@@ -17,7 +17,7 @@ export default function BlogList({ posts }: Props) {
           </Link>
           {post.excerpt && <p className="clamp-2">{post.excerpt}</p>}
           <p className="p-small">
-            Last Updated on {format(new Date(post.updated_at), 'MMMM dd, yyyy')}
+            {`Updated at ${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
           </p>
         </div>
       ))}

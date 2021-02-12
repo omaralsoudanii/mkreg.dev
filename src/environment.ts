@@ -19,6 +19,7 @@ export interface EnvironmentProps {
   siteUrl: string
   blogUrl: string
   ghostAPIUrl: string
+  NODE_ENV: string
   ogImage: string
   ogDescription: string
   ogTitle: string
@@ -45,6 +46,7 @@ export const Environment: EnvironmentProps = {
   siteUrl,
   blogUrl: `${siteUrl}/blog`,
   ghostAPIUrl,
+  NODE_ENV: process.env.NODE_ENV || 'development',
   ogTitle: 'Omar Alsoudani',
   ogDescription: 'Programming, software and premature optimization',
   ogImage: '/static/meta/og-card.jpg',

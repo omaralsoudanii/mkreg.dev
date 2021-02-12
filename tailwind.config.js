@@ -2,7 +2,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./src/**/*.tsx', './src/**/*.ts'],
+  purge: ['./src/**/*.tsx'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     colors: {
@@ -54,11 +54,6 @@ module.exports = {
       colors: {
         'gray-1000': '#050505',
       },
-    },
-  },
-  variants: {
-    extend: {
-      textColor: ['visited'],
     },
   },
   plugins: [

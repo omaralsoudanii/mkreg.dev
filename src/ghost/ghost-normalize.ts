@@ -110,7 +110,7 @@ const syntaxHighlightWithPrismJS = (htmlAst: Node) => {
         return classListItem.slice(9).toLowerCase()
       }
     }
-    return 'text'
+    return null
   }
 
   visit(
@@ -122,13 +122,14 @@ const syntaxHighlightWithPrismJS = (htmlAst: Node) => {
       }
 
       const lang = getLanguage(node)
+      if (lang === null) return
 
       let result
       try {
         result = refractor.highlight(nodeToString(node), lang)
       } catch (err) {
         if (prism.ignoreMissing && /Unknown language/.test(err.message)) {
-          result = refractor.highlight(nodeToString(node), 'text')
+          return
         }
         throw err
       }

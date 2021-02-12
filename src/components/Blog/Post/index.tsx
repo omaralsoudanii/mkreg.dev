@@ -1,5 +1,4 @@
 import * as React from 'react'
-import SyntaxHighlighter from '@/components/SyntaxHighlighter'
 import SEO from './SEO'
 import Image from 'next/image'
 import { format } from 'date-fns'
@@ -18,8 +17,6 @@ export default function PostContainer({ post }: Props) {
   const featImg = post.featureImage
   return (
     <React.Fragment>
-      <SyntaxHighlighter data={post} />
-      <GlobalPrismStyles />
       <SEO post={post} />
 
       <CenteredColumn>
@@ -50,17 +47,20 @@ export default function PostContainer({ post }: Props) {
           <div className="flex flex-col space-y-4">
             <h1>{post.title}</h1>
             <p className="p-small">
-              Last Updated on
-              {format(new Date(post.updated_at), 'MMMM dd, yyyy')}
+              {`Updated at ${format(
+                new Date(post.updated_at),
+                'MMMM dd, yyyy'
+              )}`}
             </p>
           </div>
         </div>
 
         <div
           style={{ marginTop: '16px' }}
-          className="prose lg:prose-lg prose-blue"
+          className="prose lg:prose-lg prose-blue dark:prose-dark"
         >
           <Body htmlAst={htmlAst} />
+          <GlobalPrismStyles />
         </div>
       </CenteredColumn>
     </React.Fragment>

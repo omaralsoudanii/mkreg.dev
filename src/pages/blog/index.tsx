@@ -58,8 +58,11 @@ export const getStaticProps: GetStaticProps = async () => {
       notFound: true,
     }
   }
-  const rss = generateRSSFeed({ posts })
-  fs.writeFileSync('./public/rss.xml', rss)
+
+  if (Environment.NODE_ENV === 'production') {
+    const rss = generateRSSFeed({ posts })
+    fs.writeFileSync('./public/rss.xml', rss)
+  }
 
   const { enable, revalidate } = Environment.isr
   return {
