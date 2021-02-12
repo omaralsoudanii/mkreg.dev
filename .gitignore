@@ -38,6 +38,7 @@ yarn-error.log*
 
 # post build
 /public/*.xml
+/public/*.txt
 
 # cache
 /.cache
