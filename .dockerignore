@@ -1,0 +1,17 @@
+node_modules
+.next
+.cache
+npm-debug.log
+.dockerignore
+.idea
+.vscode
+.editorconfig
+.eslintrc.js
+.git
+.gitignore
+*.md
+build
+*.eslint
+.env.example
+out
+docker
