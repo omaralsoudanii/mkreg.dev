@@ -1,5 +1,5 @@
 import SEO from '@/components/Seo'
-import { ThemeProvider } from 'next-themes'
+import React from 'react'
 import App from 'next/app'
 import '@/styles/tailwind.css'
 import 'tailwindcss/utilities.css'
@@ -14,10 +14,10 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
 
     return (
-      <ThemeProvider attribute="class">
+      <React.Fragment>
         <SEO />
         <Component {...pageProps} />
-      </ThemeProvider>
+      </React.Fragment>
     )
   }
 }

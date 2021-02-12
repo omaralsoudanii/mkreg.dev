@@ -8,18 +8,18 @@ function Home() {
       <CenteredColumn>
         <div className="flex flex-col space-y-24">
           <div className="flex flex-col space-y-8 md:items-justify">
-            <div className="flex flex-col space-y-8 md:items-justify md:text-justify">
+            <div className="flex flex-col space-y-4 md:items-center md:text-justify">
               <h1>Hello, I’m Omar</h1>
               <p className="text-2xl">
                 A programmer who made this site out of bordem, I'll be writing
                 about software engineering in general, excluding the Frontend
                 ofcourse 🤔
               </p>
-              <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
+              <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-justify">
                 <Link href="/blog" passHref>
                   <a>
                     <button className="w-full text-lg btn btn-primary btn-large">
-                      Read
+                      My blog articles
                     </button>
                   </a>
                 </Link>
@@ -29,27 +29,27 @@ function Home() {
                   rel="noopener noreferrer"
                 >
                   <button className="w-full text-lg btn btn-large">
-                    Github
+                    My Github Account
                   </button>
                 </a>
               </div>
-              <hr className="border-gray-300 " />
             </div>
-            <div className="flex flex-col space-y-8 md:items-justify">
+            <hr className="border-gray-300 dark:bg-gray-800" />
+            <div className="flex flex-col space-y-4 md:items-start md:text-justify">
               <h2> Why not Frontend?</h2>
               <p className="text-xl">
                 Well, let's just accept the fact that my frontend skills is
-                kinda worse than NVIDIA drivers support for linux
+                kinda worse than NVIDIA drivers support for linux.
               </p>
-              <hr className="border-gray-300 " />
             </div>
-            <div className="flex flex-col space-y-8 md:items-justify">
+            <hr className="border-gray-300 dark:bg-gray-800" />
+            <div className="flex flex-col space-y-4 md:items-start md:text-justify">
               <h2> What else? </h2>
               <p className="text-xl">
                 When i have the time (AKA figuring out this Tailwind stuff), I
                 wanna make dedicated sections for:
               </p>
-              <ul className="list-disc space-y-2">
+              <ul className="space-y-2 list-disc">
                 <li className="mx-8">
                   Code snippets: sharing some random stuff that saved me so much
                   time, probably Backend/Infra stuff.
@@ -64,8 +64,8 @@ function Home() {
                   related....)
                 </li>
               </ul>
-              <hr className="border-gray-300 " />
             </div>
+            <hr className="border-gray-300 " />
           </div>
         </div>
       </CenteredColumn>

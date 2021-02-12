@@ -1,12 +1,15 @@
 /* Write your own custom base styles here */
 
 html {
-  @apply text-base;
+  @apply text-base bg-gray-50 dark:bg-gray-1000;
 }
 
 /* Write your own custom component styles here */
 @layer components {
-  p, ul, ol, li {
+  p,
+  ul,
+  ol,
+  li {
     @apply text-gray-1000 dark:text-gray-50;
   }
 
@@ -145,6 +148,11 @@ html {
     @apply text-gray-1000 dark:text-gray-50;
   }
 
+  .prose pre :not(pre < code) {
+    @apply bg-gray-100 border border-gray-200 dark:border-gray-700 dark:bg-gray-800;
+  }
+
+  /* this is needed to avoid HN comments from overflowing off the right edge of the screen */
   .prose p {
     @apply break-words;
     word-break: break-word;
@@ -158,11 +166,11 @@ html {
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-300;
   }
 
   .token.punctuation {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-300;
   }
 
   .token.property,
@@ -209,9 +217,17 @@ html {
     @apply text-yellow-500;
   }
 
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*='language-'],
+  pre[class*='language-'] {
     @apply text-gray-1000 dark:text-gray-50;
+  }
+
+  .timeline-inset {
+    @apply ml-16 md:ml-0;
+  }
+
+  .timeline-full-width {
+    @apply -ml-16 md:ml-0;
   }
 
   .blob {
@@ -219,12 +235,12 @@ html {
   }
 
   .blob-pink {
-    color: #FF007A;
+    color: #ff007a;
     fill-opacity: 0.7;
   }
 
   .blob-orange {
-    color: #FF8A00;
+    color: #ff8a00;
     fill-opacity: 0.7;
   }
 
@@ -232,12 +248,12 @@ html {
     .blob-pink {
       fill-opacity: 0.9;
     }
-  
+
     .blob-orange {
       fill-opacity: 0.9;
     }
   }
-  
+
   .s-mark {
     @apply text-white dark:text-gray-1000;
   }
@@ -247,7 +263,7 @@ html {
       display: none;
     }
   }
-  
+
   .meta-wrap {
     background: transparent;
     animation: 24s spin ease-in-out infinite;
@@ -257,23 +273,23 @@ html {
     position: absolute;
     width: 100%;
     height: 140%;
-    top:60%;
+    top: 60%;
     z-index: 1;
     transition: opacity 0.3s ease-in-out;
   }
-  
+
   .meta:before,
   .meta:after {
-    content: "";
+    content: '';
     position: absolute;
-    width:212px;
-    height:212px;
-    left:50%;
-    top:50%;
-    margin:-50px;
-    background: linear-gradient(#FF9900, #FF007A);
-    border-radius:50%;
-    
+    width: 212px;
+    height: 212px;
+    left: 50%;
+    top: 50%;
+    margin: -50px;
+    background: linear-gradient(#ff9900, #ff007a);
+    border-radius: 50%;
+
     -webkit-filter: blur(10px);
     filter: blur(10px);
     animation: move 100s infinite alternate ease-in-out;
@@ -296,10 +312,10 @@ html {
 
   @keyframes spin {
     to {
-      transform: rotate(360deg)
+      transform: rotate(360deg);
     }
   }
-  
+
   @keyframes move {
     0% {
       transform: translate(0%, 2%);

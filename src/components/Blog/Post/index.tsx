@@ -55,12 +55,8 @@ export default function PostContainer({ post }: Props) {
           </div>
         </div>
 
-        <div
-          style={{ marginTop: '16px' }}
-          className="prose lg:prose-lg prose-blue dark:prose-dark"
-        >
+        <div style={{ marginTop: '16px' }} className="prose lg:prose-lg">
           <Body htmlAst={htmlAst} />
-          <GlobalPrismStyles />
         </div>
       </CenteredColumn>
     </React.Fragment>
