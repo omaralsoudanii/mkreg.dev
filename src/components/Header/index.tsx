@@ -10,18 +10,11 @@ import {
   Label,
   Background,
 } from './style'
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from 'react'
 interface Props {
   activeRoute: string
 }
 
 const NavLinks = ({ activeRoute }: Props) => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-
-  // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), [])
   return (
     <React.Fragment>
       <Label isActive={activeRoute === 'Home'}>
@@ -41,13 +34,6 @@ const NavLinks = ({ activeRoute }: Props) => {
           <a>Blog</a>
         </Link>
       </Label>
-      {mounted && (
-        <Label className="cursor-pointer">
-          <a onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-            {theme === 'dark' ? `Light` : `Dark`}
-          </a>
-        </Label>
-      )}
     </React.Fragment>
   )
 }

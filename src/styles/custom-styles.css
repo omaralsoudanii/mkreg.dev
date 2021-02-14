@@ -73,9 +73,6 @@ html {
     @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
   }
 }
-
-/* Your own custom utilities */
-@layer utilities {
   .text-primary {
     @apply text-gray-1000 dark:text-gray-50;
   }
@@ -148,16 +145,11 @@ html {
     @apply text-gray-1000 dark:text-gray-50;
   }
 
-  .prose pre :not(pre < code) {
-    @apply bg-gray-100 border border-gray-200 dark:border-gray-700 dark:bg-gray-800;
-  }
-
-  /* this is needed to avoid HN comments from overflowing off the right edge of the screen */
   .prose p {
     @apply break-words;
     word-break: break-word;
   }
-
+  
   .prose p + p {
     margin-top: 0;
   }
@@ -166,11 +158,11 @@ html {
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    @apply text-gray-300;
+    @apply text-gray-700 dark:text-gray-300;
   }
 
   .token.punctuation {
-    @apply text-gray-300;
+    @apply text-gray-700 dark:text-gray-300;
   }
 
   .token.property,
@@ -348,4 +340,3 @@ html {
   .filter-blur {
     backdrop-filter: saturate(180%) blur(20px);
   }
-}

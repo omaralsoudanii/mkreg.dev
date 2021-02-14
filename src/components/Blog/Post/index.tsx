@@ -6,7 +6,6 @@ import { CenteredColumn } from '@/components/Layouts'
 import { GhostPostOrPage } from '@/ghost/api'
 import { Environment } from '@/environment'
 import { Body } from './Body'
-import GlobalPrismStyles from '@/components/GlobalStyles/prism'
 interface Props {
   post: GhostPostOrPage
 }
@@ -57,7 +56,6 @@ export default function PostContainer({ post }: Props) {
 
         <div style={{ marginTop: '16px' }} className="prose lg:prose-lg">
           <Body htmlAst={htmlAst} />
-          <GlobalPrismStyles />
         </div>
       </CenteredColumn>
     </React.Fragment>
