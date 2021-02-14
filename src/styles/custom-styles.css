@@ -6,10 +6,7 @@ html {
 
 /* Write your own custom component styles here */
 @layer components {
-  p,
-  ul,
-  ol,
-  li {
+  p, ul, ol, li {
     @apply text-gray-1000 dark:text-gray-50;
   }
 
@@ -73,6 +70,7 @@ html {
     @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
   }
 }
+
   .text-primary {
     @apply text-gray-1000 dark:text-gray-50;
   }
@@ -124,8 +122,26 @@ html {
   .prose table {
     @apply text-gray-1000 dark:text-gray-50;
   }
+  
 
+  /* this is needed to avoid HN comments from overflowing off the right edge of the screen */
+  .prose p {
+    @apply break-words;
+    word-break: break-word;
+  }
   /* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
+  
+  .prose pre {
+    background-color: #27272a;
+  }
+  
+  .prose code {
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+  }
+  
   .prose .kg-embed-card {
     @apply my-4;
     position: relative;
@@ -149,21 +165,11 @@ html {
     @apply break-words;
     word-break: break-word;
   }
-  
+
   .prose p + p {
     margin-top: 0;
   }
 
-  .token.comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata {
-    @apply text-gray-700 dark:text-gray-300;
-  }
-
-  .token.punctuation {
-    @apply text-gray-700 dark:text-gray-300;
-  }
 
   .token.property,
   .token.tag,
@@ -172,7 +178,7 @@ html {
   .token.constant,
   .token.symbol,
   .token.deleted {
-    @apply text-green-500;
+    @apply text-green-400;
   }
 
   .token.selector,
@@ -181,7 +187,7 @@ html {
   .token.char,
   .token.builtin,
   .token.inserted {
-    @apply text-purple-500;
+    @apply text-purple-400;
   }
 
   .token.operator,
@@ -189,50 +195,38 @@ html {
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    @apply text-yellow-500;
+    @apply text-yellow-400;
   }
 
   .token.atrule,
   .token.attr-value,
   .token.keyword {
-    @apply text-blue-500;
+    @apply text-blue-400;
   }
 
   .token.function,
   .token.class-name {
-    @apply text-pink-500;
+    @apply text-pink-400;
   }
 
   .token.regex,
   .token.important,
   .token.variable {
-    @apply text-yellow-500;
+    @apply text-yellow-400;
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
-    @apply text-gray-1000 dark:text-gray-50;
-  }
-
-  .timeline-inset {
-    @apply ml-16 md:ml-0;
-  }
-
-  .timeline-full-width {
-    @apply -ml-16 md:ml-0;
-  }
 
   .blob {
     @apply text-gray-1000 dark:text-white;
   }
 
   .blob-pink {
-    color: #ff007a;
+    color: #FF007A;
     fill-opacity: 0.7;
   }
 
   .blob-orange {
-    color: #ff8a00;
+    color: #FF8A00;
     fill-opacity: 0.7;
   }
 
@@ -240,12 +234,12 @@ html {
     .blob-pink {
       fill-opacity: 0.9;
     }
-
+  
     .blob-orange {
       fill-opacity: 0.9;
     }
   }
-
+  
   .s-mark {
     @apply text-white dark:text-gray-1000;
   }
@@ -255,7 +249,7 @@ html {
       display: none;
     }
   }
-
+  
   .meta-wrap {
     background: transparent;
     animation: 24s spin ease-in-out infinite;
@@ -265,23 +259,23 @@ html {
     position: absolute;
     width: 100%;
     height: 140%;
-    top: 60%;
+    top:60%;
     z-index: 1;
     transition: opacity 0.3s ease-in-out;
   }
-
+  
   .meta:before,
   .meta:after {
-    content: '';
+    content: "";
     position: absolute;
-    width: 212px;
-    height: 212px;
-    left: 50%;
-    top: 50%;
-    margin: -50px;
-    background: linear-gradient(#ff9900, #ff007a);
-    border-radius: 50%;
-
+    width:212px;
+    height:212px;
+    left:50%;
+    top:50%;
+    margin:-50px;
+    background: linear-gradient(#FF9900, #FF007A);
+    border-radius:50%;
+    
     -webkit-filter: blur(10px);
     filter: blur(10px);
     animation: move 100s infinite alternate ease-in-out;
@@ -304,10 +298,10 @@ html {
 
   @keyframes spin {
     to {
-      transform: rotate(360deg);
+      transform: rotate(360deg)
     }
   }
-
+  
   @keyframes move {
     0% {
       transform: translate(0%, 2%);

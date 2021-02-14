@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
             href={`${Environment.siteUrl}/rss.xml`}
           />
         </Head>
-        <body>
+        <body className="antialiased">
           <Main />
           <NextScript />
         </body>
