@@ -5,73 +5,71 @@ html {
 }
 
 /* Write your own custom component styles here */
-@layer components {
-  p,
-  ul,
-  ol,
-  li {
-    @apply text-gray-1000 dark:text-gray-50;
-  }
+p,
+ul,
+ol,
+li {
+  @apply text-gray-1000 dark:text-gray-50;
+}
 
-  a {
-    @apply font-semibold;
-  }
+a {
+  @apply font-semibold;
+}
 
-  h6 {
-    @apply text-base font-bold text-gray-1000 dark:text-gray-50;
-  }
+h6 {
+  @apply text-base font-bold text-gray-1000 dark:text-gray-50;
+}
 
-  h5 {
-    @apply text-lg font-bold text-gray-1000 dark:text-gray-50;
-  }
+h5 {
+  @apply text-lg font-bold text-gray-1000 dark:text-gray-50;
+}
 
-  h4 {
-    @apply text-xl font-bold text-gray-1000 dark:text-gray-50;
-  }
+h4 {
+  @apply text-xl font-bold text-gray-1000 dark:text-gray-50;
+}
 
-  h3 {
-    @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
-  }
+h3 {
+  @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
+}
 
-  h2 {
-    @apply text-3xl font-extrabold text-gray-1000 dark:text-gray-50;
-  }
+h2 {
+  @apply text-3xl font-extrabold text-gray-1000 dark:text-gray-50;
+}
 
-  h1 {
-    @apply text-4xl font-extrabold text-gray-1000 dark:text-gray-50;
-  }
+h1 {
+  @apply text-4xl font-extrabold text-gray-1000 dark:text-gray-50;
+}
 
-  .btn {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
-  }
+.btn {
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
+}
 
-  .btn-primary {
-    @apply text-white bg-blue-500 border-none hover:bg-blue-600 dark:hover:bg-blue-400;
-  }
+.btn-primary {
+  @apply text-white bg-blue-500 border-none hover:bg-blue-600 dark:hover:bg-blue-400;
+}
 
-  .btn-outline {
-    @apply bg-white bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
-  }
+.btn-outline {
+  @apply bg-white bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
+}
 
-  .btn-large {
-    @apply px-6 py-3 font-semibold rounded-md;
-  }
+.btn-large {
+  @apply px-6 py-3 font-semibold rounded-md;
+}
 
-  .tabbed-navigation::-webkit-scrollbar {
-    display: none;
-  }
+.tabbed-navigation::-webkit-scrollbar {
+  display: none;
+}
 
-  .tab {
-    @apply flex flex-none md:justify-center md:flex-auto flex-nowrap;
-  }
+.tab {
+  @apply flex flex-none md:justify-center md:flex-auto flex-nowrap;
+}
 
-  .tab-active {
-    @apply border-b-2 text-gray-1000 dark:text-gray-50 border-gray-1000 dark:border-white hover:text-gray-1000 dark:hover:text-gray-50;
-  }
+.tab-active {
+  @apply border-b-2 text-gray-1000 dark:text-gray-50 border-gray-1000 dark:border-white hover:text-gray-1000 dark:hover:text-gray-50;
+}
 
-  .tab-inactive {
-    @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
-  }
+.tab-inactive {
+  @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
 }
 
 .text-primary {
