@@ -36,16 +36,16 @@ function Home() {
             </div>
             <hr className="border-gray-300 dark:bg-gray-800" />
             <div className="flex flex-col space-y-4 md:items-start md:text-justify">
-              <h2> Why not Frontend?</h2>
-              <p className="text-xl">
+              <h1> Why not Frontend?</h1>
+              <p className="text-2xl">
                 Well, let's just accept the fact that my frontend skills is
                 kinda worse than NVIDIA drivers support for linux.
               </p>
             </div>
             <hr className="border-gray-300 dark:bg-gray-800" />
             <div className="flex flex-col space-y-4 md:items-start md:text-justify">
-              <h2> What else? </h2>
-              <p className="text-xl">
+              <h1> What else? </h1>
+              <p className="text-2xl">
                 When i have the time (AKA figuring out this Tailwind stuff), I
                 wanna make dedicated sections for:
               </p>
@@ -65,7 +65,6 @@ function Home() {
                 </li>
               </ul>
             </div>
-            <hr className="border-gray-300 " />
           </div>
         </div>
       </CenteredColumn>
