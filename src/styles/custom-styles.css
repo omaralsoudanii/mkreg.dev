@@ -1,9 +1,8 @@
 /* Write your own custom base styles here */
 html {
-  @apply antialiased text-base bg-gray-50 dark:bg-gray-1000;
+  @apply text-base antialiased bg-gray-50 dark:bg-gray-1000;
 }
 
-/* Write your own custom component styles here */
 p,
 ul,
 ol,
@@ -123,12 +122,10 @@ h1 {
   @apply text-gray-1000 dark:text-gray-50;
 }
 
-/* this is needed to avoid HN comments from overflowing off the right edge of the screen */
 .prose p {
   @apply break-words;
   word-break: break-word;
 }
-/* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
 
 .prose pre {
   background-color: #27272a;
@@ -141,6 +138,7 @@ h1 {
   line-height: inherit;
 }
 
+/* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
 .prose .kg-embed-card {
   @apply my-4;
   position: relative;
