@@ -40,6 +40,12 @@ export default class MyDocument extends Document {
             title="Omar Alsoudani RSS Feed"
             href={`${Environment.siteUrl}/rss.xml`}
           />
+          <meta name="theme-color" content={'#fefefe'} />
+          <link
+            rel="apple-touch-icon"
+            href="/static/meta/apple-touch-icon.png"
+          />
+          <link rel="manifest" href="/static/meta/manifest.json" />
         </Head>
         <body>
           <Main />

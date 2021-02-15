@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { Environment } from '@/environment'
 
@@ -27,11 +26,6 @@ export default function SEO() {
   return (
     <React.Fragment>
       <DefaultSeo {...SeoConfig} />
-      <Head>
-        <meta name="theme-color" content={'#fefefe'} />
-        <link rel="apple-touch-icon" href="/static/meta/apple-touch-icon.png" />
-        <link rel="manifest" href="/static/meta/manifest.json" />
-      </Head>
     </React.Fragment>
   )
 }
