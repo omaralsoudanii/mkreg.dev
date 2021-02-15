@@ -16,6 +16,7 @@ begins_with_short_option() {
 _arg_pull=
 _arg_restart=
 _arg_build="off"
+$_rootdir="/var/www/mkreg.dev"
 
 print_help() {
   printf '%s\n' "The general script's help msg"
@@ -83,23 +84,16 @@ parse_commandline "$@"
 
 if [[ $_arg_pull ]]; then
   echo "Pulling in latest changes for all repositories from $_arg_pull branch..."
-
-  cd $DGROOT
-  for i in $(find . -name ".git" | cut -c 3-); do
-    echo ""
-    cd $i
-    echo "Pulling for $(dirname $i)..."
-    cd ..
-    git fetch -v
-    git pull origin $_arg_pull
-    cd $DGROOT
-  done
+  cd $_rootdir
+  echo "Pulling ..."
+  git fetch -v
+  git pull origin $_arg_pull
 fi
 
 
 if [[ $_arg_build == "on" ]]; then
   echo "Building docker......"
-  cd /var/www/mkreg.dev/docker/prod
+  cd $_rootdir/docker/prod
   docker-compose up --build -d
   echo "Docker build completed"
   docker-compose ps
@@ -107,7 +101,7 @@ fi
 
 if [[ $_arg_restart ]]; then
   echo "Restarting container $_arg_restart......"
-  cd /var/www/mkreg.dev/docker/prod
+  cd $_rootdir/docker/prod
   docker-compose restart $_arg_restart
   echo "$_arg_restart container has been restarted"
   docker-compose ps
