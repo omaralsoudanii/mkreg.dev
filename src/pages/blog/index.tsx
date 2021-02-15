@@ -5,8 +5,6 @@ import Page, { PageHeader } from '@/components/Page'
 import SEO from '@/components/Seo'
 import { Environment } from '@/environment'
 import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
-import { generateRSSFeed } from '@/ghost/rss'
-import fs from 'fs'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
@@ -57,11 +55,6 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       notFound: true,
     }
-  }
-
-  if (Environment.NODE_ENV === 'production') {
-    const rss = generateRSSFeed({ posts })
-    fs.writeFileSync('./public/rss.xml', rss)
   }
 
   const { enable, revalidate } = Environment.isr

@@ -41,10 +41,8 @@ export default class MyDocument extends Document {
             href={`${Environment.siteUrl}/rss.xml`}
           />
         </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
+        <Main />
+        <NextScript />
       </Html>
     )
   }

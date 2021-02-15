@@ -56,7 +56,7 @@ export default function PostContainer({ post }: Props) {
 
         <div
           style={{ marginTop: '16px' }}
-          className="prose prose-blue lg:prose-lg"
+          className="prose prose-blue sm:prose-sm lg:prose-lg xl:prose-xl"
         >
           <Body htmlAst={htmlAst} />
         </div>

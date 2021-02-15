@@ -1,7 +1,6 @@
 /* Write your own custom base styles here */
-
 html {
-  @apply text-base bg-gray-50 dark:bg-gray-1000;
+  @apply antialiased text-base bg-gray-50 dark:bg-gray-1000;
 }
 
 /* Write your own custom component styles here */
