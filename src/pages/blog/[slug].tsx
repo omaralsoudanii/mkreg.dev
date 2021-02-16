@@ -40,12 +40,12 @@ export async function getStaticProps({ params: { slug } }) {
       notFound: true,
     }
   }
-  const { enable, revalidate } = Environment.isr
+  const { revalidate } = Environment.isr
   return {
     props: {
       data: post,
     },
-    ...(enable && { revalidate: revalidate }),
+    revalidate: revalidate,
   }
 }
 
@@ -65,6 +65,6 @@ export async function getStaticPaths() {
   const paths = [...postRoutes]
   return {
     paths,
-    fallback: enable && 'blocking',
+    fallback: enable,
   }
 }

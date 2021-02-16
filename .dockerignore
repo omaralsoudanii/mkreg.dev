@@ -1,5 +1,4 @@
 node_modules
-.next
 npm-debug.log
 .dockerignore
 .idea
@@ -9,7 +8,6 @@ npm-debug.log
 .git
 .gitignore
 *.md
-build
 *.eslint
 .env.example
 out

@@ -57,11 +57,11 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 
-  const { enable, revalidate } = Environment.isr
+  const { revalidate } = Environment.isr
   return {
     props: {
       posts,
     },
-    ...(enable && { revalidate: revalidate }),
+    revalidate: revalidate,
   }
 }
