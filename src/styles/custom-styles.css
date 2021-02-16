@@ -54,22 +54,6 @@ h1 {
   @apply px-6 py-3 font-semibold rounded-md;
 }
 
-.tabbed-navigation::-webkit-scrollbar {
-  display: none;
-}
-
-.tab {
-  @apply flex flex-none md:justify-center md:flex-auto flex-nowrap;
-}
-
-.tab-active {
-  @apply border-b-2 text-gray-1000 dark:text-gray-50 border-gray-1000 dark:border-white hover:text-gray-1000 dark:hover:text-gray-50;
-}
-
-.tab-inactive {
-  @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
-}
-
 .text-primary {
   @apply text-gray-1000 dark:text-gray-50;
 }
@@ -95,7 +79,7 @@ h1 {
 }
 
 .p-small {
-  @apply text-sm text-gray-600 dark:text-gray-400;
+  @apply text-sm text-gray-700 dark:text-gray-400;
 }
 
 .black-link {
@@ -161,6 +145,17 @@ h1 {
 .prose p + p {
   margin-top: 0;
 }
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-gray-300;
+}
+
+.token.punctuation {
+  @apply text-gray-300;
+}
+
 
 .token.property,
 .token.tag,
@@ -169,7 +164,7 @@ h1 {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-400;
+  @apply text-green-500;
 }
 
 .token.selector,
@@ -178,7 +173,7 @@ h1 {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-purple-400;
+  @apply text-purple-500;
 }
 
 .token.operator,
@@ -186,25 +181,26 @@ h1 {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  @apply text-yellow-400;
+  @apply text-yellow-500;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  @apply text-blue-400;
+  @apply text-blue-500;
 }
 
 .token.function,
 .token.class-name {
-  @apply text-pink-400;
+  @apply text-pink-500;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-yellow-400;
+  @apply text-yellow-500;
 }
+
 
 code[class*="language-"],
 pre[class*="language-"] {

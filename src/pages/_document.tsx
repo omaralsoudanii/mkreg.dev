@@ -40,12 +40,26 @@ export default class MyDocument extends Document {
             title="Omar Alsoudani RSS Feed"
             href={`${Environment.siteUrl}/rss.xml`}
           />
-          <meta name="theme-color" content={'#fefefe'} />
+          <meta name="theme-color" content="fefefe" />
+          <link href="/static/meta/favicon.ico" rel="shortcut icon" />
+          <link href="/static/meta/site.webmanifest" rel="manifest" />
           <link
-            rel="apple-touch-icon"
             href="/static/meta/apple-touch-icon.png"
+            rel="apple-touch-icon"
+            sizes="180x180"
           />
-          <link rel="manifest" href="/static/meta/manifest.json" />
+          <link
+            href="/static/favicons/favicon-32x32.png"
+            rel="icon"
+            sizes="32x32"
+            type="image/png"
+          />
+          <link
+            href="/static/favicons/favicon-16x16.png"
+            rel="icon"
+            sizes="16x16"
+            type="image/png"
+          />
         </Head>
         <body>
           <Main />

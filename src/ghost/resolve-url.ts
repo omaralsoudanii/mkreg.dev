@@ -32,6 +32,6 @@ export const resolveUrl = ({
   if (!url.startsWith(apiUrl)) return resolvePath(slug)
 
   //const { absolute: apiUrl, relative: dirUrl } = splitUrl(url)
-  const dirUrl = url.replace(apiUrl, '/blog').replace('//', '/')
+  const dirUrl = url.replace(apiUrl, '/writing').replace('//', '/')
   return resolvePath(dirUrl)
 }

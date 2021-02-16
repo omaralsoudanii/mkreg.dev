@@ -8,7 +8,7 @@ import { resolveUrl } from '@/ghost/resolve-url'
 import { collections } from '@/ghost/collections'
 import { Environment } from '@/environment'
 import Page from '@/components/Page'
-import PostContainer from '@/components/Blog/Post'
+import PostContainer from '@/components/Writing/Post'
 import { useRouter } from 'next/router'
 import FullscreenLoading from '@/components/FullscreenLoading'
 /**

@@ -29,9 +29,9 @@ const NavLinks = ({ activeRoute }: Props) => {
         </Link>
       </Label>
 
-      <Label isActive={activeRoute === 'Blog'}>
-        <Link href="/blog">
-          <a>Blog</a>
+      <Label isActive={activeRoute === 'Writing'}>
+        <Link href="/writing">
+          <a>Writing</a>
         </Link>
       </Label>
     </React.Fragment>
@@ -52,9 +52,9 @@ export default function Header() {
     activeRoute = 'About'
     activePath = '/about'
   }
-  if (router.pathname.includes('/blog')) {
-    activeRoute = 'Blog'
-    activePath = '/blog'
+  if (router.pathname.includes('/writing')) {
+    activeRoute = 'Writing'
+    activePath = '/writing'
   }
   return (
     <React.Fragment>

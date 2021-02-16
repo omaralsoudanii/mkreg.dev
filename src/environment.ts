@@ -17,7 +17,7 @@ const resolveNumber = (value: string | undefined, defaultValue: number) => {
 
 export interface EnvironmentProps {
   siteUrl: string
-  blogUrl: string
+  writingUrl: string
   ghostAPIUrl: string
   NODE_ENV: string
   ogImage: string
@@ -44,11 +44,11 @@ export interface EnvironmentProps {
 
 export const Environment: EnvironmentProps = {
   siteUrl,
-  blogUrl: `${siteUrl}/blog`,
+  writingUrl: `${siteUrl}/writing`,
   ghostAPIUrl,
   NODE_ENV: process.env.NODE_ENV || 'development',
   ogTitle: 'Omar Alsoudani',
-  ogDescription: 'Programming, software and premature optimization',
+  ogDescription: 'Programming, software engineering and premature optimization',
   ogImage: '/static/meta/og-card.jpg',
   fileCache: resolveBool(process.env.GHOST_FILE_CACHE, true),
   nextImages: {

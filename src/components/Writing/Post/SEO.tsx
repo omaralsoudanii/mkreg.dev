@@ -13,7 +13,7 @@ export default function SEO({ post }: Props) {
       description={post.custom_excerpt || post.excerpt}
       openGraph={{
         title: post.title,
-        url: `${Environment.blogUrl}/${post.slug}`,
+        url: `${Environment.writingUrl}/${post.slug}`,
         description: post.custom_excerpt || post.excerpt,
         images: [
           {

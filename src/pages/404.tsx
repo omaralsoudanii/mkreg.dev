@@ -25,7 +25,9 @@ export default function NotFound() {
               that exists since 2007, and the only link is not found as well.
             </p>
             <Link href="/">
-              <button className="w-full text-lg btn btn-large">Homepage</button>
+              <button className="w-full text-lg btn btn-primary btn-large">
+                Homepage
+              </button>
             </Link>
           </div>
         </div>

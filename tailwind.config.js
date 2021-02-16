@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -44,6 +44,7 @@ module.exports = {
               color: theme('colors.blue.500'),
               textDecoration: 'none',
             },
+            code: { color: theme('colors.pink.500') },
           },
         },
       }),

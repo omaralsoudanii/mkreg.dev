@@ -22,27 +22,22 @@ export default function PostContainer({ post }: Props) {
         <div className="flex flex-col space-y-8">
           {featImg &&
             (Environment.nextImages?.feature && featImg?.dimensions ? (
-              <figure>
-                <Image
-                  src={featImg.url}
-                  alt={post.title}
-                  quality={Environment.nextImages.quality}
-                  layout="responsive"
-                  sizes={`
+              <Image
+                src={featImg.url}
+                className="-mx-4 -mt-24 md:mt-0 md:-mx-8 "
+                alt={post.title}
+                quality={Environment.nextImages.quality}
+                layout="responsive"
+                sizes={`
                               (max-width: 350px) 350px,
                               (max-width: 530px) 530px,
                               (max-width: 710px) 710px,
                               (max-width: 1170px) 1170px,
                               (max-width: 2110px) 2110px, 2000px
                             `}
-                  {...featImg.dimensions}
-                />
-              </figure>
-            ) : (
-              post?.feature_image && (
-                <img src={post.feature_image} alt={post.title} />
-              )
-            ))}
+                {...featImg.dimensions}
+              />
+            ) : null)}
           <div className="flex flex-col space-y-4">
             <h1>{post.title}</h1>
             <p className="p-small">
@@ -54,10 +49,7 @@ export default function PostContainer({ post }: Props) {
           </div>
         </div>
 
-        <div
-          style={{ marginTop: '16px' }}
-          className="prose prose-blue lg:prose-lg"
-        >
+        <div className="prose prose-blue lg:prose-xl">
           <Body htmlAst={htmlAst} />
         </div>
       </CenteredColumn>

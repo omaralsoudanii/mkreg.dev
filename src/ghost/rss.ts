@@ -39,7 +39,7 @@ interface ItemProps {
 }
 
 const generateItem = ({ post }: ItemProps) => {
-  const { blogUrl, ogTitle, ghostAPIUrl, ogDescription } = Environment
+  const { writingUrl, ogTitle, ghostAPIUrl, ogDescription } = Environment
   const {
     url = '',
     canonical_url,
@@ -52,7 +52,7 @@ const generateItem = ({ post }: ItemProps) => {
   } = post
 
   const postUrl = canonical_url || url
-  const itemUrl = postUrl?.replace(ghostAPIUrl, blogUrl)
+  const itemUrl = postUrl?.replace(ghostAPIUrl, writingUrl)
 
   const htmlContent = cheerio.load(html || '', {
     decodeEntities: false,

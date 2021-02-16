@@ -1,4 +1,4 @@
-import BlogList from '@/components/Blog/List'
+import WritingList from '@/components/Writing/List'
 import FullscreenLoading from '@/components/FullscreenLoading'
 import { CenteredColumn } from '@/components/Layouts'
 import Page, { PageHeader } from '@/components/Page'
@@ -9,9 +9,9 @@ import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
 /**
- * Main blog page
+ * Main writing page
  *
- * Loads top 5 posts from Ghost
+ * Loads all posts from Ghost
  *
  */
 
@@ -19,7 +19,7 @@ interface IndexProps {
   posts: GhostPostsOrPages
 }
 
-export default function Blog({ posts }: IndexProps) {
+export default function Writing({ posts }: IndexProps) {
   const router = useRouter()
   if (router.isFallback) return <FullscreenLoading />
   return (
@@ -27,13 +27,13 @@ export default function Blog({ posts }: IndexProps) {
       <SEO />
 
       <CenteredColumn>
-        <div className="flex flex-col space-y-14">
+        <div className="flex flex-col space-y-8">
           <PageHeader
             title={Environment.ogTitle}
             subtitle={Environment.ogDescription}
           />
 
-          {posts && <BlogList posts={posts} />}
+          {posts && <WritingList posts={posts} />}
         </div>
       </CenteredColumn>
     </Page>
