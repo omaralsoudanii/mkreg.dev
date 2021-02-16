@@ -1,4 +1,5 @@
-FROM node:14.15.5-buster-slim 
+# Stage 1: Building the code
+FROM mhart/alpine-node AS builder
 
 WORKDIR /mk
 
@@ -9,6 +10,19 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 RUN yarn build
+RUN yarn install --production --frozen-lockfile
+
+
+# Stage 2: And then copy over node_modules, etc from that stage to the smaller base image
+FROM mhart/alpine-node:slim as production
+
+WORKDIR /mk
+
+# COPY package.json next.config.js .env* ./
+COPY --from=builder /mk/public ./public
+COPY --from=builder /mk/.cache ./.cache
+COPY --from=builder /mk/.next ./.next
+COPY --from=builder /mk/node_modules ./node_modules
 
 EXPOSE 3000
 
