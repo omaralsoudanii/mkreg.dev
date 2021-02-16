@@ -49,7 +49,7 @@ export default function PostContainer({ post }: Props) {
           </div>
         </div>
 
-        <div className="prose prose-blue lg:prose-xl">
+        <div className="prose prose-blue lg:prose-lg">
           <Body htmlAst={htmlAst} />
         </div>
       </CenteredColumn>
