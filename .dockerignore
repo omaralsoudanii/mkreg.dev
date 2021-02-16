@@ -12,6 +12,5 @@ npm-debug.log
 .env.example
 out
 docker
-.cache
 .next
-
+.cache
