@@ -35,6 +35,8 @@ services:
       context: ./nginx
       dockerfile: Dockerfile.nginx
     image: mk-nginx
+    volumes:
+      - /var/log/nginx/:/var/log/nginx/
     depends_on:
       - mk-ghost
       - mk-next
