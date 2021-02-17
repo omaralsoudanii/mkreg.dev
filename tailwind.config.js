@@ -21,10 +21,10 @@ module.exports = {
       2: 2,
       3: 3,
     },
+    fontFamily: {
+      sans: ['Inter', ...fontFamily.sans],
+    },
     extend: {
-      fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -60,6 +60,7 @@ module.exports = {
       },
     },
   },
+  variants: {},
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-line-clamp'),
