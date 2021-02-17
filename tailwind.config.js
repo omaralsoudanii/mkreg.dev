@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
-
+const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   purge: ['./src/**/*.tsx', './src/**/*.ts'],
   darkMode: 'media', // 'media' or 'class'
@@ -22,6 +22,9 @@ module.exports = {
       3: 3,
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', ...fontFamily.sans],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
