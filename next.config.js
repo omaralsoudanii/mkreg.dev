@@ -9,14 +9,18 @@ module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   compress: process.env.NODE_ENV !== 'production',
   images: {
+    deviceSizes: [320, 500, 680, 1040, 2080, 2048, 3120],
     domains: [
       'images.unsplash.com',
-      'mkreg.dev',
+      'www.mkreg.dev',
       'cms.mkreg.dev',
       'static.ghost.org',
       'ghost.org',
       'github.githubassets.com',
       'gatsby.ghost.io',
+      'i.gyazo.com',
+      'dropbox.tech',
+      'localhost',
     ],
   },
   webpack: (config, { dev, isServer }) => {

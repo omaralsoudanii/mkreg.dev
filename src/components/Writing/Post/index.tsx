@@ -21,7 +21,7 @@ export default function PostContainer({ post }: Props) {
       <CenteredColumn>
         <div className="flex flex-col space-y-8">
           {featImg &&
-            (Environment.nextImages?.feature && featImg?.dimensions ? (
+            (Environment.nextImages?.feature && featImg.dimensions ? (
               <Image
                 src={featImg.url}
                 className="-mx-4 -mt-24 md:mt-0 md:-mx-8 "
