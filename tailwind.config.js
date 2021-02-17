@@ -44,7 +44,7 @@ module.exports = {
               color: theme('colors.blue.500'),
               textDecoration: 'none',
             },
-            code: { color: theme('colors.pink.500') },
+            code: { color: theme('colors.blue.500') },
           },
         },
       }),

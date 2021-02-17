@@ -69,9 +69,6 @@ export function Footer() {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 pb-10 sm:text-center">
-          <p className="font-bold">©2021 Omar Alsoudani</p>
-        </div>
       </div>
     </CenteredColumn>
   )

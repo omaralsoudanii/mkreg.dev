@@ -27,8 +27,7 @@ function About({ posts }) {
           </div>
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col space-y-4 md:text-start">
-              <h1>FAQ</h1>
-              <h3> Why you don't talk much Frontend?</h3>
+              <h3> Why I won't wirte that much about Frontend</h3>
               <p className="text-xl">
                 Well, let's just accept the fact that my frontend skills is
                 kinda worse than NVIDIA drivers support for linux. On a serious
@@ -61,42 +60,10 @@ function About({ posts }) {
               </a>
             </div>
           </div>
-          {posts && (
-            <React.Fragment>
-              <hr className="space-y-1 border-gray-300 dark:bg-gray-800" />
-              <RecentPosts posts={posts} />
-            </React.Fragment>
-          )}
         </div>
       </CenteredColumn>
     </Page>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  let posts: GhostPostsOrPages | []
-
-  try {
-    posts = await getAllPosts({ limit: 5 })
-  } catch (error) {
-    return {
-      notFound: true,
-    }
-  }
-
-  if (!posts.length) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const { revalidate } = Environment.isr
-  return {
-    props: {
-      posts,
-    },
-    revalidate: revalidate,
-  }
 }
 
 export default About
