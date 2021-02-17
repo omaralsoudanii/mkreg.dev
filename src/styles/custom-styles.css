@@ -145,6 +145,16 @@ h1 {
 .prose p + p {
   margin-top: 0;
 }
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-gray-1000 dark:text-gray-50;
+}
+
 .token.comment,
 .token.prolog,
 .token.doctype,
