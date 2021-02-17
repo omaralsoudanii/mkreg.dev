@@ -18,7 +18,7 @@ function Home({ posts }) {
               <p className="text-2xl">
                 A programmer who made this site out of bordem, I'll be writing
                 about software and development in general, excluding the
-                front-end ofcourse 🤔
+                Frontend ofcourse 🤔
               </p>
               <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
                 <Link href="/about" passHref>
