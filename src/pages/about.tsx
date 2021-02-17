@@ -1,12 +1,7 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
-import RecentPosts from '@/components/Writing/Recent/Index'
-import { Environment } from '@/environment'
-import { GhostPostsOrPages, getAllPosts } from '@/ghost/api'
-import { GetStaticProps } from 'next'
-import React from 'react'
 
-function About({ posts }) {
+function About() {
   return (
     <Page>
       <CenteredColumn>
