@@ -13,13 +13,13 @@ export default function WritingList({ posts }: Props) {
       {posts.map((post) => (
         <div className="flex flex-col space-y-1" key={post.id}>
           <Link href="/writing/[slug]" as={`/writing/${post.slug}`} passHref>
-            <a className="text-lg text-blue-600 dark:text-blue-500">
+            <a className="text-lg text-blue-600 dark:text-blue-400">
               {post.title}
             </a>
           </Link>
           {post.excerpt && <p className="text-base clamp-2">{post.excerpt}</p>}
           <p className="p-small">
-            {`${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
+            {`${format(new Date(post.updated_at), 'EEEE, MMMM dd, yyyy')}`}
           </p>
         </div>
       ))}

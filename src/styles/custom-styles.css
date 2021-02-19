@@ -1,13 +1,22 @@
 /* Write your own custom base styles here */
 html {
-  @apply text-base antialiased bg-gray-50 dark:bg-gray-1000;
+  min-width: 360px;
+  scroll-behavior: smooth;
 }
 
-p,
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 ul,
 ol,
 li {
   @apply text-gray-1000 dark:text-gray-50;
+}
+p {
+  @apply text-gray-1000 font-semiMedium dark:text-gray-50 dark:font-normal;
 }
 
 a {
@@ -15,35 +24,35 @@ a {
 }
 
 h6 {
-  @apply text-base font-bold text-gray-1000 dark:text-gray-50;
+  @apply text-base font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h5 {
-  @apply text-lg font-bold text-gray-1000 dark:text-gray-50;
+  @apply text-lg font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h4 {
-  @apply text-xl font-bold text-gray-1000 dark:text-gray-50;
+  @apply text-xl font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h3 {
-  @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
+  @apply text-2xl font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h2 {
-  @apply text-3xl font-extrabold text-gray-1000 dark:text-gray-50;
+  @apply text-3xl font-bold text-gray-1000 dark:text-gray-50;
 }
 
 h1 {
-  @apply text-4xl font-extrabold text-gray-1000 dark:text-gray-50;
+  @apply text-4xl font-bold text-gray-1000 dark:text-gray-50;
 }
 
 .btn {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-950 dark:bg-gray-950 dark:hover:bg-gray-950 dark:hover:border-gray-800 focus:outline-none text-primary;
 }
 
 .btn-primary {
-  @apply text-white bg-blue-500 border-none hover:bg-blue-600 dark:hover:bg-blue-400;
+  @apply text-white bg-blue-500 border-none dark:bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400;
 }
 
 .btn-outline {
@@ -79,7 +88,7 @@ h1 {
 }
 
 .p-small {
-  @apply text-sm text-gray-700 dark:text-gray-400;
+  @apply text-sm font-semibold leading-8 text-black dark:text-white dark:font-semibold;
 }
 
 .black-link {
@@ -94,27 +103,36 @@ h1 {
   @apply text-blue-500 bg-blue-500 dark:text-blue-300 bg-opacity-10;
 }
 
+
 .prose blockquote {
   @apply border-l-2 border-gray-200 text-gray-1000 dark:text-gray-50 dark:border-gray-800;
 }
 
-.prose a {
-  @apply dark:text-blue-500;
+.prose figure figcaption {
+  @apply break-words;
+  word-break: break-word;
+  text-align: center;
 }
+
+.prose a {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+.prose a code {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
 
 .prose table {
   @apply text-gray-1000 dark:text-gray-50;
 }
 
-.prose pre {
-  background-color: #27272a;
+.light pre {
+  background-color: #011627;
 }
 
-.prose code {
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
+.dark pre {
+  background-color: #161b22;
 }
 
 /* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
@@ -134,7 +152,7 @@ h1 {
 
 .prose strong,
 .prose b {
-  @apply text-gray-1000 dark:text-gray-50;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .prose p {
@@ -152,73 +170,156 @@ h1 {
 .prose h4,
 .prose h5,
 .prose h6 {
-  @apply text-gray-1000 dark:text-gray-50;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  @apply text-gray-300;
+code[class*='language-'],
+pre[class*='language-'] {
+  color: white;
+  background: none;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+code[class*='language-'] {
+  overflow: auto;
+  padding: 1.3125rem;
+}
+
+code[class*='language-']::-moz-selection {
+  /* Firefox */
+  background: hsl(207, 4%, 16%);
+}
+
+code[class*='language-']::selection {
+  /* Safari */
+  background: hsl(207, 4%, 16%);
+}
+
+/* Text Selection colour */
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+/* Inline code */
+.light :not(pre) > code[class*='language-'] {
+  border-radius: 0.3em;
+  background: rgba(255, 229, 100, 0.2);
+  color: #1a1a1a;
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+}
+
+.dark :not(pre) > code[class*='language-'] {
+  border-radius: 0.3em;
+  background: rgba(115, 124, 153, 0.2);
+  color: #e6e6e6;
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+}
+
+.token.attr-name {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.token.comment {
+  color: rgb(128, 147, 147);
+}
+
+.token.string,
+.token.url {
+  color: rgb(173, 219, 103);
+}
+
+.token.variable {
+  color: rgb(214, 222, 235);
+}
+
+.token.number {
+  color: rgb(247, 140, 108);
+}
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function {
+  color: rgb(130, 170, 255);
 }
 
 .token.punctuation {
-  @apply text-gray-300;
-}
-
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  @apply text-green-500;
+  color: rgb(199, 146, 234);
 }
 
 .token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  @apply text-purple-500;
+.token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: 'italic';
 }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  @apply text-yellow-500;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  @apply text-blue-500;
-}
-
-.token.function,
 .token.class-name {
-  @apply text-pink-500;
+  color: rgb(255, 203, 139);
 }
 
-.token.regex,
-.token.important,
-.token.variable {
-  @apply text-yellow-500;
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: #ffa7c4;
 }
 
-
-code[class*="language-"],
-pre[class*="language-"] {
-  @apply text-gray-1000 dark:text-gray-50;
+.token.boolean {
+  color: rgb(255, 88, 116);
 }
+
+.token.property {
+  color: rgb(128, 203, 196);
+}
+
+.token.namespace {
+  color: rgb(178, 204, 214);
+}
+
+pre[data-line] {
+  padding: 1em 0 1em 3em;
+  position: relative;
+}
+.prose pre {
+  margin-bottom: 1.75rem;
+  margin-left: -1.3125rem;
+  margin-right: -1.3125rem;
+  border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+
 
 .blob {
-  @apply text-gray-1000 dark:text-white;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .blob-pink {
@@ -242,7 +343,7 @@ pre[class*="language-"] {
 }
 
 .s-mark {
-  @apply text-white dark:text-gray-1000;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,9 +1,11 @@
-import SEO from '@/components/Seo'
-import React from 'react'
-import App from 'next/app'
 import '@/styles/tailwind.css'
 import 'tailwindcss/utilities.css'
 import '@/styles/custom-styles.css'
+import '@/styles/fonts.css'
+import App from 'next/app'
+import SeoConfig from '@/default.seo'
+import { ThemeProvider } from 'next-themes'
+import { DefaultSeo } from 'next-seo'
 
 class MyApp extends App {
   componentDidCatch(error, errorInfo) {
@@ -12,12 +14,11 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
-
     return (
-      <React.Fragment>
-        <SEO />
+      <ThemeProvider attribute="class">
+        <DefaultSeo {...SeoConfig} />
         <Component {...pageProps} />
-      </React.Fragment>
+      </ThemeProvider>
     )
   }
 }

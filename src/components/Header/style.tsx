@@ -35,13 +35,6 @@ export const Background = styled.div`
 export const Container = styled.header`
   ${base};
   justify-content: space-around;
-
-  @media (min-width: ${theme.breakpoints[4]}) {
-    display: flex;
-  }
-  @media (max-width: ${theme.breakpoints[4]}) {
-    display: none;
-  }
 `
 
 export const InnerGrid = styled.div`
@@ -69,13 +62,6 @@ export const MobileContainer = styled.header`
     padding: 8px 0;
     margin-left: 48px;
   }
-
-  @media (min-width: ${theme.breakpoints[4]}) {
-    display: none;
-  }
-  @media (max-width: ${theme.breakpoints[4]}) {
-    display: flex;
-  }
 `
 
 export const CloseButton = styled.div`
@@ -102,6 +88,31 @@ export const MenuButton = styled.div`
   justify-content: center;
   cursor: pointer;
   z-index: 3;
+`
+
+export const ThemeButtonMobile = styled.div`
+  position: absolute;
+  width: 56px;
+  height: 50px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+`
+
+export const ThemeButton = styled.div`
+  position: absolute;
+  right: 1rem;
+  padding: 0.5rem 0.5rem;
+  z-index: 5;
+  @media (min-width: ${theme.breakpoints[4]}) {
+    display: flex;
+  }
+  @media (max-width: ${theme.breakpoints[4]}) {
+    display: none;
+  }
 `
 
 export const Label = styled.span.attrs(({ isActive }) => ({

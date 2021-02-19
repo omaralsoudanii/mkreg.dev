@@ -35,33 +35,26 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
+            rel="preload"
+            href="/fonts/inter-var-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
             rel="alternate"
             type="application/rss+xml"
             title="Omar Alsoudani RSS Feed"
             href={`${Environment.siteUrl}/rss.xml`}
           />
-          <meta name="theme-color" content="fefefe" />
-          <link href="/static/meta/favicon.ico" rel="shortcut icon" />
-          <link href="/static/meta/site.webmanifest" rel="manifest" />
+          <meta name="theme-color" content="ffffff" />
           <link
-            href="/static/meta/apple-touch-icon.png"
             rel="apple-touch-icon"
-            sizes="180x180"
+            href="/static/meta/apple-touch-icon.png"
           />
-          <link
-            href="/static/favicons/favicon-32x32.png"
-            rel="icon"
-            sizes="32x32"
-            type="image/png"
-          />
-          <link
-            href="/static/favicons/favicon-16x16.png"
-            rel="icon"
-            sizes="16x16"
-            type="image/png"
-          />
+          <link rel="manifest" href="/static/meta/manifest.json" />
         </Head>
-        <body>
+        <body className="text-base antialiased bg-gray-50 dark:bg-gray-1000">
           <Main />
           <NextScript />
         </body>

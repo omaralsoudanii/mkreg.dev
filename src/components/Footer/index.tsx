@@ -1,12 +1,11 @@
-import React from 'react'
 import Link from 'next/link'
 import { CenteredColumn } from '../Layouts'
 
 export function Footer() {
   return (
     <CenteredColumn>
-      <div className="h-px bg-gray-200 dark:bg-gray-800 timeline-stroke">
-        <div className="grid grid-cols-1 gap-4 p-6 py-8 bg-gray-100 sm:grid-cols-3 dark:bg-gray-900 sm:bg-gray-50 sm:dark:bg-gray-1000">
+      <div className="h-px timeline-stroke">
+        <div className="grid grid-cols-1 gap-4 p-6 py-8 sm:grid-cols-3">
           <div className="flex flex-col space-y-4 sm:text-center">
             <a
               href="https://github.com/omaralsoudani"
@@ -34,8 +33,8 @@ export function Footer() {
             </a>
           </div>
           <div className="flex flex-col space-y-4 sm:text-center">
-            <Link href="/writings" as="/writings" passHref>
-              <a href="/writings" className="black-link">
+            <Link href="/writing" as="/writing" passHref>
+              <a href="/writing" className="black-link">
                 Writings
               </a>
             </Link>

@@ -1,6 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
 import {
   Container,
   MobileContainer,
@@ -9,7 +10,10 @@ import {
   CloseButton,
   Label,
   Background,
+  ThemeButtonMobile,
+  ThemeButton,
 } from './style'
+
 interface Props {
   activeRoute: string
 }
@@ -39,8 +43,12 @@ const NavLinks = ({ activeRoute }: Props) => {
 }
 
 export default function Header() {
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => setMounted(true), [])
   const [isExpanded, setExpanded] = React.useState(false)
   const router = useRouter()
+  const { theme, setTheme } = useTheme()
 
   let activeRoute = ''
   let activePath = ''
@@ -58,8 +66,8 @@ export default function Header() {
   }
   return (
     <React.Fragment>
-      <MobileContainer expanded={isExpanded}>
-        <Background className="bg-white bg-opacity-60 dark:bg-gray-900" />
+      <MobileContainer className="flex md:hidden" expanded={isExpanded}>
+        <Background className="bg-white bg-opacity-60 dark:bg-gray-1000" />
         {isExpanded ? (
           <React.Fragment>
             <CloseButton
@@ -91,6 +99,40 @@ export default function Header() {
                 ></path>
               </svg>
             </MenuButton>
+            {mounted && (
+              <ThemeButtonMobile
+                className="text-primary"
+                onClick={() => {
+                  isExpanded ? setExpanded(false) : null
+                  setTheme(theme === 'dark' ? 'light' : 'dark')
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  width="23"
+                  height="23"
+                >
+                  {theme === 'dark' ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                  )}
+                </svg>
+              </ThemeButtonMobile>
+            )}
             <Link href={activePath}>
               <a className="inline-block ml-15">
                 <span className="text-primary">{activeRoute}</span>
@@ -100,11 +142,42 @@ export default function Header() {
         )}
       </MobileContainer>
 
-      <Container>
+      <Container className="hidden md:flex">
         <InnerGrid>
           <NavLinks activeRoute={activeRoute} />
         </InnerGrid>
-        <Background className="bg-white bg-opacity-60 dark:bg-gray-900" />
+        {mounted && (
+          <ThemeButton
+            className="text-gray-700 cursor-pointer dark:text-gray-100"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              {theme === 'dark' ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              )}
+            </svg>
+          </ThemeButton>
+        )}
+        <Background className="bg-white bg-opacity-60 dark:bg-gray-950" />
       </Container>
     </React.Fragment>
   )
