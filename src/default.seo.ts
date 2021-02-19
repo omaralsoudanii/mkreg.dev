@@ -1,5 +1,3 @@
-import * as React from 'react'
-import { DefaultSeo } from 'next-seo'
 import { Environment } from '@/environment'
 
 const SeoConfig = {
@@ -22,10 +20,4 @@ const SeoConfig = {
   },
 }
 
-export default function SEO() {
-  return (
-    <React.Fragment>
-      <DefaultSeo {...SeoConfig} />
-    </React.Fragment>
-  )
-}
+export default SeoConfig

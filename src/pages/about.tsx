@@ -1,7 +1,12 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
+import RecentPosts from '@/components/Writing/Recent/Index'
+import { Environment } from '@/environment'
+import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
+import { GetStaticProps } from 'next'
+import React from 'react'
 
-function About() {
+function About({ posts }) {
   return (
     <Page>
       <CenteredColumn>
@@ -39,26 +44,56 @@ function About() {
                 href="https://github.com/omaralsoudanii"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn btn-large"
               >
-                <button className="w-full text-lg btn btn-primary btn-large">
-                  Follow me on Github
-                </button>
+                Follow me on Github
               </a>
               <a
                 href="https://www.linkedin.com/in/omaralsoudani"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn btn-large"
               >
-                <button className="w-full text-lg btn btn-primary btn-large">
-                  Reach me via LinkedIn
-                </button>
+                Reach me via LinkedIn
               </a>
             </div>
           </div>
+          {posts && (
+            <React.Fragment>
+              <hr className="space-y-1 border-gray-300 dark:bg-gray-800" />
+              <RecentPosts posts={posts} />
+            </React.Fragment>
+          )}
         </div>
       </CenteredColumn>
     </Page>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  let posts: GhostPostsOrPages | []
+
+  try {
+    posts = await getAllPosts({ limit: 5 })
+  } catch (error) {
+    return {
+      notFound: true,
+    }
+  }
+
+  if (!posts.length) {
+    return {
+      notFound: true,
+    }
+  }
+
+  const { revalidate } = Environment.isr
+  return {
+    props: {
+      posts,
+    },
+    revalidate: revalidate,
+  }
 }
 
 export default About

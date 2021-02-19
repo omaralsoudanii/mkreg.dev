@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import Page from '@/components/Page'
+import fs from 'fs'
 import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/environment'
 import { GhostPostsOrPages, getAllPosts } from '@/ghost/api'
 import { GetStaticProps } from 'next'
 import RecentPosts from '@/components/Writing/Recent/Index'
 import React from 'react'
+import { generateRSSFeed } from '@/ghost/rss'
 
 function Home({ posts }) {
   return (
@@ -22,20 +24,15 @@ function Home({ posts }) {
               </p>
               <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
                 <Link href="/about" passHref>
-                  <a>
-                    <button className="w-full text-lg btn btn-primary btn-large">
-                      More about me
-                    </button>
-                  </a>
+                  <a className="btn btn-primary btn-large">More about me</a>
                 </Link>
                 <a
                   href="https://github.com/omaralsoudanii"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="btn btn-large"
                 >
-                  <button className="w-full text-lg btn btn-large">
-                    Github
-                  </button>
+                  Follow me on Github
                 </a>
               </div>
             </div>
@@ -56,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let posts: GhostPostsOrPages | []
 
   try {
-    posts = await getAllPosts({ limit: 5 })
+    posts = await getAllPosts()
   } catch (error) {
     return {
       notFound: true,
@@ -68,7 +65,10 @@ export const getStaticProps: GetStaticProps = async () => {
       notFound: true,
     }
   }
-
+  if (Environment.rssTTL) {
+    const rss = generateRSSFeed({ posts })
+    fs.writeFileSync('./public/rss.xml', rss)
+  }
   const { revalidate } = Environment.isr
   return {
     props: {

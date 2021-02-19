@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import SEO from './SEO'
 import Image from 'next/image'
 import { format } from 'date-fns'
@@ -19,12 +19,11 @@ export default function PostContainer({ post }: Props) {
       <SEO post={post} />
 
       <CenteredColumn>
-        <div className="flex flex-col space-y-8 mb-4">
+        <div className="flex flex-col mb-4 space-y-8">
           {featImg &&
             (Environment.nextImages?.feature && featImg.dimensions ? (
               <Image
                 src={featImg.url}
-                className="-mx-4 -mt-24 md:mt-0 md:-mx-8"
                 alt={post.title}
                 quality={Environment.nextImages.quality}
                 layout="responsive"
@@ -38,15 +37,14 @@ export default function PostContainer({ post }: Props) {
                 {...featImg.dimensions}
               />
             ) : null)}
-          <div className="flex flex-col space-y-4">
-            <h1>{post.title}</h1>
+          <div className="flex flex-col space-y-8">
             <p className="p-small">
-              {`${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
+              {`${format(new Date(post.updated_at), 'EEEE, MMMM dd, yyyy')}`}
             </p>
+            <h1 className="text-center">{post.title}</h1>
           </div>
         </div>
-
-        <div className="prose prose-blue lg:prose-lg">
+        <div className="prose dark:prose-dark lg:prose-lg">
           <Body htmlAst={htmlAst} />
         </div>
       </CenteredColumn>
