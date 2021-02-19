@@ -5,7 +5,7 @@ import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/environment'
 import { GhostPostsOrPages, getAllPosts } from '@/ghost/api'
 import { GetStaticProps } from 'next'
-import RecentPosts from '@/components/Writing/Recent/Index'
+import FeaturedPosts from '@/components/Writing/FeaturedPosts'
 import React from 'react'
 import { generateRSSFeed } from '@/ghost/rss'
 
@@ -40,7 +40,7 @@ function Home({ posts }) {
           {posts && (
             <React.Fragment>
               <hr className="space-y-1 border-gray-300 dark:bg-gray-800" />
-              <RecentPosts posts={posts} />
+              <FeaturedPosts posts={posts} />
             </React.Fragment>
           )}
         </div>

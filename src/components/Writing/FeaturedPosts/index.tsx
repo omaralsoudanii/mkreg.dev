@@ -6,12 +6,12 @@ interface Props {
   posts: GhostPostOrPage[]
 }
 
-export default function RecentPosts({ posts }: Props) {
+export default function FeaturedPosts({ posts }: Props) {
   if (!posts || posts.length === 0) return null
   return (
     <div className="flex flex-col space-y-4">
       <div className="flex flex-col space-y-1">
-        <h1>Recent</h1>
+        <h1>Featured</h1>
       </div>
       {posts && <WritingList posts={posts} />}
 

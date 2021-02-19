@@ -17,6 +17,9 @@ module.exports = {
       2: 2,
       3: 3,
     },
+    maxWidth: {
+      '3xl': '45rem',
+    },
     extend: {
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
