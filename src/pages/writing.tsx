@@ -21,6 +21,7 @@ interface IndexProps {
 export default function Writing({ posts }: IndexProps) {
   const router = useRouter()
   if (router.isFallback) return <FullscreenLoading />
+
   return (
     <Page>
       <CenteredColumn>
@@ -29,7 +30,13 @@ export default function Writing({ posts }: IndexProps) {
             title={Environment.ogTitle}
             subtitle={Environment.ogDescription}
           />
-          {posts && <WritingList posts={posts} />}
+          {posts && posts.length ? (
+            <WritingList posts={posts} />
+          ) : (
+            <p className="text-2xl">
+              There seems to be no posts at the moment.
+            </p>
+          )}
         </div>
       </CenteredColumn>
     </Page>
@@ -38,22 +45,18 @@ export default function Writing({ posts }: IndexProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   let posts: GhostPostsOrPages | []
+  const { revalidate } = Environment.isr
 
   try {
     posts = await getAllPosts()
   } catch (error) {
     return {
-      notFound: true,
+      props: {
+        posts,
+      },
+      revalidate: revalidate,
     }
   }
-
-  if (!posts.length) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const { revalidate } = Environment.isr
   return {
     props: {
       posts,

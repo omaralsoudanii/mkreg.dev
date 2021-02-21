@@ -64,7 +64,7 @@ export const Environment: EnvironmentProps = {
   },
   isr: {
     enable: resolveBool(process.env.GHOST_ISR, true),
-    maxNumberOfPosts: resolveNumber(process.env.GHOST_ISR_MAX_NUMBER_POSTS, 5),
+    maxNumberOfPosts: resolveNumber(process.env.GHOST_ISR_MAX_NUMBER_POSTS, 10),
     revalidate: resolveNumber(process.env.GHOST_ISR_REVALIDATE, 3600), // 1hour
   },
 }

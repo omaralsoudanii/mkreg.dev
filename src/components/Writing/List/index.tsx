@@ -17,7 +17,11 @@ export default function WritingList({ posts }: Props) {
               {post.title}
             </a>
           </Link>
-          {post.excerpt && <p className="text-base clamp-2">{post.excerpt}</p>}
+          {post.excerpt && (
+            <p className="text-base font-medium leading-7 clamp-3">
+              {post.excerpt}
+            </p>
+          )}
           <p className="p-small">
             {`${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
           </p>

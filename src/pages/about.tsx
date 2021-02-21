@@ -1,12 +1,7 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
-import FeaturedPosts from '@/components/Writing/FeaturedPosts'
-import { Environment } from '@/environment'
-import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
-import { GetStaticProps } from 'next'
-import React from 'react'
 
-function About({ posts }) {
+export default function About() {
   return (
     <Page>
       <CenteredColumn>
@@ -58,42 +53,8 @@ function About({ posts }) {
               </a>
             </div>
           </div>
-          {posts && (
-            <React.Fragment>
-              <hr className="space-y-1 border-gray-300 dark:bg-gray-800" />
-              <FeaturedPosts posts={posts} />
-            </React.Fragment>
-          )}
         </div>
       </CenteredColumn>
     </Page>
   )
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  let posts: GhostPostsOrPages | []
-
-  try {
-    posts = await getAllPosts({ limit: 5 })
-  } catch (error) {
-    return {
-      notFound: true,
-    }
-  }
-
-  if (!posts.length) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const { revalidate } = Environment.isr
-  return {
-    props: {
-      posts,
-    },
-    revalidate: revalidate,
-  }
-}
-
-export default About

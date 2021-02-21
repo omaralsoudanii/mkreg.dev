@@ -13,7 +13,7 @@ import { useRouter } from 'next/router'
 import FullscreenLoading from '@/components/FullscreenLoading'
 /**
  *
- * Renders a single post or page and loads all content.
+ * Renders a single post and loads all content.
  *
  */
 
@@ -21,7 +21,7 @@ interface PostProps {
   data: GhostPostOrPage
 }
 
-const Post = ({ data }: PostProps) => {
+export default function Post({ data }: PostProps) {
   const router = useRouter()
   if (router.isFallback) return <FullscreenLoading />
   return (
@@ -30,8 +30,6 @@ const Post = ({ data }: PostProps) => {
     </Page>
   )
 }
-
-export default Post
 
 export async function getStaticProps({ params: { slug } }) {
   const post = await getPostBySlug(slug)
@@ -50,9 +48,8 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export async function getStaticPaths() {
-  const { enable, maxNumberOfPosts } = Environment.isr
-  const limitForPosts = (enable && { limit: maxNumberOfPosts }) || undefined
-  const posts = await getAllPosts(limitForPosts)
+  const { enable } = Environment.isr
+  const posts = await getAllPosts()
   if (!posts.length) return { paths: [], fallback: enable }
   const apiUrl = Environment.ghostAPIUrl
 
@@ -65,6 +62,6 @@ export async function getStaticPaths() {
   const paths = [...postRoutes]
   return {
     paths,
-    fallback: enable,
+    fallback: enable && 'blocking',
   }
 }

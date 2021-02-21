@@ -55,20 +55,14 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     posts = await getAllPosts()
   } catch (error) {
-    return {
-      notFound: true,
-    }
+    throw new Error(`Index creation failed: ${error}`)
   }
 
-  if (!posts.length) {
-    return {
-      notFound: true,
-    }
-  }
-  if (Environment.rssTTL) {
+  if (Environment.rssTTL && posts.length) {
     const rss = generateRSSFeed({ posts })
     fs.writeFileSync('./public/rss.xml', rss)
   }
+
   const { revalidate } = Environment.isr
   return {
     props: {
