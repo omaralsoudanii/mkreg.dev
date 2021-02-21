@@ -457,10 +457,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.26.tgz#e40df24c957568f350cca04e63bfb1e1556d1cbf"
   integrity sha512-skWxepWOs+VArEBWd2S/VR3wUavioIIx9/HzW+UJiIjtwa6+kNXdsOeq7FfxDXf56hIcL0ieo2brwMgBJ1+lhw==
 
-"@types/node@^14.14.28":
-  version "14.14.28"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.28.tgz#cade4b64f8438f588951a6b35843ce536853f25b"
-  integrity sha512-lg55ArB+ZiHHbBBttLpzD07akz0QPrZgUODNakeC09i62dnrywr9mFErHuaPlB6I7z+sEbK+IYmplahvplCj2g==
+"@types/node@^14.14.31":
+  version "14.14.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
+  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -3280,10 +3280,10 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next-seo@^4.19.0:
-  version "4.19.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.19.0.tgz#b3be79a544e420dbbf1e4fcff98dad9790f15e36"
-  integrity sha512-+jgXd1UW0XKLiBMrumjPDANeV82mTHTxGZJwU6T1mlNougKpXINlDgIHkN30sM2eDXh+xXOURj99WN2Tm9K6rg==
+next-seo@^4.20.0:
+  version "4.20.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.20.0.tgz#54b629abf93c7c051919802db011882f67004249"
+  integrity sha512-N3NIISxOV+6XatPdZWRt8L/PkdxX4qpl6s2uQVMYTkteo8hgpHDgs6XZkDzuHaPi10neSZoqQiytsxohTCyEvw==
 
 next-sitemap@^1.5.6:
   version "1.5.6"
@@ -3457,6 +3457,11 @@ npmlog@^4.0.1, npmlog@^4.1.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^2.0.0:
   version "2.0.0"
@@ -4700,10 +4705,10 @@ stylelint-config-recommended@^3.0.0:
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-3.0.0.tgz#e0e547434016c5539fe2650afd58049a2fd1d657"
   integrity sha512-F6yTRuc06xr1h5Qw/ykb2LuFynJ2IxkKfCMf+1xqPffkxh0S09Zc902XCffcsw/XMFq/OzQ1w54fLIDtmRNHnQ==
 
-stylelint@^13.10.0:
-  version "13.10.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.10.0.tgz#67b0c6f378c3fa61aa569a55d38feb8570b0b587"
-  integrity sha512-eDuLrL0wzPKbl5/TbNGZcbw0lTIGbDEr5W6lCODvb1gAg0ncbgCRt7oU0C2VFDvbrcY0A3MFZOwltwTRmc0XCw==
+stylelint@^13.11.0:
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.11.0.tgz#591981fbdd68c9d3d3e6147a0cd6a07539fc216d"
+  integrity sha512-DhrKSWDWGZkCiQMtU+VroXM6LWJVC8hSK24nrUngTSQvXGK75yZUq4yNpynqrxD3a/fzKMED09V+XxO4z4lTbw==
   dependencies:
     "@stylelint/postcss-css-in-js" "^0.37.2"
     "@stylelint/postcss-markdown" "^0.36.2"
@@ -5251,10 +5256,10 @@ webpack-sources@^2.1.1:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
 
-webpack@^5.22.0:
-  version "5.22.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.22.0.tgz#8505158bc52dcbbdb01ac94796a8aed61badf11a"
-  integrity sha512-xqlb6r9RUXda/d9iA6P7YRTP1ChWeP50TEESKMMNIg0u8/Rb66zN9YJJO7oYgJTRyFyYi43NVC5feG45FSO1vQ==
+webpack@^5.23.0:
+  version "5.23.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.23.0.tgz#9ed57e9a54b267b3549899271ad780cddc6ee316"
+  integrity sha512-RC6dwDuRxiU75F8XC4H08NtzUrMfufw5LDnO8dTtaKU2+fszEdySCgZhNwSBBn516iNaJbQI7T7OPHIgCwcJmg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"
