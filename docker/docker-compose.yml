@@ -5,7 +5,7 @@ services:
     container_name: mk-mariadb
     restart: unless-stopped
     env_file:
-      - ../../.env.docker
+      - ../.env.docker
     volumes:
       - /var/lib/mariadb:/var/lib/mysql
     networks:
@@ -18,7 +18,7 @@ services:
     depends_on:
       - mk-mariadb
     env_file:
-      - ../../.env.docker
+      - ../.env.docker
     expose:
       - 2368
     volumes:
@@ -28,11 +28,11 @@ services:
 
   mk-next:
     build:
-      context: ../../
+      context: ../
       dockerfile: docker/Dockerfile.next
     image: mk-next
     env_file:
-      - ../../.env
+      - ../.env
     container_name: mk-next
     depends_on:
       - mk-ghost
