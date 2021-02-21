@@ -61,6 +61,7 @@ export const MobileContainer = styled.header`
     text-align: left;
     padding: 8px 0;
     margin-left: 48px;
+    margin-right: 48px;
   }
 `
 
@@ -99,14 +100,14 @@ export const ThemeButtonMobile = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 5;
+  z-index: 3;
 `
 
 export const ThemeButton = styled.div`
   position: absolute;
   right: 1rem;
   padding: 0.5rem 0.5rem;
-  z-index: 5;
+  z-index: 3;
   @media (min-width: ${theme.breakpoints[4]}) {
     display: flex;
   }

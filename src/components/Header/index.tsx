@@ -38,6 +38,11 @@ const NavLinks = ({ activeRoute }: Props) => {
           <a>Writing</a>
         </Link>
       </Label>
+      <Label isActive={activeRoute === 'Nuggets'}>
+        <Link href="/nuggets">
+          <a>Nuggets</a>
+        </Link>
+      </Label>
     </React.Fragment>
   )
 }
@@ -64,6 +69,12 @@ export default function Header() {
     activeRoute = 'Writing'
     activePath = '/writing'
   }
+
+  if (router.pathname.includes('/nuggets')) {
+    activeRoute = 'Nuggets'
+    activePath = '/nuggets'
+  }
+
   return (
     <React.Fragment>
       <MobileContainer className="flex md:hidden" expanded={isExpanded}>
