@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
-import NProgress from '@/components/nprogress'
 import {
   Container,
   MobileContainer,
@@ -142,7 +141,7 @@ export default function Header() {
           </React.Fragment>
         )}
       </MobileContainer>
-      <NProgress />
+
       <Container className="hidden md:flex">
         <InnerGrid>
           <NavLinks activeRoute={activeRoute} />
