@@ -4,14 +4,14 @@ body {
   text-rendering: optimizeLegibility;
   min-width: 320px;
 }
-p,
+
 ul,
 ol,
 li {
   @apply text-gray-1000 dark:text-gray-50;
 }
 p {
-  @apply text-gray-1000 font-semiMedium dark:text-gray-50 dark:font-normal;
+  @apply text-gray-1000 font-semiMedium dark:text-gray-50;
 }
 
 a {

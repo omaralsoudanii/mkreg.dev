@@ -18,7 +18,7 @@ export default function WritingList({ posts }: Props) {
             </a>
           </Link>
           {post.excerpt && (
-            <p className="text-base font-medium leading-7 clamp-3">
+            <p className="text-base font-semiMedium leading-7 clamp-3">
               {post.excerpt}
             </p>
           )}

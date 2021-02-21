@@ -19,7 +19,7 @@ module.exports = {
       3: 3,
     },
     maxWidth: {
-      '3xl': '45rem',
+      '3xl': '50rem',
     },
     extend: {
       fontFamily: {
@@ -51,7 +51,6 @@ module.exports = {
               textDecoration: 'none',
             },
             code: { color: theme('colors.pink.500') },
-            p: { fontWeight: '450' },
           },
         },
         dark: {
@@ -60,8 +59,7 @@ module.exports = {
               color: theme('colors.blue.400'),
               textDecoration: 'none',
             },
-            code: { color: theme('colors.pink.500') },
-            p: { fontWeight: '400' },
+            code: { color: theme('colors.pink.400') },
           },
         },
       }),
