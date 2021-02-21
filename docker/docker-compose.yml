@@ -1,0 +1,64 @@
+version: "3.6"
+services:
+  mk-mariadb:
+    image: mariadb:10.5.8-focal
+    container_name: mk-mariadb
+    restart: unless-stopped
+    env_file:
+      - ../../.env.docker
+    volumes:
+      - /var/lib/mariadb:/var/lib/mysql
+    networks:
+      - mk_prod
+
+  mk-ghost:
+    image: ghost:3.41.6-alpine
+    container_name: mk-ghost
+    restart: unless-stopped
+    depends_on:
+      - mk-mariadb
+    env_file:
+      - ../../.env.docker
+    expose:
+      - 2368
+    volumes:
+      - /var/lib/ghost/content:/var/lib/ghost/content
+    networks:
+      - mk_prod
+
+  mk-next:
+    build:
+      context: ../../
+      dockerfile: docker/Dockerfile.next
+    image: mk-next
+    env_file:
+      - ../../.env
+    container_name: mk-next
+    depends_on:
+      - mk-ghost
+    expose:
+      - 3000
+    restart: unless-stopped
+    networks:
+      - mk_prod
+
+  mk-nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    image: mk-nginx
+    volumes:
+      - /var/log/nginx/:/var/log/nginx/
+    depends_on:
+      - mk-ghost
+      - mk-next
+    container_name: mk-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - mk_prod
+
+networks:
+  mk_prod:

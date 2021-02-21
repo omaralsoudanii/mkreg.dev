@@ -1,0 +1,15 @@
+# Stage 1: Building the code
+# Todo::find a solution for multi stage and ghost caching
+FROM mhart/alpine-node AS builder
+
+WORKDIR /mk
+
+COPY package.json yarn.lock ./
+
+RUN yarn install --frozen-lockfile
+
+COPY . .
+
+RUN yarn build
+
+CMD ["node_modules/.bin/next", "start"]
