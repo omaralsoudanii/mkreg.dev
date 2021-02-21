@@ -19,7 +19,7 @@ module.exports = {
       3: 3,
     },
     maxWidth: {
-      '3xl': '50rem',
+      '3xl': '45rem',
     },
     extend: {
       fontFamily: {
