@@ -6,7 +6,7 @@ _mk_completions() {
   prev="${COMP_WORDS[COMP_CWORD - 1]}"
   all_long_opts="--pull --restart --build --help "
   all_short_opts="-p -r -b -h "
-  all_pull_opts="canary"
+  all_pull_opts="main"
   all_restart_opts="mk-nginx mk-next mk-ghost"
   case "$prev" in
   --pull | -p)
