@@ -38,9 +38,9 @@ export function Footer() {
                 Writings
               </a>
             </Link>
-            <Link href="/resourcecs" as="/resourcecs" passHref>
-              <a href="/resourcecs" className="black-link">
-                Resources
+            <Link href="/nuggets" as="/nuggets" passHref>
+              <a href="/nuggets" className="black-link">
+                Nuggets
               </a>
             </Link>
             <Link href="/snippets" as="/snippets" passHref>
