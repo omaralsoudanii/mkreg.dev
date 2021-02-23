@@ -395,5 +395,11 @@ pre[data-line] {
 }
 
 .filter-blur {
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.header-bg {
+  @apply absolute top-0 left-0 w-full h-full shadow-sm bg-opacity-60 dark:bg-opacity-60;
+  z-index: -1;
+  backdrop-filter: saturate(180%) blur(10px);
 }

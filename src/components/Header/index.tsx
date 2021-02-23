@@ -9,7 +9,6 @@ import {
   MenuButton,
   CloseButton,
   Label,
-  Background,
   ThemeButtonMobile,
   ThemeButton,
 } from './style'
@@ -78,7 +77,7 @@ export default function Header() {
   return (
     <React.Fragment>
       <MobileContainer className="flex md:hidden" expanded={isExpanded}>
-        <Background className="bg-white bg-opacity-60 dark:bg-gray-1000" />
+        <div className="bg-white header-bg dark:bg-gray-950" />
         {isExpanded ? (
           <React.Fragment>
             <CloseButton
@@ -110,6 +109,11 @@ export default function Header() {
                 ></path>
               </svg>
             </MenuButton>
+            <Link href={activePath}>
+              <a className="inline-block ml-15">
+                <span className="text-center text-primary">{activeRoute}</span>
+              </a>
+            </Link>
             {mounted && (
               <ThemeButtonMobile
                 className="text-primary"
@@ -144,11 +148,6 @@ export default function Header() {
                 </svg>
               </ThemeButtonMobile>
             )}
-            <Link href={activePath}>
-              <a className="inline-block ml-15">
-                <span className="text-primary">{activeRoute}</span>
-              </a>
-            </Link>
           </React.Fragment>
         )}
       </MobileContainer>
@@ -188,7 +187,7 @@ export default function Header() {
             </svg>
           </ThemeButton>
         )}
-        <Background className="bg-white bg-opacity-60 dark:bg-gray-950" />
+        <div className="bg-white header-bg dark:bg-gray-950" />
       </Container>
     </React.Fragment>
   )

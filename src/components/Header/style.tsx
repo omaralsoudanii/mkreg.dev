@@ -21,17 +21,6 @@ const base = css`
   }
 `
 
-export const Background = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.06);
-  backdrop-filter: saturate(180%) blur(20px);
-`
-
 export const Container = styled.header`
   ${base};
   justify-content: space-around;
@@ -58,10 +47,7 @@ export const MobileContainer = styled.header`
   padding-bottom: ${(props) => (props.expanded ? '16px' : '4px')};
 
   a {
-    text-align: left;
-    padding: 8px 0;
-    margin-left: 48px;
-    margin-right: 48px;
+    text-align: center;
   }
 `
 
