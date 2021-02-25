@@ -9,7 +9,7 @@ interface Props {
 export default function WritingList({ posts }: Props) {
   if (!posts || posts.length === 0) return null
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-4">
       {posts.map((post) => (
         <div className="flex flex-col space-y-1" key={post.id}>
           <Link href="/writing/[slug]" as={`/writing/${post.slug}`} passHref>
@@ -18,7 +18,7 @@ export default function WritingList({ posts }: Props) {
             </a>
           </Link>
           {post.excerpt && (
-            <p className="text-base font-semiMedium leading-7 clamp-3">
+            <p className="text-base leading-7 font-semiMedium clamp-3">
               {post.excerpt}
             </p>
           )}

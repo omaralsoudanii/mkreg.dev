@@ -39,7 +39,7 @@ function Home({ posts }) {
           </div>
           {posts && (
             <React.Fragment>
-              <hr className="space-y-1 border-gray-300 dark:bg-gray-800" />
+              <div className="hr-stroke" />
               <FeaturedPosts posts={posts} />
             </React.Fragment>
           )}

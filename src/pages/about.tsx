@@ -22,7 +22,7 @@ export default function About() {
           </div>
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col space-y-4 md:text-start">
-              <h3> Why I won't wirte that much about Frontend</h3>
+              <h2> Why I won't wirte that much about Frontend</h2>
               <p className="text-xl">
                 Well, let's just accept the fact that my frontend skills is
                 kinda worse than NVIDIA drivers support for linux. On a serious

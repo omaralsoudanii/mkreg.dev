@@ -11,7 +11,7 @@ li {
   @apply text-gray-1000 dark:text-gray-50;
 }
 p {
-  @apply text-gray-1000 font-semiMedium dark:text-gray-50;
+  @apply text-gray-1000 dark:text-gray-50;
 }
 
 a {
@@ -43,7 +43,7 @@ h1 {
 }
 
 .btn {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-950 dark:bg-gray-950 dark:hover:bg-gray-950 dark:hover:border-gray-800 focus:outline-none text-primary;
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow border rounded shadow-sm border-gray-950 bg-gray-950 hover:bg-gray-950 hover:border-gray-800 focus:outline-none text-gray-50;
 }
 
 .btn-primary {
@@ -96,6 +96,10 @@ h1 {
 
 .nav-label.active a {
   @apply text-blue-500 bg-blue-500 dark:text-blue-300 bg-opacity-10;
+}
+
+.hr-stroke {
+  @apply w-full h-px max-w-4xl mx-auto bg-gray-300 dark:bg-gray-700;
 }
 
 .prose blockquote {
@@ -270,7 +274,6 @@ pre[data-line] {
   position: relative;
 }
 .prose pre {
-  margin-bottom: 1.75rem;
   margin-left: -1.3125rem;
   margin-right: -1.3125rem;
   border-radius: 10px;
@@ -278,6 +281,14 @@ pre[data-line] {
   overflow: auto;
 }
 
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 .blob {
   @apply text-gray-700 dark:text-gray-300;
@@ -301,10 +312,6 @@ pre[data-line] {
   .blob-orange {
     fill-opacity: 0.9;
   }
-}
-
-.s-mark {
-  @apply text-gray-700 dark:text-gray-300;
 }
 
 @media only screen and (max-width: 768px) {
@@ -389,17 +396,8 @@ pre[data-line] {
   }
 }
 
-.filter-saturate {
-  -webkit-filter: brightness(105%) saturate(200%) contrast(1);
-  filter: brightness(105%) saturate(200%) contrast(1);
-}
-
-.filter-blur {
-  backdrop-filter: saturate(180%) blur(10px);
-}
-
 .header-bg {
-  @apply absolute top-0 left-0 w-full h-full shadow-sm bg-opacity-60 dark:bg-opacity-60;
+  @apply absolute top-0 left-0 w-full h-full bg-opacity-60 dark:bg-opacity-60;
   z-index: -1;
-  backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(200%) blur(5px);
 }
