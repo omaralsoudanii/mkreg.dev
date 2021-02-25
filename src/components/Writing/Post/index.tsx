@@ -44,7 +44,7 @@ export default function PostContainer({ post }: Props) {
             <h1 className="text-center">{post.title}</h1>
           </div>
         </div>
-        <div className="prose dark:prose-dark lg:prose-lg">
+        <div className="prose dark:prose-dark max-w-none lg:prose-lg">
           <Body htmlAst={htmlAst} />
         </div>
       </CenteredColumn>

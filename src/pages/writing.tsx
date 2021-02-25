@@ -1,11 +1,12 @@
 import WritingList from '@/components/Writing/List'
 import FullscreenLoading from '@/components/FullscreenLoading'
 import { CenteredColumn } from '@/components/Layouts'
-import Page, { PageHeader } from '@/components/Page'
+import Page from '@/components/Page'
 import { Environment } from '@/environment'
 import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
+import React from 'react'
 
 /**
  * Main writing page
@@ -26,15 +27,21 @@ export default function Writing({ posts }: IndexProps) {
     <Page>
       <CenteredColumn>
         <div className="flex flex-col space-y-8">
-          <PageHeader
-            title={Environment.ogTitle}
-            subtitle={Environment.ogDescription}
-          />
+          <div className="flex flex-col space-y-8 md:items-justify">
+            <div className="flex flex-col space-y-4 md:items-center md:text-center">
+              <h1>{Environment.ogTitle}</h1>
+              <p className="text-2xl">{Environment.ogDescription}</p>
+            </div>
+          </div>
           {posts && posts.length ? (
-            <WritingList posts={posts} />
+            <React.Fragment>
+              <div className="hr-stroke" />
+              <WritingList posts={posts} />
+            </React.Fragment>
           ) : (
-            <p className="text-2xl">
-              There seems to be no posts at the moment.
+            <p className="mt-4 text-2xl">
+              There seems to be no posts at the moment. But let's not kid each
+              other. I probably pushed something buggy.
             </p>
           )}
         </div>

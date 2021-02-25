@@ -10,9 +10,7 @@ export default function FeaturedPosts({ posts }: Props) {
   if (!posts || posts.length === 0) return null
   return (
     <div className="flex flex-col space-y-4">
-      <div className="flex flex-col space-y-1">
-        <h1>Featured</h1>
-      </div>
+      <h1>Featured</h1>
       {posts && <WritingList posts={posts} />}
 
       <div className="flex flex-col space-y-1">
