@@ -56,6 +56,33 @@ h1 {
   @apply font-semibold text-3-5xl text-gray-1000 dark:text-gray-50;
 }
 
+.header-bg {
+  @apply absolute top-0 left-0 w-full h-full bg-white bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-950;
+  z-index: -1;
+  backdrop-filter: saturate(200%) blur(5px);
+}
+
+.mobile-hdr-btn {
+  @apply flex items-center justify-center px-4 py-3;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  z-index: 3;
+}
+
+.mobile-hdr-title {
+  @apply inline-block w-full px-3 py-3 text-center rounded;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  z-index: 3;
+}
+
+.mobile-close-btn {
+  @apply items-center justify-center px-4 py-3 text-2xl font-light;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  z-index: 3;
+}
+
 .btn {
   @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow border rounded shadow-sm border-gray-950 bg-gray-950 hover:bg-gray-950 hover:border-gray-800 focus:outline-none text-gray-50;
 }
@@ -412,10 +439,4 @@ pre {
   100% {
     transform: translate(20%, 10%);
   }
-}
-
-.header-bg {
-  @apply absolute top-0 left-0 w-full h-full bg-opacity-60 dark:bg-opacity-60;
-  z-index: -1;
-  backdrop-filter: saturate(200%) blur(5px);
 }

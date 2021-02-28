@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import theme from '../Theme'
 
 const base = css`
   padding: 5px 8px 4px;
@@ -31,7 +30,7 @@ export const InnerGrid = styled.div`
   justify-content: center;
   width: 100%;
   justify-self: center;
-  max-width: ${theme.breakpoints[3]};
+  max-width: 968px;
   position: relative;
   grid-template-columns: repeat(6, max-content);
   z-index: 3;
@@ -94,10 +93,10 @@ export const ThemeButton = styled.div`
   right: 1rem;
   padding: 0.5rem 0.5rem;
   z-index: 3;
-  @media (min-width: ${theme.breakpoints[4]}) {
+  @media (min-width: 768px) {
     display: flex;
   }
-  @media (max-width: ${theme.breakpoints[4]}) {
+  @media (max-width: 768px) {
     display: none;
   }
 `
@@ -114,7 +113,7 @@ export const Label = styled.span.attrs(({ isActive }) => ({
     text-align: center;
   }
 
-  @media (max-width: ${theme.breakpoints[4]}) {
+  @media (max-width: 768px) {
     width: 100%;
 
     a {
