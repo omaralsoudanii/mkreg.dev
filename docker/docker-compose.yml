@@ -49,6 +49,7 @@ services:
     image: mk-nginx
     volumes:
       - /var/log/nginx/:/var/log/nginx/
+      - ./nginx/ssl:/etc/nginx/ssl:ro
     depends_on:
       - mk-ghost
       - mk-next
