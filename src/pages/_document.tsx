@@ -54,7 +54,7 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/static/meta/manifest.json" />
         </Head>
-        <body className="text-base antialiased bg-gray-50 dark:bg-gray-1000">
+        <body className="bg-gray-50 dark:bg-gray-1000">
           <Main />
           <NextScript />
         </body>
