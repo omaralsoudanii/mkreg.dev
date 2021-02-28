@@ -22,6 +22,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
       },
+      fontSize: {
+        '3-5xl': ['2.1rem', { lineHeight: '2.5rem' }],
+      },
       fontWeight: {
         semiMedium: 450,
       },
@@ -33,15 +36,6 @@ module.exports = {
             },
             img: {
               borderRadius: '8px',
-            },
-            h4: {
-              fontSize: '1.5rem',
-              fontWeight: '800',
-            },
-            h5: {
-              fontSize: '1.3rem',
-              marginTop: '2.5rem',
-              marginBottom: '-0.75rem',
             },
             a: {
               color: theme('colors.blue.500'),

@@ -19,12 +19,13 @@ export default function PostContainer({ post }: Props) {
       <SEO post={post} />
 
       <CenteredColumn>
-        <div className="flex flex-col mb-4 space-y-8">
+        <div className="flex flex-col mb-8 space-y-8">
           {featImg &&
             (Environment.nextImages?.feature && featImg.dimensions ? (
               <Image
                 src={featImg.url}
                 alt={post.title}
+                className="dark:bg-white"
                 quality={Environment.nextImages.quality}
                 layout="responsive"
                 sizes={`
@@ -37,11 +38,11 @@ export default function PostContainer({ post }: Props) {
                 {...featImg.dimensions}
               />
             ) : null)}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-4">
+            <h1>{post.title}</h1>
             <p className="p-small">
               {`${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
             </p>
-            <h1 className="text-center">{post.title}</h1>
           </div>
         </div>
         <div className="prose dark:prose-dark max-w-none lg:prose-lg">

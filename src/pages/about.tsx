@@ -1,5 +1,6 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
+import { Environment } from '@/environment'
 
 export default function About() {
   return (
@@ -22,7 +23,7 @@ export default function About() {
           </div>
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col space-y-4 md:text-start">
-              <h2> Why I won't wirte that much about Frontend</h2>
+              <h1> Why I won't wirte that much about Frontend</h1>
               <p className="text-xl">
                 Well, let's just accept the fact that my frontend skills is
                 kinda worse than NVIDIA drivers support for linux. On a serious
@@ -36,7 +37,7 @@ export default function About() {
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
               <a
-                href="https://github.com/omaralsoudanii"
+                href={Environment.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-large"
@@ -44,7 +45,7 @@ export default function About() {
                 Follow me on Github
               </a>
               <a
-                href="https://www.linkedin.com/in/omaralsoudani"
+                href={Environment.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-large"

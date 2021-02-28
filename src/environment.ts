@@ -29,6 +29,14 @@ export interface EnvironmentProps {
     quality: number
     source: boolean
   }
+  social: {
+    github: string
+    rss: string
+    linkedin: string
+    youtube: string
+    mail: string
+    twitter: string
+  }
   rssTTL: number
   fileCache: boolean
   prism: {
@@ -51,6 +59,17 @@ export const Environment: EnvironmentProps = {
   ogDescription: 'Programming, software engineering and premature optimization',
   ogImage: '/static/meta/og-card.jpg',
   fileCache: resolveBool(process.env.GHOST_FILE_CACHE, true),
+  social: {
+    github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',
+    rss: process.env.RSS_RELATIVE_URL || '/rss.xml',
+    youtube:
+      process.env.YOUTUBE_URL ||
+      'https://www.youtube.com/channel/UCiYs0vL7tkkCK4yF_YhfyEQ/playlists',
+    linkedin:
+      process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/omaralsoudani',
+    mail: process.env.EMAIL_ADDR || 'omaralsoudani@gmail.com',
+    twitter: process.env.TWITTER_URL || 'https://twitter.com/omaralsoudani',
+  },
   nextImages: {
     feature: resolveBool(process.env.GHOST_FEATURE_IMAGES, true),
     inline: resolveBool(process.env.GHOST_INLINE_IMAGES, true),

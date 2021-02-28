@@ -1,6 +1,7 @@
 import { GhostPostOrPage } from '@/ghost/api'
 import Link from 'next/link'
 import WritingList from '@/components/Writing/List'
+import { Environment } from '@/environment'
 
 interface Props {
   posts: GhostPostOrPage[]
@@ -21,7 +22,7 @@ export default function FeaturedPosts({ posts }: Props) {
         </Link>
 
         <a
-          href="/rss.xml"
+          href={Environment.social.rss}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 dark:text-blue-400"

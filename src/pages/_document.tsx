@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
             rel="alternate"
             type="application/rss+xml"
             title="Omar Alsoudani RSS Feed"
-            href={`${Environment.siteUrl}/rss.xml`}
+            href={`${Environment.siteUrl}${Environment.social.rss}`}
           />
           <meta name="theme-color" content="ffffff" />
           <link

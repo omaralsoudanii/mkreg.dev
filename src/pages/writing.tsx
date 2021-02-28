@@ -39,7 +39,7 @@ export default function Writing({ posts }: IndexProps) {
               <WritingList posts={posts} />
             </React.Fragment>
           ) : (
-            <p className="mt-4 text-2xl">
+            <p className="mt-4 text-xl">
               There seems to be no posts at the moment. But let's not kid each
               other. I probably pushed something buggy.
             </p>

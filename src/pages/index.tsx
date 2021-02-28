@@ -27,7 +27,7 @@ function Home({ posts }) {
                   <a className="btn btn-primary btn-large">More about me</a>
                 </Link>
                 <a
-                  href="https://github.com/omaralsoudanii"
+                  href={Environment.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-large"

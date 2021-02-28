@@ -1,16 +1,18 @@
-import {
-  getPostBySlug,
-  getAllPosts,
-  GhostPostsOrPages,
-  GhostPostOrPage,
-} from '@/ghost/api'
-import { resolveUrl } from '@/ghost/resolve-url'
-import { collections } from '@/ghost/collections'
-import { Environment } from '@/environment'
+import FullscreenLoading from '@/components/FullscreenLoading'
 import Page from '@/components/Page'
 import PostContainer from '@/components/Writing/Post'
+import { Environment } from '@/environment'
+import {
+  getAllPosts,
+  getPostBySlug,
+  GhostPostOrPage,
+  GhostPostsOrPages,
+} from '@/ghost/api'
+import { collections } from '@/ghost/collections'
+import { resolveUrl } from '@/ghost/resolve-url'
 import { useRouter } from 'next/router'
-import FullscreenLoading from '@/components/FullscreenLoading'
+import React from 'react'
+
 /**
  *
  * Renders a single post and loads all content.

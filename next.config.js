@@ -27,7 +27,7 @@ module.exports = withBundleAnalyzer({
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat',
-        '@': path.resolve('./src'),
+        '@': path.resolve(__dirname, 'src'),
       })
     }
 
