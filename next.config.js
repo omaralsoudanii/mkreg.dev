@@ -7,7 +7,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   poweredByHeader: false,
-  compress: process.env.NODE_ENV !== 'production',
+  compress: false,
   images: {
     deviceSizes: [320, 500, 680, 1040, 2080, 2048, 3120],
     domains: [
