@@ -440,3 +440,11 @@ pre {
     transform: translate(20%, 10%);
   }
 }
+
+
+@supports not (backdrop-filter: none) {
+  .header-bg {
+    backdrop-filter: none;
+    @apply bg-opacity-100;
+  }
+}
