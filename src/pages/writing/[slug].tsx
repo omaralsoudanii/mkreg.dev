@@ -64,6 +64,6 @@ export async function getStaticPaths() {
   const paths = [...postRoutes]
   return {
     paths,
-    fallback: enable && 'blocking',
+    fallback: enable,
   }
 }

@@ -1,7 +1,6 @@
 import { GhostPostOrPage } from '@/ghost/api'
 import Link from 'next/link'
 import WritingList from '@/components/Writing/List'
-import { Environment } from '@/environment'
 
 interface Props {
   posts: GhostPostOrPage[]
@@ -10,26 +9,16 @@ interface Props {
 export default function FeaturedPosts({ posts }: Props) {
   if (!posts || posts.length === 0) return null
   return (
-    <div className="flex flex-col space-y-4">
-      <h1>Featured</h1>
-      {posts && <WritingList posts={posts} />}
-
-      <div className="flex flex-col space-y-1">
-        <Link href="/writing" as="/writing" passHref>
-          <a className="text-blue-600 dark:text-blue-400">
+    <div className="flex flex-col space-y-6">
+      <h1 className="py-1">Featured</h1>
+      <WritingList posts={posts} />
+      <Link href="/writing" as="/writing" passHref>
+        <a>
+          <p className="py-1 text-center text-blue-500 dark:text-blue-400">
             See all posts &rarr;
-          </a>
-        </Link>
-
-        <a
-          href={Environment.social.rss}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 dark:text-blue-400"
-        >
-          RSS Feed &rarr;
+          </p>
         </a>
-      </div>
+      </Link>
     </div>
   )
 }

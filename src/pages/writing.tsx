@@ -33,17 +33,8 @@ export default function Writing({ posts }: IndexProps) {
               <p className="text-2xl">{Environment.ogDescription}</p>
             </div>
           </div>
-          {posts && posts.length ? (
-            <React.Fragment>
-              <div className="hr-stroke" />
-              <WritingList posts={posts} />
-            </React.Fragment>
-          ) : (
-            <p className="mt-4 text-xl">
-              There seems to be no posts at the moment. But let's not kid each
-              other. I probably pushed something buggy.
-            </p>
-          )}
+          <div className="hr-stroke" />
+          <WritingList posts={posts} />
         </div>
       </CenteredColumn>
     </Page>

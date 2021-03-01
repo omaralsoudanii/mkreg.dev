@@ -445,6 +445,6 @@ pre {
 @supports not (backdrop-filter: none) {
   .header-bg {
     backdrop-filter: none;
-    @apply bg-opacity-100;
+    @apply bg-opacity-100 dark:bg-opacity-100;
   }
 }
