@@ -35,13 +35,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
-            href="/fonts/inter-var-latin.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
             rel="alternate"
             type="application/rss+xml"
             title="Omar Alsoudani RSS Feed"
@@ -54,7 +47,7 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/static/meta/manifest.json" />
         </Head>
-        <body className="bg-gray-50 dark:bg-gray-1000">
+        <body className="text-base antialiased bg-gray-50 dark:bg-gray-1000">
           <Main />
           <NextScript />
         </body>

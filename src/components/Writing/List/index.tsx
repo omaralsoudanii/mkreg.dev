@@ -19,7 +19,7 @@ export default function WritingList({ posts }: Props) {
     <div className="flex flex-col space-y-6">
       {posts.map((post) => (
         <div
-          className="flex flex-col px-4 py-6 space-y-4 shadow bg-gray-50 dark:bg-gray-950"
+          className="flex flex-col px-4 py-4 space-y-4 bg-white shadow-cardHover dark:bg-gray-950"
           key={post.id}
         >
           <Link href="/writing/[slug]" as={`/writing/${post.slug}`} passHref>

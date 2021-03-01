@@ -2,25 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: optional;
-  src: url(/fonts/inter-var-latin.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-
 /* Write your own custom base styles here */
-html {
-  @apply text-base antialiased;
-  font-feature-settings: 'kern';
-  text-rendering: optimizeLegibility;
-  min-width: 360px;
-}
-
 p,
 ul,
 ol,
@@ -29,7 +11,7 @@ li {
 }
 
 a {
-  @apply font-semibold;
+  @apply font-medium;
 }
 
 h6 {
@@ -53,7 +35,7 @@ h2 {
 }
 
 h1 {
-  @apply font-semibold text-3-5xl text-gray-1000 dark:text-gray-50;
+  @apply text-4xl font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 .header-bg {
@@ -319,9 +301,7 @@ pre[data-line] {
   position: relative;
 }
 .prose pre {
-  margin-left: -1.3125rem;
-  margin-right: -1.3125rem;
-  border-radius: 10px;
+  border-radius: 5px;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }
@@ -445,6 +425,6 @@ pre {
 @supports not (backdrop-filter: none) {
   .header-bg {
     backdrop-filter: none;
-    @apply bg-opacity-100 dark:bg-opacity-100;
+    @apply bg-opacity-100 shadow-sm dark:bg-opacity-100;
   }
 }

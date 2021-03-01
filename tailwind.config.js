@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./src/**/*.tsx'],
@@ -19,12 +18,6 @@ module.exports = {
       3: 3,
     },
     extend: {
-      fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
-      },
-      fontSize: {
-        '3-5xl': ['2.1rem', { lineHeight: '2.5rem' }],
-      },
       fontWeight: {
         semiMedium: 450,
       },
