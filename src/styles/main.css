@@ -220,7 +220,6 @@ h1 {
 /* Code blocks */
 .prose code[class*='language-'] {
   overflow: auto;
-  padding: 1.3125rem;
 }
 
 /* .light pre {
