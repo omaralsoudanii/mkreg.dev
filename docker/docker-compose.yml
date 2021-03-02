@@ -42,18 +42,37 @@ services:
     networks:
       - mk_prod
 
-  mk-nginx:
+  # mk-nginx:
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: Dockerfile.nginx
+  #   image: mk-nginx
+  #   volumes:
+  #     - /var/log/nginx/:/var/log/nginx/
+  #     - ./nginx/ssl:/etc/nginx/ssl:ro
+  #   depends_on:
+  #     - mk-ghost
+  #     - mk-next
+  #   container_name: mk-nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   networks:
+  #     - mk_prod
+
+  mk-proxy:
     build:
-      context: ./nginx
-      dockerfile: Dockerfile.nginx
-    image: mk-nginx
+      context: ./haproxy
+      dockerfile: Dockerfile.prod
+    image: mk-proxy
     volumes:
-      - /var/log/nginx/:/var/log/nginx/
-      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./nginx/ssl/cf/haproxy_ecc.pem:/etc/haproxy/ssl/haproxy_ecc.pem:ro
+      - ./nginx/ssl/dh/dhparam-2048.pem:/etc/haproxy/ssl/dhparam-2048.pem:ro
     depends_on:
       - mk-ghost
       - mk-next
-    container_name: mk-nginx
+    container_name: mk-proxy
     restart: unless-stopped
     ports:
       - 80:80

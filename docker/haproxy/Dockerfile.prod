@@ -1,0 +1,17 @@
+FROM haproxy:2.3.5-alpine
+
+# declare configs envs
+ENV HAPROXY_USER=haproxy
+
+# add the user with permissions
+RUN mkdir --parents /var/lib/$HAPROXY_USER && \
+  chown -R $HAPROXY_USER:$HAPROXY_USER /var/lib/$HAPROXY_USER
+
+RUN mkdir --parents /run/haproxy && \
+    chown -R $HAPROXY_USER:$HAPROXY_USER /run/haproxy
+
+# copy configs
+COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+
+# start with the specified configs
+CMD ["haproxy", "-db", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
