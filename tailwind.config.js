@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./src/**/*.tsx'],
@@ -20,6 +21,9 @@ module.exports = {
       1: 1,
       2: 2,
       3: 3,
+    },
+    fontFamily: {
+      sans: ['Roboto', ...fontFamily.sans],
     },
     extend: {
       fontWeight: {
@@ -63,6 +67,7 @@ module.exports = {
   variants: {
     extend: {
       fontWeight: ['dark'],
+      typography: ['dark'],
     },
   },
   plugins: [
