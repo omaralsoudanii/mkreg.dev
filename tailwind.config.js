@@ -6,11 +6,15 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     colors: {
+      yellow: colors.yellow,
+      purple: colors.purple,
       blue: colors.blue,
       gray: colors.gray,
+      red: colors.red,
+      green: colors.green,
       pink: colors.pink,
+      indigo: colors.indigo,
       white: '#fff',
-      black: '#000',
     },
     lineClamp: {
       1: 1,
@@ -40,7 +44,7 @@ module.exports = {
         dark: {
           css: {
             a: {
-              color: theme('colors.blue.400'),
+              color: theme('colors.blue.500'),
               textDecoration: 'none',
             },
             code: { color: theme('colors.pink.400') },
@@ -52,7 +56,6 @@ module.exports = {
           '0 4px 4.1px rgba(0, 0, 0, 0.012),0 4.9px 5.8px rgba(0, 0, 0, 0.018),0 6.3px 8.4px rgba(0, 0, 0, 0.029),0 8.8px 12.9px rgba(0, 0, 0, 0.05),0 15px 23px rgba(0, 0, 0, 0.11)',
       },
       colors: {
-        'gray-950': '#161b22',
         'gray-1000': '#050505',
       },
     },
