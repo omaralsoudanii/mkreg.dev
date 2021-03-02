@@ -7,8 +7,8 @@ export function Footer() {
     <CenteredColumn>
       <div className="px-4 mt-4 lg:px-0">
         <div className=" hr-stroke" />
-        <div className="grid grid-cols-1 gap-4 p-6 py-16 sm:grid-cols-3 bg-gray-50 dark:bg-gray-1000">
-          <div className="flex flex-col space-y-4 text-center">
+        <div className="grid grid-cols-1 gap-4 px-6 py-16 sm:grid-cols-3 bg-gray-50 dark:bg-gray-1000">
+          <div className="flex flex-col space-y-4 sm:text-center">
             <a
               href={Environment.social.github}
               target="_blank"
@@ -34,7 +34,7 @@ export function Footer() {
               Youtube
             </a>
           </div>
-          <div className="flex flex-col space-y-4 text-center">
+          <div className="flex flex-col space-y-4 sm:text-center">
             <a
               href={Environment.social.twitter}
               target="_blank"
@@ -54,7 +54,7 @@ export function Footer() {
               </a>
             </Link>
           </div>
-          <div className="flex flex-col space-y-4 text-center">
+          <div className="flex flex-col space-y-4 sm:text-center">
             <a
               href={Environment.social.rss}
               target="_blank"

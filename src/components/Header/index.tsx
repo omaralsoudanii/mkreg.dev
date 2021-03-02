@@ -77,7 +77,7 @@ export default function Header() {
   return (
     <React.Fragment>
       <MobileContainer className="flex md:hidden" expanded={isExpanded}>
-        <div className="bg-white header-bg dark:bg-gray-950" />
+        <div className="header-bg" />
         {isExpanded ? (
           <React.Fragment>
             <CloseButton
@@ -187,7 +187,7 @@ export default function Header() {
             </svg>
           </ThemeButton>
         )}
-        <div className="bg-white header-bg dark:bg-gray-950" />
+        <div className="header-bg" />
       </Container>
     </React.Fragment>
   )
