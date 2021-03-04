@@ -127,6 +127,10 @@ const syntaxHighlightWithPrismJS = (htmlAst: Node) => {
       let result
       try {
         result = refractor.highlight(nodeToString(node), lang)
+        if (parent.tagName === 'pre') {
+          const cs = parent.properties as NodeProperties
+          cs.className = [`language-${lang}`]
+        }
       } catch (err) {
         if (prism.ignoreMissing && /Unknown language/.test(err.message)) {
           return
