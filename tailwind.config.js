@@ -22,8 +22,11 @@ module.exports = {
       2: 2,
       3: 3,
     },
+    letterSpacing: {
+      normal: '-0.004em',
+    },
     fontFamily: {
-      sans: ['Roboto', ...fontFamily.sans],
+      sans: ['Inter var', ...fontFamily.sans],
     },
     extend: {
       fontWeight: {

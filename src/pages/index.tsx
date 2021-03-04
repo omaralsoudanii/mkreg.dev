@@ -8,19 +8,22 @@ import { GetStaticProps } from 'next'
 import FeaturedPosts from '@/components/Writing/FeaturedPosts'
 import React from 'react'
 import { generateRSSFeed } from '@/ghost/rss'
+import SeoConfig from '@/default.seo'
+import { DefaultSeo } from 'next-seo'
 
 function Home({ posts }) {
   return (
     <Page>
       <CenteredColumn>
+        <DefaultSeo {...SeoConfig} description="My personal website" />
         <div className="flex flex-col space-y-8">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col space-y-4 md:items-center md:text-center">
               <h1>Hello, I’m Omar</h1>
               <p className="text-2xl">
                 A programmer who made this site out of bordem, I'll be writing
-                about software and development in general, excluding the
-                Frontend ofcourse 🤔
+                about software & development in general, excluding the Frontend
+                ofcourse 🤔
               </p>
               <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
                 <Link href="/about" passHref>
@@ -39,7 +42,6 @@ function Home({ posts }) {
           </div>
           {posts && (
             <React.Fragment>
-              <div className="hr-stroke" />
               <FeaturedPosts posts={posts} />
             </React.Fragment>
           )}

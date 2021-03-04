@@ -7,6 +7,8 @@ import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
+import SeoConfig from '@/default.seo'
+import { DefaultSeo } from 'next-seo'
 
 /**
  * Main writing page
@@ -26,14 +28,21 @@ export default function Writing({ posts }: IndexProps) {
   return (
     <Page>
       <CenteredColumn>
+        <DefaultSeo
+          {...SeoConfig}
+          title="Blog"
+          description="A list of programming thoughts, discussions & guides I write"
+        />
         <div className="flex flex-col space-y-8">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col space-y-4 md:items-center md:text-center">
-              <h1>{Environment.ogTitle}</h1>
-              <p className="text-2xl">{Environment.ogDescription}</p>
+              <h1>What I write</h1>
+              <p className="text-2xl">
+                Publishing stuff about programming, development & software in
+                general.
+              </p>
             </div>
           </div>
-          <div className="hr-stroke" />
           <WritingList posts={posts} />
         </div>
       </CenteredColumn>

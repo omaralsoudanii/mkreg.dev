@@ -7,7 +7,7 @@ module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   compress: false,
   images: {
-    deviceSizes: [320, 500, 680, 1040, 2080, 2048, 3120],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     domains: [
       'images.unsplash.com',
       'mkreg.dev',

@@ -56,7 +56,7 @@ export const Environment: EnvironmentProps = {
   ghostAPIUrl,
   NODE_ENV: process.env.NODE_ENV || 'development',
   ogTitle: 'Omar Alsoudani',
-  ogDescription: 'Programming, software engineering and premature optimization',
+  ogDescription: 'My personal website',
   ogImage: '/static/meta/og-card.jpg',
   fileCache: resolveBool(process.env.GHOST_FILE_CACHE, true),
   social: {

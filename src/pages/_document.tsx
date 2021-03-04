@@ -34,6 +34,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+
           <link
             rel="alternate"
             type="application/rss+xml"
@@ -46,8 +48,15 @@ export default class MyDocument extends Document {
             href="/static/meta/apple-touch-icon.png"
           />
           <link rel="manifest" href="/static/meta/manifest.json" />
+          <link
+            rel="preload"
+            href="/fonts/Inter-roman.latin.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
         </Head>
-        <body className="text-base antialiased bg-gray-50 dark:bg-gray-1000">
+        <body className="bg-gray-50 dark:bg-gray-1000">
           <Main />
           <NextScript />
         </body>

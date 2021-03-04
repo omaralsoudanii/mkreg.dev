@@ -22,11 +22,12 @@ export default function NotFound() {
             <p className="mb-8">
               Don't feel bad about it, this happens to me all the time, just
               imagine you're trying to find some solution for a bug in PHP v5.6
-              that exists since 2007, and the only link is not found as well.
+              that exists since 2007, sadly the only link is a freaking 404
+              forum thread.
             </p>
             <Link href="/" passHref>
               <a className="w-full text-lg btn btn-primary btn-large">
-                Homepage
+                Back to Homepage
               </a>
             </Link>
           </div>
