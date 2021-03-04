@@ -4,10 +4,10 @@ _mk_completions() {
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev="${COMP_WORDS[COMP_CWORD - 1]}"
-  all_long_opts="--pull --restart --build --help "
+  all_long_opts="--pull --push --restart --build --help "
   all_short_opts="-p -r -b -h "
   all_pull_opts="main"
-  all_restart_opts="mk-nginx mk-next mk-ghost"
+  all_restart_opts="mk-nginx mk-next mk-ghost mk-proxy"
   case "$prev" in
   --pull | -p)
     COMPREPLY=($(compgen -W "${all_pull_opts}" -- "${cur}"))
