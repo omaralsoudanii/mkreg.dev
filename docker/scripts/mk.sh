@@ -14,6 +14,7 @@ begins_with_short_option() {
 }
 
 _arg_pull=
+_arg_push=
 _arg_restart=
 _arg_build="off"
 _rootdir="/var/www/mkreg.dev"
@@ -21,7 +22,8 @@ _rootdir="/var/www/mkreg.dev"
 print_help() {
   printf '%s\n' "The general script's help msg"
   printf 'Usage: %s [-p|--pull <arg>] [-c|--clear <arg>] [-r|--restart <arg>] [-b|--(no-)build] [-f|--(no-)files] [-h|--help]\n' "$0"
-  printf '\t%s\n' "-p, --pull: Pulls and checkout to a specified branch for all mk repositories e.g: mk -p v1.0  (no default)"
+  printf '\t%s\n' "-p, --pull: Pulls and checkout to a specified branch for  mkreg.dev repository e.g: mk -p v1.0  (no default)"
+  printf '\t%s\n' "--push: Push to the  main branch at mkreg.dev repositoy with commit message e.g: mk --push 'new update'  (no default)"
   printf '\t%s\n' "-r, --restart: Restart the specified docker container e.g: mk -r mk-server (no default)"
   printf '\t%s\n' "-b, --build, --no-build: Builds and start all docker containers e.g: mk --build (off by default)"
   printf '\t%s\n' "-h, --help: Prints help"
@@ -41,6 +43,11 @@ parse_commandline() {
       ;;
     -p*)
       _arg_pull="${_key##-p}"
+      ;;
+    --push)
+      test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+      _arg_push="$2"
+      shift
       ;;
     -r | --restart)
       test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
@@ -90,6 +97,13 @@ if [[ $_arg_pull ]]; then
   git pull origin $_arg_pull
 fi
 
+if [[ $_arg_push ]]; then
+  echo "Pushing changes to main branch with msg: $_arg_push"
+  cd $_rootdir
+  git add .
+  git commit -a -m "$_arg_push"
+  git push origin HEAD:main
+fi
 
 if [[ $_arg_build == "on" ]]; then
   echo "Building docker......"

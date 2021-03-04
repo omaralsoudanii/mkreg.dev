@@ -46,7 +46,7 @@ yarn-error.log*
 
 
 # SSL
-/docker/prod/nginx/ssl
+/docker/ssl
 
 
 .idea
