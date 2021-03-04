@@ -54,6 +54,7 @@ services:
     restart: unless-stopped
     expose:
       - 80
+      - 81
     networks:
       - mk_prod
 
