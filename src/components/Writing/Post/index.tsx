@@ -21,13 +21,19 @@ export default function PostContainer({ post }: Props) {
       <CenteredColumn>
         <div className="flex flex-col mb-8 space-y-8">
           {featImg &&
-            (Environment.nextImages?.feature && featImg.dimensions ? (
+            (Environment.nextImages?.feature && featImg?.dimensions ? (
               <Image
                 src={featImg.url}
                 alt={post.title}
-                className="dark:bg-white"
                 quality={Environment.nextImages.quality}
                 layout="responsive"
+                sizes={`
+                              (max-width: 350px) 350px,
+                              (max-width: 530px) 530px,
+                              (max-width: 710px) 710px,
+                              (max-width: 1170px) 1170px,
+                              (max-width: 2110px) 2110px, 2000px
+                            `}
                 {...featImg.dimensions}
               />
             ) : null)}

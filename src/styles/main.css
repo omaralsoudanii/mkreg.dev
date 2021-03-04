@@ -134,10 +134,6 @@ h1 {
   text-align: center;
 }
 
-.prose img {
-  @apply m-0 dark:bg-white;
-}
-
 .prose a {
   @apply text-blue-500 dark:text-blue-400;
 }
