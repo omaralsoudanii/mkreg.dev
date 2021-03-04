@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['./src/**/*.tsx'],
+  purge: ['./src/**/*.tsx', './src/**/*.ts'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     colors: {
@@ -61,7 +61,6 @@ module.exports = {
       },
       colors: {
         'gray-1000': '#06090f',
-        'gray-900': '#0d1117',
       },
     },
   },
