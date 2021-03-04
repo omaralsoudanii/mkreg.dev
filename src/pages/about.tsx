@@ -15,6 +15,7 @@ export default function About() {
         />
         <div className="flex flex-col space-y-8">
           <div className="flex flex-col space-y-8 md:items-center">
+            <img src="/static/images/kalb.png" alt="kalb"></img>
             <div className="flex flex-col space-y-4 md:text-start">
               <h1>Introduction</h1>
               <p className="text-xl">
