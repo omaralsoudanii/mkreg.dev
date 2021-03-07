@@ -74,7 +74,7 @@ export const Environment: EnvironmentProps = {
     feature: resolveBool(process.env.GHOST_FEATURE_IMAGES, true),
     inline: resolveBool(process.env.GHOST_INLINE_IMAGES, true),
     quality: resolveNumber(process.env.GHOST_IMAGES_QUALITY, 80),
-    source: resolveBool(process.env.GHOST_SOURCE_IMAGES, false),
+    source: resolveBool(process.env.GHOST_SOURCE_IMAGES, true),
   },
   rssTTL: resolveNumber(process.env.RSS_FEED, 3600), // 1hour
   prism: {
