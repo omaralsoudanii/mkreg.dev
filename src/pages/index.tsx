@@ -14,7 +14,7 @@ function Home({ posts }) {
     <Page>
       <CenteredColumn>
         <DefaultSeo {...SeoConfig} description="My personal website" />
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col space-y-4 md:items-center md:text-center">
               <h1>Hello, I’m Omar</h1>
@@ -38,11 +38,7 @@ function Home({ posts }) {
               </div>
             </div>
           </div>
-          {posts && (
-            <React.Fragment>
-              <FeaturedPosts posts={posts} />
-            </React.Fragment>
-          )}
+          <FeaturedPosts posts={posts} />
         </div>
       </CenteredColumn>
     </Page>

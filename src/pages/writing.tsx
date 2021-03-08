@@ -30,16 +30,15 @@ export default function Writing({ posts }: IndexProps) {
       <CenteredColumn>
         <DefaultSeo
           {...SeoConfig}
-          title="Blog"
-          description="A list of programming thoughts, discussions & guides I write"
+          title="Writing"
+          description="Writing about programming, software & Vim vs Emacs."
         />
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col space-y-4 md:items-center md:text-center">
-              <h1>What I write</h1>
+              <h1>Writing</h1>
               <p className="text-2xl">
-                Publishing stuff about programming, development & software in
-                general.
+                Writing about programming, software & Vim vs Emacs.
               </p>
             </div>
           </div>
@@ -57,12 +56,7 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     posts = await getAllPosts()
   } catch (error) {
-    return {
-      props: {
-        posts,
-      },
-      revalidate: revalidate,
-    }
+    throw new Error(`Index creation failed: ${error}`)
   }
   return {
     props: {

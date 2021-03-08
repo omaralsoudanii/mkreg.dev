@@ -105,7 +105,7 @@ h1 {
 }
 
 .p-small {
-  @apply text-sm font-medium leading-6 text-gray-700 dark:text-gray-300;
+  @apply text-sm font-medium leading-6 text-gray-600 dark:text-gray-300;
 }
 
 .black-link {

@@ -6,9 +6,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   poweredByHeader: false,
-  compress: false,
+  compress: process.env.NODE_ENV === 'development',
   images: {
-    deviceSizes: [320, 500, 680, 1040, 2080, 2048, 3120],
     domains: [
       'images.unsplash.com',
       'content.mkreg.dev',
@@ -27,6 +26,17 @@ module.exports = withBundleAnalyzer({
         'react-dom': 'preact/compat',
         '@': path.resolve('./src'),
       })
+    }
+
+    if (dev) {
+      config.watchOptions = {
+        ignored: [
+          path.resolve(__dirname, 'node_modules'),
+          path.resolve(__dirname, '.cache'),
+        ],
+        aggregateTimeout: 200,
+        poll: 1000,
+      }
     }
 
     return config

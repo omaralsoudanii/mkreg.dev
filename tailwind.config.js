@@ -64,6 +64,7 @@ module.exports = {
       },
       colors: {
         'gray-1000': '#050505',
+        'gray-950': '#0d1117',
       },
     },
   },

@@ -10,11 +10,11 @@ export default function FeaturedPosts({ posts }: Props) {
   if (!posts || posts.length === 0) return null
   return (
     <div className="flex flex-col space-y-6">
-      <h1 className="py-1">Featured</h1>
+      <h1 className="px-1 py-1">Recent</h1>
       <WritingList posts={posts} />
       <Link href="/writing" as="/writing" passHref>
         <a>
-          <p className="py-1 text-center text-blue-500 dark:text-blue-400">
+          <p className="py-1 text-lg text-center text-blue-500 dark:text-blue-400">
             See all posts &rarr;
           </p>
         </a>

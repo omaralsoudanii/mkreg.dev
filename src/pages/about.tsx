@@ -13,7 +13,7 @@ export default function About() {
           title="About"
           description="Brief Introduction about me"
         />
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col space-y-4 md:text-start">
               <h1>Introduction</h1>
