@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
 
   if (res && rssData) {
-    res.setHeader('Content-Type', 'application/rss+xml')
+    res.setHeader('Content-Type', 'text/xml')
     res.write(rssData)
     res.end()
   }
