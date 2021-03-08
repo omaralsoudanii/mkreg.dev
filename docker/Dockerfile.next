@@ -1,4 +1,7 @@
-FROM node:15.11.0-buster
+# https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile.multistage
+
+# Stage 1: Building the code
+FROM mhart/alpine-node:14.16 AS builder
 
 WORKDIR /app
 
@@ -9,6 +12,18 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 RUN yarn build
+RUN yarn install --production --frozen-lockfile
+
+
+# Stage 2: And then copy over node_modules, etc from that stage to the smaller base image
+FROM mhart/alpine-node:slim-14.16 as production
+
+WORKDIR /app
+COPY package.json yarn.lock next.config.js .env ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=cache /app/.cache ./.cache
+COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 3000
 

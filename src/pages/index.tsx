@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import Page from '@/components/Page'
-import fs from 'fs'
 import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/environment'
 import { GhostPostsOrPages, getAllPosts } from '@/ghost/api'
 import { GetStaticProps } from 'next'
 import FeaturedPosts from '@/components/Writing/FeaturedPosts'
 import React from 'react'
-import { generateRSSFeed } from '@/ghost/rss'
 import SeoConfig from '@/default.seo'
 import { DefaultSeo } from 'next-seo'
 
@@ -58,11 +56,6 @@ export const getStaticProps: GetStaticProps = async () => {
     posts = await getAllPosts()
   } catch (error) {
     throw new Error(`Index creation failed: ${error}`)
-  }
-
-  if (Environment.rssTTL && posts.length) {
-    const rss = generateRSSFeed({ posts })
-    fs.writeFileSync('./public/rss.xml', rss)
   }
 
   const { revalidate } = Environment.isr

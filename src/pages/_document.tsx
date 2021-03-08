@@ -34,8 +34,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-
           <link
             rel="alternate"
             type="application/rss+xml"
