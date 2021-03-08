@@ -7,6 +7,8 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
       yellow: colors.yellow,
       purple: colors.purple,
       blue: colors.blue,
@@ -15,6 +17,7 @@ module.exports = {
       green: colors.green,
       pink: colors.pink,
       indigo: colors.indigo,
+      black: '#000',
       white: '#fff',
     },
     lineClamp: {
@@ -61,7 +64,6 @@ module.exports = {
       },
       colors: {
         'gray-1000': '#050505',
-        'gray-950': '#0d1117',
       },
     },
   },
