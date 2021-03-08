@@ -15,7 +15,7 @@ export const generateRSSFeed = ({ posts }: FeedProps) => {
     title: ogTitle,
     description: ogDescription,
     generator: `RSS Feed for mkreg.dev`,
-    feed_url: resolve(siteUrl, 'rss/'),
+    feed_url: resolve(siteUrl, 'rss.xml'),
     site_url: resolve(siteUrl, ''),
     image_url: resolve(siteUrl, ogImage),
     ttl: rssTTL,

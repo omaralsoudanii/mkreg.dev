@@ -31,4 +31,11 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
+  redirects: () => [
+    {
+      source: '/rss',
+      destination: '/rss.xml',
+      permanent: true,
+    },
+  ],
 })
