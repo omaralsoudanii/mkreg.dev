@@ -9,7 +9,7 @@ interface Props {
 export default function WritingList({ posts }: Props) {
   if (!posts || posts.length === 0)
     return (
-      <p className="flex flex-col space-y-6 mt-4 text-xl">
+      <p className="flex flex-col mt-4 space-y-6 text-xl">
         There seems to be no posts at the moment. But let's not kid each other.
         I probably pushed something buggy.
       </p>
@@ -28,12 +28,15 @@ export default function WritingList({ posts }: Props) {
                 {post.title}
               </h2>
               {post.excerpt && (
-                <p className="text-base font-normal text-gray-800 dark:text-gray-100 clamp-2">
+                <p className="text-base font-normal text-gray-1000 dark:text-gray-50 clamp-3">
                   {post.excerpt}
                 </p>
               )}
               <p className="p-small">
-                {`${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
+                {`Published at ${format(
+                  new Date(post.updated_at),
+                  'MMMM dd, yyyy'
+                )}`}
               </p>
             </a>
           </Link>

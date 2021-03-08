@@ -33,7 +33,10 @@ export default function PostContainer({ post }: Props) {
           <div className="flex flex-col space-y-4">
             <h1>{post.title}</h1>
             <p className="p-small">
-              {`${format(new Date(post.updated_at), 'MMMM dd, yyyy')}`}
+              {`Published at ${format(
+                new Date(post.updated_at),
+                'MMMM dd, yyyy'
+              )}`}
             </p>
           </div>
         </div>

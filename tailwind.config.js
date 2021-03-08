@@ -22,9 +22,6 @@ module.exports = {
       2: 2,
       3: 3,
     },
-    letterSpacing: {
-      normal: '-0.004em',
-    },
     fontFamily: {
       sans: ['Inter var', ...fontFamily.sans],
     },

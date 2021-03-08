@@ -15,7 +15,7 @@ export default function About() {
         />
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-center">
-            <div className="flex flex-col space-y-4 md:text-start">
+            <div className="flex flex-col space-y-8 md:text-start">
               <h1>Introduction</h1>
               <p className="text-xl">
                 I’m Omar Alsoudani, a Software developer, based in Amman,
@@ -29,7 +29,7 @@ export default function About() {
             </div>
           </div>
           <div className="flex flex-col space-y-8 md:items-center">
-            <div className="flex flex-col space-y-4 md:text-start">
+            <div className="flex flex-col space-y-8 md:text-start">
               <h1> Why I won't wirte that much about Frontend</h1>
               <p className="text-xl">
                 Well, let's just accept the fact that my frontend skills is
@@ -42,7 +42,7 @@ export default function About() {
           </div>
 
           <div className="flex flex-col space-y-8 md:items-center">
-            <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
+            <div className="flex flex-col space-y-4 text-center md:space-x-4 md:flex-row md:space-y-0 md:items-center">
               <a
                 href={Environment.social.github}
                 target="_blank"

@@ -2,11 +2,14 @@
 @tailwind utilities;
 
 /* Write your own custom base styles here */
-p,
 ul,
 ol,
 li {
   @apply text-gray-1000 dark:text-gray-50;
+}
+
+p {
+  @apply font-medium text-gray-1000 dark:text-gray-50;
 }
 
 a {
@@ -14,27 +17,27 @@ a {
 }
 
 h6 {
-  @apply text-base font-medium text-gray-1000 dark:text-gray-50;
+  @apply text-base font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h5 {
-  @apply text-lg font-medium text-gray-1000 dark:text-gray-50;
+  @apply text-lg font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h4 {
-  @apply text-xl font-medium text-gray-1000 dark:text-gray-50;
+  @apply text-xl font-semibold text-gray-1000 dark:text-gray-50;
 }
 
 h3 {
-  @apply text-2xl font-medium text-gray-1000 dark:text-gray-50;
+  @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
 }
 
 h2 {
-  @apply text-3xl font-semibold text-gray-1000 dark:text-gray-50;
+  @apply text-3xl font-bold text-gray-1000 dark:text-gray-50;
 }
 
 h1 {
-  @apply text-4xl font-semibold text-gray-1000 dark:text-gray-50;
+  @apply text-4xl font-bold text-gray-1000 dark:text-gray-50;
 }
 
 .header-bg {
@@ -105,7 +108,7 @@ h1 {
 }
 
 .p-small {
-  @apply text-sm font-medium leading-6 text-gray-600 dark:text-gray-300;
+  @apply text-sm font-semibold leading-6 text-gray-1000 dark:text-gray-50;
 }
 
 .black-link {
