@@ -16,7 +16,6 @@ module.exports = withBundleAnalyzer({
       'github.githubassets.com',
       'i.gyazo.com',
       'dropbox.tech',
-      'localhost',
     ],
   },
   webpack: (config, { dev, isServer }) => {
@@ -32,11 +31,4 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
-  redirects: () => [
-    {
-      source: '/rss',
-      destination: '/rss.xml',
-      permanent: true,
-    },
-  ],
 })
