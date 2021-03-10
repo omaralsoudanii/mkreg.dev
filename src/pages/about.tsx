@@ -3,6 +3,7 @@ import Page from '@/components/Page'
 import { Environment } from '@/environment'
 import SeoConfig from '@/default.seo'
 import { DefaultSeo } from 'next-seo'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -15,6 +16,14 @@ export default function About() {
         />
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-center">
+            <div className="flex flex-col w-full space-y-4">
+              <Image
+                src="/static/images/mk.jpg"
+                width="800"
+                height="534"
+                layout="responsive"
+              />
+            </div>
             <div className="flex flex-col space-y-4 md:text-start">
               <h1>Introduction</h1>
               <p className="text-xl">
