@@ -11,12 +11,27 @@ RUN yarn install --frozen-lockfile
 
 COPY . .
 
+# declare configs envs
+ARG GHOST_API_URL
+ENV GHOST_API_URL=$GHOST_API_URL
+ARG GHOST_API_KEY
+ENV GHOST_API_KEY=$GHOST_API_KEY
+ARG SITE_URL
+ENV SITE_URL=$SITE_URL
+ARG GHOST_ISR_REVALIDATE
+ENV GHOST_ISR_REVALIDATE=$GHOST_ISR_REVALIDATE
+
 RUN yarn build
 RUN yarn install --production --frozen-lockfile
 
 
 # Stage 2: And then copy over node_modules, etc from that stage to the smaller base image
 FROM mhart/alpine-node:slim-14.16 as production
+
+ARG NODE_ENV
+ENV NODE_ENV=$NODE_ENV
+ARG SITE_URL
+ENV SITE_URL=$SITE_URL
 
 WORKDIR /app
 COPY package.json yarn.lock next.config.js .env ./

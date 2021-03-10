@@ -24,8 +24,6 @@ const RoutesMetadata = [
 
 export default function Header() {
   const [mounted, setMounted] = React.useState(false)
-
-  React.useEffect(() => setMounted(true), [])
   const [isExpanded, setExpanded] = React.useState(false)
   const router = useRouter()
   const { theme, setTheme } = useTheme()
@@ -38,6 +36,7 @@ export default function Header() {
       : RoutesMetadata.filter((r) => r.href !== '/').find((r) =>
           router.pathname.includes(r.href)
         )
+  React.useEffect(() => setMounted(true), [])
 
   return (
     mounted && (

@@ -30,6 +30,12 @@ services:
     build:
       context: ../
       dockerfile: docker/Dockerfile.next
+      args:
+        GHOST_API_URL: $GHOST_API_URL
+        GHOST_API_KEY: $GHOST_API_KEY
+        SITE_URL: $SITE_URL
+        GHOST_ISR_REVALIDATE: $GHOST_ISR_REVALIDATE
+        NODE_ENV: $NODE_ENV
     image: mk-next
     env_file:
       - ../.env
