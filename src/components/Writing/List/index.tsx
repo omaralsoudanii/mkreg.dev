@@ -22,7 +22,7 @@ export default function WritingList({ posts }: Props) {
           className="flex flex-col space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-900"
           key={post.id}
         >
-          <Link href="/writing/[slug]" as={`/writing/${post.slug}`} passHref>
+          <Link href={`/writing/${post.slug}`}>
             <a className="px-4 py-4 space-y-4">
               <h2 className="text-2xl text-gray-1000 dark:text-gray-50">
                 {post.title}

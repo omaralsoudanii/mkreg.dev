@@ -24,7 +24,7 @@ function Home({ posts }) {
                 ofcourse 🤔
               </p>
               <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
-                <Link href="/about" passHref>
+                <Link href="/about">
                   <a className="btn btn-primary btn-large">More about me</a>
                 </Link>
                 <a

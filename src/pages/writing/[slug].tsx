@@ -1,4 +1,3 @@
-import FullscreenLoading from '@/components/FullscreenLoading'
 import Page from '@/components/Page'
 import PostContainer from '@/components/Writing/Post'
 import { Environment } from '@/environment'
@@ -10,7 +9,6 @@ import {
 } from '@/ghost/api'
 import { collections } from '@/ghost/collections'
 import { resolveUrl } from '@/ghost/resolve-url'
-import { useRouter } from 'next/router'
 import React from 'react'
 
 /**
@@ -24,8 +22,6 @@ interface PostProps {
 }
 
 export default function Post({ data }: PostProps) {
-  const router = useRouter()
-  if (router.isFallback) return <FullscreenLoading />
   return (
     <Page>
       <PostContainer post={data} />

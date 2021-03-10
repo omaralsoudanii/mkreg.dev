@@ -1,11 +1,9 @@
 import WritingList from '@/components/Writing/List'
-import FullscreenLoading from '@/components/FullscreenLoading'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { Environment } from '@/environment'
 import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
 import { GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
 import React from 'react'
 import SeoConfig from '@/default.seo'
 import { DefaultSeo } from 'next-seo'
@@ -22,9 +20,6 @@ interface IndexProps {
 }
 
 export default function Writing({ posts }: IndexProps) {
-  const router = useRouter()
-  if (router.isFallback) return <FullscreenLoading />
-
   return (
     <Page>
       <CenteredColumn>

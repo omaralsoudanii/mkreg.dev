@@ -12,7 +12,7 @@ export default function FeaturedPosts({ posts }: Props) {
     <div className="flex flex-col space-y-6">
       <h1 className="px-1 py-1">Recent</h1>
       <WritingList posts={posts} />
-      <Link href="/writing" as="/writing" passHref>
+      <Link href="/writing">
         <a>
           <p className="py-1 text-lg text-center text-blue-500 dark:text-blue-400">
             See all posts &rarr;

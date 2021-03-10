@@ -25,7 +25,7 @@ export default function NotFound() {
               that exists since 2007, sadly the only link is a freaking 404
               forum thread.
             </p>
-            <Link href="/" passHref>
+            <Link href="/">
               <a className="w-full text-lg btn btn-primary btn-large">
                 Back to Homepage
               </a>

@@ -43,12 +43,12 @@ export function Footer() {
             >
               Twitter
             </a>
-            <Link href="/writing" as="/writing" passHref>
+            <Link href="/writing">
               <a href="/writing" className="black-link">
                 Writing
               </a>
             </Link>
-            <Link href="/nuggets" as="/nuggets" passHref>
+            <Link href="/nuggets">
               <a href="/nuggets" className="black-link">
                 Nuggets
               </a>
@@ -63,7 +63,7 @@ export function Footer() {
             >
               RSS
             </a>
-            <Link href="/uses" as="/uses" passHref>
+            <Link href="/uses">
               <a className="black-link">Uses</a>
             </Link>
             <a

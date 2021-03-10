@@ -40,50 +40,50 @@ export default function Header() {
         )
 
   return (
-    <div className="fixed top-0 z-10 w-full py-2">
-      <div className="hdr-backdrop" />
-      {/* Mobile nav */}
-      <div className="grid grid-cols-1 sm:hidden">
-        <div className="flex items-center text-primary">
-          {isExpanded ? (
-            <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </div>
-          ) : (
-            <div className="hdr-sm-btn" onClick={() => setExpanded(true)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </div>
-          )}
-          <Link href={currentRoute.href}>
-            <a className="hdr-sm-title">
-              <p className=" text-primary">{currentRoute.label}</p>
-            </a>
-          </Link>
-          {mounted && (
+    mounted && (
+      <div className="fixed top-0 z-10 w-full py-2">
+        <div className="hdr-backdrop" />
+        {/* Mobile nav */}
+        <div className="grid grid-cols-1 sm:hidden">
+          <div className="flex items-center text-primary">
+            {isExpanded ? (
+              <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+            ) : (
+              <div className="hdr-sm-btn" onClick={() => setExpanded(true)}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </div>
+            )}
+            <Link href={currentRoute.href}>
+              <a className="hdr-sm-title">
+                <p className=" text-primary">{currentRoute.label}</p>
+              </a>
+            </Link>
             <div
               className="hdr-sm-btn"
               onClick={() => {
@@ -121,35 +121,33 @@ export default function Header() {
                 </svg>
               )}
             </div>
-          )}
+          </div>
+          {isExpanded &&
+            RoutesMetadata.map((route) => {
+              const navClass =
+                route.href === router.pathname
+                  ? 'flex items-start py-3 pl-4 text-primary nav-link active'
+                  : 'flex items-start py-3 pl-4 text-primary nav-link'
+              return (
+                <Link href={route.href} key={route.href}>
+                  <a className={navClass}>{route.label}</a>
+                </Link>
+              )
+            })}
         </div>
-        {isExpanded &&
-          RoutesMetadata.map((route) => {
+        {/* End mobile nav */}
+
+        {/* Desktop nav */}
+        <div className="hidden max-w-2xl grid-cols-4 gap-1 mx-auto sm:grid">
+          {RoutesMetadata.map((route) => {
             const navClass =
-              route.href === router.pathname
-                ? 'flex items-start py-3 pl-4 text-primary nav-link active'
-                : 'flex items-start py-3 pl-4 text-primary nav-link'
+              route.href === router.pathname ? 'nav-link active' : 'nav-link'
             return (
               <Link href={route.href} key={route.href}>
                 <a className={navClass}>{route.label}</a>
               </Link>
             )
           })}
-      </div>
-      {/* End mobile nav */}
-
-      {/* Desktop nav */}
-      <div className="hidden max-w-2xl grid-cols-4 gap-1 mx-auto sm:grid">
-        {RoutesMetadata.map((route) => {
-          const navClass =
-            route.href === router.pathname ? 'nav-link active' : 'nav-link'
-          return (
-            <Link href={route.href} key={route.href}>
-              <a className={navClass}>{route.label}</a>
-            </Link>
-          )
-        })}
-        {mounted && (
           <div
             className="hdr-cnt-theme-btn"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -184,8 +182,8 @@ export default function Header() {
               </svg>
             )}
           </div>
-        )}
+        </div>
       </div>
-    </div>
+    )
   )
 }
