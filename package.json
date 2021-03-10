@@ -21,7 +21,6 @@
     "date-fns": "^2.19.0",
     "hast-util-to-string": "^1.0.4",
     "next": "10.0.8",
-    "next-seo": "^4.20.0",
     "next-sitemap": "^1.5.10",
     "next-themes": "^0.0.12",
     "postcss": "^8.2.7",

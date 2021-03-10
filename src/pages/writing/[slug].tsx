@@ -9,7 +9,6 @@ import {
 } from '@/ghost/api'
 import { collections } from '@/ghost/collections'
 import { resolveUrl } from '@/ghost/resolve-url'
-import React from 'react'
 
 /**
  *
@@ -22,8 +21,17 @@ interface PostProps {
 }
 
 export default function Post({ data }: PostProps) {
+  const extraMeta = {
+    title: data.title,
+    description: data.custom_excerpt ?? data.excerpt,
+    image: {
+      url: data.featureImage?.url,
+      alt: data.custom_excerpt ?? data.excerpt,
+    },
+  }
+
   return (
-    <Page>
+    <Page extraMeta={extraMeta}>
       <PostContainer post={data} />
     </Page>
   )

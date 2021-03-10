@@ -1,19 +1,17 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { Environment } from '@/environment'
-import SeoConfig from '@/default.seo'
-import { DefaultSeo } from 'next-seo'
 import Image from 'next/image'
 
 export default function About() {
+  const extraMeta = {
+    title: 'About',
+    description: 'Brief Introduction about me',
+  }
+
   return (
-    <Page>
+    <Page extraMeta={extraMeta}>
       <CenteredColumn>
-        <DefaultSeo
-          {...SeoConfig}
-          title="About"
-          description="Brief Introduction about me"
-        />
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col w-full space-y-4">

@@ -4,9 +4,6 @@ import Page from '@/components/Page'
 import { Environment } from '@/environment'
 import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
 import { GetStaticProps } from 'next'
-import React from 'react'
-import SeoConfig from '@/default.seo'
-import { DefaultSeo } from 'next-seo'
 
 /**
  * Main writing page
@@ -20,17 +17,17 @@ interface IndexProps {
 }
 
 export default function Writing({ posts }: IndexProps) {
+  const extraMeta = {
+    title: 'Writing',
+    description: 'Writing about programming, software & Vim vs Emacs.',
+  }
+
   return (
-    <Page>
+    <Page extraMeta={extraMeta}>
       <CenteredColumn>
-        <DefaultSeo
-          {...SeoConfig}
-          title="Writing"
-          description="Writing about programming, software & Vim vs Emacs."
-        />
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
-            <div className="flex flex-col space-y-4 md:items-center md:text-center">
+            <div className="flex flex-col items-center space-y-4 text-center">
               <h1>Writing</h1>
               <p className="text-2xl">
                 Writing about programming, software & Vim vs Emacs.

@@ -5,15 +5,11 @@ import { Environment } from '@/environment'
 import { GhostPostsOrPages, getAllPosts } from '@/ghost/api'
 import { GetStaticProps } from 'next'
 import FeaturedPosts from '@/components/Writing/FeaturedPosts'
-import React from 'react'
-import SeoConfig from '@/default.seo'
-import { DefaultSeo } from 'next-seo'
 
 function Home({ posts }) {
   return (
     <Page>
       <CenteredColumn>
-        <DefaultSeo {...SeoConfig} description="My personal website" />
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col space-y-4 md:items-center md:text-center">

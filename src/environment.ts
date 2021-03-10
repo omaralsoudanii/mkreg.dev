@@ -54,8 +54,8 @@ export const Environment: EnvironmentProps = {
   ghostAPIUrl,
   NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
-  ogDescription: 'My personal website',
-  ogImage: '/static/meta/og-card.jpg',
+  ogDescription: 'Writing about programming, software &amp; Vim vs Emacs.',
+  ogImage: '/static/images/mk.jpg',
   fileCache: resolveBool(process.env.GHOST_FILE_CACHE, true),
   social: {
     github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',

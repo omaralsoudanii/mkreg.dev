@@ -1,5 +1,3 @@
-import React from 'react'
-import SEO from './SEO'
 import Image from 'next/image'
 import { format } from 'date-fns'
 import { CenteredColumn } from '@/components/Layouts'
@@ -15,35 +13,31 @@ export default function PostContainer({ post }: Props) {
   if (htmlAst === undefined) throw Error('Post.tsx: htmlAst must be defined.')
   const featImg = post.featureImage
   return (
-    <React.Fragment>
-      <SEO post={post} />
-
-      <CenteredColumn>
-        <div className="flex flex-col mb-8 space-y-8">
-          {featImg &&
-            (Environment.nextImages?.feature && featImg?.dimensions ? (
-              <Image
-                src={featImg.url}
-                alt={post.title}
-                quality={Environment.nextImages.quality}
-                layout="responsive"
-                {...featImg.dimensions}
-              />
-            ) : null)}
-          <div className="flex flex-col space-y-4">
-            <h1>{post.title}</h1>
-            <p className="p-small">
-              {`Published at ${format(
-                new Date(post.updated_at),
-                'MMMM dd, yyyy'
-              )}`}
-            </p>
-          </div>
+    <CenteredColumn>
+      <div className="flex flex-col mb-8 space-y-8">
+        {featImg &&
+          (Environment.nextImages?.feature && featImg?.dimensions ? (
+            <Image
+              src={featImg.url}
+              alt={post.title}
+              quality={Environment.nextImages.quality}
+              layout="responsive"
+              {...featImg.dimensions}
+            />
+          ) : null)}
+        <div className="flex flex-col space-y-4">
+          <h1>{post.title}</h1>
+          <p className="p-small">
+            {`Published at ${format(
+              new Date(post.updated_at),
+              'MMMM dd, yyyy'
+            )}`}
+          </p>
         </div>
-        <div className="prose dark:prose-dark max-w-none lg:prose-lg">
-          <Body htmlAst={htmlAst} />
-        </div>
-      </CenteredColumn>
-    </React.Fragment>
+      </div>
+      <div className="prose dark:prose-dark max-w-none lg:prose-lg">
+        <Body htmlAst={htmlAst} />
+      </div>
+    </CenteredColumn>
   )
 }

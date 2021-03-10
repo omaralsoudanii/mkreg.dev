@@ -2807,11 +2807,6 @@ needle@^2.5.2:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
-next-seo@^4.20.0:
-  version "4.20.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.20.0.tgz#54b629abf93c7c051919802db011882f67004249"
-  integrity sha512-N3NIISxOV+6XatPdZWRt8L/PkdxX4qpl6s2uQVMYTkteo8hgpHDgs6XZkDzuHaPi10neSZoqQiytsxohTCyEvw==
-
 next-sitemap@^1.5.10:
   version "1.5.16"
   resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.5.16.tgz#d0db72307468d3739dbfee7e874a141a52807e1d"
