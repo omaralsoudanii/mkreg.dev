@@ -11,17 +11,12 @@ RUN yarn install --frozen-lockfile
 
 COPY . .
 
-ENV SITE_URL="https://mkreg.dev"
-
 RUN yarn build
 RUN yarn install --production --frozen-lockfile
 
 
 # Stage 2: And then copy over node_modules, etc from that stage to the smaller base image
 FROM mhart/alpine-node:slim-14.16 as production
-
-ENV NODE_ENV="production"
-ENV SITE_URL="https://mkreg.dev"
 
 WORKDIR /app
 COPY package.json yarn.lock next.config.js .env ./

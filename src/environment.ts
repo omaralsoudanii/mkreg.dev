@@ -1,8 +1,6 @@
 export const ghostAPIUrl = process.env.GHOST_API_URL
 export const ghostAPIKey = process.env.GHOST_API_KEY
 
-const siteUrl = process.env.SITE_URL || 'http://localhost:3000'
-
 // Environment variables that can be used to override the defaults
 const resolveBool = (value: string | undefined, defaultValue: boolean) => {
   if (!value) return defaultValue
@@ -51,10 +49,10 @@ export interface EnvironmentProps {
 }
 
 export const Environment: EnvironmentProps = {
-  siteUrl,
-  writingUrl: `${siteUrl}/writing`,
+  siteUrl: 'https://mkreg.dev',
+  writingUrl: `https://mkreg.dev/writing`,
   ghostAPIUrl,
-  NODE_ENV: process.env.NODE_ENV || 'development',
+  NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
   ogDescription: 'My personal website',
   ogImage: '/static/meta/og-card.jpg',
