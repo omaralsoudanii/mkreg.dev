@@ -36,12 +36,4 @@ html {
   -moz-font-variant-ligatures: contextual common-ligatures;
   -o-font-variant-ligatures: contextual common-ligatures;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
-  min-width: 360px;
-  scroll-behavior: smooth;
-}
-
-#__next {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
