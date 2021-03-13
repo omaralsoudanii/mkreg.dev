@@ -150,6 +150,10 @@ h1 {
   @apply w-full h-px max-w-4xl mx-auto bg-gray-300 dark:bg-gray-700;
 }
 
+.responsive-img {
+  @apply md:mt-0 md:-mx-8;
+}
+
 .prose blockquote {
   @apply text-gray-900 border-l-2 border-gray-200 dark:text-gray-100 dark:border-gray-800;
 }
@@ -188,19 +192,6 @@ h1 {
 
 .prose pre::-webkit-scrollbar {
   display: none;
-}
-
-.prose .figure {
-  @apply my-4;
-  position: relative;
-  padding-top: 56.25%;
-}
-.prose .figure iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .remark-code-title {

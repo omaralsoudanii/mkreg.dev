@@ -7,14 +7,13 @@ module.exports = (options) => (tree) => {
   visit(
     tree,
     // only visit p tags that contain an img element
+    // only visit p tags that contain an img element
     (node) =>
       node.type === 'paragraph' &&
       node.children.some((n) => n.type === 'image'),
-    (imgN) => {
-      const node = imgN.children.find((n) => n.type === 'image')
-      const { alt, caption } = extractCaption(node)
+    (node) => {
+      const imageNode = node.children.find((n) => n.type === 'image')
 
-      const imageNode = { ...node, alt }
       // only local files
       if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
         const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
@@ -28,47 +27,23 @@ module.exports = (options) => (tree) => {
           height={${dimensions.height}}
           loading="lazy"
           layout="responsive"
-          quality={75}
+          quality={80}
       />`
-        const figureElement = {
+        // Change node type from p to div to avoid nesting error
+        const containerElem = {
           type: 'element',
-          data: { hName: 'figure' },
+          data: {
+            hName: 'div',
+            hProperties: {
+              class: '-mx-4 md:mt-0 md:-mx-8',
+            },
+          },
+          children: [imageNode],
         }
-        if (!caption) {
-          figureElement.children = [imageNode]
-        } else {
-          const captionElement = {
-            type: 'element',
-            data: { hName: 'figcaption' },
-            children: [{ type: 'text', value: caption }],
-          }
-
-          figureElement.children = [imageNode, captionElement]
-        }
-        replace(imgN, figureElement)
+        replace(node, containerElem)
       }
     }
   )
-}
-
-function extractCaption(node) {
-  // eslint-disable-next-line no-useless-escape
-  const captionRegex = /(\{caption=([^\{\}]+)\})/
-  if (!node.alt) {
-    return { alt: node.alt }
-  }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const caption = captionRegex.exec(node.alt)
-  if (caption && caption.length) {
-    node.alt = caption[0]
-    return {
-      caption: caption[2],
-      alt: node.alt,
-    }
-  }
-  return {
-    alt: node.alt,
-  }
 }
 
 function replace(source, target) {

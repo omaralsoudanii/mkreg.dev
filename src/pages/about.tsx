@@ -15,12 +15,16 @@ export default function About() {
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-center">
             <div className="flex flex-col w-full space-y-4">
-              <Image
-                src="/static/images/mk.jpg"
-                width="800"
-                height="534"
-                layout="responsive"
-              />
+              <div className="responsive-img">
+                <Image
+                  src="/static/images/mk.jpg"
+                  width="800"
+                  height="534"
+                  layout="responsive"
+                  quality={80}
+                  loading="lazy"
+                />
+              </div>
             </div>
             <div className="flex flex-col space-y-4 md:text-start">
               <h1>Introduction</h1>

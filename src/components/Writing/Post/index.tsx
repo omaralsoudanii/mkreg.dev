@@ -24,7 +24,9 @@ export default function PostContainer({ children, frontMatter }) {
               )}`}
             </p>
           </div>
-          <div className="prose dark:prose-dark lg:prose-lg">{children}</div>
+          <div className="prose dark:prose-dark lg:prose-lg max-w-none w-full">
+            {children}
+          </div>
         </div>
       </CenteredColumn>
     </Page>
