@@ -21,7 +21,7 @@ export default function About() {
                   width="800"
                   height="534"
                   layout="responsive"
-                  quality={80}
+                  quality={75}
                   loading="lazy"
                 />
               </div>

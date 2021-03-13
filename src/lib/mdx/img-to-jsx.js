@@ -27,7 +27,7 @@ module.exports = (options) => (tree) => {
           height={${dimensions.height}}
           loading="lazy"
           layout="responsive"
-          quality={80}
+          quality={75}
       />`
         // Change node type from p to div to avoid nesting error
         const containerElem = {
