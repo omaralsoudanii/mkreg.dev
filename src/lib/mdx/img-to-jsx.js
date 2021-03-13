@@ -59,11 +59,14 @@ function extractCaption(node) {
   }
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const caption = captionRegex.exec(node.alt)
-  if (caption && caption?.[2]) {
-    node.alt = caption[2]
+  if (caption && caption.length) {
+    node.alt = caption[0]
+    return {
+      caption: caption[2],
+      alt: node.alt,
+    }
   }
   return {
-    caption,
     alt: node.alt,
   }
 }
