@@ -14,8 +14,8 @@ import { getAllFilesFrontMatter } from '@/lib/mdx/api'
 
 export default function Writing({ posts }) {
   const extraMeta = {
-    title: 'Writing',
-    description: 'Writing about programming, software & Vim vs Emacs.',
+    title: 'MK',
+    description: 'Mark Knopflar OBE',
   }
 
   return (
@@ -24,13 +24,11 @@ export default function Writing({ posts }) {
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col items-center space-y-4 text-center">
-              <h1>Writing</h1>
-              <p className="text-2xl">
-                Writing about programming, software & Vim vs Emacs.
-              </p>
+              <h1>MK</h1>
+              <p className="text-2xl">Mark Knopflar OBE</p>
             </div>
           </div>
-          <WritingList href="writing" posts={posts} />
+          <WritingList href="mk" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>
@@ -38,7 +36,7 @@ export default function Writing({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featured = await getAllFilesFrontMatter('writing')
+  const featured = await getAllFilesFrontMatter('mk')
   const posts = featured.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )

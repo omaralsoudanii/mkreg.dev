@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mkreg.dev
+
+# Sitemaps
+Sitemap: https://mkreg.dev/sitemap.xml

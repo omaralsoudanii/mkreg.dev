@@ -1,17 +1,7 @@
-import { Environment } from '@/environment'
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document'
+import { Environment } from '@/lib/environment'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    return await super.getInitialProps(ctx)
-  }
-
   render() {
     return (
       <Html lang="en">
@@ -43,7 +33,7 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
         </Head>
-        <body className="bg-white dark:bg-gray-1000">
+        <body className="text-base antialiased bg-white font-inter font-feature-default dark:bg-gray-1000">
           <Main />
           <NextScript />
         </body>

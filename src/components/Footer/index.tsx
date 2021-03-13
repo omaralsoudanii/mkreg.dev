@@ -1,5 +1,5 @@
 import { CenteredColumn } from '@/components/Layouts'
-import { Environment } from '@/environment'
+import { Environment } from '@/lib/environment'
 import Link from 'next/link'
 
 export function Footer() {

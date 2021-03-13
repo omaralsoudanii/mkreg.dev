@@ -1,27 +1,71 @@
-import { getAllPosts, GhostPostsOrPages } from '@/ghost/api'
-import { generateRSSFeed } from '@/ghost/rss'
 import { GetServerSideProps } from 'next'
-import { Environment } from '@/environment'
+import RSS from 'rss'
+const { promises: fs } = require('fs')
+const path = require('path')
+const matter = require('gray-matter')
+import { URL } from 'url'
+import { Environment } from '@/lib/environment'
+import { format } from 'date-fns'
 
-const RSS = () => null
+const RSSFeed = () => null
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  let posts: GhostPostsOrPages | []
+  const { siteUrl, ogTitle, ogImage, ogDescription, rssTTL } = Environment
 
+  const feedOptions = {
+    title: ogTitle,
+    description: ogDescription,
+    generator: `RSS Feed for mkreg.dev`,
+    feed_url: new URL('rss.xml', siteUrl),
+    site_url: new URL('', siteUrl),
+    image_url: new URL(ogImage, siteUrl),
+    ttl: rssTTL,
+    custom_namespaces: {
+      content: `http://purl.org/rss/1.0/modules/content/`,
+      media: `http://search.yahoo.com/mrss/`,
+    },
+  }
+  const feed = new RSS(feedOptions)
+
+  const dirs = ['writing', 'mk']
   try {
-    posts = await getAllPosts()
-  } catch (error) {
-    throw new Error('Index creation failed.')
-  }
+    await Promise.all(
+      dirs.map(async (dir) => {
+        const p = path.join('src', 'data', dir)
 
-  let rssData = null
-  if (Environment.rssTTL && posts.length) {
-    rssData = generateRSSFeed({ posts })
-  }
+        const posts = await fs.readdir(p)
 
-  if (res && rssData) {
+        await Promise.all(
+          posts.map(async (name) => {
+            const content = await fs.readFile(path.join(p, name))
+            const frontmatter = matter(content)
+            const url = name
+              ? siteUrl + '/' + dir + '/' + name.replace(/\.mdx?/, '')
+              : siteUrl
+            feed.item({
+              title: frontmatter.data.title ?? ogTitle,
+              url: url,
+              date: frontmatter.data.publishedAt,
+              description: frontmatter.data.description ?? ogDescription,
+              author: ogTitle,
+            })
+          })
+        )
+      })
+    )
     res.setHeader('Content-Type', 'text/xml')
-    res.write(rssData)
+    res.write(feed.xml({ indent: true }))
+    res.end()
+  } catch {
+    feed.item({
+      title: ogTitle,
+      url: siteUrl,
+      date: format(new Date(), 'yyyy-dddd-mm'),
+      description: ogDescription,
+      author: ogTitle,
+    })
+    res.setHeader('Content-Type', 'text/xml')
+    res.write(feed.xml({ indent: true }))
     res.end()
   }
 
@@ -30,4 +74,4 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
 }
 
-export default RSS
+export default RSSFeed

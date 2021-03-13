@@ -1,12 +1,7 @@
 import { format } from 'date-fns'
-import { GhostPostOrPage } from '@/ghost/api'
 import Link from 'next/link'
 
-interface Props {
-  posts: GhostPostOrPage[]
-}
-
-export default function WritingList({ posts }: Props) {
+export default function WritingList({ posts, href }) {
   if (!posts || posts.length === 0)
     return (
       <p className="flex flex-col mt-4 space-y-6 text-xl">
@@ -17,24 +12,24 @@ export default function WritingList({ posts }: Props) {
 
   return (
     <div className="flex flex-col space-y-6">
-      {posts.map((post) => (
+      {posts.map((frontMatter) => (
         <div
-          className="flex flex-col space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-900"
-          key={post.id}
+          className="flex flex-col space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-950"
+          key={frontMatter.title}
         >
-          <Link href={`/writing/${post.slug}`}>
+          <Link href={`${href}/${frontMatter.slug}`}>
             <a className="px-4 py-4 space-y-4">
               <h2 className="text-2xl text-gray-1000 dark:text-gray-50">
-                {post.title}
+                {frontMatter.title}
               </h2>
-              {post.excerpt && (
+              {frontMatter.description && (
                 <p className="text-base font-normal text-gray-1000 dark:text-gray-50 clamp-3">
-                  {post.excerpt}
+                  {frontMatter.description}
                 </p>
               )}
               <p className="p-small">
                 {`Published at ${format(
-                  new Date(post.updated_at),
+                  new Date(frontMatter.publishedAt),
                   'MMMM dd, yyyy'
                 )}`}
               </p>

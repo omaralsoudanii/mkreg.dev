@@ -1,6 +1,3 @@
-export const ghostAPIUrl = process.env.GHOST_API_URL
-export const ghostAPIKey = process.env.GHOST_API_KEY
-
 // Environment variables that can be used to override the defaults
 const resolveBool = (value: string | undefined, defaultValue: boolean) => {
   if (!value) return defaultValue
@@ -15,8 +12,6 @@ const resolveNumber = (value: string | undefined, defaultValue: number) => {
 
 export interface EnvironmentProps {
   siteUrl: string
-  writingUrl: string
-  ghostAPIUrl: string
   NODE_ENV: string
   ogImage: string
   ogDescription: string
@@ -36,11 +31,6 @@ export interface EnvironmentProps {
     twitter: string
   }
   rssTTL: number
-  fileCache: boolean
-  prism: {
-    enable: boolean
-    ignoreMissing: boolean
-  }
   isr: {
     enable: boolean
     maxNumberOfPosts: number
@@ -50,13 +40,10 @@ export interface EnvironmentProps {
 
 export const Environment: EnvironmentProps = {
   siteUrl: 'https://mkreg.dev',
-  writingUrl: `https://mkreg.dev/writing`,
-  ghostAPIUrl,
   NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
   ogDescription: 'Writing about programming, software &amp; Vim vs Emacs.',
   ogImage: '/static/images/mk.jpg',
-  fileCache: resolveBool(process.env.GHOST_FILE_CACHE, true),
   social: {
     github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',
     rss: process.env.RSS_RELATIVE_URL || '/rss.xml',
@@ -69,19 +56,15 @@ export const Environment: EnvironmentProps = {
     twitter: process.env.TWITTER_URL || 'https://twitter.com/omaralsoudani',
   },
   nextImages: {
-    feature: resolveBool(process.env.GHOST_FEATURE_IMAGES, true),
-    inline: resolveBool(process.env.GHOST_INLINE_IMAGES, true),
-    quality: resolveNumber(process.env.GHOST_IMAGES_QUALITY, 80),
-    source: resolveBool(process.env.GHOST_SOURCE_IMAGES, true),
+    feature: resolveBool(process.env.POSTS_FEATURE_IMAGES, true),
+    inline: resolveBool(process.env.POSTS_INLINE_IMAGES, true),
+    quality: resolveNumber(process.env.POSTS_IMAGES_QUALITY, 80),
+    source: resolveBool(process.env.POSTS_SOURCE_IMAGES, true),
   },
   rssTTL: resolveNumber(process.env.RSS_FEED, 3600), // 1hour
-  prism: {
-    enable: resolveBool(process.env.PRISM, true),
-    ignoreMissing: resolveBool(process.env.PRISM_IGNORE_MISSING, true),
-  },
   isr: {
-    enable: resolveBool(process.env.GHOST_ISR, true),
-    maxNumberOfPosts: resolveNumber(process.env.GHOST_ISR_MAX_NUMBER_POSTS, 10),
-    revalidate: resolveNumber(process.env.GHOST_ISR_REVALIDATE, 3600), // 1hour
+    enable: resolveBool(process.env.POSTS_ISR, true),
+    maxNumberOfPosts: resolveNumber(process.env.POSTS_ISR_MAX_NUMBER_POSTS, 10),
+    revalidate: resolveNumber(process.env.POSTS_ISR_REVALIDATE, 3600), // 1hour
   },
 }

@@ -35,14 +35,13 @@ export default function Header() {
         }
       : RoutesMetadata.filter((r) => r.href !== '/').find((r) =>
           router.pathname.includes(r.href)
-        )
+        ) ?? { href: router.asPath, label: 'MK' }
   React.useEffect(() => setMounted(true), [])
 
   return (
     mounted && (
       <div className="fixed top-0 z-10 w-full py-2">
         <div className="hdr-backdrop" />
-        {/* Mobile nav */}
         <div className="grid grid-cols-1 sm:hidden">
           <div className="flex items-center text-primary">
             {isExpanded ? (
@@ -129,15 +128,15 @@ export default function Header() {
                   : 'flex items-start py-3 pl-4 text-primary nav-link'
               return (
                 <Link href={route.href} key={route.href}>
-                  <a className={navClass}>{route.label}</a>
+                  <a onClick={() => setExpanded(false)} className={navClass}>
+                    {route.label}
+                  </a>
                 </Link>
               )
             })}
         </div>
-        {/* End mobile nav */}
 
-        {/* Desktop nav */}
-        <div className="hidden max-w-2xl grid-cols-4 gap-1 mx-auto sm:grid">
+        <div className="hidden max-w-3xl grid-cols-4 gap-1 mx-auto sm:grid">
           {RoutesMetadata.map((route) => {
             const navClass =
               route.href === router.pathname ? 'nav-link active' : 'nav-link'

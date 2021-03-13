@@ -28,5 +28,5 @@
     },
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx","**/*.css","next-env.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx","**/*.css","**/*.mdx","**/*.md","next-env.d.ts", "scripts/compose.js", "scripts/generate-sitemap.js", "src/lib/img-to-jsx.js"]
 }

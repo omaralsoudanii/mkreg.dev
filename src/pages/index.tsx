@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Page from '@/components/Page'
 import { CenteredColumn } from '@/components/Layouts'
-import { Environment } from '@/environment'
-import { GhostPostsOrPages, getAllPosts } from '@/ghost/api'
+import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
-import FeaturedPosts from '@/components/Writing/FeaturedPosts'
+import PostsList from '@/components/Writing/PostsList'
+import { getAllFilesFrontMatter } from '@/lib/mdx/api'
 
 function Home({ posts }) {
   return (
@@ -34,7 +34,7 @@ function Home({ posts }) {
               </div>
             </div>
           </div>
-          <FeaturedPosts posts={posts} />
+          <PostsList href="mk" name="The Sultan of swing" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>
@@ -42,13 +42,13 @@ function Home({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  let posts: GhostPostsOrPages | []
-
-  try {
-    posts = await getAllPosts()
-  } catch (error) {
-    throw new Error(`Index creation failed: ${error}`)
-  }
+  const featured = await getAllFilesFrontMatter('mk')
+  const posts = featured
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    )
+    .slice(0, 5)
 
   const { revalidate } = Environment.isr
   return {

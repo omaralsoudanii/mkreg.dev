@@ -1,7 +1,5 @@
-import Header from '@/components/Header'
-import { Footer } from '@/components/Footer'
 import Head from 'next/head'
-import { Environment } from '@/environment'
+import { Environment } from '@/lib/environment'
 import React from 'react'
 import { useRouter } from 'next/router'
 
@@ -48,9 +46,7 @@ export default function Page(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image.url} />
       </Head>
-      <Header />
-      <div className="px-4 pt-24 pb-16 lg:px-0">{children}</div>
-      <Footer />
+      <div className="px-4 pt-24 pb-16">{children}</div>
     </React.Fragment>
   )
 }
