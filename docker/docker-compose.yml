@@ -8,8 +8,6 @@ services:
     env_file:
       - ../.env
     container_name: mk-next
-    depends_on:
-      - mk-ghost
     expose:
       - 3000
     restart: unless-stopped
@@ -22,13 +20,11 @@ services:
       dockerfile: Dockerfile.nginx
     image: mk-nginx
     depends_on:
-      - mk-ghost
       - mk-next
     container_name: mk-nginx
     restart: unless-stopped
     expose:
       - 80
-      - 81
     networks:
       - mk_prod
 
