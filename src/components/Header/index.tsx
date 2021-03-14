@@ -41,7 +41,7 @@ export default function Header() {
   return (
     mounted && (
       <div className="fixed top-0 z-10 w-full py-2">
-        <div className="hdr-backdrop" />
+        <div className="hdr-backdrop backDrop" />
         <div className="grid grid-cols-1 sm:hidden">
           <div className="flex items-center text-primary">
             {isExpanded ? (
@@ -136,7 +136,7 @@ export default function Header() {
             })}
         </div>
 
-        <div className="hidden max-w-3xl grid-cols-4 gap-1 mx-auto sm:grid">
+        <div className="hidden max-w-screen-sm grid-cols-4 gap-4 px-4 mx-auto sm:grid">
           {RoutesMetadata.map((route) => {
             const navClass =
               route.href === router.pathname ? 'nav-link active' : 'nav-link'

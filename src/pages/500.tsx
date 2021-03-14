@@ -8,7 +8,9 @@ export default function NotFound() {
       <CenteredColumn>
         <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:space-x-10 sm:mt-24">
           <div className="max-w-md px-1 space-y-8 sm:px-0">
-            <h1 className="text-2xl sm:text-4xl">Internal server error</h1>
+            <h1 className="pt-16 text-2xl sm:text-4xl sm:pt-0">
+              Internal server error
+            </h1>
             <p className="pb-8 text-base sm:text-md">
               The server is currently unavailable for some reason. Obviously
               it's not my fault, I ran the code on my machine and it's working
@@ -16,12 +18,16 @@ export default function NotFound() {
               me and I will send you a zip file, just extract it and double
               click index.html
             </p>
-            <Image
-              src="/static/images/docker.jpeg"
-              width="604"
-              height="453"
-              layout="responsive"
-            />
+            <div className="responsive-img">
+              <Image
+                src="/static/images/docker.jpeg"
+                width="604"
+                height="453"
+                layout="responsive"
+                quality={75}
+              />
+            </div>
+
             <Link href="/">
               <a className="w-full text-lg btn btn-primary btn-large">
                 Is this gonna work? 🤔
