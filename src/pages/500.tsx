@@ -11,7 +11,7 @@ export default function NotFound() {
             <h1 className="pt-16 text-2xl sm:text-4xl sm:pt-0">
               Internal server error
             </h1>
-            <p className="pb-8 text-base sm:text-md">
+            <p className="pb-8 text-base sm:text-lg">
               The server is currently unavailable for some reason. Obviously
               it's not my fault, I ran the code on my machine and it's working
               fine. Try refreshing the page again, if that doesn't work, contact

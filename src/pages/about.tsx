@@ -20,7 +20,6 @@ export default function About() {
                   src="/static/images/mk.jpg"
                   width="800"
                   height="534"
-                  layout="responsive"
                   quality={75}
                 />
               </div>
