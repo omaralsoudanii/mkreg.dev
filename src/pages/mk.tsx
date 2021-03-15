@@ -27,24 +27,26 @@ export default function MK() {
               />
             </div>
           </div>
-          <p className="text-xl">
-            Well, Congrats on finding this page! This is my favourite human
-            being in planet earth. The one and only the legendendary Mr.Mark
-            Knopfler.
-          </p>
-          <p className="text-xl">
-            The domain name meaning if you ever wondered is an acronym for
-          </p>
-          <p className="text-xl">
-            <a
-              href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 dark:text-blue-400"
-            >
-              Mark Knopfler Red Electric Guitar
-            </a>
-          </p>
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <p className="text-xl">
+              Well, Congrats on finding this page! This is my favourite human
+              being in planet earth. The one and only the legendendary Mr.Mark
+              Knopfler.
+            </p>
+            <p className="text-xl">
+              The domain name meaning if you ever wondered is an acronym for
+            </p>
+            <p className="text-xl">
+              <a
+                href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 dark:text-blue-400"
+              >
+                Mark Knopfler Red Electric Guitar
+              </a>
+            </p>
+          </div>
         </div>
       </CenteredColumn>
     </Page>
