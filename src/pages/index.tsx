@@ -34,11 +34,7 @@ function Home({ posts }) {
               </div>
             </div>
           </div>
-          <PostsList
-            href="writing"
-            name="Writing about programming, software & Vim vs Emacs."
-            posts={posts}
-          />
+          <PostsList href="writing" name="Recent Posts" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>
