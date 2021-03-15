@@ -25,7 +25,6 @@ module.exports = (options) => (tree) => {
           src={\`${imageNode.url}\`}
           width={${dimensions.width}}
           height={${dimensions.height}}
-          loading="lazy"
           layout="responsive"
           quality={80}
       />`
@@ -34,6 +33,9 @@ module.exports = (options) => (tree) => {
           type: 'element',
           data: {
             hName: 'div',
+            hProperties: {
+              class: 'my-2',
+            },
           },
           children: [imageNode],
         }

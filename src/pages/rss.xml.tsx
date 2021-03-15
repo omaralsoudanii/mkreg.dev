@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
   const feed = new RSS(feedOptions)
 
-  const dirs = ['writing', 'mk']
+  const dirs = ['writing']
   try {
     await Promise.all(
       dirs.map(async (dir) => {

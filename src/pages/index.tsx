@@ -16,8 +16,8 @@ function Home({ posts }) {
               <h1>Hello, I’m Omar</h1>
               <p className="text-2xl">
                 A programmer who made this site out of bordem, I'll be writing
-                about software & development in general, excluding the Frontend
-                ofcourse 🤔
+                about software & development in general, not sure about Frontend
+                though 🤔
               </p>
               <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
                 <Link href="/about">

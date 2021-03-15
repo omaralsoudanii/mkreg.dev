@@ -13,6 +13,10 @@ const RoutesMetadata = [
     href: '/about',
   },
   {
+    label: 'Stack',
+    href: '/stack',
+  },
+  {
     label: 'Writing',
     href: '/writing',
   },
