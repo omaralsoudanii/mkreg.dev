@@ -34,7 +34,11 @@ function Home({ posts }) {
               </div>
             </div>
           </div>
-          <PostsList href="mk" name="The Sultan of swing" posts={posts} />
+          <PostsList
+            href="writing"
+            name="Writing about programming, software & Vim vs Emacs."
+            posts={posts}
+          />
         </div>
       </CenteredColumn>
     </Page>
@@ -42,7 +46,7 @@ function Home({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featured = await getAllFilesFrontMatter('mk')
+  const featured = await getAllFilesFrontMatter('writing')
   const posts = featured
     .sort(
       (a, b) =>

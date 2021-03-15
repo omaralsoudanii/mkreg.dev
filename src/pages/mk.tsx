@@ -4,7 +4,7 @@ import Page from '@/components/Page'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatter } from '@/lib/mdx/api'
-
+import Image from 'next/image'
 /**
  * Main writing page
  *
@@ -24,8 +24,15 @@ export default function Writing({ posts }) {
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
             <div className="flex flex-col items-center space-y-4 text-center">
-              <h1>MK</h1>
+              <h1>The Sultan of swing</h1>
               <p className="text-2xl">Mark Knopflar OBE</p>
+              <Image
+                src="/static/images/mk.jpg"
+                width="800"
+                height="534"
+                quality={80}
+                layout="responsive"
+              />
             </div>
           </div>
           <WritingList href="mk" posts={posts} />
