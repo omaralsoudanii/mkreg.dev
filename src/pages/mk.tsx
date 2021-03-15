@@ -34,10 +34,13 @@ export default function MK() {
           </p>
           <p className="text-xl">
             The domain name meaning if you ever wondered is an acronym for
+          </p>
+          <p className="text-xl">
             <a
               href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-500 dark:text-blue-400"
             >
               Mark Knopfler Red Electric Guitar
             </a>
