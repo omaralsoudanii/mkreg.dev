@@ -1,7 +1,6 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { Environment } from '@/lib/environment'
-import Image from 'next/image'
 
 export default function About() {
   const extraMeta = {
@@ -14,16 +13,6 @@ export default function About() {
       <CenteredColumn>
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-center">
-            <div className="flex flex-col w-full space-y-4">
-              <div className="responsive-img">
-                <Image
-                  src="/static/images/mk.jpg"
-                  width="800"
-                  height="534"
-                  quality={75}
-                />
-              </div>
-            </div>
             <div className="flex flex-col space-y-4 md:text-start">
               <h1>Introduction</h1>
               <p className="text-xl">

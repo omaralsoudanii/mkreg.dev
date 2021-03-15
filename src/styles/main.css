@@ -154,9 +154,6 @@ h1 {
   @apply w-full h-px max-w-4xl mx-auto bg-gray-300 dark:bg-gray-700;
 }
 
-.responsive-img {
-  @apply -mx-4 -mt-16 md:mt-0 md:-mx-8;
-}
 
 .prose blockquote {
   @apply text-gray-900 border-l-2 border-gray-200 dark:text-gray-100 dark:border-gray-800;

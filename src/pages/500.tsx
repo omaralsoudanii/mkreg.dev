@@ -18,15 +18,13 @@ export default function NotFound() {
               me and I will send you a zip file, just extract it and double
               click index.html
             </p>
-            <div className="responsive-img">
-              <Image
-                src="/static/images/docker.jpeg"
-                width="604"
-                height="453"
-                layout="responsive"
-                quality={75}
-              />
-            </div>
+            <Image
+              src="/static/images/docker.jpeg"
+              width="604"
+              height="453"
+              layout="responsive"
+              quality={80}
+            />
 
             <Link href="/">
               <a className="w-full text-lg btn btn-primary btn-large">

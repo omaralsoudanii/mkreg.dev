@@ -6,7 +6,7 @@ export default function PostsList({ posts, href, name }) {
   return (
     <div className="flex flex-col space-y-6">
       <h1 className="px-2 py-2">{name}</h1>
-      <WritingList href={href} posts={posts} />
+      <WritingList href={`/${href}`} posts={posts} />
       <Link href={`/${href}`}>
         <a>
           <p className="py-1 text-lg text-center text-blue-500 dark:text-blue-400">

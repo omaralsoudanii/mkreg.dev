@@ -43,7 +43,7 @@ export const Environment: EnvironmentProps = {
   NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
   ogDescription: 'Writing about programming, software &amp; Vim vs Emacs.',
-  ogImage: '/static/images/mk.jpg',
+  ogImage: '/static/images/meta/og-card.jpg',
   social: {
     github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',
     rss: process.env.RSS_RELATIVE_URL || '/rss.xml',
