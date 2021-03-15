@@ -14,7 +14,7 @@ export default function WritingList({ posts, href }) {
     <div className="flex flex-col space-y-6">
       {posts.map((frontMatter) => (
         <div
-          className="flex flex-col space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-950"
+          className="flex flex-col space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-900"
           key={frontMatter.title}
         >
           <Link href={`${href}/${frontMatter.slug}`}>

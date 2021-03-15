@@ -209,7 +209,7 @@ h1 {
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply font-medium bg-gray-100 rounded text-gray-950 dark:text-gray-100 dark:bg-gray-950;
+  @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-100 dark:bg-gray-900;
   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   font-feature-settings: normal;
   text-align: left;
@@ -353,7 +353,7 @@ h1 {
 }
 
 .prose pre:not([class*='language-']) , .prose code:not([class*='language-']) {
-  @apply font-medium bg-gray-100 rounded text-gray-950 dark:text-gray-50 dark:bg-gray-950;
+  @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-50 dark:bg-gray-900;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   -webkit-overflow-scrolling: touch;
