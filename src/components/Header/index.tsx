@@ -140,7 +140,7 @@ export default function Header() {
             })}
         </div>
 
-        <div className="hidden max-w-screen-sm grid-cols-4 gap-4 px-4 mx-auto sm:grid">
+        <div className="hidden max-w-screen-sm grid-cols-5 gap-4 px-4 mx-auto sm:grid">
           {RoutesMetadata.map((route) => {
             const navClass =
               route.href === router.pathname ? 'nav-link active' : 'nav-link'
