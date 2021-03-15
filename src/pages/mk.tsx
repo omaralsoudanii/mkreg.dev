@@ -26,6 +26,8 @@ export default function Writing({ posts }) {
             <div className="flex flex-col items-center space-y-4 text-center">
               <h1>The Sultan of swing</h1>
               <p className="text-2xl">Mark Knopflar OBE</p>
+            </div>
+            <div className="flex flex-col items-center space-y-4 text-center">
               <Image
                 src="/static/images/mk.jpg"
                 width="800"
