@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import dayjs from 'dayjs'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 
@@ -18,13 +18,12 @@ export default function PostContainer({ children, frontMatter }) {
           <div className="flex flex-col space-y-4">
             <h1>{frontMatter.title}</h1>
             <p className="p-small">
-              {`Published at ${format(
-                new Date(frontMatter.publishedAt),
-                'MMMM dd, yyyy'
+              {`Published at ${dayjs(new Date(frontMatter.publishedAt)).format(
+                'MMMM DD, YYYY'
               )}`}
             </p>
           </div>
-          <div className="prose dark:prose-dark lg:prose-lg max-w-none w-full">
+          <div className="w-full prose dark:prose-dark lg:prose-lg max-w-none">
             {children}
           </div>
         </div>

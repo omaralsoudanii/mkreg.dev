@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import dayjs from 'dayjs'
 import Link from 'next/link'
 
 export default function WritingList({ posts, href }) {
@@ -28,10 +28,9 @@ export default function WritingList({ posts, href }) {
                 </p>
               )}
               <p className="p-small">
-                {`Published at ${format(
-                  new Date(frontMatter.publishedAt),
-                  'MMMM dd, yyyy'
-                )}`}
+                {`Published at ${dayjs(
+                  new Date(frontMatter.publishedAt)
+                ).format('MMMM DD, YYYY')}`}
               </p>
             </a>
           </Link>

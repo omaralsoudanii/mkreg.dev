@@ -5,7 +5,6 @@ import path from 'path'
 import renderToString from 'next-mdx-remote/render-to-string'
 
 import MDXComponents from '@/components/MDXComponents'
-const imgToJsx = require('./img-to-jsx')
 
 const root = process.cwd()
 
@@ -28,7 +27,6 @@ export async function getFileBySlug(type, slug) {
         require('remark-autolink-headings'),
         require('remark-slug'),
         require('remark-code-titles'),
-        imgToJsx,
       ],
       rehypePlugins: [mdxPrism],
     },

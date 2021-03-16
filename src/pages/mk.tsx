@@ -1,6 +1,6 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
-import Image from 'next/image'
+import Image from '@/components/ImageComposed'
 
 export default function MK() {
   const extraMeta = {
@@ -20,21 +20,22 @@ export default function MK() {
             <div>
               <Image
                 src="/static/images/mk.jpg"
-                width="800"
-                height="534"
-                quality={80}
-                layout="responsive"
+                alt="Mark Knopfler"
+                width={800}
+                height={534}
               />
             </div>
           </div>
           <div className="flex flex-col items-center space-y-4 text-center">
             <p className="text-xl">
-              Well, Congrats on finding this page! This is my favourite human
-              being in planet earth. The one and only the legendendary Mr.Mark
-              Knopfler.
+              Well, Congrats on finding this page! Let me introduce you to my
+              favourite human being in the universe. The one and only the
+              legendendary Mr.Mark Knopfler.
             </p>
             <p className="text-xl">
-              The domain name meaning if you ever wondered is an acronym for
+              If you have ever wondered why the hell I have this domain rather
+              than something closer to my name (for SEO bleh...), Then I can
+              tell you that it's based on this acronym 👇
             </p>
             <p className="text-xl">
               <a
@@ -45,6 +46,16 @@ export default function MK() {
               >
                 Mark Knopfler Red Electric Guitar
               </a>
+            </p>
+            <p className="text-xl">
+              Every one has his own "Red Electric Guitar". Seeing my Idol
+              getting his guitar, gives me some euphoric feeling with a smile on
+              my face.
+            </p>
+            <p>
+              So there you go, now you have the answer to the ultimate question
+              of life. You can check my YouTube playlist for some goodies in the
+              footer below 👇
             </p>
           </div>
         </div>

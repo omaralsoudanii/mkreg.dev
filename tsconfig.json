@@ -16,6 +16,7 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -23,10 +24,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
     },
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx","**/*.css","**/*.mdx","**/*.md","next-env.d.ts", "scripts/compose.js", "scripts/generate-sitemap.js", "src/lib/img-to-jsx.js"]
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx","src/**/*.js","scripts/**/*.js"],
+  "exclude": ["node_modules"]
 }

@@ -5,7 +5,7 @@ const path = require('path')
 const matter = require('gray-matter')
 import { URL } from 'url'
 import { Environment } from '@/lib/environment'
-import { format } from 'date-fns'
+import dayjs from 'dayjs'
 
 const RSSFeed = () => null
 
@@ -60,7 +60,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     feed.item({
       title: ogTitle,
       url: siteUrl,
-      date: format(new Date(), 'yyyy-dddd-mm'),
+      date: dayjs(new Date(), 'YYYY-MM-DD'),
       description: ogDescription,
       author: ogTitle,
     })

@@ -8,8 +8,8 @@
     "type-check": "tsc",
     "export": "next export",
     "clean": "rm -rf .cache .next node_modules && yarn cache clean && yarn install && yarn build && yarn start",
-    "format": "prettier --write **/*.{js,ts,tsx}",
-    "lint": "eslint ./src/pages/* ./src/components/* ./src/ghost/* -c .eslintrc.json --fix . --ext ts,tsx"
+    "format": "prettier --write \"src/**/*.{ts,tsx,js}\"",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\""
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
@@ -17,7 +17,6 @@
     "@next/bundle-analyzer": "^10.0.8",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.5",
-    "date-fns": "^2.19.0",
     "gray-matter": "^4.0.2",
     "hast-util-to-string": "^1.0.4",
     "mdx-prism": "^0.3.3",
@@ -44,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-eslint": "^10.1.0",
+    "dayjs": "^1.10.4",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
