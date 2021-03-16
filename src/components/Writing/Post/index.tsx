@@ -15,15 +15,20 @@ export default function PostContainer({ children, frontMatter }) {
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
         <div className="flex flex-col py-8">
-          <div className="flex flex-col space-y-2 text-center">
-            <h1>{frontMatter.title}</h1>
-            <p className="p-small">
-              {`${dayjs(new Date(frontMatter.publishedAt)).format(
+          <div className="flex flex-col space-y-4 text-start">
+            <h1 className="py-2 sm:text-5xl">{frontMatter.title}</h1>
+            <p className="py-2 font-medium sm:text-2xl">
+              {frontMatter.description}
+            </p>
+
+            <p className="px-2 py-4 text-lg font-medium text-right text-gray-800 dark:text-white">
+              {`Published ${dayjs(new Date(frontMatter.publishedAt)).format(
                 'MMMM DD, YYYY'
               )}`}
             </p>
           </div>
-          <div className="w-full prose dark:prose-dark lg:prose-lg max-w-none">
+          <div className="my-4 hr-stroke" />
+          <div className="w-full my-4 prose dark:prose-dark lg:prose-lg max-w-none">
             {children}
           </div>
         </div>

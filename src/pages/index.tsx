@@ -21,19 +21,20 @@ function Home({ posts }) {
               </p>
               <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
                 <Link href="/about">
-                  <a className="btn btn-primary btn-large">More about me</a>
+                  <a className="btn-primary btn-large">More about me</a>
                 </Link>
                 <a
                   href={Environment.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-large"
+                  className="btn-primary btn-large"
                 >
                   Follow me on Github
                 </a>
               </div>
             </div>
           </div>
+          <div className=" hr-stroke" />
           <PostsList href="writing" name="Recent Posts" posts={posts} />
         </div>
       </CenteredColumn>

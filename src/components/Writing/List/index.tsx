@@ -14,7 +14,7 @@ export default function WritingList({ posts, href }) {
     <div className="flex flex-col space-y-6">
       {posts.map((frontMatter) => (
         <div
-          className="flex flex-col px-4 py-6 space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-900"
+          className="flex flex-col px-4 py-6 space-y-4 bg-white rounded-md shadow-cardHover dark:bg-gray-950"
           key={frontMatter.slug}
         >
           <p className="p-small">
@@ -24,19 +24,17 @@ export default function WritingList({ posts, href }) {
           </p>
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <p className="text-3xl font-bold text-black dark:text-white hover:underline">
-                {frontMatter.title}
-              </p>
+              <h2 className="hover:underline">{frontMatter.title}</h2>
             </a>
           </Link>
           {frontMatter.description && (
-            <p className="text-base font-medium text-gray-800 dark:text-white clamp-3">
+            <p className="text-base font-medium text-gray-800 dark:text-white">
               {frontMatter.description}
             </p>
           )}
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <p className="text-base text-blue-500 dark:text-blue-400">
+              <p className="text-base text-red-600 dark:text-red-400">
                 Read more &rarr;
               </p>
             </a>

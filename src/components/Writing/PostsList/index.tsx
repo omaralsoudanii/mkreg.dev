@@ -9,7 +9,7 @@ export default function PostsList({ posts, href, name }) {
       <WritingList href={`/${href}`} posts={posts} />
       <Link href={`/${href}`}>
         <a>
-          <p className="py-1 text-lg text-center text-blue-500 dark:text-blue-400">
+          <p className="py-1 text-lg text-center text-red-600 dark:text-red-400">
             See all posts &rarr;
           </p>
         </a>

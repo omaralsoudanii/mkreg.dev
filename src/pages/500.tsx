@@ -27,7 +27,7 @@ export default function NotFound() {
             />
 
             <Link href="/">
-              <a className="w-full text-lg btn btn-primary btn-large">
+              <a className="w-full text-lg btn-primary btn-large">
                 Is this gonna work? 🤔
               </a>
             </Link>

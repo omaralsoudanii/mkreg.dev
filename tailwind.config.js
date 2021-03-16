@@ -1,57 +1,43 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: {
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
-    keyframes: true,
-    colors: true,
-    fontFamily: true,
-  },
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class', // 'media' or 'class'
-  fontFamily: {
-    mono: [...fontFamily.mono],
-    sans: [...fontFamily.sans],
-  },
   theme: {
-    lineClamp: {
-      1: 1,
-      2: 2,
-      3: 3,
-    },
     extend: {
       typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.blue.500'),
+              color: theme('colors.red.600'),
               textDecoration: 'none',
             },
-          },
-        },
-        lg: {
-          fontFamily: {
-            sans: ['"font-inter"'],
           },
         },
         dark: {
           css: {
             a: {
-              color: theme('colors.blue.400'),
+              color: theme('colors.red.400'),
               textDecoration: 'none',
             },
           },
         },
       }),
+      boxShadow: {
+        cardHover:
+          '0 4px 4.1px rgba(0, 0, 0, 0.012),0 4.9px 5.8px rgba(0, 0, 0, 0.018),0 6.3px 8.4px rgba(0, 0, 0, 0.029),0 8.8px 12.9px rgba(0, 0, 0, 0.05),0 15px 23px rgba(0, 0, 0, 0.11)',
+      },
       colors: {
-        gray: colors.trueGray,
-        'gray-1000': '#050505',
-        'gray-950': '#161b22',
         transparent: 'transparent',
         current: 'currentColor',
         black: '#000000',
         white: '#ffffff',
+        github: '#161b22',
+        gray: colors.trueGray,
+        'gray-1000': '#050505',
+        'gray-950': '#101111',
+        red: colors.red,
       },
     },
   },
@@ -63,7 +49,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('tailwindcss-line-clamp'),
     require('tailwindcss-font-inter')({
       importFontFace: false,
     }),

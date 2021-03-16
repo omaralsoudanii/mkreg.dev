@@ -23,13 +23,14 @@ export default function Writing({ posts }) {
       <CenteredColumn>
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 md:items-justify">
-            <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="flex flex-col items-start space-y-4 text-start">
               <h1>Writing</h1>
               <p className="text-2xl">
                 Writing about programming, software & Vim vs Emacs.
               </p>
             </div>
           </div>
+          <div className=" hr-stroke" />
           <WritingList href="writing" posts={posts} />
         </div>
       </CenteredColumn>

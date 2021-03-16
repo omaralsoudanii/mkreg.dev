@@ -1,0 +1,41 @@
+.prose {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.prose a {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.prose a code {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.prose table {
+  @apply text-gray-1000 dark:text-gray-50;
+}
+
+.prose strong,
+.prose b {
+  @apply font-bold text-gray-1000 dark:text-gray-50;
+}
+
+.prose p {
+  @apply break-words;
+  word-break: break-word;
+}
+
+.prose p + p {
+  margin-top: 0;
+}
+
+.prose pre::-webkit-scrollbar {
+  display: none;
+}
+
+.prose blockquote {
+  @apply text-gray-900 border-l-2 border-gray-200 dark:text-gray-100 dark:border-gray-800;
+}
+
+.prose img {
+  @apply rounded-md;
+}

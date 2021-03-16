@@ -45,7 +45,7 @@ export default function About() {
                 href={Environment.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-large"
+                className="btn-primary btn-large"
               >
                 Follow me on Github
               </a>
@@ -53,7 +53,7 @@ export default function About() {
                 href={Environment.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-large"
+                className="btn-primary btn-large"
               >
                 Reach me via LinkedIn
               </a>

@@ -26,6 +26,7 @@ export default function MK() {
               />
             </div>
           </div>
+          <div className=" hr-stroke" />
           <div className="flex flex-col items-center space-y-4 text-center">
             <p className="text-xl">
               Well, Congrats on finding this page! Let me introduce you to my
@@ -42,7 +43,7 @@ export default function MK() {
                 href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 dark:text-blue-400"
+                className="text-red-500 dark:text-red-400"
               >
                 Mark Knopfler Red Electric Guitar
               </a>
