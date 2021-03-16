@@ -36,4 +36,17 @@ module.exports = withBundleAnalyzer({
       permanent: true,
     },
   ],
+  async headers() {
+    return [
+      {
+        source: '/rss',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/xml',
+          },
+        ],
+      },
+    ]
+  },
 })

@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import RSS from 'rss'
 const { promises: fs } = require('fs')
 const path = require('path')
@@ -9,7 +9,7 @@ import dayjs from 'dayjs'
 
 const RSSFeed = () => null
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const { siteUrl, ogTitle, ogImage, ogDescription, rssTTL } = Environment
 
   const feedOptions = {
@@ -48,29 +48,27 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
               date: frontmatter.data.publishedAt,
               description: frontmatter.data.description ?? ogDescription,
               author: ogTitle,
+              categories: frontmatter.data.tags ?? ['Programming'],
             })
           })
         )
       })
     )
-    res.setHeader('Content-Type', 'text/xml')
-    res.write(feed.xml({ indent: true }))
-    res.end()
+    fs.writeFile('./public/rss.xml', feed.xml({ indent: true }))
   } catch {
     feed.item({
       title: ogTitle,
       url: siteUrl,
-      date: dayjs(new Date(), 'YYYY-MM-DD'),
+      date: dayjs(new Date()).format('YYYY-MM-DD HH:mm'),
       description: ogDescription,
       author: ogTitle,
     })
-    res.setHeader('Content-Type', 'text/xml')
-    res.write(feed.xml({ indent: true }))
-    res.end()
+    fs.writeFile('./public/rss.xml', feed.xml({ indent: true }))
   }
 
   return {
     props: {},
+    revalidate: rssTTL,
   }
 }
 
