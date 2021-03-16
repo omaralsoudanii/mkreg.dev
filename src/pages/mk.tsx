@@ -52,7 +52,7 @@ export default function MK() {
               getting his guitar, gives me some euphoric feeling with a smile on
               my face.
             </p>
-            <p>
+            <p className="text-xl">
               So there you go, now you have the answer to the ultimate question
               of life. You can check my YouTube playlist for some goodies in the
               footer below 👇

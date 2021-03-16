@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
         </Head>
-        <body className="antialiased bg-white font-inter font-feature-normal font-feature-default dark:bg-gray-1000">
+        <body className="font-inter font-feature-default">
           <Main />
           <NextScript />
         </body>

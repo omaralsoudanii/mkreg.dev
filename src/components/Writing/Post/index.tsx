@@ -14,11 +14,11 @@ export default function PostContainer({ children, frontMatter }) {
   return (
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
-        <div className="flex flex-col mb-8 space-y-8">
-          <div className="flex flex-col space-y-4">
+        <div className="flex flex-col py-8">
+          <div className="flex flex-col space-y-2 text-center">
             <h1>{frontMatter.title}</h1>
             <p className="p-small">
-              {`Published at ${dayjs(new Date(frontMatter.publishedAt)).format(
+              {`${dayjs(new Date(frontMatter.publishedAt)).format(
                 'MMMM DD, YYYY'
               )}`}
             </p>

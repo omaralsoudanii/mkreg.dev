@@ -1,5 +1,5 @@
-import '@/styles/base.css'
 import '@/styles/main.css'
+import '@/styles/utilities.css'
 import App from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { MDXProvider } from '@mdx-js/react'
