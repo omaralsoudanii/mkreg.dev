@@ -38,7 +38,7 @@ module.exports = {
         dark: {
           css: {
             a: {
-              color: theme('colors.blue.500'),
+              color: theme('colors.blue.400'),
               textDecoration: 'none',
             },
           },
