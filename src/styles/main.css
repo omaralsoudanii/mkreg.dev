@@ -21,7 +21,7 @@
   html {
     @apply text-base antialiased;
   }
-  
+
   body {
     @apply bg-white dark:bg-gray-1000;
   }
@@ -153,261 +153,257 @@
 /* Write your own custom components styles here */
 @tailwind components;
 
-@layer components {
-  ul,
-  ol,
-  li {
-    @apply text-gray-1000 dark:text-gray-50;
-  }
-
-  p {
-    @apply font-medium text-gray-1000 dark:text-gray-50;
-  }
-
-  a {
-    @apply font-medium;
-  }
-
-  h6 {
-    @apply text-base font-semibold text-gray-1000 dark:text-gray-50;
-  }
-
-  h5 {
-    @apply text-lg font-semibold text-gray-1000 dark:text-gray-50;
-  }
-
-  h4 {
-    @apply text-xl font-semibold text-gray-1000 dark:text-gray-50;
-  }
-
-  h3 {
-    @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
-  }
-
-  h2 {
-    @apply text-3xl font-bold text-gray-1000 dark:text-gray-50;
-  }
-
-  h1 {
-    @apply text-4xl font-bold text-gray-1000 dark:text-gray-50;
-  }
-  .prose blockquote {
-    @apply text-gray-900 border-l-2 border-gray-200 dark:text-gray-100 dark:border-gray-800;
-  }
-
-  .prose figure figcaption {
-    @apply break-words;
-    word-break: break-word;
-    text-align: center;
-  }
-
-  .prose a {
-    @apply text-blue-500 dark:text-blue-400;
-  }
-
-  .prose a code {
-    @apply text-blue-500 dark:text-blue-400;
-  }
-
-  .prose table {
-    @apply text-gray-900 dark:text-gray-100;
-  }
-
-  .prose strong,
-  .prose b {
-    @apply text-gray-1000 dark:text-gray-50;
-  }
-
-  .prose p {
-    @apply text-gray-800 break-words dark:text-gray-50;
-    word-break: break-word;
-  }
-
-  .prose p + p {
-    margin-top: 0;
-  }
-
-  .prose pre::-webkit-scrollbar {
-    display: none;
-  }
-
-  .prose .remark-code-title {
-    @apply px-5 py-3 text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 rounded-t dark:text-gray-200 dark:border-gray-700 dark:bg-gray-800;
-  }
-
-  .rpose .remark-code-title + pre {
-    @apply mt-0 rounded-t-none;
-  }
-
-  .prose .mdx-marker {
-    @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
-  }
-
-  .prose code[class*='language-'],
-  .prose pre[class*='language-'] {
-    @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-100 dark:bg-gray-900;
-    font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New,
-      monospace;
-    font-feature-settings: normal;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-  }
-
-  /* Code blocks */
-  .prose pre[class*='language-'] {
-    @apply m-0 overflow-auto border border-gray-200 dark:border-gray-800;
-  }
-
-  .dark .prose .token.attr-name {
-    color: rgb(173, 219, 103);
-    font-style: italic;
-  }
-
-  .light .prose .token.attr-name {
-    color: rgb(0, 128, 0);
-    font-style: italic;
-  }
-
-  .dark .prose .token.comment {
-    color: rgb(128, 147, 147);
-  }
-
-  .light .prose .token.comment {
-    color: rgb(106, 115, 125);
-  }
-
-  .dark .prose .token.string,
-  .dark .prose .token.url {
-    color: rgb(173, 219, 103);
-  }
-
-  .light .prose .token.string,
-  .light .prose .token.url {
-    color: rgb(0, 128, 0);
-  }
-
-  .prose .token.variable {
-    @apply text-gray-1000 dark:text-white;
-  }
-
-  .dark .prose .token.number {
-    color: rgb(247, 140, 108);
-  }
-
-  .light .prose .token.number {
-    color: rgb(227, 98, 9);
-  }
-
-  .dark .prose .token.builtin,
-  .dark .prose .token.char,
-  .dark .prose .token.constant,
-  .dark .prose .token.function {
-    color: rgb(130, 170, 255);
-  }
-
-  .light .prose .token.builtin,
-  .light .prose .token.char,
-  .light .prose .token.constant,
-  .light .prose .token.function {
-    color: rgb(0, 92, 197);
-  }
-
-  .dark .prose .token.punctuation {
-    color: rgb(199, 146, 234);
-  }
-
-  .light .prose .token.punctuation {
-    color: rgb(133, 89, 162);
-  }
-
-  .dark .prose .token.selector,
-  .dark .prose .token.doctype {
-    color: rgb(199, 146, 234);
-    font-style: 'italic';
-  }
-
-  .light .token.selector,
-  .light .token.doctype {
-    color: rgb(133, 89, 162);
-    font-style: 'italic';
-  }
-
-  .dark .token.class-name {
-    color: rgb(255, 203, 139);
-  }
-
-  .light .prose .token.class-name {
-    color: rgb(166, 108, 38);
-  }
-
-  .dark .prose .token.tag,
-  .dark .prose .token.operator,
-  .dark .prose .token.keyword {
-    color: #ffa7c4;
-  }
-
-  .light .prose .token.tag,
-  .light .prose .token.operator,
-  .light .prose .token.keyword {
-    color: #ff4884;
-  }
-
-  .dark .prose .token.boolean {
-    color: rgb(255, 88, 116);
-  }
-
-  .light .prose .token.boolean {
-    color: rgb(215, 58, 73);
-  }
-
-  .dark .prose .token.property {
-    color: rgb(128, 203, 196);
-  }
-
-  .light .prose .token.property {
-    color: rgb(99, 205, 195);
-  }
-
-  .dark .prose .token.namespace {
-    color: rgb(178, 204, 214);
-  }
-
-  .light .prose .token.namespace {
-    color: rgb(113, 178, 205);
-  }
-
-  .prose pre:not([class*='language-']),
-  .prose code:not([class*='language-']) {
-    @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-50 dark:bg-gray-900;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    -webkit-overflow-scrolling: touch;
-    overflow: auto;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    margin-bottom: 1.75rem;
-  }
-
-  @media (max-width: 672px) {
-    .prose pre[class*='language-'] {
-      border-radius: 0.5rem;
-    }
-  }
+ul,
+ol,
+li {
+  @apply text-gray-1000 dark:text-gray-50;
 }
 
+p {
+  @apply font-medium text-gray-1000 dark:text-gray-50;
+}
+
+a {
+  @apply font-medium;
+}
+
+h6 {
+  @apply text-base font-semibold text-gray-1000 dark:text-gray-50;
+}
+
+h5 {
+  @apply text-lg font-semibold text-gray-1000 dark:text-gray-50;
+}
+
+h4 {
+  @apply text-xl font-semibold text-gray-1000 dark:text-gray-50;
+}
+
+h3 {
+  @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
+}
+
+h2 {
+  @apply text-3xl font-bold text-gray-1000 dark:text-gray-50;
+}
+
+h1 {
+  @apply text-4xl font-bold text-gray-1000 dark:text-gray-50;
+}
+.prose blockquote {
+  @apply text-gray-900 border-l-2 border-gray-200 dark:text-gray-100 dark:border-gray-800;
+}
+
+.prose figure figcaption {
+  @apply break-words;
+  word-break: break-word;
+  text-align: center;
+}
+
+.prose a {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+.prose a code {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+.prose table {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.prose strong,
+.prose b {
+  @apply text-gray-1000 dark:text-gray-50;
+}
+
+.prose p {
+  @apply text-gray-800 break-words dark:text-gray-50;
+  word-break: break-word;
+}
+
+.prose p + p {
+  margin-top: 0;
+}
+
+.prose pre::-webkit-scrollbar {
+  display: none;
+}
+
+.prose .remark-code-title {
+  @apply px-5 py-3 text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 rounded-t dark:text-gray-200 dark:border-gray-700 dark:bg-gray-800;
+}
+
+.rpose .remark-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}
+
+.prose .mdx-marker {
+  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
+}
+
+.prose code[class*='language-'],
+.prose pre[class*='language-'] {
+  @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-100 dark:bg-gray-900;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+.prose pre[class*='language-'] {
+  @apply m-0 overflow-auto border border-gray-200 dark:border-gray-800;
+}
+
+.dark .prose .token.attr-name {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.light .prose .token.attr-name {
+  color: rgb(0, 128, 0);
+  font-style: italic;
+}
+
+.dark .prose .token.comment {
+  color: rgb(128, 147, 147);
+}
+
+.light .prose .token.comment {
+  color: rgb(106, 115, 125);
+}
+
+.dark .prose .token.string,
+.dark .prose .token.url {
+  color: rgb(173, 219, 103);
+}
+
+.light .prose .token.string,
+.light .prose .token.url {
+  color: rgb(0, 128, 0);
+}
+
+.prose .token.variable {
+  @apply text-gray-1000 dark:text-white;
+}
+
+.dark .prose .token.number {
+  color: rgb(247, 140, 108);
+}
+
+.light .prose .token.number {
+  color: rgb(227, 98, 9);
+}
+
+.dark .prose .token.builtin,
+.dark .prose .token.char,
+.dark .prose .token.constant,
+.dark .prose .token.function {
+  color: rgb(130, 170, 255);
+}
+
+.light .prose .token.builtin,
+.light .prose .token.char,
+.light .prose .token.constant,
+.light .prose .token.function {
+  color: rgb(0, 92, 197);
+}
+
+.dark .prose .token.punctuation {
+  color: rgb(199, 146, 234);
+}
+
+.light .prose .token.punctuation {
+  color: rgb(133, 89, 162);
+}
+
+.dark .prose .token.selector,
+.dark .prose .token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: 'italic';
+}
+
+.light .token.selector,
+.light .token.doctype {
+  color: rgb(133, 89, 162);
+  font-style: 'italic';
+}
+
+.dark .token.class-name {
+  color: rgb(255, 203, 139);
+}
+
+.light .prose .token.class-name {
+  color: rgb(166, 108, 38);
+}
+
+.dark .prose .token.tag,
+.dark .prose .token.operator,
+.dark .prose .token.keyword {
+  color: #ffa7c4;
+}
+
+.light .prose .token.tag,
+.light .prose .token.operator,
+.light .prose .token.keyword {
+  color: #ff4884;
+}
+
+.dark .prose .token.boolean {
+  color: rgb(255, 88, 116);
+}
+
+.light .prose .token.boolean {
+  color: rgb(215, 58, 73);
+}
+
+.dark .prose .token.property {
+  color: rgb(128, 203, 196);
+}
+
+.light .prose .token.property {
+  color: rgb(99, 205, 195);
+}
+
+.dark .prose .token.namespace {
+  color: rgb(178, 204, 214);
+}
+
+.light .prose .token.namespace {
+  color: rgb(113, 178, 205);
+}
+
+.prose pre:not([class*='language-']),
+.prose code:not([class*='language-']) {
+  @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-50 dark:bg-gray-900;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 672px) {
+  .prose pre[class*='language-'] {
+    border-radius: 0.5rem;
+  }
+}
 
 .blob {
   @apply text-gray-700 dark:text-gray-300;
