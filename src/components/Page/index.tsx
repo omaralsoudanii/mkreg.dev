@@ -33,7 +33,7 @@ export default function Page(props) {
           content={`${Environment.siteUrl}${router.asPath}`}
         />
         <link rel="canonical" href={`${Environment.siteUrl}${router.asPath}`} />
-        <meta property="description" content={meta.description} />
+        <meta name="description" content={meta.description} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:image" content={meta.image.url} />
         <meta property="og:image:alt" content={meta.image.alt} />
