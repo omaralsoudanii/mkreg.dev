@@ -3,7 +3,7 @@ import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
-import { getAllFilesFrontMatter } from '@/lib/mdx/api'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 /**
  * Main writing page

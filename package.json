@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "build-check": "next build && next start",
     "type-check": "tsc",
     "export": "next export",
     "clean": "rm -rf .cache .next node_modules && yarn cache clean && yarn install && yarn build && yarn start",

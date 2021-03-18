@@ -6,14 +6,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   compress: process.env.NODE_ENV === 'development',
-  images: {
-    domains: [
-      'images.unsplash.com',
-      'content.mkreg.dev',
-      'mkreg.dev',
-      'github.githubassets.com',
-    ],
-  },
   webpack: (config, { dev, isServer }) => {
     if (isServer && !dev) {
       require('./scripts/generate-sitemap')

@@ -1,7 +1,7 @@
 import MDXComponents from '@/components/MDXComponents'
 import PostContainer from '@/components/Writing/Post'
 import { Environment } from '@/lib/environment'
-import { formatSlug, getFileBySlug, getFiles } from '@/lib/mdx/api'
+import { formatSlug, getFileBySlug, getFiles } from '@/lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
 
 /**

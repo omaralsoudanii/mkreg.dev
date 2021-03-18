@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-gray-1000;
+    @apply bg-white dark:bg-black;
   }
 }
 
@@ -36,7 +36,7 @@
   p {
     @apply font-medium text-gray-900 dark:text-gray-100;
   }
-  
+
   a {
     @apply font-medium;
   }
@@ -54,15 +54,15 @@
   }
 
   h3 {
-    @apply text-2xl font-extrabold text-gray-1000 dark:text-gray-50;
+    @apply text-2xl font-extrabold text-black dark:text-white;
   }
 
   h2 {
-    @apply text-3xl font-extrabold text-gray-1000 dark:text-gray-50;
+    @apply text-3xl font-extrabold text-black dark:text-white;
   }
 
   h1 {
-    @apply text-4xl font-extrabold text-gray-1000 dark:text-gray-50;
+    @apply text-4xl font-extrabold text-black dark:text-white;
   }
 }
 
@@ -79,14 +79,6 @@
       backdrop-filter: none;
       @apply bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
     }
-  }
-
-  .dark .hdr-backdrop {
-    box-shadow: inset 0 -1px 0 0 rgb(255 255 255 / 10%);
-  }
-
-  .light .hdr-backdrop {
-    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   }
 
   .hdr-base {
@@ -134,17 +126,13 @@
   }
 
   .btn-primary {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium text-gray-100 transition-shadow border rounded shadow-sm bg-github border-github hover:bg-github hover:border-gray-800 focus:outline-none;
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm rounded shadow-sm text-gray-50 bg-github focus:outline-none;
   }
-  
-  .btn-outline {
-    @apply bg-white bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
-  }
-  
+
   .btn-large {
-    @apply px-6 py-3 font-semibold rounded-md;
+    @apply px-6 py-3 font-semibold;
   }
-  
+
   .text-primary {
     @apply text-gray-900 dark:text-gray-100;
   }
@@ -173,7 +161,7 @@
   }
 
   .hr-stroke {
-    @apply w-full h-px max-w-4xl mx-auto bg-gray-300 dark:bg-gray-700;
+    @apply w-full h-px mx-auto bg-gray-300 dark:bg-gray-700;
   }
 
   .divider-gray {

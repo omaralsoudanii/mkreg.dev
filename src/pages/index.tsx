@@ -4,7 +4,7 @@ import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import PostsList from '@/components/Writing/PostsList'
-import { getAllFilesFrontMatter } from '@/lib/mdx/api'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 function Home({ posts }) {
   return (

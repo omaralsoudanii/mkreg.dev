@@ -35,7 +35,3 @@
 .prose blockquote {
   @apply text-gray-900 border-l-2 border-gray-200 dark:text-gray-100 dark:border-gray-800;
 }
-
-.prose img {
-  @apply rounded-md;
-}
