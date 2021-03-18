@@ -71,7 +71,7 @@ export default function About() {
               <p className="text-xl">
                 You can find what I "think" am capable of in the
                 <Link href="/stack">
-                  <a className="text-red-600 dark:text-red-400">
+                  <a className="pl-1 text-red-600 no-underline hover:underline dark:text-red-400">
                     {' '}
                     Stack page &rarr;
                   </a>

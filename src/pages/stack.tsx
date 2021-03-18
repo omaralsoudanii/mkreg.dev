@@ -10,8 +10,8 @@ function Stack() {
             <h1>Tech Stack</h1>
             <p className="text-2xl">A list of what i know about tech.</p>
           </div>
+          <div className=" hr-stroke" />
         </div>
-        <div className=" hr-stroke" />
       </CenteredColumn>
     </Page>
   )
