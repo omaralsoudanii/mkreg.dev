@@ -20,14 +20,7 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/meta/manifest.json" />
           <link
             rel="preload"
-            href="/fonts/Inter-roman.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/Inter-italic.var.woff2"
+            href="/fonts/Inter-roman.latin.var.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
