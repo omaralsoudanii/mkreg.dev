@@ -11,25 +11,25 @@ function Home({ posts }) {
     <Page>
       <CenteredColumn>
         <div className="flex flex-col space-y-12">
-          <div className="flex flex-col space-y-8 md:items-justify">
-            <div className="flex flex-col space-y-4 md:items-center md:text-center">
+          <div className="flex flex-col space-y-8 sm:items-start">
+            <div className="flex flex-col space-y-4 sm:items-center sm:text-center">
               <h1>Hello, I’m Omar</h1>
               <p className="text-2xl">
                 A programmer who made this site out of bordem, I'll be writing
                 about software & development in general, not sure about Frontend
                 though 🤔
               </p>
-              <div className="flex flex-col space-y-4 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:text-center">
+              <div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0 sm:items-center sm:text-center">
                 <Link href="/about">
                   <a className="btn-primary btn-large">More about me</a>
                 </Link>
                 <a
-                  href={Environment.social.github}
+                  href={Environment.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary btn-large"
                 >
-                  Follow me on Github
+                  Reach me via LinkedIn
                 </a>
               </div>
             </div>

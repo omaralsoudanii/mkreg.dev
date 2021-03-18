@@ -12,7 +12,7 @@ export default function MK() {
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
         <div className="flex flex-col space-y-12">
-          <div className="flex flex-col space-y-8 md:items-justify">
+          <div className="flex flex-col space-y-8 sm:items-start">
             <div className="flex flex-col items-center space-y-4 text-center">
               <h1>The Sultan of swing</h1>
               <p className="text-2xl">Mark Knopfler OBE</p>
@@ -25,8 +25,8 @@ export default function MK() {
                 height={2400}
               />
             </div>
+            <div className=" hr-stroke" />
           </div>
-          <div className=" hr-stroke" />
           <div className="flex flex-col items-center space-y-4 text-center">
             <p className="text-xl">
               Well, Congrats on finding this page! Let me introduce you to my
