@@ -1,4 +1,4 @@
-import WritingList from '@/components/Writing/List'
+import PostsList from '@/components/Posts/List'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { Environment } from '@/lib/environment'
@@ -29,7 +29,7 @@ export default function Writing({ posts }) {
             </p>
           </div>
           <div className=" hr-stroke" />
-          <WritingList href="writing" posts={posts} />
+          <PostsList href="writing" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>
@@ -37,8 +37,8 @@ export default function Writing({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featured = await getAllFilesFrontMatter('writing')
-  const posts = featured.sort(
+  const WritingData = await getAllFilesFrontMatter('writing')
+  const posts = WritingData.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )
 

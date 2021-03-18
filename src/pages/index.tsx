@@ -3,8 +3,8 @@ import Page from '@/components/Page'
 import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
-import PostsList from '@/components/Writing/PostsList'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
+import PostsContainer from '@/components/Posts/PostsList'
+import { getAllFilesFrontMatterMeta } from '@/lib/mdx'
 
 function Home({ posts }) {
   return (
@@ -19,7 +19,7 @@ function Home({ posts }) {
                 about software & development in general, not sure about Frontend
                 though 🤔
               </p>
-              <div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0 sm:items-center sm:text-center">
+              <div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0">
                 <Link href="/about">
                   <a className="btn-primary btn-large">More about me</a>
                 </Link>
@@ -35,7 +35,11 @@ function Home({ posts }) {
             </div>
           </div>
           <div className=" hr-stroke" />
-          <PostsList href="writing" name="Recent Posts" posts={posts} />
+          <PostsContainer
+            href="writing"
+            name="Published recently"
+            posts={posts}
+          />
         </div>
       </CenteredColumn>
     </Page>
@@ -43,13 +47,10 @@ function Home({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featured = await getAllFilesFrontMatter('writing')
-  const posts = featured
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    )
-    .slice(0, 5)
+  const WritingMetadata = await getAllFilesFrontMatterMeta('writing')
+  const posts = WritingMetadata.sort(
+    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+  ).slice(0, 5)
 
   const { revalidate } = Environment.isr
   return {

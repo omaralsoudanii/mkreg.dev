@@ -12,21 +12,21 @@ export default function About() {
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
         <div className="flex flex-col py-8 space-y-12 sm:py-16">
-          <div className="flex flex-col space-y-8 sm:items-start">
-            <div className="flex flex-col items-start space-y-4 text-start">
+          <div className="flex flex-col items-start space-y-8 text-left">
+            <div className="flex flex-col space-y-4">
               <h1>Introduction</h1>
               <p className="text-2xl">
                 A brief introduction about me and my work.
               </p>
             </div>
             <div className=" hr-stroke" />
-            <div className="flex flex-col space-y-4 sm:text-start">
+            <div className="flex flex-col space-y-4">
               <p className="text-xl">
                 I’m Omar Alsoudani, a Software developer, based in Amman,
                 Jordan. I've been building stuff on the web for about 7 years or
                 so (I stopped counting after a while). Working with companies
-                across various countries & industries. My focus is on creating
-                correct, scalable & performant applications. Powered by cloud
+                across various countries and industries. My focus is on creating
+                correct, scalable and performant applications. Powered by cloud
                 agnostic infrastructure using the proper tools with DevOps
                 mindset.
               </p>
@@ -34,15 +34,15 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col pt-8 space-y-12 sm:pt-12">
-          <div className="flex flex-col space-y-8 sm:items-start">
-            <div className="flex flex-col items-start space-y-4 text-start">
+          <div className="flex flex-col items-start space-y-8 text-left">
+            <div className="flex flex-col space-y-4">
               <h1>FAQ</h1>
               <p className="text-2xl">
                 Answering the most frequently asked questions.
               </p>
             </div>
             <div className=" hr-stroke" />
-            <div className="flex flex-col space-y-4 sm:text-start">
+            <div className="flex flex-col space-y-4">
               <h2>
                 What is your specialization, and what is your technical skills?
               </h2>
@@ -78,7 +78,7 @@ export default function About() {
                 </Link>
               </p>
             </div>
-            <div className="flex flex-col space-y-4 sm:text-start">
+            <div className="flex flex-col space-y-4">
               <h2> Why you don't wanna write about Frontend topics?</h2>
               <p className="text-xl">
                 Well, let's just accept the fact that my frontend skills is

@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import WritingList from '@/components/Writing/List'
+import PostsList from '@/components/Posts/List'
 
-export default function PostsList({ posts, href, name }) {
+export default function PostsContainer({ posts, href, name }) {
   if (!posts || posts.length === 0) return null
   return (
     <div className="flex flex-col space-y-6">
       <h1 className="px-2 py-2">{name}</h1>
-      <WritingList href={`/${href}`} posts={posts} />
+      <PostsList href={`/${href}`} posts={posts} />
       <Link href={`/${href}`}>
         <a>
           <p className="py-1 text-lg text-center text-red-600 dark:text-red-400">

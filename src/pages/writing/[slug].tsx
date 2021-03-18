@@ -1,7 +1,7 @@
 import MDXComponents from '@/components/MDXComponents'
-import PostContainer from '@/components/Writing/Post'
+import PostContainer from '@/components/Posts/Post'
 import { Environment } from '@/lib/environment'
-import { formatSlug, getFileBySlug, getFiles } from '@/lib/mdx'
+import { formatSlug, getFileBySlug, getAllFilesName } from '@/lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
 
 /**
@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const { enable } = Environment.isr
-  const posts = await getFiles('writing')
+  const posts = await getAllFilesName('writing')
   if (!posts.length) return { paths: [], fallback: enable }
 
   const paths = posts.map((p) => ({
