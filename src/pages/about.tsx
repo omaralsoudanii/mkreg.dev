@@ -1,6 +1,5 @@
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
-import { Environment } from '@/lib/environment'
 import Link from 'next/link'
 
 export default function About() {
