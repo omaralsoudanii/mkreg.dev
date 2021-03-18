@@ -38,7 +38,9 @@ const Image = ({
   return (
     <div
       style={{
-        display: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         contentVisibility: 'auto',
       }}
     >

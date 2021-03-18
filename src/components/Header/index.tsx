@@ -127,7 +127,8 @@ export default function Header() {
           {isExpanded &&
             RoutesMetadata.map((route) => {
               const navClass =
-                route.href === router.pathname
+                route.href === router.pathname ??
+                router.pathname.includes(route.href)
                   ? 'flex items-start py-3 pl-4 text-primary nav-link active'
                   : 'flex items-start py-3 pl-4 text-primary nav-link'
               return (

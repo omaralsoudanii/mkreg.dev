@@ -149,7 +149,7 @@
   }
 
   .black-link {
-    @apply font-semibold text-gray-900 sm:text-lg dark:text-gray-100 hover:underline;
+    @apply inline-block font-semibold text-gray-900 transition-all sm:text-lg dark:text-gray-100 hover:underline;
   }
 
   .nav-link {

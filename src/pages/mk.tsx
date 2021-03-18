@@ -21,8 +21,8 @@ export default function MK() {
               <Image
                 src="/static/images/mk.jpg"
                 alt="Mark Knopfler"
-                width={800}
-                height={534}
+                width={3000}
+                height={2400}
               />
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function MK() {
                 rel="noopener noreferrer"
                 className="text-red-500 dark:text-red-400"
               >
-                Mark Knopfler Red Electric Guitar
+                Mark Knopfler Red Electric Guitar &rarr;
               </a>
             </p>
             <p className="text-xl">
