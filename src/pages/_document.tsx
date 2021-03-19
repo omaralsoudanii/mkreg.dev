@@ -20,6 +20,34 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/meta/manifest.json" />
           <link
             rel="preload"
+            href="/fonts/Inter-roman.extra.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter-roman.alternates.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter-roman.symbols.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter-roman.latin-ext.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
             href="/fonts/Inter-roman.latin.var.woff2"
             as="font"
             type="font/woff2"
