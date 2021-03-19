@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/fonts/Inter-roman.latin-ext.woff2"
+            href="/fonts/Inter-roman.latin-ext.var.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
