@@ -14,7 +14,7 @@ function Home({ posts }) {
           <div className="flex flex-col space-y-8 sm:items-start">
             <div className="flex flex-col space-y-4 sm:items-center sm:text-center">
               <h1>Hello, I’m Omar</h1>
-              <p className="text-2xl">
+              <p className="text-title">
                 A programmer who made this site out of bordem, I'll be writing
                 about software & development in general, not sure about Frontend
                 though 🤔

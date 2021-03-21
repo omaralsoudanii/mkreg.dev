@@ -8,7 +8,7 @@ function Nuggets() {
         <div className="flex flex-col space-y-8 items-start">
           <div className="flex flex-col space-y-4">
             <h1>Nuggets</h1>
-            <p className="text-2xl">Resources I recommend everyone to read</p>
+            <p className="text-title">Resources I recommend everyone to read</p>
           </div>
           <div className=" hr-stroke" />
         </div>

@@ -24,7 +24,7 @@ export default function Writing({ posts }) {
         <div className="flex flex-col items-start space-y-8">
           <div className="flex flex-col space-y-4">
             <h1>Writing</h1>
-            <p className="text-2xl">
+            <p className="text-title">
               Writing about programming, software & Vim vs Emacs.
             </p>
           </div>

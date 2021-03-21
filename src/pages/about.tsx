@@ -15,7 +15,7 @@ export default function About() {
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
               <h1>Introduction</h1>
-              <p className="text-2xl">
+              <p className="text-title">
                 A brief introduction about me and my work.
               </p>
             </div>
@@ -37,7 +37,7 @@ export default function About() {
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
               <h1>FAQ</h1>
-              <p className="text-2xl">
+              <p className="text-title">
                 Answering the most frequently asked questions.
               </p>
             </div>

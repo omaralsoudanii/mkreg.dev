@@ -15,7 +15,7 @@ export default function MK() {
           <div className="flex flex-col items-center space-y-8">
             <div className="flex flex-col items-center space-y-4 text-center">
               <h1>The Sultan of swing</h1>
-              <p className="text-2xl">Mark Knopfler OBE</p>
+              <p className="text-title">Mark Knopfler OBE</p>
             </div>
             <div>
               <Image

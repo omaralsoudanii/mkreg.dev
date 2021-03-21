@@ -17,9 +17,7 @@ export default function PostContainer({ children, frontMatter }) {
         <div className="flex flex-col py-8">
           <div className="flex flex-col space-y-4">
             <h1 className="py-2">{frontMatter.title}</h1>
-            <p className="py-2 text-2xl font-medium">
-              {frontMatter.description}
-            </p>
+            <p className="py-2 text-title">{frontMatter.description}</p>
 
             <p className="px-2 py-4 text-lg font-medium text-right text-gray-800 dark:text-white">
               {`Published ${dayjs(new Date(frontMatter.publishedAt)).format(
@@ -28,7 +26,7 @@ export default function PostContainer({ children, frontMatter }) {
             </p>
           </div>
           <div className="my-4 hr-stroke" />
-          <div className="w-full my-4 prose dark:prose-dark lg:text-lg lg:prose-lg max-w-none">
+          <div className="w-full my-4 prose text-base dark:prose-dark lg:prose-lg lg:text-lg max-w-none">
             {children}
           </div>
         </div>
