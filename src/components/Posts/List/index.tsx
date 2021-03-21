@@ -28,7 +28,7 @@ export default function PostsList({ posts, href }) {
             </a>
           </Link>
           {frontMatter.description && (
-            <p className="text-base font-medium text-gray-800 dark:text-white">
+            <p className="text-lg font-medium text-gray-800 dark:text-white">
               {frontMatter.description}
             </p>
           )}
