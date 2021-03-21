@@ -27,7 +27,7 @@ export default function MK() {
             </div>
             <div className=" hr-stroke" />
           </div>
-          <div className="flex flex-col space-y-4 text-left text-gray-800 sm:items-start">
+          <div className="flex flex-col space-y-4 text-gray-800 items-start">
             <p className="text-xl">
               Well, Congrats on finding this page! Let me introduce you to my
               favourite human being in the universe. The one and only the

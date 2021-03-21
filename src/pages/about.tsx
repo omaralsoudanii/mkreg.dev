@@ -12,7 +12,7 @@ export default function About() {
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
         <div className="flex flex-col py-8 space-y-12 sm:py-16">
-          <div className="flex flex-col items-start space-y-8 text-left">
+          <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
               <h1>Introduction</h1>
               <p className="text-2xl">
@@ -34,7 +34,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col pt-8 space-y-12 sm:pt-12">
-          <div className="flex flex-col items-start space-y-8 text-left">
+          <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
               <h1>FAQ</h1>
               <p className="text-2xl">

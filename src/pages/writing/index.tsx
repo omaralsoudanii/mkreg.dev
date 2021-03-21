@@ -21,8 +21,8 @@ export default function Writing({ posts }) {
   return (
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
-        <div className="flex flex-col space-y-8 sm:items-start">
-          <div className="flex flex-col items-start space-y-4 text-start">
+        <div className="flex flex-col items-start space-y-8">
+          <div className="flex flex-col space-y-4">
             <h1>Writing</h1>
             <p className="text-2xl">
               Writing about programming, software & Vim vs Emacs.
