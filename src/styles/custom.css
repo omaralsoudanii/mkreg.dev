@@ -335,10 +335,10 @@
 /* Custom tailwind components styles here */
 @layer base {
   html {
-    @apply font-sans antialiased;
+    @apply font-sans;
   }
   body {
-    @apply text-base bg-white dark:bg-black;
+    @apply bg-white dark:bg-black;
   }
 }
 

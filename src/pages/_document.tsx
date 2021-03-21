@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/static/meta/manifest.json" />
         </Head>
-        <body className="font-inter font-feature-default">
+        <body className="text-base antialiased font-inter font-feature-default">
           <Main />
           <NextScript />
         </body>
