@@ -62,7 +62,7 @@ const Image = ({
         loading="lazy"
         decoding="async"
         className={`z-10 transition-opacity ${
-          loaded ? 'opacity-100 z-auto' : 'opacity-0'
+          loaded ? 'opacity-100 z-auto' : 'opacity-0 z-auto'
         }${extraStyles ? ` ${extraStyles}` : ''}`}
         onLoad={() => {
           setLoaded(true)

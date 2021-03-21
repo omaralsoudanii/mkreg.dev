@@ -343,6 +343,12 @@
 }
 
 @layer components {
+  ul,
+  ol,
+  li {
+    @apply text-gray-900 dark:text-gray-50;
+  }
+
   p {
     @apply font-medium text-gray-900 dark:text-gray-100;
   }
@@ -352,15 +358,15 @@
   }
 
   h6 {
-    @apply text-lg font-bold text-gray-900 dark:text-gray-100;
+    @apply text-xl font-medium text-gray-900 dark:text-gray-100;
   }
 
   h5 {
-    @apply text-lg font-bold text-gray-900 dark:text-gray-100;
+    @apply text-xl font-medium text-gray-900 dark:text-gray-100;
   }
 
   h4 {
-    @apply text-xl font-bold text-gray-900 dark:text-gray-100;
+    @apply text-xl font-bold text-gray-1000 dark:text-gray-50;
   }
 
   h3 {
@@ -387,7 +393,7 @@
   @supports not (backdrop-filter: none) {
     .hdr-backdrop {
       backdrop-filter: none;
-      @apply z-20 bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
+      @apply bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
     }
   }
 
