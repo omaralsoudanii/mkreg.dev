@@ -6,6 +6,16 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        InterVariant: [
+          '"Inter var"',
+          'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+        ],
+        Inter: [
+          '"Inter"',
+          'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+        ],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -36,7 +46,7 @@ module.exports = {
         github: '#161b22',
         gray: colors.trueGray,
         'gray-1000': '#050505',
-        'gray-950': '#101111',
+        'gray-950': '#111111',
         red: colors.red,
       },
     },
@@ -47,10 +57,5 @@ module.exports = {
       typography: ['dark'],
     },
   },
-  plugins: [
-    require('tailwindcss-font-inter')({
-      importFontFace: false,
-    }),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 }

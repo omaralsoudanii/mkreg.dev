@@ -24,13 +24,13 @@ export default function PostsList({ posts, href }) {
           </p>
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <h2 className="hover:underline">{frontMatter.title}</h2>
+              <h2 className="hover:underline text-heading-2">
+                {frontMatter.title}
+              </h2>
             </a>
           </Link>
           {frontMatter.description && (
-            <p className="text-lg font-medium text-gray-800 dark:text-white">
-              {frontMatter.description}
-            </p>
+            <p className="text-p-3">{frontMatter.description}</p>
           )}
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>

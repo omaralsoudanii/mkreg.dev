@@ -5,6 +5,7 @@ import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import PostsContainer from '@/components/Posts/PostsList'
 import { getAllFilesFrontMatterMeta } from '@/lib/mdx'
+import Heading from '@/components/Heading'
 
 function Home({ posts }) {
   return (
@@ -13,12 +14,12 @@ function Home({ posts }) {
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col space-y-8 sm:items-start">
             <div className="flex flex-col space-y-4 sm:items-center sm:text-center">
-              <h1>Hello, I’m Omar</h1>
-              <p className="text-title">
-                A programmer who made this site out of bordem, I'll be writing
+              <Heading
+                title="Hello, I’m Omar"
+                subTitle="A programmer who made this site out of bordem, I'll be writing
                 about software & development in general, not sure about Frontend
-                though 🤔
-              </p>
+                though 🤔"
+              />
               <div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0">
                 <Link href="/about">
                   <a className="btn-primary btn-large">More about me</a>

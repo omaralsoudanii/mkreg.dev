@@ -16,17 +16,17 @@ export default function PostContainer({ children, frontMatter }) {
       <CenteredColumn>
         <div className="flex flex-col py-8">
           <div className="flex flex-col space-y-4">
-            <h1 className="py-2">{frontMatter.title}</h1>
-            <p className="py-2 text-title">{frontMatter.description}</p>
+            <h1 className="py-2 text-heading-1">{frontMatter.title}</h1>
+            <p className="py-2 text-p-1">{frontMatter.description}</p>
 
-            <p className="px-2 py-4 text-lg font-medium text-right text-gray-800 dark:text-white">
+            <p className="px-2 py-4 text-right text-p-3">
               {`Published ${dayjs(new Date(frontMatter.publishedAt)).format(
                 'MMMM DD, YYYY'
               )}`}
             </p>
           </div>
           <div className="my-4 hr-stroke" />
-          <div className="w-full my-4 text-lg prose dark:prose-dark xl:prose-lg xl:text-xl max-w-none">
+          <div className="w-full my-4 prose dark:prose-dark lg:prose-lg max-w-none">
             {children}
           </div>
         </div>

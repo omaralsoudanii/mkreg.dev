@@ -335,10 +335,33 @@
 /* Custom tailwind components styles here */
 @layer base {
   html {
-    @apply font-sans;
+    @apply font-Inter;
   }
+  @supports (font-variation-settings: normal) {
+    html {
+      @apply font-InterVariant;
+    }
+  }
+
   body {
-    @apply bg-white dark:bg-black;
+    @apply text-base antialiased bg-white dark:bg-black;
+    letter-spacing: -0.004em;
+    font-weight: 400;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    font-kerning: normal;
+    -webkit-font-kerning: normal;
+    -ms-font-kerning: normal;
+    -moz-font-kerning: normal;
+    -o-font-kerning: normal;
+    font-variant-ligatures: contextual common-ligatures;
+    -webkit-font-variant-ligatures: contextual common-ligatures;
+    -ms-font-variant-ligatures: contextual common-ligatures;
+    -moz-font-variant-ligatures: contextual common-ligatures;
+    -o-font-variant-ligatures: contextual common-ligatures;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   }
 }
 
@@ -350,35 +373,37 @@
   }
 
   p {
-    @apply font-medium text-gray-900 dark:text-gray-100;
-  }
-
-  a {
-    @apply font-medium;
+    @apply font-medium text-gray-950 dark:text-white;
   }
 
   h6 {
-    @apply text-xl font-medium text-gray-900 dark:text-gray-100;
+    @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
+    letter-spacing: -0.014em;
   }
 
   h5 {
-    @apply text-xl font-medium text-gray-900 dark:text-gray-100;
+    @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
+    letter-spacing: -0.017em;
   }
 
   h4 {
-    @apply text-xl font-bold text-gray-1000 dark:text-gray-50;
+    @apply text-xl font-medium tracking-tight lg:text-2xl text-gray-950 dark:text-gray-50;
+    letter-spacing: -0.019em;
   }
 
   h3 {
-    @apply text-2xl font-extrabold text-black dark:text-white;
+    @apply text-2xl font-semibold tracking-tight lg:text-3xl text-gray-1000 dark:text-white;
+    letter-spacing: -0.021em;
   }
 
   h2 {
-    @apply text-3xl font-extrabold text-black dark:text-white;
+    @apply text-3xl font-bold text-gray-1000 lg:text-4xl dark:text-white;
+    letter-spacing: -0.022em;
   }
 
   h1 {
-    @apply text-4xl font-extrabold text-black dark:text-white;
+    @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
+    letter-spacing: -0.022em;
   }
 }
 
@@ -460,20 +485,41 @@
   .text-tertiary {
     @apply text-gray-600 dark:text-gray-400;
   }
+  
   .p-small {
-    @apply text-base font-medium text-gray-800 dark:text-white;
+    @apply text-base font-medium text-gray-800 dark:text-gray-50;
   }
 
-  .text-title {
-    @apply text-2xl font-medium text-black dark:text-white;
+  .text-p-1 {
+    @apply text-2xl font-medium text-gray-950 dark:text-white;
+  }
+
+  .text-p-2 {
+    @apply text-xl font-normal text-gray-950 dark:text-gray-100;
+  }
+
+  .text-p-3 {
+    @apply text-lg font-medium text-gray-950 dark:text-gray-100;
+  }
+
+  .text-heading-1 {
+    @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
+  }
+
+  .text-heading-2 {
+    @apply text-3xl font-bold text-gray-1000 lg:text-4xl dark:text-white;
+  }
+
+  .text-heading-3 {
+    @apply text-2xl font-semibold lg:text-3xl text-gray-1000 dark:text-white;
   }
 
   .black-link {
-    @apply inline-block font-semibold text-gray-900 transition-all sm:text-lg dark:text-gray-100 hover:underline;
+    @apply inline-block font-medium transition-all text-gray-950 sm:text-lg dark:text-gray-100 hover:underline;
   }
 
   .nav-link {
-    @apply text-sm font-semibold text-gray-900 sm:text-base dark:text-gray-100 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
+    @apply text-sm font-medium text-gray-950 sm:text-base dark:text-gray-100 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
   }
 
   .nav-link.active {
@@ -482,10 +528,6 @@
 
   .hr-stroke {
     @apply w-full h-px mx-auto bg-gray-400 dark:bg-gray-700;
-  }
-
-  .divider-gray {
-    @apply text-gray-400 dark:text-gray-700;
   }
 
   .blob {

@@ -4,6 +4,7 @@ import Page from '@/components/Page'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+import Heading from '@/components/Heading'
 
 /**
  * Main writing page
@@ -23,10 +24,10 @@ export default function Writing({ posts }) {
       <CenteredColumn>
         <div className="flex flex-col items-start space-y-8">
           <div className="flex flex-col space-y-4">
-            <h1>Writing</h1>
-            <p className="text-title">
-              Writing about programming, software & Vim vs Emacs.
-            </p>
+            <Heading
+              title="Writing"
+              subTitle="Writing about programming, software & Vim vs Emacs."
+            />
           </div>
           <div className=" hr-stroke" />
           <PostsList href="writing" posts={posts} />

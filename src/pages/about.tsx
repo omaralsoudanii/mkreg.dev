@@ -1,3 +1,4 @@
+import Heading from '@/components/Heading'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import Link from 'next/link'
@@ -14,14 +15,14 @@ export default function About() {
         <div className="flex flex-col py-8 space-y-12 sm:py-16">
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
-              <h1>Introduction</h1>
-              <p className="text-title">
-                A brief introduction about me and my work.
-              </p>
+              <Heading
+                title="Introduction"
+                subTitle="A brief introduction about me and my work."
+              />
             </div>
             <div className=" hr-stroke" />
             <div className="flex flex-col space-y-4">
-              <p className="text-xl">
+              <p className="text-p-2">
                 I’m Omar Alsoudani, a Software developer, based in Amman,
                 Jordan. I've been building stuff on the web for about 7 years or
                 so (I stopped counting after a while). Working with companies
@@ -33,42 +34,42 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col pt-8 space-y-12 sm:pt-12">
+        <div className="flex flex-col pt-4 space-y-12 sm:pt-6">
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
-              <h1>FAQ</h1>
-              <p className="text-title">
-                Answering the most frequently asked questions.
-              </p>
+              <Heading
+                title="FAQ"
+                subTitle="Answering the most frequently asked questions."
+              />
             </div>
             <div className=" hr-stroke" />
             <div className="flex flex-col space-y-4">
-              <h2>
-                What is your specialization, and what is your technical skills?
+              <h2 className="text-heading-2">
+                What do you focus on in terms of technical aspects?
               </h2>
-              <p className="text-xl">
+              <p className="text-p-2">
                 To be honest, I have stopped counting what programming languages
                 I know and what frameworks I can work with. I am of the mindset
                 that coding, programming languages won't matter after a certain
                 point.
               </p>
-              <p className="text-xl">
+              <p className="text-p-2">
                 What I try to do best is to recognize the challenges that arise
                 during the life cycle of developing a software, whether it's
-                about business, technical debt and you probably the rest.
+                about business, technical debt and you probably know the rest.
               </p>
-              <p className="text-xl">
+              <p className="text-p-2">
                 Then, based on my knowledge and experience, and other factors
                 unique to the problem in hand. I approach the problem in an
                 abstract way to get a solution.
               </p>
-              <p className="text-xl">
+              <p className="text-p-2">
                 In summary the technology you are gonna use is a tool to solve
                 the problem. Understanding the problem and identifying the core
                 cause is more valuable for me, (Unless you are a PHP developer
                 ofcourse 🤦).
               </p>
-              <p className="text-xl">
+              <p className="text-p-2">
                 You can find what I "think" am capable of in the
                 <Link href="/stack">
                   <a className="pl-1 text-red-600 no-underline hover:underline dark:text-red-400">
@@ -79,9 +80,9 @@ export default function About() {
               </p>
             </div>
             <div className="flex flex-col space-y-4">
-              <h2> Why you don't wanna write about Frontend topics?</h2>
-              <p className="text-xl">
-                Well, let's just accept the fact that my frontend skills is
+              <h2 className="text-heading-2">Do you enjoy working Frontend?</h2>
+              <p className="text-p-2">
+                Well, let's just accept the fact that my Frontend skills is
                 kinda worse than NVIDIA drivers support for linux. On a serious
                 note, I simply don't have the talent for UI/UX, neither the
                 experience on how to create eye pleasing applications. However I
