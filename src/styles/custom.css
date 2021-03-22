@@ -373,7 +373,7 @@
   }
 
   p {
-    @apply font-medium text-gray-950 dark:text-white;
+    @apply text-gray-950 dark:text-white;
   }
 
   h6 {
@@ -453,7 +453,7 @@
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-1 text-base text-center cursor-pointer;
+    @apply inline-block w-full px-3 py-2 text-base font-medium text-left cursor-pointer;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
@@ -492,7 +492,7 @@
   }
 
   .text-p-1 {
-    @apply text-2xl font-medium text-gray-950 dark:text-white;
+    @apply text-2xl font-normal text-gray-950 dark:text-white;
   }
 
   .text-p-2 {
@@ -501,7 +501,6 @@
 
   .text-p-3 {
     @apply text-lg text-gray-950 dark:text-white;
-    font-weight: 450;
   }
 
   .text-heading-1 {

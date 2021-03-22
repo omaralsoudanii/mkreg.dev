@@ -3,7 +3,7 @@ import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { getAllFilesFrontMatterMeta } from '@/lib/mdx'
 import Heading from '@/components/Heading'
 
 /**
@@ -38,7 +38,7 @@ export default function Writing({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const WritingData = await getAllFilesFrontMatter('writing')
+  const WritingData = await getAllFilesFrontMatterMeta('writing')
   const posts = WritingData.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )
