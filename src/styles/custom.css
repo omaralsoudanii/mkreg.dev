@@ -373,7 +373,7 @@
   }
 
   p {
-    @apply text-gray-950 dark:text-white;
+    @apply font-medium text-gray-950 dark:text-white;
   }
 
   h6 {
@@ -488,31 +488,36 @@
   
   .p-small {
     @apply text-base text-gray-950 dark:text-white;
-    font-weight: 450;
   }
 
   .text-p-1 {
     @apply text-2xl font-normal text-gray-950 dark:text-white;
+    letter-spacing: -0.019em;
   }
 
   .text-p-2 {
     @apply text-xl font-normal text-gray-950 dark:text-white;
+    letter-spacing: -0.017em;
   }
 
   .text-p-3 {
-    @apply text-lg text-gray-950 dark:text-white;
+    @apply text-lg font-normal text-gray-950 dark:text-white;
+    letter-spacing: -0.014em;
   }
 
   .text-heading-1 {
     @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
+    letter-spacing: -0.022em;
   }
 
   .text-heading-2 {
     @apply text-3xl font-bold text-gray-1000 lg:text-4xl dark:text-white;
+    letter-spacing: -0.022em;
   }
 
   .text-heading-3 {
     @apply text-2xl font-semibold lg:text-3xl text-gray-1000 dark:text-white;
+    letter-spacing: -0.021em;
   }
 
   .black-link {
