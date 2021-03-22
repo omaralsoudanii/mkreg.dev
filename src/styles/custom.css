@@ -1,141 +1,5 @@
 /* Inter font declerations https://rsms.me/inter/inter.css */
 
-/*------------------------- static ------------------------- */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Thin.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url('/static/fonts/Inter-ThinItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url('/static/fonts/Inter-ExtraLight.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url('/static/fonts/Inter-ExtraLightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Light.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/static/fonts/Inter-LightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Medium.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/static/fonts/Inter-MediumItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/static/fonts/Inter-SemiBold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/static/fonts/Inter-SemiBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Bold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/static/fonts/Inter-BoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/static/fonts/Inter-ExtraBold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/static/fonts/Inter-ExtraBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/static/fonts/Inter-Black.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/static/fonts/Inter-BlackItalic.woff2') format('woff2');
-}
-
 /* ----------------------- variable ----------------------- */
 /* extra */
 @font-face {
@@ -335,18 +199,11 @@
 /* Custom tailwind components styles here */
 @layer base {
   html {
-    @apply font-Inter;
-  }
-  @supports (font-variation-settings: normal) {
-    html {
-      @apply font-InterVariant;
-    }
+    @apply text-base antialiased;
   }
 
   body {
-    @apply text-base antialiased bg-white dark:bg-black;
-    letter-spacing: -0.004em;
-    font-weight: 400;
+    @apply font-normal bg-white dark:bg-black;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-overflow-scrolling: touch;
@@ -372,38 +229,36 @@
     @apply text-gray-900 dark:text-gray-50;
   }
 
+  a {
+    @apply font-medium;
+  }
+
   p {
-    @apply font-medium text-gray-950 dark:text-white;
+    @apply text-gray-950 dark:text-white font-semiNormal;
   }
 
   h6 {
     @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
-    letter-spacing: -0.014em;
   }
 
   h5 {
     @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
-    letter-spacing: -0.017em;
   }
 
   h4 {
     @apply text-xl font-medium tracking-tight lg:text-2xl text-gray-950 dark:text-gray-50;
-    letter-spacing: -0.019em;
   }
 
   h3 {
     @apply text-2xl font-semibold tracking-tight lg:text-3xl text-gray-1000 dark:text-white;
-    letter-spacing: -0.021em;
   }
 
   h2 {
     @apply text-3xl font-bold text-gray-1000 lg:text-4xl dark:text-white;
-    letter-spacing: -0.022em;
   }
 
   h1 {
     @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
-    letter-spacing: -0.022em;
   }
 }
 
@@ -447,13 +302,13 @@
   }
 
   .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1 text-primary;
+    @apply flex items-center justify-center px-4 py-1;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 text-base font-medium text-left cursor-pointer;
+    @apply inline-block w-full px-3 py-2 text-base text-left cursor-pointer font-semiNormal;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
@@ -473,51 +328,33 @@
   .btn-large {
     @apply px-6 py-3 font-semibold;
   }
-
-  .text-primary {
-    @apply text-gray-900 dark:text-gray-100;
-  }
-
-  .text-secondary {
-    @apply text-gray-800 dark:text-gray-200;
-  }
-
-  .text-tertiary {
-    @apply text-gray-600 dark:text-gray-400;
-  }
   
   .p-small {
     @apply text-base text-gray-950 dark:text-white;
   }
 
   .text-p-1 {
-    @apply text-2xl font-normal text-gray-950 dark:text-white;
-    letter-spacing: -0.019em;
+    @apply text-2xl font-semiNormal text-gray-950 dark:text-white;
   }
 
   .text-p-2 {
-    @apply text-xl font-normal text-gray-950 dark:text-white;
-    letter-spacing: -0.017em;
+    @apply text-xl font-semiNormal text-gray-950 dark:text-white;
   }
 
   .text-p-3 {
-    @apply text-lg font-normal text-gray-950 dark:text-white;
-    letter-spacing: -0.014em;
+    @apply text-lg font-semiNormal text-gray-950 dark:text-white;
   }
 
   .text-heading-1 {
-    @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
-    letter-spacing: -0.022em;
+    @apply text-4xl font-extrabold text-black lg:text-5xl dark:text-white;
   }
 
   .text-heading-2 {
-    @apply text-3xl font-bold text-gray-1000 lg:text-4xl dark:text-white;
-    letter-spacing: -0.022em;
+    @apply text-3xl font-bold text-black lg:text-4xl dark:text-white;
   }
 
   .text-heading-3 {
-    @apply text-2xl font-semibold lg:text-3xl text-gray-1000 dark:text-white;
-    letter-spacing: -0.021em;
+    @apply text-2xl font-semibold text-black lg:text-3xl dark:text-white;
   }
 
   .black-link {

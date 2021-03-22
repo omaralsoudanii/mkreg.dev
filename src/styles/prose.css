@@ -33,5 +33,5 @@
 }
 
 .prose pre {
-  @apply text-base lg:text-lg;
+  @apply text-base;
 }

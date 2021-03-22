@@ -15,10 +15,7 @@ export default function About() {
         <div className="flex flex-col py-8 space-y-12 sm:py-16">
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
-              <Heading
-                title="Introduction"
-                subTitle="A brief introduction about me and my work."
-              />
+              <Heading title="Introduction" subTitle="What am usually doing" />
             </div>
             <div className=" hr-stroke" />
             <div className="flex flex-col space-y-4">
@@ -26,10 +23,10 @@ export default function About() {
                 I’m Omar Alsoudani, a Software developer, based in Amman,
                 Jordan. I've been building stuff on the web for about 7 years or
                 so (I stopped counting after a while). Working with companies
-                across various countries and industries. My focus is on creating
-                correct, scalable and performant applications. Powered by cloud
-                agnostic infrastructure using the proper tools with DevOps
-                mindset.
+                across various countries and industries. Following the DevOps
+                methodology, my focus would be on building correct, scalable and
+                performant applications, Powered by cloud agnostic
+                infrastructure.
               </p>
             </div>
           </div>
@@ -38,14 +35,15 @@ export default function About() {
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
               <Heading
-                title="FAQ"
-                subTitle="Answering the most frequently asked questions."
+                title="Discussion"
+                subTitle="This is me, pretending to be on a talk show."
               />
             </div>
             <div className=" hr-stroke" />
             <div className="flex flex-col space-y-4">
               <h2 className="text-heading-2">
-                What do you focus on in terms of technical aspects?
+                What tehcnologies and programming languages you consider your
+                self good at?
               </h2>
               <p className="text-p-2">
                 To be honest, I have stopped counting what programming languages
@@ -66,8 +64,8 @@ export default function About() {
               <p className="text-p-2">
                 In summary the technology you are gonna use is a tool to solve
                 the problem. Understanding the problem and identifying the core
-                cause is more valuable for me, (Unless you are a PHP developer
-                ofcourse 🤦).
+                cause is more valuable for me. Unless you are a PHP developer 🤦
+                (nah, just kidding).
               </p>
               <p className="text-p-2">
                 You can find what I "think" am capable of in the
@@ -87,6 +85,25 @@ export default function About() {
                 note, I simply don't have the talent for UI/UX, neither the
                 experience on how to create eye pleasing applications. However I
                 have a lot of knowledge in the Frontend engineering parts.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4">
+              <h2 className="text-heading-2">Do you enjoy Frontend work?</h2>
+              <p className="text-p-2">
+                Well, let's just accept the fact that my Frontend skills is
+                kinda worse than NVIDIA drivers support for linux. On a serious
+                note, I simply don't have the talent for UI/UX, neither the
+                experience on how to create eye pleasing applications. However I
+                have a lot of knowledge in the Frontend engineering parts.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4">
+              <h2 className="text-heading-2">
+                Then how the hell you created this site?
+              </h2>
+              <p className="text-p-2">
+                It is inspired *cough*Stole*cough* by other open source
+                projects. I will list them below.
               </p>
             </div>
           </div>

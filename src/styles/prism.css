@@ -12,7 +12,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply font-medium bg-gray-100 rounded text-gray-950 dark:text-gray-100 dark:bg-gray-950;
+  @apply font-mono bg-gray-100 text-gray-950 dark:text-gray-100 dark:bg-gray-900;
   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   font-feature-settings: normal;
   text-align: left;
@@ -34,7 +34,7 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  @apply m-0 overflow-auto border border-gray-200 dark:border-gray-800;
+  @apply m-0 overflow-auto border-gray-200 rounded-sm sm:border sm:rounded dark:border-gray-800;
 }
 
 .dark .token.attr-name {
@@ -157,18 +157,11 @@ pre[class*='language-'] {
 
 pre:not([class*='language-']),
 code:not([class*='language-']) {
-  @apply font-medium text-gray-900 bg-gray-100 rounded dark:text-gray-50 dark:bg-gray-950;
+  @apply font-mono rounded text-gray-950 bg-gray-50 dark:text-gray-50 dark:bg-gray-900 mb-7;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   -webkit-overflow-scrolling: touch;
   overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  margin-bottom: 1.75rem;
-}
-
-@media (max-width: 672px) {
-  pre[class*='language-'] {
-    border-radius: 0.5rem;
-  }
 }
