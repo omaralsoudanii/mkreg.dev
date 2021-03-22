@@ -88,16 +88,6 @@ export default function About() {
               </p>
             </div>
             <div className="flex flex-col space-y-4">
-              <h2 className="text-heading-2">Do you enjoy Frontend work?</h2>
-              <p className="text-p-2">
-                Well, let's just accept the fact that my Frontend skills is
-                kinda worse than NVIDIA drivers support for linux. On a serious
-                note, I simply don't have the talent for UI/UX, neither the
-                experience on how to create eye pleasing applications. However I
-                have a lot of knowledge in the Frontend engineering parts.
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4">
               <h2 className="text-heading-2">
                 Then how the hell you created this site?
               </h2>
