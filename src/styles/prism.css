@@ -13,7 +13,6 @@
 code[class*='language-'],
 pre[class*='language-'] {
   @apply font-mono bg-gray-100 text-gray-950 dark:text-gray-100 dark:bg-gray-900;
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   font-feature-settings: normal;
   text-align: left;
   white-space: pre;
@@ -34,7 +33,7 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  @apply m-0 overflow-auto border-gray-200 rounded-sm sm:border sm:rounded dark:border-gray-800;
+  @apply overflow-auto border-gray-200 rounded-sm sm:border sm:rounded dark:border-gray-800;
 }
 
 .dark .token.attr-name {
