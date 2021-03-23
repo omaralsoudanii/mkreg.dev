@@ -36,11 +36,7 @@ function Home({ posts }) {
             </div>
           </div>
           <div className=" hr-stroke" />
-          <PostsContainer
-            href="writing"
-            name="Published recently"
-            posts={posts}
-          />
+          <PostsContainer href="writing" name="Recent" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>

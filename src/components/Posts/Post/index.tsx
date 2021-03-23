@@ -20,7 +20,7 @@ export default function PostContainer({ children, frontMatter }) {
             <p className="py-2 text-p-1">{frontMatter.description}</p>
 
             <p className="px-2 py-4 text-right text-p-3">
-              {`Published ${dayjs(new Date(frontMatter.publishedAt)).format(
+              {`${dayjs(new Date(frontMatter.publishedAt)).format(
                 'MMMM DD, YYYY'
               )}`}
             </p>
