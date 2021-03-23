@@ -302,13 +302,13 @@
   }
 
   .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1;
+    @apply flex items-center justify-center px-4 py-1 text-gray-950 font-semiNormal dark:text-gray-50;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 text-base text-left cursor-pointer font-semiNormal;
+    @apply inline-block w-full px-3 py-2 text-base text-left cursor-pointer font-semiNormal text-gray-950 dark:text-gray-50;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
