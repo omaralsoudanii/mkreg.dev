@@ -197,285 +197,279 @@
 }
 
 /* Custom tailwind components styles here */
-@layer base {
-  html {
-    @apply text-base antialiased;
-  }
-
-  body {
-    @apply font-normal bg-white dark:bg-black;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    font-kerning: normal;
-    -webkit-font-kerning: normal;
-    -ms-font-kerning: normal;
-    -moz-font-kerning: normal;
-    -o-font-kerning: normal;
-    font-variant-ligatures: contextual common-ligatures;
-    -webkit-font-variant-ligatures: contextual common-ligatures;
-    -ms-font-variant-ligatures: contextual common-ligatures;
-    -moz-font-variant-ligatures: contextual common-ligatures;
-    -o-font-variant-ligatures: contextual common-ligatures;
-    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
-  }
+html {
+  @apply text-base antialiased;
 }
 
-@layer components {
-  ul,
-  ol,
-  li {
-    @apply text-gray-900 dark:text-gray-50;
-  }
-
-  a {
-    @apply font-medium;
-  }
-
-  p {
-    @apply text-gray-950 dark:text-white font-semiNormal;
-  }
-
-  h6 {
-    @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
-  }
-
-  h5 {
-    @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
-  }
-
-  h4 {
-    @apply text-xl font-medium tracking-tight lg:text-2xl text-gray-950 dark:text-gray-50;
-  }
-
-  h3 {
-    @apply text-2xl font-semibold tracking-tight lg:text-3xl text-gray-1000 dark:text-white;
-  }
-
-  h2 {
-    @apply text-3xl font-bold text-gray-1000 lg:text-4xl dark:text-white;
-  }
-
-  h1 {
-    @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
-  }
+body {
+  @apply font-normal bg-white dark:bg-black;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  font-kerning: normal;
+  -webkit-font-kerning: normal;
+  -ms-font-kerning: normal;
+  -moz-font-kerning: normal;
+  -o-font-kerning: normal;
+  font-variant-ligatures: contextual common-ligatures;
+  -webkit-font-variant-ligatures: contextual common-ligatures;
+  -ms-font-variant-ligatures: contextual common-ligatures;
+  -moz-font-variant-ligatures: contextual common-ligatures;
+  -o-font-variant-ligatures: contextual common-ligatures;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
-@layer utilities {
+ul,
+ol,
+li {
+  @apply text-gray-900 dark:text-gray-50;
+}
+
+a {
+  @apply font-medium;
+}
+
+p {
+  @apply text-gray-950 dark:text-white font-semiNormal;
+}
+
+h6 {
+  @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
+}
+
+h5 {
+  @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
+}
+
+h4 {
+  @apply text-xl font-medium lg:text-2xl text-gray-950 dark:text-gray-50;
+}
+
+h3 {
+  @apply text-2xl font-extrabold lg:text-3xl text-gray-1000 dark:text-white;
+}
+
+h2 {
+  @apply text-3xl font-extrabold text-gray-1000 lg:text-4xl dark:text-white;
+}
+
+h1 {
+  @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
+}
+
+.hdr-backdrop {
+  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-950;
+  z-index: -1;
+  transition: box-shadow 0.1s ease 0s, background-color 0.1s ease 0s;
+  backdrop-filter: saturate(180%) blur(5px);
+}
+
+@supports not (backdrop-filter: none) {
   .hdr-backdrop {
-    @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-950;
-    z-index: -1;
-    transition: box-shadow 0.1s ease 0s, background-color 0.1s ease 0s;
-    backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: none;
+    @apply bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
   }
+}
 
-  @supports not (backdrop-filter: none) {
-    .hdr-backdrop {
-      backdrop-filter: none;
-      @apply bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
-    }
-  }
+.hdr-base {
+  @apply fixed left-0 right-0 px-2 py-1 m-0 -mt-px text-sm font-bold;
+}
 
-  .hdr-base {
-    @apply fixed left-0 right-0 px-2 py-1 m-0 -mt-px text-sm font-bold;
-  }
+.hdr-base a {
+  @apply w-full px-8 py-2 mx-px my-0 text-center rounded sm:w-auto sm:p-0;
+}
 
-  .hdr-base a {
-    @apply w-full px-8 py-2 mx-px my-0 text-center rounded sm:w-auto sm:p-0;
-  }
+.hdr-sm-cnt {
+  @apply flex justify-center text-base;
+}
 
-  .hdr-sm-cnt {
-    @apply flex justify-center text-base;
-  }
+.hdr-sm-cnt a {
+  @apply text-center;
+}
 
-  .hdr-sm-cnt a {
-    @apply text-center;
-  }
+.hdr-sm-cnt-expanded {
+  @apply flex-col items-start pb-4;
+}
 
-  .hdr-sm-cnt-expanded {
-    @apply flex-col items-start pb-4;
-  }
+.hdr-sm-cnt-not-expanded {
+  @apply flex-row items-center pb-1;
+}
 
-  .hdr-sm-cnt-not-expanded {
-    @apply flex-row items-center pb-1;
-  }
+.hdr-sm-btn {
+  @apply flex items-center justify-center px-4 py-1 text-gray-950 font-semiNormal dark:text-gray-50;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
 
-  .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1 text-gray-950 font-semiNormal dark:text-gray-50;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-  }
+.hdr-sm-title {
+  @apply inline-block w-full px-3 py-2 text-base text-left cursor-pointer font-semiNormal text-gray-950 dark:text-gray-50;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
 
-  .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 text-base text-left cursor-pointer font-semiNormal text-gray-950 dark:text-gray-50;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-  }
+.hdr-sm-btn svg {
+  @apply w-6;
+}
 
-  .hdr-sm-btn svg {
-    @apply w-6;
-  }
+.hdr-cnt-theme-btn {
+  @apply absolute hidden p-2 text-gray-700 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-50;
+}
 
-  .hdr-cnt-theme-btn {
-    @apply absolute hidden p-2 text-gray-700 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-50;
-  }
+.btn-primary {
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm rounded shadow-sm text-gray-50 bg-github focus:outline-none;
+}
 
-  .btn-primary {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm rounded shadow-sm text-gray-50 bg-github focus:outline-none;
-  }
+.btn-large {
+  @apply px-6 py-3 font-semibold;
+}
 
-  .btn-large {
-    @apply px-6 py-3 font-semibold;
-  }
-  
-  .p-small {
-    @apply text-base text-gray-950 dark:text-white;
-  }
+.p-small {
+  @apply text-base text-gray-950 dark:text-white;
+}
 
-  .text-p-1 {
-    @apply text-2xl font-semiNormal text-gray-950 dark:text-white;
-  }
+.text-p-1 {
+  @apply text-xl sm:text-2xl font-semiNormal text-gray-950 dark:text-white;
+}
 
-  .text-p-2 {
-    @apply text-xl font-semiNormal text-gray-950 dark:text-white;
-  }
+.text-p-2 {
+  @apply text-lg sm:text-xl font-semiNormal text-gray-950 dark:text-white;
+}
 
-  .text-p-3 {
-    @apply text-lg font-semiNormal text-gray-950 dark:text-white;
-  }
+.text-p-3 {
+  @apply text-base sm:text-lg font-semiNormal text-gray-950 dark:text-white;
+}
 
-  .text-heading-1 {
-    @apply text-4xl font-extrabold text-black lg:text-5xl dark:text-white;
-  }
+.text-heading-1 {
+  @apply text-4xl font-extrabold text-black sm:text-5xl dark:text-white;
+}
 
-  .text-heading-2 {
-    @apply text-3xl font-bold text-black lg:text-4xl dark:text-white;
-  }
+.text-heading-2 {
+  @apply text-3xl font-extrabold text-black sm:text-4xl dark:text-white;
+}
 
-  .text-heading-3 {
-    @apply text-2xl font-semibold text-black lg:text-3xl dark:text-white;
-  }
+.text-heading-3 {
+  @apply text-2xl font-extrabold text-black sm:text-3xl dark:text-white;
+}
 
-  .black-link {
-    @apply inline-block font-medium transition-all text-gray-950 sm:text-lg dark:text-gray-100 hover:underline;
-  }
+.black-link {
+  @apply inline-block font-medium transition-all text-gray-950 sm:text-lg dark:text-gray-100 hover:underline;
+}
 
-  .nav-link {
-    @apply text-sm font-medium text-gray-950 sm:text-base dark:text-gray-100 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
-  }
+.nav-link {
+  @apply text-sm font-medium text-gray-950 sm:text-base dark:text-gray-100 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
+}
 
-  .nav-link.active {
-    @apply text-red-600 bg-red-500 dark:text-red-400 bg-opacity-10;
-  }
+.nav-link.active {
+  @apply text-red-600 bg-red-500 dark:text-red-400 bg-opacity-10;
+}
 
-  .hr-stroke {
-    @apply w-full h-px mx-auto bg-gray-400 dark:bg-gray-700;
-  }
+.hr-stroke {
+  @apply w-full h-px mx-auto bg-gray-400 dark:bg-gray-700;
+}
 
-  .blob {
-    @apply text-gray-700 dark:text-gray-300;
-  }
+.blob {
+  @apply text-gray-700 dark:text-gray-300;
+}
 
+.blob-pink {
+  color: #ff007a;
+  fill-opacity: 0.7;
+}
+
+.blob-orange {
+  color: #ff8a00;
+  fill-opacity: 0.7;
+}
+
+@media (prefers-color-scheme: dark) {
   .blob-pink {
-    color: #ff007a;
-    fill-opacity: 0.7;
+    fill-opacity: 0.9;
   }
 
   .blob-orange {
-    color: #ff8a00;
-    fill-opacity: 0.7;
+    fill-opacity: 0.9;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    .blob-pink {
-      fill-opacity: 0.9;
-    }
-
-    .blob-orange {
-      fill-opacity: 0.9;
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .meta-wrap {
-      display: none;
-    }
-  }
-
+@media only screen and (max-width: 768px) {
   .meta-wrap {
-    background: transparent;
-    animation: 24s spin ease-in-out infinite;
-    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
-    filter: brightness(105%) saturate(200%) contrast(1);
-    border-radius: 16px;
-    position: absolute;
-    width: 100%;
-    height: 140%;
-    top: 60%;
-    z-index: 1;
-    transition: opacity 0.3s ease-in-out;
+    display: none;
   }
+}
 
-  .meta:before,
-  .meta:after {
-    content: '';
-    position: absolute;
-    width: 212px;
-    height: 212px;
-    left: 50%;
-    top: 50%;
-    margin: -50px;
-    background: linear-gradient(#ff9900, #ff007a);
-    border-radius: 50%;
+.meta-wrap {
+  background: transparent;
+  animation: 24s spin ease-in-out infinite;
+  -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+  filter: brightness(105%) saturate(200%) contrast(1);
+  border-radius: 16px;
+  position: absolute;
+  width: 100%;
+  height: 140%;
+  top: 60%;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+}
 
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
-    animation: move 100s infinite alternate ease-in-out;
+.meta:before,
+.meta:after {
+  content: '';
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  left: 50%;
+  top: 50%;
+  margin: -50px;
+  background: linear-gradient(#ff9900, #ff007a);
+  border-radius: 50%;
+
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  animation: move 100s infinite alternate ease-in-out;
+}
+
+.meta:before {
+  animation-duration: 29.3s;
+  animation-delay: -3.3s;
+}
+
+.meta:nth-child(2):before {
+  animation-duration: 34.7s;
+  animation-delay: -2.7s;
+}
+
+.meta:nth-child(2):after {
+  animation-duration: 28.7s;
+  animation-delay: -5.32s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
+}
 
-  .meta:before {
-    animation-duration: 29.3s;
-    animation-delay: -3.3s;
+@keyframes move {
+  0% {
+    transform: translate(0%, 2%);
   }
-
-  .meta:nth-child(2):before {
-    animation-duration: 34.7s;
-    animation-delay: -2.7s;
+  15% {
+    transform: translate(-20%, 20%);
   }
-
-  .meta:nth-child(2):after {
-    animation-duration: 28.7s;
-    animation-delay: -5.32s;
+  30% {
+    transform: translate(30%, -30%);
   }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
+  40% {
+    transform: translate(-20%, 20%);
   }
-
-  @keyframes move {
-    0% {
-      transform: translate(0%, 2%);
-    }
-    15% {
-      transform: translate(-20%, 20%);
-    }
-    30% {
-      transform: translate(30%, -30%);
-    }
-    40% {
-      transform: translate(-20%, 20%);
-    }
-    60% {
-      transform: translate(20%, -20%);
-    }
-    80% {
-      transform: translate(-20%, -10%);
-    }
-    100% {
-      transform: translate(20%, 10%);
-    }
+  60% {
+    transform: translate(20%, -20%);
+  }
+  80% {
+    transform: translate(-20%, -10%);
+  }
+  100% {
+    transform: translate(20%, 10%);
   }
 }

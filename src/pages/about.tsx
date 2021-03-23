@@ -15,7 +15,7 @@ export default function About() {
         <div className="flex flex-col py-8 space-y-12 sm:py-16">
           <div className="flex flex-col items-start space-y-8">
             <div className="flex flex-col space-y-4">
-              <Heading title="Introduction" subTitle="What am usually doing" />
+              <Heading title="Introduction" subTitle="What am usually doing." />
             </div>
             <div className=" hr-stroke" />
             <div className="flex flex-col space-y-4">
@@ -41,10 +41,10 @@ export default function About() {
             </div>
             <div className=" hr-stroke" />
             <div className="flex flex-col space-y-4">
-              <h2 className="text-heading-2">
-                What tehcnologies and programming languages you consider your
+              <h3 className="text-heading-2">
+                What technologies and programming languages you consider your
                 self good at?
-              </h2>
+              </h3>
               <p className="text-p-2">
                 To be honest, I have stopped counting what programming languages
                 I know and what frameworks I can work with. I am of the mindset
@@ -78,7 +78,7 @@ export default function About() {
               </p>
             </div>
             <div className="flex flex-col space-y-4">
-              <h2 className="text-heading-2">Do you enjoy working Frontend?</h2>
+              <h3 className="text-heading-2">Do you enjoy working Frontend?</h3>
               <p className="text-p-2">
                 Well, let's just accept the fact that my Frontend skills is
                 kinda worse than NVIDIA drivers support for linux. On a serious
@@ -88,9 +88,9 @@ export default function About() {
               </p>
             </div>
             <div className="flex flex-col space-y-4">
-              <h2 className="text-heading-2">
+              <h3 className="text-heading-2">
                 Then how the hell you created this site?
-              </h2>
+              </h3>
               <p className="text-p-2">
                 It is inspired *cough*Stole*cough* by other open source
                 projects. I will list them below.
