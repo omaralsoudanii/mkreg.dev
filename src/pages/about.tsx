@@ -26,9 +26,9 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col pt-12 space-y-12 sm:pt-16">
-          <div className="flex flex-col items-start space-y-2">
-            <Heading title="FAQ" />
+        <div className="flex flex-col pt-12 space-y-4 sm:pt-16">
+          <Heading title="FAQ" />
+          <div className="flex flex-col items-start space-y-12">
             <div className="flex flex-col space-y-4">
               <div className=" hr-stroke" />
               <h3 className="text-heading-3">
