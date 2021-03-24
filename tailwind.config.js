@@ -112,6 +112,7 @@ module.exports = {
         gray: colors.trueGray,
         'gray-1000': '#050505',
         'gray-950': '#111111',
+        blue: colors.lightBlue,
       },
     },
   },

@@ -217,14 +217,13 @@ body {
   -ms-font-variant-ligatures: contextual common-ligatures;
   -moz-font-variant-ligatures: contextual common-ligatures;
   -o-font-variant-ligatures: contextual common-ligatures;
-  font-feature-settings: 'ss01' 1, 'rlig' 1, 'cv05' 1, 'kern' 1, 'liga' 1,
-    'calt' 1, 'case' 1;
+  font-feature-settings: 'ss01' 1, 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
 ul,
 ol,
 li {
-  @apply text-gray-950 dark:text-gray-100;
+  @apply text-gray-900 dark:text-gray-50;
 }
 
 a {
@@ -232,31 +231,31 @@ a {
 }
 
 p {
-  @apply text-gray-950 dark:text-white font-semiNormal;
+  @apply text-gray-900 dark:text-gray-50 font-semiNormal;
 }
 
 h6 {
-  @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
+  @apply text-lg font-semibold text-black lg:text-xl dark:text-white;
 }
 
 h5 {
-  @apply text-lg font-medium text-gray-950 lg:text-xl dark:text-gray-100;
+  @apply text-lg font-semibold text-black lg:text-xl dark:text-white;
 }
 
 h4 {
-  @apply text-xl font-medium lg:text-2xl text-gray-950 dark:text-gray-50;
+  @apply text-xl font-semibold text-black lg:text-2xl dark:text-white;
 }
 
 h3 {
-  @apply text-2xl font-extrabold lg:text-3xl text-gray-1000 dark:text-white;
+  @apply text-2xl font-bold text-black lg:text-3xl dark:text-white;
 }
 
 h2 {
-  @apply text-3xl font-extrabold text-gray-1000 lg:text-4xl dark:text-white;
+  @apply text-3xl font-bold text-black lg:text-4xl dark:text-white;
 }
 
 h1 {
-  @apply text-4xl font-extrabold lg:text-5xl text-gray-1000 dark:text-white;
+  @apply text-4xl font-bold text-black lg:text-5xl dark:text-white;
 }
 
 .hdr-backdrop {
@@ -298,13 +297,13 @@ h1 {
 }
 
 .hdr-sm-btn {
-  @apply flex items-center justify-center px-4 py-1 text-gray-950 font-semiNormal dark:text-gray-50;
+  @apply flex items-center justify-center px-4 py-1 text-gray-900 font-semiNormal dark:text-gray-50;
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
 
 .hdr-sm-title {
-  @apply inline-block w-full px-3 py-2 text-base text-left cursor-pointer font-semiNormal text-gray-950 dark:text-gray-50;
+  @apply inline-block w-full px-3 py-2 text-base text-left text-gray-900 cursor-pointer font-semiNormal dark:text-gray-50;
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
@@ -326,31 +325,31 @@ h1 {
 }
 
 .p-small {
-  @apply text-base text-gray-1000 dark:text-gray-50;
+  @apply text-base text-gray-900 dark:text-gray-50;
 }
 
 .text-p-1 {
-  @apply text-xl sm:text-2xl font-semiNormal text-gray-1000 dark:text-gray-50;
+  @apply text-xl text-gray-900 sm:text-2xl font-semiNormal dark:text-gray-50;
 }
 
 .text-p-2 {
-  @apply text-lg sm:text-xl font-semiNormal text-gray-1000 dark:text-gray-50;
+  @apply text-lg text-gray-900 sm:text-xl font-semiNormal dark:text-gray-50;
 }
 
 .text-p-3 {
-  @apply text-base sm:text-lg font-semiNormal text-gray-1000 dark:text-gray-50;
+  @apply text-base text-gray-900 sm:text-lg font-semiNormal dark:text-gray-50;
 }
 
 .text-heading-1 {
-  @apply text-4xl font-bold text-gray-1000 dark:text-gray-50 sm:text-5xl;
+  @apply text-4xl font-bold text-black dark:text-white sm:text-5xl;
 }
 
 .text-heading-2 {
-  @apply text-3xl font-bold text-gray-1000 dark:text-gray-50 sm:text-4xl;
+  @apply text-3xl font-bold text-black dark:text-white sm:text-4xl;
 }
 
 .text-heading-3 {
-  @apply text-2xl font-bold text-gray-1000 dark:text-gray-50 sm:text-3xl;
+  @apply text-2xl font-bold text-black dark:text-white sm:text-3xl;
 }
 
 .black-link {
@@ -358,7 +357,7 @@ h1 {
 }
 
 .nav-link {
-  @apply text-base font-semiNormal text-gray-950 dark:text-gray-100 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
+  @apply text-base text-gray-900 font-semiNormal dark:text-gray-50 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
 }
 
 .nav-link.active {

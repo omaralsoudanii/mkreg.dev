@@ -29,6 +29,33 @@ export default function PostsList({ posts, href }) {
               </h2>
             </a>
           </Link>
+          <div className="col-span-12 lg:col-span-8">
+            <a
+              href="#"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-red-400 rounded-full hover:bg-red-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+            >
+              Caching &rarr;
+            </a>
+            <a
+              href="#"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+            >
+              RabbitMQ &rarr;
+            </a>
+            <a
+              href="#"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-green-400 rounded-full hover:bg-green-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+            >
+              Memcached &rarr;
+            </a>
+            <a
+              href="#"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-blue-400 rounded-full hover:bg-blue-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+            >
+              Redis &rarr;
+            </a>
+          </div>
+
           {frontMatter.description && (
             <p className="text-p-3">{frontMatter.description}</p>
           )}
