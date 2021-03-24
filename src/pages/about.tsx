@@ -12,35 +12,25 @@ export default function About() {
   return (
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
-        <div className="flex flex-col py-8 space-y-12 sm:py-16">
-          <div className="flex flex-col items-start space-y-8">
-            <div className="flex flex-col space-y-4">
-              <Heading title="Introduction" subTitle="What am usually doing." />
-            </div>
+        <div className="flex flex-col items-start py-4 space-y-2">
+          <Heading title="Introduction" />
+          <div className="flex flex-col space-y-4">
             <div className=" hr-stroke" />
-            <div className="flex flex-col space-y-4">
-              <p className="text-p-2">
-                I’m Omar Alsoudani, a Software developer, based in Amman,
-                Jordan. I've been building stuff on the web for about 7 years or
-                so (I stopped counting after a while). Working with companies
-                across various countries and industries. Following the DevOps
-                methodology, my focus would be on building correct, scalable and
-                performant applications, Powered by cloud agnostic
-                infrastructure.
-              </p>
-            </div>
+            <p className="text-p-2">
+              I’m Omar Alsoudani, a Software developer, based in Amman, Jordan.
+              I've been building stuff on the web for about 7 years or so (I
+              stopped counting after a while). Working with companies across
+              various countries and industries. Following the DevOps
+              methodology, my focus would be on building correct, scalable and
+              performant applications, Powered by cloud agnostic infrastructure.
+            </p>
           </div>
         </div>
-        <div className="flex flex-col pt-4 space-y-12 sm:pt-6">
-          <div className="flex flex-col items-start space-y-8">
+        <div className="flex flex-col pt-12 space-y-12 sm:pt-16">
+          <div className="flex flex-col items-start space-y-2">
+            <Heading title="FAQ" />
             <div className="flex flex-col space-y-4">
-              <Heading
-                title="Discussion"
-                subTitle="This is me, pretending to be on a talk show."
-              />
-            </div>
-            <div className=" hr-stroke" />
-            <div className="flex flex-col space-y-4">
+              <div className=" hr-stroke" />
               <h3 className="text-heading-3">
                 What technologies and programming languages you consider your
                 self good at?

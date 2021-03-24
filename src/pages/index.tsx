@@ -12,27 +12,23 @@ function Home({ posts }) {
     <Page>
       <CenteredColumn>
         <div className="flex flex-col space-y-12">
-          <div className="flex flex-col space-y-8 sm:items-start">
-            <div className="flex flex-col space-y-4 sm:items-center sm:text-center">
-              <Heading
-                title="Hello, I’m Omar"
-                subTitle="A programmer who made this site out of bordem, I'll be writing
-                about software & development in general, not sure about Frontend
-                though 🤔"
-              />
-              <div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0">
-                <Link href="/about">
-                  <a className="btn-primary btn-large">More about me</a>
-                </Link>
-                <a
-                  href={Environment.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary btn-large"
-                >
-                  Reach me via LinkedIn
-                </a>
-              </div>
+          <div className="flex flex-col items-start space-y-8 sm:items-center sm:text-center">
+            <Heading
+              title="Hi, I’m Omar."
+              subTitle="I made this site to understand what the heck is Jamstack 🤔. It's a work in progress!"
+            />
+            <div className="flex flex-col w-full space-y-4 sm:space-x-4 sm:flex-row sm:w-max sm:space-y-0">
+              <Link href="/about">
+                <a className="btn-primary btn-large">More about me</a>
+              </Link>
+              <a
+                href={Environment.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary btn-large"
+              >
+                Reach me via LinkedIn
+              </a>
             </div>
           </div>
           <div className=" hr-stroke" />

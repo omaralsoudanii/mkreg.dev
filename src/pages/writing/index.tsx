@@ -23,12 +23,10 @@ export default function Writing({ posts }) {
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
         <div className="flex flex-col items-start space-y-8">
-          <div className="flex flex-col space-y-4">
-            <Heading
-              title="Writing"
-              subTitle="Writing about programming, software & Vim vs Emacs."
-            />
-          </div>
+          <Heading
+            title="Writing"
+            subTitle="Writing about programming, software & Vim vs Emacs."
+          />
           <div className=" hr-stroke" />
           <PostsList href="writing" posts={posts} />
         </div>

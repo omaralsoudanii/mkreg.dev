@@ -12,19 +12,15 @@ export default function MK() {
   return (
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
-        <div className="flex flex-col space-y-12">
-          <div className="flex flex-col items-center space-y-8">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <Heading title="The Sultan of swing" subTitle="Mark Knopfler" />
-            </div>
-            <div>
-              <Image
-                src="/static/images/mk.jpg"
-                alt="Mark Knopfler"
-                width={3000}
-                height={2400}
-              />
-            </div>
+        <div className="flex flex-col space-y-8">
+          <div className="flex flex-col items-center space-y-8 text-center">
+            <Heading title="The Sultan of swing" subTitle="Mark Knopfler" />
+            <Image
+              src="/static/images/mk.jpg"
+              alt="Mark Knopfler"
+              width={3000}
+              height={2400}
+            />
             <div className=" hr-stroke" />
           </div>
           <div className="flex flex-col items-start space-y-4 text-gray-800">

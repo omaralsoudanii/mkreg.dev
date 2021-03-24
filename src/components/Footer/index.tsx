@@ -7,7 +7,7 @@ export function Footer() {
     <CenteredColumn>
       <div className="px-4 mt-4 lg:px-0">
         <div className=" hr-stroke" />
-        <div className="grid grid-cols-1 gap-4 p-6 py-16 sm:grid-cols-3 bg-white dark:bg-black">
+        <div className="grid grid-cols-1 gap-4 p-6 py-12 bg-white sm:grid-cols-3 dark:bg-black">
           <div className="flex flex-col space-y-4 text-center">
             <a
               href={Environment.social.github}

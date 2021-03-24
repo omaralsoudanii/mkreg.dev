@@ -83,7 +83,7 @@ export default function Header() {
             )}
             <Link href={currentRoute.href}>
               <a className="hdr-sm-title">
-                <p className=" text-primary">{currentRoute.label}</p>
+                <p>{currentRoute.label}</p>
               </a>
             </Link>
             <div
