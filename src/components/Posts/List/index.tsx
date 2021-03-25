@@ -32,27 +32,27 @@ export default function PostsList({ posts, href }) {
           <div className="col-span-12 lg:col-span-8">
             <a
               href="#"
-              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-red-400 rounded-full hover:bg-red-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-blue-500 rounded-full md:mr-2 md:px-4 "
             >
-              Caching &rarr;
+              Caching
             </a>
             <a
               href="#"
-              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-yellow-500 rounded-full md:mr-2 md:px-4 "
             >
-              RabbitMQ &rarr;
+              RabbitMQ
             </a>
             <a
               href="#"
-              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-green-400 rounded-full hover:bg-green-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-red-500 rounded-full md:mr-2 md:px-4 "
             >
-              Memcached &rarr;
+              Memcached
             </a>
             <a
               href="#"
-              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-blue-400 rounded-full hover:bg-blue-500 md:mr-2 md:px-4 opacity-90 hover:opacity-100"
+              className="inline-block px-2 py-1 mb-2 mr-1 text-xs font-bold text-white duration-300 bg-blue-500 rounded-full md:mr-2 md:px-4"
             >
-              Redis &rarr;
+              Redis
             </a>
           </div>
 
@@ -61,7 +61,7 @@ export default function PostsList({ posts, href }) {
           )}
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <p className="text-base text-red-600 dark:text-red-400">
+              <p className="text-base text-blue-500 dark:text-blue-400">
                 Read more &rarr;
               </p>
             </a>

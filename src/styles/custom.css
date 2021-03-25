@@ -259,7 +259,7 @@ h1 {
 }
 
 .hdr-backdrop {
-  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-1000;
+  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-950;
   z-index: -1;
   box-shadow: inset 0 -1px 0 0 rgb(0 0 0 / 10%);
   backdrop-filter: saturate(180%) blur(5px);
@@ -316,12 +316,20 @@ h1 {
   @apply absolute hidden p-2 text-gray-700 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-50;
 }
 
+.btn {
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold transition duration-300 ease-in-out rounded;
+}
+
+.btn-secondary {
+  @apply text-black bg-gray-200 dark:text-white dark:bg-github hover:bg-github dark:hover:bg-gray-200 hover:text-white dark:hover:text-black;
+}
+
 .btn-primary {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm rounded shadow-sm text-gray-50 bg-github focus:outline-none;
+  @apply  text-white bg-blue-600 bg-opacity-100 hover:bg-opacity-90 dark:hover:bg-opacity-90;
 }
 
 .btn-large {
-  @apply px-6 py-3 font-semibold;
+  @apply px-6 py-3;
 }
 
 .p-small {
@@ -353,15 +361,15 @@ h1 {
 }
 
 .black-link {
-  @apply inline-block font-medium transition-all text-gray-1000 sm:text-lg dark:text-gray-50 hover:underline;
+  @apply inline-block font-medium transition-all text-gray-1000 sm:text-lg dark:text-white hover:underline;
 }
 
 .nav-link {
-  @apply text-base text-gray-900 font-semiNormal dark:text-gray-50 sm:py-2 sm:px-0 sm:text-center hover:text-red-600 dark:hover:text-red-400 dark:hover:bg-opacity-10 hover:bg-red-500 hover:bg-opacity-10;
+  @apply text-base text-gray-900 font-semiNormal dark:text-gray-50 sm:py-2 sm:px-0 sm:text-center hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-500 hover:bg-opacity-10;
 }
 
 .nav-link.active {
-  @apply text-red-600 bg-red-500 dark:text-red-400 bg-opacity-10;
+  @apply text-blue-600 bg-blue-500 dark:text-blue-400 bg-opacity-10;
 }
 
 .hr-stroke {

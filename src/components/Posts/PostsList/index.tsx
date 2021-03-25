@@ -9,7 +9,7 @@ export default function PostsContainer({ posts, href, name }) {
       <PostsList href={`/${href}`} posts={posts} />
       <Link href={`/${href}`}>
         <a>
-          <p className="py-1 text-base text-center text-red-600 dark:text-red-400">
+          <p className="py-1 text-base text-center text-blue-600 dark:text-blue-400">
             See all posts &rarr;
           </p>
         </a>

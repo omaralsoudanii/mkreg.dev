@@ -26,7 +26,7 @@ export default function NotFound() {
               forum thread.
             </p>
             <Link href="/">
-              <a className="w-full text-lg btn-primary btn-large">
+              <a className="w-full text-lg btn btn-primary btn-large">
                 Back to Homepage
               </a>
             </Link>

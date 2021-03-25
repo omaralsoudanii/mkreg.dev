@@ -1,9 +1,9 @@
 .prose a {
-  @apply text-red-600 dark:text-red-400;
+  @apply text-blue-600 dark:text-blue-400;
 }
 
 .prose a code {
-  @apply text-red-600 dark:text-red-400;
+  @apply text-blue-600 dark:text-blue-400;
 }
 
 .prose table {

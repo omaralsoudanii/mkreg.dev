@@ -81,7 +81,7 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.red.600'),
+              color: theme('colors.blue.600'),
               textDecoration: 'none',
             },
             'code:before': {
@@ -95,7 +95,7 @@ module.exports = {
         dark: {
           css: {
             a: {
-              color: theme('colors.red.400'),
+              color: theme('colors.blue.400'),
               textDecoration: 'none',
             },
           },
@@ -119,6 +119,7 @@ module.exports = {
   variants: {
     extend: {
       fontWeight: ['dark'],
+      textColor: ['dark'],
       typography: ['dark'],
     },
   },

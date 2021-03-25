@@ -19,13 +19,13 @@ function Home({ posts }) {
             />
             <div className="flex flex-col w-full space-y-4 sm:space-x-4 sm:flex-row sm:w-max sm:space-y-0">
               <Link href="/about">
-                <a className="btn-primary btn-large">More about me</a>
+                <a className="btn btn-primary btn-large">More about me</a>
               </Link>
               <a
                 href={Environment.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary btn-large"
+                className="btn btn-secondary btn-large"
               >
                 Reach me via LinkedIn
               </a>
