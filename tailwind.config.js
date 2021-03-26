@@ -104,10 +104,10 @@ module.exports = {
       colors: {
         black: '#000000',
         white: '#ffffff',
-        semiblack: '#0b0b0c',
+        semiblack: 'rgb(11, 11, 12)',
         gray: colors.trueGray,
-        'gray-1000': '#050505',
-        'gray-950': '#111111',
+        'gray-1000': 'rgb(5, 5, 5)',
+        'gray-950': 'rgb(17, 17, 17)',
         blue: colors.lightBlue,
       },
     },

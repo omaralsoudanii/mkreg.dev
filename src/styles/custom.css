@@ -256,7 +256,7 @@ h1 {
 }
 
 .hdr-backdrop {
-  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-semiblack;
+  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-950;
   z-index: -1;
   backdrop-filter: saturate(180%) blur(5px);
 }
