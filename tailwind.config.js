@@ -82,7 +82,9 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.blue.600'),
-              textDecoration: 'none',
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
             },
             'code:before': {
               content: 'none',
@@ -96,7 +98,9 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.blue.400'),
-              textDecoration: 'none',
+              '&:hover': {
+                color: theme('colors.blue.500'),
+              },
             },
           },
         },
@@ -104,9 +108,8 @@ module.exports = {
       colors: {
         black: '#000000',
         white: '#ffffff',
-        semiblack: 'rgb(11, 11, 12)',
         gray: colors.trueGray,
-        'gray-1000': 'rgb(5, 5, 5)',
+        'gray-1000': 'rgb(11, 11, 12)',
         'gray-950': 'rgb(17, 17, 17)',
         blue: colors.lightBlue,
       },

@@ -34,16 +34,14 @@ export default function MK() {
               than something closer to my name (for SEO bleh...), Then I can
               tell you that it's based on this acronym:
             </p>
-            <p className="mx-auto text-xl text-center">
-              <a
-                href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400"
-              >
-                Mark Knopfler Red Electric Guitar &rarr;
-              </a>
-            </p>
+            <a
+              href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 mx-auto text-xl text-center"
+            >
+              Mark Knopfler Red Electric Guitar &rarr;
+            </a>
             <p className="text-p-2">
               Every one has his own "Red Electric Guitar". Seeing my Idol
               getting his guitar, gives me some euphoric feeling with a smile on

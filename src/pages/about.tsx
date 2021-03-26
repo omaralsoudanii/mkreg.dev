@@ -61,6 +61,7 @@ export default function About() {
                 You can find what I "think" am capable of in the
                 <Link href="/stack">
                   <a className="pl-1 text-blue-600 dark:text-blue-400">
+                    {' '}
                     Stack page &rarr;
                   </a>
                 </Link>

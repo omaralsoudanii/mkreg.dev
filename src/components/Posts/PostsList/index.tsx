@@ -8,10 +8,8 @@ export default function PostsContainer({ posts, href, name }) {
       <h1 className="px-2 py-2 text-heading-1">{name}</h1>
       <PostsList href={`/${href}`} posts={posts} />
       <Link href={`/${href}`}>
-        <a>
-          <p className="py-1 text-base text-center text-blue-600 dark:text-blue-400">
-            See all posts &rarr;
-          </p>
+        <a className="py-1 text-base text-center text-blue-600 dark:text-blue-400">
+          See all posts &rarr;
         </a>
       </Link>
     </div>

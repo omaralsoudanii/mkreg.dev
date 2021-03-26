@@ -202,7 +202,7 @@ html {
 }
 
 body {
-  @apply font-normal bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70;
+  @apply font-normal bg-white dark:bg-black;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
@@ -220,15 +220,11 @@ body {
   font-feature-settings: 'ss01' 1, 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1,
     'case' 1;
 }
-
+p,
 ul,
 ol,
 li {
   @apply text-gray-900 dark:text-gray-50;
-}
-
-p {
-  @apply  text-gray-900 dark:text-gray-50;
 }
 
 h6 {
@@ -256,7 +252,7 @@ h1 {
 }
 
 .hdr-backdrop {
-  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-950;
+  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-1000;
   z-index: -1;
   backdrop-filter: saturate(180%) blur(5px);
 }
@@ -357,7 +353,7 @@ h1 {
 }
 
 .black-link {
-  @apply inline-block font-medium text-gray-1000 sm:text-lg dark:text-white hover:underline;
+  @apply inline-block font-medium text-gray-900 sm:text-lg dark:text-white hover:underline;
 }
 
 .nav-link {

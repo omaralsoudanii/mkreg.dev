@@ -14,7 +14,7 @@ export default function PostsList({ posts, href }) {
     <div className="flex flex-col space-y-6">
       {posts.map((frontMatter) => (
         <div
-          className="flex flex-col items-start px-4 py-6 space-y-4 bg-gray-50 bg-opacity-100  dark:bg-gray-900 dark:bg-opacity-40"
+          className="flex flex-col items-start px-4 py-6 space-y-4 bg-gray-100 dark:bg-gray-900"
           key={frontMatter.slug}
         >
           <p className="p-small">
@@ -33,11 +33,9 @@ export default function PostsList({ posts, href }) {
           {frontMatter.description && (
             <p className="text-p-3">{frontMatter.description}</p>
           )}
-          <Link href={`${href}/${frontMatter.slug}`} passHref>
-            <a>
-              <p className="text-base text-blue-600 dark:text-blue-400">
-                Read more &rarr;
-              </p>
+          <Link href={`${href}/${frontMatter.slug}`}>
+            <a className="text-base text-blue-600 dark:text-blue-400">
+              Read more &rarr;
             </a>
           </Link>
         </div>
