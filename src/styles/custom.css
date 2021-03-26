@@ -197,8 +197,12 @@
 }
 
 /* Custom tailwind components styles here */
+html {
+  @apply text-base antialiased;
+}
+
 body {
-  @apply text-base antialiased font-normal bg-white dark:bg-black;
+  @apply font-normal bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
@@ -213,7 +217,8 @@ body {
   -ms-font-variant-ligatures: contextual common-ligatures;
   -moz-font-variant-ligatures: contextual common-ligatures;
   -o-font-variant-ligatures: contextual common-ligatures;
-  font-feature-settings: 'ss01' 1, 'kern' 1, 'liga' 1, 'calt' 1;
+  font-feature-settings: 'ss01' 1, 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1,
+    'case' 1;
 }
 
 ul,
@@ -222,12 +227,8 @@ li {
   @apply text-gray-900 dark:text-gray-50;
 }
 
-a {
-  @apply font-normal;
-}
-
 p {
-  @apply font-normal text-gray-900 dark:text-gray-50;
+  @apply  text-gray-900 dark:text-gray-50;
 }
 
 h6 {
@@ -255,7 +256,7 @@ h1 {
 }
 
 .hdr-backdrop {
-  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-70 dark:bg-opacity-70 dark:bg-gray-1000;
+  @apply absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-semiblack;
   z-index: -1;
   backdrop-filter: saturate(180%) blur(5px);
 }
@@ -292,13 +293,13 @@ h1 {
 }
 
 .hdr-sm-btn {
-  @apply flex items-center justify-center px-4 py-1 font-normal text-gray-900 dark:text-gray-50;
+  @apply flex items-center justify-center px-4 py-1 text-gray-900 dark:text-gray-50;
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
 
 .hdr-sm-title {
-  @apply inline-block w-full px-3 py-2 text-base font-normal text-left text-gray-900 cursor-pointer dark:text-gray-50;
+  @apply inline-block w-full px-3 py-2 text-base text-left text-gray-900 cursor-pointer dark:text-gray-50;
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
@@ -316,7 +317,7 @@ h1 {
 }
 
 .btn-secondary {
-  @apply text-black bg-gray-200 dark:text-white dark:bg-github hover:bg-github dark:hover:bg-gray-200 hover:text-white dark:hover:text-black;
+  @apply text-black bg-gray-200 dark:text-white dark:bg-gray-900 hover:bg-gray-900 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black;
 }
 
 .btn-primary {
@@ -332,15 +333,15 @@ h1 {
 }
 
 .text-p-1 {
-  @apply text-xl font-normal text-gray-900 sm:text-2xl dark:text-gray-50;
+  @apply text-xl text-gray-900 sm:text-2xl dark:text-gray-50;
 }
 
 .text-p-2 {
-  @apply text-lg font-normal text-gray-900 sm:text-xl dark:text-gray-50;
+  @apply text-lg text-gray-900 sm:text-xl dark:text-gray-50;
 }
 
 .text-p-3 {
-  @apply text-base font-normal text-gray-900 sm:text-lg dark:text-gray-50;
+  @apply text-base text-gray-900 sm:text-lg dark:text-gray-50;
 }
 
 .text-heading-1 {
@@ -356,11 +357,11 @@ h1 {
 }
 
 .black-link {
-  @apply inline-block font-medium transition-all text-gray-1000 sm:text-lg dark:text-white hover:underline;
+  @apply inline-block font-medium text-gray-1000 sm:text-lg dark:text-white hover:underline;
 }
 
 .nav-link {
-  @apply text-base font-normal text-gray-900 dark:text-gray-50 sm:py-2 sm:px-0 sm:text-center hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-500 hover:bg-opacity-10;
+  @apply text-base text-gray-900 dark:text-gray-50 sm:py-2 sm:px-0 sm:text-center hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-500 hover:bg-opacity-10;
 }
 
 .nav-link.active {
