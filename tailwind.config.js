@@ -70,7 +70,7 @@ module.exports = {
     },
     extend: {
       fontWeight: {
-        semiNormal: 440,
+        normal: 440,
       },
       fontFamily: {
         sans: ['Inter var', ...fontFamily.sans],
