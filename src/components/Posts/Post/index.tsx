@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
+import Tag from '@/components/Tag'
 
 export default function PostContainer({ children, frontMatter }) {
   const extraMeta = {
@@ -16,8 +17,14 @@ export default function PostContainer({ children, frontMatter }) {
       <CenteredColumn>
         <div className="flex flex-col py-4">
           <div className="flex flex-col space-y-2">
-            <h1 className="py-2 text-heading-1">{frontMatter.title}</h1>
-            <p className="px-2 py-2 text-right text-p-3">
+            <h1 className="py-1 text-heading-1">{frontMatter.title}</h1>
+            <p className="py-1 text-p-2">{frontMatter.description}</p>
+            <div className="flex flex-wrap py-2">
+              {frontMatter.tags.map((tag) => (
+                <Tag key={tag} text={tag} />
+              ))}
+            </div>
+            <p className="py-1 text-p-3">
               {`${dayjs(new Date(frontMatter.publishedAt)).format(
                 'MMMM DD, YYYY'
               )}`}

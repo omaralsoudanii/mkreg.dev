@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import Tag from '@/components/Tag'
 
 export default function PostsList({ posts, href }) {
   if (!posts || posts.length === 0)
@@ -11,32 +12,34 @@ export default function PostsList({ posts, href }) {
     )
 
   return (
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col w-full space-y-6">
       {posts.map((frontMatter) => (
         <div
-          className="flex flex-col items-start px-4 py-6 space-y-4 bg-gray-100 dark:bg-gray-900"
+          className="flex flex-col items-start px-4 py-6 space-y-2 bg-gray-100 dark:bg-gray-950"
           key={frontMatter.slug}
         >
-          <p className="p-small">
+          <p className="text-p-3">
             {`${dayjs(new Date(frontMatter.publishedAt)).format(
               'MMMM DD, YYYY'
             )}`}
           </p>
-          <Link href={`${href}/${frontMatter.slug}`} passHref>
+          <Link href={`/${href}/${frontMatter.slug}`} passHref>
             <a>
               <h2 className="hover:underline text-heading-2">
                 {frontMatter.title}
               </h2>
             </a>
           </Link>
-
+          <div className="flex flex-wrap">
+            {frontMatter.tags.map((tag) => (
+              <Tag key={tag} text={tag} />
+            ))}
+          </div>
           {frontMatter.description && (
             <p className="text-p-3">{frontMatter.description}</p>
           )}
-          <Link href={`${href}/${frontMatter.slug}`}>
-            <a className="text-base text-blue-600 dark:text-blue-400">
-              Read more &rarr;
-            </a>
+          <Link href={`/${href}/${frontMatter.slug}`}>
+            <a className="text-base text-link">Read more</a>
           </Link>
         </div>
       ))}

@@ -38,7 +38,7 @@ export default function MK() {
               href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 mx-auto text-xl text-center"
+              className="text-link mx-auto text-xl text-center"
             >
               Mark Knopfler Red Electric Guitar &rarr;
             </a>

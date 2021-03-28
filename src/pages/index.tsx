@@ -4,7 +4,7 @@ import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import PostsContainer from '@/components/Posts/PostsList'
-import { getAllFilesFrontMatterMeta } from '@/lib/mdx'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Heading from '@/components/Heading'
 
 function Home({ posts }) {
@@ -40,7 +40,7 @@ function Home({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const WritingMetadata = await getAllFilesFrontMatterMeta('writing')
+  const WritingMetadata = await getAllFilesFrontMatter('writing')
   const posts = WritingMetadata.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   ).slice(0, 5)

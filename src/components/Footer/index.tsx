@@ -63,8 +63,8 @@ export function Footer() {
             >
               RSS
             </a>
-            <Link href="/uses">
-              <a className="black-link">Uses</a>
+            <Link href="/tags">
+              <a className="black-link">Tags</a>
             </Link>
             <a
               href={`mailto:${Environment.social.mail}`}

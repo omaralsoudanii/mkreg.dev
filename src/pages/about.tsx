@@ -58,12 +58,9 @@ export default function About() {
                 (nah, just kidding).
               </p>
               <p className="text-p-2">
-                You can find what I "think" am capable of in the
+                You can find what I "think" am capable of in the{' '}
                 <Link href="/stack">
-                  <a className="pl-1 text-blue-600 dark:text-blue-400">
-                    {' '}
-                    Stack page &rarr;
-                  </a>
+                  <a className="pl-1 text-link"> Stack page &rarr;</a>
                 </Link>
               </p>
             </div>

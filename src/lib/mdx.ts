@@ -53,26 +53,6 @@ export async function getAllFilesFrontMatter(type) {
       path.join(root, 'src', 'data', type, postSlug),
       'utf8'
     )
-    const { data } = matter(source)
-
-    return [
-      {
-        ...data,
-        slug: formatSlug(postSlug),
-      },
-      ...allPosts,
-    ]
-  }, [])
-}
-
-export async function getAllFilesFrontMatterMeta(type) {
-  const files = fs.readdirSync(path.join(root, 'src', 'data', type))
-
-  return files.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(
-      path.join(root, 'src', 'data', type, postSlug),
-      'utf8'
-    )
     const { publishedAt, tags, description, title } = matter(source).data
 
     return [

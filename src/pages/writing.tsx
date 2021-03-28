@@ -2,9 +2,10 @@ import PostsList from '@/components/Posts/List'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import { GetStaticProps } from 'next'
-import { getAllFilesFrontMatterMeta } from '@/lib/mdx'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Heading from '@/components/Heading'
-
+import { Environment } from '@/lib/environment'
+import Link from 'next/link'
 /**
  * Main writing page
  *
@@ -26,6 +27,9 @@ export default function Writing({ posts }) {
             title="Writing"
             subTitle="Writing about programming, software & Vim vs Emacs."
           />
+          <Link href="/tags">
+            <a className="text-link">Tags &rarr;</a>
+          </Link>
           <div className=" hr-stroke" />
           <PostsList href="writing" posts={posts} />
         </div>
@@ -35,7 +39,7 @@ export default function Writing({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const WritingData = await getAllFilesFrontMatterMeta('writing')
+  const WritingData = await getAllFilesFrontMatter('writing')
   const posts = WritingData.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )
