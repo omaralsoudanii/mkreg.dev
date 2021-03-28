@@ -1,7 +1,6 @@
 import PostsList from '@/components/Posts/List'
 import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
-import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatterMeta } from '@/lib/mdx'
 import Heading from '@/components/Heading'
