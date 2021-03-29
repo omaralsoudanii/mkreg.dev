@@ -1,4 +1,3 @@
-import { CenteredColumn } from '@/components/Layouts'
 import Page from '@/components/Page'
 import Tag from '@/components/Tag'
 import { getAllTags } from '@/lib/tags'
