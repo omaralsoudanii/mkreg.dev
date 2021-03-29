@@ -72,17 +72,8 @@ module.exports = {
       fontWeight: {
         normal: 440,
       },
-      spacing: {
-        '9/16': '56.25%',
-      },
-      lineHeight: {
-        11: '2.75rem',
-        12: '3rem',
-        13: '3.25rem',
-        14: '3.5rem',
-      },
       fontFamily: {
-        sans: ['Inter var', ...fontFamily.sans],
+        sans: ['"Inter var"', ...fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -125,9 +116,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      typography: ['dark'],
       fontWeight: ['dark'],
       textColor: ['dark'],
+      typography: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
