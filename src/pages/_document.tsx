@@ -7,28 +7,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
-            href="/static/fonts/Inter-roman.latin.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/Inter-roman.symbols.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/Inter-italic.latin.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link rel="manifest" href="/static/meta/manifest.json" />
-          <link
             rel="alternate"
             type="application/rss+xml"
             title="Omar Alsoudani RSS Feed"
@@ -39,6 +17,7 @@ export default class MyDocument extends Document {
             rel="apple-touch-icon"
             href="/static/meta/apple-touch-icon.png"
           />
+          <link rel="manifest" href="/static/meta/manifest.json" />
         </Head>
         <body>
           <Main />
