@@ -79,10 +79,10 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.blue.500'),
+              color: theme('colors.red.500'),
               textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.blue.600'),
+                color: theme('colors.red.600'),
               },
             },
             'code:before': {
@@ -96,21 +96,21 @@ module.exports = {
         dark: {
           css: {
             a: {
-              color: theme('colors.blue.400'),
+              color: theme('colors.red.400'),
               textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.blue.500'),
+                color: theme('colors.red.500'),
               },
             },
           },
         },
       }),
       colors: {
-        gray: colors.trueGray,
+        gray: colors.gray,
         'gray-1000': '#0b0b0c',
         'gray-900': '#131415',
         'gray-100': '#fafafa',
-        blue: colors.lightBlue,
+        red: colors.red,
       },
     },
   },

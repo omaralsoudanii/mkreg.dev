@@ -30,17 +30,15 @@ export default function PostsList({ posts, href }) {
               </h2>
             </a>
           </Link>
-          <div className="flex flex-wrap">
+
+          {frontMatter.description && (
+            <p className="text-p-3">{frontMatter.description}</p>
+          )}
+          <div className="flex flex-wrap py-2">
             {frontMatter.tags.map((tag) => (
               <Tag key={tag} text={tag} />
             ))}
           </div>
-          {frontMatter.description && (
-            <p className="text-p-3">{frontMatter.description}</p>
-          )}
-          <Link href={`/${href}/${frontMatter.slug}`}>
-            <a className="text-base text-link">Read more</a>
-          </Link>
         </div>
       ))}
     </div>
