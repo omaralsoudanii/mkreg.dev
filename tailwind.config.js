@@ -106,7 +106,7 @@ module.exports = {
         },
       }),
       colors: {
-        gray: colors.gray,
+        gray: colors.trueGray,
         'gray-1000': '#0b0b0c',
         'gray-900': '#131415',
         'gray-100': '#fafafa',
