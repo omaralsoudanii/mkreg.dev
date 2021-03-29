@@ -7,7 +7,7 @@ export default function NotFound() {
       <CenteredColumn>
         <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:flex-row sm:space-x-10 sm:mt-24">
           <div className="pt-16 space-x-2 sm:space-y-6">
-            <h1 className="text-6xl leading-loose sm:text-8xl sm:leading-loose border-gray-1000 sm:dark:border-gray-50 sm:border-r-8 sm:py-40 sm:px-6">
+            <h1 className="text-6xl leading-loose sm:text-8xl sm:leading-loose border-gray-900 sm:dark:border-gray-100 sm:border-r-8 sm:py-40 sm:px-6">
               404
             </h1>
           </div>

@@ -28,7 +28,7 @@ export default function Writing({ posts }) {
             subTitle="Writing about programming, software & Vim vs Emacs."
           />
           <Link href="/tags">
-            <a className="text-link">Tags &rarr;</a>
+            <a className="text-base text-link sm:text-lg">Tags &rarr;</a>
           </Link>
           <div className=" hr-stroke" />
           <PostsList href="writing" posts={posts} />

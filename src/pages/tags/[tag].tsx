@@ -25,7 +25,7 @@ export default function Tag({ posts, tag }) {
         <div className="flex flex-col items-start space-y-8">
           <Heading title={title} />
           <Link href="/writing">
-            <a className="text-link">&larr; Writing</a>
+            <a className="text-base sm:text-lg text-link">&larr; Writing</a>
           </Link>
           <div className=" hr-stroke" />
           <PostsList href="writing" posts={posts} />

@@ -72,18 +72,26 @@ module.exports = {
       fontWeight: {
         normal: 440,
       },
+      spacing: {
+        '9/16': '56.25%',
+      },
+      lineHeight: {
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+      },
       fontFamily: {
         sans: ['Inter var', ...fontFamily.sans],
-        mono: [...fontFamily.mono],
-        system: [...fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.blue.600'),
+              color: theme('colors.blue.500'),
+              textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.blue.700'),
+                color: theme('colors.blue.600'),
               },
             },
             'code:before': {
@@ -98,6 +106,7 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.blue.400'),
+              textDecoration: 'none',
               '&:hover': {
                 color: theme('colors.blue.500'),
               },
@@ -106,20 +115,19 @@ module.exports = {
         },
       }),
       colors: {
-        black: '#000000',
-        white: '#ffffff',
         gray: colors.trueGray,
-        'gray-1000': 'rgb(11, 11, 12)',
-        'gray-950': 'rgb(17, 17, 17)',
+        'gray-1000': '#0b0b0c',
+        'gray-900': '#131415',
+        'gray-100': '#fafafa',
         blue: colors.lightBlue,
       },
     },
   },
   variants: {
     extend: {
+      typography: ['dark'],
       fontWeight: ['dark'],
       textColor: ['dark'],
-      typography: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
