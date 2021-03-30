@@ -205,7 +205,7 @@ h1 {
 }
 
 .hdr-backdrop {
-  @apply bg-gray-100 bg-opacity-70 dark:bg-opacity-50 dark:bg-gray-900;
+  @apply bg-white bg-opacity-70 dark:bg-opacity-50 dark:bg-black;
   backdrop-filter: saturate(200%) blur(5px);
 }
 
