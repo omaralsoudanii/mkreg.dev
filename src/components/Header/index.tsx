@@ -44,10 +44,9 @@ export default function Header() {
 
   return (
     mounted && (
-      <div className="fixed top-0 z-10 w-full py-2">
-        <div className="hdr-backdrop backDrop" />
+      <div className="fixed top-0 z-10 w-full py-2 hdr-backdrop">
         <div className="grid grid-cols-1 sm:hidden">
-          <div className="flex items-center text-primary">
+          <div className="flex items-center">
             {isExpanded ? (
               <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
                 <svg
@@ -129,8 +128,8 @@ export default function Header() {
               const navClass =
                 route.href === router.pathname ??
                 router.pathname.includes(route.href)
-                  ? 'flex items-start py-3 pl-4 text-primary nav-link active'
-                  : 'flex items-start py-3 pl-4 text-primary nav-link'
+                  ? 'flex items-start py-3 pl-4  nav-link active'
+                  : 'flex items-start py-3 pl-4  nav-link'
               return (
                 <Link href={route.href} key={route.href}>
                   <a onClick={() => setExpanded(false)} className={navClass}>
