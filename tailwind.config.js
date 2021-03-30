@@ -75,15 +75,11 @@ module.exports = {
       fontFamily: {
         sans: ['"Inter var"', ...fontFamily.sans],
       },
-      typography: (theme) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.red.500'),
               textDecoration: 'none',
-              '&:hover': {
-                color: theme('colors.red.600'),
-              },
             },
             'code:before': {
               content: 'none',
@@ -96,11 +92,7 @@ module.exports = {
         dark: {
           css: {
             a: {
-              color: theme('colors.red.400'),
               textDecoration: 'none',
-              '&:hover': {
-                color: theme('colors.red.500'),
-              },
             },
           },
         },
@@ -110,7 +102,7 @@ module.exports = {
         'gray-1000': '#0b0b0c',
         'gray-900': '#131415',
         'gray-100': '#fafafa',
-        red: colors.red,
+        indigo: colors.indigo,
       },
     },
   },
