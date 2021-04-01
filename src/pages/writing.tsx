@@ -31,7 +31,7 @@ export default function Writing({ posts }) {
             <a className="text-base text-link sm:text-lg">Tags &rarr;</a>
           </Link>
           <div className=" hr-stroke" />
-          <PostsList href="writing" posts={posts} />
+          <PostsList href="/writing" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>

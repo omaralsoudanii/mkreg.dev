@@ -6,8 +6,8 @@ export default function PostsContainer({ posts, href, name }) {
   return (
     <div className="flex flex-col space-y-6">
       <h1 className="py-2 text-heading-1">{name}</h1>
-      <PostsList href={`${href}`} posts={posts} />
-      <Link href={`${href}`}>
+      <PostsList href={href} posts={posts} />
+      <Link href={href}>
         <a className="py-1 text-base text-center text-link">
           See all posts &rarr;
         </a>

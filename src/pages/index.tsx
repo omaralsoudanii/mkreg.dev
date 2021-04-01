@@ -3,7 +3,7 @@ import Page from '@/components/Page'
 import { CenteredColumn } from '@/components/Layouts'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
-import PostsContainer from '@/components/Posts/PostsList'
+import PostsContainer from '@/components/Posts/Container'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Heading from '@/components/Heading'
 
@@ -32,7 +32,7 @@ function Home({ posts }) {
             </div>
           </div>
           <div className=" hr-stroke" />
-          <PostsContainer href="writing" name="Recent" posts={posts} />
+          <PostsContainer href="/writing" name="Recent" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>

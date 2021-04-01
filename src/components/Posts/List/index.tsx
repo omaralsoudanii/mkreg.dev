@@ -23,7 +23,7 @@ export default function PostsList({ posts, href }) {
               'MMMM DD, YYYY'
             )}`}
           </p>
-          <Link href={`/${href}/${frontMatter.slug}`} passHref>
+          <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
               <h2 className="hover:underline text-heading-2">
                 {frontMatter.title}

@@ -17,7 +17,7 @@ export default function Tag({ posts, tag }) {
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
   const extraMeta = {
     title: `${tag} - ${Environment.ogTitle}`,
-    description: `${tag} Writing - ${Environment.ogTitle}`,
+    description: `${title} writing - ${Environment.ogTitle}`,
   }
   return (
     <Page extraMeta={extraMeta}>
@@ -28,7 +28,7 @@ export default function Tag({ posts, tag }) {
             <a className="text-base sm:text-lg text-link">&larr; Writing</a>
           </Link>
           <div className=" hr-stroke" />
-          <PostsList href="writing" posts={posts} />
+          <PostsList href="/writing" posts={posts} />
         </div>
       </CenteredColumn>
     </Page>

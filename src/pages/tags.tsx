@@ -16,7 +16,7 @@ import { Environment } from '@/lib/environment'
 export default function Tags({ tags }) {
   const extraMeta = {
     title: `Tags - ${Environment.ogTitle}`,
-    description: `Writings tags - ${Environment.ogTitle}`,
+    description: `Explore my writing by tags - ${Environment.ogTitle}`,
   }
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
