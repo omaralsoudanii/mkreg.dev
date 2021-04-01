@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+const withPreact = require('next-plugin-preact')
 
-module.exports = withBundleAnalyzer({
+module.exports = withPreact({
   poweredByHeader: false,
   future: {
     webpack5: true,
@@ -13,15 +11,6 @@ module.exports = withBundleAnalyzer({
     if (isServer && !dev) {
       require('./scripts/generate-sitemap')
     }
-    if (!dev && !isServer) {
-      // Replace React with Preact only in client production build
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
-
     return config
   },
   redirects: () => [
