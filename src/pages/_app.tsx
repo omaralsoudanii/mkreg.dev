@@ -1,4 +1,3 @@
-import '@/styles/base.css'
 import '@/styles/custom.css'
 import '@/styles/prism.css'
 import '@/styles/prose.css'

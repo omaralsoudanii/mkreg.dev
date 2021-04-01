@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./src/**/*.{js,ts,tsx,md,mdx}'],
@@ -71,9 +70,6 @@ module.exports = {
     extend: {
       fontWeight: {
         normal: 440,
-      },
-      fontFamily: {
-        sans: ['"Inter var"', ...fontFamily.sans],
       },
       typography: () => ({
         DEFAULT: {
