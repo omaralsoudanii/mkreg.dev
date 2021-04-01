@@ -187,8 +187,7 @@
     -ms-font-variant-ligatures: contextual common-ligatures;
     -moz-font-variant-ligatures: contextual common-ligatures;
     -o-font-variant-ligatures: contextual common-ligatures;
-    font-feature-settings: 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1, 'case' 1,
-      'salt' 1;
+    font-feature-settings: 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1, 'case' 1;
   }
 }
 @tailwind components;
