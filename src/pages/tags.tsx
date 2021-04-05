@@ -24,7 +24,7 @@ export default function Tags({ tags }) {
     <Page extraMeta={extraMeta}>
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-24">
         <div className="pt-6 pb-8 space-x-2 md:space-y-5">
-          <h1 className="font-extrabold text-primary md:border-r-2 md:px-6">
+          <h1 className="text-6xl font-extrabold md:border-r-2 md:px-6">
             Tags
           </h1>
         </div>
@@ -35,7 +35,7 @@ export default function Tags({ tags }) {
               <div key={t} className="mt-2 mb-2 mr-5">
                 <Tag text={t} />
                 <Link href={`/tags/${kebabCase(t)}`}>
-                  <a className="-ml-2 text-sm font-semibold text-gray-600 uppercase dark:text-gray-400">
+                  <a className="-ml-2 text-2xl font-semibold text-gray-600 uppercase dark:text-gray-400">
                     {` (${tags[t]})`}
                   </a>
                 </Link>

@@ -27,7 +27,7 @@ const RoutesMetadata = [
 ]
 
 export default function Header() {
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted] = React.useState(true)
   const [isExpanded, setExpanded] = React.useState(false)
   const router = useRouter()
   const { theme, setTheme } = useTheme()
@@ -40,7 +40,6 @@ export default function Header() {
       : RoutesMetadata.filter((r) => r.href !== '/').find((r) =>
           router.pathname.includes(r.href)
         ) ?? { href: router.asPath, label: 'MK' }
-  React.useEffect(() => setMounted(true), [])
 
   return (
     <div className="fixed top-0 z-10 w-full py-2 hdr-backdrop">
