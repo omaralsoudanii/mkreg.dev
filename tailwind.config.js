@@ -11,6 +11,7 @@ module.exports = {
         gray: colors.trueGray,
         'gray-1000': '#0b0b0c',
         'gray-900': '#131415',
+        'gray-100': '#fafafa',
         indigo: colors.indigo,
       },
       fontWeight: {
@@ -124,7 +125,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.50'),
+            color: theme('colors.white'),
             a: {
               color: theme('colors.indigo.400'),
               textDecoration: 'none',

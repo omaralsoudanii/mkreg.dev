@@ -16,12 +16,11 @@
     -ms-font-variant-ligatures: contextual common-ligatures;
     -moz-font-variant-ligatures: contextual common-ligatures;
     -o-font-variant-ligatures: contextual common-ligatures;
-    font-feature-settings: 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1, 'case' 1;
+    font-feature-settings: 'rlig' 1, 'liga' 1, 'kern' 1, 'calt' 1, 'ccmp' 1,
+      'salt' 1;
   }
+
   body {
-    @apply bg-white dark:bg-gray-1000;
-  }
-  p {
-    @apply text-base lg:text-lg;
+    @apply text-gray-900 bg-white dark:bg-black dark:text-white;
   }
 }
