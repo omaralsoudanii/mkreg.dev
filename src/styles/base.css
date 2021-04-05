@@ -22,4 +22,7 @@
   body {
     @apply bg-white dark:bg-gray-1000;
   }
+  p {
+    @apply text-base lg:text-lg;
+  }
 }
