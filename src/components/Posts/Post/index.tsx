@@ -16,24 +16,25 @@ export default function PostContainer({ children, frontMatter }) {
     <Page extraMeta={extraMeta}>
       <CenteredColumn>
         <div className="flex flex-col py-4">
-          <div className="flex flex-col space-y-2">
-            <h1 className="py-1 text-heading-1">{frontMatter.title}</h1>
-            <p className="py-1 text-p-2">{frontMatter.description}</p>
-            <div className="flex flex-wrap py-2">
+          <div className="flex flex-col space-y-4">
+            <h1 className="font-extrabold text-primary">{frontMatter.title}</h1>
+            <div className="flex flex-wrap">
               {frontMatter.tags.map((tag) => (
                 <Tag key={tag} text={tag} />
               ))}
             </div>
-            <p className="py-1 text-p-3">
+            <p className="text-gray-700 dark:text-gray-300">
               {`${dayjs(new Date(frontMatter.publishedAt)).format(
                 'MMMM DD, YYYY'
               )}`}
             </p>
           </div>
           <div className="my-4 hr-stroke" />
-          <div className="w-full my-4 prose dark:prose-dark md:prose-lg max-w-none">
-            {children}
-          </div>
+          <article>
+            <div className="w-full my-4 prose dark:prose-dark max-w-none">
+              {children}
+            </div>
+          </article>
         </div>
       </CenteredColumn>
     </Page>

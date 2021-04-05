@@ -23,13 +23,13 @@ export default function MK() {
             />
             <div className=" hr-stroke" />
           </div>
-          <div className="flex flex-col items-start space-y-4 text-gray-800">
-            <p className="text-p-2">
+          <div className="flex flex-col items-start space-y-4">
+            <p className="text-lg">
               Well, Congrats on finding this page! Let me introduce you to my
               favourite human being in the universe. The one and only the
               legendendary Mr.Mark Knopfler.
             </p>
-            <p className="text-p-2">
+            <p className="text-lg">
               If you have ever wondered why the hell I have this domain rather
               than something closer to my name (for SEO bleh...), Then I can
               tell you that it's based on this acronym:
@@ -42,12 +42,12 @@ export default function MK() {
             >
               Mark Knopfler Red Electric Guitar &rarr;
             </a>
-            <p className="text-p-2">
+            <p className="text-lg">
               Every one has his own "Red Electric Guitar". Seeing my Idol
               getting his guitar, gives me some euphoric feeling with a smile on
               my face.
             </p>
-            <p className="text-p-2">
+            <p className="text-lg">
               So there you go, now you have the answer to the ultimate question
               of life. You can check my YouTube playlist for some goodies in the
               footer below 👇

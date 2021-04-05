@@ -1,12 +1,12 @@
-import '@/styles/custom.css'
-import '@/styles/prism.css'
-import '@/styles/prose.css'
 import App from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { MDXProvider } from '@mdx-js/react'
 import MDXComponents from '@/components/MDXComponents'
 import Header from '@/components/Header'
 import { Footer } from '@/components/Footer'
+
+import '@/styles/fonts.css'
+import '@/styles/main.css'
 class MyApp extends App {
   componentDidCatch(error, errorInfo) {
     super.componentDidCatch(error, errorInfo)

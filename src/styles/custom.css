@@ -1,344 +1,116 @@
-@tailwind base;
-/* Inter font declerations https://rsms.me/inter/inter.css */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Thin.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url(/static/fonts/Inter-ThinItalic.woff2) format('woff2');
-}
+@tailwind utilities;
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url(/static/fonts/Inter-ExtraLight.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url(/static/fonts/Inter-ExtraLightItalic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Light.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url(/static/fonts/Inter-LightItalic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Regular.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Italic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Medium.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url(/static/fonts/Inter-MediumItalic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(/static/fonts/Inter-SemiBold.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url(/static/fonts/Inter-SemiBoldItalic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Bold.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/static/fonts/Inter-BoldItalic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url(/static/fonts/Inter-ExtraBold.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url(/static/fonts/Inter-ExtraBoldItalic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url(/static/fonts/Inter-Black.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url(/static/fonts/Inter-BlackItalic.woff2) format('woff2');
-}
-/* ----------------------- variable ----------------------- */
-/* latin italic var */
-@font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url(/static/fonts/Inter-roman.var.woff2) format('woff2');
-}
-/* latin var */
-@font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url(/static/fonts/Inter-italic.var.woff2) format('woff2');
-}
-
-/* Custom tailwind components styles here */
-@layer base {
-  html {
-    @apply text-base antialiased font-normal;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      ui-sans-serif, system-ui, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
+/* Your own custom utilities */
+@layer utilities {
+  .text-primary {
+    @apply text-4xl text-black dark:text-white;
   }
-  @supports (font-variation-settings: normal) {
-    html {
-      font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, ui-sans-serif, system-ui, 'Helvetica Neue', Arial, 'Noto Sans',
-        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
+
+  .text-secondary {
+    @apply text-3xl text-black dark:text-white;
+  }
+
+  .text-tertiary {
+    @apply text-2xl text-black dark:text-white;
+  }
+  
+  .inter-text {
+    @apply text-base sm:text-tertiary md:text-secondary lg:text-primary;
+  }
+
+  .hdr-backdrop {
+    @apply bg-white bg-opacity-70 dark:bg-opacity-50 dark:bg-black;
+    backdrop-filter: saturate(200%) blur(5px);
+  }
+
+  @supports not (backdrop-filter: none) {
+    .hdr-backdrop {
+      backdrop-filter: none;
+      @apply bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
     }
   }
-  body {
-    @apply bg-white dark:bg-gray-1000;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    font-kerning: normal;
-    -webkit-font-kerning: normal;
-    -ms-font-kerning: normal;
-    -moz-font-kerning: normal;
-    -o-font-kerning: normal;
-    font-variant-ligatures: contextual common-ligatures;
-    -webkit-font-variant-ligatures: contextual common-ligatures;
-    -ms-font-variant-ligatures: contextual common-ligatures;
-    -moz-font-variant-ligatures: contextual common-ligatures;
-    -o-font-variant-ligatures: contextual common-ligatures;
-    font-feature-settings: 'rlig' 1, 'kern' 1, 'liga' 1, 'calt' 1, 'case' 1;
+
+  .hdr-base {
+    @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px text-sm font-bold;
   }
-}
-@tailwind components;
-@tailwind utilities;
-p,
-ul,
-ol,
-li {
-  @apply text-gray-900 dark:text-gray-50;
-}
 
-h6 {
-  @apply text-lg font-bold text-gray-900 lg:text-xl dark:text-gray-50;
-}
-
-h5 {
-  @apply text-lg font-bold text-gray-900 lg:text-xl dark:text-gray-50;
-}
-
-h4 {
-  @apply text-xl font-bold text-gray-900 lg:text-2xl dark:text-gray-50;
-}
-
-h3 {
-  @apply text-2xl font-extrabold text-gray-900 lg:text-3xl dark:text-gray-50;
-}
-
-h2 {
-  @apply text-3xl font-extrabold text-gray-900 lg:text-4xl dark:text-gray-50;
-}
-
-h1 {
-  @apply text-4xl font-extrabold text-gray-900 lg:text-5xl dark:text-gray-50;
-}
-
-.hdr-backdrop {
-  @apply bg-white bg-opacity-70 dark:bg-opacity-50 dark:bg-black;
-  backdrop-filter: saturate(200%) blur(5px);
-}
-
-@supports not (backdrop-filter: none) {
-  .hdr-backdrop {
-    backdrop-filter: none;
-    @apply bg-opacity-100 border-b border-gray-400 dark:bg-opacity-100 dark:border-opacity-10 border-opacity-20;
+  .hdr-base a {
+    @apply w-full px-8 py-2 mx-px my-0 text-center rounded sm:w-auto sm:p-0;
   }
-}
 
-.hdr-base {
-  @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px text-sm font-bold;
-}
+  .hdr-sm-cnt {
+    @apply flex justify-center;
+  }
 
-.hdr-base a {
-  @apply w-full px-8 py-2 mx-px my-0 text-center rounded sm:w-auto sm:p-0;
-}
+  .hdr-sm-cnt a {
+    @apply text-center;
+  }
 
-.hdr-sm-cnt {
-  @apply flex justify-center text-base;
-}
+  .hdr-sm-cnt-expanded {
+    @apply flex-col items-start pb-4;
+  }
 
-.hdr-sm-cnt a {
-  @apply text-center;
-}
+  .hdr-sm-cnt-not-expanded {
+    @apply flex-row items-center pb-1;
+  }
 
-.hdr-sm-cnt-expanded {
-  @apply flex-col items-start pb-4;
-}
+  .hdr-sm-btn {
+    @apply flex items-center justify-center px-4 py-1 font-medium text-gray-900 dark:text-gray-50;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  }
 
-.hdr-sm-cnt-not-expanded {
-  @apply flex-row items-center pb-1;
-}
+  .hdr-sm-title {
+    @apply inline-block w-full px-3 py-2 text-sm font-medium text-left text-gray-900 cursor-pointer dark:text-gray-50;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  }
 
-.hdr-sm-btn {
-  @apply flex items-center justify-center px-4 py-1 font-medium text-gray-900 dark:text-gray-50;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-}
+  .hdr-sm-btn svg {
+    @apply w-6;
+  }
 
-.hdr-sm-title {
-  @apply inline-block w-full px-3 py-2 text-base font-medium text-left text-gray-900 cursor-pointer dark:text-gray-50;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-}
+  .hdr-cnt-theme-btn {
+    @apply absolute hidden p-2 font-medium text-gray-900 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-50;
+  }
 
-.hdr-sm-btn svg {
-  @apply w-6;
-}
+  .btn {
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold transition duration-300 ease-in-out rounded;
+  }
 
-.hdr-cnt-theme-btn {
-  @apply absolute hidden p-2 font-medium text-gray-900 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-50;
-}
+  .btn-secondary {
+    @apply text-gray-900 bg-gray-200 dark:text-gray-50 dark:bg-gray-900 hover:bg-gray-900 dark:hover:bg-gray-200 hover:text-gray-50 dark:hover:text-gray-900;
+  }
 
-.btn {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold transition duration-300 ease-in-out rounded;
-}
+  .btn-primary {
+    @apply bg-indigo-600 text-gray-50;
+  }
 
-.btn-secondary {
-  @apply text-gray-900 bg-gray-200 dark:text-gray-50 dark:bg-gray-900 hover:bg-gray-900 dark:hover:bg-gray-200 hover:text-gray-50 dark:hover:text-gray-900;
-}
+  .btn-large {
+    @apply px-6 py-3;
+  }
 
-.btn-primary {
-  @apply bg-indigo-600 text-gray-50;
-}
+  .text-link {
+    @apply font-medium text-indigo-600 duration-150 hover:text-opacity-75 dark:text-indigo-400 dark:font-medium dark:hover:text-indigo-300;
+  }
 
-.btn-large {
-  @apply px-6 py-3;
-}
+  .black-link {
+    @apply inline-block text-sm font-medium text-gray-900 sm:text-base dark:text-gray-50 hover:underline;
+  }
 
-.text-link {
-  @apply font-normal text-indigo-600 duration-150 hover:text-opacity-75 dark:text-indigo-400 dark:font-medium dark:hover:text-indigo-300;
-}
+  .nav-link {
+    @apply flex items-start py-2 text-sm font-medium rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-10 hover:bg-opacity-10 dark:hover:bg-gray-300 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-100;
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
 
-.text-p-1 {
-  @apply text-lg text-gray-900 sm:text-xl dark:text-gray-50;
-}
+  .nav-link.active {
+    @apply text-gray-900 bg-gray-800 bg-opacity-10 dark:bg-gray-800 dark:text-gray-50;
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
 
-.text-p-2 {
-  @apply text-base text-gray-900 sm:text-lg dark:text-gray-50;
-}
-
-.text-p-3 {
-  @apply text-base text-gray-900 dark:text-gray-50;
-}
-
-.text-heading-1 {
-  @apply text-4xl font-extrabold text-gray-900 dark:text-gray-50 sm:text-5xl;
-}
-
-.text-heading-2 {
-  @apply text-3xl font-extrabold text-gray-900 dark:text-gray-50 sm:text-4xl;
-}
-
-.text-heading-3 {
-  @apply text-2xl font-extrabold text-gray-900 dark:text-gray-50 sm:text-3xl;
-}
-
-.black-link {
-  @apply inline-block font-medium text-gray-900 sm:text-lg dark:text-gray-50 hover:underline;
-}
-
-.nav-link {
-  @apply flex items-start py-2 text-base font-medium rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-10 hover:bg-opacity-10 dark:hover:bg-gray-300 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-100;
-  filter: brightness(105%) saturate(200%) contrast(1);
-}
-
-.nav-link.active {
-  @apply text-gray-900 bg-gray-800 bg-opacity-10 dark:bg-gray-800 dark:text-gray-50;
-  -webkit-filter: brightness(105%) saturate(200%) contrast(1);
-  filter: brightness(105%) saturate(200%) contrast(1);
-  backdrop-filter: saturate(180%) blur(20px);
-}
-
-.hr-stroke {
-  @apply w-full h-px mx-auto bg-gray-400 dark:bg-gray-700;
+  .hr-stroke {
+    @apply w-full h-px mx-auto bg-gray-400 dark:bg-gray-700;
+  }
 }

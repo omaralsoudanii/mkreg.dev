@@ -14,7 +14,7 @@ function Nuggets() {
           <div className="hr-stroke" />
         </div>
         <div className="flex flex-col items-start space-y-4">
-          <p className="text-p-1">Under construction.</p>
+          <p className="text-xl">Under construction.</p>
         </div>
       </CenteredColumn>
     </Page>

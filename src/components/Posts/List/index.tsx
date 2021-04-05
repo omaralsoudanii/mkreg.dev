@@ -18,27 +18,25 @@ export default function PostsList({ posts, href }) {
           className="flex flex-col items-start px-4 py-6 space-y-2 bg-gray-100 dark:bg-gray-900"
           key={frontMatter.slug}
         >
-          <p className="text-p-3">
-            {`${dayjs(new Date(frontMatter.publishedAt)).format(
-              'MMMM DD, YYYY'
-            )}`}
-          </p>
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <h2 className="hover:underline text-heading-2">
+              <h2 className="font-extrabold hover:underline text-secondary">
                 {frontMatter.title}
               </h2>
             </a>
           </Link>
 
-          {frontMatter.description && (
-            <p className="text-p-3">{frontMatter.description}</p>
-          )}
-          <div className="flex flex-wrap py-2">
+          {frontMatter.description && <p>{frontMatter.description}</p>}
+          <div className="flex flex-wrap">
             {frontMatter.tags.map((tag) => (
               <Tag key={tag} text={tag} />
             ))}
           </div>
+          <p className="text-sm font-medium text-gray-700 dark:text-gray-400">
+            {`${dayjs(new Date(frontMatter.publishedAt)).format(
+              'MMMM DD, YYYY'
+            )}`}
+          </p>
         </div>
       ))}
     </div>

@@ -12,14 +12,14 @@ export default function NotFound() {
             </h1>
           </div>
           <div className="max-w-md px-1 space-y-4 sm:px-0">
-            <h1 className="text-heading-1">
+            <h1 className="text-primary font-extrabold">
               I tried, but didn't find this page
             </h1>
-            <p className="text-p-2">
+            <p className="text-xl">
               It seems that you're looking for something that used to exist, or
               you spelled something wrong.
             </p>
-            <p className="pb-4 text-p-2 sm:pb-0">
+            <p className="pb-4 text-xl sm:pb-0">
               Don't feel bad about it, this happens to me all the time, just
               imagine you're trying to find some solution for a bug in PHP v5.6
               that exists since 2007, sadly the only link is a freaking 404
