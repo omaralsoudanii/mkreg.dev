@@ -31,7 +31,7 @@
   }
 
   .hdr-base {
-    @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px text-sm font-bold sm:text-base;
+    @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px text-base font-bold;
   }
 
   .hdr-base a {
@@ -61,7 +61,7 @@
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 text-sm font-medium text-left text-gray-900 cursor-pointer sm:text-base dark:text-gray-50;
+    @apply inline-block w-full px-3 py-2 text-base font-medium text-left text-gray-900 cursor-pointer dark:text-gray-50;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
@@ -75,7 +75,7 @@
   }
 
   .btn {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold transition duration-300 ease-in-out rounded sm:text-base;
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-base font-semibold transition duration-300 ease-in-out rounded;
   }
 
   .btn-secondary {
@@ -95,7 +95,7 @@
   }
 
   .black-link {
-    @apply inline-block text-sm font-medium text-gray-900 sm:text-base dark:text-gray-50 hover:underline;
+    @apply inline-block text-base font-medium text-gray-900 dark:text-gray-50 hover:underline;
   }
 
   .nav-link {

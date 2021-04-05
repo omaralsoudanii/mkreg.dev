@@ -95,10 +95,11 @@ module.exports = {
             'h1,h2,h3': {
               fontWeight: '800',
               color: theme('colors.black'),
+              letterSpacing: theme('letterSpacing.tight'),
             },
             'h4,h5,h6': {
               fontWeight: '700',
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             'code:before': {
               content: 'none',
@@ -134,10 +135,11 @@ module.exports = {
             'h1,h2,h3': {
               fontWeight: '800',
               color: theme('colors.white'),
+              letterSpacing: theme('letterSpacing.tight'),
             },
             'h4,h5,h6': {
               fontWeight: '700',
-              color: theme('colors.gray.50'),
+              color: theme('colors.white'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {
