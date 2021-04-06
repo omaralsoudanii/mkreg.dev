@@ -23,6 +23,7 @@ export default function Page({ children }) {
     <React.Fragment>
       <Head>
         <title key="title">{meta.title}</title>
+        <meta key="description" name="description" content={meta.description} />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="robots" content="follow, index" />
         <meta name="googlebot" content="index,follow" />

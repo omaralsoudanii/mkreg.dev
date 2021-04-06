@@ -30,7 +30,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            letterSpacing: theme('letterSpacing.tight'),
             color: theme('colors.gray.1000'),
             a: {
               color: theme('colors.blue.500'),
@@ -71,7 +70,6 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.100'),
-            letterSpacing: theme('letterSpacing.tight'),
             a: {
               color: theme('colors.blue.400'),
               textDecoration: 'none',

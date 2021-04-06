@@ -16,7 +16,7 @@ export default function Seo({ data }) {
   return (
     <Head>
       <title key="title">{meta.title}</title>
-      <meta name="description" content={meta.description} />
+      <meta key="description" name="description" content={meta.description} />
       <meta property="og:image" content={meta.image.url} />
       <meta property="og:image:alt" content={meta.image.alt} />
       <meta property="og:title" content={meta.title} />
