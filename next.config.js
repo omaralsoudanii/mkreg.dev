@@ -3,7 +3,6 @@ const withPreact = require('next-plugin-preact')
 
 module.exports = withPreact({
   poweredByHeader: false,
-  trailingSlash: false,
   future: {
     webpack5: true,
   },
