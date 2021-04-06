@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { CenteredColumn } from '@/components/Layouts'
+import { CenteredColumn } from '@/components/CenteredColumn'
 import Page from '@/components/Page'
 import Tag from '@/components/Tag'
 
@@ -30,10 +30,8 @@ export default function PostContainer({ children, frontMatter }) {
             </p>
           </div>
           <div className="my-4 hr-stroke" />
-          <article>
-            <div className="w-full my-4 prose dark:prose-dark lg:prose-lg max-w-none">
-              {children}
-            </div>
+          <article className="w-full my-4 prose dark:prose-dark sm:prose">
+            {children}
           </article>
         </div>
       </CenteredColumn>

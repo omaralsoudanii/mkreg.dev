@@ -1,4 +1,4 @@
-import { CenteredColumn } from '@/components/Layouts'
+import { CenteredColumn } from '@/components/CenteredColumn'
 import Link from 'next/link'
 import Image from 'next/image'
 

@@ -1,5 +1,5 @@
 import PostsList from '@/components/Posts/List'
-import { CenteredColumn } from '@/components/Layouts'
+import { CenteredColumn } from '@/components/CenteredColumn'
 import Page from '@/components/Page'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatter } from '@/lib/mdx'

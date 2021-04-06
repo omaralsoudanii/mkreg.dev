@@ -1,106 +1,51 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./src/**/*.tsx', './src/**/*.ts'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
+    fontFamily: {
+      mono: [
+        'Menlo',
+        'Monaco',
+        '"Lucida Console"',
+        'Consolas',
+        '"Liberation Mono"',
+        '"Courier New"',
+        'monospace',
+      ],
+    },
     extend: {
       colors: {
         gray: colors.trueGray,
-        'gray-1000': '#0b0b0c',
-        'gray-900': '#131415',
+        'gray-1000': '#141414',
+        'gray-900': '#1a1a1a',
+        'gray-800': '#202020',
+        'gray-700': '#2a2a2a',
+        'gray-600': '#323232',
         'gray-100': '#fafafa',
-        indigo: colors.indigo,
-      },
-      fontWeight: {
-        normal: 440,
-      },
-      fontFamily: {
-        sans: ['"Inter var"', ...fontFamily.sans],
-      },
-      fontSize: {
-        xs: [
-          '0.75rem',
-          {
-            letterSpacing: '0.0004908em',
-          },
-        ],
-        sm: [
-          '0.875rem',
-          {
-            letterSpacing: '-0.0062235em',
-          },
-        ],
-        base: [
-          '1rem',
-          {
-            letterSpacing: '-0.0109598em',
-          },
-        ],
-        lg: [
-          '1.125rem',
-          {
-            letterSpacing: '-0.0143007em',
-          },
-        ],
-        xl: [
-          '1.25rem',
-          {
-            letterSpacing: '-0.0166573em',
-          },
-        ],
-        '2xl': [
-          '1.5rem',
-          {
-            letterSpacing: '-0.0194923em',
-          },
-        ],
-        '3xl': [
-          '1.875rem',
-          {
-            letterSpacing: '-0.0213145em',
-          },
-        ],
-        '4xl': [
-          '2.25rem',
-          {
-            letterSpacing: '-0.0219541em',
-          },
-        ],
-        '5xl': [
-          '3rem',
-          {
-            letterSpacing: '-0.0222574em',
-          },
-        ],
-        '6xl': [
-          '4rem',
-          {
-            letterSpacing: '-0.0222974em',
-          },
-        ],
+        blue: colors.lightBlue,
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.gray.1000'),
             a: {
-              color: theme('colors.indigo.600'),
+              color: theme('colors.blue.500'),
               textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.indigo.500'),
+                color: theme('colors.blue.400'),
               },
             },
             'h1,h2,h3': {
               fontWeight: '800',
-              color: theme('colors.black'),
+              color: theme('colors.gray.1000'),
               letterSpacing: theme('letterSpacing.tight'),
             },
             'h4,h5,h6': {
               fontWeight: '700',
-              color: theme('colors.black'),
+              color: theme('colors.gray.1000'),
             },
             'code:before': {
               content: 'none',
@@ -125,22 +70,22 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.white'),
+            color: theme('colors.gray.100'),
+            letterSpacing: theme('letterSpacing.tight'),
             a: {
-              color: theme('colors.indigo.400'),
+              color: theme('colors.blue.400'),
               textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.indigo.300'),
+                color: theme('colors.blue.300'),
               },
             },
             'h1,h2,h3': {
               fontWeight: '800',
-              color: theme('colors.white'),
-              letterSpacing: theme('letterSpacing.tight'),
+              color: theme('colors.gray.100'),
             },
             'h4,h5,h6': {
               fontWeight: '700',
-              color: theme('colors.white'),
+              color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {

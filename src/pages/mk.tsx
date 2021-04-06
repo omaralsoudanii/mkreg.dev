@@ -1,4 +1,4 @@
-import { CenteredColumn } from '@/components/Layouts'
+import { CenteredColumn } from '@/components/CenteredColumn'
 import Page from '@/components/Page'
 import Image from '@/components/ImageComposed'
 import Heading from '@/components/Heading'

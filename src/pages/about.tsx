@@ -1,5 +1,5 @@
 import Heading from '@/components/Heading'
-import { CenteredColumn } from '@/components/Layouts'
+import { CenteredColumn } from '@/components/CenteredColumn'
 import Page from '@/components/Page'
 import Link from 'next/link'
 

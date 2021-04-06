@@ -1,5 +1,5 @@
 import Page from '@/components/Page'
-import { CenteredColumn } from '@/components/Layouts'
+import { CenteredColumn } from '@/components/CenteredColumn'
 import Heading from '@/components/Heading'
 
 function Stack() {
