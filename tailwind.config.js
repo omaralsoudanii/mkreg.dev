@@ -30,6 +30,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            letterSpacing: theme('letterSpacing.tight'),
             color: theme('colors.gray.1000'),
             a: {
               color: theme('colors.blue.500'),
@@ -41,7 +42,6 @@ module.exports = {
             'h1,h2,h3': {
               fontWeight: '800',
               color: theme('colors.gray.1000'),
-              letterSpacing: theme('letterSpacing.tight'),
             },
             'h4,h5,h6': {
               fontWeight: '700',

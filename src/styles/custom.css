@@ -19,7 +19,7 @@
   }
 
   .hdr-backdrop {
-    @apply bg-white bg-opacity-70 dark:bg-opacity-50 dark:bg-black;
+    @apply bg-white bg-opacity-70 dark:bg-opacity-50 dark:bg-gray-800;
     backdrop-filter: saturate(200%) blur(5px);
   }
 
