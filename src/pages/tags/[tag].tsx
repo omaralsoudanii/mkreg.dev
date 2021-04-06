@@ -1,12 +1,12 @@
+import * as React from 'react'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
 import { kebabCase } from '@/lib/utils'
 import PostsList from '@/components/Posts/List'
-import { CenteredColumn } from '@/components/CenteredColumn'
-import Page from '@/components/Page'
 import Heading from '@/components/Heading'
 import Link from 'next/link'
+import Seo from '@/components/Seo'
 /**
  *
  * Renders a single post by tag and loads all content.
@@ -15,23 +15,21 @@ import Link from 'next/link'
 
 export default function Tag({ posts, tag }) {
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
-  const extraMeta = {
+  const meta = {
     title: `${tag} - ${Environment.ogTitle}`,
     description: `${title} writing - ${Environment.ogTitle}`,
   }
+
   return (
-    <Page extraMeta={extraMeta}>
-      <CenteredColumn>
-        <div className="flex flex-col items-start space-y-8">
-          <Heading title={title} />
-          <Link href="/writing">
-            <a className="text-base sm:text-lg text-link">&larr; Writing</a>
-          </Link>
-          <div className=" hr-stroke" />
-          <PostsList href="/writing" posts={posts} />
-        </div>
-      </CenteredColumn>
-    </Page>
+    <div className="flex flex-col items-start space-y-8">
+      <Seo data={meta} />
+      <Heading title={title} />
+      <Link href="/writing">
+        <a className="text-base sm:text-lg text-link">&larr; Writing</a>
+      </Link>
+      <div className=" hr-stroke" />
+      <PostsList href="/writing" posts={posts} />
+    </div>
   )
 }
 

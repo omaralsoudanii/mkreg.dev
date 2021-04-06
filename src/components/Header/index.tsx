@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
@@ -27,7 +27,6 @@ const RoutesMetadata = [
 ]
 
 export default function Header() {
-  const [mounted] = React.useState(true)
   const [isExpanded, setExpanded] = React.useState(false)
   const router = useRouter()
   const { theme, setTheme } = useTheme()
@@ -42,7 +41,7 @@ export default function Header() {
         ) ?? { href: router.asPath, label: 'MK' }
 
   return (
-    <div className="fixed top-0 z-10 w-full py-2 hdr-backdrop">
+    <div className="fixed top-0 left-0 right-0 z-10 w-full py-2 hdr-backdrop">
       <div className="grid grid-cols-1 sm:hidden">
         <div className="flex items-center">
           {isExpanded ? (
@@ -83,77 +82,13 @@ export default function Header() {
               <p>{currentRoute.label}</p>
             </a>
           </Link>
-          {mounted && (
-            <div
-              className="hdr-sm-btn"
-              onClick={() => {
-                isExpanded ? setExpanded(false) : null
-                setTheme(theme === 'dark' ? 'light' : 'dark')
-              }}
-            >
-              {theme === 'dark' ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-              )}
-            </div>
-          )}
-        </div>
-        {isExpanded &&
-          RoutesMetadata.map((route) => {
-            const navClass =
-              route.href === router.pathname ??
-              router.pathname.includes(route.href)
-                ? 'flex items-start py-3 pl-4  nav-link active'
-                : 'flex items-start py-3 pl-4  nav-link'
-            return (
-              <Link href={route.href} key={route.href}>
-                <a onClick={() => setExpanded(false)} className={navClass}>
-                  {route.label}
-                </a>
-              </Link>
-            )
-          })}
-      </div>
 
-      <div className="hidden max-w-screen-sm grid-cols-5 gap-4 px-4 mx-auto sm:grid">
-        {RoutesMetadata.map((route) => {
-          const navClass =
-            route.href === router.pathname ? 'nav-link active' : 'nav-link'
-          return (
-            <Link href={route.href} key={route.href}>
-              <a className={navClass}>{route.label}</a>
-            </Link>
-          )
-        })}
-        {mounted && (
           <div
-            className="hdr-cnt-theme-btn"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="hdr-sm-btn"
+            onClick={() => {
+              isExpanded ? setExpanded(false) : null
+              setTheme(theme === 'dark' ? 'light' : 'dark')
+            }}
           >
             {theme === 'dark' ? (
               <svg
@@ -185,7 +120,68 @@ export default function Header() {
               </svg>
             )}
           </div>
-        )}
+        </div>
+        {isExpanded &&
+          RoutesMetadata.map((route) => {
+            const navClass =
+              route.href === router.pathname ??
+              router.pathname.includes(route.href)
+                ? 'flex items-start py-3 pl-4  nav-link active'
+                : 'flex items-start py-3 pl-4  nav-link'
+            return (
+              <Link href={route.href} key={route.href}>
+                <a onClick={() => setExpanded(false)} className={navClass}>
+                  {route.label}
+                </a>
+              </Link>
+            )
+          })}
+      </div>
+
+      <div className="hidden max-w-screen-sm grid-cols-5 gap-4 px-4 mx-auto sm:grid">
+        {RoutesMetadata.map((route) => {
+          const navClass =
+            route.href === router.pathname ? 'nav-link active' : 'nav-link'
+          return (
+            <Link href={route.href} key={route.href}>
+              <a className={navClass}>{route.label}</a>
+            </Link>
+          )
+        })}
+        <div
+          className="hdr-cnt-theme-btn"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          {theme === 'dark' ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          )}
+        </div>
       </div>
     </div>
   )

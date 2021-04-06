@@ -1,3 +1,4 @@
+import * as React from 'react'
 import MDXComponents from '@/components/MDXComponents'
 import PostContainer from '@/components/Posts/Post'
 import { Environment } from '@/lib/environment'

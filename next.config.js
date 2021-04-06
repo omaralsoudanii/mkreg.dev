@@ -3,6 +3,7 @@ const withPreact = require('next-plugin-preact')
 
 module.exports = withPreact({
   poweredByHeader: false,
+  trailingSlash: false,
   future: {
     webpack5: true,
   },
@@ -28,6 +29,24 @@ module.exports = withPreact({
           {
             key: 'Content-Type',
             value: 'text/xml',
+          },
+        ],
+      },
+      {
+        source: '/static/fonts/Inter-roman.var.woff2',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/static/fonts/Inter-italic.var.woff2',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

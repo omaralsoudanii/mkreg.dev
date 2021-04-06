@@ -1,11 +1,12 @@
+import * as React from 'react'
 import PostsList from '@/components/Posts/List'
-import { CenteredColumn } from '@/components/CenteredColumn'
-import Page from '@/components/Page'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Heading from '@/components/Heading'
 import { Environment } from '@/lib/environment'
 import Link from 'next/link'
+import Seo from '@/components/Seo'
+
 /**
  * Main writing page
  *
@@ -14,27 +15,26 @@ import Link from 'next/link'
  */
 
 export default function Writing({ posts }) {
-  const extraMeta = {
+  const meta = {
     title: 'Writing',
     description: 'Writing about programming, software & Vim vs Emacs.',
   }
 
   return (
-    <Page extraMeta={extraMeta}>
-      <CenteredColumn>
-        <div className="flex flex-col items-start space-y-8">
-          <Heading
-            title="Writing"
-            subTitle="Writing about programming, software & Vim vs Emacs."
-          />
-          <Link href="/tags">
-            <a className="text-base text-link sm:text-lg">Tags &rarr;</a>
-          </Link>
-          <div className=" hr-stroke" />
-          <PostsList href="/writing" posts={posts} />
-        </div>
-      </CenteredColumn>
-    </Page>
+    <article>
+      <Seo data={meta} />
+      <div className="flex flex-col items-start space-y-8">
+        <Heading
+          title="Writing"
+          subTitle="Writing about programming, software & Vim vs Emacs."
+        />
+        <Link href="/tags">
+          <a className="text-base text-link sm:text-lg">Tags &rarr;</a>
+        </Link>
+        <div className=" hr-stroke" />
+        <PostsList href="/writing" posts={posts} />
+      </div>
+    </article>
   )
 }
 

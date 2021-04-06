@@ -1,7 +1,5 @@
+import * as React from 'react'
+
 export function CenteredColumn({ children }) {
-  return (
-    <div className="flex flex-col max-w-screen-md mx-auto justify-content">
-      {children}
-    </div>
-  )
+  return <div className="flex flex-col">{children}</div>
 }

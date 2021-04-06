@@ -1,14 +1,15 @@
-import App from 'next/app'
-import { ThemeProvider } from 'next-themes'
-import { MDXProvider } from '@mdx-js/react'
-import MDXComponents from '@/components/MDXComponents'
-
-
 import '@/styles/fonts.css'
 import '@/styles/main.css'
+
+import * as React from 'react'
+import App from 'next/app'
+import MDXComponents from '@/components/MDXComponents'
+import { ThemeProvider } from 'next-themes'
+import { MDXProvider } from '@mdx-js/react'
 import { Main } from '@/components/Layouts/main'
+
 class MyApp extends App {
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     super.componentDidCatch(error, errorInfo)
   }
 
