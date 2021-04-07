@@ -30,7 +30,6 @@ export interface EnvironmentProps {
     mail: string
     twitter: string
   }
-  rssTTL: number
   isr: {
     enable: boolean
     maxNumberOfPosts: number
@@ -61,7 +60,6 @@ export const Environment: EnvironmentProps = {
     quality: resolveNumber(process.env.POSTS_IMAGES_QUALITY, 80),
     source: resolveBool(process.env.POSTS_SOURCE_IMAGES, true),
   },
-  rssTTL: resolveNumber(process.env.RSS_FEED, 3600), // 1hour
   isr: {
     enable: resolveBool(process.env.POSTS_ISR, true),
     maxNumberOfPosts: resolveNumber(process.env.POSTS_ISR_MAX_NUMBER_POSTS, 10),

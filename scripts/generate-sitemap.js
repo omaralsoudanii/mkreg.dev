@@ -22,11 +22,11 @@ const prettier = require('prettier')
               .map((page) => {
                 const path = page
                   .replace('src/', '')
-                  .replace('pages', '')
-                  .replace('data', '')
+                  .replace('pages/', '/')
+                  .replace('data/writing', '/writing')
+                  .replace('public/', '/')
                   .replace('.tsx', '')
                   .replace('.mdx', '')
-                  .replace('public/', '/')
                   .replace('.md', '')
                   .replace('/index.xml', '')
                 const route = path === '/index' ? '' : path
@@ -46,5 +46,5 @@ const prettier = require('prettier')
   })
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync('public/sitemap.xml', formatted)
+  fs.writeFileSync('./public/sitemap.xml', formatted)
 })()
