@@ -5,7 +5,9 @@ import Heading from '@/components/Heading'
 import { Environment } from '@/lib/environment'
 import Link from 'next/link'
 import Seo from '@/components/Seo'
-
+import GenerateRSS from '@/lib/generate-rss'
+import fs from 'fs'
+import path from 'path'
 /**
  * Main writing page
  *
@@ -42,7 +44,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = WritingData.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )
-
+  const root = process.cwd()
+  const rssPath = path.join(root, 'public', 'rss.xml')
+  const rss = GenerateRSS(WritingData, 'rss.xml')
+  fs.writeFileSync(rssPath, rss)
   const { revalidate } = Environment.isr
   return {
     props: {

@@ -18,24 +18,8 @@ module.exports = {
     }
     return config
   },
-  redirects: () => [
-    {
-      source: '/rss',
-      destination: '/rss.xml',
-      permanent: true,
-    },
-  ],
   async headers() {
     return [
-      {
-        source: '/rss',
-        headers: [
-          {
-            key: 'Content-Type',
-            value: 'text/xml',
-          },
-        ],
-      },
       {
         source: '/static/fonts/Inter-roman.var.woff2',
         headers: [

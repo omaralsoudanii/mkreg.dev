@@ -6,6 +6,9 @@ import PostsList from '@/components/Posts/List'
 import Heading from '@/components/Heading'
 import Link from 'next/link'
 import Seo from '@/components/Seo'
+import GenerateRSS from '@/lib/generate-rss'
+import path from 'path'
+import fs from 'fs'
 /**
  *
  * Renders a single post by tag and loads all content.
@@ -37,6 +40,11 @@ export async function getStaticProps({ params }) {
   const filteredPosts = allPosts.filter((post) =>
     post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
+  const root = process.cwd()
+  const rss = GenerateRSS(filteredPosts, `tags/${params.tag}/index.xml`)
+  const rssPath = path.join(root, 'public', 'tags', params.tag)
+  fs.mkdirSync(rssPath, { recursive: true })
+  fs.writeFileSync(path.join(rssPath, 'index.xml'), rss)
   const { revalidate } = Environment.isr
   return {
     props: { posts: filteredPosts, tag: params.tag },
