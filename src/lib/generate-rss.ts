@@ -19,7 +19,7 @@ const GenerateRSS = (posts, page = 'index.xml') => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${ogTitle}</title>
-      <link>${siteUrl}/blog</link>
+      <link>${siteUrl}/writing</link>
       <description>${ogDescription}</description>
       <language>en-US</language>
       <managingEditor>${social.mail} (${ogTitle})</managingEditor>
