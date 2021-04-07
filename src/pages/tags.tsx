@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Tag from '@/components/Tag'
 import { getAllTags } from '@/lib/tags'
 import { kebabCase } from '@/lib/utils'

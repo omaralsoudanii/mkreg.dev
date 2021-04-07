@@ -1,4 +1,3 @@
-import * as React from 'react'
 import PostsList from '@/components/Posts/List'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatter } from '@/lib/mdx'

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'

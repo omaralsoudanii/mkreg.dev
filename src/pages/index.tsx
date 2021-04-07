@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Link from 'next/link'
 import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
@@ -13,7 +12,7 @@ function Home({ posts }) {
         <div className="flex flex-col items-start space-y-8 sm:items-center sm:text-center">
           <Heading
             title="Hi, I’m Omar"
-            subTitle="I made this site to understand what the heck is Jamstack 🤔, apparently it seems like i will spend the next year researching and reading about typography. Should've just installed Ghost instead 🤦"
+            subTitle="I made this site to understand what the heck is Jamstack 🤔, it seems like I will spend the next year researching and reading about typography. Should've just installed Ghost instead 🤦"
           />
           <div className="flex flex-col w-full space-y-4 sm:space-x-4 sm:flex-row sm:w-max sm:space-y-0">
             <Link href="/about">
@@ -30,7 +29,7 @@ function Home({ posts }) {
           </div>
         </div>
         <div className=" hr-stroke" />
-        <PostsContainer href="/writing" name="Recent" posts={posts} />
+        <PostsContainer href="/writing" name="Writing" posts={posts} />
       </div>
     </article>
   )

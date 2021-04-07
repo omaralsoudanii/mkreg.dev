@@ -1,17 +1,7 @@
-import * as React from 'react'
 import { Environment } from '@/lib/environment'
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    return await super.getInitialProps(ctx)
-  }
   render() {
     return (
       <Html lang="en">

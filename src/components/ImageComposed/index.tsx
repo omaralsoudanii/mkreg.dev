@@ -39,6 +39,7 @@ const Image = ({
     <div
       style={{
         contentVisibility: 'auto',
+        maxWidth: '100%',
       }}
     >
       <img

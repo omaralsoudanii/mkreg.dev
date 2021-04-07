@@ -1,18 +1,17 @@
-import * as React from 'react'
 import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className="px-4 py-8">
-      <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:flex-row sm:space-x-10 sm:mt-24">
-        <div className="pt-16 space-x-2 sm:space-y-6">
-          <h1 className="text-6xl leading-loose border-gray-900 sm:text-8xl sm:leading-loose sm:dark:border-gray-100 sm:border-r-8 sm:py-40 sm:px-6">
+    <div className="px-4 py-4">
+      <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:flex-row sm:space-x-10 sm:mt-8">
+        <div className="pt-4 space-x-2 sm:space-y-6">
+          <h1 className="text-6xl leading-loose border-gray-900 sm:text-8xl sm:leading-loose sm:dark:border-gray-100 sm:border-r-8 sm:py-24 sm:px-6">
             404
           </h1>
         </div>
         <div className="max-w-md px-1 space-y-4 sm:px-0">
           <h1 className="font-extrabold text-primary">
-            I tried, but didn't find this page
+            I tried but didn't find this page
           </h1>
           <p className="text-xl">
             It seems that you're looking for something that used to exist, or

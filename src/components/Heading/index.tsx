@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 export default function Heading({ title, subTitle = '' }) {
   return subTitle ? (
     <div className="space-y-6">

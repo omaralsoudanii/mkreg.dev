@@ -3,15 +3,15 @@
 /* Your own custom utilities */
 @layer utilities {
   .text-primary {
-    @apply text-4xl text-black  dark:text-white;
+    @apply text-4xl text-black dark:text-white;
   }
 
   .text-secondary {
-    @apply text-3xl text-black  dark:text-white;
+    @apply text-3xl text-black dark:text-white;
   }
 
   .text-tertiary {
-    @apply text-2xl text-black  dark:text-white;
+    @apply text-2xl text-black dark:text-white;
   }
 
   .hdr-backdrop {

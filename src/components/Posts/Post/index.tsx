@@ -1,4 +1,3 @@
-import * as React from 'react'
 import dayjs from 'dayjs'
 import Tag from '@/components/Tag'
 import Seo from '@/components/Seo'

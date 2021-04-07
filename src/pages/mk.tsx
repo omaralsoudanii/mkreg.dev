@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Image from '@/components/ImageComposed'
 import Heading from '@/components/Heading'
 import Seo from '@/components/Seo'
@@ -26,30 +25,45 @@ export default function MK() {
         <div className="flex flex-col items-start space-y-4">
           <p className="text-lg">
             Well, Congrats on finding this page! Let me introduce you to my
-            favourite human being in the universe. The one and only the
-            legendendary Mr.Mark Knopfler.
+            favorite human being in the universe. The legend himself Mr.Mark
+            Knopfler.
           </p>
           <p className="text-lg">
-            If you have ever wondered why the hell I have this domain rather
-            than something closer to my name (for SEO bleh...), Then I can tell
-            you that it's based on this acronym:
+            If you have ever wondered why the hell I have this weird domain name
+            rather than something closer to my name (for SEO blah...), Then I
+            can tell you that it's based on this acronym:
           </p>
           <a
             href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
             target="_blank"
             rel="noopener noreferrer"
-            className="mx-auto text-xl text-center text-link"
+            className="mx-auto text-lg text-center text-link"
           >
             Mark Knopfler Red Electric Guitar &rarr;
           </a>
           <p className="text-lg">
-            Every one has his own "Red Electric Guitar". Seeing my Idol getting
-            his guitar, gives me some euphoric feeling with a smile on my face.
+            Everyone has his own "Red Electric Guitar". Seeing this beautiful
+            genuine soul getting his guitar is always a pleasure that puts a
+            smile on my face.
           </p>
           <p className="text-lg">
             So there you go, now you have the answer to the ultimate question of
-            life. You can check my YouTube playlist for some goodies in the
-            footer below 👇
+            life.
+          </p>
+          <p className="text-lg">
+            You can check my YouTube playlist for some goodies in the footer
+            below.
+          </p>
+          <p className="text-lg">
+            Perhaps you can check this too 🤔 &rarr;{' '}
+            <a
+              href="https://mr.mkreg.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-auto text-lg text-center text-link"
+            >
+              MK
+            </a>
           </p>
         </div>
       </div>

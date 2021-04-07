@@ -1,8 +1,7 @@
-import * as React from 'react'
 import Page from '@/components/Page'
-import { CenteredColumn } from '@/components/CenteredColumn'
 import Header from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { CenteredColumn } from '../CenteredColumn'
 
 export function Main({ children }) {
   return (
