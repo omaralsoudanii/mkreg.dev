@@ -8,8 +8,8 @@ const prettier = require('prettier')
     'src/pages/*.tsx',
     'src/data/**/*.mdx',
     'src/data/**/*.md',
+    'public/tags/**/*.xml',
     '!src/pages/_*.tsx',
-    '!src/pages/rss.tsx',
     '!src/pages/api',
     '!src/pages/404.tsx',
     '!src/pages/500.tsx',
@@ -26,7 +26,9 @@ const prettier = require('prettier')
                   .replace('data', '')
                   .replace('.tsx', '')
                   .replace('.mdx', '')
+                  .replace('public/', '/')
                   .replace('.md', '')
+                  .replace('/index.xml', '')
                 const route = path === '/index' ? '' : path
                 return `
                           <url>
