@@ -28,7 +28,7 @@ export default function PostContainer({ children, frontMatter }) {
         </p>
       </div>
       <div className="my-4 hr-stroke" />
-      <article className="w-full my-4 prose dark:prose-dark sm:prose lg:prose-lg">
+      <article className="w-full my-4 prose !max-w-none dark:prose-dark">
         {children}
       </article>
     </div>

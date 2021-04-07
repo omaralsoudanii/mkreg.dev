@@ -15,7 +15,7 @@ export default function PostsList({ posts, href }) {
     <div className="flex flex-col w-full space-y-6">
       {posts.map((frontMatter) => (
         <div
-          className="flex flex-col items-start px-4 py-6 space-y-2 bg-gray-100 dark:bg-gray-900"
+          className="flex flex-col items-start px-4 py-6 space-y-4 bg-gray-100 dark:bg-gray-900"
           key={frontMatter.slug}
         >
           <Link href={`${href}/${frontMatter.slug}`} passHref>

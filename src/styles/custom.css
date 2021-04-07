@@ -1,7 +1,8 @@
+/* Your own custom utilities */
 @tailwind utilities;
 
-/* Your own custom utilities */
 @layer utilities {
+  
   .text-primary {
     @apply text-4xl text-black dark:text-white;
   }

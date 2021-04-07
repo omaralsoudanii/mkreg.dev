@@ -2,7 +2,8 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./src/**/*.tsx', './src/**/*.ts'],
+  mode: 'jit',
+  purge: ['./src/**/*.tsx', './src/**/*.ts', './src/**/*.mdx', './src/**/*.md'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
@@ -19,18 +20,14 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.trueGray,
-        'gray-1000': '#141414',
-        'gray-900': '#1a1a1a',
-        'gray-800': '#202020',
-        'gray-700': '#2a2a2a',
-        'gray-600': '#323232',
-        'gray-100': '#fafafa',
+        'gray-1000': '#0b0b0c',
+        'gray-900': '#131415',
         blue: colors.lightBlue,
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.1000'),
+            color: theme('colors.gray.900'),
             a: {
               color: theme('colors.blue.500'),
               textDecoration: 'none',
@@ -40,11 +37,11 @@ module.exports = {
             },
             'h1,h2,h3': {
               fontWeight: '800',
-              color: theme('colors.gray.1000'),
+              color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
               fontWeight: '700',
-              color: theme('colors.gray.1000'),
+              color: theme('colors.gray.900'),
             },
             'code:before': {
               content: 'none',
@@ -109,13 +106,6 @@ module.exports = {
           },
         },
       }),
-    },
-  },
-  variants: {
-    extend: {
-      fontWeight: ['dark'],
-      textColor: ['dark'],
-      typography: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],

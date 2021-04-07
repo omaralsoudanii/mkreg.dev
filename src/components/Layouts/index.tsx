@@ -5,7 +5,7 @@ import { CenteredColumn } from '../CenteredColumn'
 
 export function Main({ children }) {
   return (
-    <main className="h-screen max-w-screen-lg mx-auto justify-items-center md:text-lg">
+    <main className="h-screen max-w-screen-md mx-auto justify-items-center">
       <Header />
       <Page>
         <CenteredColumn>{children}</CenteredColumn>

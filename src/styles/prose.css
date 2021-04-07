@@ -1,5 +1,5 @@
 .prose {
-  @apply text-gray-1000 dark:text-gray-100;
+  @apply text-gray-900 dark:text-gray-100;
 }
 
 .prose h1,
@@ -8,7 +8,7 @@
 .prose h4,
 .prose h5,
 .prose h6, {
-  @apply font-extrabold text-gray-1000 dark:text-gray-100;
+  @apply font-extrabold text-gray-900 dark:text-gray-100;
 }
 
 .prose a {

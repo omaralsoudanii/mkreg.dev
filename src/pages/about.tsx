@@ -29,7 +29,7 @@ export default function About() {
         <Heading title="FAQ" />
         <div className="flex flex-col items-start space-y-12">
           <div className=" hr-stroke" />
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-4">
             <h3 className="font-extrabold text-tertiary">
               What technologies and programming languages you consider yourself
               good at?
@@ -57,7 +57,7 @@ export default function About() {
               </Link>
             </p>
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-4">
             <h3 className="font-extrabold text-tertiary">
               I heard you are the one the most talented Frontend engineers out
               there, could you expand on that?
@@ -75,7 +75,7 @@ export default function About() {
               parts.
             </p>
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-4">
             <h3 className="font-extrabold text-tertiary">
               Then how the hell you created this site?
             </h3>
