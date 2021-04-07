@@ -38,6 +38,7 @@ yarn-error.log*
 .vscode
 
 # post build
+/public/tags/
 /public/*.xml
 
 
