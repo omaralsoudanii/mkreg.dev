@@ -1,31 +1,5 @@
 version: "3.6"
 services:
-  mk-mariadb:
-    image: mariadb:10.5.9-focal
-    container_name: mk-mariadb
-    restart: unless-stopped
-    env_file:
-      - ../.env.docker
-    volumes:
-      - /var/lib/mariadb:/var/lib/mysql
-    networks:
-      - mk_prod
-
-  mk-ghost:
-    image: ghost:4.2-alpine
-    container_name: mk-ghost
-    restart: unless-stopped
-    depends_on:
-      - mk-mariadb
-    env_file:
-      - ../.env.docker
-    expose:
-      - 2368
-    volumes:
-      - /var/lib/ghost/content:/var/lib/ghost/content
-    networks:
-      - mk_prod
-
   mk-next:
     build:
       context: ../
