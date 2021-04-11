@@ -6,10 +6,7 @@ function Nuggets() {
   return (
     <article>
       <div className="flex flex-col items-start py-4 space-y-4">
-        <Heading
-          title="Nuggets"
-          subTitle="Resources I recommend everyone to read"
-        />
+        <Heading title="Nuggets" subTitle="Some stuff I bookmark" />
         <div className="hr-stroke" />
       </div>
       <div className="flex flex-col items-start space-y-4">
