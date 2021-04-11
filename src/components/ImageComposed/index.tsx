@@ -52,11 +52,7 @@ const Image = ({
             return `${urlResolver(src, size)} ${size}w`
           })
           .join(', ')}
-        sizes={
-          fixed
-            ? `${width}px`
-            : '(min-width: 1024px) 50vw, (min-width: 768px) 66.666667vw, 83.333333vw'
-        }
+        sizes={fixed ? `${width}px` : '100vw'}
         loading="lazy"
         decoding="async"
         className={`z-10 transition-opacity ${
