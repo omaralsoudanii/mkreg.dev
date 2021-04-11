@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { kebabCase } from '@/lib/utils'
 
-const Tag = ({ text }) => {
+const Tag = ({ url, text }) => {
   return (
-    <Link href={`/tags/${kebabCase(text)}`}>
-      <a className="mr-3 text-link">{kebabCase(text)}</a>
+    <Link href={url}>
+      <a className="mr-3 text-link">{text}</a>
     </Link>
   )
 }

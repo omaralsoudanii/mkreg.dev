@@ -1,10 +1,15 @@
 import Heading from '@/components/Heading'
-import Image from '@/components/ImageComposed'
+import Image from 'next/image'
+import { SEO } from '@/components/Seo/seo'
 import dayjs from 'dayjs'
 
 function Nuggets() {
+  const meta = {
+    description: 'Nuggets',
+  }
   return (
     <article>
+      <SEO {...meta} />
       <div className="flex flex-col items-start py-4 space-y-4">
         <Heading
           title="Nuggets"
@@ -23,6 +28,7 @@ function Nuggets() {
           alt="Omar Alsoudani bookmarks"
           width={2048}
           height={1357}
+          layout="responsive"
         />
       </div>
     </article>

@@ -1,17 +1,17 @@
 import Heading from '@/components/Heading'
+import { SEO } from '@/components/Seo/seo'
 import Link from 'next/link'
-import Seo from '@/components/Seo'
 
 export default function About() {
   const meta = {
     title: 'About',
-    description: 'Introduction and FAQ about me',
+    description: 'Omar Alsoudani - Software Engineer',
   }
 
   return (
     <article>
       <div className="flex flex-col items-start py-4 space-y-2">
-        <Seo data={meta} />
+        <SEO {...meta} />
         <Heading title="Introduction" />
         <div className="flex flex-col space-y-4">
           <div className=" hr-stroke" />

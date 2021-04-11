@@ -1,40 +1,25 @@
 module.exports = {
-  poweredByHeader: false,
   future: {
     webpack5: true,
   },
-  compress: process.env.NODE_ENV === 'development',
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      // Replace React with Preact only in client production build
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
-    return config
-  },
-  async headers() {
-    return [
-      {
-        source: '/static/fonts/Inter-roman.var.woff2',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/static/fonts/Inter-italic.var.woff2',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ]
+  images: {
+    deviceSizes: [320, 500, 680, 1040, 2080, 2048, 3120],
+    domains: [
+      'localhost',
+      'mkreg.dev',
+      'writing.mkreg.dev',
+      'images.unsplash.com',
+      'static.gotsby.org',
+      'static.ghost.org',
+      'hooshmand.net',
+      'ghost.org',
+      'repository-images.githubusercontent.com',
+      'www.gravatar.com',
+      'github.githubassets.com',
+      'www.crio.do',
+      'drive.google.com',
+      'lh3.googleusercontent.com',
+      'lh6.googleusercontent.com',
+    ],
   },
 }

@@ -18,22 +18,26 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
-    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": false,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ]
-    }
+    },
+    "resolveJsonModule": true
   },
   "include": [
-    "./next-env.d.ts",
+    "next-env.d.ts",
+    "types.d.ts",
+    "node_modules/@types/node/fs",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.js",
-    "scripts/**/*.js"
+    "src/*.tsx",
+    "src/*.ts",
+    "*.js",
+    "**/*.js"
   ],
   "exclude": [
     "node_modules"

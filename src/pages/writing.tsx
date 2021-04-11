@@ -1,13 +1,12 @@
 import PostsList from '@/components/Posts/List'
 import { GetStaticProps } from 'next'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Heading from '@/components/Heading'
 import { Environment } from '@/lib/environment'
 import Link from 'next/link'
-import Seo from '@/components/Seo'
-import GenerateRSS from '@/lib/generate-rss'
-import fs from 'fs'
-import path from 'path'
+import { useRouter } from 'next/router'
+import { SEO } from '@/components/Seo/seo'
+import { getAllPosts, GhostPostsOrPages } from '@/lib/ghost'
+import { seoImage } from '@/components/Seo/seoImage'
 /**
  * Main writing page
  *
@@ -15,15 +14,18 @@ import path from 'path'
  *
  */
 
-export default function Writing({ posts }) {
+export default function Writing({ data }) {
+  const router = useRouter()
+  if (router.isFallback) return <div>Loading...</div>
   const meta = {
-    title: 'Writing',
+    title: 'Omar Alsoudani - Writing',
     description: 'Writing about programming, software & Vim vs Emacs.',
+    seoImage: data.seoImage,
   }
 
   return (
     <article>
-      <Seo data={meta} />
+      <SEO {...meta} />
       <div className="flex flex-col items-start space-y-8">
         <Heading
           title="Writing"
@@ -33,26 +35,31 @@ export default function Writing({ posts }) {
           <a className="text-base text-link sm:text-lg">Tags &rarr;</a>
         </Link>
         <div className=" hr-stroke" />
-        <PostsList href="/writing" posts={posts} />
+        <PostsList posts={data.posts} />
       </div>
     </article>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const WritingData = await getAllFilesFrontMatter('writing')
-  const posts = WritingData.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  )
-  const root = process.cwd()
-  const rssPath = path.join(root, 'public', 'rss.xml')
-  const rss = GenerateRSS(WritingData, 'rss.xml')
-  fs.writeFileSync(rssPath, rss)
-  const { revalidate } = Environment.isr
+  let posts: GhostPostsOrPages | []
+
+  try {
+    posts = await getAllPosts()
+  } catch (error) {
+    console.log(error)
+    // throw new Error('Writing creation failed.')
+  }
+
+  const data = {
+    posts,
+    seoImage: await seoImage({ siteUrl: Environment.siteUrl }),
+  }
+
   return {
     props: {
-      posts,
+      data,
     },
-    revalidate: revalidate,
+    ...(Environment.isr.enable && { revalidate: Environment.isr.revalidate }),
   }
 }

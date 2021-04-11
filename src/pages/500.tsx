@@ -16,14 +16,18 @@ export default function NotFound() {
             I will send you a zip file, just extract it and double click
             index.html
           </p>
-          <Image
-            src="/static/images/docker.jpeg"
-            width="604"
-            height="453"
-            layout="responsive"
-            quality={80}
-          />
-
+          <div
+            className="max-w-full my-4"
+            style={{ contentVisibility: 'auto' }}
+          >
+            <Image
+              src="/static/images/docker.jpeg"
+              width="604"
+              height="453"
+              layout="responsive"
+              sizes={`(min-width: 1024px) 50vw, (min-width: 768px) 66.666667vw, 83.333333vw`}
+            />
+          </div>
           <Link href="/">
             <a className="max-w-md mx-auto btn btn-primary btn-large">
               Is this gonna work? 🤔

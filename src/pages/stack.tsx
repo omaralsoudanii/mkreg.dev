@@ -1,10 +1,16 @@
 import Heading from '@/components/Heading'
-import Image from '@/components/ImageComposed'
+import Image from 'next/image'
+import { SEO } from '@/components/Seo/seo'
 import dayjs from 'dayjs'
 
 function Stack() {
+  const meta = {
+    title: 'Stack',
+    description: 'Omar Alsoudani tech stack',
+  }
   return (
     <article>
+      <SEO {...meta} />
       <div className="flex flex-col items-start py-4 space-y-4">
         <Heading title="Stack" subTitle="A list of what I know about tech." />
         <div className=" hr-stroke" />
@@ -20,6 +26,7 @@ function Stack() {
           alt="Omar Alsoudani stack"
           width={2048}
           height={1357}
+          layout="responsive"
         />
       </div>
     </article>

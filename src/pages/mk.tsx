@@ -1,6 +1,6 @@
-import Image from '@/components/ImageComposed'
+import Image from 'next/image'
 import Heading from '@/components/Heading'
-import Seo from '@/components/Seo'
+import { SEO } from '@/components/Seo/seo'
 
 export default function MK() {
   const meta = {
@@ -10,16 +10,23 @@ export default function MK() {
 
   return (
     <article>
-      <Seo data={meta} />
+      <SEO {...meta} />
       <div className="flex flex-col space-y-8">
         <div className="flex flex-col items-center space-y-8 text-center">
           <Heading title="The Sultan of swing" subTitle="Mark Knopfler" />
-          <Image
-            src="/static/images/mk.jpg"
-            alt="Mark Knopfler"
-            width={3000}
-            height={2400}
-          />
+          <div
+            className="max-w-full my-4"
+            style={{ contentVisibility: 'auto' }}
+          >
+            <Image
+              src="/static/images/mk.jpg"
+              alt="Mark Knopfler"
+              width={3000}
+              height={2400}
+              layout="responsive"
+              sizes={`(min-width: 1024px) 50vw, (min-width: 768px) 66.666667vw, 83.333333vw`}
+            />
+          </div>
           <div className=" hr-stroke" />
         </div>
         <div className="flex flex-col items-start space-y-4">
