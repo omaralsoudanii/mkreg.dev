@@ -18,7 +18,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/static/fonts/Inter-roman.var.woff2',
+        source: '/static/fonts/(.*)',
         headers: [
           {
             key: 'Cache-Control',

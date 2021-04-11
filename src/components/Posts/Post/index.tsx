@@ -15,7 +15,7 @@ export default function PostContainer({ children, frontMatter }) {
     <div className="flex flex-col py-4">
       <Seo data={meta} />
       <div className="flex flex-col space-y-4">
-        <h1 className="font-extrabold text-primary">{frontMatter.title}</h1>
+        <h1 className="font-bold text-primary">{frontMatter.title}</h1>
         <div className="flex flex-wrap">
           {frontMatter.tags.map((tag) => (
             <Tag key={tag} text={tag} />

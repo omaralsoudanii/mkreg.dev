@@ -10,7 +10,7 @@ export default function NotFound() {
           </h1>
         </div>
         <div className="max-w-md px-1 space-y-4 sm:px-0">
-          <h1 className="font-extrabold text-primary">
+          <h1 className="font-bold text-primary">
             I tried but didn't find this page
           </h1>
           <p className="text-xl">

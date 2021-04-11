@@ -30,7 +30,7 @@ export default function About() {
         <div className="flex flex-col items-start space-y-12">
           <div className=" hr-stroke" />
           <div className="flex flex-col space-y-4">
-            <h3 className="font-extrabold text-tertiary">
+            <h3 className="font-bold text-tertiary">
               What technologies and programming languages you consider yourself
               good at?
             </h3>
@@ -58,7 +58,7 @@ export default function About() {
             </p>
           </div>
           <div className="flex flex-col space-y-4">
-            <h3 className="font-extrabold text-tertiary">
+            <h3 className="font-bold text-tertiary">
               I heard you are the one the most talented Frontend engineers out
               there, could you expand on that?
             </h3>
@@ -76,7 +76,7 @@ export default function About() {
             </p>
           </div>
           <div className="flex flex-col space-y-4">
-            <h3 className="font-extrabold text-tertiary">
+            <h3 className="font-bold text-tertiary">
               Then how the hell you created this site?
             </h3>
             <p className="text-lg">

@@ -1,18 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
   "headers": [
     {
-      "source": "/static/fonts/Inter-roman.var.woff2",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/static/fonts/Inter-italic.var.woff2",
+      "source": "/static/fonts/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

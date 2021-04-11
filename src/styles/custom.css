@@ -4,15 +4,15 @@
 @layer utilities {
   
   .text-primary {
-    @apply text-4xl text-black dark:text-white;
+    @apply text-4xl text-gray-900 dark:text-gray-100;
   }
 
   .text-secondary {
-    @apply text-3xl text-black dark:text-white;
+    @apply text-3xl text-gray-900 dark:text-gray-100
   }
 
   .text-tertiary {
-    @apply text-2xl text-black dark:text-white;
+    @apply text-2xl text-gray-900 dark:text-gray-100;
   }
 
   .hdr-backdrop {
@@ -52,13 +52,13 @@
   }
 
   .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1 font-medium text-gray-900 dark:text-gray-50;
+    @apply flex items-center justify-center px-4 py-1 font-medium text-gray-900 dark:text-gray-100;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 text-base font-medium text-left text-gray-900 cursor-pointer dark:text-gray-50;
+    @apply inline-block w-full px-3 py-2 text-base font-medium text-left text-gray-900 cursor-pointer dark:text-gray-100;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
@@ -68,7 +68,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute hidden p-2 font-medium text-gray-900 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-50;
+    @apply absolute hidden p-2 font-medium text-gray-900 cursor-pointer right-4 top-1 w-11 sm:flex dark:text-gray-100;
   }
 
   .btn {
@@ -76,11 +76,11 @@
   }
 
   .btn-secondary {
-    @apply bg-gray-900 text-gray-50 dark:text-gray-900 dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-900 hover:text-gray-900 dark:hover:text-gray-50;
+    @apply text-gray-100 bg-gray-900 dark:text-gray-900 dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-900 hover:text-gray-900 dark:hover:text-gray-100;
   }
 
   .btn-primary {
-    @apply bg-blue-600 text-gray-50;
+    @apply text-gray-100 bg-blue-600;
   }
 
   .btn-large {
@@ -92,7 +92,7 @@
   }
 
   .black-link {
-    @apply inline-block text-base font-medium text-gray-900 dark:text-gray-50 hover:underline;
+    @apply inline-block text-base font-medium text-gray-900 dark:text-gray-100 hover:underline;
   }
 
   .nav-link {
@@ -101,7 +101,7 @@
   }
 
   .nav-link.active {
-    @apply text-gray-900 bg-gray-800 bg-opacity-10 dark:bg-gray-800 dark:text-gray-50;
+    @apply text-gray-900 bg-gray-800 bg-opacity-10 dark:bg-gray-800 dark:text-gray-100;
     -webkit-filter: brightness(105%) saturate(200%) contrast(1);
     filter: brightness(105%) saturate(200%) contrast(1);
     backdrop-filter: saturate(180%) blur(20px);

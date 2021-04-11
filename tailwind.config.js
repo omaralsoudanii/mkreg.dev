@@ -5,18 +5,18 @@ module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.tsx', './src/**/*.ts', './src/**/*.mdx', './src/**/*.md'],
   darkMode: 'class', // 'media' or 'class'
+  fontFamily: {
+    mono: [
+      'Menlo',
+      'Monaco',
+      '"Lucida Console"',
+      'Consolas',
+      '"Liberation Mono"',
+      '"Courier New"',
+      'monospace',
+    ],
+  },
   theme: {
-    fontFamily: {
-      mono: [
-        'Menlo',
-        'Monaco',
-        '"Lucida Console"',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-      ],
-    },
     extend: {
       colors: {
         gray: colors.trueGray,
@@ -36,7 +36,7 @@ module.exports = {
               },
             },
             'h1,h2,h3': {
-              fontWeight: '800',
+              fontWeight: '700',
               color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
@@ -75,7 +75,7 @@ module.exports = {
               },
             },
             'h1,h2,h3': {
-              fontWeight: '800',
+              fontWeight: '700',
               color: theme('colors.gray.100'),
             },
             'h4,h5,h6': {

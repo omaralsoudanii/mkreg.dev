@@ -20,7 +20,7 @@ export default function PostsList({ posts, href }) {
         >
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <h2 className="font-extrabold hover:underline text-secondary">
+              <h2 className="font-bold hover:underline text-secondary">
                 {frontMatter.title}
               </h2>
             </a>
