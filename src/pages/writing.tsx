@@ -1,13 +1,13 @@
-import PostsList from '@/components/Posts/List'
 import { GetStaticProps } from 'next'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import Heading from '@/components/Heading'
 import { Environment } from '@/lib/environment'
 import Link from 'next/link'
 import Seo from '@/components/Seo'
 import GenerateRSS from '@/lib/generate-rss'
 import fs from 'fs'
 import path from 'path'
+import React from 'react'
+import PostsContainer from '@/components/Posts/Container'
 /**
  * Main writing page
  *
@@ -22,20 +22,19 @@ export default function Writing({ posts }) {
   }
 
   return (
-    <article>
+    <div className="container px-2 mx-auto leading-relaxed">
       <Seo data={meta} />
-      <div className="flex flex-col items-start space-y-8">
-        <Heading
-          title="Writing"
-          subTitle="Writing about programming, software & Vim vs Emacs."
-        />
-        <Link href="/tags">
-          <a className="text-base text-link sm:text-lg">Tags &rarr;</a>
-        </Link>
-        <div className=" hr-stroke" />
-        <PostsList href="/writing" posts={posts} />
-      </div>
-    </article>
+      <section className="mb-20 space-y-8">
+        <h2>Writing</h2>
+        <p>Writing about programming, software & Vim vs Emacs.</p>
+        <p className="text-right">
+          <Link href="/tags">
+            <a className="text-link">Tags &rarr;</a>
+          </Link>
+        </p>
+      </section>
+      <PostsContainer href="/writing" name="All Posts" posts={posts} />
+    </div>
   )
 }
 

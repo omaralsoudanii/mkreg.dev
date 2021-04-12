@@ -1,9 +1,4 @@
 @import 'base.css';
-
-/*! purgecss start ignore */
-@import 'prism.css';
-@import 'prose.css';
-/*! purgecss end ignore */
-
 @import 'tailwindcss/components';
+@import 'prose.css';
 @import 'custom.css';

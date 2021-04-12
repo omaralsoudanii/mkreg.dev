@@ -24,7 +24,9 @@ const GenerateRSS = (posts, page = 'index.xml') => `
       <language>en-US</language>
       <managingEditor>${social.mail} (${ogTitle})</managingEditor>
       <webMaster>${social.mail} (${ogTitle})</webMaster>
-      <lastBuildDate>${new Date(posts[0].publishedAt).toUTCString()}</lastBuildDate>
+      <lastBuildDate>${new Date(
+        posts[0].publishedAt
+      ).toUTCString()}</lastBuildDate>
       <atom:link href="${siteUrl}/${page}" rel="self" type="application/rss+xml"/>
       ${posts.map(GenerateRSSItem).join('')}
     </channel>

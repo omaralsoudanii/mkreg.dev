@@ -1,6 +1,6 @@
-import dayjs from 'dayjs'
-import Tag from '@/components/Tag'
+import { Container } from '@/components/Container'
 import Seo from '@/components/Seo'
+import * as React from 'react'
 
 export default function PostContainer({ children, frontMatter }) {
   const meta = {
@@ -12,25 +12,14 @@ export default function PostContainer({ children, frontMatter }) {
     },
   }
   return (
-    <div className="flex flex-col py-4">
+    <React.Fragment>
       <Seo data={meta} />
-      <div className="flex flex-col space-y-4">
-        <h1 className="font-bold text-primary">{frontMatter.title}</h1>
-        <div className="flex flex-wrap">
-          {frontMatter.tags.map((tag) => (
-            <Tag key={tag} text={tag} />
-          ))}
-        </div>
-        <p className="text-gray-700 dark:text-gray-300">
-          {`${dayjs(new Date(frontMatter.publishedAt)).format(
-            'MMMM DD, YYYY'
-          )}`}
-        </p>
-      </div>
-      <div className="my-4 hr-stroke" />
-      <article className="w-full my-4 prose !max-w-none dark:prose-dark">
+      <Container>
+        <header className="mb-4">
+          <h1>{frontMatter.title}</h1>
+        </header>
         {children}
-      </article>
-    </div>
+      </Container>
+    </React.Fragment>
   )
 }

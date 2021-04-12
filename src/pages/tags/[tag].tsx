@@ -2,13 +2,12 @@ import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
 import { kebabCase } from '@/lib/utils'
-import PostsList from '@/components/Posts/List'
-import Heading from '@/components/Heading'
 import Link from 'next/link'
 import Seo from '@/components/Seo'
 import GenerateRSS from '@/lib/generate-rss'
 import path from 'path'
 import fs from 'fs'
+import PostsContainer from '@/components/Posts/Container'
 /**
  *
  * Renders a single post by tag and loads all content.
@@ -23,14 +22,17 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <div className="flex flex-col items-start space-y-8">
+    <div className="container px-2 mx-auto leading-relaxed">
       <Seo data={meta} />
-      <Heading title={title} />
-      <Link href="/writing">
-        <a className="text-base sm:text-lg text-link">&larr; Writing</a>
-      </Link>
-      <div className=" hr-stroke" />
-      <PostsList href="/writing" posts={posts} />
+      <section className="mb-10 space-y-4">
+        <h2>{`Writing about ${title}`}</h2>
+        <p className="text-right">
+          <Link href="/writing">
+            <a className="text-link">Browse all writing &rarr; </a>
+          </Link>
+        </p>
+      </section>
+      <PostsContainer href="/writing" name={`${title} Posts`} posts={posts} />
     </div>
   )
 }

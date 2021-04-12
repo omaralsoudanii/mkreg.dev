@@ -1,44 +1,33 @@
 import dayjs from 'dayjs'
 import Link from 'next/link'
-import Tag from '@/components/Tag'
 
 export default function PostsList({ posts, href }) {
   if (!posts || posts.length === 0)
     return (
-      <p className="flex flex-col mt-4 space-y-6 text-xl">
+      <p>
         There seems to be no posts at the moment. But let's not kid each other.
         I probably pushed something buggy.
       </p>
     )
 
   return (
-    <div className="flex flex-col w-full space-y-6">
+    <ul className="space-y-8 leading-relaxed sm:space-y-4">
       {posts.map((frontMatter) => (
-        <div
-          className="flex flex-col items-start px-4 py-6 space-y-4 bg-gray-100 dark:bg-gray-900"
-          key={frontMatter.slug}
-        >
+        <li key={frontMatter.slug}>
           <Link href={`${href}/${frontMatter.slug}`} passHref>
             <a>
-              <h2 className="font-bold hover:underline text-secondary">
+              <span className="border-b border-dotted border-lt-darker dark:border-dk-darker hover:border-none hover:bg-lt-black hover:text-lt-white dark:hover:bg-dk-black dark:hover:text-dk-white">
                 {frontMatter.title}
-              </h2>
+              </span>
+              <time className="w-full ml-2 text-lt-darkest dark:text-dk-darkest sm:ml-4 sm:w-24">
+                {`${dayjs(new Date(frontMatter.publishedAt)).format(
+                  'MMMM DD, YYYY'
+                )}`}
+              </time>
             </a>
           </Link>
-
-          {frontMatter.description && <p>{frontMatter.description}</p>}
-          <div className="flex flex-wrap">
-            {frontMatter.tags.map((tag) => (
-              <Tag key={tag} text={tag} />
-            ))}
-          </div>
-          <p className="text-sm font-medium text-gray-700 dark:text-gray-400">
-            {`${dayjs(new Date(frontMatter.publishedAt)).format(
-              'MMMM DD, YYYY'
-            )}`}
-          </p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }

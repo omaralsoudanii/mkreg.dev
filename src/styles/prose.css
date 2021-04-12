@@ -1,5 +1,209 @@
-.prose {
-  @apply text-gray-900 dark:text-gray-100;
+.prose .remark-code-title {
+  @apply px-5 py-3 text-sm bg-gray-100 rounded-t text-lt-black dark:text-dk-black dark:bg-gray-900;
+  font-variation-settings: "wght" 600;
+}
+
+.prose .remark-code-title + pre {
+  @apply mt-0 mb-0 rounded-t-none;
+}
+
+.prose .mdx-marker {
+  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-gray-900 dark:border-gray-100 dark:bg-gray-900;
+}
+
+.prose code[class*='language-'],
+.prose pre[class*='language-'] {
+  @apply mt-0 mb-0 font-mono bg-gray-100 text-lt-black dark:text-dk-black dark:bg-gray-900;
+  font-feature-settings: normal;
+  letter-spacing: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.prose pre[class*='language-']::-moz-selection,
+.prose pre[class*='language-'] ::-moz-selection,
+.prose code[class*='language-']::-moz-selection,
+.prose code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+}
+
+.prose pre[class*='language-']::selection,
+.prose pre[class*='language-'] ::selection,
+.prose code[class*='language-']::selection,
+.prose code[class*='language-'] ::selection {
+  text-shadow: none;
+}
+
+@media print {
+  .prose code[class*='language-'],
+  .prose pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+.prose pre[class*='language-'] {
+  overflow: auto;
+}
+
+.prose :not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  white-space: normal;
+}
+
+.dark .prose .token.attr-name {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.light .prose .token.attr-name {
+  color: rgb(0, 128, 0);
+  font-style: italic;
+}
+
+.dark .prose .token.comment {
+  color: rgb(128, 147, 147);
+}
+
+.light .prose .token.comment {
+  color: rgb(106, 115, 125);
+}
+
+.dark .prose .token.string,
+.dark .prose .token.url {
+  color: rgb(173, 219, 103);
+}
+
+.light .prose .token.string,
+.light .prose .token.url {
+  color: rgb(0, 128, 0);
+}
+
+.prose .token.variable {
+  @apply text-lt-black dark:text-dk-black;
+}
+
+.dark .prose .token.number {
+  color: rgb(247, 140, 108);
+}
+
+.light .prose .token.number {
+  color: rgb(227, 98, 9);
+}
+
+.dark .prose .token.builtin,
+.dark .prose .token.char,
+.dark .prose .token.constant,
+.dark .prose .token.function {
+  color: rgb(130, 170, 255);
+}
+
+.light .prose .token.builtin,
+.light .prose .token.char,
+.light .prose .token.constant,
+.light .prose .token.function {
+  color: rgb(0, 92, 197);
+}
+
+.dark .prose .token.punctuation {
+  color: rgb(199, 146, 234);
+}
+
+.light .prose .token.punctuation {
+  color: rgb(133, 89, 162);
+}
+
+.dark .prose .token.selector,
+.dark .prose .token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: 'italic';
+}
+
+.light .prose .token.selector,
+.light .prose .token.doctype {
+  color: rgb(133, 89, 162);
+  font-style: 'italic';
+}
+
+.dark .prose .token.class-name {
+  color: rgb(255, 203, 139);
+}
+
+.light .prose .token.class-name {
+  color: rgb(166, 108, 38);
+}
+
+.dark .prose .token.tag,
+.dark .prose .token.operator,
+.dark .prose .token.keyword {
+  color: #ffa7c4;
+}
+
+.light .prose .token.tag,
+.light .prose .token.operator,
+.light .prose .token.keyword {
+  color: #ff4884;
+}
+
+.dark .prose .token.boolean {
+  color: rgb(255, 88, 116);
+}
+
+.light .prose .token.boolean {
+  color: rgb(215, 58, 73);
+}
+
+.dark .prose .token.property {
+  color: rgb(128, 203, 196);
+}
+
+.light .prose .token.property {
+  color: rgb(99, 205, 195);
+}
+
+.dark .prose .token.namespace {
+  color: rgb(178, 204, 214);
+}
+
+.light .prose .token.namespace {
+  color: rgb(113, 178, 205);
+}
+
+.prose pre::-webkit-scrollbar {
+  display: none;
+}
+
+.prose pre:not([class*='language-']),
+.prose code:not([class*='language-']) {
+  @apply font-mono bg-gray-100 rounded text-lt-black dark:text-dk-black dark:bg-gray-900 mb-7;
+  letter-spacing: normal;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.prose img {
+  @apply m-0;
+}
+
+.prose p {
+  @apply mt-0 mb-4 leading-relaxed;
 }
 
 .prose h1,
@@ -7,40 +211,30 @@
 .prose h3,
 .prose h4,
 .prose h5,
-.prose h6, {
-  @apply font-bold text-gray-900 dark:text-gray-100;
+.prose h6 {
+  @apply mt-0 mb-4 font-bold leading-tight tracking-tight text-lt-headings dark:text-dk-headings font-display;
+  font-variation-settings: 'wght' 700;
 }
 
-.prose a {
-  @apply font-medium text-blue-500 no-underline duration-150 dark:no-underline hover:text-opacity-75 dark:text-blue-400 dark:font-medium dark:hover:text-blue-300;
+.prose h1 {
+  @apply text-3xl;
+}
+.prose h2 {
+  @apply text-2xl;
 }
 
-.prose blockquote {
-  @apply font-normal border-l-2 border-gray-200 dark:border-gray-800 dark:text-gray-200;
+.prose h3 {
+  @apply text-xl;
 }
 
-
-.prose figure {
-  @apply md:-mx-6;
-}
-
-.prose img {
-  @apply w-full rounded-md;
-}
-
-.prose a code {
-  @apply px-0.5 -mx-0.5 font-medium no-underline bg-blue-400 rounded-sm dark:bg-gray-100 dark:bg-opacity-20 text-gray-900 dark:text-gray-50 bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-blue-500 dark:hover:bg-opacity-100 dark:hover:text-gray-900;
-}
-
-.prose table {
-  @apply text-gray-900 dark:text-gray-50;
-}
-
-.prose b,
-.prose strong {
-  @apply font-bold text-gray-900 dark:text-gray-50;
+.prose h4 {
+  @apply text-lg;
 }
 
 .prose h5 {
-  @apply mt-10 -mb-3 text-2xl;
+  @apply text-base;
+}
+
+.prose h6 {
+  @apply text-base;
 }

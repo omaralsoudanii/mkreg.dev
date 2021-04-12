@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Environment } from '@/lib/environment'
 import { useRouter } from 'next/router'
-import React from 'react'
+import * as React from 'react'
 
 export default function Page({ children }) {
   const router = useRouter()
@@ -38,7 +38,7 @@ export default function Page({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@omaralsoudani" />
       </Head>
-      <div className="px-4 pt-24 pb-16">{children}</div>
+      <div className="px-4 pt-24 pb-16 sm:px-0">{children}</div>
     </React.Fragment>
   )
 }

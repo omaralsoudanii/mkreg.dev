@@ -1,17 +1,13 @@
-import Heading from '@/components/Heading'
 import Image from '@/components/ImageComposed'
 import dayjs from 'dayjs'
 
 function Stack() {
   return (
-    <article>
-      <div className="flex flex-col items-start py-4 space-y-4">
-        <Heading title="Stack" subTitle="A list of what I know about tech." />
-        <div className=" hr-stroke" />
-      </div>
-      <div className="flex flex-col items-start py-4 space-y-4">
-        <p className="text-xl">Content is not ready yet.</p>
-        <p className="text-xl">
+    <div className="container px-0 mx-auto leading-relaxed">
+      <section className="mb-20 space-y-8">
+        <h2>Stack</h2>
+        <p>A list of what I know about tech.</p>
+        <p>
           <strong>ETA:</strong> about ~1 year from{' '}
           {`${dayjs(new Date()).format('MMMM DD, YYYY')}`}
         </p>
@@ -21,8 +17,8 @@ function Stack() {
           width={2048}
           height={1357}
         />
-      </div>
-    </article>
+      </section>
+    </div>
   )
 }
 

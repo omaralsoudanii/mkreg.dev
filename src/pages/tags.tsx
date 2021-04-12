@@ -24,11 +24,7 @@ export default function Tags({ tags }) {
     <article>
       <Seo data={meta} />
       <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-24">
-        <div className="pt-16 space-x-2 sm:space-y-6">
-          <h1 className="text-6xl leading-loose border-gray-900 sm:text-8xl sm:leading-loose sm:dark:border-gray-100 sm:border-r-8 sm:py-40 sm:px-6">
-            Tags
-          </h1>
-        </div>
+        <h1 className="text-6xl">Tags</h1>
         <div className="flex flex-wrap max-w-md">
           {Object.keys(tags).length === 0 && 'No tags found.'}
           {sortedTags.map((t) => {

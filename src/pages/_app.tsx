@@ -1,12 +1,12 @@
-import '@/styles/fonts.css'
-import '@/styles/main.css'
-
 import type { AppProps } from 'next/app'
 
 import MDXComponents from '@/components/MDXComponents'
 import { ThemeProvider } from 'next-themes'
 import { MDXProvider } from '@mdx-js/react'
 import { Main } from '@/components/Layouts'
+
+import '@/styles/fonts.css'
+import '@/styles/main.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
