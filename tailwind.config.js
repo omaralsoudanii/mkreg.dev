@@ -3,19 +3,8 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.tsx', './src/**/*.ts', './src/**/*.mdx', './src/**/*.md'],
+  purge: ['src/**/*.tsx', 'src/**/*.ts', 'src/**/*.mdx', 'src/**/*.md'],
   darkMode: 'class', // 'media' or 'class'
-  fontFamily: {
-    mono: [
-      'Menlo',
-      'Monaco',
-      '"Lucida Console"',
-      'Consolas',
-      '"Liberation Mono"',
-      '"Courier New"',
-      'monospace',
-    ],
-  },
   theme: {
     extend: {
       colors: {
