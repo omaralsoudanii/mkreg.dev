@@ -1,5 +1,5 @@
 /* Inter font declerations https://rsms.me/inter/inter.css */
-/* @font-face {
+@font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 100;
@@ -132,18 +132,19 @@
   font-weight: 900;
   font-display: swap;
   src: url(/static/fonts/Inter-BlackItalic.woff2) format('woff2');
-} */
+}
 /* ----------------------- variable ----------------------- */
 /* latin var */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
+/* @font-face {
+  font-family: 'Inter var';
   font-weight: 100 900;
   font-display: swap;
-  src: url(/static/fonts/Inter-latin.woff2) format('woff2');
-}
-/* latin italic var
-@font-face {
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/static/fonts/Inter-roman.var.woff2) format('woff2');
+} */
+/* latin italic var */
+/* @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
   font-display: swap;
