@@ -40,8 +40,6 @@ const Image = ({
       style={{
         contentVisibility: 'auto',
         maxWidth: '100%',
-        marginLeft: '-1rem',
-        marginRight: '-1rem',
       }}
     >
       <img
