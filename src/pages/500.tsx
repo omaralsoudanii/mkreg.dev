@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from '@/components/ImageComposed'
+import { Container } from '@/components/Container'
 
 export default function NotFound() {
   return (
-    <div className="max-w-md px-4 py-4 mx-auto">
+    <Container>
       <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:space-x-10 sm:mt-8">
         <div className="px-1 space-y-8 sm:px-0">
           <h1 className="font-bold text-primary sm:pt-0">
@@ -18,19 +19,18 @@ export default function NotFound() {
           </p>
           <Image
             src="/static/images/docker.jpeg"
-            width="604"
-            height="453"
-            layout="responsive"
-            quality={80}
+            width={604}
+            height={403}
+            alt="500 Internal server error"
           />
 
-          <Link href="/">
-            <a className="max-w-md mx-auto btn btn-primary btn-large">
-              Is this gonna work? 🤔
-            </a>
-          </Link>
+          <p>
+            <Link href="/">
+              <a>&larr; Back to homepage </a>
+            </Link>
+          </p>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }

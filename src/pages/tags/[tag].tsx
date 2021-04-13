@@ -24,15 +24,15 @@ export default function Tag({ posts, tag }) {
   return (
     <div className="container px-2 mx-auto leading-relaxed">
       <Seo data={meta} />
-      <section className="mb-10 space-y-4">
-        <h2>{`Writing about ${title}`}</h2>
+      <section className="mb-10 space-y-8">
+        <h1>{`Writing about ${title}`}</h1>
         <p className="text-right">
           <Link href="/writing">
             <a className="text-link">Browse all writing &rarr; </a>
           </Link>
         </p>
       </section>
-      <PostsContainer href="/writing" name={`${title} Posts`} posts={posts} />
+      <PostsContainer href="/writing" name={`${title} Writing`} posts={posts} />
     </div>
   )
 }

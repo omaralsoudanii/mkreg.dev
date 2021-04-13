@@ -10,7 +10,10 @@ export default function PostContainer({ children, frontMatter }) {
       url: frontMatter?.featuredImage,
       alt: frontMatter.title,
     },
+    tags: frontMatter?.tags,
+    JsonLd: true,
   }
+
   return (
     <React.Fragment>
       <Seo data={meta} />

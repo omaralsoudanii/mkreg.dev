@@ -2,12 +2,14 @@ import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import PostsContainer from '@/components/Posts/Container'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+import Seo from '@/components/Seo'
 
 function Home({ posts }) {
   return (
     <div className="container px-2 mx-auto leading-relaxed">
+      <Seo data={{ JsonLd: false }} />
       <section className="mb-28">
-        <h2>Hi, I’m Omar</h2>
+        <h1>Hi, I’m Omar</h1>
         <p>
           I made this site to understand what the heck is Jamstack 🤔, then i
           got hooked reading about design. It seems like I will spend the next

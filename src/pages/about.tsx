@@ -7,6 +7,7 @@ export default function About() {
   const meta = {
     title: 'About - Omar Alsoudani',
     description: 'Introduction and FAQ about me',
+    JsonLd: false,
   }
 
   return (

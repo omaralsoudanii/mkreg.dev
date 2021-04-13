@@ -17,6 +17,7 @@ export default function Tags({ tags }) {
   const meta = {
     title: `Tags - ${Environment.ogTitle}`,
     description: `Explore my writing by tags - ${Environment.ogTitle}`,
+    JsonLd: false,
   }
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 

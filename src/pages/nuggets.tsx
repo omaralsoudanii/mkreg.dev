@@ -5,7 +5,7 @@ function Nuggets() {
   return (
     <div className="container px-0 mx-auto leading-relaxed">
       <section className="mb-20 space-y-8">
-        <h2>Nuggets</h2>
+        <h1>Nuggets</h1>
         <p>
           Some stuff I bookmark and never read again. Content is not ready yet.
         </p>

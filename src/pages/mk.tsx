@@ -7,6 +7,7 @@ export default function MK() {
   const meta = {
     title: 'MK',
     description: 'Mark Knopfler OBE',
+    JsonLd: false,
   }
 
   return (

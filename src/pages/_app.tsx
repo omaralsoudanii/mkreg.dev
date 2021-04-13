@@ -1,21 +1,16 @@
-import type { AppProps } from 'next/app'
-
-import MDXComponents from '@/components/MDXComponents'
-import { ThemeProvider } from 'next-themes'
-import { MDXProvider } from '@mdx-js/react'
-import { Main } from '@/components/Layouts'
-
 import '@/styles/fonts.css'
 import '@/styles/main.css'
+
+import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
+import { Main } from '@/components/Layouts'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <MDXProvider components={MDXComponents}>
-        <Main>
-          <Component {...pageProps} />
-        </Main>
-      </MDXProvider>
+      <Main>
+        <Component {...pageProps} />
+      </Main>
     </ThemeProvider>
   )
 }

@@ -1,13 +1,14 @@
-import { GetStaticProps } from 'next'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { Environment } from '@/lib/environment'
-import Link from 'next/link'
-import Seo from '@/components/Seo'
-import GenerateRSS from '@/lib/generate-rss'
-import fs from 'fs'
-import path from 'path'
-import React from 'react'
 import PostsContainer from '@/components/Posts/Container'
+import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
+import GenerateRSS from '@/lib/generate-rss'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
+import fs from 'fs'
+import { GetStaticProps } from 'next'
+import Link from 'next/link'
+import path from 'path'
+import * as React from 'react'
+
 /**
  * Main writing page
  *
@@ -17,15 +18,16 @@ import PostsContainer from '@/components/Posts/Container'
 
 export default function Writing({ posts }) {
   const meta = {
-    title: 'Writing',
+    title: 'Writing - Omar Alsoudani',
     description: 'Writing about programming, software & Vim vs Emacs.',
+    JsonLd: false,
   }
 
   return (
     <div className="container px-2 mx-auto leading-relaxed">
       <Seo data={meta} />
       <section className="mb-20 space-y-8">
-        <h2>Writing</h2>
+        <h1>Writing</h1>
         <p>Writing about programming, software & Vim vs Emacs.</p>
         <p className="text-right">
           <Link href="/tags">
@@ -33,7 +35,7 @@ export default function Writing({ posts }) {
           </Link>
         </p>
       </section>
-      <PostsContainer href="/writing" name="All Posts" posts={posts} />
+      <PostsContainer href="/writing" name="All Writing" posts={posts} />
     </div>
   )
 }
