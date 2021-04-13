@@ -28,14 +28,14 @@ export default function Writing({ posts }) {
       <Seo data={meta} />
       <section className="mb-20 space-y-8">
         <h1>Writing</h1>
-        <p>Writing about programming, software & Vim vs Emacs.</p>
+        <p>Stuff I wrote about programming, software & Vim vs Emacs.</p>
         <p className="text-right">
           <Link href="/tags">
-            <a className="text-link">Tags &rarr;</a>
+            <a className="text-link">Browse by Tags &rarr;</a>
           </Link>
         </p>
       </section>
-      <PostsContainer href="/writing" name="All Writing" posts={posts} />
+      <PostsContainer href="/writing" name="All Posts" posts={posts} />
     </div>
   )
 }

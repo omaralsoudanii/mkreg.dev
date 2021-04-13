@@ -7,7 +7,7 @@ export default function Page({ children }) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <div className="px-4 pt-24 pb-16 sm:px-0">{children}</div>
+      <div className="px-2 pt-24 pb-16 sm:px-0">{children}</div>
     </React.Fragment>
   )
 }

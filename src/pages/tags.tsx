@@ -1,6 +1,5 @@
 import Tag from '@/components/Tag'
 import { getAllTags } from '@/lib/tags'
-import { kebabCase } from '@/lib/utils'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { Environment } from '@/lib/environment'
@@ -16,7 +15,7 @@ import Seo from '@/components/Seo'
 export default function Tags({ tags }) {
   const meta = {
     title: `Tags - ${Environment.ogTitle}`,
-    description: `Explore my writing by tags - ${Environment.ogTitle}`,
+    description: `Browse Writing by tags - ${Environment.ogTitle}`,
     JsonLd: false,
   }
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
@@ -24,15 +23,19 @@ export default function Tags({ tags }) {
   return (
     <article>
       <Seo data={meta} />
-      <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-24">
-        <h1 className="text-6xl">Tags</h1>
-        <div className="flex flex-wrap max-w-md">
+      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-200 dark:divide-gray-700 sm:justify-center sm:items-center sm:divide-y-0 sm:flex-row sm:space-x-6 sm:mt-16">
+        <div className="pt-6 space-x-2 space-y-5 sm:pb-8">
+          <h1 className="px-2 mb-0 text-6xl leading-loose sm:px-6 sm:border-r-2">
+            Tags
+          </h1>
+        </div>
+        <div className="flex flex-wrap items-center justify-center max-w-lg px-2 py-6 sm:p-0 sm:justify-start sm:items-start">
           {Object.keys(tags).length === 0 && 'No tags found.'}
           {sortedTags.map((t) => {
             return (
-              <div key={t} className="mt-2 mb-2 mr-5 text-lg sm:text-xl">
-                <Tag text={t} />
-                <Link href={`/tags/${kebabCase(t)}`}>
+              <div key={t} className="mt-2 mb-2 mr-5">
+                <Tag slug={t} />
+                <Link href={`/tags/${t}`}>
                   <a className="-ml-2 font-semibold text-gray-600 dark:text-gray-400">
                     {` (${tags[t]})`}
                   </a>

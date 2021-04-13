@@ -1,7 +1,7 @@
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
-import { kebabCase } from '@/lib/utils'
+import { slugify, unSlugify } from '@/lib/utils'
 import Link from 'next/link'
 import Seo from '@/components/Seo'
 import GenerateRSS from '@/lib/generate-rss'
@@ -15,24 +15,28 @@ import PostsContainer from '@/components/Posts/Container'
  */
 
 export default function Tag({ posts, tag }) {
-  const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
+  const title = unSlugify(tag)
   const meta = {
-    title: `${tag} - ${Environment.ogTitle}`,
-    description: `${title} writing - ${Environment.ogTitle}`,
+    title: `${title} - ${Environment.ogTitle}`,
+    description: `Topics, guides and thoughts I wrote about ${title} or related to it - ${Environment.ogTitle}`,
   }
 
   return (
     <div className="container px-2 mx-auto leading-relaxed">
       <Seo data={meta} />
-      <section className="mb-10 space-y-8">
-        <h1>{`Writing about ${title}`}</h1>
+      <section className="mb-20 space-y-8">
+        <h1>{title}</h1>
+        <p>
+          Topics, guides and thoughts I wrote about <strong>{title}</strong> or
+          related to it.
+        </p>
         <p className="text-right">
           <Link href="/writing">
             <a className="text-link">Browse all writing &rarr; </a>
           </Link>
         </p>
       </section>
-      <PostsContainer href="/writing" name={`${title} Writing`} posts={posts} />
+      <PostsContainer href="/writing" name="All Posts" posts={posts} />
     </div>
   )
 }
@@ -40,7 +44,7 @@ export default function Tag({ posts, tag }) {
 export async function getStaticProps({ params }) {
   const allPosts = await getAllFilesFrontMatter('writing')
   const filteredPosts = allPosts.filter((post) =>
-    post.tags.map((t) => kebabCase(t)).includes(params.tag)
+    post.tags.map((t) => slugify(t)).includes(params.tag)
   )
   const root = process.cwd()
   const rss = GenerateRSS(filteredPosts, `tags/${params.tag}/index.xml`)

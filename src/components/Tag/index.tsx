@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { kebabCase } from '@/lib/utils'
+import { unSlugify } from '@/lib/utils'
 
-const Tag = ({ text }) => {
+const Tag = ({ slug }) => {
   return (
-    <Link href={`/tags/${kebabCase(text)}`}>
-      <a className="mr-3 text-link">{kebabCase(text)}</a>
+    <Link href={`/tags/${slug}`}>
+      <a className="mr-3 text-link">{unSlugify(slug)}</a>
     </Link>
   )
 }

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import { kebabCase } from '@/lib/utils'
+import { slugify } from '@/lib/utils'
 
 const root = process.cwd()
 
@@ -18,7 +18,7 @@ export async function getAllTags(type) {
     const { data } = matter(source)
     if (data.tags) {
       data.tags.forEach((tag) => {
-        const formattedTag = kebabCase(tag)
+        const formattedTag = slugify(tag)
         if (formattedTag in tagCount) {
           tagCount[formattedTag] += 1
         } else {
