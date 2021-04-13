@@ -40,6 +40,8 @@ const Image = ({
       style={{
         contentVisibility: 'auto',
         maxWidth: '100%',
+        marginLeft: '-1rem',
+        marginRight: '-1rem',
       }}
     >
       <img
@@ -52,11 +54,13 @@ const Image = ({
             return `${urlResolver(src, size)} ${size}w`
           })
           .join(', ')}
-        sizes={fixed ? `${width}px` : '100vw'}
+        sizes={fixed ? `${width}px` : '(min-width: 1024px) 50vw, 100vw'}
         loading="lazy"
         decoding="async"
-        className={`z-10 transition-opacity ${
-          loaded ? 'opacity-100 z-auto' : 'opacity-0 z-auto'
+        className={`z-10 transition  ${
+          loaded
+            ? 'opacity-100 z-auto'
+            : 'opacity-60 filter backdrop-blur blur z-auto'
         }${extraStyles ? ` ${extraStyles}` : ''}`}
         onLoad={() => {
           setLoaded(true)
