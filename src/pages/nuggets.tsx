@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 function Nuggets() {
   return (
-    <div className="container px-0 mx-auto leading-relaxed">
+    <div className="container mx-auto leading-relaxed">
       <section className="mb-20 space-y-8">
         <h1>Nuggets</h1>
         <p>

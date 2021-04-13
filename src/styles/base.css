@@ -11,19 +11,26 @@
     --lineHeight: calc(var(--fontSize) * 1.5);
   }
 
+  html {
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+  }
+
   body {
-    @apply subpixel-antialiased bg-lt-bg dark:bg-dk-bg text-lt-body dark:text-dk-body font-display;
+    @apply bg-lt-bg dark:bg-dk-bg text-lt-body dark:text-dk-body font-display;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     font-size: var(--fontSize);
     line-height: var(--lineHeight);
     text-rendering: optimizeLegibility;
-    text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
       'cv03' 1, 'cv04' 1, 'liga', 'clig', 'calt';
     font-variation-settings: 'wght' 440;
-    letter-spacing: -0.004em;
+    letter-spacing: -.02em;
     font-variant: common-ligatures contextual;
   }
 

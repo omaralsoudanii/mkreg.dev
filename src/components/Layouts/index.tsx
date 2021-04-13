@@ -4,9 +4,9 @@ import { Footer } from '@/components/Footer'
 
 export function Main({ children }) {
   return (
-    <div className="max-w-screen-sm mx-auto">
+    <div className="max-w-prose mx-auto">
       <Header />
-      <main className="max-w-screen-sm mx-auto mt-6 mb-auto">
+      <main className="mt-6">
         <Page>{children}</Page>
       </main>
       <Footer />

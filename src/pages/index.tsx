@@ -6,7 +6,7 @@ import Seo from '@/components/Seo'
 
 function Home({ posts }) {
   return (
-    <div className="container px-2 mx-auto leading-relaxed">
+    <div className="container mx-auto leading-relaxed">
       <Seo data={{ JsonLd: false }} />
       <section className="mb-28">
         <h1>Hi, I’m Omar</h1>
@@ -17,8 +17,11 @@ function Home({ posts }) {
         </p>
         <p>
           Hopefully by the next leap year this site will be launched with my
-          first post! Should've just installed Ghost instead 🤦. Below is
-          probably some dummy content to test teh CSS Skillz ( ͡° ͜ʖ ͡°)
+          first post!
+        </p>
+        <p>
+          Should've just installed Ghost instead 🤦. Below is probably some
+          dummy content to test teh CSS Skillz ( ͡° ͜ʖ ͡°)
         </p>
       </section>
       <PostsContainer href="/writing" name="Latest Writing" posts={posts} />

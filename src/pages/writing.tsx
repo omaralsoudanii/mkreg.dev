@@ -24,7 +24,7 @@ export default function Writing({ posts }) {
   }
 
   return (
-    <div className="container px-2 mx-auto leading-relaxed">
+    <div className="container mx-auto leading-relaxed">
       <Seo data={meta} />
       <section className="mb-20 space-y-8">
         <h1>Writing</h1>

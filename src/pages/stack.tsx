@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 function Stack() {
   return (
-    <div className="container px-0 mx-auto leading-relaxed">
+    <div className="container mx-auto leading-relaxed">
       <section className="mb-20 space-y-8">
         <h1>Stack</h1>
         <p>A list of what I know about tech. Content is not ready yet.</p>
