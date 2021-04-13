@@ -47,6 +47,11 @@
     font-variation-settings: 'wght' 440;
   }
 
+
+  a {
+    font-variation-settings: 'wght' 500;
+  }
+
   b,
   strong {
     font-variation-settings: 'wght' 650;

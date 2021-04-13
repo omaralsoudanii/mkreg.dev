@@ -111,7 +111,7 @@ module.exports = {
             a: {
               borderBottom: `1px dotted ${theme('colors.lt.darker')}`,
               color: theme('colors.current'),
-              fontVariationSettings: '"wght" 600',
+              fontVariationSettings: '"wght" 500',
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.lt.black'),
@@ -176,7 +176,7 @@ module.exports = {
             a: {
               borderBottom: `1px dotted ${theme('colors.dk.darker')}`,
               color: theme('colors.current'),
-              fontVariationSettings: '"wght" 600',
+              fontVariationSettings: '"wght" 500',
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.dk.black'),
