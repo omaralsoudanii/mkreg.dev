@@ -51,23 +51,21 @@ export async function getStaticProps({ params }) {
   const rssPath = path.join(root, 'public', 'tags', params.tag)
   fs.mkdirSync(rssPath, { recursive: true })
   fs.writeFileSync(path.join(rssPath, 'index.xml'), rss)
-  const { revalidate } = Environment.isr
   return {
     props: { posts: filteredPosts, tag: params.tag },
-    revalidate: revalidate,
   }
 }
 
 export async function getStaticPaths() {
   const { enable } = Environment.isr
   const tags = await getAllTags('writing')
-  if (!Object.keys(tags).length) return { paths: [], fallback: enable }
+  if (!Object.keys(tags).length) return { paths: [], fallback: !enable }
   return {
     paths: Object.keys(tags).map((tag) => ({
       params: {
         tag,
       },
     })),
-    fallback: enable && 'blocking',
+    fallback: !enable,
   }
 }

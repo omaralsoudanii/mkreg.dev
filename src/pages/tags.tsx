@@ -51,11 +51,9 @@ export default function Tags({ tags }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const tags = await getAllTags('writing')
-  const { revalidate } = Environment.isr
   return {
     props: {
       tags,
     },
-    revalidate: revalidate,
   }
 }

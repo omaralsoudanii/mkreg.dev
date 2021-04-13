@@ -1,4 +1,3 @@
-import { Environment } from '@/lib/environment'
 import { GetStaticProps } from 'next'
 import PostsContainer from '@/components/Posts/Container'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
@@ -35,12 +34,10 @@ export const getStaticProps: GetStaticProps = async () => {
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   ).slice(0, 5)
 
-  const { revalidate } = Environment.isr
   return {
     props: {
       posts,
     },
-    revalidate: revalidate,
   }
 }
 

@@ -1,6 +1,5 @@
 import PostsContainer from '@/components/Posts/Container'
 import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
 import GenerateRSS from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import fs from 'fs'
@@ -49,11 +48,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const rssPath = path.join(root, 'public', 'rss.xml')
   const rss = GenerateRSS(WritingData, 'rss.xml')
   fs.writeFileSync(rssPath, rss)
-  const { revalidate } = Environment.isr
   return {
     props: {
       posts,
     },
-    revalidate: revalidate,
   }
 }

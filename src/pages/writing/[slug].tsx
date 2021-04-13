@@ -20,19 +20,20 @@ export default function Post({ mdxSource, frontMatter }) {
 
 export async function getStaticProps({ params }) {
   const post = await getFileBySlug('writing', params.slug)
+  const { revalidate } = Environment.isr
   if (!post) {
     return {
       notFound: true,
+      revalidate: revalidate,
     }
   }
-  const { revalidate } = Environment.isr
-  return { props: post, revalidate: revalidate }
+  return { props: post }
 }
 
 export async function getStaticPaths() {
   const { enable } = Environment.isr
   const posts = await getAllFilesName('writing')
-  if (!posts.length) return { paths: [], fallback: enable }
+  if (!posts.length) return { paths: [], fallback: !enable }
 
   const paths = posts.map((p) => ({
     params: {
@@ -42,6 +43,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: enable && 'blocking',
+    fallback: !enable,
   }
 }
