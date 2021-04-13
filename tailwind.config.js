@@ -111,7 +111,6 @@ module.exports = {
             a: {
               borderBottom: `1px dotted ${theme('colors.lt.darker')}`,
               color: theme('colors.current'),
-              fontVariationSettings: '"wght" 600',
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.lt.black'),
@@ -121,7 +120,6 @@ module.exports = {
             },
             strong: {
               color: theme('colors.lt.body'),
-              fontVariationSettings: '"wght" 700',
             },
             thead: {
               borderBottomColor: theme('colors.lt.light'),
@@ -177,7 +175,6 @@ module.exports = {
             a: {
               borderBottom: `1px dotted ${theme('colors.dk.darker')}`,
               color: theme('colors.current'),
-              fontVariationSettings: '"wght" 600',
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.dk.black'),
@@ -187,7 +184,6 @@ module.exports = {
             },
             strong: {
               color: theme('colors.dk.body'),
-              fontVariationSettings: '"wght" 700',
             },
             thead: {
               color: theme('colors.dk.body'),

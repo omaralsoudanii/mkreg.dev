@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply antialiased bg-lt-bg dark:bg-dk-bg text-lt-body dark:text-dk-body font-display;
+    @apply subpixel-antialiased bg-lt-bg dark:bg-dk-bg text-lt-body dark:text-dk-body font-display;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
@@ -27,8 +27,26 @@
     font-variant: common-ligatures contextual;
   }
 
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5),
+    screen and (min-device-pixel-ratio: 1.5),
+    screen and (min-resolution: 1.5dppx) {
+    body {
+      @apply antialiased;
+    }
+  }
+
   p {
     @apply mt-0 mb-4 leading-relaxed;
+    font-variation-settings: 'wght' 440;
+  }
+
+  a {
+    font-variation-settings: 'wght' 600;
+  }
+
+  b,
+  strong {
+    font-variation-settings: 'wght' 650;
   }
 
   h1,
@@ -37,31 +55,36 @@
   h4,
   h5,
   h6 {
-    @apply mt-0 mb-4 font-bold leading-tight tracking-tight text-lt-headings dark:text-dk-headings font-display;
-    font-variation-settings: 'wght' 700;
+    @apply mt-0 mb-4 leading-tight tracking-tight text-lt-headings dark:text-dk-headings font-display;
   }
 
   h1 {
     @apply text-3xl;
+    font-variation-settings: 'wght' 850;
   }
 
   h2 {
     @apply text-2xl;
+    font-variation-settings: 'wght' 750;
   }
 
   h3 {
     @apply text-xl;
+    font-variation-settings: 'wght' 650;
   }
 
   h4 {
     @apply text-lg;
+    font-variation-settings: 'wght' 650;
   }
 
   h5 {
     @apply text-base;
+    font-variation-settings: 'wght' 650;
   }
 
   h6 {
     @apply text-base;
+    font-variation-settings: 'wght' 650;
   }
 }
