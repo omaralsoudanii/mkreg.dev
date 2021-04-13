@@ -1,4 +1,4 @@
-ARG NGINX_VERSION=1.19.7
+ARG NGINX_VERSION=1.19.9
 
 # Google brotlie repo latest commit
 # https://github.com/google/ngx_brotli/commit/9aec15e2aa6feea2113119ba06460af70ab3ea62
