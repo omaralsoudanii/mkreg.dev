@@ -52,7 +52,7 @@
 
   b,
   strong {
-    font-variation-settings: 'wght' 650;
+    font-variation-settings: 'wght' 700;
   }
 
   h1,
@@ -65,27 +65,27 @@
   }
 
   h1 {
-    @apply text-3xl;
+    @apply text-4xl;
     font-variation-settings: 'wght' 850;
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-3xl;
     font-variation-settings: 'wght' 750;
   }
 
   h3 {
+    @apply text-2xl;
+    font-variation-settings: 'wght' 700;
+  }
+
+  h4 {
     @apply text-xl;
     font-variation-settings: 'wght' 650;
   }
 
-  h4 {
-    @apply text-lg;
-    font-variation-settings: 'wght' 650;
-  }
-
   h5 {
-    @apply text-base;
+    @apply text-lg;
     font-variation-settings: 'wght' 650;
   }
 

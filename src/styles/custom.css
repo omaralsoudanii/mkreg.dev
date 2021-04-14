@@ -2,8 +2,8 @@
 
 @layer utilities {
   .hdr-backdrop {
-    @apply bg-gray-50 bg-opacity-70 dark:bg-opacity-50 dark:bg-gray-800;
-    backdrop-filter: saturate(200%) blur(5px);
+    @apply bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-800;
+    backdrop-filter: saturate(180%) blur(5px);
   }
 
   @supports not (backdrop-filter: none) {
@@ -13,6 +13,14 @@
     }
   }
 
+  .dark .hdr-backdrop {
+    box-shadow: inset 0 -1px 0 0 rgb(255 255 255/10%);
+  }
+
+  .light .hdr-backdrop {
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  
   .hdr-base {
     @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px text-base font-bold;
   }
@@ -62,11 +70,11 @@
   }
 
   .btn-secondary {
-    @apply text-dk-black bg-lt-black dark:text-lt-black dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-lt-black hover:text-lt-black dark:hover:text-dk-black;
+    @apply rounded text-lt-black bg-lt-lightest dark:text-dk-black dark:bg-dk-lightest;
   }
 
   .btn-primary {
-    @apply bg-blue-600 text-dk-black;
+    @apply rounded text-lt-white bg-lt-black dark:text-dk-white dark:bg-dk-black;
   }
 
   .btn-large {
@@ -82,15 +90,12 @@
   }
 
   .nav-link {
-    @apply flex items-start py-2 rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-10 hover:bg-opacity-10 dark:hover:bg-gray-300;
+    @apply flex items-start py-2 rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-20 hover:bg-opacity-10 dark:hover:bg-gray-400;
     filter: brightness(105%) saturate(200%) contrast(1);
   }
 
   .nav-link.active {
-    @apply bg-gray-800 bg-opacity-10 dark:bg-gray-800;
-    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
-    filter: brightness(105%) saturate(200%) contrast(1);
-    backdrop-filter: saturate(180%) blur(20px);
+    @apply bg-gray-800 bg-opacity-10 dark:bg-opacity-20 dark:bg-gray-600;
   }
 
   .hr-stroke {

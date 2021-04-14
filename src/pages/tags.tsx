@@ -23,7 +23,7 @@ export default function Tags({ tags }) {
   return (
     <article>
       <Seo data={meta} />
-      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-200 dark:divide-gray-700 sm:justify-center sm:items-center sm:divide-y-0 sm:flex-row sm:space-x-6 sm:mt-16">
+      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-300 dark:divide-gray-700 sm:justify-center sm:items-center sm:divide-y-0 sm:flex-row sm:space-x-6 sm:mt-16">
         <div className="pt-6 space-x-2 space-y-5 sm:pb-8">
           <h1 className="px-2 mb-0 text-6xl leading-loose sm:px-6 sm:border-r-2">
             Tags

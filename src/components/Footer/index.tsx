@@ -3,8 +3,7 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <div className="mt-4">
-      <div className=" hr-stroke" />
+    <div className="mx-auto mt-4 hr-stroke">
       <div className="grid grid-cols-1 gap-4 p-6 py-12 sm:grid-cols-3 ">
         <div className="flex flex-col space-y-4 text-center">
           <a

@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 text-base bg-gray-100 rounded-t text-lt-black dark:text-dk-black dark:bg-gray-900;
+  @apply px-5 py-3 text-base bg-gray-100 rounded-t text-lt-body dark:text-dk-body dark:bg-gray-900;
   font-variation-settings: 'wght' 600;
 }
 
@@ -13,7 +13,7 @@
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-lt-black dark:text-dk-black dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-lt-body dark:text-dk-body dark:bg-gray-900;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -167,7 +167,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply font-mono bg-gray-100 rounded text-lt-black dark:text-dk-black dark:bg-gray-900 mb-7;
+  @apply font-mono bg-gray-100 rounded text-lt-body dark:text-dk-body dark:bg-gray-900 mb-7;
   letter-spacing: normal;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -188,7 +188,7 @@
 
 .prose b,
 .prose strong {
-  font-variation-settings: 'wght' 650;
+  font-variation-settings: 'wght' 700;
 }
 
 
@@ -202,27 +202,27 @@
 }
 
 .prose h1 {
-  @apply text-3xl;
+  @apply text-4xl;
   font-variation-settings: 'wght' 850;
 }
 
 .prose h2 {
-  @apply text-2xl;
+  @apply text-3xl;
   font-variation-settings: 'wght' 750;
 }
 
 .prose h3 {
+  @apply text-2xl;
+  font-variation-settings: 'wght' 700;
+}
+
+.prose h4 {
   @apply text-xl;
   font-variation-settings: 'wght' 650;
 }
 
-.prose h4 {
-  @apply text-lg;
-  font-variation-settings: 'wght' 650;
-}
-
 .prose h5 {
-  @apply text-base;
+  @apply text-lg;
   font-variation-settings: 'wght' 650;
 }
 

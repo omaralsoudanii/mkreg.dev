@@ -6,18 +6,6 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx,md,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
-    fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
-    },
     fontFamily: {
       display: 'var(--font-display)',
       mono: 'var(--font-mono)',
@@ -26,7 +14,6 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
         'gray-900': 'rgb(19 20 21)',
-        blue: colors.lightBlue,
         lt: {
           bg: 'rgb(255 255 255)',
           body: 'rgb(0 0 0)',
@@ -77,9 +64,6 @@ module.exports = {
             color: theme('colors.lt.body'),
             h1: {
               color: theme('colors.lt.headings'),
-              fontSize: theme('fontSize.3xl'),
-              marginTop: '0',
-              marginBottom: '1rem',
             },
             h2: {
               color: theme('colors.lt.headings'),
