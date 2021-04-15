@@ -2,27 +2,22 @@
 
 @layer base {
   :root {
-    --font-size: 15px;
-    --line-height: calc(15px * 1.5);
+    --font-size: 1em;
+    --line-height: calc(1em * 1.5);
   }
 
   body {
-    @apply bg-mk-lightest dark:bg-mk-dark text-mk-darkest dark:text-mk-lightest;
-    font: 15px/22px Inter var, system-ui, -apple-system, BlinkMacSystemFont,
+    @apply bg-mk-lightest dark:bg-mk-darkest text-mk-darkest dark:text-mk-lightest;
+    font: var(--font-size) / var(--line-height) Inter var, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-variation-settings: 'wght' 450;
     font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02' 1,
       'cv03' 1, 'cv04' 1, 'liga', 'clig', 'calt', 'kern';
     font-kerning: normal;
-    letter-spacing: -0.004em;
+    letter-spacing: -0.01em;
     font-variant: common-ligatures contextual;
   }
 
@@ -34,8 +29,7 @@
     }
   }
 
-  p,
-  blockquote {
+  p {
     line-height: var(--line-height) !important;
   }
 

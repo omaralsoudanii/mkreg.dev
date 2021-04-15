@@ -92,9 +92,6 @@ module.exports = {
               borderColor: theme('colors.lt.light'),
             },
             color: theme('colors.mk.darkest'),
-            'p, blockquote': {
-              lineHeight: 'calc(15px * 1.5)',
-            },
             h1: {
               color: theme('colors.mk.darkest'),
             },
