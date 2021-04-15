@@ -1,16 +1,13 @@
 @tailwind base;
 
 @layer base {
-  :root {
-    --font-size: 1em;
-    --line-height: calc(1em * 1.5);
-  }
-
   body {
-    @apply bg-mk-lightest dark:bg-mk-darkest text-mk-darkest dark:text-mk-lightest;
-    font: var(--font-size) / var(--line-height) Inter var, system-ui, -apple-system, BlinkMacSystemFont,
-      Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    @apply bg-mk-lightest dark:bg-mk-dark text-mk-darkest dark:text-mk-lightest font-display;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-variation-settings: 'wght' 450;
@@ -29,10 +26,11 @@
     }
   }
 
-  p {
-    line-height: var(--line-height) !important;
+  p,
+  blockquote {
+    line-height: 'calc(1em * 1.5)' !important;
   }
-
+  
   a {
     font-variation-settings: 'wght' 500;
   }
