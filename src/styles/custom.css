@@ -82,7 +82,7 @@
   }
 
   .text-link {
-    @apply border-b border-dotted border-lt-darker dark:border-dk-darker hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-dk-black dark:hover:text-dk-white;
+    @apply border-b-2 border-dotted border-lt-darker dark:border-dk-darker dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
   }
 
   .black-link {
@@ -92,6 +92,7 @@
   .nav-link {
     @apply flex items-start py-2 rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-20 hover:bg-opacity-10 dark:hover:bg-gray-400;
     filter: brightness(105%) saturate(200%) contrast(1);
+    font-variation-settings: 'wght' 450;
   }
 
   .nav-link.active {

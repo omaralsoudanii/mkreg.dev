@@ -92,9 +92,6 @@ module.exports = {
               borderColor: theme('colors.lt.light'),
             },
             color: theme('colors.mk.darkest'),
-            'p , span, a, strong, blockquote': {
-              lineHeight: 'calc(1em * 1.5)',
-            },
             h1: {
               color: theme('colors.mk.darkest'),
             },
@@ -120,8 +117,8 @@ module.exports = {
               borderRadius: '50%',
             },
             a: {
-              borderBottom: `1px dotted ${theme('colors.lt.darker')}`,
-              color: theme('colors.current'),
+              borderBottom: `2px dotted ${theme('colors.lt.darker')}`,
+              color: theme('colors.mk.darkest'),
               fontVariationSettings: '"wght" 500',
               textDecoration: 'none',
               '&:hover': {
@@ -155,7 +152,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.mk.lightest'),
+            color: theme('colors.mk.lighter'),
             '*,*::before,*::after': {
               borderColor: theme('colors.dk.light'),
             },
@@ -188,8 +185,19 @@ module.exports = {
               color: theme('colors.mk.lightest'),
             },
             thead: {
-              color: theme('colors.mk.lightest'),
+              color: theme('colors.mk.lighter'),
               borderBottomColor: theme('colors.dk.light'),
+            },
+            a: {
+              borderBottom: `2px dotted ${theme('colors.lt.darker')}`,
+              color: theme('colors.mk.lightest'),
+              fontVariationSettings: '"wght" 500',
+              textDecoration: 'none',
+              '&:hover': {
+                backgroundColor: theme('colors.mk.lightest'),
+                color: theme('colors.mk.darkest'),
+                borderBottom: 'none',
+              },
             },
             tbody: {
               tr: {
