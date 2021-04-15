@@ -19,6 +19,12 @@ module.exports = {
         'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       ],
       mono: [
+        'JetBrains Mono',
+        'IBM Plex Mono',
+        'Fira Code',
+        'Menlo',
+        'DejaVu Sans Mono',
+        'Bitstream Vera Sans Mono',
         'ui-monospace',
         'SFMono-Regular',
         'Menlo',
@@ -86,6 +92,9 @@ module.exports = {
               borderColor: theme('colors.lt.light'),
             },
             color: theme('colors.mk.darkest'),
+            'p , span, a, strong, blockquote': {
+              lineHeight: 'calc(1em * 1.5)',
+            },
             h1: {
               color: theme('colors.mk.darkest'),
             },
