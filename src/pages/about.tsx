@@ -45,7 +45,7 @@ export default function About() {
           more valuable for me. Unless you are a PHP developer 🤦 (Nah, just
           kidding). You can find what I "think" am capable of in the{' '}
           <Link href="/stack">
-            <a className="pl-1 text-link"> Stack page &rarr;</a>
+            <a className="pl-1 text-link"> Stack page </a>
           </Link>
         </p>
         <h2>A word of caution</h2>

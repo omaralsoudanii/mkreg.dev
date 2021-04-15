@@ -39,7 +39,7 @@ export default function MK() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Mark Knopfler Red Electric Guitar &rarr;
+            Mark Knopfler Red Electric Guitar
           </a>
         </p>
         <p>
@@ -56,7 +56,7 @@ export default function MK() {
           below.
         </p>
         <p>
-          Perhaps you can check this too 🤔 &rarr;{' '}
+          Perhaps you can check this too 🤔{' '}
           <a
             href="https://mr.mkreg.dev"
             target="_blank"

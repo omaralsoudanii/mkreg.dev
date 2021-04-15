@@ -1,19 +1,19 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 text-base bg-gray-100 rounded-t text-lt-body dark:text-dk-body dark:bg-gray-900;
+  @apply px-5 py-3 bg-gray-100 rounded-t text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
   font-variation-settings: 'wght' 600;
 }
 
 .prose .remark-code-title + pre {
-  @apply mt-0 mb-0 text-base rounded-t-none;
+  @apply mt-0 mb-0 rounded-t-none;
 }
 
 .prose .mdx-marker {
-  @apply block px-4 -mx-4 text-base bg-gray-100 border-l-4 border-gray-900 dark:border-gray-100 dark:bg-gray-900;
+  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-gray-900 dark:border-gray-50 dark:bg-gray-900;
 }
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-lt-body dark:text-dk-body dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -72,7 +72,7 @@
 }
 
 .prose .token.variable {
-  @apply text-lt-black dark:text-dk-black;
+  @apply text-mk-darkest dark:text-mk-lightest;
 }
 
 .dark .prose .token.number {
@@ -167,7 +167,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply font-mono bg-gray-100 rounded text-lt-body dark:text-dk-body dark:bg-gray-900 mb-7;
+  @apply font-mono bg-gray-100 rounded text-mk-darkest dark:text-mk-lightest dark:bg-gray-900 mb-7;
   letter-spacing: normal;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -179,54 +179,4 @@
 
 .prose img {
   @apply m-0;
-}
-
-.prose p {
-  @apply mt-0 mb-4 leading-relaxed;
-  font-variation-settings: 'wght' 440;
-}
-
-.prose b,
-.prose strong {
-  font-variation-settings: 'wght' 700;
-}
-
-
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
-  @apply mt-0 mb-4 leading-tight tracking-tight text-lt-headings dark:text-dk-headings font-display;
-}
-
-.prose h1 {
-  @apply text-4xl;
-  font-variation-settings: 'wght' 850;
-}
-
-.prose h2 {
-  @apply text-3xl;
-  font-variation-settings: 'wght' 750;
-}
-
-.prose h3 {
-  @apply text-2xl;
-  font-variation-settings: 'wght' 700;
-}
-
-.prose h4 {
-  @apply text-xl;
-  font-variation-settings: 'wght' 650;
-}
-
-.prose h5 {
-  @apply text-lg;
-  font-variation-settings: 'wght' 650;
-}
-
-.prose h6 {
-  @apply text-base;
-  font-variation-settings: 'wght' 650;
 }

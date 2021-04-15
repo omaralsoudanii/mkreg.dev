@@ -8,6 +8,9 @@ import GenerateRSS from '@/lib/generate-rss'
 import path from 'path'
 import fs from 'fs'
 import PostsContainer from '@/components/Posts/Container'
+import { Container } from '@/components/Container'
+import * as React from 'react'
+
 /**
  *
  * Renders a single post by tag and loads all content.
@@ -22,22 +25,24 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <div className="container mx-auto leading-relaxed">
+    <React.Fragment>
       <Seo data={meta} />
-      <section className="mb-20 space-y-8">
-        <h1>{title}</h1>
-        <p>
-          Topics, guides and thoughts I wrote about <strong>{title}</strong> or
-          related to it.
-        </p>
-        <p className="text-right">
-          <Link href="/writing">
-            <a className="text-link">Browse all writing &rarr; </a>
-          </Link>
-        </p>
-      </section>
-      <PostsContainer href="/writing" name="All Posts" posts={posts} />
-    </div>
+      <Container>
+        <section className="mb-20 space-y-8">
+          <h1>{title}</h1>
+          <p>
+            Topics, guides and thoughts I wrote about <strong>{title}</strong>{' '}
+            or related to it.
+          </p>
+          <p className="text-right">
+            <Link href="/writing">
+              <a className="text-link">Browse all writing </a>
+            </Link>
+          </p>
+        </section>
+        <PostsContainer href="/writing" name="All Posts" posts={posts} />
+      </Container>
+    </React.Fragment>
   )
 }
 

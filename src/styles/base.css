@@ -1,50 +1,30 @@
 @tailwind base;
 
 @layer base {
-  :root {
-    --font-display: 'Inter var', 'ui-sans-serif';
-    --font-mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
-      'Liberation Mono', 'Courier New', 'monospace';
-    --fontSize: 1rem;
-    --lineHeight: calc(var(--fontSize) * 1.5);
-  }
-
-  html {
-    font-size: var(--fontSize);
-    line-height: var(--lineHeight);
-  }
-
   body {
-    @apply bg-lt-bg dark:bg-dk-bg text-lt-body dark:text-dk-body font-display;
+    @apply bg-mk-lightest dark:bg-mk-darkest text-mk-darkest dark:text-mk-lightest font-display;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    font-size: var(--fontSize);
-    line-height: var(--lineHeight);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
-      'cv03' 1, 'cv04' 1, 'liga', 'clig', 'calt';
-    font-variation-settings: 'wght' 440;
+    font-variation-settings: 'wght' 450;
+    font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02' 1,
+      'cv03' 1, 'cv04' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'kern' 1;
+    font-kerning: normal;
     letter-spacing: -.02em;
     font-variant: common-ligatures contextual;
   }
 
-  @media screen and (-webkit-min-device-pixel-ratio: 1.5),
-    screen and (min-device-pixel-ratio: 1.5),
+  @media screen and (min-device-pixel-ratio: 1.5),
     screen and (min-resolution: 1.5dppx) {
     body {
-      @apply antialiased;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
   }
-
-  p {
-    @apply mt-0 mb-4 leading-relaxed;
-    font-variation-settings: 'wght' 440;
-  }
-
 
   a {
     font-variation-settings: 'wght' 500;
@@ -55,42 +35,29 @@
     font-variation-settings: 'wght' 700;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply mt-0 mb-4 leading-tight tracking-tight text-lt-headings dark:text-dk-headings font-display;
-  }
-
+  .prose h1,
   h1 {
     @apply text-4xl;
     font-variation-settings: 'wght' 850;
+    letter-spacing: -.03em;
   }
 
+  .prose h2,
   h2 {
-    @apply text-3xl;
+    @apply text-2xl tracking-tight;
     font-variation-settings: 'wght' 750;
   }
 
+  .prose h3,
   h3 {
-    @apply text-2xl;
+    @apply text-xl tracking-tight;
     font-variation-settings: 'wght' 700;
   }
 
-  h4 {
-    @apply text-xl;
-    font-variation-settings: 'wght' 650;
-  }
-
-  h5 {
-    @apply text-lg;
-    font-variation-settings: 'wght' 650;
-  }
-
+  h4,
+  h5,
   h6 {
-    @apply text-base;
+    @apply tracking-tight;
     font-variation-settings: 'wght' 650;
   }
 }

@@ -24,7 +24,7 @@ export default function NotFound() {
 
           <p>
             <Link href="/">
-              <a>&larr; Back to homepage </a>
+              <a className="text-link"> Back to homepage </a>
             </Link>
           </p>
         </div>

@@ -1,4 +1,4 @@
 @import 'base.css';
-@import 'tailwindcss/components';
 @import 'prose.css';
+@import 'tailwindcss/components';
 @import 'custom.css';

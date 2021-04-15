@@ -11,7 +11,7 @@ export default function PostsList({ posts, href }) {
     )
 
   return (
-    <ul className="leading-relaxed space-y-4">
+    <ul className="space-y-4 leading-relaxed">
       {posts.map((frontMatter) => (
         <li key={frontMatter.slug}>
           <Link href={`${href}/${frontMatter.slug}`} passHref>
@@ -19,13 +19,13 @@ export default function PostsList({ posts, href }) {
               <span className="border-b border-dotted border-lt-darker dark:border-dk-darker hover:border-none hover:bg-lt-black hover:text-lt-white dark:hover:bg-dk-black dark:hover:text-dk-white">
                 {frontMatter.title}
               </span>
-              <time className="w-full ml-2 text-lt-darkest dark:text-dk-darkest sm:ml-4 sm:w-24">
-                {`${dayjs(new Date(frontMatter.publishedAt)).format(
-                  'MMMM DD, YYYY'
-                )}`}
-              </time>
             </a>
           </Link>
+          <time className="w-full ml-2 text-lt-darkest dark:text-dk-darkest sm:ml-4 sm:w-24">
+            {`${dayjs(new Date(frontMatter.publishedAt)).format(
+              'MMMM DD, YYYY'
+            )}`}
+          </time>
         </li>
       ))}
     </ul>

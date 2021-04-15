@@ -20,9 +20,9 @@
   .light .hdr-backdrop {
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   }
-  
+
   .hdr-base {
-    @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px text-base font-bold;
+    @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px font-bold;
   }
 
   .hdr-base a {
@@ -46,13 +46,13 @@
   }
 
   .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1 font-medium text-lt-black dark:text-dk-black;
+    @apply flex items-center justify-center px-4 py-1 font-medium text-mk-darkest dark:text-mk-lightest;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 text-base font-medium text-left cursor-pointer text-lt-black dark:text-dk-black;
+    @apply inline-block w-full px-3 py-2 font-medium text-left cursor-pointer text-mk-darkest dark:text-mk-lightest;
     -webkit-box-align: center;
     -webkit-box-pack: center;
   }
@@ -62,19 +62,19 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute hidden p-2 font-medium cursor-pointer text-lt-black right-4 top-1 w-11 sm:flex dark:text-dk-black;
+    @apply absolute hidden p-2 font-medium cursor-pointer text-mk-darkest right-4 top-1 w-11 sm:flex dark:text-mk-lightest;
   }
 
   .btn {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold transition duration-300 ease-in-out rounded;
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold rounded;
   }
 
   .btn-secondary {
-    @apply rounded text-lt-black bg-lt-lightest dark:text-dk-black dark:bg-dk-lightest;
+    @apply text-mk-darkest bg-mk-lightest dark:text-mk-lightest dark:bg-mk-darkest;
   }
 
   .btn-primary {
-    @apply rounded text-lt-white bg-lt-black dark:text-dk-white dark:bg-dk-black;
+    @apply text-mk-lightest bg-mk-darkest dark:text-mk-darkest dark:bg-mk-lightest;
   }
 
   .btn-large {
@@ -82,11 +82,11 @@
   }
 
   .text-link {
-    @apply border-b border-dotted border-lt-darker dark:border-dk-darker hover:border-none hover:bg-lt-black hover:text-lt-white dark:hover:bg-dk-black dark:hover:text-dk-white;
+    @apply border-b border-dotted border-lt-darker dark:border-dk-darker hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-dk-black dark:hover:text-dk-white;
   }
 
   .black-link {
-    @apply inline-block text-base font-medium hover:underline;
+    @apply inline-block font-medium hover:underline;
   }
 
   .nav-link {
@@ -99,6 +99,6 @@
   }
 
   .hr-stroke {
-    @apply w-full h-px mx-auto bg-gray-400 dark:bg-gray-700;
+    @apply border-t border-gray-400 dark:border-gray-700;
   }
 }

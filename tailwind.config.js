@@ -3,24 +3,48 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.{js,jsx,ts,tsx,md,mdx}'],
+  purge: [
+    './src/pages/**/*.tsx',
+    './src/components/**/*.tsx',
+    './src/**/*.ts',
+    './src/**/*.js',
+    './public/**/*.html',
+    './index.html',
+  ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
-      display: 'var(--font-display)',
-      mono: 'var(--font-mono)',
+      display: [
+        '"Inter var"',
+        'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      ],
+      mono: [
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        'Liberation Mono',
+        'Courier New',
+        'monospace',
+      ],
     },
     extend: {
       colors: {
         gray: colors.trueGray,
-        'gray-900': 'rgb(19 20 21)',
+        'gray-900': 'rgb(19 20 21)', //'rgb(19 20 21)',
+        mk: {
+          darkest: 'rgb(0 0 0)', // body light - activelink light
+          darker: 'rgb(6 6 6)', // headings light
+          dark: 'rgb(10 10 10)', // bg dark
+          light: 'rgb(245 245 245)', // bg light
+          lighter: 'rgb(250 250 250)', // headings dark
+          lightest: 'rgb(255 255 255)', // body dark - activelink dark
+        },
         lt: {
-          bg: 'rgb(255 255 255)',
+          bg: 'rgb(245 245 245)',
           body: 'rgb(0 0 0)',
-          headings: 'rgb(6 5 6)',
-          primary: '#0040dd',
-          'primary-light': 'color(#0040dd l(90%))',
-          'primary-lightest': 'color(#0040dd l(95%))',
+          headings: 'rgb(6 6 6)',
           secondary: '#fac24f',
           tertiary: '#d70015',
           quaternary: '#a05a00',
@@ -61,24 +85,24 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.lt.light'),
             },
-            color: theme('colors.lt.body'),
+            color: theme('colors.mk.darkest'),
             h1: {
-              color: theme('colors.lt.headings'),
+              color: theme('colors.mk.darkest'),
             },
             h2: {
-              color: theme('colors.lt.headings'),
+              color: theme('colors.mk.darkest'),
             },
             h3: {
-              color: theme('colors.lt.headings'),
+              color: theme('colors.mk.darkest'),
             },
             h4: {
-              color: theme('colors.lt.headings'),
+              color: theme('colors.mk.darkest'),
             },
             h5: {
-              color: theme('colors.lt.headings'),
+              color: theme('colors.mk.darkest'),
             },
             h6: {
-              color: theme('colors.lt.headings'),
+              color: theme('colors.mk.darkest'),
             },
             'ul > li::before': {
               content: '""',
@@ -92,13 +116,13 @@ module.exports = {
               fontVariationSettings: '"wght" 500',
               textDecoration: 'none',
               '&:hover': {
-                backgroundColor: theme('colors.lt.black'),
-                color: theme('colors.lt.white'),
+                backgroundColor: theme('colors.mk.darkest'),
+                color: theme('colors.mk.lightest'),
                 borderBottom: 'none',
               },
             },
             strong: {
-              color: theme('colors.lt.body'),
+              color: theme('colors.mk.darkest'),
             },
             thead: {
               borderBottomColor: theme('colors.lt.light'),
@@ -122,27 +146,27 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.dk.body'),
+            color: theme('colors.mk.lightest'),
             '*,*::before,*::after': {
               borderColor: theme('colors.dk.light'),
             },
             h1: {
-              color: theme('colors.dk.headings'),
+              color: theme('colors.mk.lightest'),
             },
             h2: {
-              color: theme('colors.dk.headings'),
+              color: theme('colors.mk.lightest'),
             },
             h3: {
-              color: theme('colors.dk.headings'),
+              color: theme('colors.mk.lightest'),
             },
             h4: {
-              color: theme('colors.dk.headings'),
+              color: theme('colors.mk.lightest'),
             },
             h5: {
-              color: theme('colors.dk.headings'),
+              color: theme('colors.mk.lightest'),
             },
             h6: {
-              color: theme('colors.dk.headings'),
+              color: theme('colors.mk.lightest'),
             },
             borderColor: theme('colors.dk.light'),
             'ul > li::before': {
@@ -151,22 +175,11 @@ module.exports = {
               backgroundColor: theme('colors.dk.dark'),
               borderRadius: '50%',
             },
-            a: {
-              borderBottom: `1px dotted ${theme('colors.dk.darker')}`,
-              color: theme('colors.current'),
-              fontVariationSettings: '"wght" 500',
-              textDecoration: 'none',
-              '&:hover': {
-                backgroundColor: theme('colors.dk.black'),
-                color: theme('colors.dk.white'),
-                borderBottom: 'none',
-              },
-            },
             strong: {
-              color: theme('colors.dk.body'),
+              color: theme('colors.mk.lightest'),
             },
             thead: {
-              color: theme('colors.dk.body'),
+              color: theme('colors.mk.lightest'),
               borderBottomColor: theme('colors.dk.light'),
             },
             tbody: {
@@ -186,11 +199,6 @@ module.exports = {
           },
         },
       }),
-    },
-  },
-  variants: {
-    extend: {
-      typography: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
