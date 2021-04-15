@@ -96,19 +96,10 @@ module.exports = {
               color: theme('colors.mk.darkest'),
             },
             h2: {
-              color: theme('colors.mk.darkest'),
+              color: 'rgb(10 10 10)',
             },
-            h3: {
-              color: theme('colors.mk.darkest'),
-            },
-            h4: {
-              color: theme('colors.mk.darkest'),
-            },
-            h5: {
-              color: theme('colors.mk.darkest'),
-            },
-            h6: {
-              color: theme('colors.mk.darkest'),
+            h3,h4,h5,h6: {
+              color: 'rgb(20 20 20)',
             },
             'ul > li::before': {
               content: '""',
@@ -160,19 +151,10 @@ module.exports = {
               color: theme('colors.mk.lightest'),
             },
             h2: {
-              color: theme('colors.mk.lightest'),
+              color: 'rgb(245 245 245)',
             },
-            h3: {
-              color: theme('colors.mk.lightest'),
-            },
-            h4: {
-              color: theme('colors.mk.lightest'),
-            },
-            h5: {
-              color: theme('colors.mk.lightest'),
-            },
-            h6: {
-              color: theme('colors.mk.lightest'),
+            h3,h4,h5,h6: {
+              color: 'rgb(240 240 240)',
             },
             borderColor: theme('colors.dk.light'),
             'ul > li::before': {

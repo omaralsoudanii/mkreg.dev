@@ -15,10 +15,8 @@ export default function PostsList({ posts, href }) {
       {posts.map((frontMatter) => (
         <li key={frontMatter.slug}>
           <Link href={`${href}/${frontMatter.slug}`} passHref>
-            <a>
-              <span className="border-b border-dotted border-lt-darker dark:border-dk-darker hover:border-none hover:bg-lt-black hover:text-lt-white dark:hover:bg-dk-black dark:hover:text-dk-white">
-                {frontMatter.title}
-              </span>
+            <a className="text-link">
+              <span>{frontMatter.title}</span>
             </a>
           </Link>
           <time className="w-full ml-2 text-lt-darkest dark:text-dk-darkest sm:ml-4 sm:w-24">
