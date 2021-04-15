@@ -18,7 +18,7 @@ export default function PostContainer({ children, frontMatter }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <header className="mb-4">
+        <header className="mb-4 text-center">
           <h1>{frontMatter.title}</h1>
         </header>
         {children}

@@ -12,6 +12,35 @@ export async function getAllFilesName(type) {
   return fs.readdirSync(path.join(root, 'src', 'data', type))
 }
 
+export async function getPageFile(slug) {
+  const mdxPath = path.join(root, 'src', 'data', `${slug}.mdx`)
+  const mdPath = path.join(root, 'src', 'data', `${slug}.md`)
+  const source = fs.existsSync(mdxPath)
+    ? fs.readFileSync(mdxPath, 'utf8')
+    : fs.readFileSync(mdPath, 'utf8')
+
+  const { data, content } = matter(source)
+  const mdxSource = await renderToString(content, {
+    components: MDXComponents,
+    mdxOptions: {
+      remarkPlugins: [
+        require('remark-autolink-headings'),
+        require('remark-slug'),
+        require('remark-code-titles'),
+      ],
+      rehypePlugins: [mdxPrism],
+    },
+  })
+
+  return {
+    mdxSource,
+    frontMatter: {
+      slug: slug ? formatSlug(slug) : null,
+      ...data,
+    },
+  }
+}
+
 export async function getFileBySlug(type, slug) {
   const mdxPath = path.join(root, 'src', 'data', type, `${slug}.mdx`)
   const mdPath = path.join(root, 'src', 'data', type, `${slug}.md`)

@@ -1,37 +1,27 @@
-import { Container } from '@/components/Container'
-import Image from '@/components/ImageComposed'
-import Seo from '@/components/Seo'
-import dayjs from 'dayjs'
-import * as React from 'react'
+import MDXComponents from '@/components/MDXComponents'
+import PostContainer from '@/components/Posts/Post'
+import { Environment } from '@/lib/environment'
+import { getPageFile } from '@/lib/mdx'
+import hydrate from 'next-mdx-remote/hydrate'
 
-function Stack() {
-  const meta = {
-    title: 'Stack',
-    description: 'Omar Alsoudani tech stack',
-    JsonLd: false,
+function Stack({ mdxSource, frontMatter }) {
+  const content = hydrate(mdxSource, {
+    components: MDXComponents,
+  })
+
+  return <PostContainer frontMatter={frontMatter}>{content}</PostContainer>
+}
+
+export async function getStaticProps() {
+  const post = await getPageFile('stack')
+  const { revalidate } = Environment.isr
+  if (!post) {
+    return {
+      notFound: true,
+      revalidate: revalidate,
+    }
   }
-
-  return (
-    <React.Fragment>
-      <Seo data={meta} />
-      <Container>
-        <section className="mb-20 space-y-8">
-          <h1>Stack</h1>
-          <p>A list of what I know about tech. Content is not ready yet.</p>
-          <p>
-            <strong>ETA:</strong> about ~1 year from{' '}
-            {`${dayjs(new Date()).format('MMMM DD, YYYY')}`}
-          </p>
-          <Image
-            src="/static/images/under-construction.jpg"
-            alt="Omar Alsoudani stack"
-            width={2048}
-            height={1357}
-          />
-        </section>
-      </Container>
-    </React.Fragment>
-  )
+  return { props: post }
 }
 
 export default Stack
