@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 rounded-t bg-gray-50 text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
+  @apply px-5 py-3 bg-gray-100 rounded-t text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
   font-variation-settings: 'wght' 600;
 }
 
@@ -8,12 +8,12 @@
 }
 
 .prose .mdx-marker {
-  @apply block px-4 -mx-4 border-l-4 border-gray-900 bg-gray-50 dark:border-gray-50 dark:bg-gray-900;
+  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-gray-900 dark:border-gray-50 dark:bg-gray-900;
 }
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono bg-gray-50 text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
   font-feature-settings: normal;
   font-variation-settings: 'wght' 500;
   letter-spacing: normal;
