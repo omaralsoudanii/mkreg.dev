@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-mk-lightest dark:bg-mk-darkest text-mk-darkest dark:text-mk-lightest font-display;
+    @apply bg-mk-lightest dark:bg-mk-dark text-mk-darkest dark:text-mk-lightest font-display;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
@@ -12,9 +12,9 @@
     -moz-osx-font-smoothing: grayscale;
     font-variation-settings: 'wght' 450;
     font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02' 1,
-      'cv03' 1, 'cv04' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'kern' 1;
+      'cv03' 1, 'cv04' 1, 'liga', 'clig', 'calt', 'kern';
     font-kerning: normal;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
     font-variant: common-ligatures contextual;
   }
 
@@ -26,6 +26,11 @@
     }
   }
 
+  p,
+  blockquote {
+    line-height: 'calc(1em * 1.5)' !important;
+  }
+  
   a {
     font-variation-settings: 'wght' 500;
   }
@@ -39,7 +44,7 @@
   h1 {
     @apply text-4xl;
     font-variation-settings: 'wght' 850;
-    letter-spacing: -.03em;
+    letter-spacing: -0.03em;
   }
 
   .prose h2,
