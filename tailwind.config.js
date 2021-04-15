@@ -14,10 +14,10 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
-      display: [
-        '"Inter var"',
-        'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      ],
+      // display: [
+      //   '"Inter var"',
+      //   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      // ],
       mono: [
         'JetBrains Mono',
         'IBM Plex Mono',
@@ -92,8 +92,8 @@ module.exports = {
               borderColor: theme('colors.lt.light'),
             },
             color: theme('colors.mk.darkest'),
-            'p , span, a, strong, blockquote': {
-              lineHeight: 'calc(1em * 1.5)',
+            'p, blockquote': {
+              lineHeight: 'calc(15px * 1.5)',
             },
             h1: {
               color: theme('colors.mk.darkest'),

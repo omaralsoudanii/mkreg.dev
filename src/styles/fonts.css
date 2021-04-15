@@ -146,7 +146,7 @@
 @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
-  font-display: swap;
+  font-display: optional;
   font-style: italic;
   font-named-instance: 'Italic';
   src: url(/static/fonts/Inter-italic.latin.var.woff2) format('woff2');
