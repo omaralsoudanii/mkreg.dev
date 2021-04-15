@@ -38,7 +38,7 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.trueGray,
-        'gray-900': 'rgb(19 20 21)', //'rgb(19 20 21)',
+        'gray-900': 'rgb(6 10 9)', //'rgb(19 20 21)',
         mk: {
           darkest: 'rgb(0 0 0)', // body light - activelink light
           darker: 'rgb(6 6 6)', // headings light
@@ -92,9 +92,9 @@ module.exports = {
               borderColor: theme('colors.lt.light'),
             },
             color: theme('colors.mk.darkest'),
-            'p , span, a, strong, blockquote': {
-              lineHeight: 'calc(1em * 1.5)',
-            },
+            // 'p , span, a, strong, blockquote': {
+            //   lineHeight: 'calc(1em * 1.5)',
+            // },
             h1: {
               color: theme('colors.mk.darkest'),
             },
