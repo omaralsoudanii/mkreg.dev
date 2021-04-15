@@ -98,7 +98,7 @@ module.exports = {
             h2: {
               color: 'rgb(10 10 10)',
             },
-            h3,h4,h5,h6: {
+            'h3,h4,h5,h6': {
               color: 'rgb(20 20 20)',
             },
             'ul > li::before': {
@@ -153,7 +153,7 @@ module.exports = {
             h2: {
               color: 'rgb(245 245 245)',
             },
-            h3,h4,h5,h6: {
+            'h3,h4,h5,h6': {
               color: 'rgb(240 240 240)',
             },
             borderColor: theme('colors.dk.light'),
