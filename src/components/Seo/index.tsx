@@ -1,6 +1,18 @@
-import Head from 'next/head'
 import { Environment } from '@/lib/environment'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+
+interface JsonLd {
+  '@context': string
+  '@type': string
+  headline?: any
+  keywords?: any
+  url: string
+  datePublished?: any
+  description: any
+  author: { '@type': string; name: string } | { '@type': string; name: string }
+  name?: any
+}
 
 export default function Seo({ data }) {
   const router = useRouter()
@@ -11,13 +23,14 @@ export default function Seo({ data }) {
     type: 'article',
     locale: 'en_US',
     image: {
-      url: `${Environment.siteUrl}${Environment.ogImage}`,
+      url: Environment.ogImage,
       alt: Environment.ogTitle,
     },
     ...data,
   }
 
-  let JsonLd
+  let JsonLd: JsonLd
+
   if (meta.JsonLd) {
     JsonLd = {
       '@context': 'http://schema.org',
@@ -74,8 +87,16 @@ export default function Seo({ data }) {
       <meta key="type" property="og:type" content={meta.type} />
       <meta property="og:locale" content={meta.locale} />
 
-      <meta key="ogImg" property="og:image" content={meta.image.url} />
-      <meta key="twitImg" name="twitter:image" content={meta.image.url} />
+      <meta
+        key="ogImg"
+        property="og:image"
+        content={`${Environment.siteUrl}${meta.image.url}`}
+      />
+      <meta
+        key="twitImg"
+        name="twitter:image"
+        content={`${Environment.siteUrl}${meta.image.url}`}
+      />
       <meta key="imgAlt" property="og:image:alt" content={meta.image.alt} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@omaralsoudani" />

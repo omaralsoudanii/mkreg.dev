@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import Seo from '@/components/Seo'
-import * as React from 'react'
 import { Container } from '@/components/Container'
+import Seo from '@/components/Seo'
+import Link from 'next/link'
+import * as React from 'react'
 
 export default function About() {
   const meta = {
-    title: 'About - Omar Alsoudani',
-    description: 'Introduction and FAQ about me',
+    title: 'Omar Alsoudani - About',
+    description: 'Software developer, creator and the king of laziness.',
     JsonLd: false,
   }
 
@@ -45,7 +45,7 @@ export default function About() {
           more valuable for me. Unless you are a PHP developer 🤦 (Nah, just
           kidding). You can find what I "think" am capable of in the{' '}
           <Link href="/stack">
-            <a className="pl-1 text-link"> Stack page </a>
+            <a className="pl-1 text-link"> Stack page &rarr; </a>
           </Link>
         </p>
         <h2>A word of caution</h2>

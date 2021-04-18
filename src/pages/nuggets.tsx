@@ -6,8 +6,8 @@ import * as React from 'react'
 
 function Nuggets() {
   const meta = {
-    title: 'Nuggets',
-    description: 'Recommended resources to read',
+    title: 'Omar Alsoudani - Nuggets',
+    description: 'Some stuff I bookmark and never read again.',
     JsonLd: false,
   }
 

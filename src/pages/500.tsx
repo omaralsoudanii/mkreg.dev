@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import Image from '@/components/ImageComposed'
 import { Container } from '@/components/Container'
+import Image from '@/components/ImageComposed'
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
@@ -22,11 +22,9 @@ export default function NotFound() {
             alt="500 Internal server error"
           />
 
-          <p>
-            <Link href="/">
-              <a className="text-link"> Back to homepage </a>
-            </Link>
-          </p>
+          <Link href="/">
+            <a className="w-full btn btn-primary btn-large">Back to Homepage</a>
+          </Link>
         </div>
       </div>
     </Container>

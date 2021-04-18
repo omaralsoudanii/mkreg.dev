@@ -1,8 +1,14 @@
 import { Environment } from '@/lib/environment'
-import Document, { Head, Html, Main, NextScript } from 'next/document'
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
@@ -45,7 +51,7 @@ export default class MyDocument extends Document {
           <meta name="application-name" content="MK" />
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
-          <meta name="theme-color" content="#000000" />
+          <meta name="theme-color" content="#0b0b0c" />
         </Head>
         <body>
           <Main />

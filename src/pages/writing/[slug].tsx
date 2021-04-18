@@ -1,7 +1,8 @@
 import MDXComponents from '@/components/MDXComponents'
 import PostContainer from '@/components/Posts/Post'
 import { Environment } from '@/lib/environment'
-import { formatSlug, getFileBySlug, getAllFilesName } from '@/lib/mdx'
+import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import hydrate from 'next-mdx-remote/hydrate'
 
 /**
@@ -18,31 +19,33 @@ export default function Post({ mdxSource, frontMatter }) {
   return <PostContainer frontMatter={frontMatter}>{content}</PostContainer>
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getFileBySlug('writing', params.slug)
   const { revalidate } = Environment.isr
+
   if (!post) {
     return {
       notFound: true,
       revalidate: revalidate,
     }
   }
-  return { props: post }
+  return {
+    props: post,
+    revalidate: Environment.isr.revalidate,
+  }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { enable } = Environment.isr
   const posts = await getAllFilesName('writing')
-  if (!posts.length) return { paths: [], fallback: !enable }
-
-  const paths = posts.map((p) => ({
-    params: {
-      slug: formatSlug(p),
-    },
-  }))
+  if (!posts.length) return { paths: [], fallback: enable }
 
   return {
-    paths,
-    fallback: !enable,
+    paths: posts.map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ''),
+      },
+    })),
+    fallback: false,
   }
 }

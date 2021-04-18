@@ -1,7 +1,8 @@
 import MDXComponents from '@/components/MDXComponents'
 import PostContainer from '@/components/Posts/Post'
 import { Environment } from '@/lib/environment'
-import { getPageFile } from '@/lib/mdx'
+import { getFileBySlug } from '@/lib/mdx'
+import { GetStaticProps } from 'next'
 import hydrate from 'next-mdx-remote/hydrate'
 
 function Stack({ mdxSource, frontMatter }) {
@@ -12,8 +13,8 @@ function Stack({ mdxSource, frontMatter }) {
   return <PostContainer frontMatter={frontMatter}>{content}</PostContainer>
 }
 
-export async function getStaticProps() {
-  const post = await getPageFile('stack')
+export const getStaticProps: GetStaticProps = async () => {
+  const post = await getFileBySlug('stack')
   const { revalidate } = Environment.isr
   if (!post) {
     return {

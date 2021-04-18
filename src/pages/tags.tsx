@@ -1,9 +1,9 @@
-import Tag from '@/components/Tag'
-import { getAllTags } from '@/lib/tags'
-import Link from 'next/link'
-import { GetStaticProps } from 'next'
-import { Environment } from '@/lib/environment'
 import Seo from '@/components/Seo'
+import Tag from '@/components/Tag'
+import { Environment } from '@/lib/environment'
+import { getAllTags } from '@/lib/mdx'
+import { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 /**
  * Main Tags page
@@ -14,8 +14,8 @@ import Seo from '@/components/Seo'
 
 export default function Tags({ tags }) {
   const meta = {
-    title: `Tags - ${Environment.ogTitle}`,
-    description: `Browse Writing by tags - ${Environment.ogTitle}`,
+    title: `Omar Alsoudani - Tags`,
+    description: `Browse my writings, discussions and thoughts by tags.`,
     JsonLd: false,
   }
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
@@ -50,10 +50,12 @@ export default function Tags({ tags }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const { revalidate } = Environment.isr
   const tags = await getAllTags('writing')
   return {
     props: {
       tags,
     },
+    revalidate: revalidate,
   }
 }

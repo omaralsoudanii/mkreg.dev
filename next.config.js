@@ -26,6 +26,15 @@ module.exports = {
           },
         ],
       },
+      {
+        source: '/(*.xml)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, no-cache, must-revalidate',
+          },
+        ],
+      },
     ]
   },
 }

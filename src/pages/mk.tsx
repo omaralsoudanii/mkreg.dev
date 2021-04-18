@@ -1,12 +1,12 @@
+import { Container } from '@/components/Container'
 import Image from '@/components/ImageComposed'
 import Seo from '@/components/Seo'
 import * as React from 'react'
-import { Container } from '@/components/Container'
 
 export default function MK() {
   const meta = {
-    title: 'MK',
-    description: 'Mark Knopfler OBE',
+    title: 'Omar Alsoudani - The Sultan of swing',
+    description: 'The legend himself.',
     JsonLd: false,
   }
 
@@ -39,7 +39,7 @@ export default function MK() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Mark Knopfler Red Electric Guitar
+            Mark Knopfler Red Electric Guitar &rarr;
           </a>
         </p>
         <p>
@@ -63,7 +63,7 @@ export default function MK() {
             rel="noopener noreferrer"
             className="mx-auto text-center text-link"
           >
-            MK
+            MK &rarr;
           </a>
         </p>
       </Container>

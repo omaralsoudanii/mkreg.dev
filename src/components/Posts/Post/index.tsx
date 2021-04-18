@@ -5,9 +5,9 @@ import * as React from 'react'
 export default function PostContainer({ children, frontMatter }) {
   const meta = {
     title: frontMatter.title,
-    description: frontMatter.description,
+    description: frontMatter.summary,
     image: {
-      url: frontMatter?.featuredImage,
+      url: frontMatter?.image,
       alt: frontMatter.title,
     },
     tags: frontMatter?.tags,

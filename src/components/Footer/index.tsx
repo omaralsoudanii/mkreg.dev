@@ -4,8 +4,8 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <div className="mt-16 hr-stroke">
-      <div className="grid grid-cols-1 gap-4 p-6 py-12 sm:grid-cols-3 ">
-        <div className="flex flex-col space-y-4 text-center">
+      <div className="grid grid-cols-1 gap-4 p-6 py-12 text-left sm:text-center sm:grid-cols-3 ">
+        <div className="flex flex-col space-y-4">
           <a
             href={Environment.social.github}
             target="_blank"
@@ -31,7 +31,7 @@ export function Footer() {
             Youtube
           </a>
         </div>
-        <div className="flex flex-col space-y-4 text-center">
+        <div className="flex flex-col space-y-4">
           <a
             href={Environment.social.twitter}
             target="_blank"
@@ -51,7 +51,7 @@ export function Footer() {
             </a>
           </Link>
         </div>
-        <div className="flex flex-col space-y-4 text-center">
+        <div className="flex flex-col space-y-4">
           <a
             href={Environment.social.rss}
             target="_blank"
