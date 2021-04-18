@@ -83,6 +83,7 @@
 
   .text-link {
     @apply border-b-2 border-dotted border-lt-darker dark:border-dk-darker dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
+    font-variation-settings: 'wght' 500;
   }
 
   .black-link {
