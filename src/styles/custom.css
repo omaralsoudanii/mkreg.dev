@@ -92,7 +92,7 @@
   .nav-link {
     @apply flex items-start py-2 rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-20 hover:bg-opacity-10 dark:hover:bg-gray-400;
     filter: brightness(105%) saturate(200%) contrast(1);
-    font-variation-settings: 'wght' 450;
+    font-variation-settings: 'wght' 440;
   }
 
   .nav-link.active {

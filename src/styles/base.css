@@ -16,9 +16,9 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-variation-settings: 'wght' 450;
-    font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02' 1,
-      'cv03' 1, 'cv04' 1, 'liga', 'clig', 'calt', 'kern';
+    font-variation-settings: 'wght' 440;
+    font-feature-settings: 'case' 1, 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1,
+      'cv03' 1, 'cv04' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'kern' 1;
     font-kerning: normal;
     letter-spacing: -0.01em;
     font-variant: common-ligatures contextual;
