@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
@@ -14,10 +15,7 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
-      display: [
-        '"Inter var"',
-        'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      ],
+      sans: ['Inter', ...fontFamily.sans],
       mono: [
         'JetBrains Mono',
         'IBM Plex Mono',
