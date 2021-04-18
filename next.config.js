@@ -27,7 +27,25 @@ module.exports = {
         ],
       },
       {
-        source: '/(*.xml)',
+        source: '/rss.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, no-cache, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, no-cache, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/robots.txt',
         headers: [
           {
             key: 'Cache-Control',
