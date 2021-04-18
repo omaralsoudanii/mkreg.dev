@@ -17,8 +17,8 @@ import * as React from 'react'
 export default function Tag({ posts, tag }) {
   const title = unSlugify(tag)
   const meta = {
-    title: `${title} | ${Environment.ogTitle}`,
-    description: `Topics, Discussions & Thoughts about ${title} | ${Environment.ogTitle}`,
+    title: `${Environment.ogTitle} - ${title}`,
+    description: `Topics, Discussions & Thoughts about ${title}`,
   }
 
   return (
@@ -28,7 +28,7 @@ export default function Tag({ posts, tag }) {
         <section className="mb-20 space-y-8">
           <h1>{title}</h1>
           <p>
-            Topics, guides and thoughts I wrote about <strong>{title}</strong>
+            Topics, guides and thoughts I wrote about <strong>{title}</strong>{' '}
             or related to it.
           </p>
           <p className="text-right">
