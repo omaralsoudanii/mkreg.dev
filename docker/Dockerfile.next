@@ -22,9 +22,9 @@ ENV NODE_ENV production
 
 COPY --from=builder /mk/next.config.js ./
 COPY --from=builder /mk/public ./public
-COPY --from=builder /mk/scripts ./scripts
 COPY --from=builder /mk/.next ./.next
 COPY --from=builder /mk/node_modules ./node_modules
+COPY --from=builder /mk/package.json ./
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
@@ -35,4 +35,4 @@ EXPOSE 3000
 
 RUN npx next telemetry disable
 
-CMD ["node_modules/.bin/next", "start"]
+CMD ["yarn", "start"]
