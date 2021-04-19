@@ -22,7 +22,16 @@ module.exports = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, no-cache, must-revalidate',
+            value: 'public, no-cache, no-tranform, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/static/fonts/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -31,7 +40,7 @@ module.exports = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, no-cache, must-revalidate',
+            value: 'public, no-cache, no-tranform, must-revalidate',
           },
         ],
       },
@@ -40,7 +49,7 @@ module.exports = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, no-cache, must-revalidate',
+            value: 'public, no-cache, no-tranform, must-revalidate',
           },
         ],
       },

@@ -17,15 +17,13 @@ const slugify = (str) =>
 ;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
 
-  const files = fs.readdirSync(
-    path.join(__dirname, '..', 'src', 'data', 'writing')
-  )
+  const files = fs.readdirSync(path.join(__dirname, 'src', 'data', 'writing'))
 
   const tagCount = {}
   // Iterate through each post, putting all found tags into `tags`
   files.forEach((file) => {
     const source = fs.readFileSync(
-      path.join(__dirname, '..', 'src', 'data', 'writing', file),
+      path.join(__dirname, 'src', 'data', 'writing', file),
       'utf8'
     )
     const { data } = matter(source)

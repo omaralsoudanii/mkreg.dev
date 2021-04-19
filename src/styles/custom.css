@@ -47,14 +47,14 @@
 
   .hdr-sm-btn {
     @apply flex items-center justify-center px-4 py-1 font-medium text-mk-darkest dark:text-mk-lightest;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
+    box-align: center;
+    box-pack: center;
   }
 
   .hdr-sm-title {
     @apply inline-block w-full px-3 py-2 font-medium text-left cursor-pointer text-mk-darkest dark:text-mk-lightest;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
+    box-align: center;
+    box-pack: center;
   }
 
   .hdr-sm-btn svg {
@@ -82,7 +82,7 @@
   }
 
   .text-link {
-    @apply border-b-2 border-dotted border-lt-darker dark:border-dk-darker dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
+    @apply border-b-2 border-dotted no-underline border-mk-dark dark:border-mk-light dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
     font-variation-settings: 'wght' 500;
   }
 

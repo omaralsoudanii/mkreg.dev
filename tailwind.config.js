@@ -15,7 +15,7 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['Inter', ...fontFamily.sans],
+      sans: ['"Inter var"', ...fontFamily.sans],
       mono: [
         'JetBrains Mono',
         'IBM Plex Mono',
@@ -46,15 +46,6 @@ module.exports = {
           lightest: 'rgb(255 255 255)', // body dark - activelink dark
         },
         lt: {
-          bg: 'rgb(245 245 245)',
-          body: 'rgb(0 0 0)',
-          headings: 'rgb(6 6 6)',
-          secondary: '#fac24f',
-          tertiary: '#d70015',
-          quaternary: '#a05a00',
-          black: 'rgb(6 5 6)',
-          white: 'rgb(255 255 255)',
-          'active-link': 'rgb(0 0 0)',
           lightest: '#f3f3f6',
           light: '#d8d8dc',
           medium: '#bcbcc0',
@@ -63,18 +54,6 @@ module.exports = {
           darkest: '#6c6c70',
         },
         dk: {
-          bg: 'rgb(0 0 0)',
-          body: 'rgb(250 250 250)',
-          headings: 'rgb(255 255 255)',
-          primary: '#409cff',
-          'primary-light': 'color(#409cff a(25%))',
-          'primary-lightest': 'color(#409cff a(10%))',
-          secondary: '#ffd426',
-          tertiary: '#ff6961',
-          quaternary: '#ffd426',
-          black: 'rgb(255 255 255)',
-          white: 'rgb(0 0 0)',
-          'active-link': 'rgb(255 255 255)',
           lightest: '#242426',
           light: '#363638',
           medium: '#444446',
@@ -106,7 +85,7 @@ module.exports = {
               borderRadius: '50%',
             },
             a: {
-              borderBottom: `2px dotted ${theme('colors.lt.darker')}`,
+              borderBottom: `2px dotted ${theme('colors.mk.dark')}`,
               color: theme('colors.mk.darkest'),
               fontVariationSettings: '"wght" 500',
               textDecoration: 'none',
@@ -131,7 +110,6 @@ module.exports = {
             figure: {
               figcaption: {
                 color: theme('colors.lt.darkest'),
-                fontFamily: theme('fontFamily.display'),
               },
             },
             blockquote: {
@@ -169,7 +147,7 @@ module.exports = {
               borderBottomColor: theme('colors.dk.light'),
             },
             a: {
-              borderBottom: `2px dotted ${theme('colors.lt.darker')}`,
+              borderBottom: `2px dotted ${theme('colors.mk.light')}`,
               color: theme('colors.mk.lightest'),
               fontVariationSettings: '"wght" 500',
               textDecoration: 'none',
@@ -187,7 +165,6 @@ module.exports = {
             figure: {
               figcaption: {
                 color: theme('colors.dk.darkest'),
-                fontFamily: theme('fontFamily.display'),
               },
             },
             blockquote: {

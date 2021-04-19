@@ -4,7 +4,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint"],
   "env": {
     "node": true,
     "browser": true,
@@ -36,13 +36,8 @@
   },
   "settings": {
     "react": {
-      "createClass": "createReactClass",
       "pragma": "React",
-      "fragment": "Fragment",
       "version": "detect"
-    },
-    "propWrapperFunctions": [],
-
-    "linkComponents": ["Link"]
+    }
   }
 }

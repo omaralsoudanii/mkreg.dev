@@ -1,4 +1,3 @@
-import '@/styles/fonts.css'
 import '@/styles/main.css'
 import { Main } from '@/components/Layouts'
 import { ThemeProvider } from 'next-themes'

@@ -174,7 +174,7 @@
   scrollbar-width: none; /* Firefox */
   -webkit-overflow-scrolling: touch;
   overflow: auto;
-  -ms-overflow-style: none; /* IE and Edge */
+  -moz-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
