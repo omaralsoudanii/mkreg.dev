@@ -24,9 +24,10 @@ services:
     container_name: mk-haproxy
     restart: unless-stopped
     volumes:
-      - ./ssl/cf/ecc.pem:/etc/haproxy/ssl/ecc.pem:ro
+      - ./ssl/cf/haproxy_ecc.pem:/etc/haproxy/ssl/haproxy_ecc.pem:ro
       - ./ssl/cf/priv.key:/etc/haproxy/ssl/priv.key:ro
       - ./ssl/dh/dhparam-2048.pem:/etc/haproxy/ssl/dhparam-2048.pem:ro
+      - ./cf_ips.lst:/etc/haproxy/cf_ips.lst
     ports:
       - 80:80
       - 443:443
