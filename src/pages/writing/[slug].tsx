@@ -46,6 +46,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: p.replace(/\.mdx/, ''),
       },
     })),
-    fallback: false,
+    fallback: enable ? 'blocking' : false,
   }
 }

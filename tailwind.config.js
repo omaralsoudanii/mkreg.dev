@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
@@ -15,7 +14,6 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['"Inter var"', ...fontFamily.sans],
       mono: [
         'JetBrains Mono',
         'IBM Plex Mono',

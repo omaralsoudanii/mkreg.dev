@@ -52,6 +52,20 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
           <meta name="theme-color" content="#0b0b0c" />
+          <link
+            rel="preload"
+            href="/static/fonts/Inter-roman.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/fonts/Inter-italic.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />

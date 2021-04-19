@@ -66,7 +66,8 @@
   }
 
   .btn {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold rounded;
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm rounded;
+    font-variation-settings: 'wght' 600;
   }
 
   .btn-secondary {
@@ -82,12 +83,11 @@
   }
 
   .text-link {
-    @apply border-b-2 border-dotted no-underline border-mk-dark dark:border-mk-light dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
-    font-variation-settings: 'wght' 500;
+    @apply border-b-2 border-dotted font-medium no-underline border-mk-dark dark:border-mk-light dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
   }
 
   .black-link {
-    @apply inline-block font-medium hover:underline;
+    @apply inline-block hover:underline;
   }
 
   .nav-link {
