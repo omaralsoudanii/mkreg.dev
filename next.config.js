@@ -3,9 +3,6 @@ module.exports = {
     webpack5: true,
     strictPostcssConfiguration: true,
   },
-  experimental: {
-    optimizeCss: true
-  },
   compress: process.env.NODE_ENV === 'development',
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
