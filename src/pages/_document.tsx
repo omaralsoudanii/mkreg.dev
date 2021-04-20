@@ -54,14 +54,14 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#0b0b0c" />
           <link
             rel="preload"
-            href="/static/fonts/Inter-roman.var.woff2"
+            href="/static/fonts/Inter-italic.latin.var.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/static/fonts/Inter-italic.var.woff2"
+            href="/static/fonts/Inter-roman.latin.var.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

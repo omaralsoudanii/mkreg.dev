@@ -2,21 +2,17 @@
 
 @layer base {
   html {
-    font: 1em / 1.5 Inter var, system-ui, -apple-system, BlinkMacSystemFont,
+    font-family: Inter var, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
 
   body {
-    @apply subpixel-antialiased bg-mk-lightest dark:bg-mk-dark text-mk-darkest dark:text-mk-lighter;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    @apply subpixel-antialiased leading-relaxed bg-mk-lightest dark:bg-mk-dark text-mk-darkest dark:text-mk-lighter;
     text-rendering: optimizeLegibility;
     font-variation-settings: 'wght' 450;
-    font-feature-settings: 'case' 1, 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1, 'cv03' 1,
-      'cv04' 1, 'liga' 1, 'clig' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
+    font-feature-settings: 'case' 1, 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1,
+      'cv03' 1, 'cv04' 1, 'liga' 1, 'clig' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
     font-kerning: normal;
     letter-spacing: -0.01em;
     font-variant: common-ligatures contextual;
@@ -29,42 +25,44 @@
     }
   }
 
-  p,
-  blockquote {
-    line-height: calc(1em * 1.5) !important;
-  }
-
   b,
   strong {
     font-variation-settings: 'wght' 700;
   }
 
-  .prose h1,
   h1 {
-    @apply text-4xl;
     font-variation-settings: 'wght' 850;
-    letter-spacing: -0.03em;
   }
 
-  .prose h2,
   h2 {
-    @apply text-2xl tracking-tight;
     font-variation-settings: 'wght' 800;
   }
 
-  .prose h3,
   h3 {
-    @apply text-xl tracking-tight;
-    font-variation-settings: 'wght' 800;
+    font-variation-settings: 'wght' 750;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-variation-settings: 'wght' 700;
+  }
+
+  .prose h1 {
+    @apply text-[2.25rem] tracking-tight !important;
+  }
+
+  .prose h2 {
+    @apply text-[1.875rem] leading-tight tracking-tight !important;
+  }
+
+  .prose h3 {
+    @apply text-[1.5rem] leading-normal tracking-tight !important;
   }
 
   .prose h4,
-  h4,
   .prose h5,
-  h5,
-  .prose h6,
-  h6 {
-    @apply text-lg tracking-tight;
-    font-variation-settings: 'wght' 750;
+  .prose h6 {
+    @apply text-[1.25rem] leading-relaxed tracking-tight !important;
   }
 }

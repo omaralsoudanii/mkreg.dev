@@ -13,7 +13,7 @@
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono bg-gray-100 font-medium text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
   font-feature-settings: normal;
   font-variation-settings: 'wght' 500;
   letter-spacing: normal;

@@ -66,6 +66,7 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.lt.light'),
             },
+            lineHeight: theme('lineHeight.relaxed'),
             color: theme('colors.mk.darkest'),
             h1: {
               color: theme('colors.mk.darkest'),
