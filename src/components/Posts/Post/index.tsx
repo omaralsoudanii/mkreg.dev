@@ -17,17 +17,22 @@ export default function PostContainer({ children, frontMatter }) {
     JsonLd: true,
   }
 
-  const Tags = () => (
-    <div className="flex flex-row space-x-4 text-sm tracking-wide text-right">
-      {frontMatter.tags.map((t: string) => (
-        <p key={t}>
-          <Link href={`/tags/${slugify(t)}`}>
-            <a className="font-semibold text-gray-600 dark:text-gray-400">
-              {t}
-            </a>
-          </Link>
-        </p>
-      ))}
+  const Meta = () => (
+    <div className="grid grid-cols-1 my-8 sm:grid-cols-2">
+      <p className="text-sm font-semibold text-mk-darkest dark:text-mk-lighter">
+        {`Published on ${dayjs(new Date(frontMatter.publishedAt)).format(
+          'MMMM,DD YYYY'
+        )}`}
+      </p>
+      <div className="flex flex-row justify-start space-x-4 sm:justify-end">
+        {frontMatter.tags.map((t: string) => (
+          <p className="text-sm">
+            <Link key={t} href={`/tags/${slugify(t)}`}>
+              <a className="text-link">{t}</a>
+            </Link>
+          </p>
+        ))}
+      </div>
     </div>
   )
 
@@ -35,16 +40,10 @@ export default function PostContainer({ children, frontMatter }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <div className="w-full py-8 space-y-4">
-          <h1 className="!mb-0 text-center">{frontMatter.title}</h1>
-          {Tags()}
-          <time className="w-full text-right text-lt-darkest dark:text-dk-darkest">
-            {`${dayjs(new Date(frontMatter.publishedAt)).format(
-              'MMMM DD, YYYY'
-            )}`}
-          </time>
-        </div>
-        <div className="hr-stroke" />
+        <header className="text-center">
+          <h1> {frontMatter.title}</h1>
+        </header>
+        {Meta()}
         {children}
       </Container>
     </React.Fragment>

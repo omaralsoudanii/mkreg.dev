@@ -14,7 +14,10 @@ export default function PostsList({ posts, href }) {
     <ul className="space-y-4 leading-relaxed">
       {posts.map((frontMatter) => (
         <li key={frontMatter.slug}>
-          <Link href={`${href}/${frontMatter.slug}`} passHref>
+          <Link
+            href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+            passHref
+          >
             <a className="text-link">
               <span>{frontMatter.title}</span>
             </a>
