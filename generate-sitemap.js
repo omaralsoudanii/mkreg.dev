@@ -14,28 +14,37 @@ const slugify = (str) =>
     .replace(/^-|-$/g, '')
     .toLowerCase()
 
+const loc = path.join(__dirname, 'src', 'data')
+
 ;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
-
-  const files = fs.readdirSync(path.join(__dirname, 'src', 'data', 'writing'))
-
+  const type = 'writing'
+  const files = fs.readdirSync(path.join(loc, type))
+  const pageFiles = fs.readdirSync(loc)
+  const allFiles = files.concat(pageFiles)
   const tagCount = {}
   // Iterate through each post, putting all found tags into `tags`
-  files.forEach((file) => {
-    const source = fs.readFileSync(
-      path.join(__dirname, 'src', 'data', 'writing', file),
-      'utf8'
-    )
-    const { data } = matter(source)
-    if (data.tags) {
-      data.tags.forEach((tag) => {
-        const formattedTag = slugify(tag)
-        if (formattedTag in tagCount) {
-          tagCount[formattedTag] += 1
-        } else {
-          tagCount[formattedTag] = 1
-        }
-      })
+  allFiles.forEach((file) => {
+    const source =
+      fs.existsSync(path.join(loc, type, file)) &&
+      !fs.statSync(path.join(loc, type, file)).isDirectory()
+        ? fs.readFileSync(path.join(loc, type, file), 'utf-8')
+        : !fs.statSync(path.join(loc, file)).isDirectory()
+        ? fs.readFileSync(path.join(loc, file), 'utf-8')
+        : null
+
+    if (source) {
+      const { data } = matter(source)
+      if (data.tags) {
+        data.tags.forEach((tag) => {
+          const formattedTag = slugify(tag)
+          if (formattedTag in tagCount) {
+            tagCount[formattedTag] += 1
+          } else {
+            tagCount[formattedTag] = 1
+          }
+        })
+      }
     }
   })
 
