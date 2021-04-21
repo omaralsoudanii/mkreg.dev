@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 text-sm font-semibold bg-gray-100 rounded-t md:text-base text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
+  @apply px-5 py-3 text-sm font-semibold bg-gray-100 rounded-t md:text-base text-mk-dark dark:text-mk-lightest dark:bg-gray-900;
 }
 
 .prose .remark-code-title + pre {
@@ -12,7 +12,7 @@
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono text-sm font-medium bg-gray-100 text-mk-dark dark:text-mk-lightest dark:bg-gray-900;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -71,7 +71,7 @@
 }
 
 .prose .token.variable {
-  @apply text-mk-darkest dark:text-mk-lightest;
+  @apply text-mk-dark dark:text-mk-lightest;
 }
 
 .dark .prose .token.number {
@@ -166,7 +166,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply font-mono text-sm font-medium bg-gray-100 font-medium rounded md:text-base text-mk-darkest dark:text-mk-lightest dark:bg-gray-900 mb-7;
+  @apply font-mono text-sm font-medium bg-gray-100 rounded md:text-base text-mk-dark dark:text-mk-lightest dark:bg-gray-900 mb-7;
   letter-spacing: normal;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
