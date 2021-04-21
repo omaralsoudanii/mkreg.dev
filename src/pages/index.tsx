@@ -20,10 +20,15 @@ function Home({ posts }) {
             year reading about Typography, Fonts, Colors. Hopefully by the next
             leap year this site will be launched with my first post!
           </p>
-          <p>Should've just installed Ghost instead 🤦.</p>
+          <p>
+            My goals for this site is to be my digital identity, where I can
+            write notes, share my knowledge with others, and write opinion based
+            posts. Also open source some projects that I'll create and share
+            here, maybe with a playground or proof of concept.
+          </p>
           <p className="text-right">
             <Link href="/about">
-              <a className="text-link">More about me &rarr; </a>
+              <a className="text-link">More about me </a>
             </Link>
           </p>
         </section>

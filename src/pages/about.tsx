@@ -42,18 +42,18 @@ export default function About() {
           I approach the problem in an abstract way to get a solution. In
           summary, the technology you are gonna use is a tool to solve the
           problem. Understanding the problem and identifying the core cause is
-          more valuable for me. Unless you are a PHP developer 🤦 (Nah, just
-          kidding). You can find what I "think" am capable of in the{' '}
+          more valuable for me. You can find what I "think" am capable of in the{' '}
           <Link href="/stack">
-            <a className="pl-1 text-link"> Stack page &rarr; </a>
+            <a className="pl-1 text-link"> Stack page </a>
           </Link>
         </p>
         <h2>A word of caution</h2>
         <p>
-          Hmmm, About my knowledge in Frontend, please keep in mind that it only
-          took me a whole week to center a paragraph in a page (didn't even work
-          on mobile 🤦). So, let's just accept the fact that my Frontend skills
-          are kinda worse than NVIDIA drivers support for Linux.
+          I don't know CSS or Flexbox or anything about UI, please keep in mind
+          that it only took me a whole week to center a paragraph in a page
+          (didn't even work on mobile 🤦). So, let's just accept the fact that
+          my Frontend skills are kinda worse than NVIDIA drivers support for
+          Linux.
         </p>
         <p>
           On a serious note, I simply don't have the talent for UI/UX, neither
@@ -61,8 +61,8 @@ export default function About() {
           have a lot of knowledge in the Frontend engineering parts.
         </p>
         <p>
-          It is inspired *cough*Stole*cough* by other open-source projects. I
-          will list them below.
+          It is inspired *cough*Stole*cough* by other open-source projects. You
+          can read about it in how I created this site post.
         </p>
       </Container>
     </React.Fragment>

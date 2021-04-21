@@ -38,7 +38,7 @@ module.exports = {
         mk: {
           darkest: 'rgb(0 0 0)', // body light - activelink light
           darker: 'rgb(6 6 6)', // headings light
-          dark: 'rgba(13,17,23,0.84)', // bg dark
+          dark: 'rgb(11 11 12)', // bg dark
           light: 'rgb(245 245 245)', // bg light
           lighter: 'rgb(250 250 250)', // headings dark
           lightest: 'rgb(255 255 255)', // body dark - activelink dark

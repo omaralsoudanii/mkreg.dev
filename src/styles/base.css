@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply text-base subpixel-antialiased leading-relaxed bg-mk-lightest dark:bg-mk-darkest text-mk-darkest dark:text-mk-lighter;
+    @apply text-base subpixel-antialiased leading-relaxed bg-mk-lightest dark:bg-mk-darkest text-mk-dark dark:text-mk-lighter;
     font-weight: 450;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'cv01' 1, 'cv02' 1, 'cv03' 1, 'cv04' 1, 'liga' 1,

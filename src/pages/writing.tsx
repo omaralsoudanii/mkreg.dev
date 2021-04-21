@@ -30,7 +30,7 @@ export default function Writing({ posts }) {
           <p>Stuff I wrote about programming. Software & Vim vs Emacs.</p>
           <p className="text-right">
             <Link href="/tags">
-              <a className="text-link">Browse by Tags &rarr; </a>
+              <a className="text-link">Browse by Tags </a>
             </Link>
           </p>
         </section>

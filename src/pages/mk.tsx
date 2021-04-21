@@ -39,7 +39,7 @@ export default function MK() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Mark Knopfler Red Electric Guitar &rarr;
+            Mark Knopfler Red Electric Guitar
           </a>
         </p>
         <p>
@@ -63,7 +63,7 @@ export default function MK() {
             rel="noopener noreferrer"
             className="mx-auto text-center text-link"
           >
-            MK &rarr;
+            MK
           </a>
         </p>
       </Container>
