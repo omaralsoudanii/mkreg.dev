@@ -1,6 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 bg-gray-100 rounded-t text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
-  font-variation-settings: 'wght' 600;
+  @apply px-5 py-3 text-sm font-semibold bg-gray-100 rounded-t md:text-base text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
 }
 
 .prose .remark-code-title + pre {
@@ -13,9 +12,9 @@
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono bg-gray-100 font-medium text-mk-darkest dark:text-mk-lightest dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-mk-dark;
   font-feature-settings: normal;
-  font-variation-settings: 'wght' 500;
+  font-weight: 450;
   letter-spacing: normal;
   text-align: left;
   white-space: pre;
@@ -135,11 +134,11 @@
 .light .prose .token.tag,
 .light .prose .token.operator,
 .light .prose .token.keyword {
-  color: rgb(200, 52, 101);
+  color: rgb(229, 30, 96);
 }
 
 .dark .prose .token.boolean {
-  color: rgb(255, 88, 116);
+  color: rgb(255, 117, 162);
 }
 
 .light .prose .token.boolean {
@@ -168,7 +167,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply font-mono bg-gray-100 rounded text-mk-darkest dark:text-mk-lightest dark:bg-gray-900 mb-7;
+  @apply font-mono text-sm bg-gray-100 rounded md:text-base text-mk-darkest dark:text-mk-lightest dark:bg-gray-900 mb-7;
   letter-spacing: normal;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

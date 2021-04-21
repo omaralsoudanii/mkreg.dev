@@ -38,7 +38,7 @@ module.exports = {
         mk: {
           darkest: 'rgb(0 0 0)', // body light - activelink light
           darker: 'rgb(6 6 6)', // headings light
-          dark: 'rgb(11 11 12)', // bg dark
+          dark: 'rgba(13,17,23,0.84)', // bg dark
           light: 'rgb(245 245 245)', // bg light
           lighter: 'rgb(250 250 250)', // headings dark
           lightest: 'rgb(255 255 255)', // body dark - activelink dark
@@ -86,7 +86,7 @@ module.exports = {
             a: {
               borderBottom: `2px dotted ${theme('colors.mk.dark')}`,
               color: theme('colors.mk.darkest'),
-              fontVariationSettings: '"wght" 500',
+              fontWeight: theme('fontWeight.bold'),
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.mk.darkest'),
@@ -148,7 +148,7 @@ module.exports = {
             a: {
               borderBottom: `2px dotted ${theme('colors.mk.light')}`,
               color: theme('colors.mk.lightest'),
-              fontVariationSettings: '"wght" 500',
+              fontWeight: theme('fontWeight.bold'),
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.mk.lightest'),
