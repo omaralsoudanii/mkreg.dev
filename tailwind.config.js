@@ -94,9 +94,6 @@ module.exports = {
                 borderBottom: 'none',
               },
             },
-            strong: {
-              color: theme('colors.mk.darkest'),
-            },
             thead: {
               borderBottomColor: theme('colors.lt.light'),
             },
@@ -137,9 +134,6 @@ module.exports = {
               position: 'absolute',
               backgroundColor: theme('colors.dk.dark'),
               borderRadius: '50%',
-            },
-            strong: {
-              color: theme('colors.mk.lightest'),
             },
             thead: {
               color: theme('colors.mk.lighter'),

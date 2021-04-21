@@ -26,11 +26,6 @@
     }
   }
 
-  b,
-  strong {
-    @apply text-gray-900  dark:text-mk-light !important;
-    font-weight: 600 !important;
-  }
 
   h1 {
     font-weight: 800 !important;

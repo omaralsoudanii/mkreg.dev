@@ -12,9 +12,8 @@
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono text-sm bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-mk-dark;
+  @apply mt-0 mb-0 font-mono font-normal text-sm bg-gray-100 text-mk-darkest dark:text-mk-lightest dark:bg-mk-dark;
   font-feature-settings: normal;
-  font-weight: 450;
   letter-spacing: normal;
   text-align: left;
   white-space: pre;
