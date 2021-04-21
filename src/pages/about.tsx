@@ -62,7 +62,10 @@ export default function About() {
         </p>
         <p>
           It is inspired *cough*Stole*cough* by other open-source projects. You
-          can read about it in how I created this site post.
+          can read about it in how I{' '}
+          <Link href="/writing/building-this-site">
+            <a className="pl-1 text-link"> Built this </a>
+          </Link>
         </p>
       </Container>
     </React.Fragment>
