@@ -166,7 +166,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply font-mono text-sm bg-gray-100 font-medium rounded md:text-base text-mk-darkest dark:text-mk-lightest dark:bg-gray-900 mb-7;
+  @apply font-mono text-sm font-medium bg-gray-100 font-medium rounded md:text-base text-mk-darkest dark:text-mk-lightest dark:bg-gray-900 mb-7;
   letter-spacing: normal;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
