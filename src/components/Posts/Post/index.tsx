@@ -18,16 +18,16 @@ export default function PostContainer({ children, frontMatter }) {
   }
 
   const Meta = () => (
-    <div className="grid grid-cols-1 my-8 sm:grid-cols-2">
-      <p className="text-sm font-semibold text-mk-darkest dark:text-mk-lighter">
+    <div className="grid grid-cols-1 my-8 sm:grid-cols-1">
+      <p className="px-2 text-sm font-semibold text-mk-darkest dark:text-mk-lighter">
         {`Published on ${dayjs(new Date(frontMatter.publishedAt)).format(
           'MMMM,DD YYYY'
         )}`}
       </p>
-      <div className="flex flex-row justify-start space-x-4 sm:justify-end">
+      <div className="flex flex-wrap">
         {frontMatter.tags.map((t: string) => (
-          <p className="text-sm">
-            <Link key={t} href={`/tags/${slugify(t)}`}>
+          <p key={t} className="px-2 text-sm">
+            <Link href={`/tags/${slugify(t)}`}>
               <a className="text-link">{t}</a>
             </Link>
           </p>

@@ -9,7 +9,7 @@
   @supports not (backdrop-filter: none) {
     .hdr-backdrop {
       backdrop-filter: none;
-      @apply bg-gray-900;
+      @apply bg-gray-900 bg-opacity-100;
     }
   }
 
