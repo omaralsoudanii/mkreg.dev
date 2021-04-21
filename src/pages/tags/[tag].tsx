@@ -6,6 +6,7 @@ import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
 import { slugify, unSlugify } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import * as React from 'react'
 
 /**
@@ -15,6 +16,8 @@ import * as React from 'react'
  */
 
 export default function Tag({ posts, tag }) {
+  const router = useRouter()
+  if (router.isFallback) return <p>No posts yet...</p>
   const title = unSlugify(tag)
   const meta = {
     title: `${Environment.ogTitle} - ${title}`,
@@ -66,6 +69,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         tag,
       },
     })),
-    fallback: enable ? 'blocking' : false,
+    fallback: enable,
   }
 }

@@ -81,7 +81,7 @@ export default function Header() {
           )}
           <Link href={currentRoute.href}>
             <a className="hdr-sm-title">
-              <p className="m-0 leading-normal">{currentRoute.label}</p>
+              <p className="m-0 text-base">{currentRoute.label}</p>
             </a>
           </Link>
           {mounted && (
