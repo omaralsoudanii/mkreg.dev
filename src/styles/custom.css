@@ -2,14 +2,14 @@
 
 @layer utilities {
   .hdr-backdrop {
-    @apply bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-800;
+    @apply bg-gray-50 bg-opacity-60 dark:bg-opacity-60 dark:bg-gray-900;
     backdrop-filter: saturate(180%) blur(5px);
   }
 
   @supports not (backdrop-filter: none) {
     .hdr-backdrop {
       backdrop-filter: none;
-      @apply bg-gray-900 bg-opacity-100;
+      @apply bg-white bg-opacity-100 dark:bg-opacity-100 dark:bg-mk-dark;
     }
   }
 
