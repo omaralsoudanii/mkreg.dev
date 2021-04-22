@@ -177,5 +177,5 @@
 }
 
 .prose img {
-  @apply m-0;
+  @apply m-0 !important;
 }
