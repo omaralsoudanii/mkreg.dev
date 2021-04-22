@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
   const feed = new RSS(feedOptions)
 
-  const dirs = ['writing']
+  const dirs = ['writing', '']
   try {
     await Promise.all(
       dirs.map(async (dir) => {

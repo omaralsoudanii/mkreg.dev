@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { unSlugify } from '@/lib/utils'
 
-const Tag = ({ slug }) => {
+const Tag = ({ name, slug }) => {
   return (
     <Link href={`/tags/${slug}`}>
-      <a className="mr-3 text-link">{unSlugify(slug)}</a>
+      <a className="mr-3 text-link">{name}</a>
     </Link>
   )
 }

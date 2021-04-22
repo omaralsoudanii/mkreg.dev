@@ -12,13 +12,15 @@ import Link from 'next/link'
  *
  */
 
-export default function Tags({ tags }) {
+export default function Tags({ tagCount, tags }) {
   const meta = {
     title: `Omar Alsoudani - Tags`,
     description: `Browse my writings, discussions and thoughts by tags.`,
     JsonLd: false,
   }
-  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+  const sortedTags = Object.keys(tagCount).sort(
+    (a, b) => tagCount[b] - tagCount[a]
+  )
 
   return (
     <article>
@@ -30,14 +32,13 @@ export default function Tags({ tags }) {
           </h1>
         </div>
         <div className="flex flex-wrap items-center justify-center max-w-lg px-2 py-6 sm:p-0 sm:justify-start sm:items-start">
-          {Object.keys(tags).length === 0 && 'No tags found.'}
           {sortedTags.map((t) => {
             return (
               <div key={t} className="mt-2 mb-2 mr-5">
-                <Tag slug={t} />
+                <Tag name={tags[t]} slug={t} />
                 <Link href={`/tags/${t}`}>
                   <a className="-ml-2 font-semibold text-gray-600 dark:text-gray-400">
-                    {` (${tags[t]})`}
+                    {` (${tagCount[t]})`}
                   </a>
                 </Link>
               </div>
@@ -51,9 +52,18 @@ export default function Tags({ tags }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { revalidate } = Environment.isr
-  const tags = await getAllTags('writing')
+  const { tagCount, tags } = await getAllTags('writing')
+
+  if (!Object.keys(tagCount).length) {
+    return {
+      notFound: true,
+      revalidate: revalidate,
+    }
+  }
+
   return {
     props: {
+      tagCount,
       tags,
     },
     revalidate: revalidate,

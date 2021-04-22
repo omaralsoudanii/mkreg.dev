@@ -3,7 +3,7 @@ import PostsContainer from '@/components/Posts/Container'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
-import { slugify, unSlugify } from '@/lib/utils'
+import { slugify } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -18,10 +18,10 @@ import * as React from 'react'
 export default function Tag({ posts, tag }) {
   const router = useRouter()
   if (router.isFallback) return <p>No posts yet...</p>
-  const title = unSlugify(tag)
+
   const meta = {
-    title: `${Environment.ogTitle} - ${title}`,
-    description: `Topics, Discussions & Thoughts about ${title}`,
+    title: `${Environment.ogTitle} - ${tag}`,
+    description: `Topics, Discussions & Thoughts about ${tag}`,
   }
 
   return (
@@ -29,10 +29,10 @@ export default function Tag({ posts, tag }) {
       <Seo data={meta} />
       <Container>
         <section className="mb-20 space-y-8">
-          <h1>{title}</h1>
+          <h1>{tag}</h1>
           <p>
-            Topics, guides and thoughts I wrote about <strong>{title}</strong>{' '}
-            or related to it.
+            Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
+            related to it.
           </p>
           <p className="text-right">
             <Link href="/writing">
@@ -48,23 +48,38 @@ export default function Tag({ posts, tag }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { revalidate } = Environment.isr
+  let tag: string
+
   const allPosts = await getAllFilesFrontMatter('writing')
+
   const filteredPosts = allPosts.filter((post) =>
     post.tags.map((t: string) => slugify(t)).includes(params.tag)
   )
 
+  if (filteredPosts.length) {
+    tag = filteredPosts[0].tags.find((t: string) =>
+      slugify(t).includes(params.tag as string)
+    )
+  }
+
+  if (!tag && !filteredPosts.length) {
+    return {
+      notFound: true,
+      revalidate: revalidate,
+    }
+  }
   return {
-    props: { posts: filteredPosts, tag: params.tag },
+    props: { posts: filteredPosts, tag: tag },
     revalidate: revalidate,
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { enable } = Environment.isr
-  const tags = await getAllTags('writing')
-  if (!Object.keys(tags).length) return { paths: [], fallback: enable }
+  const { tagCount } = await getAllTags('writing')
+  if (!Object.keys(tagCount).length) return { paths: [], fallback: enable }
   return {
-    paths: Object.keys(tags).map((tag) => ({
+    paths: Object.keys(tagCount).map((tag) => ({
       params: {
         tag,
       },

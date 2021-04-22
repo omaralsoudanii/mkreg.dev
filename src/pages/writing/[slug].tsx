@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 export default function Post({ mdxSource, frontMatter }) {
   const router = useRouter()
   if (router.isFallback) return <p>No posts...</p>
+
   const content = hydrate(mdxSource, {
     components: MDXComponents,
   })
