@@ -37,25 +37,36 @@ export const getStaticProps: GetStaticProps = async () => {
 
         await Promise.all(
           posts.map(async (name) => {
-            const content = await fs.readFile(path.join(p, name))
-            const frontmatter = matter(content)
-            const url = name
-              ? siteUrl + '/' + dir + '/' + name.replace(/\.mdx?/, '')
-              : siteUrl
-            feed.item({
-              title: frontmatter.data.title ?? ogTitle,
-              url: url,
-              date: frontmatter.data.publishedAt,
-              description: frontmatter.data.summary ?? ogDescription,
-              author: ogTitle,
-              categories: frontmatter.data.tags ?? ['Software development'],
-            })
+            try {
+              const content = await fs.readFile(path.join(p, name))
+              const frontmatter = matter(content)
+
+              const resolvedDir =
+                dir === '' ? dir.concat('/') : '/'.concat(dir, '/')
+
+              const url = name
+                ? siteUrl.concat(resolvedDir, name.replace(/\.mdx?/, ''))
+                : siteUrl
+
+              feed.item({
+                title: frontmatter.data.title ?? ogTitle,
+                url: url,
+                date: frontmatter.data.publishedAt,
+                description: frontmatter.data.summary ?? ogDescription,
+                author: ogTitle,
+                categories: frontmatter.data.tags ?? ['Software development'],
+              })
+            } catch (e) {
+              console.log(`RSS feed item error`, e)
+            }
           })
         )
       })
     )
+
     fs.writeFile('./public/rss.xml', feed.xml({ indent: true }))
-  } catch {
+  } catch (e) {
+    console.log(`RSS feed full build error`, e)
     feed.item({
       title: ogTitle,
       url: siteUrl,
