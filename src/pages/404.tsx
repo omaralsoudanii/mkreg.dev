@@ -1,3 +1,4 @@
+import { Container } from '@/components/Container'
 import Link from 'next/link'
 
 export default function NotFound() {
@@ -9,22 +10,24 @@ export default function NotFound() {
             404
           </h1>
         </div>
-        <div className="max-w-md px-1 space-y-4 sm:px-0">
+        <Container>
           <h1>I tried but didn't find this page</h1>
           <p>
             It seems that you're looking for something that used to exist, or
             you spelled something wrong.
           </p>
-          <p className="pb-4 sm:pb-0">
+          <p>
             Don't feel bad about it, this happens to me all the time, just
             imagine you're trying to find some solution for a bug in PHP v5.6
             that exists since 2007, sadly the only link is a freaking 404 forum
             thread.
           </p>
-          <Link href="/">
-            <a className="w-full btn btn-primary btn-large">Back to Homepage</a>
+          <Link href="/" passHref>
+            <button className="w-full btn btn-primary btn-large">
+              Back to Homepage
+            </button>
           </Link>
-        </div>
+        </Container>
       </div>
     </div>
   )

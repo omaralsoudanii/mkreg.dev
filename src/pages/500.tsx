@@ -2,13 +2,13 @@ import { Container } from '@/components/Container'
 import ImageComposed from '@/components/ImageComposed'
 import Link from 'next/link'
 
-export default function NotFound() {
+export default function ServerError() {
   return (
     <Container>
       <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:space-x-10 sm:mt-8">
         <div className="px-1 space-y-8 sm:px-0">
           <h1 className="sm:pt-0">Internal server error</h1>
-          <p className="pb-2">
+          <p className="pb-8">
             The server is currently unavailable for some reason. Obviously, it's
             not my fault, I ran the code on my machine and it's working fine.
             Try refreshing the page again, if that doesn't work, contact me and
@@ -22,8 +22,10 @@ export default function NotFound() {
             alt="500 Internal server error"
           />
 
-          <Link href="/">
-            <a className="w-full btn btn-primary btn-large">Back to Homepage</a>
+          <Link href="/" passHref>
+            <button className="w-full btn btn-primary btn-large">
+              Back to Homepage
+            </button>
           </Link>
         </div>
       </div>
