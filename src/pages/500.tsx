@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import Image from '@/components/ImageComposed'
+import ImageComposed from '@/components/ImageComposed'
 import Link from 'next/link'
 
 export default function NotFound() {
@@ -15,7 +15,7 @@ export default function NotFound() {
             I will send you a zip file, just extract it and double click
             index.html
           </p>
-          <Image
+          <ImageComposed
             src="/static/images/docker.jpeg"
             width={604}
             height={403}

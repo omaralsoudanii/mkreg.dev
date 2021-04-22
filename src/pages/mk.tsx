@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import Image from '@/components/ImageComposed'
+import ImageComposed from '@/components/ImageComposed'
 import Seo from '@/components/Seo'
 import * as React from 'react'
 
@@ -16,7 +16,7 @@ export default function MK() {
       <Container>
         <h1 className="text-center">The Sultan of swing</h1>
         <h2 className="text-center">Mark Knopfler</h2>
-        <Image
+        <ImageComposed
           src="/static/images/mk.jpg"
           alt="Mark Knopfler"
           width={3000}

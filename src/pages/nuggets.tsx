@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import Image from '@/components/ImageComposed'
+import ImageComposed from '@/components/ImageComposed'
 import Seo from '@/components/Seo'
 import dayjs from 'dayjs'
 import * as React from 'react'
@@ -25,7 +25,7 @@ function Nuggets() {
             <strong>ETA:</strong> about ~1 year from{' '}
             {`${dayjs(new Date()).format('MMMM DD, YYYY')}`}
           </p>
-          <Image
+          <ImageComposed
             src="/static/images/under-construction.jpg"
             alt="Omar Alsoudani bookmarks"
             width={2048}

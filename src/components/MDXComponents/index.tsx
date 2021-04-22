@@ -1,8 +1,8 @@
 import Link from '@/components/LinkComposed'
-import Image from '@/components/ImageComposed'
+import ImageComposed from '@/components/ImageComposed'
 
 const MDXComponents = {
-  Image: Image,
+  Image: ImageComposed,
   a: Link,
 }
 

@@ -136,7 +136,7 @@
 /* ----------------------- variable ----------------------- */
 /* latin var */
 @font-face {
-  font-family: 'Inter var';
+  font-family: 'Inter';
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
@@ -145,9 +145,9 @@
 }
 /* latin italic var */
 @font-face {
-  font-family: 'Inter var';
+  font-family: 'Inter';
   font-weight: 100 900;
-  font-display: optional;
+  font-display: swap;
   font-style: italic;
   font-named-instance: 'Italic';
   src: url(/static/fonts/Inter-italic.latin.var.woff2) format('woff2');

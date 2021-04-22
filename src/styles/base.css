@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    font: 16px / 1.5 Inter var, system-ui, -apple-system, BlinkMacSystemFont,
+    font: 16px / 1.5 Inter, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
@@ -14,7 +14,7 @@
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
-    font-feature-settings: 'case' 1, 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1, 'cv03' 1,
+    font-feature-settings: 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1, 'cv03' 1,
       'cv04' 1, 'liga' 1, 'clig' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
     font-kerning: normal;
     font-weight: 440;

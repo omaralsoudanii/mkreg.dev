@@ -18,6 +18,13 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
+            rel="preload"
+            href="/static/fonts/Inter-roman.latin.var.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
             rel="alternate"
             type="application/rss+xml"
             title="Omar Alsoudani RSS Feed"
@@ -55,13 +62,6 @@ export default class MyDocument extends Document {
           <link
             rel="preload"
             href="/static/fonts/Inter-italic.latin.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/Inter-roman.latin.var.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

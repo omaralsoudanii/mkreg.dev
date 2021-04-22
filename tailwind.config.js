@@ -86,7 +86,7 @@ module.exports = {
             a: {
               borderBottom: `2px dotted ${theme('colors.mk.dark')}`,
               color: theme('colors.mk.darkest'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.medium'),
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.mk.darkest'),
@@ -148,7 +148,7 @@ module.exports = {
             a: {
               borderBottom: `2px dotted ${theme('colors.mk.light')}`,
               color: theme('colors.mk.lightest'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.medium'),
               textDecoration: 'none',
               '&:hover': {
                 backgroundColor: theme('colors.mk.lightest'),
