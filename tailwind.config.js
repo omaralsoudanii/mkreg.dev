@@ -34,7 +34,7 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.trueGray,
-        'gray-900': 'rgb(19 20 21)', //'rgb(19 20 21)',
+        'gray-900': '#131415', //'rgb(19 20 21)',
         mk: {
           darkest: 'rgb(0 0 0)', // body light - activelink light
           darker: 'rgb(6 6 6)', // headings light
