@@ -50,7 +50,7 @@ const Image = ({
             return `${urlResolver(src, size)} ${size}w`
           })
           .join(', ')}
-        sizes={fixed ? `${width}px` : '(min-width: 1024px) 50vw, 100vw'}
+        sizes={fixed ? `${width}px` : '(max-width: 65ch) 100vw, 50vw'}
         loading="lazy"
         decoding="async"
         className="m-0"
