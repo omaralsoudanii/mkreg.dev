@@ -5,10 +5,11 @@
     font: 16px / 1.5 Inter, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      scroll-behavior: smooth;
   }
 
   body {
-    @apply text-base subpixel-antialiased leading-relaxed bg-mk-lightest dark:bg-mk-dark text-mk-darkest dark:text-mk-lighter;
+    @apply text-base subpixel-antialiased leading-relaxed bg-mk-lightest dark:bg-mk-darker text-mk-darkest dark:text-mk-lighter;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;

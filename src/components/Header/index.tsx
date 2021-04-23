@@ -86,7 +86,7 @@ export default function Header() {
           </Link>
           {mounted && (
             <div
-              className="hdr-sm-btn"
+              className="hdr-sm-btn isolate"
               onClick={() => {
                 isExpanded ? setExpanded(false) : null
                 setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -153,7 +153,7 @@ export default function Header() {
         })}
         {mounted && (
           <div
-            className="hdr-cnt-theme-btn"
+            className="hdr-cnt-theme-btn isolate"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             {theme === 'dark' ? (
