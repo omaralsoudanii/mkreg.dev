@@ -4,7 +4,6 @@ import { Environment } from '@/lib/environment'
 import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import hydrate from 'next-mdx-remote/hydrate'
-import { useRouter } from 'next/router'
 
 /**
  *
@@ -13,9 +12,6 @@ import { useRouter } from 'next/router'
  */
 
 export default function Post({ mdxSource, frontMatter }) {
-  const router = useRouter()
-  if (router.isFallback) return <p>No posts...</p>
-
   const content = hydrate(mdxSource, {
     components: MDXComponents,
   })
@@ -49,6 +45,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: p.replace(/\.mdx/, ''),
       },
     })),
-    fallback: enable,
+    fallback: enable ? 'blocking' : false,
   }
 }
