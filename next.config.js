@@ -27,15 +27,6 @@ module.exports = {
         ],
       },
       {
-        source: '/static/fonts/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, s-maxage=31536000, no-transform',
-          },
-        ],
-      },
-      {
         source: '/static/(.*)',
         headers: [
           {

@@ -20,17 +20,15 @@ const RoutesMetadata = [
     label: 'Writing',
     href: '/writing',
   },
-  {
-    label: 'Nuggets',
-    href: '/nuggets',
-  },
 ]
 
 export default function Header() {
   const [mounted, setMounted] = React.useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
+  React.useEffect(() => setMounted(true), [])
+
   const [isExpanded, setExpanded] = React.useState(false)
   const router = useRouter()
-  const { theme, setTheme } = useTheme()
   const currentRoute =
     router.pathname === '/'
       ? {
@@ -40,12 +38,11 @@ export default function Header() {
       : RoutesMetadata.filter((r) => r.href !== '/').find((r) =>
           router.pathname.includes(r.href)
         ) ?? { href: router.asPath, label: 'MK' }
-  React.useEffect(() => setMounted(true), [])
 
   return (
     <div className="header-container">
       <div className="grid grid-cols-1 sm:hidden">
-        <div className="flex items-center">
+        <div className="flex items-start">
           {isExpanded ? (
             <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
               <svg
@@ -86,13 +83,13 @@ export default function Header() {
           </Link>
           {mounted && (
             <div
-              className="hdr-sm-btn "
+              className="hdr-sm-btn"
               onClick={() => {
                 isExpanded ? setExpanded(false) : null
-                setTheme(theme === 'dark' ? 'light' : 'dark')
+                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
               }}
             >
-              {theme === 'dark' ? (
+              {resolvedTheme === 'dark' ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -129,8 +126,8 @@ export default function Header() {
             const navClass =
               route.href === router.pathname ??
               router.pathname.includes(route.href)
-                ? 'flex items-start py-3 pl-4  nav-default nav-active'
-                : 'flex items-start py-3 pl-4  nav-default nav-inactive'
+                ? 'flex pl-6 nav-default nav-active'
+                : 'flex pl-6 nav-default nav-inactive'
             return (
               <Link href={route.href} key={route.href}>
                 <a onClick={() => setExpanded(false)} className={navClass}>
@@ -141,7 +138,7 @@ export default function Header() {
           })}
       </div>
 
-      <div className="hidden grid-cols-5 gap-4 mx-auto max-w-prose sm:grid">
+      <div className="hidden grid-cols-4 gap-4 mx-auto max-w-prose sm:grid">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname
@@ -155,10 +152,12 @@ export default function Header() {
         })}
         {mounted && (
           <div
-            className="hdr-cnt-theme-btn "
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="hdr-cnt-theme-btn"
+            onClick={() =>
+              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+            }
           >
-            {theme === 'dark' ? (
+            {resolvedTheme === 'dark' ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

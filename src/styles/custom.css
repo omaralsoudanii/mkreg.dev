@@ -41,7 +41,7 @@
   }
 
   .nav-default {
-    @apply flex items-center justify-center py-2 text-sm font-semibold rounded;
+    @apply flex md:items-center md:justify-center py-2 text-sm font-semibold rounded;
   }
 
   .nav-active {
@@ -49,30 +49,6 @@
   }
   .nav-inactive {
     @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-white hover:text-gray-1100 dark:hover:text-gray-100 dark:text-tertiary text-tertiary;
-  }
-
-  .hdr-base {
-    @apply sticky left-0 right-0 px-2 py-1 m-0 -mt-px font-bold;
-  }
-
-  .hdr-base a {
-    @apply w-full px-8 py-2 mx-px my-0 text-center rounded sm:w-auto sm:p-0;
-  }
-
-  .hdr-sm-cnt {
-    @apply flex justify-center;
-  }
-
-  .hdr-sm-cnt a {
-    @apply text-center;
-  }
-
-  .hdr-sm-cnt-expanded {
-    @apply flex-col items-start pb-4;
-  }
-
-  .hdr-sm-cnt-not-expanded {
-    @apply flex-row items-center pb-1;
   }
 
   .hdr-sm-btn {

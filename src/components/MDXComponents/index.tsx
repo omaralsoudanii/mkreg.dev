@@ -1,9 +1,9 @@
-import Link from '@/components/LinkComposed'
-import ImageComposed from '@/components/ImageComposed'
+import NextLink from '@/components/NextLink'
+import NextImage from '@/components/NextImage'
 
 const MDXComponents = {
-  Image: ImageComposed,
-  a: Link,
+  Image: NextImage,
+  a: NextLink,
 }
 
 export default MDXComponents

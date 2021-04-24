@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import ImageComposed from '@/components/ImageComposed'
+import NextImage from '@/components/NextImage'
 import Seo from '@/components/Seo'
 import * as React from 'react'
 
@@ -15,7 +15,7 @@ export default function MK() {
       <Seo data={meta} />
       <Container>
         <h1 className="text-center">The Sultan of swing</h1>
-        <ImageComposed
+        <NextImage
           src="/static/images/mk.jpg"
           alt="Mark Knopfler"
           width={3000}

@@ -1,6 +1,6 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 
-const Link = ({
+const NextLink = ({
   href,
   className,
   children,
@@ -12,9 +12,9 @@ const Link = ({
   const Internal = href.startsWith('/') || href.startsWith('#')
 
   return Internal ? (
-    <NextLink href={href}>
+    <Link href={href}>
       <a className={className}>{children}</a>
-    </NextLink>
+    </Link>
   ) : (
     <a
       href={href}
@@ -27,4 +27,4 @@ const Link = ({
   )
 }
 
-export default Link
+export default NextLink

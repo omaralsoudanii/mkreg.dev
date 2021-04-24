@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import ImageComposed from '@/components/ImageComposed'
+import NextImage from '@/components/NextImage'
 import Link from 'next/link'
 
 export default function ServerError() {
@@ -15,7 +15,7 @@ export default function ServerError() {
             I will send you a zip file, just extract it and double click
             index.html
           </p>
-          <ImageComposed
+          <NextImage
             src="/static/images/docker.jpeg"
             width={604}
             height={403}

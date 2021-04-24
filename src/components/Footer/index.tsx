@@ -45,9 +45,9 @@ export function Footer() {
               Writing
             </a>
           </Link>
-          <Link href="/nuggets">
-            <a href="/nuggets" className="black-link">
-              Nuggets
+          <Link href="/about">
+            <a href="/about" className="black-link">
+              About
             </a>
           </Link>
         </div>
