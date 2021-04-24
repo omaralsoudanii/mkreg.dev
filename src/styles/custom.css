@@ -15,7 +15,7 @@
   }
 
   .filter-blur {
-    backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(5px);
   }
 
   .header-container {
@@ -41,7 +41,7 @@
   }
 
   .nav-default {
-    @apply flex md:items-center md:justify-center py-2 text-sm font-semibold rounded;
+    @apply flex py-3 text-sm font-semibold md:py-2 md:rounded md:items-center md:justify-center;
   }
 
   .nav-active {
@@ -52,11 +52,11 @@
   }
 
   .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1 font-medium text-black dark:text-white;
+    @apply px-3 py-2 font-semibold text-primary;
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 font-medium text-left text-black cursor-pointer dark:text-white;
+    @apply w-full px-3 py-3 text-sm font-semibold text-primary;
   }
 
   .hdr-sm-btn svg {
@@ -64,7 +64,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute hidden p-2 font-medium text-black cursor-pointer right-4 top-1 w-11 sm:flex dark:text-white;
+    @apply absolute p-2 font-semibold cursor-pointer text-primary right-4 top-1 w-11;
   }
 
   .btn {

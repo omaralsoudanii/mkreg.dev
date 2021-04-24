@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" enableSystem={true}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>

@@ -25,9 +25,28 @@ const RoutesMetadata = [
 export default function Header() {
   const [mounted, setMounted] = React.useState(false)
   const { resolvedTheme, setTheme } = useTheme()
-  React.useEffect(() => setMounted(true), [])
-
   const [isExpanded, setExpanded] = React.useState(false)
+  React.useEffect(() => {
+    setMounted(true)
+    if (isExpanded) {
+      document.addEventListener('mousedown', handleClickOutside)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isExpanded])
+  const node = React.useRef(null)
+  const handleClickOutside = (e) => {
+    if (node && node.current && node.current.contains(e.target)) {
+      // inside click
+      return
+    }
+    // outside click
+    setExpanded(false)
+  }
+
   const router = useRouter()
   const currentRoute =
     router.pathname === '/'
@@ -41,8 +60,8 @@ export default function Header() {
 
   return (
     <div className="header-container">
-      <div className="grid grid-cols-1 sm:hidden">
-        <div className="flex items-start">
+      <div className="grid grid-cols-1 sm:hidden" ref={node}>
+        <div className="flex items-center">
           {isExpanded ? (
             <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
               <svg
@@ -77,8 +96,8 @@ export default function Header() {
             </div>
           )}
           <Link href={currentRoute.href}>
-            <a className="hdr-sm-title">
-              <p className="m-0 text-base">{currentRoute.label}</p>
+            <a onClick={() => setExpanded(false)} className="hdr-sm-title">
+              {currentRoute.label}
             </a>
           </Link>
           {mounted && (
@@ -126,8 +145,8 @@ export default function Header() {
             const navClass =
               route.href === router.pathname ??
               router.pathname.includes(route.href)
-                ? 'flex pl-6 nav-default nav-active'
-                : 'flex pl-6 nav-default nav-inactive'
+                ? 'flex pl-6  nav-default nav-active'
+                : 'flex pl-6  nav-default nav-inactive'
             return (
               <Link href={route.href} key={route.href}>
                 <a onClick={() => setExpanded(false)} className={navClass}>
