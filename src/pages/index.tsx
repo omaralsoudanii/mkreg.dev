@@ -22,9 +22,9 @@ function Home({ posts }) {
           </p>
           <p>
             My goals for this site is to be my digital identity, where I can
-            write notes, share my knowledge with others, and write opinion based
-            posts. Also open source some projects that I'll create and share
-            here, maybe with a playground or proof of concept.
+            write notes, share my knowledge with others, my opinion on some
+            topics. Open source projects I create and share them here, maybe
+            with a playground or proof of concept.
           </p>
           <p className="text-right">
             <Link href="/about">

@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
       revalidate: revalidate,
     }
   }
-  return { props: post }
+  return { props: post, revalidate: revalidate }
 }
 
 export default Stack

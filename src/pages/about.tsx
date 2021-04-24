@@ -44,7 +44,7 @@ export default function About() {
           problem. Understanding the problem and identifying the core cause is
           more valuable for me. You can find what I "think" am capable of in the{' '}
           <Link href="/stack">
-            <a className="pl-1 text-link"> Stack page </a>
+            <a className="text-link"> Stack page </a>
           </Link>
         </p>
         <h2>A word of caution</h2>
@@ -64,7 +64,7 @@ export default function About() {
           It is inspired *cough*Stole*cough* by other open-source projects. You
           can read about it in how I{' '}
           <Link href="/writing/building-this-site">
-            <a className="pl-1 text-link"> Built this </a>
+            <a className="text-link"> Built this </a>
           </Link>
         </p>
       </Container>
