@@ -19,7 +19,7 @@ export default function PostContainer({ children, frontMatter }) {
 
   const Meta = () => (
     <div className="grid grid-cols-1 mt-1 mb-8 sm:grid-cols-1">
-      <p className="px-2 !mb-1 text-base font-medium text-mk-darkest dark:text-mk-lighter">
+      <p className="px-2 !mb-1 text-base font-medium text-black dark:text-gray-100">
         {`${dayjs(new Date(frontMatter.publishedAt)).format('MMMM DD, YYYY')}`}
       </p>
       <div className="flex flex-wrap">

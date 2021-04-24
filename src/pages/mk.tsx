@@ -15,7 +15,6 @@ export default function MK() {
       <Seo data={meta} />
       <Container>
         <h1 className="text-center">The Sultan of swing</h1>
-        <h2 className="text-center">Mark Knopfler</h2>
         <ImageComposed
           src="/static/images/mk.jpg"
           alt="Mark Knopfler"

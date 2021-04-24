@@ -43,7 +43,7 @@ export default function Header() {
   React.useEffect(() => setMounted(true), [])
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-10 w-full py-2 hdr-backdrop">
+    <div className="header-container">
       <div className="grid grid-cols-1 sm:hidden">
         <div className="flex items-center">
           {isExpanded ? (
@@ -86,7 +86,7 @@ export default function Header() {
           </Link>
           {mounted && (
             <div
-              className="hdr-sm-btn isolate"
+              className="hdr-sm-btn "
               onClick={() => {
                 isExpanded ? setExpanded(false) : null
                 setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -129,8 +129,8 @@ export default function Header() {
             const navClass =
               route.href === router.pathname ??
               router.pathname.includes(route.href)
-                ? 'flex items-start py-3 pl-4  nav-link active'
-                : 'flex items-start py-3 pl-4  nav-link'
+                ? 'flex items-start py-3 pl-4  nav-default nav-active'
+                : 'flex items-start py-3 pl-4  nav-default nav-inactive'
             return (
               <Link href={route.href} key={route.href}>
                 <a onClick={() => setExpanded(false)} className={navClass}>
@@ -144,7 +144,9 @@ export default function Header() {
       <div className="hidden grid-cols-5 gap-4 mx-auto max-w-prose sm:grid">
         {RoutesMetadata.map((route) => {
           const navClass =
-            route.href === router.pathname ? 'nav-link active' : 'nav-link'
+            route.href === router.pathname
+              ? 'nav-default nav-active'
+              : 'nav-default nav-inactive'
           return (
             <Link href={route.href} key={route.href}>
               <a className={navClass}>{route.label}</a>
@@ -153,7 +155,7 @@ export default function Header() {
         })}
         {mounted && (
           <div
-            className="hdr-cnt-theme-btn isolate"
+            className="hdr-cnt-theme-btn "
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             {theme === 'dark' ? (

@@ -1,24 +1,54 @@
 @tailwind utilities;
-
 @layer utilities {
-  .hdr-backdrop {
-    @apply bg-gray-50 bg-opacity-80 dark:bg-opacity-80 dark:bg-gray-800;
-    backdrop-filter: saturate(180%) blur(5px);
+  .filter-none {
+    filter: none;
+    backdrop-filter: none;
+  }
+
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+
+  .filter-saturate {
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
+
+  .filter-blur {
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .header-container {
+    @apply fixed top-0 z-10 w-full py-2 bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
-    .hdr-backdrop {
-      backdrop-filter: none;
-      @apply bg-white bg-opacity-100 dark:bg-opacity-100 dark:bg-mk-darker;
+    .header-container {
+      @apply fixed top-0 z-10 w-full py-2 bg-white bg-opacity-100 border-b border-gray-400 dark:border-opacity-10 border-opacity-20 dark:bg-gray-900 filter-none;
     }
   }
 
-  .dark .hdr-backdrop {
-    box-shadow: inset 0 -1px 0 0 rgb(255 255 255/10%);
+  .text-primary {
+    @apply text-gray-1100 dark:text-gray-100;
   }
 
-  .light .hdr-backdrop {
-    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  .text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .text-tertiary {
+    @apply text-gray-500 dark:text-gray-500;
+  }
+
+  .nav-default {
+    @apply flex items-center justify-center py-2 text-sm font-semibold rounded;
+  }
+
+  .nav-active {
+    @apply bg-gray-1100 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
+  }
+  .nav-inactive {
+    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-white hover:text-gray-1100 dark:hover:text-gray-100 dark:text-tertiary text-tertiary;
   }
 
   .hdr-base {
@@ -46,11 +76,11 @@
   }
 
   .hdr-sm-btn {
-    @apply flex items-center justify-center px-4 py-1 font-medium text-mk-darkest dark:text-mk-lightest;
+    @apply flex items-center justify-center px-4 py-1 font-medium text-black dark:text-white;
   }
 
   .hdr-sm-title {
-    @apply inline-block w-full px-3 py-2 font-medium text-left cursor-pointer text-mk-darkest dark:text-mk-lightest;
+    @apply inline-block w-full px-3 py-2 font-medium text-left text-black cursor-pointer dark:text-white;
   }
 
   .hdr-sm-btn svg {
@@ -58,7 +88,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute hidden p-2 font-medium cursor-pointer text-mk-darkest right-4 top-1 w-11 sm:flex dark:text-mk-lightest;
+    @apply absolute hidden p-2 font-medium text-black cursor-pointer right-4 top-1 w-11 sm:flex dark:text-white;
   }
 
   .btn {
@@ -66,11 +96,11 @@
   }
 
   .btn-secondary {
-    @apply text-mk-darkest bg-mk-lightest dark:text-mk-lightest dark:bg-mk-darkest;
+    @apply text-black bg-white dark:text-white dark:bg-black;
   }
 
   .btn-primary {
-    @apply text-mk-lightest bg-mk-darkest dark:text-mk-darkest dark:bg-mk-lightest;
+    @apply text-white bg-black dark:text-black dark:bg-white;
   }
 
   .btn-large {
@@ -78,20 +108,11 @@
   }
 
   .text-link {
-    @apply font-medium no-underline border-b-2 border-dotted border-mk-dark dark:border-mk-light dark:hover:border-none hover:border-none hover:bg-mk-darkest hover:text-mk-lightest dark:hover:bg-mk-lightest dark:hover:text-mk-darkest;
+    @apply font-medium no-underline border-b-2 border-dotted border-gray-1000 dark:border-gray-100 dark:hover:border-none hover:border-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black;
   }
 
   .black-link {
     @apply inline-block font-medium hover:underline;
-  }
-
-  .nav-link {
-    @apply flex items-start py-2 text-base rounded justify-items-start sm:items-center sm:justify-center text-opacity-40 hover:bg-gray-800 dark:hover:bg-opacity-20 hover:bg-opacity-10 dark:hover:bg-gray-400;
-    filter: brightness(105%) saturate(200%) contrast(1);
-  }
-
-  .nav-link.active {
-    @apply bg-gray-800 bg-opacity-10 dark:bg-opacity-20 dark:bg-gray-600;
   }
 
   .hr-stroke {

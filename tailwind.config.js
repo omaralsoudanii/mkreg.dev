@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   mode: 'jit',
   purge: [
@@ -33,141 +31,127 @@ module.exports = {
     },
     extend: {
       colors: {
-        gray: colors.trueGray,
-        'gray-900': '#131415', //'rgb(19 20 21)',
-        mk: {
-          darkest: 'rgb(0 0 0)', // body light - activelink light
-          darker: 'rgb(6 6 6)', // headings light
-          dark: 'rgb(11 11 12)', // bg dark
-          light: 'rgb(245 245 245)', // bg light
-          lighter: 'rgb(250 250 250)', // headings dark
-          lightest: 'rgb(255 255 255)', // body dark - activelink dark
+        transparent: 'transparent',
+        current: 'currentColor',
+        gray: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d8d8dc',
+          400: '#aeaeb2',
+          500: '#737373',
+          600: '#545456',
+          700: '#363638',
+          800: '#262626',
+          900: '#171717',
+          1000: '#0b0b0c',
+          1100: '#050505',
         },
-        lt: {
-          lightest: '#f3f3f6',
-          light: '#d8d8dc',
-          medium: '#bcbcc0',
-          dark: '#aeaeb2',
-          darker: '#8e8e93',
-          darkest: '#6c6c70',
-        },
-        dk: {
-          lightest: '#242426',
-          light: '#363638',
-          medium: '#444446',
-          dark: '#545456',
-          darker: '#7c7c80',
-          darkest: '#aeaeb2',
-        },
+        white: '#ffffff',
+        black: '#000000',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             '*,*::before,*::after': {
-              borderColor: theme('colors.lt.light'),
+              borderColor: theme('colors.gray.300'),
             },
             lineHeight: theme('lineHeight.relaxed'),
-            color: theme('colors.mk.darkest'),
+            color: theme('colors.black'),
             h1: {
-              color: theme('colors.mk.darkest'),
+              color: theme('colors.black'),
             },
-            h2: {
-              color: 'rgb(10 10 10)',
-            },
-            'h3,h4,h5,h6': {
-              color: 'rgb(20 20 20)',
+            'h2,h3,h4,h5,h6': {
+              color: theme('color.gray.1000'),
             },
             'ul > li::before': {
               content: '""',
               position: 'absolute',
-              backgroundColor: theme('colors.lt.dark'),
+              backgroundColor: theme('colors.gray.400'),
               borderRadius: '50%',
             },
             a: {
-              borderBottom: `2px dotted ${theme('colors.mk.dark')}`,
-              color: theme('colors.mk.darkest'),
+              borderBottom: `2px dotted ${theme('colors.gray.1000')}`,
+              color: theme('colors.black'),
               fontWeight: theme('fontWeight.medium'),
               textDecoration: 'none',
               '&:hover': {
-                backgroundColor: theme('colors.mk.darkest'),
-                color: theme('colors.mk.lightest'),
+                backgroundColor: theme('colors.black'),
+                color: theme('colors.white'),
                 borderBottom: 'none',
               },
             },
             strong: {
-              color: theme('colors.mk.darkest'),
+              color: theme('colors.black'),
             },
             thead: {
-              borderBottomColor: theme('colors.lt.light'),
+              borderBottomColor: theme('colors.gray.300'),
             },
-            borderColor: theme('colors.lt.light'),
+            borderColor: theme('colors.gray.300'),
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.lt.light'),
+                borderBottomColor: theme('colors.gray.300'),
               },
             },
             figure: {
               figcaption: {
-                color: theme('colors.lt.darkest'),
+                color: theme('colors.gray.400'),
               },
             },
             blockquote: {
-              color: theme('colors.lt.darkest'),
+              color: theme('colors.gray.400'),
             },
           },
         },
         dark: {
           css: {
-            color: theme('colors.mk.lighter'),
+            color: theme('colors.gray.50'),
             '*,*::before,*::after': {
-              borderColor: theme('colors.dk.light'),
+              borderColor: theme('colors.gray.700'),
             },
             h1: {
-              color: theme('colors.mk.lightest'),
+              color: theme('colors.white'),
             },
-            h2: {
-              color: 'rgb(245 245 245)',
+            'h2,h3,h4,h5,h6': {
+              color: theme('colors.gray.100'),
             },
-            'h3,h4,h5,h6': {
-              color: 'rgb(240 240 240)',
-            },
-            borderColor: theme('colors.dk.light'),
+            borderColor: theme('colors.gray.700'),
             'ul > li::before': {
               content: '""',
               position: 'absolute',
-              backgroundColor: theme('colors.dk.dark'),
+              backgroundColor: theme('colors.gray.600'),
               borderRadius: '50%',
             },
             strong: {
-              color: theme('colors.mk.lightest'),
+              color: theme('colors.white'),
             },
             thead: {
               color: theme('colors.mk.lighter'),
-              borderBottomColor: theme('colors.dk.light'),
+              borderBottomColor: theme('colors.gray.700'),
             },
             a: {
-              borderBottom: `2px dotted ${theme('colors.mk.light')}`,
-              color: theme('colors.mk.lightest'),
+              borderBottom: `2px dotted ${theme('colors.gray.100')}`,
+              color: theme('colors.white'),
               fontWeight: theme('fontWeight.medium'),
               textDecoration: 'none',
               '&:hover': {
-                backgroundColor: theme('colors.mk.lightest'),
-                color: theme('colors.mk.darkest'),
+                backgroundColor: theme('colors.white'),
+                color: theme('colors.black'),
                 borderBottom: 'none',
               },
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.dk.light'),
+                borderBottomColor: theme('colors.gray.700'),
               },
             },
             figure: {
               figcaption: {
-                color: theme('colors.dk.darkest'),
+                color: theme('colors.gray.400'),
               },
             },
             blockquote: {
-              color: theme('colors.dk.darkest'),
+              color: theme('colors.gray.400'),
             },
           },
         },
