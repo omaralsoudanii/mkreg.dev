@@ -28,6 +28,10 @@
       @apply antialiased;
     }
   }
+  
+  #__next {
+    min-height: 100vh;
+  }
 
   h1 {
     letter-spacing: -0.03em !important;
