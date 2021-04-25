@@ -40,7 +40,7 @@ export default function Seo({ data }) {
         ? meta.tags.join(' ,')
         : [Environment.ogTitle],
       url: canonical,
-      datePublished: meta.publishedAt,
+      datePublished: meta.date,
       description: meta.description,
       author: {
         '@type': 'Person',
