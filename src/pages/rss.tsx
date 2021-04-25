@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
               feed.item({
                 title: frontmatter.data.title ?? ogTitle,
                 url: url,
-                date: frontmatter.data.publishedAt,
+                date: frontmatter.data.date,
                 description: frontmatter.data.summary ?? ogDescription,
                 author: ogTitle,
                 categories: frontmatter.data.tags ?? ['Software development'],

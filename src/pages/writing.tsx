@@ -43,7 +43,7 @@ export default function Writing({ posts }) {
 export const getStaticProps: GetStaticProps = async () => {
   const WritingData = await getAllFilesFrontMatter('writing')
   const posts = WritingData.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
   )
 
   return {

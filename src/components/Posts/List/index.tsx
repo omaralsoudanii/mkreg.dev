@@ -23,9 +23,7 @@ export default function PostsList({ posts, href }) {
             </a>
           </Link>
           <time className="w-full ml-2 text-gray-600 dark:text-gray-400 sm:ml-4 sm:w-24">
-            {`${dayjs(new Date(frontMatter.publishedAt)).format(
-              'MMMM DD, YYYY'
-            )}`}
+            {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
           </time>
         </li>
       ))}

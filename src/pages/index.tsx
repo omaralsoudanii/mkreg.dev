@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { revalidate } = Environment.isr
   const Writing = await getAllFilesFrontMatter('writing')
   const posts = Writing.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
   ).slice(0, 5)
 
   return {

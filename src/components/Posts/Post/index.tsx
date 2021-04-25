@@ -20,7 +20,7 @@ export default function PostContainer({ children, frontMatter }) {
   const Meta = () => (
     <div className="grid grid-cols-1 mt-1 sm:grid-cols-1">
       <p className="px-0 text-base !my-1 !py-1 font-semibold">
-        {`${dayjs(new Date(frontMatter.publishedAt)).format('MMMM DD, YYYY')}`}
+        {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
       </p>
       <div className="flex flex-wrap">
         {frontMatter.tags.map((t: string) => (
