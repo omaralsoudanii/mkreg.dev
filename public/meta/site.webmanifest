@@ -1,5 +1,5 @@
 {
-    "name": "MK",
+    "name": "Omar Alsoudani",
     "short_name": "MK",
     "icons": [
         {
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#000000",
     "background_color": "#000000",
-    "start_url": "mkreg.dev",
+    "start_url": "https://mkreg.dev/",
     "display": "standalone"
 }
