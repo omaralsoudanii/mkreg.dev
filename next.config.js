@@ -27,37 +27,6 @@ module.exports = {
         ],
       },
       {
-        source: '/static/fonts/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=2592000, immutable, no-transform',
-          },
-        ],
-      },
-      {
-        source: '/static/(.*)',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-        ],
-      },
-      {
-        source: '/meta/(.*)',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, no-transform',
-          },
-        ],
-      },
-      {
         source: '/sitemap.xml',
         headers: [
           {
