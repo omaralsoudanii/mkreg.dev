@@ -29,30 +29,23 @@
     }
   }
   
-  #__next {
-    min-height: 100vh;
-  }
-
   h1 {
+    @apply font-black !important;
     letter-spacing: -0.03em !important;
-    font-weight: 800 !important;
   }
 
   h2 {
-    @apply tracking-tight !important;
-    font-weight: 700 !important;
+    @apply tracking-tight font-extrabold !important;
   }
 
   h3 {
-    @apply tracking-tight !important;
-    font-weight: 650 !important;
+    @apply tracking-tight font-bold !important;
   }
 
   h4,
   h5,
   h6 {
-    @apply tracking-tight !important;
-    font-weight: 550 !important;
+    @apply tracking-tight font-semibold !important;
   }
 
   .prose h1 {
@@ -61,11 +54,11 @@
   }
 
   .prose h2 {
-    @apply text-[1.875rem] leading-tight !important;
+    @apply text-[1.875rem] !leading-tight !important;
   }
 
   .prose h3 {
-    @apply text-[1.5rem] leading-tight !important;
+    @apply text-[1.5rem] !leading-tight !important;
   }
 
   .prose h4,
