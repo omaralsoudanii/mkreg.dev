@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 text-base font-semibold text-black bg-gray-200 rounded-t dark:text-white dark:bg-gray-800;
+  @apply px-5 py-3 text-base font-semibold bg-gray-200 rounded-t text-gray-1000 dark:text-gray-50 dark:bg-gray-800;
 }
 
 .prose .remark-code-title + pre {
@@ -12,7 +12,7 @@
 
 .prose code[class*='language-'],
 .prose pre[class*='language-'] {
-  @apply mt-0 mb-0 font-mono text-sm font-medium text-black bg-gray-100 dark:text-white dark:bg-gray-900;
+  @apply mt-0 mb-0 font-mono text-sm font-medium bg-gray-100 text-gray-1000 dark:text-gray-50 dark:bg-gray-900;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -71,7 +71,7 @@
 }
 
 .prose .token.variable {
-  @apply text-black dark:text-white;
+  @apply text-gray-1000 dark:text-gray-50;
 }
 
 .dark .prose .token.number {
@@ -166,7 +166,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply font-mono font-medium text-black bg-gray-100 rounded md:text-base dark:text-white dark:bg-gray-900 mb-7;
+  @apply font-mono font-medium bg-gray-100 rounded text-gray-1000 md:text-base dark:text-gray-50 dark:bg-gray-900 mb-7;
   letter-spacing: normal;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

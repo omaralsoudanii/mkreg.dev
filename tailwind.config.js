@@ -62,8 +62,8 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.300'),
             },
-            lineHeight: theme('lineHeight.relaxed'),
-            color: theme('colors.black'),
+            lineHeight: theme('lineHeight.normal'),
+            color: theme('colors.gray.1000'),
             h1: {
               color: theme('colors.black'),
             },
@@ -111,7 +111,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.white'),
+            color: theme('colors.gray.50'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.700'),
             },

@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply subpixel-antialiased leading-relaxed bg-white text-black dark:bg-gray-1100 dark:text-black;
+    @apply subpixel-antialiased bg-white text-gray-1000 dark:bg-gray-1100 dark:text-gray-50;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
@@ -17,7 +17,7 @@
     font-feature-settings: 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1, 'cv03' 1,
       'cv04' 1, 'liga' 1, 'clig' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
     font-kerning: normal;
-    font-weight: 440;
+    font-weight: 450;
     letter-spacing: -0.01em;
     font-variant: common-ligatures contextual;
   }
@@ -28,7 +28,10 @@
       @apply antialiased;
     }
   }
-  
+  p {
+    @apply text-base;
+  }
+
   h1 {
     @apply text-[2.25rem];
     @apply font-black;

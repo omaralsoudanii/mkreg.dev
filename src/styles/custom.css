@@ -29,7 +29,7 @@
   }
 
   .text-primary {
-    @apply text-black dark:text-white;
+    @apply text-gray-1000 dark:text-gray-50;
   }
 
   .text-secondary {
@@ -48,7 +48,7 @@
     @apply bg-gray-1100 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-white hover:text-gray-1100 dark:hover:text-gray-100 dark:text-tertiary text-tertiary;
+    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-gray-50 hover:text-gray-1100 dark:hover:text-gray-100 dark:text-tertiary text-tertiary;
   }
 
   .hdr-sm-btn {
@@ -72,11 +72,11 @@
   }
 
   .btn-secondary {
-    @apply text-black bg-white dark:text-white dark:bg-black;
+    @apply bg-white text-gray-1000 dark:text-gray-50 dark:bg-black;
   }
 
   .btn-primary {
-    @apply text-white bg-black dark:text-black dark:bg-white;
+    @apply bg-black text-gray-50 dark:text-gray-1000 dark:bg-white;
   }
 
   .btn-large {
@@ -85,7 +85,7 @@
 
   .prose .link-unstyled,.link-unstyled {
     @apply  text-primary !important;
-    font-weight: 440 !important;
+    font-weight: 450 !important;
     background: none !important;
     border: none !important;
     text-decoration: none !important;
@@ -94,18 +94,18 @@
 
   .prose .link-unstyled:hover, .link-unstyled:hover {
     @apply text-primary !important;
-    font-weight: 440 !important;
+    font-weight: 450 !important;
     background: none !important;
     text-decoration: none !important;
     border-bottom: none !important;
   }
   
   .text-link {
-    @apply font-medium no-underline border-b-2 border-dotted border-gray-1000 dark:border-gray-100 dark:hover:border-none hover:border-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black;
+    @apply font-medium no-underline border-b-2 border-dotted border-gray-1000 dark:border-gray-100 dark:hover:border-none hover:border-none hover:bg-black hover:text-gray-50 dark:hover:bg-white dark:hover:text-gray-1000;
   }
 
   .black-link {
-    @apply inline-block font-medium hover:underline;
+    @apply inline-block font-medium hover:underline text-primary;
   }
 
   .hr-stroke {
