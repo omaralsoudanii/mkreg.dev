@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply subpixel-antialiased bg-white text-gray-1100 dark:bg-gray-1100 dark:text-gray-50;
+    @apply subpixel-antialiased leading-relaxed bg-white text-black dark:bg-gray-1100 dark:text-black;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;

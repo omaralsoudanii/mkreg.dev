@@ -29,7 +29,7 @@
   }
 
   .text-primary {
-    @apply text-gray-1100 dark:text-gray-50;
+    @apply text-black dark:text-white;
   }
 
   .text-secondary {
