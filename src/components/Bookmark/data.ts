@@ -17,7 +17,7 @@ const Bookmarks = [
   {
     title: 'NGINX thread pooling',
     desc:
-      'Interesting read about NGINX thread pools, seems like it could benefit serving static content static content',
+      'Interesting read about NGINX thread pools, seems like it could benefit serving static content',
     url: 'https://www.nginx.com/blog/thread-pools-boost-performance-9x/',
     icon: Nginx({
       className: 'w-12 h-12  min-w-sm fill-current',
