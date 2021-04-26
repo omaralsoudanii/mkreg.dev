@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply text-base subpixel-antialiased leading-relaxed bg-white text-gray-1100 dark:bg-gray-1100 dark:text-gray-50;
+    @apply subpixel-antialiased bg-white text-gray-1100 dark:bg-gray-1100 dark:text-gray-50;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
@@ -46,9 +46,13 @@
   }
 
   h4,
+   {
+    @apply text-[1.25rem];
+    @apply font-semibold leading-snug tracking-tight;
+  }
   h5,
   h6 {
-    @apply text-[1.25rem];
+    @apply text-[1.125rem];
     @apply font-semibold leading-snug tracking-tight;
   }
 
@@ -66,8 +70,13 @@
   }
 
   .prose h4,
-  .prose h5,
-  .prose h6 {
+ {
     @apply text-[1.25rem] leading-snug !important;
+  } 
+  
+  .prose h5,
+  .prose h6,
+ {
+    @apply text-[1.125rem] leading-snug !important;
   }
 }

@@ -33,7 +33,7 @@
   }
 
   .text-secondary {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-800 dark:text-gray-200;
   }
 
   .text-tertiary {
@@ -83,11 +83,23 @@
     @apply px-6 py-3;
   }
 
-  .link-unstyled {
-    @apply no-underline border-0 border-none text-primary;
-    font-weight: 440;
+  .prose .link-unstyled,.link-unstyled {
+    @apply  text-primary !important;
+    font-weight: 440 !important;
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 
+  .prose .link-unstyled:hover, .link-unstyled:hover {
+    @apply text-primary !important;
+    font-weight: 440 !important;
+    background: none !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
   .text-link {
     @apply font-medium no-underline border-b-2 border-dotted border-gray-1000 dark:border-gray-100 dark:hover:border-none hover:border-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black;
   }

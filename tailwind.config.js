@@ -15,6 +15,7 @@ module.exports = {
       1: 1,
       2: 2,
       3: 3,
+      5: 5,
     },
     fontFamily: {
       mono: [
@@ -61,7 +62,7 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.300'),
             },
-            lineHeight: theme('lineHeight.relaxed'),
+            lineHeight: theme('lineHeight.normal'),
             color: theme('colors.gray.1100'),
             h1: {
               color: theme('colors.black'),
