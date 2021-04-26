@@ -11,6 +11,11 @@ module.exports = {
   ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
+    lineClamp: {
+      1: 1,
+      2: 2,
+      3: 3,
+    },
     fontFamily: {
       mono: [
         'JetBrains Mono',
@@ -57,7 +62,7 @@ module.exports = {
               borderColor: theme('colors.gray.300'),
             },
             lineHeight: theme('lineHeight.relaxed'),
-            color: theme('colors.black'),
+            color: theme('colors.gray.1100'),
             h1: {
               color: theme('colors.black'),
             },
@@ -158,5 +163,8 @@ module.exports = {
       }),
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-line-clamp'),
+  ],
 }

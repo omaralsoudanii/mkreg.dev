@@ -35,11 +35,12 @@ export function Footer() {
           <Link href="/tags">
             <a className="black-link">Tags</a>
           </Link>
-          <Link href="/about">
-            <a href="/about" className="black-link">
-              About
+          <Link href="/reading">
+            <a href="/reading" className="black-link">
+              Reading
             </a>
           </Link>
+
           <Link href="/writing">
             <a href="/writing" className="black-link">
               Writing
@@ -55,6 +56,11 @@ export function Footer() {
           >
             RSS
           </a>
+          <Link href="/about">
+            <a href="/about" className="black-link">
+              About
+            </a>
+          </Link>
           <a
             href={Environment.social.twitter}
             target="_blank"
@@ -62,14 +68,6 @@ export function Footer() {
             className="black-link"
           >
             Twitter
-          </a>
-          <a
-            href={Environment.social.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="black-link"
-          >
-            Youtube
           </a>
         </div>
       </div>

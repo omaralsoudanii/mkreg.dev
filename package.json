@@ -26,6 +26,8 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
+    "@svgr/cli": "^5.5.0",
+    "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.4.0",
     "@types/mdx-js__react": "^1.5.3",
     "@types/node": "^14.14.41",
@@ -54,6 +56,7 @@
     "remark-slug": "^6.0.0",
     "remark-stringify": "^9.0.1",
     "tailwindcss": "^2.1.2",
+    "tailwindcss-line-clamp": "^1.0.5",
     "typescript": "4.2.4",
     "unified": "^9.2.1"
   },

@@ -8,9 +8,14 @@ import Link from 'next/link'
 import * as React from 'react'
 
 function Home({ posts }) {
+  const meta = {
+    title: 'Omar Alsoudani',
+    description: 'Software developer, creator and the king of laziness.',
+    JsonLd: false,
+  }
   return (
     <React.Fragment>
-      <Seo data={{ JsonLd: false }} />
+      <Seo data={meta} />
       <Container>
         <section className="mb-28">
           <h1>Hi, I’m Omar</h1>
