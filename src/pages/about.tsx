@@ -63,8 +63,8 @@ export default function About() {
           It is inspired *cough*Stole*cough* by other open-source projects.I
           wrote A high-level overview about the process of building & developing
           this site at{' '}
-          <Link href="/writing/building-this-site">
-            <a className="text-link"> Building this </a>
+          <Link href="/writing/building-this-thing">
+            <a className="text-link"> Building this thing </a>
           </Link>
         </p>
       </Container>
