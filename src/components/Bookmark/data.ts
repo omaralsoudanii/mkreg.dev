@@ -26,25 +26,25 @@ const Bookmarks = [
   {
     title: 'moz://a SSL generator',
     desc:
-      'Sane SSL config generator for most web servers and load balancers, I recommend the intermediate config',
+      'Sane SSL config generator for most web servers & load balancers, I recommend the intermediate config',
     url: 'https://ssl-config.mozilla.org/',
     icon: Mozilla({
       className: 'w-12 h-12  min-w-sm fill-current',
     }),
   },
   {
-    title: 'Golang: pipelines and cancellation',
+    title: 'Golang: pipelines & cancellation',
     desc:
-      'A big fundamental part of Golang is concurrency & parallelism, this explains in depth about some of the techniques used to achieve that',
+      'A big fundamental part of Golang is concurrency & parallelism, this explains in-depth some of the techniques used to achieve that',
     url: 'https://blog.golang.org/pipelines',
     icon: Go({
       className: 'w-12 h-12  min-w-sm fill-svg',
     }),
   },
   {
-    title: 'MySQL behaviour with swap and NUMA',
+    title: 'MySQL behavior with swap & NUMA',
     desc:
-      'Detailed article about unpredictable performance and random delays on MySQL when dealing with swap and NUMA',
+      'Detailed article about unpredictable performance & random delays on MySQL when dealing with swap & NUMA',
     url:
       'https://blog.jcole.us/2010/09/28/mysql-swap-insanity-and-the-numa-architecture/',
     icon: Mysql({
@@ -52,9 +52,9 @@ const Bookmarks = [
     }),
   },
   {
-    title: 'High throughput and low latency web servers',
+    title: 'High throughput & low latency web servers',
     desc:
-      'From Dropbox engineer, a must read article for infrastructure engineers, about NGINX high-throughput, reliability, performance, and efficiency',
+      'From a Dropbox engineer, a must-read article for infrastructure engineers, about NGINX high-throughput, reliability, performance & efficiency',
     url:
       'https://thoughts.t37.net/designing-the-perfect-elasticsearch-cluster-the-almost-definitive-guide-e614eabc1a87/',
     icon: Dropbox({
@@ -62,7 +62,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: 'Understanding Origin Cache-Control',
+    title: 'Cloudflare & Origin servers Cache-Control',
     desc:
       'To use Cloudflare caching mechanism with efficiency, You need to fully understand how Cloudflare deals with Cache-Control headers',
     url: 'https://support.cloudflare.com/hc/en-us/articles/115003206852',
@@ -73,25 +73,25 @@ const Bookmarks = [
   {
     title: 'Nginx HTTP server boilerplate configs',
     desc:
-      'Out of the box optimized and sane configuration for NGINX, explained and documented',
+      'Out of the box optimized & sane configuration for NGINX explained & documented',
     url: 'https://github.com/h5bp/server-configs-nginx',
     icon: Github({
       className: 'w-12 h-12  min-w-sm fill-svg',
     }),
   },
   {
-    title: 'Fastify, best practices, and recommendations boilerplate',
+    title: 'Fastify, best practices & recommendations boilerplate',
     desc:
-      'Fastify, the new kid in town. This is a feature complete application with a well structured & documented code. Made by one the lead mainteners of the framework',
+      'Fastify, the new kid in town. This is a feature-complete application with well-structured & documented code. Made by one of the lead maintainers of the framework',
     url: 'https://github.com/delvedor/fastify-example/',
     icon: Fastify({
       className: 'w-12 h-12  min-w-sm fill-svg',
     }),
   },
   {
-    title: 'MariaDB and UUID performance',
+    title: 'MariaDB & UUID performance',
     desc:
-      'GUID/UUID Performance limitations and problems when used with MariaDB/MySQL. And some possible workarounds',
+      'GUID/UUID Performance limitations & problems when used with MariaDB/MySQL & some possible workarounds',
     url: 'https://mariadb.com/kb/en/guiduuid-performance/',
     icon: Mariadb({
       className: 'w-12 h-12  min-w-sm fill-svg',
@@ -100,7 +100,7 @@ const Bookmarks = [
   {
     title: 'NoSQL databases overview',
     desc:
-      'NoSQL databases overview, their behaviour, use cases to make informed decision picking one when the time comes',
+      'NoSQL databases overview, their behavior, use cases to make informed decision picking one when the time comes',
     url:
       'https://medium.baqend.com/nosql-databases-a-survey-and-decision-guidance-ea7823a822d/',
     icon: Medium({
@@ -117,9 +117,9 @@ const Bookmarks = [
     }),
   },
   {
-    title: 'Designing ElasticSearch Clusers',
+    title: 'Designing ElasticSearch Clusters',
     desc:
-      'Good ElasticSearch recommendations on designing a cluser(s). And some things to consider before integrating Elastic into your stack',
+      'Recommendations about designing ElasticSearch cluster(s). Something to consider before integrating Elastic into your stack',
     url:
       'https://thoughts.t37.net/designing-the-perfect-elasticsearch-cluster-the-almost-definitive-guide-e614eabc1a87/',
     icon: Medium({
@@ -129,7 +129,7 @@ const Bookmarks = [
   {
     title: 'Simple Icons',
     desc:
-      'The site I am using for the icons you see. It has over 1500 Free SVG icons for popular brands all in one page',
+      'The site I am using for the icons you see. It has over 1500 Free SVG icons for popular brands all on one page',
     url: 'https://simpleicons.org/',
     icon: Simpleicons({
       className: 'w-12 h-12  min-w-sm fill-svg',

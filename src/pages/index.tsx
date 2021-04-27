@@ -10,7 +10,7 @@ import * as React from 'react'
 function Home({ posts }) {
   const meta = {
     title: 'Omar Alsoudani',
-    description: 'Software developer, creator and the king of laziness.',
+    description: 'Software developer, creator & the king of laziness.',
     JsonLd: false,
   }
   return (
@@ -28,8 +28,8 @@ function Home({ posts }) {
           <p>
             My goals for this site is to be my digital identity, where I can
             write notes, share my knowledge with others, my opinion on some
-            topics. Open source projects I create and share them here, maybe
-            with a playground or proof of concept.
+            topics. Open source projects I create & share them here, maybe with
+            a playground or proof of concept.
           </p>
           <p className="text-right">
             <Link href="/about">

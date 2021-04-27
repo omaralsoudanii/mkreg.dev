@@ -17,7 +17,7 @@ import * as React from 'react'
 export default function Writing({ posts }) {
   const meta = {
     title: 'Omar Alsoudani - Writing',
-    description: 'Writing about programming, software and Vim vs Emacs.',
+    description: 'Writing about programming, software & Vim vs Emacs.',
     JsonLd: false,
   }
 
