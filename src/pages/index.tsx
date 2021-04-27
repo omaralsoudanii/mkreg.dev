@@ -17,7 +17,7 @@ function Home({ posts }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="mb-28">
+        <section className="mb-20">
           <h1>Hi, I’m Omar</h1>
           <p>
             I made this site to understand what the heck is Jamstack 🤔, then I
@@ -31,13 +31,25 @@ function Home({ posts }) {
             topics. Open source projects I create & share them here, maybe with
             a playground or proof of concept.
           </p>
-          <p className="text-right">
-            <Link href="/about">
-              <a className="text-link">More about me </a>
-            </Link>
-          </p>
+          <ul className="space-y-4 leading-relaxed">
+            <li>
+              <Link href="/about">
+                <a className="text-link">More about me </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/writing">
+                <a className="text-link">Stuff I wrote </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/nuggets">
+                <a className="text-link">Nuggets</a>
+              </Link>
+            </li>
+          </ul>
         </section>
-        <PostsContainer href="/writing" name="Latest Writing" posts={posts} />
+        <PostsContainer href="/writing" name="Featured Writing" posts={posts} />
       </Container>
     </React.Fragment>
   )
