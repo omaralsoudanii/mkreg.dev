@@ -1,16 +1,22 @@
 import {
+  Aws,
   Cloudflare,
   Curl,
   Dropbox,
   Fastify,
   Github,
   Go,
+  Haproxy,
+  Linux,
   Mariadb,
   Medium,
   Mozilla,
   Mysql,
   Nginx,
+  Openssl,
   Simpleicons,
+  Stackoverflow,
+  Twilio,
 } from '@/components/Icons'
 
 const iconClassName = 'w-12 h-12  min-w-sm fill-current'
@@ -37,6 +43,14 @@ const Bookmarks = [
     desc: `A big fundamental part of Golang is having concurrency and parallelism. This explains in-depth some of the techniques used to achieve that`,
     url: `https://blog.golang.org/pipelines`,
     icon: Go({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `AWS EC2 Comparison`,
+    desc: `A simple page where you can compare AWS EC2 instances using different filters and variables`,
+    url: `https://instances.vantage.sh/`,
+    icon: Aws({
       className: iconClassName,
     }),
   },
@@ -117,6 +131,62 @@ const Bookmarks = [
     desc: `The site I am using for the icons you see. It has over 1500 Free SVG icons for popular brands all on one page`,
     url: `https://simpleicons.org/`,
     icon: Simpleicons({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `High Performance Go`,
+    desc: `Diagnosing performance problems in your Go applications and fix them by Dave Cheney`,
+    url: `https://dave.cheney.net/high-performance-go-workshop/sydney-2019.html#license_and_materials/`,
+    icon: Go({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `HTTPS on Stack Overflow`,
+    desc: `Stack Overflow story about migrating to HTTPS, very long but worth it`,
+    url: `https://nickcraver.com/blog/2017/05/22/https-on-stack-overflow/`,
+    icon: Stackoverflow({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `moz://a on immutable caching`,
+    desc: `A blog from mozilla about speeding up your site using immutable cache headers`,
+    url: `https://hacks.mozilla.org/2017/01/using-immutable-caching-to-speed-up-the-web/`,
+    icon: Mozilla({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `Twillio and HTTP/2 issues`,
+    desc: `Twillio blog sharing their experiments with HTTP/2 and it's limitations, which lead us now to the new HTTP protocol QUIC`,
+    url: `https://www.twilio.com/blog/2017/10/http2-issues.html/`,
+    icon: Twilio({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `Chmod Calculator`,
+    desc: `Convert Linux file permissions between different formats`,
+    url: `https://chmod-calculator.com/`,
+    icon: Linux({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `SSL Labs`,
+    desc: `Test your SSL certificate strength`,
+    url: `https://www.ssllabs.com/ssltest/`,
+    icon: Openssl({
+      className: iconClassName,
+    }),
+  },
+  {
+    title: `The bible`,
+    desc: `HAProxy documentation, if you are stuck something there is no better place than their docs`,
+    url: `https://www.haproxy.org/#docs/`,
+    icon: Haproxy({
       className: iconClassName,
     }),
   },
