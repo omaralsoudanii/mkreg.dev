@@ -23,7 +23,7 @@ const iconClassName = 'w-12 h-12  min-w-sm fill-current'
 
 const Bookmarks = [
   {
-    title: `NGINX thread pooling`,
+    title: `NGINX threading`,
     desc: `Interesting read about NGINX thread pools. Seems like a good experiment to see it's benefit serving static content`,
     url: `https://www.nginx.com/blog/thread-pools-boost-performance-9x/`,
     icon: Nginx({
@@ -39,7 +39,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: `Golang pipelines and cancellation`,
+    title: `Golang pipelinesn`,
     desc: `A big fundamental part of Golang is having concurrency and parallelism. This explains in-depth some of the techniques used to achieve that`,
     url: `https://blog.golang.org/pipelines`,
     icon: Go({
@@ -63,7 +63,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: `High throughput and low latency NGINX`,
+    title: `NGINX High throughput and low latency`,
     desc: `From a Dropbox engineer, a must-read article for infrastructure engineers, about optimizing NGINX high-throughput.`,
     url: `https://dropbox.tech/infrastructure/optimizing-web-servers-for-high-throughput-and-low-latency/`,
     icon: Dropbox({
@@ -79,7 +79,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: `NGINX configs boilerplate`,
+    title: `NGINX configs`,
     desc: `Out of the box optimized and sane configuration for NGINX. Explained and documented`,
     url: `https://github.com/h5bp/server-configs-nginx`,
     icon: Github({
@@ -87,7 +87,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: `Fastify boilerplate with best practices and recommendations`,
+    title: `Fastify boilerplate`,
     desc: `Fastify, the new kid in town. This is a feature-complete application with well-structured and documented code. Made by one of the lead maintainers of the framework`,
     url: `https://github.com/delvedor/fastify-example/`,
     icon: Fastify({
@@ -95,7 +95,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: `MariaDB and UUID performance`,
+    title: `MariaDB UUID performance`,
     desc: `GUID/UUID Performance limitations and problems when used with MariaDB/MySQL and some possible workarounds`,
     url: `https://mariadb.com/kb/en/guiduuid-performance/`,
     icon: Mariadb({
@@ -136,7 +136,7 @@ const Bookmarks = [
   },
   {
     title: `High Performance Go`,
-    desc: `Diagnosing performance problems in your Go applications and fix them by Dave Cheney`,
+    desc: `Diagnosing performance problems in your Go applications and fix them. Workshop by Dave Cheney`,
     url: `https://dave.cheney.net/high-performance-go-workshop/sydney-2019.html#license_and_materials/`,
     icon: Go({
       className: iconClassName,
