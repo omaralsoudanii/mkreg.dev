@@ -39,7 +39,7 @@ const Bookmarks = [
     }),
   },
   {
-    title: `Golang pipelinesn`,
+    title: `Golang pipelines`,
     desc: `A big fundamental part of Golang is having concurrency and parallelism. This explains in-depth some of the techniques used to achieve that`,
     url: `https://blog.golang.org/pipelines`,
     icon: Go({
