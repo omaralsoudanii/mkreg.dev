@@ -43,7 +43,7 @@ export const Environment: EnvironmentProps = {
   CF_BEACON: resolveBool(process.env.CF_BEACON, false),
   NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
-  ogDescription: 'Writing about programming, software &amp; Vim vs Emacs.',
+  ogDescription: 'Writing about programming, software and Vim vs Emacs.',
   ogImage: '/static/images/mk.jpg',
   social: {
     github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',

@@ -6,7 +6,7 @@ import * as React from 'react'
 function Nuggets() {
   const meta = {
     title: 'Omar Alsoudani - Nuggets',
-    description: 'Resources & bookmarks for the readers',
+    description: 'Resources and bookmarks for the readers',
     JsonLd: false,
   }
 

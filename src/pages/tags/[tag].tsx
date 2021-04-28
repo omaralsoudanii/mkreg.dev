@@ -11,7 +11,7 @@ import * as React from 'react'
 
 /**
  *
- * Renders a single post by tag & loads all content.
+ * Renders a single post by tag and loads all content.
  *
  */
 
@@ -21,7 +21,7 @@ export default function Tag({ posts, tag }) {
 
   const meta = {
     title: `${Environment.ogTitle} - ${tag}`,
-    description: `Topics, Discussions & Thoughts about ${tag}`,
+    description: `Topics, Discussions and Thoughts about ${tag}`,
   }
 
   return (
@@ -31,7 +31,7 @@ export default function Tag({ posts, tag }) {
         <section className="mb-20 space-y-8">
           <h1>{tag}</h1>
           <p>
-            Topics, guides & thoughts I wrote about <strong>{tag}</strong> or
+            Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
           <p className="text-right">

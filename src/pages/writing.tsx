@@ -17,7 +17,7 @@ import * as React from 'react'
 export default function Writing({ posts }) {
   const meta = {
     title: 'Omar Alsoudani - Writing',
-    description: 'Writing about programming, software & Vim vs Emacs.',
+    description: 'Writing about programming, software and Vim vs Emacs.',
     JsonLd: false,
   }
 
@@ -27,7 +27,7 @@ export default function Writing({ posts }) {
       <Container>
         <section className="mb-20 space-y-8">
           <h1>Writing</h1>
-          <p>Stuff I wrote about programming. Software & Vim vs Emacs.</p>
+          <p>Stuff I wrote about programming and software</p>
           <p className="text-right">
             <Link href="/tags">
               <a className="text-link">Browse by Tags </a>

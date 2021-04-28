@@ -10,9 +10,9 @@ export default function ServerError() {
           <h1 className="sm:pt-0">Internal server error</h1>
           <p className="pb-8">
             The server is currently unavailable for some reason. Obviously, it's
-            not my fault, I ran the code on my machine & it's working fine. Try
-            refreshing the page again, if that doesn't work, contact me & I will
-            send you a zip file, just extract it & double click{' '}
+            not my fault, I ran the code on my machine and it's working fine.
+            Try refreshing the page again, if that doesn't work, contact me and
+            I will send you a zip file, just extract it and double click{' '}
             <strong>index_v17_final.html</strong>
           </p>
           <NextImage

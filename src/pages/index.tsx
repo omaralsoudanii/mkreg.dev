@@ -10,7 +10,7 @@ import * as React from 'react'
 function Home({ posts }) {
   const meta = {
     title: 'Omar Alsoudani',
-    description: 'Software developer, creator & the king of laziness.',
+    description: 'Software developer, creator and the king of laziness.',
     JsonLd: false,
   }
   return (
@@ -22,32 +22,20 @@ function Home({ posts }) {
           <p>
             I made this site to understand what the heck is Jamstack 🤔, then I
             got hooked reading about design. It seems like I will spend the next
-            year reading about Typography, Fonts, Colors. Hopefully by the next
-            leap year this site will be launched with my first post!
+            year reading about Typography, Fonts, Colors.
           </p>
           <p>
             My goals for this site is to be my digital identity, where I can
             write notes, share my knowledge with others, my opinion on some
-            topics. Open source projects I create & share them here, maybe with
-            a playground or proof of concept.
+            topics. Open source projects I create and share them here, maybe
+            with a playground or proof of concept.
           </p>
-          <ul className="space-y-4 leading-relaxed">
-            <li>
-              <Link href="/about">
-                <a className="text-link">More about me </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/writing">
-                <a className="text-link">Stuff I wrote </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/nuggets">
-                <a className="text-link">Nuggets</a>
-              </Link>
-            </li>
-          </ul>
+          <Link href="/about">
+            <a className="text-link">More about me </a>
+          </Link>
+          <Link href="/nuggets">
+            <a className="text-link">Maybe some Nuggets?</a>
+          </Link>
         </section>
         <PostsContainer href="/writing" name="Featured Writing" posts={posts} />
       </Container>

@@ -15,7 +15,7 @@ import Link from 'next/link'
 export default function Tags({ tagCount, tags }) {
   const meta = {
     title: `Omar Alsoudani - Tags`,
-    description: `Browse my writings, discussions & thoughts by tags.`,
+    description: `Browse my writings, discussions and thoughts by tags.`,
     JsonLd: false,
   }
   const sortedTags = Object.keys(tagCount).sort(
