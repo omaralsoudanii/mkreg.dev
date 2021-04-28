@@ -30,12 +30,16 @@ function Home({ posts }) {
             topics. Open source projects I create and share them here, maybe
             with a playground or proof of concept.
           </p>
-          <Link href="/about">
-            <a className="text-link">More about me </a>
-          </Link>
-          <Link href="/nuggets">
-            <a className="text-link">Maybe some Nuggets?</a>
-          </Link>
+          <p>
+            <Link href="/about">
+              <a className="text-link">More about me </a>
+            </Link>
+          </p>
+          <p>
+            <Link href="/nuggets">
+              <a className="text-link">Maybe some Nuggets?</a>
+            </Link>
+          </p>
         </section>
         <PostsContainer href="/writing" name="Featured Writing" posts={posts} />
       </Container>
