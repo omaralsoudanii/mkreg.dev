@@ -51,7 +51,7 @@ const Bookmarks = [
   {
     title: `High throughput and low latency NGINX`,
     desc: `From a Dropbox engineer, a must-read article for infrastructure engineers, about optimizing NGINX high-throughput.`,
-    url: `https://thoughts.t37.net/designing-the-perfect-elasticsearch-cluster-the-almost-definitive-guide-e614eabc1a87/`,
+    url: `https://dropbox.tech/infrastructure/optimizing-web-servers-for-high-throughput-and-low-latency/`,
     icon: Dropbox({
       className: iconClassName,
     }),
