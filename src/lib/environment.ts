@@ -17,12 +17,6 @@ export interface EnvironmentProps {
   ogImage: string
   ogDescription: string
   ogTitle: string
-  nextImages: {
-    feature: boolean
-    inline: boolean
-    quality: number
-    source: boolean
-  }
   social: {
     github: string
     rss: string
@@ -44,7 +38,7 @@ export const Environment: EnvironmentProps = {
   NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
   ogDescription: 'Writing about programming, software and Vim vs Emacs.',
-  ogImage: '/static/images/mk.jpg',
+  ogImage: '/meta/android-chrome-512x512.png',
   social: {
     github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',
     rss: process.env.RSS_RELATIVE_URL || '/rss.xml',
@@ -55,12 +49,6 @@ export const Environment: EnvironmentProps = {
       process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/omaralsoudani',
     mail: process.env.EMAIL_ADDR || 'omaralsoudani@gmail.com',
     twitter: process.env.TWITTER_URL || 'https://twitter.com/omaralsoudani',
-  },
-  nextImages: {
-    feature: resolveBool(process.env.POSTS_FEATURE_IMAGES, true),
-    inline: resolveBool(process.env.POSTS_INLINE_IMAGES, true),
-    quality: resolveNumber(process.env.POSTS_IMAGES_QUALITY, 80),
-    source: resolveBool(process.env.POSTS_SOURCE_IMAGES, true),
   },
   isr: {
     enable: resolveBool(process.env.POSTS_ISR, true),
