@@ -1,7 +1,8 @@
-import BookmarkList from '@/components/Bookmark/list'
+import Bookmarks from '@/lib/bookmarks'
 import { Container } from '@/components/Container'
 import Seo from '@/components/Seo'
 import * as React from 'react'
+import Card from '@/components/Card'
 
 function Nuggets() {
   const meta = {
@@ -24,7 +25,11 @@ function Nuggets() {
             something misleading or plain wrong. Please contact me!
           </p>
         </section>
-        <section className="mt-8 space-y-8">{BookmarkList()}</section>
+        <section className="mt-8 space-y-8">
+          {Bookmarks.map((bookmark) => (
+            <Card data={bookmark} />
+          ))}
+        </section>
       </Container>
     </React.Fragment>
   )
