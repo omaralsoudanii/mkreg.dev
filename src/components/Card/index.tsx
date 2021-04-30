@@ -14,10 +14,8 @@ const Card = ({ data }) => (
         {data.icon}
       </div>
       <div>
-        <h4 className="!font-extrabold !mt-2 !mb-1 text-primary">
-          {data.title}
-        </h4>
-        <p className="!mt-1 !mb-2 text-[15px] leading-5 text-secondary clamp-5">
+        <h4 className=" !mt-2 !mb-1 text-primary">{data.title}</h4>
+        <p className="!mt-1 !mb-2 text-[15px] !leading-5 text-secondary clamp-5">
           {data.desc}
         </p>
       </div>

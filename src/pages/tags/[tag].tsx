@@ -35,9 +35,11 @@ export default function Tag({ posts, tag }) {
             related to it.
           </p>
           <p className="text-right">
-            <Link href="/writing">
-              <a className="text-link">Browse all writing </a>
-            </Link>
+            <h5 className="text-right text-secondary">
+              <Link href="/writing">
+                <a className=" link-unstyled">Browse all writing &rarr;</a>
+              </Link>
+            </h5>
           </p>
         </section>
         <PostsContainer href="/writing" name="All Posts" posts={posts} />

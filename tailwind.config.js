@@ -1,14 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 module.exports = {
   mode: 'jit',
-  purge: [
-    './src/pages/**/*.tsx',
-    './src/components/**/*.tsx',
-    './src/**/*.ts',
-    './src/**/*.js',
-    './public/**/*.html',
-    './index.html',
-  ],
+  purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx', './src/**/*.ts'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     lineClamp: {
@@ -62,12 +54,39 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.300'),
             },
-            lineHeight: theme('lineHeight.normal'),
+            lineHeight: '1.65',
+            p: {
+              lineHeight: theme('lineHeight.normal'),
+            },
             color: theme('colors.gray.1000'),
             h1: {
               color: theme('colors.black'),
+              fontWeight: theme('fontWeight.extrabold'),
+              fontSize: '2.25rem',
+              letterSpacing: '-.03em',
             },
-            'h2,h3,h4,h5,h6': {
+            h2: {
+              color: theme('colors.gray.1000'),
+              fontSize: '1.875rem',
+              fontWeight: theme('fontWeight.bold'),
+              lineHeight: theme('lineHeight.tight'),
+            },
+            h3: {
+              color: theme('colors.gray.1000'),
+              fontSize: '1.5rem',
+              fontWeight: theme('fontWeight.semibold'),
+              lineHeight: theme('lineHeight.tight'),
+            },
+            h4: {
+              color: theme('colors.gray.1000'),
+              fontSize: '1.25rem',
+              fontWeight: theme('fontWeight.semibold'),
+              lineHeight: theme('lineHeight.snug'),
+            },
+            'h5,h6': {
+              fontSize: '1.125rem',
+              lineHeight: theme('lineHeight.snug'),
+              fontWeight: theme('fontWeight.meduim'),
               color: theme('color.gray.1000'),
             },
             'ul > li::before': {
@@ -77,18 +96,14 @@ module.exports = {
               borderRadius: '50%',
             },
             a: {
-              borderBottom: `2px dotted ${theme('colors.gray.1000')}`,
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.medium'),
+              color: '#0070f3',
               textDecoration: 'none',
-              '&:hover': {
-                backgroundColor: theme('colors.black'),
-                color: theme('colors.white'),
-                borderBottom: 'none',
-              },
+              outline: theme('outline.none'),
+              fontWeight: theme('fontWeight.meduim'),
             },
             strong: {
               color: theme('colors.black'),
+              fontWeight: theme('fontWeight.bold'),
             },
             thead: {
               borderBottomColor: theme('colors.gray.300'),
@@ -119,7 +134,7 @@ module.exports = {
               color: theme('colors.white'),
             },
             'h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.50'),
             },
             borderColor: theme('colors.gray.700'),
             'ul > li::before': {
@@ -128,36 +143,25 @@ module.exports = {
               backgroundColor: theme('colors.gray.600'),
               borderRadius: '50%',
             },
+            a: {
+              color: '#68b5fb',
+              textDecoration: 'none',
+              outline: theme('outline.none'),
+              'text-shadow': '0px 0px 1px #0070f3',
+              fontWeight: theme('fontWeight.meduim'),
+            },
             strong: {
               color: theme('colors.white'),
+              fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.mk.lighter'),
+              color: theme('colors.gray.50'),
               borderBottomColor: theme('colors.gray.700'),
-            },
-            a: {
-              borderBottom: `2px dotted ${theme('colors.gray.100')}`,
-              color: theme('colors.white'),
-              fontWeight: theme('fontWeight.medium'),
-              textDecoration: 'none',
-              '&:hover': {
-                backgroundColor: theme('colors.white'),
-                color: theme('colors.black'),
-                borderBottom: 'none',
-              },
             },
             tbody: {
               tr: {
                 borderBottomColor: theme('colors.gray.700'),
               },
-            },
-            figure: {
-              figcaption: {
-                color: theme('colors.gray.400'),
-              },
-            },
-            blockquote: {
-              color: theme('colors.gray.400'),
             },
           },
         },

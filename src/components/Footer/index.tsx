@@ -4,7 +4,7 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <div className="mt-16 hr-stroke">
-      <div className="grid grid-cols-1 gap-4 p-6 py-12 text-left md:text-center md:grid-cols-3 ">
+      <div className="grid items-start grid-cols-1 gap-4 py-12 text-left md:items-center md:text-center md:grid-cols-3 ">
         <div className="flex flex-col space-y-4">
           <a
             href={`mailto:${Environment.social.mail}`}

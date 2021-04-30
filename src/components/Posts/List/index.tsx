@@ -14,14 +14,14 @@ export default function PostsList({ posts, href }) {
     <ul className="space-y-4 leading-relaxed">
       {posts.map((frontMatter) => (
         <li key={frontMatter.slug}>
-          <Link
-            href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
-            passHref
-          >
-            <a className="text-link">
-              <span>{frontMatter.title}</span>
-            </a>
-          </Link>
+          <h5 className="inline text-primary">
+            <Link
+              href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+              passHref
+            >
+              <a className="link-unstyled">{frontMatter.title}</a>
+            </Link>
+          </h5>
           <time className="w-full ml-2 text-gray-600 dark:text-gray-400 md:ml-4 md:w-24">
             {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
           </time>
