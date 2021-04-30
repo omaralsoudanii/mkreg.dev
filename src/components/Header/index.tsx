@@ -60,7 +60,7 @@ export default function Header() {
 
   return (
     <div className="header-container">
-      <div className="grid grid-cols-1 sm:hidden" ref={node}>
+      <div className="grid grid-cols-1 md:hidden" ref={node}>
         <div className="flex items-center">
           {isExpanded ? (
             <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
@@ -149,7 +149,7 @@ export default function Header() {
           })}
       </div>
 
-      <div className="hidden grid-cols-4 gap-4 mx-auto max-w-prose sm:grid">
+      <div className="hidden grid-cols-4 gap-4 mx-auto max-w-prose md:grid">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname

@@ -4,9 +4,9 @@ import Link from 'next/link'
 export default function NotFound() {
   return (
     <div className="px-4 py-4">
-      <div className="flex flex-col items-start justify-start sm:justify-center sm:items-center sm:flex-row sm:space-x-10 sm:mt-8">
-        <div className="pt-4 space-x-2 sm:space-y-6">
-          <h1 className="text-6xl leading-loose border-gray-900 sm:text-8xl sm:leading-loose sm:dark:border-gray-100 sm:border-r-8 sm:py-24 sm:px-6">
+      <div className="flex flex-col items-start justify-start md:justify-center md:items-center md:flex-row md:space-x-10 md:mt-8">
+        <div className="pt-4 space-x-2 md:space-y-6">
+          <h1 className="text-6xl leading-loose border-gray-900 md:text-8xl md:leading-loose md:dark:border-gray-100 md:border-r-8 md:py-24 md:px-6">
             404
           </h1>
         </div>

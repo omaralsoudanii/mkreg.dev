@@ -25,13 +25,13 @@ export default function Tags({ tagCount, tags }) {
   return (
     <article>
       <Seo data={meta} />
-      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-300 dark:divide-gray-700 sm:justify-center sm:items-center sm:divide-y-0 sm:flex-row sm:space-x-6 sm:mt-16">
-        <div className="pt-6 space-x-2 space-y-5 sm:pb-8">
-          <h1 className="px-2 mb-0 text-6xl leading-loose sm:px-6 sm:border-r-2">
+      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-300 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-16">
+        <div className="pt-6 space-x-2 space-y-5 md:pb-8">
+          <h1 className="px-2 mb-0 text-6xl leading-loose md:px-6 md:border-r-2">
             Tags
           </h1>
         </div>
-        <div className="flex flex-wrap items-center justify-center max-w-lg px-2 py-6 sm:p-0 sm:justify-start sm:items-start">
+        <div className="flex flex-wrap items-center justify-center max-w-lg px-2 py-6 md:p-0 md:justify-start md:items-start">
           {sortedTags.map((t) => {
             return (
               <div key={t} className="mt-2 mb-2 mr-5">
