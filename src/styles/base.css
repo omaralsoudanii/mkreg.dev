@@ -26,30 +26,4 @@
       @apply antialiased;
     }
   }
-
-  h1 {
-    @apply text-[2.25rem];
-    @apply font-extrabold;
-    letter-spacing: -0.03em;
-  }
-
-  h2 {
-    @apply text-[1.875rem];
-    @apply font-bold leading-tight tracking-tight;
-  }
-
-  h3 {
-    @apply text-[1.5rem];
-    @apply font-semibold leading-tight tracking-tight;
-  }
-
-  h4 {
-    @apply text-[1.25rem];
-    @apply font-semibold leading-snug tracking-tight;
-  }
-  h5,
-  h6 {
-    @apply text-[1.125rem];
-    @apply font-semibold leading-snug tracking-tight;
-  }
 }

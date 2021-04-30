@@ -28,11 +28,11 @@ export default function Writing({ posts }) {
         <section className="mb-20 space-y-8">
           <h1>Writing</h1>
           <p>Stuff I wrote about programming and software</p>
-          <h5 className="text-right text-secondary">
+          <h3 className="text-right !text-lg">
             <Link href="/tags">
               <a className="link-unstyled">Browse by Tags &rarr;</a>
             </Link>
-          </h5>
+          </h3>
         </section>
         <PostsContainer href="/writing" name="All Posts" posts={posts} />
       </Container>

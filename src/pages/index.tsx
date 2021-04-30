@@ -28,15 +28,16 @@ function Home({ posts }) {
             My goals for this site is to be my digital identity, where I can
             write notes, share my knowledge with others, my opinion on some
             topics. Open source projects I create and share them here, maybe
-            with a playground or proof of concept.{' '}
+            with a playground or proof of concept.
           </p>
           <p>
             <Link href="/about">
-              <a className="text-link"> Read more </a>
+              <a className="py-4 text-link"> About me &rarr; </a>
             </Link>
-            or{' '}
+          </p>
+          <p>
             <Link href="/nuggets">
-              <a className="text-link"> have some nuggets!</a>
+              <a className="py-4 text-link"> Nuggets factory &rarr; </a>
             </Link>
           </p>
         </section>

@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <div className="mt-16 hr-stroke">
       <div className="grid items-start grid-cols-1 gap-4 py-12 text-left md:items-center md:text-center md:grid-cols-3 ">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col items-start px-2 space-y-4 md:px-0 md:items-center">
           <a
             href={`mailto:${Environment.social.mail}`}
             target="_blank"
@@ -31,7 +31,7 @@ export function Footer() {
             LinkedIn
           </a>
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col items-start px-2 space-y-4 md:px-0 md:items-center">
           <Link href="/tags">
             <a className="black-link">Tags</a>
           </Link>
@@ -47,7 +47,7 @@ export function Footer() {
             </a>
           </Link>
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col items-start px-2 space-y-4 md:px-0 md:items-center">
           <a
             href={Environment.social.rss}
             target="_blank"

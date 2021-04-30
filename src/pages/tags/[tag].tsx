@@ -34,13 +34,11 @@ export default function Tag({ posts, tag }) {
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
-          <p className="text-right">
-            <h5 className="text-right text-secondary">
-              <Link href="/writing">
-                <a className=" link-unstyled">Browse all writing &rarr;</a>
-              </Link>
-            </h5>
-          </p>
+          <h3 className="text-right !text-lg">
+            <Link href="/writing">
+              <a className="link-unstyled">Browse all writing &rarr;</a>
+            </Link>
+          </h3>
         </section>
         <PostsContainer href="/writing" name="All Posts" posts={posts} />
       </Container>

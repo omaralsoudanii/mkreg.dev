@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   mode: 'jit',
   purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx', './src/**/*.ts'],
@@ -58,37 +60,13 @@ module.exports = {
             p: {
               lineHeight: theme('lineHeight.normal'),
             },
-            color: theme('colors.gray.1000'),
             h1: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.extrabold'),
-              fontSize: '2.25rem',
-              letterSpacing: '-.03em',
             },
-            h2: {
+            'h2,h3,h5,h6': {
               color: theme('colors.gray.1000'),
-              fontSize: '1.875rem',
-              fontWeight: theme('fontWeight.bold'),
-              lineHeight: theme('lineHeight.tight'),
             },
-            h3: {
-              color: theme('colors.gray.1000'),
-              fontSize: '1.5rem',
-              fontWeight: theme('fontWeight.semibold'),
-              lineHeight: theme('lineHeight.tight'),
-            },
-            h4: {
-              color: theme('colors.gray.1000'),
-              fontSize: '1.25rem',
-              fontWeight: theme('fontWeight.semibold'),
-              lineHeight: theme('lineHeight.snug'),
-            },
-            'h5,h6': {
-              fontSize: '1.125rem',
-              lineHeight: theme('lineHeight.snug'),
-              fontWeight: theme('fontWeight.meduim'),
-              color: theme('color.gray.1000'),
-            },
+            color: theme('colors.gray.1000'),
             'ul > li::before': {
               content: '""',
               position: 'absolute',
@@ -99,7 +77,10 @@ module.exports = {
               color: '#0070f3',
               textDecoration: 'none',
               outline: theme('outline.none'),
-              fontWeight: theme('fontWeight.meduim'),
+              fontWeight: '450',
+              '&:hover': {
+                filter: 'brightness(150%)',
+              },
             },
             strong: {
               color: theme('colors.black'),
@@ -133,7 +114,7 @@ module.exports = {
             h1: {
               color: theme('colors.white'),
             },
-            'h2,h3,h4,h5,h6': {
+            'h2,h3,h5,h6': {
               color: theme('colors.gray.50'),
             },
             borderColor: theme('colors.gray.700'),
@@ -146,9 +127,12 @@ module.exports = {
             a: {
               color: '#68b5fb',
               textDecoration: 'none',
+              fontWeight: '450',
               outline: theme('outline.none'),
-              'text-shadow': '0px 0px 1px #0070f3',
-              fontWeight: theme('fontWeight.meduim'),
+              'text-shadow': '0px 0px 1px #68b5fb',
+              '&:hover': {
+                filter: 'brightness(111%)',
+              },
             },
             strong: {
               color: theme('colors.white'),
@@ -171,5 +155,30 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-line-clamp'),
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        h1: {
+          letterSpacing: '-.03em',
+          fontSize: '2.25em',
+          fontWeight: theme('fontWeight.extrabold'),
+        },
+        h2: {
+          letterSpacing: '-0.025em',
+          fontSize: '1.5em',
+          fontWeight: theme('fontWeight.bold'),
+        },
+        h3: {
+          letterSpacing: '-0.025em',
+          fontSize: '1.25em',
+          fontWeight: theme('fontWeight.semibold'),
+        },
+        'h4,h5,h6': {
+          letterSpacing: '-0.025em',
+          fontSize: '1.125em',
+          fontWeight: theme('fontWeight.meduim'),
+          color: theme('color.gray.1000'),
+        },
+      })
+    }),
   ],
 }

@@ -84,20 +84,33 @@
   }
 
   .prose .link-unstyled,
-  .link-unstyled {
-    @apply text-primary !important;
+  .link-unstyled,
+  .link-unstyled:hover {
+    @apply text-primary no-underline hover:text-primary !important;
     text-shadow: none !important;
+    fontWeight: 450;
   }
 
   .dark .text-link {
     color: #68b5fb;
-    text-shadow: 0px 0px 1px #0070f3;
-    @apply font-medium no-underline outline-none;
+    fontWeight: 450;
+    @apply no-underline outline-none;
+  }  
+  
+  .dark .text-link:hover {
+    text-shadow: 0px 0px 1px #68b5fb;
+    filter: brightness(111%);
   }
 
   .light .text-link {
     color: #0070f3;
-    @apply font-medium no-underline outline-none;
+    fontWeight: 450;
+    @apply  no-underline outline-none;
+  }
+
+  .light .text-link:hover {
+    text-shadow: 0px 0px 1px #0070f3;
+    filter: brightness(150%),
   }
 
   .black-link {
@@ -113,5 +126,12 @@
   }
   .light .fill-svg {
     fill: black;
+  }
+
+  h2,
+  h3,
+  h5,
+  h6 {
+    @apply text-primary;
   }
 }
