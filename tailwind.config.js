@@ -51,7 +51,7 @@ module.exports = {
         black: '#000000',
       },
       typography: (theme) => ({
-        light: {
+        DEFAULT: {
           css: {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.300'),
@@ -77,7 +77,6 @@ module.exports = {
               color: '#0070f3',
               textDecoration: 'none',
               outline: theme('outline.none'),
-              fontWeight: '450',
               '&:hover': {
                 filter: 'brightness(150%)',
               },
@@ -127,7 +126,6 @@ module.exports = {
             a: {
               color: '#68b5fb',
               textDecoration: 'none',
-              fontWeight: '450',
               outline: theme('outline.none'),
               'text-shadow': '0px 0px 1px #68b5fb',
               '&:hover': {
