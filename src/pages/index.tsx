@@ -32,12 +32,12 @@ function Home({ posts }) {
           </p>
           <p>
             <Link href="/about">
-              <a className="py-4 text-link"> About me &rarr; </a>
+              <a className="my-4 link-unstyled"> About me &rarr; </a>
             </Link>
           </p>
           <p>
             <Link href="/nuggets">
-              <a className="py-4 text-link"> Nuggets factory &rarr; </a>
+              <a className="my-4 link-unstyled"> Nuggets factory &rarr; </a>
             </Link>
           </p>
         </section>

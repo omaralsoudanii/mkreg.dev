@@ -51,7 +51,7 @@ module.exports = {
         black: '#000000',
       },
       typography: (theme) => ({
-        DEFAULT: {
+        light: {
           css: {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.300'),
@@ -63,7 +63,7 @@ module.exports = {
             h1: {
               color: theme('colors.black'),
             },
-            'h2,h3,h5,h6': {
+            'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.1000'),
             },
             color: theme('colors.gray.1000'),
@@ -114,7 +114,7 @@ module.exports = {
             h1: {
               color: theme('colors.white'),
             },
-            'h2,h3,h5,h6': {
+            'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.50'),
             },
             borderColor: theme('colors.gray.700'),
@@ -153,8 +153,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwindcss-line-clamp'),
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
@@ -176,9 +174,10 @@ module.exports = {
           letterSpacing: '-0.025em',
           fontSize: '1.125em',
           fontWeight: theme('fontWeight.meduim'),
-          color: theme('color.gray.1000'),
         },
       })
     }),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-line-clamp'),
   ],
 }

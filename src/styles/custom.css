@@ -19,12 +19,12 @@
   }
 
   .header-container {
-    @apply fixed top-0 z-10 w-full py-2 bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
+    @apply fixed top-0 z-10 w-full py-2 bg-white border-b border-gray-400 md:relative dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
     .header-container {
-      @apply fixed top-0 z-10 w-full py-2 bg-white bg-opacity-100 border-b border-gray-400 dark:border-opacity-10 border-opacity-20 dark:bg-gray-900 filter-none;
+      @apply relative top-0 z-10 w-full py-2 bg-white bg-opacity-100 border-b border-gray-400 dark:border-opacity-10 border-opacity-20 dark:bg-gray-1000 filter-none;
     }
   }
 
@@ -41,14 +41,14 @@
   }
 
   .nav-default {
-    @apply flex py-3 text-base font-semibold md:text-sm md:py-2 md:rounded md:items-center md:justify-center;
+    @apply flex py-3 text-sm font-semibold md:py-2 md:rounded md:items-center md:justify-center;
   }
 
   .nav-active {
     @apply bg-gray-1100 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-gray-50 hover:text-gray-1100 dark:hover:text-gray-100 dark:text-tertiary text-tertiary;
+    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-gray-50 hover:text-gray-1100 dark:hover:text-gray-100 text-secondary;
   }
 
   .hdr-sm-btn {
@@ -56,7 +56,7 @@
   }
 
   .hdr-sm-title {
-    @apply w-full px-3 py-3 text-base font-semibold text-primary;
+    @apply w-full px-3 py-3 text-sm font-semibold text-primary;
   }
 
   .hdr-sm-btn svg {
@@ -85,15 +85,21 @@
 
   .prose .link-unstyled,
   .link-unstyled,
-  .link-unstyled:hover {
-    @apply text-primary no-underline hover:text-primary !important;
+   {
+    @apply text-primary  my-1  no-underline !important;
+    transition-property: border;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
     text-shadow: none !important;
-    fontWeight: 450;
+  }
+  .link-unstyled:hover {
+    @apply text-primary no-underline border-b-2 border-gray-1000 dark:border-gray-50 !important;
+    text-shadow: none !important;
+    filter: none im !important;
   }
 
   .dark .text-link {
     color: #68b5fb;
-    fontWeight: 450;
     @apply no-underline outline-none;
   }  
   
@@ -104,7 +110,6 @@
 
   .light .text-link {
     color: #0070f3;
-    fontWeight: 450;
     @apply  no-underline outline-none;
   }
 
@@ -114,7 +119,7 @@
   }
 
   .black-link {
-    @apply font-medium text-primary;
+    @apply font-medium hover:underline;
   }
 
   .hr-stroke {
@@ -130,6 +135,7 @@
 
   h2,
   h3,
+  h4,
   h5,
   h6 {
     @apply text-primary;
