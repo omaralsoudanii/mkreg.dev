@@ -10,40 +10,39 @@ export function Footer() {
             href={`mailto:${Environment.social.mail}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="black-link"
           >
-            Contact
+            <p className="inline link-unstyled">Contact</p>
           </a>
           <a
             href={Environment.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="black-link"
           >
-            Github
+            <p className="inline link-unstyled">Github</p>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href={Environment.social.linkedin}
-            className="black-link"
           >
-            LinkedIn
+            <p className="inline link-unstyled">LinkedIn</p>
           </a>
         </div>
         <div className="flex flex-col items-start px-2 space-y-4 md:px-0 md:items-center">
-          <Link href="/tags">
-            <a className="black-link">Tags</a>
+          <Link href="/tags" passHref>
+            <a>
+              <p className="inline link-unstyled">Tags</p>
+            </a>
           </Link>
-          <Link href="/nuggets">
-            <a href="/nuggets" className="black-link">
-              Nuggets
+          <Link href="/nuggets" passHref>
+            <a href="/nuggets">
+              <p className="inline link-unstyled">Nuggets</p>
             </a>
           </Link>
 
-          <Link href="/writing">
-            <a href="/writing" className="black-link">
-              Writing
+          <Link href="/writing" passHref>
+            <a href="/writing">
+              <p className="inline link-unstyled">Writing</p>
             </a>
           </Link>
         </div>
@@ -52,22 +51,20 @@ export function Footer() {
             href={Environment.social.rss}
             target="_blank"
             rel="noopener noreferrer"
-            className="black-link"
           >
-            RSS
+            <p className="inline link-unstyled">RSS</p>
           </a>
-          <Link href="/about">
-            <a href="/about" className="black-link">
-              About
+          <Link href="/about" passHref>
+            <a href="/about">
+              <p className="inline link-unstyled">About</p>
             </a>
           </Link>
           <a
             href={Environment.social.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="black-link"
           >
-            Twitter
+            <p className="inline link-unstyled">Twitter</p>
           </a>
         </div>
       </div>

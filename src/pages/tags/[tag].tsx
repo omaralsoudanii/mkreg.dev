@@ -30,15 +30,15 @@ export default function Tag({ posts, tag }) {
       <Container>
         <section className="mb-20 space-y-8">
           <h1>{tag}</h1>
-          <p>
+          <p className="text-lg !leading-normal">
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
-          <h2 className="text-right !text-lg">
-            <Link href="/writing">
+          <p className="!text-lg text-right !leading-normal">
+            <Link href="/writing" passHref>
               <a className="link-unstyled">Browse all writing &rarr;</a>
             </Link>
-          </h2>
+          </p>
         </section>
         <PostsContainer href="/writing" name="All Posts" posts={posts} />
       </Container>

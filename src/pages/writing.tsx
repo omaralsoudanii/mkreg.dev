@@ -27,12 +27,14 @@ export default function Writing({ posts }) {
       <Container>
         <section className="mb-20 space-y-8">
           <h1>Writing</h1>
-          <p>Stuff I wrote about programming and software</p>
-          <h3 className="text-right !text-lg">
-            <Link href="/tags">
+          <p className="text-lg !leading-normal">
+            Stuff I wrote about programming and software
+          </p>
+          <p className="!text-lg text-right !leading-normal">
+            <Link href="/tags" passHref>
               <a className="link-unstyled">Browse by Tags &rarr;</a>
             </Link>
-          </h3>
+          </p>
         </section>
         <PostsContainer href="/writing" name="All Posts" posts={posts} />
       </Container>

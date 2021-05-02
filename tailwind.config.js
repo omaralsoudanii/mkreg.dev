@@ -70,27 +70,24 @@ module.exports = {
             'ul > li::before': {
               content: '""',
               position: 'absolute',
-              backgroundColor: theme('colors.gray.400'),
+              backgroundColor: theme('colors.gray.700'),
               borderRadius: '50%',
             },
             a: {
-              color: '#0070f3',
               textDecoration: 'none',
-              '&:hover': {
-                filter: 'brightness(150%)',
-              },
+              fontWeight: '450',
             },
             strong: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              borderBottomColor: theme('colors.gray.300'),
+              borderBottomColor: theme('colors.gray.700'),
             },
             borderColor: theme('colors.gray.300'),
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.300'),
+                borderBottomColor: theme('colors.gray.700'),
               },
             },
             figure: {
@@ -115,20 +112,12 @@ module.exports = {
             'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.50'),
             },
-            borderColor: theme('colors.gray.700'),
+            borderColor: theme('colors.gray.300'),
             'ul > li::before': {
               content: '""',
               position: 'absolute',
-              backgroundColor: theme('colors.gray.600'),
+              backgroundColor: theme('colors.gray.300'),
               borderRadius: '50%',
-            },
-            a: {
-              color: '#68b5fb',
-              textDecoration: 'none',
-              'text-shadow': '0px 0px 1px #68b5fb',
-              '&:hover': {
-                filter: 'brightness(111%)',
-              },
             },
             strong: {
               color: theme('colors.white'),
@@ -136,11 +125,11 @@ module.exports = {
             },
             thead: {
               color: theme('colors.gray.50'),
-              borderBottomColor: theme('colors.gray.700'),
+              borderBottomColor: theme('colors.gray.300'),
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.700'),
+                borderBottomColor: theme('colors.gray.300'),
               },
             },
           },

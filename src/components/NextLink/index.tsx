@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const NextLink = ({
   href,
-  className,
+  className = 'text-link',
   children,
 }: {
   href: string
