@@ -75,7 +75,7 @@ module.exports = {
             },
             a: {
               textDecoration: 'none',
-              fontWeight: '450',
+              fontWeight: theme('fontWeight.meduim'),
             },
             strong: {
               color: theme('colors.black'),
