@@ -19,7 +19,7 @@
   }
 
   .header-container {
-    @apply fixed top-0 z-10 w-full py-2 bg-white border-b border-gray-400 md:relative dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
+    @apply fixed top-0 z-10 w-full py-2 bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -84,9 +84,8 @@
   }
 
   .prose .link-unstyled,
-  .link-unstyled,
-   {
-    @apply text-primary  my-1  no-underline !important;
+  .link-unstyled {
+    @apply text-primary my-1 no-underline !important;
     transition-property: border;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
@@ -95,14 +94,14 @@
   .link-unstyled:hover {
     @apply text-primary no-underline border-b-2 border-gray-1000 dark:border-gray-50 !important;
     text-shadow: none !important;
-    filter: none im !important;
+    filter: none !important;
   }
 
   .dark .text-link {
     color: #68b5fb;
-    @apply no-underline outline-none;
-  }  
-  
+    @apply no-underline;
+  }
+
   .dark .text-link:hover {
     text-shadow: 0px 0px 1px #68b5fb;
     filter: brightness(111%);
@@ -110,12 +109,12 @@
 
   .light .text-link {
     color: #0070f3;
-    @apply  no-underline outline-none;
+    @apply no-underline;
   }
 
   .light .text-link:hover {
     text-shadow: 0px 0px 1px #0070f3;
-    filter: brightness(150%),
+    filter: brightness(150%);
   }
 
   .black-link {

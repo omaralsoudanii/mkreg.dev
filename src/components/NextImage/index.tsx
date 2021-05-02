@@ -21,7 +21,7 @@ const NextImage = ({
       width={width}
       height={height}
       layout="responsive"
-      sizes={`(min-width: 760px) 50vw, 100vw`}
+      sizes={`(min-width: 640px) 50vw, 100vw`}
       quality={quality}
       className="!pb-8"
     />

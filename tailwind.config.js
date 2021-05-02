@@ -76,7 +76,6 @@ module.exports = {
             a: {
               color: '#0070f3',
               textDecoration: 'none',
-              outline: theme('outline.none'),
               '&:hover': {
                 filter: 'brightness(150%)',
               },
@@ -126,7 +125,6 @@ module.exports = {
             a: {
               color: '#68b5fb',
               textDecoration: 'none',
-              outline: theme('outline.none'),
               'text-shadow': '0px 0px 1px #68b5fb',
               '&:hover': {
                 filter: 'brightness(111%)',
