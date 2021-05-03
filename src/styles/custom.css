@@ -20,7 +20,7 @@
   }
 
   .header-default {
-    @apply py-2 bg-white border-b border-gray-400 md:pt-4 md:pb-2 md:relative dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
+    @apply py-2 bg-white border-b border-gray-400 md:pt-6 md:pb-3 md:relative dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
   }
 
   .header-container {

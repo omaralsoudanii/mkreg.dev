@@ -14,14 +14,14 @@ const Home = () => {
       <Seo data={meta} />
       <Container>
         <section>
-          <div className="lg:!mb-20 !mb-10 lg:!mb-24">
+          <div className="lg:!mb-24 !mb-10 lg:!mb-24">
             <h1 className="!mb-2">Omar Alsoudani</h1>
             <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Enthusiast</h2>
             <h2 className="sub-heading">Creator</h2>
           </div>
 
-          <div className="flex flex-col lg:!mb-20 !mb-10 items-start justify-start divide-y-4 divide-gray-400 dark:divide-gray-700 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
+          <div className="flex flex-col lg:!mb-24 !mb-10 items-start justify-start divide-y-4 divide-gray-400 dark:divide-gray-700 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
             <div className="pt-6 space-x-2 space-y-5 lg:pb-8">
               <h1 className="!px-2 !mb-4 !mt-4 lg:!mb-2 lg:!mt-2 text-4xl lg:!text-6xl lg:!leading-loose lg:!px-6 lg:!border-r-2">
                 Goal
