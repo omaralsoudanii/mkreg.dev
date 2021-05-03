@@ -19,13 +19,21 @@
     backdrop-filter: saturate(180%) blur(5px);
   }
 
+  .header-default {
+    @apply py-2 bg-white border-b border-gray-400 md:pt-4 md:pb-2 md:relative dark:border-opacity-10 border-opacity-20 dark:bg-gray-900;
+  }
+
   .header-container {
-    @apply fixed top-0 z-10 w-full py-2 bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
+    @apply fixed top-0 z-10 w-full bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
     .header-container {
-      @apply fixed top-0 z-10 w-full py-2 bg-white bg-opacity-100 border-b border-gray-400 dark:border-opacity-10 border-opacity-20 dark:bg-gray-1000 filter-none;
+      @apply fixed top-0 z-10 w-full bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-none;
+    }
+
+    .header-default {
+      @apply py-2 bg-white border-b border-gray-400 md:pt-4 md:pb-2 md:relative dark:border-opacity-10 border-opacity-20 dark:bg-gray-900;
     }
   }
 
@@ -42,7 +50,11 @@
   }
 
   .nav-default {
-    @apply flex py-3 text-base font-semibold md:py-2 md:rounded md:items-center md:justify-center;
+    @apply flex py-3 text-base font-medium;
+  }
+
+  .nav-md-default {
+    @apply inline w-full h-full px-6 pt-2 pb-2 mx-2 text-base font-medium text-primary;
   }
 
   .nav-active {
@@ -53,15 +65,15 @@
   }
 
   .hdr-sm-btn {
-    @apply px-3 py-2 font-semibold text-primary;
+    @apply px-3 py-2 font-semibold cursor-pointer text-primary;
   }
 
   .hdr-sm-title {
-    @apply w-full px-3 py-3 text-base font-semibold text-primary;
+    @apply w-full px-3 py-3 text-base font-semibold cursor-pointer text-primary;
   }
 
   .hdr-sm-btn svg {
-    @apply w-6;
+    @apply w-6 cursor-pointer;
   }
 
   .hdr-cnt-theme-btn {
@@ -126,7 +138,7 @@
   .task-list-item:before {
     @apply hidden;
   }
-  
+
   h2,
   h3,
   h4,
@@ -135,9 +147,8 @@
     @apply text-primary;
   }
 
-
   .sub-heading {
     @apply text-gray-800 dark:text-gray-100 leading-snug font-medium mt-0 mb-0 !important;
-    letter-spacing: -.03em !important;
+    letter-spacing: -0.03em !important;
   }
 }

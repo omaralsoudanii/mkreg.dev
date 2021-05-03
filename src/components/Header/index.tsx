@@ -59,7 +59,7 @@ export default function Header() {
         ) ?? { href: router.asPath, label: 'MK' }
 
   return (
-    <div className="header-container">
+    <div className="md:header-default header-default header-container">
       <div className="grid grid-cols-1 md:hidden" ref={node}>
         <div className="flex items-center">
           {isExpanded ? (
@@ -149,49 +149,49 @@ export default function Header() {
           })}
       </div>
 
-      <div className="hidden max-w-screen-sm grid-cols-4 gap-4 mx-auto md:grid">
+      <ul className="hidden max-w-2xl mx-auto md:max-w-3xl md:space-x-3 md:flex md:flex-row">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname
-              ? 'nav-default nav-active'
-              : 'nav-default nav-inactive'
+              ? 'nav-md-default border-b-2 border-gray-1000 dark:border-gray-50'
+              : 'nav-md-default hover:border-b-2 hover:border-gray-1000 dark:hover:border-gray-50'
           return (
-            <Link href={route.href} key={route.href}>
-              <a className={navClass}>{route.label}</a>
-            </Link>
+            <li key={route.href}>
+              <Link href={route.href}>
+                <a className={navClass}>{route.label}</a>
+              </Link>
+            </li>
           )
         })}
-        {mounted && (
-          <div
-            className="hdr-cnt-theme-btn"
-            onClick={() =>
-              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-            }
-          >
-            {resolvedTheme === 'dark' ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-              </svg>
-            )}
-          </div>
-        )}
-      </div>
+      </ul>
+      {mounted && (
+        <div
+          className="hidden md:hdr-cnt-theme-btn md:inline"
+          onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+        >
+          {resolvedTheme === 'dark' ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          )}
+        </div>
+      )}
     </div>
   )
 }
