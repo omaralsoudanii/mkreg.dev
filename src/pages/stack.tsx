@@ -3,12 +3,17 @@ import PostContainer from '@/components/Posts/Post'
 import { Environment } from '@/lib/environment'
 import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 
 function Stack({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, {
-    components: MDXComponents,
-  })
+  const content = (
+    <MDXRemote
+      {...mdxSource}
+      components={{
+        ...MDXComponents,
+      }}
+    />
+  )
 
   return <PostContainer frontMatter={frontMatter}>{content}</PostContainer>
 }

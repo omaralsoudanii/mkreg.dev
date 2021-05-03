@@ -1,9 +1,8 @@
-import MDXComponents from '@/components/MDXComponents'
 import { slugify } from '@/lib/utils'
 import fs from 'fs'
 import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
 import mdxPrism from 'mdx-prism'
-import renderToString from 'next-mdx-remote/render-to-string'
 import path from 'path'
 
 const root = path.join(process.cwd(), 'src')
@@ -19,8 +18,7 @@ export async function getFileBySlug(type: string, slug?) {
     : fs.readFileSync(path.join(loc, `${type}.mdx`), 'utf8')
 
   const { data, content } = matter(source)
-  const mdxSource = await renderToString(content, {
-    components: MDXComponents,
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
       rehypePlugins: [mdxPrism, require('rehype-slug')],

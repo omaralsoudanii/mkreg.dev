@@ -77,7 +77,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute p-2 font-semibold cursor-pointer text-primary right-4 top-1 w-11;
+    @apply absolute p-2 font-semibold cursor-pointer text-primary right-4 top-3 w-11;
   }
 
   .btn {
