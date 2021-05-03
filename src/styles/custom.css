@@ -42,7 +42,7 @@
   }
 
   .nav-default {
-    @apply flex py-3 text-sm font-semibold md:text-base md:py-2 md:rounded md:items-center md:justify-center;
+    @apply flex py-3 text-sm font-semibold md:py-2 md:rounded md:items-center md:justify-center;
   }
 
   .nav-active {
