@@ -56,10 +56,6 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.300'),
             },
-            lineHeight: '1.65',
-            p: {
-              lineHeight: theme('lineHeight.normal'),
-            },
             h1: {
               color: theme('colors.black'),
             },
@@ -68,11 +64,7 @@ module.exports = {
             },
             color: theme('colors.gray.1000'),
             'ul > li::before': {
-              content: '""',
-              position: 'absolute',
-              top: 'calc(.675em - .1875em)',
               backgroundColor: theme('colors.gray.700'),
-              borderRadius: '50%',
             },
             a: {
               textDecoration: 'none',
@@ -115,11 +107,7 @@ module.exports = {
             },
             borderColor: theme('colors.gray.300'),
             'ul > li::before': {
-              content: '""',
-              position: 'absolute',
-              top: 'calc(.675em - .1875em)',
               backgroundColor: theme('colors.gray.300'),
-              borderRadius: '50%',
             },
             strong: {
               color: theme('colors.white'),

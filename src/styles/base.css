@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    font: 16px / 1.5 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    font: 16px / 1.5 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }

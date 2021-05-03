@@ -136,7 +136,7 @@
 /* ----------------------- variable ----------------------- */
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 400;
   font-display: optional;
@@ -145,7 +145,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 400;
   font-display: optional;
@@ -154,7 +154,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 450;
   font-display: optional;
@@ -163,7 +163,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 450;
   font-display: optional;
@@ -172,7 +172,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 500;
   font-display: optional;
@@ -181,7 +181,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 500;
   font-display: optional;
@@ -190,7 +190,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 600;
   font-display: optional;
@@ -199,7 +199,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 600;
   font-display: optional;
@@ -208,7 +208,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 700;
   font-display: optional;
@@ -217,7 +217,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 700;
   font-display: optional;
@@ -226,7 +226,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 800;
   font-display: optional;
@@ -235,7 +235,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 800;
   font-display: optional;
@@ -244,7 +244,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 900;
   font-display: optional;
@@ -253,7 +253,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter var';
   font-style: normal;
   font-weight: 900;
   font-display: optional;
