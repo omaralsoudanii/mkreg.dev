@@ -42,7 +42,7 @@
   }
 
   .nav-default {
-    @apply flex py-3 text-sm font-semibold md:py-2 md:rounded md:items-center md:justify-center;
+    @apply flex py-3 text-sm font-semibold md:text-base md:py-2 md:rounded md:items-center md:justify-center;
   }
 
   .nav-active {
@@ -133,5 +133,11 @@
   h5,
   h6 {
     @apply text-primary;
+  }
+
+
+  .sub-heading {
+    @apply text-gray-800 dark:text-gray-100 leading-snug font-medium mt-0 mb-0 !important;
+    letter-spacing: -.03em !important;
   }
 }

@@ -167,7 +167,7 @@
 
   .prose pre:not([class*='language-']),
   .prose code:not([class*='language-']) {
-    @apply font-mono text-base font-medium bg-gray-100 rounded text-primary dark:bg-gray-900 mb-7;
+    @apply font-mono text-base font-medium  bg-gray-100 rounded text-primary dark:bg-gray-900 mb-7;
     letter-spacing: normal;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -175,9 +175,5 @@
     overflow: auto;
     -moz-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-  }
-
-  .prose p + p {
-    margin-top: 0;
   }
 }

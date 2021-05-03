@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    font: 16px / 1.5 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+    font: 1rem / 1.5 'Inter var','Inter', system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
@@ -16,7 +16,6 @@
     text-rendering: optimizeLegibility;
     font-kerning: normal;
     font-weight: 450;
-    letter-spacing: -0.01em;
     font-variant: common-ligatures contextual;
   }
 

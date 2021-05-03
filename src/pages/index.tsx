@@ -1,13 +1,9 @@
 import { Container } from '@/components/Container'
-import PostsContainer from '@/components/Posts/Container'
 import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import * as React from 'react'
 
-function Home({ posts }) {
+const Home = () => {
   const meta = {
     title: 'Omar Alsoudani',
     description: 'Software developer, creator and the king of laziness.',
@@ -17,49 +13,50 @@ function Home({ posts }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="mb-20">
-          <h1>Hi, I’m Omar</h1>
-          <p>
-            I made this site to understand what the heck is Jamstack 🤔, then I
-            got hooked reading about design. It seems like I will spend the next
-            year reading about Typography, Fonts, Colors.
-          </p>
-          <p>
-            My goals for this site is to be my digital identity, where I can
-            write notes, share my knowledge with others, my opinion on some
-            topics. Open source projects I create and share them here, maybe
-            with a playground or proof of concept.
-          </p>
-          <p>
-            <Link href="/about">
-              <a className="my-4 link-unstyled"> About me &rarr; </a>
-            </Link>
-          </p>
-          <p>
-            <Link href="/nuggets">
-              <a className="my-4 link-unstyled"> Nuggets factory &rarr; </a>
-            </Link>
-          </p>
+        <section>
+          <div className="lg:!mb-20 !mb-10 lg:!mb-24">
+            <h1 className="!mb-2">Omar Alsoudani</h1>
+            <h2 className="sub-heading">Software Engineer</h2>
+            <h2 className="sub-heading">Enthusiast</h2>
+            <h2 className="sub-heading">Creator</h2>
+          </div>
+
+          <div className="flex flex-col lg:!mb-20 !mb-10 items-start justify-start divide-y-4 divide-gray-400 dark:divide-gray-700 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
+            <div className="pt-6 space-x-2 space-y-5 lg:pb-8">
+              <h1 className="!px-2 !mb-4 !mt-4 lg:!mb-2 lg:!mt-2 text-4xl lg:!text-6xl lg:!leading-loose lg:!px-6 lg:!border-r-2">
+                Goal
+              </h1>
+            </div>
+            <div className="flex flex-col !px-2">
+              <p className="lg:!text-xl">
+                This site will be my digital identity, where I can write notes.
+                Share my knowledge with others, my opinion on some topics, and
+                open-source projects I create and share them here, maybe with a
+                playground or proof of concept.
+              </p>
+            </div>
+          </div>
+          <div className="grid items-start grid-cols-1 text-left md:gap-4 md:items-center md:text-center md:grid-cols-3 !px-2">
+            <p className="lg:!text-xl lg:!font-bold">
+              <Link href="/about">
+                <a className="my-2 link-unstyled"> About me &rarr; </a>
+              </Link>
+            </p>
+            <p className="lg:!text-xl lg:!font-bold">
+              <Link href="/writing">
+                <a className="my-2 link-unstyled"> Writing &rarr; </a>
+              </Link>
+            </p>
+            <p className="lg:!text-xl lg:!font-bold">
+              <Link href="/nuggets">
+                <a className="my-2 link-unstyled"> Nuggets factory &rarr; </a>
+              </Link>
+            </p>
+          </div>
         </section>
-        <PostsContainer href="/writing" name="Featured Writing" posts={posts} />
       </Container>
     </React.Fragment>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const { revalidate } = Environment.isr
-  const Writing = await getAllFilesFrontMatter('writing')
-  const posts = Writing.sort(
-    (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
-  ).slice(0, 5)
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: revalidate,
-  }
 }
 
 export default Home

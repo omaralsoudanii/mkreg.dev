@@ -50,21 +50,6 @@ export default function MK() {
           So there you go, now you have the answer to the ultimate question of
           life.
         </p>
-        <p>
-          You can check my YouTube playlist for some goodies in the footer
-          below.
-        </p>
-        <p>
-          Perhaps you can check this too 🤔{' '}
-          <a
-            href="https://mr.mkreg.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-auto text-center text-link"
-          >
-            MK
-          </a>
-        </p>
       </Container>
     </React.Fragment>
   )

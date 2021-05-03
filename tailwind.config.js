@@ -54,7 +54,12 @@ module.exports = {
         DEFAULT: {
           css: {
             '*,*::before,*::after': {
-              borderColor: theme('colors.gray.300'),
+              borderColor: theme('colors.gray.400'),
+            },
+            letterSpacing: '-0.01em',
+            lineHeight: theme('lineHeight.relaxed'),
+            'li > p': {
+              lineHeight: theme('lineHeight.8'),
             },
             h1: {
               color: theme('colors.black'),
@@ -77,7 +82,7 @@ module.exports = {
             thead: {
               borderBottomColor: theme('colors.gray.700'),
             },
-            borderColor: theme('colors.gray.300'),
+            borderColor: theme('colors.gray.400'),
             tbody: {
               tr: {
                 borderBottomColor: theme('colors.gray.700'),
@@ -93,6 +98,15 @@ module.exports = {
             },
           },
         },
+        lg: {
+          css: {
+            lineHeight: theme('lineHeight.relaxed'),
+            letterSpacing: '-0.025em',
+            'li > p': {
+              lineHeight: theme('lineHeight.8'),
+            },
+          },
+        },
         dark: {
           css: {
             color: theme('colors.gray.50'),
@@ -105,9 +119,9 @@ module.exports = {
             'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.50'),
             },
-            borderColor: theme('colors.gray.300'),
+            borderColor: theme('colors.gray.400'),
             'ul > li::before': {
-              backgroundColor: theme('colors.gray.300'),
+              backgroundColor: theme('colors.gray.400'),
             },
             strong: {
               color: theme('colors.white'),
@@ -115,11 +129,11 @@ module.exports = {
             },
             thead: {
               color: theme('colors.gray.50'),
-              borderBottomColor: theme('colors.gray.300'),
+              borderBottomColor: theme('colors.gray.400'),
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.300'),
+                borderBottomColor: theme('colors.gray.400'),
               },
             },
           },

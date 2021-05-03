@@ -25,7 +25,7 @@ export default function Tags({ tagCount, tags }) {
   return (
     <article>
       <Seo data={meta} />
-      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-300 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-16">
+      <div className="flex flex-col items-start justify-start divide-y-4 divide-gray-400 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-16">
         <div className="pt-6 space-x-2 space-y-5 md:pb-8">
           <h1 className="px-2 mb-0 text-6xl leading-loose md:px-6 md:border-r-2">
             Tags
@@ -34,7 +34,7 @@ export default function Tags({ tagCount, tags }) {
         <div className="flex flex-wrap items-center justify-center max-w-lg px-2 py-6 md:p-0 md:justify-start md:items-start">
           {sortedTags.map((t) => {
             return (
-              <div key={t} className="mt-2 mb-2 mr-5">
+              <div key={t} className="mt-2 mb-2 mr-5 lg:!text-lg">
                 <Tag name={tags[t]} slug={t} />
                 <Link href={`/tags/${t}`}>
                   <a className="-ml-2 font-semibold text-gray-600 dark:text-gray-400">

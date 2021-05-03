@@ -15,7 +15,7 @@ function Nuggets() {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="mb-8 space-y-8">
+        <section className="mb-8 space-y-8 md:mb-16">
           <h1>Nuggets</h1>
           <p>
             Some stuff I bookmark to read later, or a tool I find useful to use.
