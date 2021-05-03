@@ -20,20 +20,20 @@
   }
 
   .header-default {
-    @apply py-2 bg-white border-b border-gray-400 md:pt-4 md:pb-2 md:relative dark:border-opacity-10 border-opacity-20 dark:bg-gray-900;
+    @apply py-2 bg-white border-b border-gray-400 md:pt-4 md:pb-2 md:relative dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
   }
 
   .header-container {
-    @apply fixed top-0 z-10 w-full bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
+    @apply fixed top-0 z-10 w-full bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
     .header-container {
-      @apply fixed top-0 z-10 w-full bg-white border-b border-gray-400 dark:border-opacity-10 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-none;
+      @apply fixed top-0 z-10 w-full bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-40 filter-none;
     }
 
     .header-default {
-      @apply py-2 bg-white border-b border-gray-400 md:pt-4 md:pb-2 md:relative dark:border-opacity-10 border-opacity-20 dark:bg-gray-900;
+      @apply py-2 bg-white border-b border-gray-700 md:pt-4 md:pb-2 md:relative dark:border-gray-300 dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
     }
   }
 

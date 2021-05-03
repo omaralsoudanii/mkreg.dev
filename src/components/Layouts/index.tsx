@@ -6,7 +6,7 @@ export function Main({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <div className="h-screen max-w-2xl px-6 pt-16 pb-8 mx-auto mt-6 md:max-w-3xl md:px-0">
+      <div className="max-w-2xl px-6 pt-16 pb-8 mx-auto mt-6 md:max-w-3xl md:px-0">
         <main>{children}</main>
         <Footer />
       </div>
