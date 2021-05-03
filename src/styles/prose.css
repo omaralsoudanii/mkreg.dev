@@ -176,4 +176,8 @@
     -moz-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .prose p + p {
+    margin-top: 0;
+  }
 }

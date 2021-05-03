@@ -26,11 +26,12 @@ export default function PostContainer({ children, frontMatter }) {
         {frontMatter.tags.map((t: string) => (
           <p key={t} className="pr-2 !my-1 !py-1">
             <Link href={`/tags/${slugify(t)}`}>
-              <a className="text-link">{t}</a>
+              <a className="text-sm text-link">{t}</a>
             </Link>
           </p>
         ))}
       </div>
+      <p>{frontMatter.summary}</p>
     </div>
   )
 
@@ -40,7 +41,7 @@ export default function PostContainer({ children, frontMatter }) {
       <Container>
         <h1 className="!py-4 !m-0 text-center"> {frontMatter.title}</h1>
         {Meta()}
-        <div className="pt-8">{children}</div>
+        <div className="mt-8">{children}</div>
       </Container>
     </React.Fragment>
   )

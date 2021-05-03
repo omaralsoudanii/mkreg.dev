@@ -6,7 +6,6 @@ import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
 import { slugify } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import * as React from 'react'
 
 /**
@@ -16,9 +15,6 @@ import * as React from 'react'
  */
 
 export default function Tag({ posts, tag }) {
-  const router = useRouter()
-  if (router.isFallback) return <p>No posts yet...</p>
-
   const meta = {
     title: `${Environment.ogTitle} - ${tag}`,
     description: `Topics, Discussions and Thoughts about ${tag}`,
@@ -30,11 +26,11 @@ export default function Tag({ posts, tag }) {
       <Container>
         <section className="mb-20 space-y-8">
           <h1>{tag}</h1>
-          <p className="text-lg !leading-normal">
+          <p>
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
-          <p className="!text-lg text-right !leading-normal">
+          <p className="text-right">
             <Link href="/writing" passHref>
               <a className="link-unstyled">Browse all writing &rarr;</a>
             </Link>
@@ -84,6 +80,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         tag,
       },
     })),
-    fallback: enable ? 'blocking' : false,
+    fallback: false,
   }
 }

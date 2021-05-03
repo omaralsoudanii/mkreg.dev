@@ -149,7 +149,7 @@ export default function Header() {
           })}
       </div>
 
-      <div className="hidden max-w-screen-sm grid-cols-4 gap-4 mx-auto md:grid">
+      <div className="hidden max-w-prose grid-cols-4 gap-4 mx-auto md:grid">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname

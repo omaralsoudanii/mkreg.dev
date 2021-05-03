@@ -19,9 +19,7 @@ export default function PostsList({ posts, href }) {
             passHref
           >
             <a>
-              <p className="inline !text-lg link-unstyled !leading-normal">
-                {frontMatter.title}
-              </p>
+              <p className="inline link-unstyled">{frontMatter.title}</p>
             </a>
           </Link>
           <time className="w-full ml-2 text-gray-600 dark:text-gray-400 md:ml-4 md:w-24">

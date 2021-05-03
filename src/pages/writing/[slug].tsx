@@ -36,7 +36,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { enable } = Environment.isr
   const posts = await getAllFilesName('writing')
 
   return {
@@ -45,6 +44,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: p.replace(/\.mdx/, ''),
       },
     })),
-    fallback: enable ? 'blocking' : false,
+    fallback: false,
   }
 }

@@ -18,13 +18,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
-            href="/static/fonts/Inter-latin.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
             rel="alternate"
             type="application/rss+xml"
             title="Omar Alsoudani RSS Feed"
@@ -58,7 +51,7 @@ export default class MyDocument extends Document {
           <meta name="application-name" content="MK" />
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
-          <meta name="theme-color" content="#0b0b0c" />
+          <meta name="theme-color" content="#000000" />
         </Head>
         <body>
           <Main />

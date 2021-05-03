@@ -70,6 +70,7 @@ module.exports = {
             'ul > li::before': {
               content: '""',
               position: 'absolute',
+              top: 'calc(.675em - .1875em)',
               backgroundColor: theme('colors.gray.700'),
               borderRadius: '50%',
             },
@@ -116,6 +117,7 @@ module.exports = {
             'ul > li::before': {
               content: '""',
               position: 'absolute',
+              top: 'calc(.675em - .1875em)',
               backgroundColor: theme('colors.gray.300'),
               borderRadius: '50%',
             },
