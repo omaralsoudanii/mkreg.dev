@@ -1,3 +1,4 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
+      sans: ['Inter var', 'Inter', ...fontFamily.sans],
     },
     extend: {
       colors: {
