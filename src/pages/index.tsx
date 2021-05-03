@@ -28,7 +28,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex flex-col !px-2">
-              <p className="lg:!text-xl">
+              <p className="text-lg lg:!text-xl">
                 This site will be my digital identity, where I can write notes.
                 Share my knowledge with others, my opinion on some topics, and
                 open-source projects I create and share them here, maybe with a
@@ -37,17 +37,17 @@ const Home = () => {
             </div>
           </div>
           <div className="grid items-start grid-cols-1 text-left md:gap-4 md:items-center md:text-center md:grid-cols-3 !px-2">
-            <p className="lg:!text-xl lg:!font-bold">
+            <p className="text-lg lg:!text-xl lg:!font-semibold">
               <Link href="/about">
                 <a className="my-2 link-unstyled"> About me &rarr; </a>
               </Link>
             </p>
-            <p className="lg:!text-xl lg:!font-bold">
+            <p className="text-lg lg:!text-xl lg:!font-semibold">
               <Link href="/writing">
                 <a className="my-2 link-unstyled"> Writing &rarr; </a>
               </Link>
             </p>
-            <p className="lg:!text-xl lg:!font-bold">
+            <p className="text-lg lg:!text-xl lg:!font-semibold">
               <Link href="/nuggets">
                 <a className="my-2 link-unstyled"> Nuggets factory &rarr; </a>
               </Link>
