@@ -57,7 +57,7 @@
   }
 
   .hdr-sm-title {
-    @apply w-full px-3 py-3 text-sm font-semibold text-primary;
+    @apply w-full px-3 py-3 text-base font-semibold text-primary;
   }
 
   .hdr-sm-btn svg {
