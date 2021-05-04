@@ -15,6 +15,7 @@
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^10.2.0",
     "dayjs": "^1.10.4",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.3",
@@ -27,9 +28,6 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
-    "@babel/preset-react": "^7.13.13",
     "@svgr/cli": "^5.5.0",
     "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.4.0",

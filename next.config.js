@@ -3,6 +3,9 @@ module.exports = {
     webpack5: true,
     strictPostcssConfiguration: true,
   },
+  experimental: {
+    turboMode: true,
+  },
   compress: process.env.NODE_ENV === 'development',
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
