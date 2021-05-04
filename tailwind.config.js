@@ -102,10 +102,7 @@ module.exports = {
         },
         lg: {
           css: {
-            p: {
-              lineHeight: theme('lineHeight.relaxed'),
-            },
-            letterSpacing: '-0.02em',
+            lineHeight: theme('lineHeight.relaxed'),
             'li > p': {
               lineHeight: theme('lineHeight.8'),
             },
