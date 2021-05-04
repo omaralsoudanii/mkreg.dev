@@ -1,3 +1,4 @@
+import MDXComponents from '@/components/MDXComponents'
 import PostContainer from '@/components/Posts/Post'
 import { Environment } from '@/lib/environment'
 import { getFileBySlug } from '@/lib/mdx'
@@ -5,11 +6,16 @@ import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 
 function Stack({ mdxSource, frontMatter }) {
-  return (
-    <PostContainer frontMatter={frontMatter}>
-      <MDXRemote {...mdxSource} />
-    </PostContainer>
+  const content = (
+    <MDXRemote
+      {...mdxSource}
+      components={{
+        ...MDXComponents,
+      }}
+    />
   )
+
+  return <PostContainer frontMatter={frontMatter}>{content}</PostContainer>
 }
 
 export const getStaticProps: GetStaticProps = async () => {
