@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 import * as React from 'react'
 
-export default function PostContainer({ children, frontMatter }) {
+export default function Post({ children, frontMatter }) {
   const meta = {
     title: frontMatter.title,
     description: frontMatter.summary,

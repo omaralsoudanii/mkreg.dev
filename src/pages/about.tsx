@@ -14,9 +14,7 @@ export default function About() {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <header className="mb-4">
-          <h1>About me</h1>
-        </header>
+        <h1 className="mb-4">About me</h1>
         <p>
           I’m Omar Alsoudani, a Software developer, based in Amman, Jordan. I've
           been building stuff on the web for about 7 years or so (I stopped
