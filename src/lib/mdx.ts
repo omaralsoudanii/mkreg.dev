@@ -20,7 +20,10 @@ export async function getFileBySlug(type: string, slug?) {
   const { data, content } = matter(source)
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [require('remark-code-titles')],
+      remarkPlugins: [
+        require('remark-autolink-headings'),
+        require('remark-code-titles'),
+      ],
       rehypePlugins: [mdxPrism, require('rehype-slug')],
     },
   })

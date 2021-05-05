@@ -8,12 +8,7 @@ import { MDXRemote } from 'next-mdx-remote'
 function Stack({ mdxSource, frontMatter }) {
   return (
     <Post frontMatter={frontMatter}>
-      <MDXRemote
-        {...mdxSource}
-        components={{
-          ...MDXComponents,
-        }}
-      />
+      <MDXRemote {...mdxSource} components={MDXComponents} />
     </Post>
   )
 }
@@ -21,12 +16,6 @@ function Stack({ mdxSource, frontMatter }) {
 export const getStaticProps: GetStaticProps = async () => {
   const post = await getFileBySlug('stack')
   const { revalidate } = Environment.isr
-  if (!post) {
-    return {
-      notFound: true,
-      revalidate: revalidate,
-    }
-  }
   return { props: post, revalidate: revalidate }
 }
 

@@ -58,12 +58,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     )
   }
 
-  if (!tag && !filteredPosts.length) {
-    return {
-      notFound: true,
-      revalidate: revalidate,
-    }
-  }
   return {
     props: { posts: filteredPosts, tag: tag },
     revalidate: revalidate,
@@ -80,6 +74,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         tag,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }

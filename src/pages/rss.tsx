@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 categories: frontmatter.data.tags ?? ['Software development'],
               })
             } catch (e) {
-              console.log(`RSS feed item error`, e)
+              // just too lazy to check if we are reading a dir or a file
             }
           })
         )
@@ -66,7 +66,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     fs.writeFile('./public/rss.xml', feed.xml({ indent: true }))
   } catch (e) {
-    console.log(`RSS feed full build error`, e)
+    // fallback default
     feed.item({
       title: ogTitle,
       url: siteUrl,
