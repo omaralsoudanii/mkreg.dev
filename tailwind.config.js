@@ -3,7 +3,7 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx', './src/**/*.ts'],
+  purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     lineClamp: {

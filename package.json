@@ -1,6 +1,15 @@
 {
   "name": "mkreg.dev",
   "version": "1.0.0",
+  "author": {
+    "name": "Omar Alsoudani",
+    "email": "omaralsoudani@gmail.com",
+    "url": "https://mkreg.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaralsoudanii/mkreg.dev.git"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build && node ./generate-sitemap",
@@ -24,6 +33,9 @@
     "preact": "^10.5.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rehype-slug": "^4.0.1",
+    "remark-code-titles": "^0.1.2",
+    "remark-frontmatter": "^3.0.0",
     "rss": "^1.2.2"
   },
   "devDependencies": {
@@ -50,9 +62,6 @@
     "prettier-eslint": "^12.0.0",
     "rehype": "^11.0.0",
     "rehype-react": "^6.2.0",
-    "rehype-slug": "^4.0.1",
-    "remark-code-titles": "^0.1.2",
-    "remark-frontmatter": "^3.0.0",
     "remark-parse": "^9.0.0",
     "remark-slug": "^6.0.0",
     "remark-stringify": "^9.0.1",
