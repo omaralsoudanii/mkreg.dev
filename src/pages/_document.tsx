@@ -51,7 +51,7 @@ export default class MyDocument extends Document {
           <meta name="application-name" content="MK" />
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
-          <meta name="theme-color" content="#000000" />
+          <meta name="theme-color" content="#050505" />
         </Head>
         <body>
           <Main />
