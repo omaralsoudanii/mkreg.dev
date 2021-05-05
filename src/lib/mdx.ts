@@ -31,7 +31,7 @@ export async function getFileBySlug(type: string, slug?) {
   return {
     mdxSource,
     frontMatter: {
-      slug: slug ? slug.replace(/\.mdx/, '') : null,
+      slug: slug ? slug.replace(/\.mdx/, '') : type,
       ...data,
     },
   }
