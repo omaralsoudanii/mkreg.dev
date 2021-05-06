@@ -40,7 +40,7 @@ yarn-error.log*
 # post build
 /public/tags/
 /public/*.xml
-
+/public/robots.txt
 
 # SSL
 /docker/ssl

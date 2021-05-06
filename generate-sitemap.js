@@ -5,6 +5,13 @@ const path = require('path')
 const prettier = require('prettier')
 const matter = require('gray-matter')
 
+if (
+  process.env.NODE_ENV !== 'production' &&
+  process.env.SITE_URL !== 'https://mkreg.dev'
+) {
+  return
+}
+
 const slugify = (str) =>
   str &&
   str
