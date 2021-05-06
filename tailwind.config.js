@@ -29,7 +29,7 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      sans: ['Inter var', 'Inter', ...fontFamily.sans],
+      sans: ["'Inter var'", ...fontFamily.sans],
     },
     extend: {
       colors: {
