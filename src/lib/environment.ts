@@ -33,11 +33,11 @@ export interface EnvironmentProps {
 }
 
 export const Environment: EnvironmentProps = {
-  siteUrl: 'https://mkreg.dev',
+  siteUrl: process.env.SITE_URL || 'https://mkreg.dev',
   CF_BEACON: resolveBool(process.env.CF_BEACON, false),
   NODE_ENV: process.env.NODE_ENV || 'production',
   ogTitle: 'Omar Alsoudani',
-  ogDescription: 'Writing about programming, software and Vim vs Emacs.',
+  ogDescription: 'Software developer, creator and the king of laziness.',
   ogImage: '/static/images/mk.jpg',
   social: {
     github: process.env.GITHUB_URL || 'https://github.com/omaralsoudanii',
