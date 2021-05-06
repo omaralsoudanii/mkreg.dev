@@ -29,7 +29,7 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      sans: ["'Inter var'", ...fontFamily.sans],
+      sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
       colors: {
@@ -77,7 +77,7 @@ module.exports = {
             },
             a: {
               textDecoration: 'none',
-              fontWeight: '450',
+              fontWeight: '400',
             },
             strong: {
               color: theme('colors.black'),
