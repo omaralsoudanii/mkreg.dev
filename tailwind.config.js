@@ -58,12 +58,12 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
-            letterSpacing: '-0.01em',
+            letterSpacing: '-0.01rem',
             p: {
-              lineHeight: '1.625',
+              lineHeight: '1.5',
             },
             'ul > li > p': {
-              paddingTop: '0.15em',
+              paddingTop: '0.21111em',
             },
             h1: {
               color: theme('colors.black'),
@@ -105,10 +105,10 @@ module.exports = {
         lg: {
           css: {
             p: {
-              lineHeight: '1.625',
+              lineHeight: '1.5',
             },
             'ul > li > p': {
-              paddingTop: '0.15em',
+              paddingTop: '0.0em',
             },
           },
         },
