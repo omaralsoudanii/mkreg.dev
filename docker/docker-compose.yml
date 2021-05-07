@@ -14,21 +14,6 @@ services:
     networks:
       - mk_prod
  
-  mk-nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile.nginx
-    image: mk-nginx
-    env_file:
-      - ../.env
-    container_name: mk-nginx
-    expose:
-      - 80
-      - 443
-    restart: unless-stopped
-    networks:
-      - mk_prod
-
 
   mk-haproxy:
     build:
@@ -37,7 +22,6 @@ services:
     image: mk-haproxy
     depends_on:
       - mk-next
-      - mk-nginx
     container_name: mk-haproxy
     restart: unless-stopped
     volumes:
