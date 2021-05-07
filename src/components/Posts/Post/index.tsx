@@ -21,7 +21,9 @@ export default function Post({ children, frontMatter }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <h1 className="!py-4 !mb-1 text-center"> {frontMatter.title}</h1>
+        <h1 className="!py-4 !mb-1 text-left md:text-center">
+          {frontMatter.title}
+        </h1>
         <div className="grid grid-cols-1 mt-1 md:grid-cols-1">
           <p className="!mt-1 !mb-4 !py-2 !font-medium">
             {frontMatter.summary}
