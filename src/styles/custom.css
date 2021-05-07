@@ -103,6 +103,11 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 100ms;
   }
+  
+  .prose .footer-border,
+  .footer-border {
+    @apply border-b-2 border-transparent dark:border-transparent;
+  }
 
   .dark .text-link {
     @apply !font-medium;
