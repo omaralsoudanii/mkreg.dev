@@ -59,12 +59,7 @@ module.exports = {
               borderColor: theme('colors.gray.400'),
             },
             letterSpacing: '-0.01em',
-            p: {
-              lineHeight: '1.5',
-            },
-            'ul > li > p': {
-              paddingTop: '0.21111em',
-            },
+            lineHeight: '1.5',
             h1: {
               color: theme('colors.black'),
             },
@@ -103,12 +98,7 @@ module.exports = {
         },
         lg: {
           css: {
-            p: {
-              lineHeight: '1.5',
-            },
-            'ul > li > p': {
-              paddingTop: '0.2em',
-            },
+            lineHeight: '1.65',
           },
         },
         dark: {

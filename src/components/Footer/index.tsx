@@ -6,22 +6,21 @@ export function Footer() {
     <footer className="mx-auto mt-16 prose md:prose-lg dark:prose-dark hr-stroke">
       <div className="grid items-start grid-cols-1 py-12 text-left md:gap-4 md:items-center md:text-center md:grid-cols-3 ">
         <div className="flex flex-col items-start px-4 mb-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
-          <Link href="/tags" passHref>
-            <a>
-              <p className="inline font-medium link-unstyled">Tags</p>
-            </a>
+          <Link href="/tags">
+            <a className="inline font-medium link-unstyled">Tags</a>
           </Link>
-          <Link href="/about" passHref>
-            <a href="/about">
-              <p className="inline font-medium link-unstyled">About</p>
+          <Link href="/about">
+            <a className="inline font-medium link-unstyled" href="/about">
+              About
             </a>
           </Link>
           <a
             href={`mailto:${Environment.social.mail}`}
             target="_blank"
             rel="noopener noreferrer"
+            className="inline font-medium link-unstyled"
           >
-            <p className="inline font-medium link-unstyled">Contact</p>
+            Contact
           </a>
         </div>
         <div className="flex flex-col items-start px-4 mb-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
@@ -29,20 +28,22 @@ export function Footer() {
             href={Environment.social.github}
             target="_blank"
             rel="noopener noreferrer"
+            className="inline font-medium link-unstyled"
           >
-            <p className="inline font-medium link-unstyled">Github</p>
+            Github
           </a>
-          <Link href="/nuggets" passHref>
-            <a href="/nuggets">
-              <p className="inline font-medium link-unstyled">Nuggets</p>
+          <Link href="/nuggets">
+            <a className="inline font-medium link-unstyled" href="/nuggets">
+              Nuggets
             </a>
           </Link>
           <a
             target="_blank"
             rel="noopener noreferrer"
+            className="inline font-medium link-unstyled"
             href={Environment.social.linkedin}
           >
-            <p className="inline font-medium link-unstyled">LinkedIn</p>
+            LinkedIn
           </a>
         </div>
         <div className="flex flex-col items-start px-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
@@ -50,20 +51,22 @@ export function Footer() {
             href={Environment.social.rss}
             target="_blank"
             rel="noopener noreferrer"
+            className="inline font-medium link-unstyled"
           >
-            <p className="inline font-medium link-unstyled">RSS</p>
+            RSS
           </a>
-          <Link href="/writing" passHref>
-            <a href="/writing">
-              <p className="inline font-medium link-unstyled">Writing</p>
+          <Link href="/writing">
+            <a className="inline font-medium link-unstyled" href="/writing">
+              Writing
             </a>
           </Link>
           <a
             href={Environment.social.twitter}
             target="_blank"
             rel="noopener noreferrer"
+            className="inline font-medium link-unstyled"
           >
-            <p className="inline font-medium link-unstyled">Twitter</p>
+            Twitter
           </a>
         </div>
       </div>
