@@ -1,15 +1,5 @@
 node_modules
-npm-debug.log
 yarn-error.log
-.dockerignore
-.idea
-.vscode
-.editorconfig
-.eslintrc.js
-.git
-.gitignore
-*.eslint
-.env.example
-out
 docker
+docker/Dockerfile.next
 .next
