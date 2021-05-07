@@ -64,7 +64,6 @@ module.exports = {
             },
             'ul > li > p': {
               paddingTop: '0.21111em',
-              lineHeight: '1.5',
             },
             h1: {
               color: theme('colors.black'),
@@ -78,7 +77,6 @@ module.exports = {
             },
             a: {
               textDecoration: 'none',
-              fontWeight: '400',
             },
             strong: {
               color: theme('colors.black'),
@@ -109,7 +107,7 @@ module.exports = {
               lineHeight: '1.5',
             },
             'ul > li > p': {
-              paddingTop: '0.02em',
+              paddingTop: '0.2em',
             },
           },
         },

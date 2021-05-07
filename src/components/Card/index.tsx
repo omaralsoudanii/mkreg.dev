@@ -9,7 +9,7 @@ const Card = ({ data }) => (
       </div>
       <div>
         <h2 className="!mt-2 !mb-1 !text-lg">{data.title}</h2>
-        <p className="!mt-1 !mb-2 text-[15px] !leading-5 text-secondary clamp-5">
+        <p className="!mt-1 !mb-2 text-base !leading-5 text-secondary clamp-5">
           {data.desc}
         </p>
       </div>
