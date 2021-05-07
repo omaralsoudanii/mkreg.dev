@@ -92,12 +92,16 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.400'),
+              color: theme('colors.gray.1000'),
+              fontWeight: '400',
             },
           },
         },
         lg: {
           css: {
+            blockquote: {
+              fontWeight: '400',
+            },
             lineHeight: '1.65',
           },
         },
@@ -129,6 +133,9 @@ module.exports = {
               tr: {
                 borderBottomColor: theme('colors.gray.400'),
               },
+            },
+            blockquote: {
+              color: theme('colors.gray.50'),
             },
           },
         },
