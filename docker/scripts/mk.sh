@@ -108,8 +108,7 @@ fi
 if [[ $_arg_build == "on" ]]; then
   echo "Building docker......"
   cd $_rootdir/docker
-  docker buildx bake
-  docker-compose up -d
+  docker-compose up --build -d
   echo "Docker build completed"
   docker-compose ps
 fi
