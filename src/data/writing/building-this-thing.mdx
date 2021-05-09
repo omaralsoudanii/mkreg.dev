@@ -1,7 +1,7 @@
 ---
 title: 'Building this thing'
 date: '2021-04-27'
-lastmod: '2021-05-07'
+lastmod: '2021-05-09'
 summary: "High-level overview of building and developing my personal site and some of the struggles for someone whose specialty is not Front-end. And by that I mean I have zero knowledge of CSS (Well not zero maybe 5%)."
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
 image: '/static/images/writing/building-mkreg.png'
@@ -23,11 +23,11 @@ So I started my research about the good stuff. Basically the end result was to d
 
 ## Technologies used
 
-- [HAProxy](https://www.haproxy.org/) no, HAProxy is not just a "loadbalancer". Perfect combo with Cloudflare
-- [NGINX](https://nginx.org/) well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time
-- [Docker](https://www.docker.com/) I hate this thing so creating build images is the first thing I do starting a project (lightweight layer built on top of Linux my ass)
-- [Cloudflare](https://cloudflare.com/) takes care of delivering 99.9% of the app for a specified period of time that i can set
-- [TypeScript](https://www.typescriptlang.org/) well, why not?
+- [HAProxy](https://www.haproxy.org/) No, HAProxy is not just a "loadbalancer". A perfect combo with Cloudflare
+- [NGINX](https://nginx.org/) Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time
+- [Docker](https://www.docker.com/) I hate this thing so much that creating build images is the first thing I do when starting a project (lightweight layer built on top of Linux my ass)
+- [Cloudflare](https://cloudflare.com/) Takes care of delivering 99.9% of the app for a specified period of time that i can set
+- [TypeScript](https://www.typescriptlang.org/) Well, why not?
 - [Next.js](https://nextjs.org/) 🤔
 - [MDX](https://mdxjs.com/) Since we're building a minimal app and not over engineering stuff ☝, MDX seemed like a good choice
 - [Tailwindcss](https://tailwindcss.com/) I saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing works so I knew it would be a perfect fit
@@ -39,7 +39,7 @@ whether it's about what's rendered, caching or performance
 - Yes I know I don't need any of this
 - Indeed this is overkill
 - No this is not a waste of time, I learn by doing and I treat this site as a playground
-- No, It didn't take me a lot of time setting up those, I do these on daily basic
+- No, It didn't take me a lot of time setting up those, I do these on daily basis
 - No those are not dependencies, You can literally clone or fork the repository and deploy it on [Vercel](https://vercel.com/)
 - After the end result, I learned some things regarding both Front-end and Back-end. I might write something about it later
 
