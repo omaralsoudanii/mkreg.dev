@@ -16,7 +16,7 @@ const Home = () => {
         <section>
           <div className="!mb-10 md:!mb-24">
             <h1>Omar Alsoudani</h1>
-            <h2 className="sub-heading">Developer</h2>
+            <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Architect</h2>
             <h2 className="sub-heading">Creator</h2>
           </div>
@@ -28,7 +28,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex flex-col !px-2">
-              <p className="text-lg !leading-normal md:!leading-relaxed md:text-xl">
+              <p className="text-lg !leading-normal md:text-[1.25rem]">
                 This site will be my digital identity, where I can write notes.
                 Share my knowledge with others, my opinion on some topics, and
                 open-source projects I create and share them here, maybe with a
@@ -37,17 +37,17 @@ const Home = () => {
             </div>
           </div>
           <div className="grid items-start grid-cols-1 text-left md:gap-1 md:items-center md:text-center md:grid-cols-3 !px-2">
-            <p className="text-lg md:text-xl !font-medium">
+            <p className="text-lg !leading-normal md:text-[1.25rem] !font-medium">
               <Link href="/about">
                 <a className="my-2 link-unstyled"> About me &rarr; </a>
               </Link>
             </p>
-            <p className="text-lg md:text-xl  !font-medium">
+            <p className="text-lg !leading-normal md:text-[1.25rem]  !font-medium">
               <Link href="/writing">
                 <a className="my-2 link-unstyled"> Writing &rarr; </a>
               </Link>
             </p>
-            <p className="text-lg md:text-xl !font-medium">
+            <p className="text-lg !leading-normal md:text-[1.25rem] !font-medium">
               <Link href="/nuggets">
                 <a className="my-2 link-unstyled"> Nuggets factory &rarr; </a>
               </Link>

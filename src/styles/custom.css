@@ -103,7 +103,7 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 100ms;
   }
-  
+
   .prose .footer-border,
   .footer-border {
     @apply border-b-2 border-transparent dark:border-transparent;
@@ -151,7 +151,6 @@
   }
 
   .sub-heading {
-    @apply text-gray-800 dark:text-gray-100 leading-snug font-medium mt-0 mb-0 !important;
-    letter-spacing: -0.03em !important;
+    @apply tracking-normal font-medium mt-0 mb-0 !important;
   }
 }

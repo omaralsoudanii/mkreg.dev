@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-1100 dark:bg-dark dark:text-white;
+    @apply bg-white text-gray-1000 dark:bg-dark dark:text-white;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
   }
