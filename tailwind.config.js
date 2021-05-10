@@ -51,6 +51,7 @@ module.exports = {
         },
         white: '#ffffff',
         black: '#000000',
+        dark: 'rgb(14, 20, 27)',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -58,11 +59,11 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
-            lineHeight: '1.5rem',
+            lineHeight: '1.5',
             h1: {
               color: theme('colors.black'),
             },
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.01em',
             'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.1000'),
             },
@@ -102,12 +103,13 @@ module.exports = {
             blockquote: {
               fontWeight: '400',
             },
-            lineHeight: '1.625rem',
+            lineHeight: '1.6',
+            fontSize: '1.375rem',
           },
         },
         dark: {
           css: {
-            color: theme('colors.gray.50'),
+            color: theme('colors.white'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.700'),
             },
@@ -115,7 +117,7 @@ module.exports = {
               color: theme('colors.white'),
             },
             'h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.50'),
+              color: theme('colors.white'),
             },
             borderColor: theme('colors.gray.400'),
             'ul > li::before': {
@@ -126,7 +128,7 @@ module.exports = {
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.gray.50'),
+              color: theme('colors.white'),
               borderBottomColor: theme('colors.gray.400'),
             },
             tbody: {
@@ -135,7 +137,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.50'),
+              color: theme('colors.white'),
             },
           },
         },
@@ -151,19 +153,19 @@ module.exports = {
           fontWeight: theme('fontWeight.extrabold'),
         },
         h2: {
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.02em',
           fontSize: '1.5em',
           fontWeight: theme('fontWeight.bold'),
         },
         h3: {
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.015em',
           fontSize: '1.25em',
-          fontWeight: theme('fontWeight.semibold'),
+          fontWeight: theme('fontWeight.bold'),
         },
         'h4,h5,h6': {
           letterSpacing: '-0.025em',
           fontSize: '1.125em',
-          fontWeight: theme('fontWeight.medium'),
+          fontWeight: theme('fontWeight.semibold'),
         },
       })
     }),

@@ -15,7 +15,7 @@ const Home = () => {
       <Container>
         <section>
           <div className="!mb-10 md:!mb-24">
-            <h1 className="!mb-2">Omar Alsoudani</h1>
+            <h1>Omar Alsoudani</h1>
             <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Enthusiast</h2>
             <h2 className="sub-heading">Creator</h2>
@@ -23,12 +23,12 @@ const Home = () => {
 
           <div className="flex flex-col md:!mb-24 !mb-10 items-start justify-start divide-y-4 divide-gray-700 dark:divide-gray-300 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-16">
             <div className="pt-6 space-x-2 space-y-5 md:pb-8">
-              <h1 className="!px-2 !mb-4 !mt-4 md:!mb-2 md:!mt-2 text-4xl md:!text-6xl md:!leading-loose md:!px-6 md:border-gray-700 md:dark:border-gray-300  md:!border-r-2">
+              <h1 className="!px-2 !mb-4 !mt-4 md:!mb-4 md:!mt-4 text-4xl md:!text-[2.6666667em] md:!leading-loose md:!px-6 md:border-gray-700 md:dark:border-gray-300  md:!border-r-2">
                 Goal
               </h1>
             </div>
             <div className="flex flex-col !px-2">
-              <p className="text-lg leading-normal">
+              <p className="text-lg leading-relaxed md:text-[1.275rem]">
                 This site will be my digital identity, where I can write notes.
                 Share my knowledge with others, my opinion on some topics, and
                 open-source projects I create and share them here, maybe with a
@@ -37,17 +37,17 @@ const Home = () => {
             </div>
           </div>
           <div className="grid items-start grid-cols-1 text-left md:gap-1 md:items-center md:text-center md:grid-cols-3 !px-2">
-            <p className="text-lg !font-medium">
+            <p className="text-lg md:text-[1.275rem] !font-medium">
               <Link href="/about">
                 <a className="my-2 link-unstyled"> About me &rarr; </a>
               </Link>
             </p>
-            <p className="text-lg !font-medium">
+            <p className="text-lg md:text-[1.275rem] !font-medium">
               <Link href="/writing">
                 <a className="my-2 link-unstyled"> Writing &rarr; </a>
               </Link>
             </p>
-            <p className="text-lg !font-medium">
+            <p className="text-lg md:text-[1.275rem] !font-medium">
               <Link href="/nuggets">
                 <a className="my-2 link-unstyled"> Nuggets factory &rarr; </a>
               </Link>
