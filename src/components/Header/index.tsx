@@ -115,8 +115,8 @@ export default function Header() {
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname
-              ? 'nav-md-default border-b-2 border-gray-1000 dark:border-gray-50'
-              : 'nav-md-default hover:border-b-2 hover:border-gray-1000 dark:hover:border-gray-50'
+              ? 'nav-md-default border-b-2 border-gray-900 dark:border-gray-50'
+              : 'nav-md-default hover:border-b-2 hover:border-gray-900 dark:hover:border-gray-50'
           return (
             <li key={route.href}>
               <Link href={route.href}>

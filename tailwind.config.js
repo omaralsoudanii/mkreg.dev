@@ -30,8 +30,13 @@ module.exports = {
       ],
       sans:
         'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+      body:
+        'Arimo,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
     },
     extend: {
+      lineHeight: {
+        relaxed: '1.65',
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -46,8 +51,6 @@ module.exports = {
           700: '#363638',
           800: '#262626',
           900: '#171717',
-          1000: '#0b0b0c',
-          1100: '#050505',
         },
         white: '#ffffff',
         black: '#000000',
@@ -56,23 +59,34 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            color: theme('colors.gray.900'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
             lineHeight: '1.5',
+            p: {
+              fontFamily: theme('fontFamily.body'),
+              letterSpacing: 'normal',
+            },
             h1: {
               color: theme('colors.black'),
+              fontFamily: theme('fontFamily.sans'),
             },
             letterSpacing: '-0.01em',
             'h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.1000'),
+              color: theme('colors.gray.900'),
+              fontFamily: theme('fontFamily.sans'),
             },
-            color: theme('colors.gray.1000'),
             'ul > li::before': {
               backgroundColor: theme('colors.gray.700'),
             },
+            ul: {
+              fontFamily: theme('fontFamily.body'),
+              letterSpacing: 'normal',
+            },
             a: {
               textDecoration: 'none',
+              fontFamily: theme('fontFamily.sans'),
             },
             strong: {
               color: theme('colors.black'),
@@ -93,8 +107,10 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.1000'),
+              color: theme('colors.gray.900'),
               fontWeight: '400',
+              fontFamily: theme('fontFamily.body'),
+              letterSpacing: 'normal',
             },
           },
         },
@@ -103,13 +119,13 @@ module.exports = {
             blockquote: {
               fontWeight: '400',
             },
-            lineHeight: '1.6',
-            fontSize: '1.25rem',
+            lineHeight: '1.65',
+            fontSize: '1.3rem',
           },
         },
         dark: {
           css: {
-            color: theme('colors.white'),
+            color: theme('colors.gray.50'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.700'),
             },
@@ -117,7 +133,7 @@ module.exports = {
               color: theme('colors.white'),
             },
             'h2,h3,h4,h5,h6': {
-              color: theme('colors.white'),
+              color: theme('colors.gray.50'),
             },
             borderColor: theme('colors.gray.400'),
             'ul > li::before': {
@@ -128,7 +144,7 @@ module.exports = {
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.white'),
+              color: theme('colors.gray.50'),
               borderBottomColor: theme('colors.gray.400'),
             },
             tbody: {
@@ -137,7 +153,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.white'),
+              color: theme('colors.gray.50'),
             },
           },
         },
@@ -166,6 +182,10 @@ module.exports = {
           letterSpacing: '-0.025em',
           fontSize: '1.125em',
           fontWeight: theme('fontWeight.semibold'),
+        },
+        p: {
+          fontFamily: theme('fontFamily.body'),
+          letterSpacing: 'normal',
         },
       })
     }),

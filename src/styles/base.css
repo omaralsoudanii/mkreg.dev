@@ -2,15 +2,11 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-1000 dark:bg-dark dark:text-white;
-    -webkit-font-smoothing: subpixel-antialiased;
+    @apply bg-white antialiased text-gray-900 dark:bg-dark dark:text-gray-50;
     text-rendering: optimizeLegibility;
   }
 
-  @media screen and (min-device-pixel-ratio: 1.5),
-    screen and (min-resolution: 1.5dppx) {
-    body {
-      @apply antialiased;
-    }
+  p {
+    @apply font-body tracking-normal leading-normal lg:leading-relaxed;
   }
 }

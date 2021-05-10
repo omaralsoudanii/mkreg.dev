@@ -38,7 +38,7 @@
   }
 
   .text-primary {
-    @apply text-gray-1000 dark:text-white;
+    @apply text-gray-900 dark:text-gray-50;
   }
 
   .text-secondary {
@@ -58,10 +58,10 @@
   }
 
   .nav-active {
-    @apply bg-gray-1100 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
+    @apply bg-gray-900 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-gray-50 hover:text-gray-1100 dark:hover:text-gray-100 text-secondary;
+    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-gray-50 hover:text-gray-900 dark:hover:text-gray-100 text-secondary;
   }
 
   .hdr-sm-btn {
@@ -89,7 +89,7 @@
   }
 
   .btn-primary {
-    @apply bg-black text-gray-50 dark:text-gray-1000 dark:bg-white;
+    @apply bg-black text-gray-50 dark:text-gray-900 dark:bg-white;
   }
 
   .btn-large {
@@ -98,7 +98,7 @@
 
   .prose .link-unstyled,
   .link-unstyled {
-    @apply text-primary hover:border-b-2 !font-medium hover:border-gray-1000 dark:hover:border-gray-50;
+    @apply text-primary !font-body !tracking-normal hover:border-b-2 !font-medium hover:border-gray-900 dark:hover:border-gray-50;
     transition-property: border;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 100ms;
@@ -107,6 +107,9 @@
   .prose .footer-border,
   .footer-border {
     @apply border-b-2 border-transparent dark:border-transparent;
+  }
+  .footer .link-unstyled {
+    @apply md:!text-[1.25rem] !leading-relaxed !text-base;
   }
 
   .dark .text-link {
@@ -142,6 +145,7 @@
     @apply hidden;
   }
 
+
   h2,
   h3,
   h4,
@@ -151,6 +155,6 @@
   }
 
   .sub-heading {
-    @apply tracking-normal font-medium mt-0 mb-0 !important;
+    @apply font-medium mt-0 mb-0 !important;
   }
 }
