@@ -59,7 +59,7 @@ module.exports = {
               borderColor: theme('colors.gray.400'),
             },
             letterSpacing: '-0.01em',
-            lineHeight: '1.5',
+            lineHeight: '1.5rem',
             h1: {
               color: theme('colors.black'),
             },
@@ -102,7 +102,7 @@ module.exports = {
             blockquote: {
               fontWeight: '400',
             },
-            lineHeight: '1.65',
+            lineHeight: '1.75rem',
           },
         },
         dark: {
