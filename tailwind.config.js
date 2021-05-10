@@ -104,7 +104,7 @@ module.exports = {
               fontWeight: '400',
             },
             lineHeight: '1.6',
-            fontSize: '1.375rem',
+            fontSize: '1.25rem',
           },
         },
         dark: {
