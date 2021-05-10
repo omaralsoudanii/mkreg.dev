@@ -25,9 +25,7 @@ export default function Post({ children, frontMatter }) {
           {frontMatter.title}
         </h1>
         <div className="grid grid-cols-1 mt-1 md:grid-cols-1">
-          <p className="!mt-1 !mb-4 !py-2 !font-medium">
-            {frontMatter.summary}
-          </p>
+          <p className="!mt-1 !mb-4 !py-2">{frontMatter.summary}</p>
           <div className="flex flex-wrap">
             {frontMatter.tags.map((t: string) => (
               <p key={t} className="pr-2 text-base !my-0 !py-1">

@@ -27,7 +27,7 @@ function Nuggets() {
         </section>
         <section className="mt-8 space-y-8">
           {Bookmarks.map((bookmark) => (
-            <Card key={bookmark.title} data={bookmark} />
+            <Card key={bookmark.title} {...bookmark} />
           ))}
         </section>
       </Container>

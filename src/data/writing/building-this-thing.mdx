@@ -1,7 +1,7 @@
 ---
 title: 'Building this thing'
 date: '2021-04-27'
-lastmod: '2021-05-09'
+lastmod: '2021-05-10'
 summary: "High-level overview of building and developing my personal site and some of the struggles for someone whose specialty is not Front-end. And by that I mean I have zero knowledge of CSS (Well not zero maybe 5%)."
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
 image: '/static/images/writing/building-mkreg.png'
@@ -23,9 +23,9 @@ So I started my research about the good stuff. Basically the end result was to d
 
 ## Technologies used
 
-- [HAProxy](https://www.haproxy.org/) No, HAProxy is not just a "loadbalancer". A perfect combo with Cloudflare
+- [HAProxy](https://www.haproxy.org/) No, HAProxy is not just a "loadbalancer". A perfect combo with CloudFlare
 - [NGINX](https://nginx.org/) Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time
-- [Docker](https://www.docker.com/) I hate this thing so much that creating build images is the first thing I do when starting a project (lightweight layer built on top of Linux my ass)
+- [Docker](https://www.docker.com/) You kinda hate Docker, but you want the benefits as well. So here we are
 - [Cloudflare](https://cloudflare.com/) Takes care of delivering 99.9% of the app for a specified period of time that i can set
 - [TypeScript](https://www.typescriptlang.org/) Well, why not?
 - [Next.js](https://nextjs.org/) 🤔
@@ -45,13 +45,22 @@ whether it's about what's rendered, caching or performance
 
 ## Coding and best practices
 
-This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You will find 0 informative commits, not proper usage of TypeScript and maybe other stuff I didn't notice.
+This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code in terms of best practice or what's the standard way of programming a React/Next.js application.
 
 Why? Well because this is my way of learning things. I read about them then start by doing and see the results, then iterate and fix. 
 
 Also, I was building it just to learn Next.js and some other stuff. However I didn't know that I would enjoy it so much eventually it will become my site.
 
-If you wanna contribute, fix stuff, or whatever feel free to do so. The code is open source.
+With time, the code should be cleaner by removing some technical debts or using the proper way to implement something.
+
+If you wanna contribute, fix stuff, or whatever feel free to do so. The code is open sourced on Github.
+
+<Card 
+    title="omaralsoudanii/mkreg.dev"
+    desc="Omar Alsoudani personal site https://mkreg.dev/"
+    url="https://github.com/omaralsoudanii/mkreg.dev"
+    icon="Github"
+/>
 
 ## Lessons learned
 
