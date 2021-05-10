@@ -36,7 +36,7 @@ module.exports = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, no-cache',
+            value: 'public, s-maxage=0',
           },
         ],
       },
