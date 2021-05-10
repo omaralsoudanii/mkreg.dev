@@ -1,4 +1,3 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
@@ -29,7 +28,8 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      sans: ['Inter', ...fontFamily.sans],
+      sans:
+        'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
     },
     extend: {
       colors: {
@@ -58,11 +58,11 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
-            letterSpacing: '-0.01em',
             lineHeight: '1.5rem',
             h1: {
               color: theme('colors.black'),
             },
+            letterSpacing: '-0.02em',
             'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.1000'),
             },
@@ -102,7 +102,7 @@ module.exports = {
             blockquote: {
               fontWeight: '400',
             },
-            lineHeight: '1.75rem',
+            lineHeight: '1.625rem',
           },
         },
         dark: {
@@ -163,7 +163,7 @@ module.exports = {
         'h4,h5,h6': {
           letterSpacing: '-0.025em',
           fontSize: '1.125em',
-          fontWeight: theme('fontWeight.meduim'),
+          fontWeight: theme('fontWeight.medium'),
         },
       })
     }),

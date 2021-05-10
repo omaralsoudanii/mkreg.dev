@@ -28,7 +28,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex flex-col !px-2">
-              <p className="text-lg">
+              <p className="text-lg leading-normal">
                 This site will be my digital identity, where I can write notes.
                 Share my knowledge with others, my opinion on some topics, and
                 open-source projects I create and share them here, maybe with a
