@@ -2,7 +2,7 @@
 
 @layer utilities {
   .app {
-    @apply max-w-2xl px-6 mx-auto md:px-12 md:max-w-3xl lg:px-0;
+    @apply max-w-2xl px-2 mx-auto md:px-6 md:max-w-3xl lg:px-0;
   }
 
   .filter-none {
@@ -117,7 +117,7 @@
   }
 
   .dark .text-link {
-    @apply !font-medium;
+    @apply !font-medium !font-body;
     color: #68b5fb;
   }
 
@@ -127,7 +127,7 @@
   }
 
   .light .text-link {
-    @apply !font-medium text-blue-500;
+    @apply !font-medium !font-body text-blue-500;
   }
 
   .light .text-link:hover {

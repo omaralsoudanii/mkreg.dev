@@ -1,12 +1,15 @@
 @tailwind base;
 
 @layer base {
+  
   html {
-    font-size: 1rem;
+    @apply text-base;
   }
+
   body {
     @apply subpixel-antialiased text-gray-900 bg-white dark:bg-dark dark:text-gray-50;
     text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
   }
 
   @media screen and (min-device-pixel-ratio: 1.5),
