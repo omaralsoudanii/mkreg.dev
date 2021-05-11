@@ -11,22 +11,29 @@ export default function PostsList({ posts, href }) {
     )
 
   return (
-    <ul className="space-y-4 leading-relaxed">
+    <div className="space-y-8 leading-relaxed">
       {posts.map((frontMatter) => (
-        <li key={frontMatter.slug}>
-          <p className="inline">
-            <Link
-              href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
-              passHref
-            >
-              <a className="link-unstyled">{frontMatter.title}</a>
-            </Link>
-          </p>
-          <time className="w-full ml-2 text-gray-600 dark:text-gray-400 md:ml-4 md:w-24">
-            {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
-          </time>
-        </li>
+        <div className="w-full my-8">
+          <Link
+            key={frontMatter.slug}
+            href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+          >
+            <a className="my-8 link-unstyled">
+              <div className="flex flex-col items-start justify-between md:items-center md:flex-row">
+                <h3 className="md:!my-2 !my-1">{frontMatter.title}</h3>
+                <p className="text-left !my-0 ! md:!my-2  md:text-lg md:!leading-relaxed text-gray-600 dark:text-gray-400 md:text-right">
+                  <time>{`${dayjs(new Date(frontMatter.date)).format(
+                    'MMMM DD, YYYY'
+                  )}`}</time>
+                </p>
+              </div>
+              <p className="text-secondary md:text-lg md:!leading-relaxed  !my-2 md:!my-0 clamp-3">
+                {frontMatter.summary}
+              </p>
+            </a>
+          </Link>
+        </div>
       ))}
-    </ul>
+    </div>
   )
 }

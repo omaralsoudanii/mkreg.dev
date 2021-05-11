@@ -16,7 +16,13 @@ export function Footer() {
               Tags
             </a>
           </Link>
-
+          <Link href="/stack">
+            <a className="inline font-medium footer-border link-unstyled">
+              Stack
+            </a>
+          </Link>
+        </div>
+        <div className="flex flex-col items-start px-4 mb-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
           <a
             href={`mailto:${Environment.social.mail}`}
             target="_blank"
@@ -25,8 +31,6 @@ export function Footer() {
           >
             Contact
           </a>
-        </div>
-        <div className="flex flex-col items-start px-4 mb-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
           <a
             href={Environment.social.github}
             target="_blank"
@@ -35,11 +39,7 @@ export function Footer() {
           >
             Github
           </a>
-          <Link href="/nuggets">
-            <a className="inline font-medium footer-border link-unstyled">
-              Nuggets
-            </a>
-          </Link>
+
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -58,11 +58,6 @@ export function Footer() {
           >
             RSS
           </a>
-          <Link href="/writing">
-            <a className="inline font-medium footer-border link-unstyled">
-              Writing
-            </a>
-          </Link>
           <a
             href={Environment.social.twitter}
             target="_blank"
@@ -70,6 +65,14 @@ export function Footer() {
             className="inline font-medium footer-border link-unstyled"
           >
             Twitter
+          </a>
+          <a
+            href={Environment.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline font-medium footer-border link-unstyled"
+          >
+            YouTube
           </a>
         </div>
       </div>

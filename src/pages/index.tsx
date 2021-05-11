@@ -48,8 +48,8 @@ const Home = () => {
               </Link>
             </p>
             <p className="text-lg !leading-normal md:text-xl md:!leading-relaxed !font-medium">
-              <Link href="/nuggets">
-                <a className="my-2 link-unstyled"> Nuggets factory &rarr; </a>
+              <Link href="/stack">
+                <a className="my-2 link-unstyled"> My Stack &rarr; </a>
               </Link>
             </p>
           </div>

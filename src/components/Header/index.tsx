@@ -18,8 +18,8 @@ const RoutesMetadata = [
     href: '/writing',
   },
   {
-    label: 'Stack',
-    href: '/stack',
+    label: 'Nuggets',
+    href: '/nuggets',
   },
 ]
 
