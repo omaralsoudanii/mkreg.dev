@@ -3,7 +3,7 @@
 @layer base {
   
   html {
-    @apply text-base;
+    @apply leading-normal text-[1rem];
   }
 
   body {
@@ -20,6 +20,6 @@
   }
   
   p {
-    @apply leading-normal tracking-normal font-body lg:leading-relaxed;
+    @apply leading-normal font-body lg:leading-relaxed;
   }
 }
