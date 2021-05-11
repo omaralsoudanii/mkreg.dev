@@ -1,6 +1,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .app {
+    @apply max-w-2xl px-6 mx-auto md:px-12 md:max-w-3xl lg:px-0;
+  }
+
   .filter-none {
     filter: none;
     backdrop-filter: none;

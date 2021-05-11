@@ -6,10 +6,7 @@ export function Main({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <main
-        id="skip"
-        className="max-w-2xl px-6 pt-24 pb-8 mx-auto mt-6 md:max-w-3xl md:px-0"
-      >
+      <main id="skip" className="pt-24 pb-8 mt-6 app ">
         {children}
         <Footer />
       </main>
