@@ -2,7 +2,7 @@
 
 @layer utilities {
   .app {
-    @apply max-w-2xl px-2 mx-auto md:px-6 md:max-w-3xl lg:px-0;
+    @apply max-w-2xl px-4 mx-auto md:px-6 md:max-w-3xl lg:px-0;
   }
 
   .filter-none {
