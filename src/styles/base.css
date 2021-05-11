@@ -1,12 +1,22 @@
 @tailwind base;
 
 @layer base {
+  html {
+    font-size: 1rem;
+  }
   body {
-    @apply bg-white antialiased text-gray-900 dark:bg-dark dark:text-gray-50;
+    @apply subpixel-antialiased text-gray-900 bg-white dark:bg-dark dark:text-gray-50;
     text-rendering: optimizeLegibility;
   }
 
+  @media screen and (min-device-pixel-ratio: 1.5),
+    screen and (min-resolution: 1.5dppx) {
+    body {
+      @apply antialiased;
+    }
+  }
+  
   p {
-    @apply font-body tracking-normal leading-normal lg:leading-relaxed;
+    @apply leading-normal tracking-normal font-body lg:leading-relaxed;
   }
 }

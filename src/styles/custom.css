@@ -155,6 +155,6 @@
   }
 
   .sub-heading {
-    @apply font-medium mt-0 mb-0 !important;
+    @apply !text-black dark:!text-white font-medium mt-0 mb-0 !important;
   }
 }

@@ -31,11 +31,11 @@ module.exports = {
       sans:
         'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
       body:
-        'Arimo,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+        'Lato,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
     },
     extend: {
       lineHeight: {
-        relaxed: '1.65',
+        relaxed: '1.6',
       },
       colors: {
         transparent: 'transparent',
@@ -66,13 +66,11 @@ module.exports = {
             lineHeight: '1.5',
             p: {
               fontFamily: theme('fontFamily.body'),
-              letterSpacing: 'normal',
             },
             h1: {
               color: theme('colors.black'),
               fontFamily: theme('fontFamily.sans'),
             },
-            letterSpacing: '-0.01em',
             'h2,h3,h4,h5,h6': {
               color: theme('colors.gray.900'),
               fontFamily: theme('fontFamily.sans'),
@@ -82,7 +80,6 @@ module.exports = {
             },
             ul: {
               fontFamily: theme('fontFamily.body'),
-              letterSpacing: 'normal',
             },
             a: {
               textDecoration: 'none',
@@ -110,7 +107,6 @@ module.exports = {
               color: theme('colors.gray.900'),
               fontWeight: '400',
               fontFamily: theme('fontFamily.body'),
-              letterSpacing: 'normal',
             },
           },
         },
@@ -119,8 +115,8 @@ module.exports = {
             blockquote: {
               fontWeight: '400',
             },
-            lineHeight: '1.65',
-            fontSize: '1.3rem',
+            lineHeight: '1.6',
+            fontSize: '1.25rem',
           },
         },
         dark: {
@@ -174,18 +170,17 @@ module.exports = {
           fontWeight: theme('fontWeight.bold'),
         },
         h3: {
-          letterSpacing: '-0.015em',
+          letterSpacing: '-0.02em',
           fontSize: '1.25em',
           fontWeight: theme('fontWeight.bold'),
         },
         'h4,h5,h6': {
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.02em',
           fontSize: '1.125em',
           fontWeight: theme('fontWeight.semibold'),
         },
         p: {
           fontFamily: theme('fontFamily.body'),
-          letterSpacing: 'normal',
         },
       })
     }),
