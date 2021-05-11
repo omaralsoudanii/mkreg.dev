@@ -36,7 +36,7 @@ export default function Tags({ tagCount, tags }) {
             return (
               <div
                 key={t}
-                className="mt-2 mb-2 mr-5 text-lg !leading-normal md:text-xl md:!leading-relaxed"
+                className="mt-2 mb-2 mr-5 text-base !leading-normal md:text-xl md:!leading-relaxed"
               >
                 <Tag name={tags[t]} slug={t} />
                 <Link href={`/tags/${t}`}>
