@@ -54,11 +54,11 @@
   }
 
   .nav-default {
-    @apply flex py-3 text-lg !leading-none font-bold;
+    @apply flex py-3 text-lg !leading-none font-bold text-black dark:text-white;
   }
 
   .nav-md-default {
-    @apply inline w-full h-full px-6 pt-4 pb-4 mx-2 text-primary;
+    @apply inline w-full h-full px-6 pt-4 pb-4 mx-2;
   }
 
   .nav-active {
