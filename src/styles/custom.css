@@ -54,11 +54,11 @@
   }
 
   .nav-default {
-    @apply flex py-3 text-base font-medium;
+    @apply flex py-3 text-lg !leading-none font-bold;
   }
 
   .nav-md-default {
-    @apply inline w-full h-full px-6 pt-5 pb-5 mx-2 text-base font-medium text-primary;
+    @apply inline w-full h-full px-6 pt-4 pb-4 mx-2 text-primary;
   }
 
   .nav-active {
@@ -161,6 +161,6 @@
   }
 
   .sub-heading {
-    @apply  font-medium mt-0 mb-0 !important;
+    @apply font-medium mt-0 mb-0 !important;
   }
 }
