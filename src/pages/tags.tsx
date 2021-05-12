@@ -34,13 +34,10 @@ export default function Tags({ tagCount, tags }) {
         <div className="flex flex-wrap items-center justify-center max-w-lg px-2 py-6 md:p-0 md:justify-start md:items-start">
           {sortedTags.map((t) => {
             return (
-              <div
-                key={t}
-                className="mt-2 mb-2 mr-5 text-base !leading-normal md:text-xl md:!leading-relaxed"
-              >
+              <div key={t} className="mt-2 mb-2 mr-5">
                 <Tag name={tags[t]} slug={t} />
                 <Link href={`/tags/${t}`}>
-                  <a className="-ml-2 !font-medium text-gray-600 dark:text-gray-400">
+                  <a className="-ml-2 text-gray-600 link-lg dark:text-gray-400">
                     {` (${tagCount[t]})`}
                   </a>
                 </Link>

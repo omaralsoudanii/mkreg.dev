@@ -46,7 +46,7 @@
   }
 
   .text-secondary {
-    @apply text-gray-800 dark:text-gray-200;
+    @apply text-gray-800 dark:text-gray-100;
   }
 
   .text-tertiary {
@@ -112,8 +112,10 @@
   .footer-border {
     @apply border-b-2 border-transparent dark:border-transparent;
   }
-  .footer .link-unstyled {
-    @apply md:!text-[1.25rem] !leading-relaxed !text-base;
+
+  .prose .link-lg,
+  .link-lg {
+    @apply text-lg !leading-normal md:text-xl md:!leading-relaxed !font-medium;
   }
 
   .dark .text-link {

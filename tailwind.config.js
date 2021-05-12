@@ -34,9 +34,6 @@ module.exports = {
         'Lato,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
     },
     extend: {
-      lineHeight: {
-        relaxed: '1.6',
-      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -64,6 +61,7 @@ module.exports = {
               borderColor: theme('colors.gray.400'),
             },
             lineHeight: '1.5',
+            fontWeight: theme('fontWeight.medium'),
             p: {
               fontFamily: theme('fontFamily.body'),
             },
@@ -115,8 +113,9 @@ module.exports = {
             blockquote: {
               fontWeight: '400',
             },
-            lineHeight: '1.6',
-            fontSize: '1.25rem',
+            lineHeight: '1.625',
+            fontSize: '1.3rem',
+            fontWeight: theme('fontWeight.normal'),
           },
         },
         dark: {
@@ -125,6 +124,7 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.700'),
             },
+            fontWeight: theme('fontWeight.normal'),
             h1: {
               color: theme('colors.white'),
             },
