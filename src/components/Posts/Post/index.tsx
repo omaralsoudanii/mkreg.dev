@@ -23,10 +23,12 @@ export default function Post({ children, frontMatter }) {
       <Container>
         <h1 className="!py-4 !mb-1 text-center">{frontMatter.title}</h1>
         <div className="grid grid-cols-1 mt-1 md:grid-cols-1">
-          <p className="!mt-1 !mb-4 !py-2">{frontMatter.summary}</p>
+          <p className="!mt-1 !mb-4 !py-2 !font-normal">
+            {frontMatter.summary}
+          </p>
           <div className="flex flex-wrap">
             {frontMatter.tags.map((t: string) => (
-              <p key={t} className="pr-2  !my-0 !py-1">
+              <p key={t} className="pr-2 text-base !leading-normal !my-0 !py-1">
                 <Link href={`/tags/${slugify(t)}`}>
                   <a className="text-link">{t}</a>
                 </Link>
@@ -34,11 +36,11 @@ export default function Post({ children, frontMatter }) {
             ))}
           </div>
           <div className="flex flex-row justify-between mt-4">
-            <p className="px-0 !my-1  !py-1 text-gray-600 dark:text-gray-400">
+            <p className="px-0 !my-1 text-base !leading-normal !py-1 text-gray-600 dark:text-gray-400">
               {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
             </p>
             {frontMatter.lastmod && (
-              <p className="px-0 !my-1 !py-1 text-gray-600 dark:text-gray-400">
+              <p className="px-0 !my-1 text-base !leading-normal !py-1 text-gray-600 dark:text-gray-400">
                 {`Updated on ${dayjs(new Date(frontMatter.lastmod)).format(
                   'MMMM DD, YYYY'
                 )}`}

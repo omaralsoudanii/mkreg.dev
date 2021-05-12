@@ -24,7 +24,7 @@
   }
 
   .header-default {
-    @apply py-2 bg-white border-b border-gray-400 md:pt-5 md:pb-4 md:relative dark:border-opacity-30 border-opacity-20 dark:bg-dark;
+    @apply py-2 bg-white border-b border-gray-400 md:pt-6 md:pb-3 md:relative dark:border-opacity-30 border-opacity-20 dark:bg-dark;
   }
 
   .header-container {
@@ -46,7 +46,7 @@
   }
 
   .text-secondary {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-800 dark:text-gray-200;
   }
 
   .text-tertiary {
@@ -58,7 +58,7 @@
   }
 
   .nav-md-default {
-    @apply inline w-full h-full px-6 pt-4 pb-4 mx-2 text-lg !leading-none font-bold text-black dark:text-white;
+    @apply inline w-full h-full px-6 pt-2 pb-3 mx-2 text-base font-medium text-black dark:text-white;
   }
 
   .nav-active {
