@@ -27,14 +27,16 @@ export default function Writing({ posts }) {
       <Container>
         <section className="mb-20 space-y-8">
           <h1>Writing</h1>
-          <p>Stuff I wrote about programming and software</p>
+          <p className="text-lg md:text-xl">
+            Stuff I wrote about programming and software
+          </p>
           <p className="text-right">
             <Link href="/tags" passHref>
               <a className="link-unstyled">Browse by Tags &rarr;</a>
             </Link>
           </p>
         </section>
-        <PostsContainer href="/writing" name="All Posts" posts={posts} />
+        <PostsContainer href="/writing" posts={posts} />
       </Container>
     </React.Fragment>
   )

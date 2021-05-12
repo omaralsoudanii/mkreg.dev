@@ -10,9 +10,7 @@ const Card = ({ title, url, icon, desc }) => (
         })}
       </div>
       <div>
-        <h3 className="!mt-2 !mb-1 !text-lg md:!text-xl !leading-normal">
-          {title}
-        </h3>
+        <h3 className="!mt-2 !mb-1 !text-lg md:!text-xl !leading-normal">{title}</h3>
         <p className="!mt-1 !mb-2  !font-medium !leading-normal !text-[15px] lg:!text-base text-secondary clamp-5">
           {desc}
         </p>

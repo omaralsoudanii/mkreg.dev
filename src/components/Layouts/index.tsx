@@ -6,7 +6,7 @@ export function Main({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <main id="skip" className="pt-24 pb-8 mt-6 app ">
+      <main id="skip" className="pt-24 pb-8 mt-6 app">
         {children}
         <Footer />
       </main>

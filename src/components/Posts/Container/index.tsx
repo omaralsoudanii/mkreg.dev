@@ -1,10 +1,9 @@
 import PostsList from '@/components/Posts/List'
 
-export default function PostsContainer({ posts, href, name }) {
+export default function PostsContainer({ posts, href }) {
   if (!posts || posts.length === 0) return null
   return (
-    <aside className="mt-4">
-      <h2>{name}</h2>
+    <aside>
       <PostsList href={href} posts={posts} />
     </aside>
   )

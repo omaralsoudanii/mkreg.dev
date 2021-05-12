@@ -11,11 +11,11 @@ export default function PostsList({ posts, href }) {
     )
 
   return (
-    <div className="space-y-8 leading-relaxed">
+    <div className="space-y-8">
       {posts.map((frontMatter) => (
         <div className="w-full my-8" key={frontMatter.slug}>
           <Link href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}>
-            <a>
+            <a className="link-unstyled">
               <div className="flex flex-col items-start justify-between md:items-center md:flex-row">
                 <h3 className="md:!my-2 !my-1">{frontMatter.title}</h3>
                 <p className="text-left !my-0 ! md:!my-2  md:text-lg md:!leading-relaxed text-gray-600 dark:text-gray-400 md:text-right">

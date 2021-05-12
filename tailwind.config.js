@@ -2,7 +2,14 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
+  purge: [
+    './src/pages/**/*.{tsx,ts}',
+    './src/components/**/*.{tsx,ts}',
+    './src/pages/*.{tsx,ts}',
+    './src/components/*.{tsx,ts}',
+    './src/data/*.mdx',
+    './src/data/**/*.mdx',
+  ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     lineClamp: {
@@ -28,12 +35,16 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
+      display:
+        '"HK Grotesk", Inter, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
       sans:
-        'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
-      body:
-        'Lato,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+        'Lato, Inter, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
     },
     extend: {
+      lineHeight: {
+        normal: '1.5rem',
+        relaxed: '1.7777778rem',
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -48,6 +59,7 @@ module.exports = {
           700: '#363638',
           800: '#262626',
           900: '#171717',
+          1000: '#0b0b0b',
         },
         white: '#ffffff',
         black: '#000000',
@@ -56,32 +68,22 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.gray.1000'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
-            lineHeight: '1.5',
-            fontWeight: theme('fontWeight.medium'),
-            p: {
-              fontFamily: theme('fontFamily.body'),
-            },
-            h1: {
+            fontSize: '1.125rem',
+            lineHeight: theme('lineHeight.normal'),
+            'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.black'),
-              fontFamily: theme('fontFamily.sans'),
-            },
-            'h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.900'),
-              fontFamily: theme('fontFamily.sans'),
+              fontFamily: theme('fontFamily.display'),
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.700'),
-            },
-            ul: {
-              fontFamily: theme('fontFamily.body'),
+              top: '0.4555555em',
             },
             a: {
               textDecoration: 'none',
-              fontFamily: theme('fontFamily.sans'),
             },
             strong: {
               color: theme('colors.black'),
@@ -102,20 +104,17 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.900'),
-              fontWeight: '400',
-              fontFamily: theme('fontFamily.body'),
+              color: theme('colors.gray.1000'),
             },
           },
         },
         lg: {
           css: {
-            blockquote: {
-              fontWeight: '400',
+            fontSize: '1.25rem',
+            lineHeight: theme('lineHeight.relaxed'),
+            'ul>li:before': {
+              top: '0.4555555em',
             },
-            lineHeight: '1.625',
-            fontSize: '1.3rem',
-            fontWeight: theme('fontWeight.normal'),
           },
         },
         dark: {
@@ -124,12 +123,8 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.700'),
             },
-            fontWeight: theme('fontWeight.normal'),
-            h1: {
+            'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.white'),
-            },
-            'h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.50'),
             },
             borderColor: theme('colors.gray.400'),
             'ul > li::before': {
@@ -160,27 +155,24 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          letterSpacing: '-.03em',
-          fontSize: '2.25em',
+          letterSpacing: '-.01em',
+          fontSize: '2.6666667em',
           fontWeight: theme('fontWeight.extrabold'),
         },
         h2: {
-          letterSpacing: '-0.02em',
-          fontSize: '1.5em',
+          letterSpacing: '-0.01em',
+          fontSize: '1.6666667em',
           fontWeight: theme('fontWeight.bold'),
         },
         h3: {
-          letterSpacing: '-0.02em',
-          fontSize: '1.25em',
+          letterSpacing: '-0.01em',
+          fontSize: '1.3333333em',
           fontWeight: theme('fontWeight.bold'),
         },
         'h4,h5,h6': {
-          letterSpacing: '-0.02em',
+          letterSpacing: '-0.01em',
           fontSize: '1.125em',
           fontWeight: theme('fontWeight.semibold'),
-        },
-        p: {
-          fontFamily: theme('fontFamily.body'),
         },
       })
     }),
