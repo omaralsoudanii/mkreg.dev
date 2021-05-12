@@ -157,7 +157,7 @@
   h4,
   h5,
   h6 {
-    @apply text-black dark:text-white;
+    @apply tracking-tight text-black dark:text-white;
   }
 
   .sub-heading {
