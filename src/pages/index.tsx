@@ -28,7 +28,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex flex-col !px-2">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg !leading-6 md:text-xl md:!leading-relaxed">
                 My digital identity, where I can write notes. Share my knowledge
                 with others, my opinion on some topics, and open-source projects
                 I create and share them here, maybe with a playground or proof
@@ -37,17 +37,17 @@ const Home = () => {
             </div>
           </div>
           <div className="grid items-start grid-cols-1 text-left md:gap-1 md:items-center md:text-center md:grid-cols-3 !px-2">
-            <p className="text-lg !leading-normal md:text-xl md:!leading-relaxed !font-medium">
+            <p className="link-lg">
               <Link href="/about">
                 <a className="my-2 link-unstyled"> About me &rarr; </a>
               </Link>
             </p>
-            <p className="text-lg !leading-normal md:text-xl md:!leading-relaxed !font-medium">
+            <p className="link-lg">
               <Link href="/writing">
                 <a className="my-2 link-unstyled"> Writing &rarr; </a>
               </Link>
             </p>
-            <p className="text-lg !leading-normal md:text-xl md:!leading-relaxed !font-medium">
+            <p className="link-lg">
               <Link href="/stack">
                 <a className="my-2 link-unstyled"> My Stack &rarr; </a>
               </Link>

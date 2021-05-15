@@ -115,11 +115,11 @@
 
   .prose .link-lg,
   .link-lg {
-    @apply text-lg !leading-normal md:text-xl md:!leading-relaxed !font-medium;
+    @apply text-lg !leading-6 md:text-xl md:!leading-relaxed !font-medium;
   }
 
   .dark .text-link {
-    @apply !font-medium;
+    @apply !font-normal;
     color: #68b5fb;
   }
 
@@ -129,7 +129,7 @@
   }
 
   .light .text-link {
-    @apply !font-medium text-blue-500;
+    @apply text-blue-500 !font-normal;
   }
 
   .light .text-link:hover {
@@ -151,13 +151,17 @@
     @apply hidden;
   }
 
+  .text-heading {
+    @apply text-black dark:text-white;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-black dark:text-white;
+    @apply text-heading;
     letter-spacing: normal;
   }
 
