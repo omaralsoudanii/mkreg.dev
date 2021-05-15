@@ -76,25 +76,25 @@ module.exports = {
             h1: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.black'),
-              letterSpacing: '-.025em',
+              letterSpacing: '-.02em',
               fontFamily: theme('fontFamily.display'),
             },
             h2: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.extrabold'),
-              letterSpacing: '-.025em',
+              letterSpacing: '-.02em',
               fontFamily: theme('fontFamily.display'),
             },
             h3: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
-              letterSpacing: '-.025em',
+              letterSpacing: '-.02em',
               fontFamily: theme('fontFamily.display'),
             },
             'h4,h5,h6': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
-              letterSpacing: '-.025em',
+              letterSpacing: '-.02em',
               fontFamily: theme('fontFamily.display'),
             },
             'ul > li::before': {
@@ -175,25 +175,25 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          letterSpacing: '-.025em',
+          letterSpacing: '-.02em',
           fontSize: '2.6666667em',
           fontWeight: theme('fontWeight.black'),
           fontFamily: theme('fontFamily.display'),
         },
         h2: {
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.02em',
           fontSize: '1.6666667em',
           fontWeight: theme('fontWeight.extrabold'),
           fontFamily: theme('fontFamily.display'),
         },
         h3: {
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.02em',
           fontSize: '1.3333333em',
           fontWeight: theme('fontWeight.bold'),
           fontFamily: theme('fontFamily.display'),
         },
         'h4,h5,h6': {
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.02em',
           fontSize: '1.125em',
           fontWeight: theme('fontWeight.semibold'),
           fontFamily: theme('fontFamily.display'),
