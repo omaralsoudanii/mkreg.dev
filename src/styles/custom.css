@@ -158,7 +158,7 @@
   h5,
   h6 {
     @apply text-black dark:text-white;
-    letter-spacing: -.02em;
+    letter-spacing: normal;
   }
 
   .sub-heading {
