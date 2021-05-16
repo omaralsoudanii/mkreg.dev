@@ -67,7 +67,6 @@ module.exports = {
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
-            letterSpacing: '-0.01em',
             lineHeight: theme('lineHeight.normal'),
             h1: {
               color: theme('colors.black'),
