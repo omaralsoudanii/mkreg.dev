@@ -119,7 +119,6 @@
   }
 
   .dark .text-link {
-    @apply !font-normal;
     color: #68b5fb;
   }
 
@@ -129,7 +128,7 @@
   }
 
   .light .text-link {
-    @apply text-blue-500 !font-normal;
+    @apply text-blue-500;
   }
 
   .light .text-link:hover {
