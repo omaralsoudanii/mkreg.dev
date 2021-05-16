@@ -22,10 +22,7 @@ export default function Post({ children, frontMatter }) {
       <Seo data={meta} />
       <Container>
         <h1 className="!py-4 !mb-1 text-center">{frontMatter.title}</h1>
-        <div className="grid grid-cols-1 mt-1 md:grid-cols-1">
-          <p className="!mt-1 !mb-4 !py-2 !font-normal">
-            {frontMatter.summary}
-          </p>
+        <div className="grid grid-cols-1 mt-1 !mb-4 !py-2 md:grid-cols-1">
           <div className="flex flex-wrap">
             {frontMatter.tags.map((t: string) => (
               <p key={t} className="pr-2 text-base !leading-normal !my-0 !py-1">

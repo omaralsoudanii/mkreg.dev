@@ -72,25 +72,25 @@ module.exports = {
             h1: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.black'),
-              letterSpacing: 'normal',
+              letterSpacing: '0.01em',
               fontFamily: theme('fontFamily.display'),
             },
             h2: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.extrabold'),
-              letterSpacing: 'normal',
+              letterSpacing: '0.01em',
               fontFamily: theme('fontFamily.display'),
             },
             h3: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
-              letterSpacing: 'normal',
+              letterSpacing: '0.01em',
               fontFamily: theme('fontFamily.display'),
             },
             'h4,h5,h6': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
-              letterSpacing: 'normal',
+              letterSpacing: '0.01em',
               fontFamily: theme('fontFamily.display'),
             },
             'ul > li::before': {
@@ -171,22 +171,22 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          letterSpacing: 'normal',
+          letterSpacing: '0.01em',
           fontWeight: theme('fontWeight.black'),
           fontFamily: theme('fontFamily.display'),
         },
         h2: {
-          letterSpacing: 'normal',
+          letterSpacing: '0.01em',
           fontWeight: theme('fontWeight.extrabold'),
           fontFamily: theme('fontFamily.display'),
         },
         h3: {
-          letterSpacing: 'normal',
+          letterSpacing: '0.01em',
           fontWeight: theme('fontWeight.bold'),
           fontFamily: theme('fontFamily.display'),
         },
         'h4,h5,h6': {
-          letterSpacing: 'normal',
+          letterSpacing: '0.01em',
           fontWeight: theme('fontWeight.semibold'),
           fontFamily: theme('fontFamily.display'),
         },

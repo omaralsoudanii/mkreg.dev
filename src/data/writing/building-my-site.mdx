@@ -1,11 +1,14 @@
 ---
-title: 'Building this thing'
+title: 'Building my site'
 date: '2021-04-27'
-lastmod: '2021-05-10'
-summary: "High-level overview of building and developing my personal site and some of the struggles for someone whose specialty is not Front-end. And by that I mean I have zero knowledge of CSS (Well not zero maybe 5%)."
+lastmod: '2021-05-16'
+summary: "High level overview of building and developing my personal site coding and infrastructure wise."
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
 image: '/static/images/writing/building-mkreg.png'
 ---
+
+**Frontend** is harder and more complex than what most programmers who don't do any UI stuff think. I was one of those until I actually had to build one.
+This a high level talk about building and developing my personal site. Coding and infrastructure wise.
 
 <Image
   src="/static/images/writing/building-mkreg.png"
@@ -15,15 +18,18 @@ image: '/static/images/writing/building-mkreg.png'
 />
 
 
-No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty ( FYI I consider in-depth knowledge when building Front-end applications is valuable for someone who focuses on Back-end. You gotta optimize delivery for the Front-end app after all, whether it's Infrastructure based or code wise based )
+## The clueless research
+
+No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. 
+FYI I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend. You gotta optimize delivery for the Frontend app after all, whether it's infrastructure based or code wise based.
 
 I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about React like 4 years ago when everything was a class.
 
-So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). I decided to go with Next since I knew React and Next seemed to be always ahead, Used more and bigger sites were using it.
+So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). I decided to go with Next since I knew React and Next seemed to be always ahead, used more and bigger sites were using it. To be fair it boiled down to the fact that I just knew React syntax, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
 
 ## Technologies used
 
-- [HAProxy](https://www.haproxy.org/) No, HAProxy is not just a "loadbalancer". A perfect combo with CloudFlare
+- [HAProxy](https://www.haproxy.org/) HAProxy is not just a "loadbalancer". Perfect combo with Cloudflare
 - [NGINX](https://nginx.org/) Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time
 - [Docker](https://www.docker.com/) You kinda hate Docker, but you want the benefits as well. So here we are
 - [Cloudflare](https://cloudflare.com/) Takes care of delivering 99.9% of the app for a specified period of time that i can set
@@ -39,17 +45,15 @@ whether it's about what's rendered, caching or performance
 - Yes I know I don't need any of this
 - Indeed this is overkill
 - No this is not a waste of time, I learn by doing and I treat this site as a playground
-- No, It didn't take me a lot of time setting up those, I do these on daily basis
-- No those are not dependencies, You can literally clone or fork the repository and deploy it on [Vercel](https://vercel.com/)
-- After the end result, I learned some things regarding both Front-end and Back-end. I might write something about it later
+- No, it didn't take me a lot of time setting up those, I do these on daily basis
+- No those are not dependencies, You can clone or fork the repository and deploy it on [Vercel](https://vercel.com/)
+- After the end result, I learned some things regarding both Frontend and Backend. I might write something about it later with more details
 
 ## Coding and best practices
 
-This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code in terms of best practice or what's the standard way of programming a React/Next.js application.
+This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code. However if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
 
-Why? Well because this is my way of learning things. I read about them then start by doing and see the results, then iterate and fix. 
-
-Also, I was building it just to learn Next.js and some other stuff. However I didn't know that I would enjoy it so much eventually it will become my site.
+This is my way of learning things. I read, develop then start progressing in a form of trial and error. Then iterate and fix. Honestly I didn't know that I would enjoy it so much eventually it will become my site.
 
 With time, the code should be cleaner by removing some technical debts or using the proper way to implement something.
 

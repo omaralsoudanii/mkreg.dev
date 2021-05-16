@@ -39,9 +39,9 @@ export default function About() {
           I approach the problem in an abstract way to get a solution. In
           summary, the technology you are gonna use is a tool to solve the
           problem. Understanding the problem and identifying the core cause is
-          more valuable for me. You can find what I "think" am capable of on the{' '}
+          more valuable for me. You can find what I "think" am capable of in{' '}
           <Link href="/stack">
-            <a className="text-link"> Stack page </a>
+            <a className="text-link"> Stack </a>
           </Link>
         </p>
         <h2>Word of caution</h2>
@@ -59,10 +59,9 @@ export default function About() {
         </p>
         <p>
           This site is inspired *cough*Stole*cough* by other open-source
-          projects.I wrote A high-level overview about the process of building
-          and developing this site at{' '}
-          <Link href="/writing/building-this-thing">
-            <a className="text-link"> Building this thing </a>
+          projects.I wrote about it in{' '}
+          <Link href="/writing/building-my-site">
+            <a className="text-link"> Building my site </a>
           </Link>
         </p>
       </Container>
