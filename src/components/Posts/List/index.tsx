@@ -19,7 +19,7 @@ export default function PostsList({ posts, href }) {
               <Link
                 href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
               >
-                <a className="link-unstyled !text-heading !font-extrabold">
+                <a className="link-unstyled !text-heading !font-bold">
                   {frontMatter.title}{' '}
                 </a>
               </Link>

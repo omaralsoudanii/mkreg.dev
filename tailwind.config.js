@@ -56,7 +56,7 @@ module.exports = {
           700: '#363638',
           800: '#262626',
           900: '#171717',
-          1000: '#0b0b0b',
+          1000: '#111111',
         },
         dark: 'rgb(14, 20, 27)',
       },
@@ -70,26 +70,26 @@ module.exports = {
             lineHeight: theme('lineHeight.normal'),
             h1: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.black'),
-              letterSpacing: '0.01em',
+              fontWeight: theme('fontWeight.extrabold'),
+              letterSpacing: '0.02rem',
               fontFamily: theme('fontFamily.display'),
             },
             h2: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.extrabold'),
-              letterSpacing: '0.01em',
+              fontWeight: theme('fontWeight.bold'),
+              letterSpacing: '0.02rem',
               fontFamily: theme('fontFamily.display'),
             },
             h3: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.bold'),
-              letterSpacing: '0.01em',
+              fontWeight: theme('fontWeight.semibold'),
+              letterSpacing: '0.02rem',
               fontFamily: theme('fontFamily.display'),
             },
             'h4,h5,h6': {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
-              letterSpacing: '0.01em',
+              fontWeight: theme('fontWeight.medium'),
+              letterSpacing: '0.02rem',
               fontFamily: theme('fontFamily.display'),
             },
             'ul > li::before': {
@@ -170,23 +170,23 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          letterSpacing: '0.01em',
-          fontWeight: theme('fontWeight.black'),
-          fontFamily: theme('fontFamily.display'),
-        },
-        h2: {
-          letterSpacing: '0.01em',
+          letterSpacing: '0.02rem',
           fontWeight: theme('fontWeight.extrabold'),
           fontFamily: theme('fontFamily.display'),
         },
-        h3: {
-          letterSpacing: '0.01em',
+        h2: {
+          letterSpacing: '0.02rem',
           fontWeight: theme('fontWeight.bold'),
           fontFamily: theme('fontFamily.display'),
         },
-        'h4,h5,h6': {
-          letterSpacing: '0.01em',
+        h3: {
+          letterSpacing: '0.02rem',
           fontWeight: theme('fontWeight.semibold'),
+          fontFamily: theme('fontFamily.display'),
+        },
+        'h4,h5,h6': {
+          letterSpacing: '0.02rem',
+          fontWeight: theme('fontWeight.medium'),
           fontFamily: theme('fontFamily.display'),
         },
       })

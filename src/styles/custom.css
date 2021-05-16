@@ -161,10 +161,10 @@
   h5,
   h6 {
     @apply text-heading;
-    letterSpacing: '0.01em',
+    letter-spacing: '0.02rem';
   }
 
   .sub-heading {
-    @apply font-bold mt-0 mb-0 !important;
+    @apply font-medium my-1 !important;
   }
 }
