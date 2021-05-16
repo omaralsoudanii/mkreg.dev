@@ -19,16 +19,18 @@ export default function PostsList({ posts, href }) {
               <Link
                 href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
               >
-                <a className="link-unstyled !font-bold">{frontMatter.title} </a>
+                <a className="link-unstyled !text-heading !font-extrabold">
+                  {frontMatter.title}{' '}
+                </a>
               </Link>
             </h2>
-            <p className="text-left !my-0 ! md:!mt-2  md:text-lg md:!leading-relaxed text-gray-600 dark:text-gray-400 md:text-right">
+            <p className="text-left !my-0 ! md:!mt-2 md:text-lg !leading-normal text-gray-600 dark:text-gray-400 md:text-right">
               <time>{`${dayjs(new Date(frontMatter.date)).format(
                 'MMMM DD, YYYY'
               )}`}</time>
             </p>
           </div>
-          <p className="text-secondary !font-normal md:text-lg !leading-normal md:!leading-relaxed  !my-2 md:!my-0 clamp-3">
+          <p className="text-secondary !font-normal md:text-lg !leading-normal !my-2 md:!my-0 clamp-2">
             {frontMatter.summary}
           </p>
         </div>

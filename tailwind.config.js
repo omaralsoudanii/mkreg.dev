@@ -36,17 +36,15 @@ module.exports = {
         'monospace',
       ],
       display:
-        '"HK Grotesk", Inter, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
-      sans: 'Inter, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+        '"HK Grotesk", Inter, ui-sans-serif, Roboto, "Helvetica Neue", sans-serif',
+      sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
     },
     extend: {
       lineHeight: {
-        normal: '1.4rem', // 22.4px
-        relaxed: '1.8rem', // 28.8px
+        normal: '1.4', // 22.5px
+        relaxed: '1.5', // 30px
       },
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
         gray: {
           50: '#fafafa',
           100: '#f5f5f5',
@@ -60,8 +58,6 @@ module.exports = {
           900: '#171717',
           1000: '#0b0b0b',
         },
-        white: '#ffffff',
-        black: '#000000',
         dark: 'rgb(14, 20, 27)',
       },
       typography: (theme) => ({
@@ -99,7 +95,7 @@ module.exports = {
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.700'),
-              top: '0.4555555em',
+              top: '0.55555em',
             },
             a: {
               textDecoration: 'none',
@@ -130,10 +126,10 @@ module.exports = {
         },
         lg: {
           css: {
-            fontSize: '1.25rem',
+            fontSize: '1.25em',
             lineHeight: theme('lineHeight.relaxed'),
             'ul>li:before': {
-              top: '0.52222em',
+              top: '0.5em',
             },
           },
         },
@@ -176,25 +172,21 @@ module.exports = {
       addBase({
         h1: {
           letterSpacing: 'normal',
-          fontSize: '2.6666667em',
           fontWeight: theme('fontWeight.black'),
           fontFamily: theme('fontFamily.display'),
         },
         h2: {
           letterSpacing: 'normal',
-          fontSize: '1.6666667em',
           fontWeight: theme('fontWeight.extrabold'),
           fontFamily: theme('fontFamily.display'),
         },
         h3: {
           letterSpacing: 'normal',
-          fontSize: '1.3333333em',
           fontWeight: theme('fontWeight.bold'),
           fontFamily: theme('fontFamily.display'),
         },
         'h4,h5,h6': {
           letterSpacing: 'normal',
-          fontSize: '1.125em',
           fontWeight: theme('fontWeight.semibold'),
           fontFamily: theme('fontFamily.display'),
         },

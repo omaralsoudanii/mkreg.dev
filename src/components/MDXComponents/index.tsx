@@ -16,8 +16,10 @@ const MDXCard = ({ title, url, icon, desc }) => (
         })}
       </div>
       <div>
-        <h3 className="!mt-2 !mb-1 !text-lg md:!text-xl">{title}</h3>
-        <p className="!mt-1 !mb-2  !font-medium !leading-normal !text-[15px] lg:!text-base text-secondary clamp-5">
+        <h3 className="!mt-2 !mb-1 !text-lg md:!text-xl !font-bold !text-heading !leading-normal">
+          {title}
+        </h3>
+        <p className="!mt-1 !mb-2  !font-normal !leading-normal !text-[15px] lg:!text-base text-secondary clamp-5">
           {desc}
         </p>
       </div>

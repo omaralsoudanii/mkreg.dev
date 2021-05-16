@@ -6,7 +6,7 @@
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     font-variant: common-ligatures contextual;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
     font-feature-settings: 'cpsp' 1, 'ccmp' 1, 'cv01' 1, 'cv02' 1, 'cv03' 1,
       'cv04' 1, 'liga' 1, 'clig' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
   }

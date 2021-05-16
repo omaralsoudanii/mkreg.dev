@@ -115,7 +115,7 @@
 
   .prose .link-lg,
   .link-lg {
-    @apply text-lg !leading-6 md:text-xl md:!leading-relaxed !font-medium;
+    @apply text-lg !leading-normal md:!leading-relaxed !font-medium;
   }
 
   .dark .text-link {
@@ -166,6 +166,6 @@
   }
 
   .sub-heading {
-    @apply  font-medium mt-0 mb-0 !important;
+    @apply font-medium mt-0 mb-0 !important;
   }
 }
