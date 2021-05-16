@@ -1,14 +1,9 @@
-FROM haproxy:2.4.0-alpine
-
+FROM haproxy:2.4-alpine
+USER root
+RUN mkdir -p /var/lib/haproxy && \
+    chown -R "haproxy:haproxy" /var/lib/haproxy
 # declare configs envs
 ENV HAPROXY_USER=haproxy
-
-# add the user with permissions
-RUN mkdir --parents /var/lib/$HAPROXY_USER && \
-  chown -R $HAPROXY_USER:$HAPROXY_USER /var/lib/$HAPROXY_USER
-
-RUN mkdir --parents /run/haproxy && \
-    chown -R $HAPROXY_USER:$HAPROXY_USER /run/haproxy
 
 # copy configs
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
