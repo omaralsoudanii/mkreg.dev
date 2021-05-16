@@ -27,16 +27,7 @@ module.exports = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, no-transform, immutable',
-          },
-        ],
-      },
-      {
-        source: '/',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=0, s-maxage=3600',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
