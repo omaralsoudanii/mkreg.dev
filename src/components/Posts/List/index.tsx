@@ -15,16 +15,16 @@ export default function PostsList({ posts, href }) {
       {posts.map((frontMatter) => (
         <div className="w-full my-12" key={frontMatter.slug}>
           <div className="flex flex-col items-start justify-between md:items-center md:flex-row">
-            <h2 className="md:!my-3 !my-2">
+            <h3 className="!my-1 md:!my-2">
               <Link
                 href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
               >
-                <a className="link-unstyled !text-heading !font-bold">
+                <a className="link-unstyled !text-heading !font-semibold">
                   {frontMatter.title}{' '}
                 </a>
               </Link>
-            </h2>
-            <p className="text-left !my-0 ! md:!mt-2 md:text-lg !leading-normal text-gray-600 dark:text-gray-400 md:text-right">
+            </h3>
+            <p className="text-left !my-0 ! md:!mt-1 md:text-lg !leading-normal text-gray-600 dark:text-gray-400 md:text-right">
               <time>{`${dayjs(new Date(frontMatter.date)).format(
                 'MMMM DD, YYYY'
               )}`}</time>

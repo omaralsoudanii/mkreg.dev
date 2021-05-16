@@ -23,7 +23,7 @@ const Home = () => {
 
           <div className="flex flex-col md:!mb-24 !mb-10 items-start justify-start divide-y-4 divide-gray-700 dark:divide-gray-300 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-16">
             <div className="pt-6 space-x-2 space-y-5 md:pb-8">
-              <h1 className="!px-2 !mb-4 !mt-4 md:!mb-4 md:!mt-4 text-4xl md:!text-[2.6666667em] md:!leading-loose md:!px-6 md:border-gray-700 md:dark:border-gray-300  md:!border-r-2">
+              <h1 className="!px-2 !mb-4 !mt-4 md:!mb-4 md:!mt-4 md:!leading-loose md:!px-6 md:border-gray-700 md:dark:border-gray-300  md:!border-r-2">
                 Purpose
               </h1>
             </div>

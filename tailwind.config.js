@@ -18,6 +18,18 @@ module.exports = {
       3: 3,
       5: 5,
     },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '4rem',
+    },
     fontFamily: {
       mono: [
         'JetBrains Mono',
@@ -35,8 +47,6 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      display:
-        'Raleway, Inter, ui-sans-serif, Roboto, "Helvetica Neue", sans-serif',
       sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
     },
     extend: {
@@ -56,7 +66,7 @@ module.exports = {
           700: '#363638',
           800: '#262626',
           900: '#171717',
-          1000: '#111111',
+          1000: '#0b0b0b',
         },
         dark: 'rgb(14, 20, 27)',
       },
@@ -70,27 +80,20 @@ module.exports = {
             lineHeight: theme('lineHeight.normal'),
             h1: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.extrabold'),
-              letterSpacing: '0.02rem',
-              fontFamily: theme('fontFamily.display'),
+              fontWeight: '780',
+              letterSpacing: '-0.02em',
             },
             h2: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
-              letterSpacing: '0.02rem',
-              fontFamily: theme('fontFamily.display'),
             },
             h3: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
-              letterSpacing: '0.02rem',
-              fontFamily: theme('fontFamily.display'),
             },
             'h4,h5,h6': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.medium'),
-              letterSpacing: '0.02rem',
-              fontFamily: theme('fontFamily.display'),
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.700'),
@@ -170,24 +173,17 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          letterSpacing: '0.02rem',
-          fontWeight: theme('fontWeight.extrabold'),
-          fontFamily: theme('fontFamily.display'),
+          letterSpacing: '-0.02em',
+          fontWeight: '780',
         },
         h2: {
-          letterSpacing: '0.02rem',
           fontWeight: theme('fontWeight.bold'),
-          fontFamily: theme('fontFamily.display'),
         },
         h3: {
-          letterSpacing: '0.02rem',
           fontWeight: theme('fontWeight.semibold'),
-          fontFamily: theme('fontFamily.display'),
         },
         'h4,h5,h6': {
-          letterSpacing: '0.02rem',
           fontWeight: theme('fontWeight.medium'),
-          fontFamily: theme('fontFamily.display'),
         },
       })
     }),
