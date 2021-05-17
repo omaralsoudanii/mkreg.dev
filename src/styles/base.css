@@ -2,18 +2,20 @@
 
 @layer base {
   body {
-    @apply subpixel-antialiased bg-white text-gray-1000 dark:bg-dark dark:text-gray-50;
+    @apply antialiased bg-white text-gray-900 dark:bg-dark dark:text-white;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    font-variant: common-ligatures contextual;
-    letter-spacing: -0.01rem;
-    font-feature-settings: "cv01","cv02","cv03","cv04","liga","clig","rlig","calt","kern";
+    font-variant: contextual common-ligatures;
+    font-kerning: normal;
+    font-feature-settings: 'cpsp', 'ss01', 'calt', 'ccmp', 'kern';
   }
 
-  @media screen and (min-device-pixel-ratio: 1.5),
-    screen and (min-resolution: 1.5dppx) {
-    body {
-      @apply antialiased;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern';
   }
 }

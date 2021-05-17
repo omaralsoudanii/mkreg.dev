@@ -8,12 +8,12 @@
   }
 
   .prose .mdx-marker {
-    @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-gray-1000 dark:border-gray-50 dark:bg-gray-1000;
+    @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-gray-900 dark:border-white dark:bg-gray-900;
   }
 
   .prose code[class*='language-'],
   .prose pre[class*='language-'] {
-    @apply mt-0 mb-0 font-mono text-sm font-medium bg-gray-100 text-primary dark:bg-gray-1000;
+    @apply mt-0 mb-0 font-mono text-sm font-medium bg-gray-100 text-primary dark:bg-gray-900;
     font-feature-settings: normal;
     letter-spacing: normal;
     text-align: left;
@@ -167,7 +167,7 @@
 
   .prose pre:not([class*='language-']),
   .prose code:not([class*='language-']) {
-    @apply font-mono text-base font-medium bg-gray-100 rounded text-primary dark:bg-gray-1000 mb-7;
+    @apply font-mono text-base font-medium bg-gray-100 rounded text-primary dark:bg-gray-900 mb-7;
     letter-spacing: normal;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */

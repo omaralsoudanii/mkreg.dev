@@ -42,7 +42,7 @@
   }
 
   .text-primary {
-    @apply text-gray-1000 dark:text-gray-50;
+    @apply text-gray-900 dark:text-white;
   }
 
   .text-secondary {
@@ -58,14 +58,14 @@
   }
 
   .nav-md-default {
-    @apply inline w-full h-full px-6 pt-2 pb-3 mx-2 text-base font-medium text-black dark:text-white;
+    @apply inline w-full h-full px-6 pt-2 pb-3 mx-2 text-lg font-medium text-black dark:text-white;
   }
 
   .nav-active {
-    @apply bg-gray-1000 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
+    @apply bg-gray-900 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply hover:bg-gray-1000 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-gray-50 hover:text-gray-1000 dark:hover:text-gray-100 text-secondary;
+    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-white hover:text-gray-900 dark:hover:text-gray-100 text-secondary;
   }
 
   .hdr-sm-btn {
@@ -88,12 +88,12 @@
     @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold rounded;
   }
 
-  .btn-secondary {
+  .btn-primary {
     @apply bg-white text-primary dark:bg-black;
   }
 
-  .btn-primary {
-    @apply bg-black text-gray-50 dark:text-gray-1000 dark:bg-white;
+  .btn-secondary {
+    @apply text-white bg-black dark:text-gray-900 dark:bg-white;
   }
 
   .btn-large {
@@ -102,7 +102,7 @@
 
   .prose .link-unstyled,
   .link-unstyled {
-    @apply text-primary hover:border-b-2 !font-medium hover:border-gray-1000 dark:hover:border-gray-50;
+    @apply text-primary hover:border-b-2 !font-medium hover:border-gray-900 dark:hover:border-white;
     transition-property: border;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 100ms;
@@ -115,7 +115,7 @@
 
   .prose .link-lg,
   .link-lg {
-    @apply text-lg !leading-normal md:!leading-relaxed !font-medium;
+    @apply text-lg md:text-xl !font-medium;
   }
 
   .dark .text-link {
@@ -148,6 +148,10 @@
 
   .task-list-item:before {
     @apply hidden;
+  }
+
+  .text-heading {
+    @apply text-black dark:text-white;
   }
 
   .sub-heading {

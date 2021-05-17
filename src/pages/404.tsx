@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="px-4 py-4">
       <div className="flex flex-col items-start justify-start md:justify-center md:items-center md:flex-row md:space-x-10 md:mt-8">
         <div className="pt-4 space-x-2 md:space-y-6">
-          <h1 className="text-6xl leading-loose border-gray-1000 md:text-8xl md:leading-loose md:dark:border-gray-100 md:border-r-8 md:py-24 md:px-6">
+          <h1 className="text-6xl leading-loose border-gray-900 md:text-8xl md:leading-loose md:dark:border-gray-100 md:border-r-8 md:py-24 md:px-6">
             404
           </h1>
         </div>

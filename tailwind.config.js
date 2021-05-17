@@ -51,8 +51,8 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.4', // 22.5px
-        relaxed: '1.5', // 30px
+        normal: '1.6', // 28px
+        relaxed: '1.65', // 36.3px
       },
       colors: {
         gray: {
@@ -66,45 +66,46 @@ module.exports = {
           700: '#363638',
           800: '#262626',
           900: '#171717',
-          1000: '#0b0b0b',
         },
         dark: 'rgb(14, 20, 27)',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.1000'),
+            color: theme('colors.gray.900'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
+            fontSize: '1.125em',
             lineHeight: theme('lineHeight.normal'),
             h1: {
               color: theme('colors.black'),
-              fontWeight: '780',
-              letterSpacing: '-0.02em',
+              fontWeight: theme('fontWeight.bold'),
             },
             h2: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
             },
             h3: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: '550',
             },
             'h4,h5,h6': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.medium'),
             },
             'ul > li::before': {
-              backgroundColor: theme('colors.gray.700'),
-              top: '0.55555em',
+              backgroundColor: theme('colors.gray.800'),
+              top: '0.7em',
+              width: '.275em',
+              height: '.275em',
             },
             a: {
               textDecoration: 'none',
             },
             strong: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
             },
             thead: {
               borderBottomColor: theme('colors.gray.700'),
@@ -117,27 +118,27 @@ module.exports = {
             },
             figure: {
               figcaption: {
-                color: theme('colors.gray.400'),
+                color: theme('colors.gray.300'),
               },
             },
             blockquote: {
-              color: theme('colors.gray.1000'),
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.normal'),
             },
           },
         },
         lg: {
           css: {
-            fontSize: '1.25em',
+            fontSize: '1.375em',
             lineHeight: theme('lineHeight.relaxed'),
-            'ul>li:before': {
-              top: '0.5em',
+            'ul > li::before': {
+              top: '0.65em',
             },
           },
         },
         dark: {
           css: {
-            color: theme('colors.gray.50'),
+            color: theme('colors.white'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.700'),
             },
@@ -146,23 +147,23 @@ module.exports = {
             },
             borderColor: theme('colors.gray.400'),
             'ul > li::before': {
-              backgroundColor: theme('colors.gray.400'),
+              backgroundColor: theme('colors.gray.300'),
             },
             strong: {
               color: theme('colors.white'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
             },
             thead: {
-              color: theme('colors.gray.50'),
-              borderBottomColor: theme('colors.gray.400'),
+              color: theme('colors.white'),
+              borderBottomColor: theme('colors.gray.300'),
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.400'),
+                borderBottomColor: theme('colors.gray.300'),
               },
             },
             blockquote: {
-              color: theme('colors.gray.50'),
+              color: theme('colors.white'),
             },
           },
         },
@@ -173,14 +174,16 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          letterSpacing: '-0.02em',
-          fontWeight: '780',
+          fontWeight: theme('fontWeight.bold'),
+          letterSpacing: '-.015em',
         },
         h2: {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.semibold'),
+          letterSpacing: '-.01em',
         },
         h3: {
-          fontWeight: theme('fontWeight.semibold'),
+          fontWeight: '550',
+          letterSpacing: '-.01em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),
