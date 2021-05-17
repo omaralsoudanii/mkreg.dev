@@ -51,7 +51,7 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.6', // 28px
+        normal: '1.5', // 28px
         relaxed: '1.65', // 36.3px
       },
       colors: {
@@ -65,7 +65,7 @@ module.exports = {
           600: '#545456',
           700: '#363638',
           800: '#262626',
-          900: '#171717',
+          900: '#111111',
         },
         dark: 'rgb(14, 20, 27)',
       },
@@ -96,9 +96,7 @@ module.exports = {
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.800'),
-              top: '0.7em',
-              width: '.275em',
-              height: '.275em',
+              top: '0.54em',
             },
             a: {
               textDecoration: 'none',
@@ -179,11 +177,9 @@ module.exports = {
         },
         h2: {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-.01em',
         },
         h3: {
           fontWeight: '550',
-          letterSpacing: '-.01em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),

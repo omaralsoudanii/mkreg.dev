@@ -85,19 +85,15 @@
   }
 
   .btn {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-semibold rounded;
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-base font-medium;
   }
 
   .btn-primary {
-    @apply bg-white text-primary dark:bg-black;
-  }
-
-  .btn-secondary {
     @apply text-white bg-black dark:text-gray-900 dark:bg-white;
   }
 
   .btn-large {
-    @apply px-6 py-3;
+    @apply w-full px-4 py-2;
   }
 
   .prose .link-unstyled,

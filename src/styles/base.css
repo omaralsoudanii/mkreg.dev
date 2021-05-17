@@ -8,6 +8,7 @@
     font-variant: contextual common-ligatures;
     font-kerning: normal;
     font-feature-settings: 'cpsp', 'ss01', 'calt', 'ccmp', 'kern';
+    letter-spacing: -.01em;
   }
 
   h1,
