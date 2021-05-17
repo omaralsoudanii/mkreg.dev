@@ -26,7 +26,7 @@ export default function Tag({ posts, tag }) {
       <Container>
         <section className="mb-20 space-y-8">
           <h1>{tag}</h1>
-          <p className="text-lg !leading-normal md:text-xl md:!leading-relaxed">
+          <p>
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
