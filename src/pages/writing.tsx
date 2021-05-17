@@ -26,7 +26,7 @@ export default function Writing({ posts }) {
       <Seo data={meta} />
       <Container>
         <section className="mb-20 space-y-8">
-          <h1>Writing</h1>
+          <h1 className="!mb-8">Writing</h1>
           <p>Stuff I wrote about programming and software</p>
           <p className="text-right">
             <Link href="/tags" passHref>
