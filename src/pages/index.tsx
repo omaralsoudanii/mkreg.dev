@@ -35,21 +35,21 @@ const Home = () => {
             </p>
           </div>
           <div className="grid items-start grid-cols-1 text-left md:gap-1 md:items-center md:text-center md:grid-cols-3 !px-2">
-            <p className="link-lg">
-              <Link href="/about">
-                <a className="my-2 link-unstyled"> About me &rarr; </a>
-              </Link>
-            </p>
-            <p className="link-lg">
-              <Link href="/writing">
-                <a className="my-2 link-unstyled"> Writing &rarr; </a>
-              </Link>
-            </p>
-            <p className="link-lg">
-              <Link href="/stack">
-                <a className="my-2 link-unstyled"> My Stack &rarr; </a>
-              </Link>
-            </p>
+            <Link href="/about">
+              <a className="my-2 md:mx-auto link-unstyled link-lg">
+                About me &rarr;
+              </a>
+            </Link>
+            <Link href="/writing">
+              <a className="my-2 md:mx-auto link-unstyled link-lg">
+                Writing &rarr;
+              </a>
+            </Link>
+            <Link href="/stack">
+              <a className="my-2 md:mx-auto link-unstyled link-lg">
+                My Stack &rarr;
+              </a>
+            </Link>
           </div>
         </section>
       </Container>

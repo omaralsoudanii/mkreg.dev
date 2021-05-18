@@ -69,6 +69,12 @@ module.exports = {
         },
         dark: 'rgb(14, 20, 27)',
       },
+      boxShadow: {
+        white: '0px 0px 0px #ffffff',
+        whiteHover: '0px 2px 0px #ffffff',
+        black: '0px 0px 0px #000000',
+        blackHover: '0px 2px 0px #000000',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

@@ -32,7 +32,7 @@ export default function Tag({ posts, tag }) {
           </p>
           <p className="text-right">
             <Link href="/writing" passHref>
-              <a className="link-unstyled">Browse all Writing &rarr;</a>
+              <a className="link-unstyled link-lg">Browse all Writing &rarr;</a>
             </Link>
           </p>
         </section>

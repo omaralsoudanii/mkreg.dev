@@ -7,19 +7,13 @@ export function Footer() {
       <div className="grid items-start grid-cols-1 py-12 text-left footer md:gap-4 md:items-center md:text-center md:grid-cols-3 ">
         <div className="flex flex-col items-start px-4 mb-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
           <Link href="/">
-            <a className="inline font-medium footer-border link-lg link-unstyled">
-              Home
-            </a>
+            <a className="font-medium  link-lg link-unstyled">Home</a>
           </Link>
           <Link href="/tags">
-            <a className="inline font-medium footer-border link-lg link-unstyled">
-              Tags
-            </a>
+            <a className="font-medium  link-lg link-unstyled">Tags</a>
           </Link>
           <Link href="/stack">
-            <a className="inline font-medium footer-border link-lg link-unstyled">
-              Stack
-            </a>
+            <a className="font-medium  link-lg link-unstyled">Stack</a>
           </Link>
         </div>
         <div className="flex flex-col items-start px-4 mb-4 space-y-4 md:space-y-8 md:px-0 md:m-0 md:items-center">
@@ -27,7 +21,7 @@ export function Footer() {
             href={`mailto:${Environment.social.mail}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline font-medium footer-border link-lg link-unstyled"
+            className="font-medium  link-lg link-unstyled"
           >
             Contact
           </a>
@@ -35,7 +29,7 @@ export function Footer() {
             href={Environment.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline font-medium footer-border link-lg link-unstyled"
+            className="font-medium  link-lg link-unstyled"
           >
             Github
           </a>
@@ -43,7 +37,7 @@ export function Footer() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="inline font-medium footer-border link-lg link-unstyled"
+            className="font-medium  link-lg link-unstyled"
             href={Environment.social.linkedin}
           >
             LinkedIn
@@ -54,7 +48,7 @@ export function Footer() {
             href={Environment.social.rss}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline font-medium footer-border link-lg link-unstyled"
+            className="font-medium  link-lg link-unstyled"
           >
             RSS
           </a>
@@ -62,7 +56,7 @@ export function Footer() {
             href={Environment.social.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline font-medium footer-border link-lg link-unstyled"
+            className="font-medium  link-lg link-unstyled"
           >
             Twitter
           </a>
@@ -70,7 +64,7 @@ export function Footer() {
             href={Environment.social.youtube}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline font-medium footer-border link-lg link-unstyled"
+            className="font-medium  link-lg link-unstyled"
           >
             YouTube
           </a>
