@@ -147,6 +147,6 @@
   }
 
   .sub-heading {
-    @apply font-medium my-1 !important;
+    @apply font-medium my-0 !important;
   }
 }
