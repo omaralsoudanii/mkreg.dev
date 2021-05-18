@@ -21,6 +21,7 @@ const NextImage = ({
       width={width}
       height={height}
       layout="responsive"
+      sizes={`(min-width: 1024px) 50vw, 100vw`}
       quality={quality}
     />
   )
