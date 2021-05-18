@@ -11,9 +11,6 @@ services:
     expose:
       - 3000
     restart: unless-stopped
-    volumes: 
-      - /app/node_modules
-      - /app/.next
     networks:
       - mk_prod
  
