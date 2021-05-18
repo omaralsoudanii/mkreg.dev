@@ -43,7 +43,6 @@ export default function Tag({ posts, tag }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { revalidate } = Environment.isr
   let tag: string
 
   const allPosts = await getAllFilesFrontMatter('writing')
@@ -60,7 +59,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { posts: filteredPosts, tag: tag },
-    revalidate: revalidate,
   }
 }
 
@@ -74,6 +72,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         tag,
       },
     })),
-    fallback: 'blocking',
+    fallback: false,
   }
 }

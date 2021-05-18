@@ -1,7 +1,6 @@
 import { Container } from '@/components/Container'
 import PostsContainer from '@/components/Posts/Container'
 import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
@@ -50,6 +49,5 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
-    revalidate: Environment.isr.revalidate,
   }
 }
