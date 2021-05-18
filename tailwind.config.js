@@ -184,12 +184,15 @@ module.exports = {
         },
         h2: {
           fontWeight: theme('fontWeight.semibold'),
+          letterSpacing: 'normal',
         },
         h3: {
           fontWeight: '550',
+          letterSpacing: 'normal',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),
+          letterSpacing: 'normal',
         },
       })
     }),

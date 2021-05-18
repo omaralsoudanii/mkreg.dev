@@ -1,6 +1,5 @@
 import Seo from '@/components/Seo'
 import Tag from '@/components/Tag'
-import { Environment } from '@/lib/environment'
 import { getAllTags } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
@@ -51,21 +50,12 @@ export default function Tags({ tagCount, tags }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { revalidate } = Environment.isr
   const { tagCount, tags } = await getAllTags('writing')
-
-  if (!Object.keys(tagCount).length) {
-    return {
-      notFound: true,
-      revalidate: revalidate,
-    }
-  }
 
   return {
     props: {
       tagCount,
       tags,
     },
-    revalidate: revalidate,
   }
 }

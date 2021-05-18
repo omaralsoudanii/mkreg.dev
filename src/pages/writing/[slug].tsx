@@ -1,6 +1,5 @@
 import MDXComponents from '@/components/MDXComponents'
 import Post from '@/components/Posts/Post'
-import { Environment } from '@/lib/environment'
 import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
@@ -21,11 +20,9 @@ export default function MDXPost({ mdxSource, frontMatter }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getFileBySlug('writing', params.slug)
-  const { revalidate } = Environment.isr
 
   return {
     props: post,
-    revalidate: revalidate,
   }
 }
 
@@ -38,6 +35,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: p.replace(/\.mdx/, ''),
       },
     })),
-    fallback: 'blocking',
+    fallback: false,
   }
 }

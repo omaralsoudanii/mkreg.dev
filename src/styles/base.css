@@ -2,13 +2,13 @@
 
 @layer base {
   body {
-    @apply antialiased bg-white text-gray-900 dark:bg-dark dark:text-white;
+    @apply antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-white;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     font-variant: contextual common-ligatures;
     font-kerning: normal;
-    font-feature-settings: 'cpsp', 'ss01', 'calt', 'ccmp', 'kern';
-    letter-spacing: -.01em;
+    font-feature-settings: 'cpsp', 'ss01', 'calt', 'ccmp', 'kern', 'case';
+    letter-spacing: -0.4px;
   }
 
   h1,
