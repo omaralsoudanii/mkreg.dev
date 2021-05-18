@@ -106,6 +106,7 @@ module.exports = {
             },
             a: {
               textDecoration: 'none',
+              color: 'inherit',
             },
             strong: {
               color: theme('colors.black'),
