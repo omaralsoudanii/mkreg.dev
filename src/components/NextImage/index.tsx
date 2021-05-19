@@ -6,12 +6,14 @@ const NextImage = ({
   width,
   height,
   alt,
+  layout = 'intrinsic',
   quality = 75,
 }: {
   src: string
   width: number
   height: number
   alt: string
+  layout?: 'intrinsic' | 'fixed' | 'responsive'
   quality?: number
 }): JSX.Element => {
   return (
@@ -20,8 +22,7 @@ const NextImage = ({
       src={src}
       width={width}
       height={height}
-      layout="responsive"
-      sizes={`(min-width: 1024px) 50vw, 100vw`}
+      layout={layout}
       quality={quality}
     />
   )

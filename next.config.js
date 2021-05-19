@@ -40,33 +40,16 @@ module.exports = {
           },
         ],
       },
-      {
-        source: '/rss.xml',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, no-cache, no-tranform, must-revalidate',
-          },
-        ],
-      },
-      {
-        source: '/sitemap.xml',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, no-cache, no-tranform, must-revalidate',
-          },
-        ],
-      },
-      {
-        source: '/robots.txt',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, no-cache, no-tranform, must-revalidate',
-          },
-        ],
-      },
     ]
   },
+  rewrites: async () => [
+    {
+      source: '/sitemap.xml',
+      destination: '/api/sitemap',
+    },
+    {
+      source: '/rss.xml',
+      destination: '/api/rss',
+    },
+  ],
 }

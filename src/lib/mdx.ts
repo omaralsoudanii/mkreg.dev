@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import mdxPrism from 'mdx-prism'
 import path from 'path'
+import MDXImage from './MDXImage'
 
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
@@ -23,6 +24,7 @@ export async function getFileBySlug(type: string, slug?) {
       remarkPlugins: [
         require('remark-autolink-headings'),
         require('remark-code-titles'),
+        MDXImage,
       ],
       rehypePlugins: [mdxPrism, require('rehype-slug')],
     },

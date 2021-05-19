@@ -1,26 +1,20 @@
 /* eslint-disable no-useless-escape */
-const fs = require('fs')
-const globby = require('globby')
-const path = require('path')
-const prettier = require('prettier')
-const matter = require('gray-matter')
+import fs from 'fs'
+import globby from 'globby'
+import path from 'path'
+import prettier from 'prettier'
+import matter from 'gray-matter'
+import { slugify } from '@/lib/utils'
 
-if (process.env.SITE_MAP !== 'true') {
-  return
-}
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { Environment } from '@/lib/environment'
 
-const slugify = (str) =>
-  str &&
-  str
-    .trim()
-    .replace(/[^\.a-z0-9-]/gi, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .toLowerCase()
+const handler = async (
+  _: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
+  const loc = path.join(process.cwd(), 'src', 'data')
 
-const loc = path.join(__dirname, 'src', 'data')
-
-;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const type = 'writing'
   const files = fs.readdirSync(path.join(loc, type))
@@ -81,7 +75,7 @@ const loc = path.join(__dirname, 'src', 'data')
                 const route = path === '/index' ? '' : path
                 return `
                           <url>
-                              <loc>${`https://mkreg.dev${route}`}</loc>
+                              <loc>${`${Environment.siteUrl}${route}`}</loc>
                           </url>
                       `
               })
@@ -94,6 +88,13 @@ const loc = path.join(__dirname, 'src', 'data')
     parser: 'html',
   })
 
-  // eslint-disable-next-line no-sync
-  fs.writeFileSync('./public/sitemap.xml', formatted)
-})()
+  res.setHeader(
+    'cache-control',
+    `s-maxage=${Environment.isr.revalidate}, stale-while-revalidate=${60}`
+  )
+  res.setHeader('content-type', 'text/xml')
+
+  res.send(formatted)
+}
+
+export default handler

@@ -1,15 +1,17 @@
-import { Environment } from '@/lib/environment'
 import dayjs from 'dayjs'
 import { promises as fs } from 'fs'
 import matter from 'gray-matter'
-import { GetStaticProps } from 'next'
 import path from 'path'
 import RSS from 'rss'
 import { URL } from 'url'
 
-const RSSFeed = () => null
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { Environment } from '@/lib/environment'
 
-export const getStaticProps: GetStaticProps = async () => {
+const handler = async (
+  _: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
   const { siteUrl, ogTitle, ogImage, ogDescription, isr } = Environment
 
   const feedOptions = {
@@ -31,7 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     await Promise.all(
       dirs.map(async (dir) => {
-        const p = path.join('src', 'data', dir)
+        const p = path.join(process.cwd(), 'src', 'data', dir)
 
         const posts = await fs.readdir(p)
 
@@ -64,7 +66,13 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     )
 
-    fs.writeFile('./public/rss.xml', feed.xml({ indent: true }))
+    res.setHeader(
+      'cache-control',
+      `s-maxage=${isr.revalidate}, stale-while-revalidate=${60}`
+    )
+    res.setHeader('content-type', 'text/xml')
+
+    res.send(feed.xml({ indent: true }))
   } catch (e) {
     // fallback default
     feed.item({
@@ -74,13 +82,14 @@ export const getStaticProps: GetStaticProps = async () => {
       description: ogDescription,
       author: ogTitle,
     })
-    fs.writeFile('./public/rss.xml', feed.xml({ indent: true }))
-  }
+    res.setHeader(
+      'cache-control',
+      `s-maxage=${isr.revalidate}, stale-while-revalidate=${60}`
+    )
+    res.setHeader('content-type', 'text/xml')
 
-  return {
-    props: {},
-    revalidate: isr.revalidate,
+    res.send(feed.xml({ indent: true }))
   }
 }
 
-export default RSSFeed
+export default handler

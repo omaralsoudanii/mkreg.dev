@@ -36,17 +36,17 @@ const Home = () => {
           </div>
           <div className="grid items-start grid-cols-1 text-left md:gap-1 md:items-center md:text-center md:grid-cols-3 !px-2">
             <Link href="/about">
-              <a className="my-2 md:mx-auto link-unstyled link-lg">
+              <a className="my-4 md:mx-auto link-unstyled link-lg">
                 About me &rarr;
               </a>
             </Link>
             <Link href="/writing">
-              <a className="my-2 md:mx-auto link-unstyled link-lg">
+              <a className="my-4 md:mx-auto link-unstyled link-lg">
                 Writing &rarr;
               </a>
             </Link>
             <Link href="/stack">
-              <a className="my-2 md:mx-auto link-unstyled link-lg">
+              <a className="my-4 md:mx-auto link-unstyled link-lg">
                 My Stack &rarr;
               </a>
             </Link>
