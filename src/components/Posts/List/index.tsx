@@ -13,25 +13,21 @@ export default function PostsList({ posts, href }) {
   return (
     <div className="space-y-8">
       {posts.map((frontMatter) => (
-        <div className="w-full my-12" key={frontMatter.slug}>
-          <div className="flex flex-col items-start justify-between md:items-center md:flex-row">
-            <h3 className="!my-0">
-              <Link
-                href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
-              >
-                <a className="link-unstyled !text-heading !font-semibold">
-                  {frontMatter.title}{' '}
-                </a>
-              </Link>
-            </h3>
-            <p className="text-left !my-0  text-base md:text-lg  text-gray-600 dark:text-gray-400 md:text-right">
-              <time>{`${dayjs(new Date(frontMatter.date)).format(
-                'MMMM DD, YYYY'
-              )}`}</time>
-            </p>
-          </div>
-          <p className="text-secondary text-base md:text-lg !my-1 md:!my-0 clamp-2 md:clamp-3">
+        <div className="flex flex-col my-12" key={frontMatter.slug}>
+          <h3 className="!my-2 !font-semibold">
+            <Link href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}>
+              <a className="link-unstyled !font-semibold">
+                {frontMatter.title}
+              </a>
+            </Link>
+          </h3>
+          <p className="text-secondary text-base md:text-lg !my-0 clamp-2 md:clamp-3">
             {frontMatter.summary}
+          </p>
+          <p className="!my-0 text-base md:text-lg !font-medium text-tertiary">
+            <time>{`${dayjs(new Date(frontMatter.date)).format(
+              'MMMM DD, YYYY'
+            )}`}</time>
           </p>
         </div>
       ))}

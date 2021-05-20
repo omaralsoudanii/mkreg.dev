@@ -6,8 +6,8 @@ const Card = ({ title, url, icon, desc }) => (
         {icon}
       </div>
       <div>
-        <h2 className="!my-2 !text-lg md:!text-2xl !text-heading">{title}</h2>
-        <p className="!my-2 !font-normal !leading-normal !text-base md:!text-lg text-secondary clamp-5">
+        <h2 className="!my-1 !text-lg md:!text-xl !text-heading">{title}</h2>
+        <p className="!my-1 !font-normal !leading-normal !text-base md:!text-lg text-secondary clamp-5">
           {desc}
         </p>
       </div>

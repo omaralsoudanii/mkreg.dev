@@ -98,7 +98,7 @@ module.exports = {
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.800'),
-              top: '0.5em',
+              top: '0.55em',
             },
             a: {
               textDecoration: 'none',

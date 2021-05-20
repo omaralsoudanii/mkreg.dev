@@ -33,12 +33,12 @@ export default function Post({ children, frontMatter }) {
             ))}
           </div>
           <div className="flex flex-row justify-between mt-4">
-            <p className="px-0 !my-1 text-base md:text-lg !py-1 text-gray-600 dark:text-gray-400">
-              {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
+            <p className="px-0 !my-1 text-base md:text-lg !py-1 text-tertiary">
+              {`${dayjs(new Date(frontMatter.date)).format('MMM DD, YYYY')}`}
             </p>
             {frontMatter.lastmod && (
-              <p className="px-0 !my-1 text-base md:text-lg !py-1 text-gray-600 dark:text-gray-400">
-                {`Updated on ${dayjs(new Date(frontMatter.lastmod)).format(
+              <p className="px-0 !my-1 text-base md:text-lg !py-1 text-tertiary">
+                {`Updated ${dayjs(new Date(frontMatter.lastmod)).format(
                   'MMMM DD, YYYY'
                 )}`}
               </p>

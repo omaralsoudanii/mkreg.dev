@@ -65,7 +65,7 @@
     @apply bg-dark bg-opacity-10 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply  filter-saturate dark:text-white text-secondary;
+    @apply filter-saturate dark:text-white text-secondary;
   }
 
   .hdr-sm-btn {
@@ -100,12 +100,12 @@
     transition: box-shadow 300ms ease 0s;
   }
 
-  .link-transition-hover {
+  .link-transition:hover {
     transition: box-shadow 100ms ease 0s;
   }
 
   .link-unstyled {
-    @apply text-primary md:link-transition md:hover:link-transition-hover !font-medium md:shadow-black md:dark:shadow-white md:hover:shadow-blackHover md:dark:hover:shadow-whiteHover;
+    @apply text-primary md:link-transition !font-medium md:shadow-black md:dark:shadow-white md:hover:shadow-blackHover md:dark:hover:shadow-whiteHover;
   }
 
   .link-lg {
