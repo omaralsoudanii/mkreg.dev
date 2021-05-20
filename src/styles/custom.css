@@ -58,7 +58,7 @@
   }
 
   .nav-md-default {
-    @apply px-6 pt-2 pb-3 mx-2 text-lg font-medium text-black dark:text-white;
+    @apply px-6 pt-2 pb-3 mx-2 text-lg font-medium text-primary;
   }
 
   .nav-active {
@@ -96,16 +96,18 @@
     @apply w-full px-4 py-2;
   }
 
-  .link-unstyled {
-    @apply text-primary !font-medium shadow-black dark:shadow-white hover:shadow-blackHover dark:hover:shadow-whiteHover;
+  .link-transition {
     transition: box-shadow 300ms ease 0s;
   }
 
-  .link-unstyled:hover {
+  .link-transition-hover {
     transition: box-shadow 100ms ease 0s;
   }
 
-  .prose .link-lg,
+  .link-unstyled {
+    @apply text-primary md:link-transition md:hover:link-transition-hover !font-medium md:shadow-black md:dark:shadow-white md:hover:shadow-blackHover md:dark:hover:shadow-whiteHover;
+  }
+
   .link-lg {
     @apply text-lg md:text-xl !font-medium;
   }

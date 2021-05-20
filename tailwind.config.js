@@ -3,12 +3,8 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
   purge: [
-    './src/pages/**/*.{tsx,ts}',
-    './src/components/**/*.{tsx,ts}',
-    './src/pages/*.{tsx,ts}',
-    './src/components/*.{tsx,ts}',
-    './src/data/*.mdx',
-    './src/data/**/*.mdx',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
@@ -102,7 +98,7 @@ module.exports = {
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.800'),
-              top: '0.54em',
+              top: '0.5em',
             },
             a: {
               textDecoration: 'none',
