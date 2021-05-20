@@ -1,11 +1,21 @@
 import NextLink from '@/components/NextLink'
 import NextImage from '@/components/NextImage'
-import MDXCard from './MDXCard'
+import Card from '@/components/Card'
+import { Github } from '@/components/Icons'
+
+const iconClassName = 'w-12 h-12  min-w-sm fill-current'
+
+const GithubCard = (card) => {
+  const icon = Github({
+    className: iconClassName,
+  })
+  return <Card {...card} icon={icon} />
+}
 
 const MDXComponents = {
   Image: NextImage,
   a: NextLink,
-  Card: MDXCard,
+  GithubCard,
 }
 
 export default MDXComponents

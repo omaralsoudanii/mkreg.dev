@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply antialiased tracking-[-0.2px] md:tracking-[-0.4px] text-gray-900 bg-gray-100 dark:bg-dark dark:text-white;
+    @apply antialiased tracking-[-0.2px] md:tracking-[-0.4px] text-black bg-gray-100 dark:bg-dark dark:text-white;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     font-variant: contextual common-ligatures;

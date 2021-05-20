@@ -74,7 +74,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.black'),
             '*,*::before,*::after': {
               borderColor: theme('colors.gray.400'),
             },
@@ -123,7 +123,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
               fontWeight: theme('fontWeight.normal'),
             },
           },

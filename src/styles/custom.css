@@ -42,11 +42,11 @@
   }
 
   .text-primary {
-    @apply text-gray-900 dark:text-white;
+    @apply text-black dark:text-white;
   }
 
   .text-secondary {
-    @apply text-gray-800 dark:text-gray-200;
+    @apply text-gray-800 dark:text-gray-400;
   }
 
   .text-tertiary {
@@ -62,10 +62,10 @@
   }
 
   .nav-active {
-    @apply bg-gray-900 bg-opacity-5 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
+    @apply bg-dark bg-opacity-10 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-opacity-5 dark:hover:bg-white dark:text-white hover:text-gray-900 dark:hover:text-gray-100 text-secondary;
+    @apply  filter-saturate dark:text-white text-secondary;
   }
 
   .hdr-sm-btn {
@@ -89,7 +89,7 @@
   }
 
   .btn-primary {
-    @apply text-white bg-black dark:text-gray-900 dark:bg-white;
+    @apply text-white bg-black dark:text-black dark:bg-white;
   }
 
   .btn-large {
