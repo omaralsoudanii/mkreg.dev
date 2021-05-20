@@ -2,11 +2,12 @@
 
 @layer base {
   body {
-    @apply antialiased tracking-[-0.2px] md:tracking-[-0.4px] text-black bg-gray-100 dark:bg-dark dark:text-white;
+    @apply antialiased text-black bg-gray-100 dark:bg-dark dark:text-white;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     font-variant: contextual common-ligatures;
     font-kerning: normal;
+    letter-spacing: normal;
     font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern', 'case';
   }
 }

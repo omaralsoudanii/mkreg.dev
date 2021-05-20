@@ -47,8 +47,8 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.5', // 28px
-        relaxed: '1.65', // 36.3px
+        normal: '1.5', // 27px
+        relaxed: '1.675', // 32.5px
       },
       colors: {
         gray: {
@@ -130,7 +130,7 @@ module.exports = {
         },
         lg: {
           css: {
-            fontSize: '1.375em',
+            fontSize: '1.275em',
             lineHeight: theme('lineHeight.relaxed'),
             'ul > li::before': {
               top: '0.65em',
