@@ -193,7 +193,7 @@ const Bookmarks = [
   {
     title: `The Art of Scalability`,
     desc: `Comprehensive, proven approach to scale any software service`,
-    url: `https://cbonte.github.io/haproxy-dconv/2.4/intro.html/`,
+    url: `https://cbonte.github.io/haproxy-dconv/2.4/intro.html`,
     icon: Haproxy({
       className: iconClassName,
     }),
