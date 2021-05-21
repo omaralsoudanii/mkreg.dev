@@ -14,16 +14,16 @@ const Home = () => {
       <Seo data={meta} />
       <Container>
         <section>
-          <div className="!mb-10 md:!mb-24">
+          <div className="!mb-10 lg:!mb-24">
             <h1 className="!font-semibold !mb-4">Omar Alsoudani</h1>
             <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Architect</h2>
             <h2 className="sub-heading">Creator</h2>
           </div>
 
-          <div className="flex flex-col md:!mb-16 !mb-10 items-start justify-start divide-y-2 divide-gray-700 dark:divide-gray-400 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-16">
-            <div className="pt-6 space-x-2 space-y-5 md:pb-8">
-              <h1 className="!px-2 !font-semibold !mb-4 !mt-4 md:!mb-4 md:!mt-4 md:!leading-[10rem] md:!px-6 md:border-gray-700 md:dark:border-gray-300  md:!border-r-2">
+          <div className="flex flex-col lg:!mb-16 !mb-10 items-start justify-start divide-y-2 divide-gray-700 dark:divide-gray-400 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
+            <div className="pt-6 space-x-2 space-y-5 lg:pb-8">
+              <h1 className="!px-2 !font-semibold !mb-4 !mt-4 lg:!mb-4 lg:!mt-4 lg:!leading-[10rem] lg:!px-6 lg:border-gray-700 lg:dark:border-gray-300  lg:!border-r-2">
                 Purpose
               </h1>
             </div>
@@ -34,19 +34,19 @@ const Home = () => {
               concept.
             </p>
           </div>
-          <div className="grid items-start grid-cols-1 text-left md:gap-1 md:items-center md:text-center md:grid-cols-3 !px-2">
+          <div className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-3 !px-2">
             <Link href="/about">
-              <a className="my-4 md:mx-auto link-unstyled link-lg">
+              <a className="my-4 lg:mx-auto link-unstyled link-lg">
                 About me &rarr;
               </a>
             </Link>
             <Link href="/writing">
-              <a className="my-4 md:mx-auto link-unstyled link-lg">
+              <a className="my-4 lg:mx-auto link-unstyled link-lg">
                 Writing &rarr;
               </a>
             </Link>
             <Link href="/stack">
-              <a className="my-4 md:mx-auto link-unstyled link-lg">
+              <a className="my-4 lg:mx-auto link-unstyled link-lg">
                 My Stack &rarr;
               </a>
             </Link>

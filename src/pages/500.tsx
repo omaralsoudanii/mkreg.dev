@@ -5,9 +5,9 @@ import Link from 'next/link'
 export default function ServerError() {
   return (
     <Container>
-      <div className="flex flex-col items-start justify-start md:justify-center md:items-center md:space-x-10 md:mt-8">
-        <div className="px-1 space-y-8 md:px-0">
-          <h1 className="md:pt-0">Internal server error</h1>
+      <div className="flex flex-col items-start justify-start lg:justify-center lg:items-center lg:space-x-10 lg:mt-8">
+        <div className="px-1 space-y-8 lg:px-0">
+          <h1 className="lg:pt-0">Internal server error</h1>
           <p className="pb-8">
             The server is currently unavailable for some reason. Obviously, it's
             not my fault, I ran the code on my machine and it's working fine.

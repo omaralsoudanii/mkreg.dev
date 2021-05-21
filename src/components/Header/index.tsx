@@ -62,11 +62,11 @@ export default function Header() {
         ) ?? { href: router.asPath, label: 'MK' }
 
   return (
-    <nav className="md:header-default header-default header-container">
+    <nav className="lg:header-default header-default header-container">
       <a href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </a>
-      <div className="grid grid-cols-1 md:hidden" ref={node}>
+      <div className="grid grid-cols-1 lg:hidden" ref={node}>
         <div className="flex items-center">
           {isExpanded ? (
             <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
@@ -111,7 +111,7 @@ export default function Header() {
           })}
       </div>
 
-      <ul className="hidden app md:space-x-3 md:flex md:flex-row">
+      <ul className="hidden app lg:space-x-3 lg:flex lg:flex-row">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname
@@ -128,7 +128,7 @@ export default function Header() {
       </ul>
       {mounted && (
         <div
-          className="hidden md:hdr-cnt-theme-btn md:inline"
+          className="hidden lg:hdr-cnt-theme-btn lg:inline"
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
           {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}

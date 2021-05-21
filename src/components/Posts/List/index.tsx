@@ -21,10 +21,10 @@ export default function PostsList({ posts, href }) {
               </a>
             </Link>
           </h3>
-          <p className="text-secondary text-base md:text-lg !my-0 clamp-2 md:clamp-3">
+          <p className="text-secondary text-base lg:text-lg !my-0 clamp-2 lg:clamp-3">
             {frontMatter.summary}
           </p>
-          <p className="!my-0 text-base md:text-lg !font-medium text-tertiary">
+          <p className="!my-0 text-base lg:text-lg !font-medium text-tertiary">
             <time>{`${dayjs(new Date(frontMatter.date)).format(
               'MMMM DD, YYYY'
             )}`}</time>

@@ -5,6 +5,7 @@ module.exports = {
   purge: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/data/**/*.{mdx}',
   ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
@@ -47,8 +48,8 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.5', // 27px
-        relaxed: '1.675', // 32.5px
+        normal: '1.5', // 29.25px
+        relaxed: '1.75', // 37.324px
       },
       colors: {
         gray: {
@@ -63,7 +64,7 @@ module.exports = {
           800: '#262626',
           900: '#111111',
         },
-        dark: 'rgb(14, 20, 27)',
+        dark: 'rgb(22, 27, 34)',
       },
       boxShadow: {
         white: '0px 0px 0px #ffffff',
@@ -130,11 +131,8 @@ module.exports = {
         },
         lg: {
           css: {
-            fontSize: '1.275em',
+            fontSize: '1.333em',
             lineHeight: theme('lineHeight.relaxed'),
-            'ul > li::before': {
-              top: '0.65em',
-            },
           },
         },
         dark: {
@@ -176,15 +174,15 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          letterSpacing: '-.015em',
+          letterSpacing: '-.022em',
         },
         h2: {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: 'normal',
+          letterSpacing: '-.011em',
         },
         h3: {
           fontWeight: '550',
-          letterSpacing: 'normal',
+          letterSpacing: '-.011em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),

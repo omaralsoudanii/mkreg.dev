@@ -2,12 +2,12 @@
 
 @layer base {
   body {
-    @apply antialiased text-black bg-gray-100 dark:bg-dark dark:text-white;
+    @apply antialiased leading-normal lg:leading-relaxed text-black bg-gray-100 dark:bg-dark dark:text-white;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     font-variant: contextual common-ligatures;
     font-kerning: normal;
     letter-spacing: normal;
-    font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern', 'case';
+    font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern';
   }
 }
