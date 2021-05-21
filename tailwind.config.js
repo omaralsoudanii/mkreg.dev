@@ -48,7 +48,7 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.5', // 29.25px
+        normal: '1.65', // 29.25px
         relaxed: '1.75', // 37.324px
       },
       colors: {
@@ -99,7 +99,7 @@ module.exports = {
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.800'),
-              top: '0.55em',
+              top: '0.65em',
             },
             a: {
               textDecoration: 'none',

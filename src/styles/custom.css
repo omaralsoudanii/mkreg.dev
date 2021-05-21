@@ -28,7 +28,7 @@
   }
 
   .header-container {
-    @apply fixed top-0 z-10 w-full bg-gray-100 border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-40 lg:dark:bg-opacity-100 filter-blur;
+    @apply fixed top-0 z-10 w-full bg-gray-100 border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 lg:dark:bg-opacity-100 lg:filter-none lg:dark:filter-none filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -69,11 +69,11 @@
   }
 
   .hdr-sm-btn {
-    @apply px-3 py-2 font-semibold cursor-pointer text-primary;
+    @apply py-3 pl-4 pr-6 font-medium cursor-pointer text-primary;
   }
 
   .hdr-sm-title {
-    @apply w-full px-3 py-3 text-base font-semibold cursor-pointer text-primary;
+    @apply w-full px-2 py-3 text-base font-medium cursor-pointer text-primary;
   }
 
   .hdr-sm-btn svg {
@@ -81,7 +81,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute p-2 font-semibold cursor-pointer text-primary right-4 top-3 w-11;
+    @apply absolute p-2 font-medium cursor-pointer text-primary right-4 top-3 w-11;
   }
 
   .btn {

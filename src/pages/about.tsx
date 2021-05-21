@@ -39,7 +39,7 @@ export default function About() {
           I approach the problem in an abstract way to get a solution. In
           summary, the technology you are gonna use is a tool to solve the
           problem. Understanding the problem and identifying the core cause is
-          more valuable for me. You can find what I "think" am capable of in{' '}
+          more valuable for me. You can find what I "think" am capable of in my{' '}
           <Link href="/stack">
             <a className="text-link"> Stack </a>
           </Link>
@@ -58,8 +58,8 @@ export default function About() {
           have a lot of knowledge when it comes to non UI parts.
         </p>
         <p>
-          This site is inspired *cough*Stole*cough* by other open-source
-          projects.I wrote about it in{' '}
+          This site is copied by other open-source projects. Wait, I meant
+          inspired not copied. Read more about it at{' '}
           <Link href="/writing/building-my-site">
             <a className="text-link"> Building my site </a>
           </Link>
