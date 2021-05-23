@@ -6,7 +6,6 @@
     text-rendering: optimizeLegibility;
     font-variant: contextual common-ligatures;
     font-kerning: normal;
-    letter-spacing: -.01em;
     font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern';
   }
 }

@@ -48,7 +48,7 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.65',
+        normal: '1.5',
         relaxed: '1.7',
       },
       colors: {
@@ -99,7 +99,6 @@ module.exports = {
             },
             'ul > li::before': {
               backgroundColor: theme('colors.gray.800'),
-              top: '0.65em',
             },
             a: {
               textDecoration: 'none',
@@ -174,15 +173,12 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          letterSpacing: '-.022em',
         },
         h2: {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-.011em',
         },
         h3: {
           fontWeight: '550',
-          letterSpacing: '-.011em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),
