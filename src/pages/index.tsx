@@ -23,11 +23,11 @@ const Home = () => {
 
           <div className="flex flex-col lg:!mb-16 !mb-10 items-start justify-start divide-y-2 divide-gray-700 dark:divide-gray-400 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
             <div className="pt-6 space-x-2 space-y-5 lg:pb-8">
-              <h1 className="!px-2 !font-semibold !mb-4 !mt-4 lg:!mb-4 lg:!mt-4 lg:!leading-[10rem] lg:!px-6 lg:border-gray-700 lg:dark:border-gray-300  lg:!border-r-2">
+              <h1 className="!px-0 !font-semibold !my-4 lg:!leading-loose lg:!px-6 lg:border-gray-700 lg:dark:border-gray-300  lg:!border-r-2">
                 Purpose
               </h1>
             </div>
-            <p className="!px-2 flex flex-col !py-2 !my-0">
+            <p className="!px-0 lg:!px-2 flex flex-col !py-4 !my-0">
               My digital identity, where I can write notes. Share my knowledge
               with others, my opinion on some topics, and open-source projects I
               create and share them here, maybe with a playground or proof of

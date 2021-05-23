@@ -46,11 +46,11 @@
   }
 
   .text-secondary {
-    @apply text-gray-800 dark:text-gray-400;
+    @apply text-gray-800 dark:text-gray-300;
   }
 
   .text-tertiary {
-    @apply text-gray-500 dark:text-gray-500;
+    @apply text-gray-600 dark:text-gray-400;
   }
 
   .nav-default {
@@ -131,13 +131,6 @@
 
   .hr-stroke {
     @apply border-t border-gray-400 dark:border-gray-700;
-  }
-
-  .dark .fill-svg {
-    fill: white;
-  }
-  .light .fill-svg {
-    fill: black;
   }
 
   .task-list-item:before {
