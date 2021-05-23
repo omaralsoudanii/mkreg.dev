@@ -4,10 +4,9 @@
   body {
     @apply antialiased leading-normal text-black bg-gray-100 lg:leading-relaxed dark:bg-dark dark:text-white;
     text-rendering: optimizeLegibility;
-    text-size-adjust: 100%;
     font-variant: contextual common-ligatures;
     font-kerning: normal;
-    letter-spacing: normal;
-    font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern' , 'liga' , 'clig' , 'case';
+    letter-spacing: -.01em;
+    font-feature-settings: 'cpsp', 'salt', 'calt', 'ccmp', 'kern';
   }
 }

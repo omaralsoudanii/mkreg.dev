@@ -48,8 +48,8 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        normal: '1.65', // 29.25px
-        relaxed: '1.75', // 37.324px
+        normal: '1.65',
+        relaxed: '1.7',
       },
       colors: {
         gray: {
@@ -131,7 +131,7 @@ module.exports = {
         },
         lg: {
           css: {
-            fontSize: '1.333em',
+            fontSize: '1.25em',
             lineHeight: theme('lineHeight.relaxed'),
           },
         },
