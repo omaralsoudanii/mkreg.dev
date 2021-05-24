@@ -25,7 +25,7 @@ export default function Post({ children, frontMatter }) {
         <div className="grid grid-cols-1 mt-1 !mb-4 !py-2 lg:grid-cols-1">
           <div className="flex flex-wrap">
             {frontMatter.tags.map((t: string) => (
-              <p key={t} className="pr-2 text-base lg:text-lg  !my-0 !py-1">
+              <p key={t} className="pr-2 !my-0 !py-1">
                 <Link href={`/tags/${slugify(t)}`}>
                   <a className="text-link">{t}</a>
                 </Link>
@@ -33,11 +33,11 @@ export default function Post({ children, frontMatter }) {
             ))}
           </div>
           <div className="flex flex-row justify-between mt-4">
-            <p className="px-0 !my-1 text-base lg:text-lg !py-1 text-tertiary">
+            <p className="px-0 !my-1 !py-1 text-tertiary">
               {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
             </p>
             {frontMatter.lastmod && (
-              <p className="px-0 !my-1 text-base lg:text-lg !py-1 text-tertiary">
+              <p className="px-0 !my-1 !py-1 text-tertiary">
                 {`Updated ${dayjs(new Date(frontMatter.lastmod)).format(
                   'MMMM DD, YYYY'
                 )}`}

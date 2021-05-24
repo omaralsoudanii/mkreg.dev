@@ -1,6 +1,6 @@
 export function Container({ children }) {
   return (
-    <article className="mx-auto prose lg:prose-lg dark:prose-dark">
+    <article className="container prose max-w-prose lg:prose-lg dark:prose-dark">
       {children}
     </article>
   )

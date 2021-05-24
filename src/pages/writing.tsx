@@ -24,11 +24,11 @@ export default function Writing({ posts }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="space-y-8 mb-28">
+        <section className="mb-28">
           <h1 className="!mb-8">Writing</h1>
           <p>Stuff I wrote about programming and software</p>
           <p className="text-right">
-            <Link href="/tags" passHref>
+            <Link href="/tags">
               <a className="mr-1 link-unstyled">Browse by Tags &rarr;</a>
             </Link>
           </p>

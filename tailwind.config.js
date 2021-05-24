@@ -31,9 +31,6 @@ module.exports = {
       sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
-      lineHeight: {
-        lg: '1.7777778',
-      },
       colors: {
         dark: 'rgb(22, 27, 34)',
         'gray-100': 'rgb(245,245,245)',
@@ -62,12 +59,18 @@ module.exports = {
             },
             ol: {
               li: {
-                '&:before': { color: theme('colors.gray.700') },
+                '&:before': {
+                  backgroundColor: theme('colors.gray.700'),
+                  top: '0.8em',
+                },
               },
             },
             ul: {
               li: {
-                '&:before': { backgroundColor: theme('colors.gray.700') },
+                '&:before': {
+                  backgroundColor: theme('colors.gray.700'),
+                  top: '0.8em',
+                },
               },
             },
             strong: {
@@ -92,6 +95,11 @@ module.exports = {
             'blockquote p:last-of-type::after': false,
           },
         },
+        lg: {
+          css: {
+            lineHeight: '1.8',
+          },
+        },
         dark: {
           css: {
             color: theme('colors.white'),
@@ -100,7 +108,7 @@ module.exports = {
             },
             ol: {
               li: {
-                '&:before': { color: theme('colors.gray.300') },
+                '&:before': { backgroundColor: theme('colors.gray.300') },
               },
             },
             ul: {

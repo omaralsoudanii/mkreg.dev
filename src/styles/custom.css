@@ -59,7 +59,7 @@
   }
 
   .nav-md-default {
-    @apply px-6 pt-2 pb-3 mx-2 text-lg font-medium text-primary;
+    @apply px-6 pt-2 pb-3 mx-2 font-medium text-primary;
   }
 
   .nav-active {
@@ -70,7 +70,7 @@
   }
 
   .hdr-sm-btn {
-    @apply py-3 pl-4 pr-6 font-medium cursor-pointer text-primary;
+    @apply flex-auto px-4 py-3 mx-2 font-medium cursor-pointer text-primary;
   }
 
   .hdr-sm-title {

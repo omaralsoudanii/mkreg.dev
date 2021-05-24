@@ -5,8 +5,7 @@
     @apply subpixel-antialiased text-black bg-gray-100 dark:bg-dark dark:text-white;
     font-variant: common-ligatures contextual;
     text-rendering: optimizeLegibility;
-    font-feature-settings: 'case' 1, 'cpsp' 1, 'ccmp' 1, 'dlig' 1, 'cv01' 1,
-      'cv10' 1, 'ss01' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'kern' 1;
+    font-feature-settings: 'cpsp', 'ccmp', 'cv01', 'salt', 'kern', 'liga', 'clig', 'calt', 'dlig', 'case';
   }
 
   @media screen and (min-device-pixel-ratio: 1.5),
