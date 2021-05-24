@@ -84,8 +84,9 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.700'),
+              color: theme('colors.gray.800'),
               borderLeftColor: theme('colors.gray.300'),
+              fontWeight: theme('fontWeight.normal'),
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
@@ -121,8 +122,9 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.300'),
+              color: theme('colors.gray.200'),
               borderLeftColor: theme('colors.gray.700'),
+              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
