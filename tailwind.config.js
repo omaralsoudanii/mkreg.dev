@@ -129,7 +129,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.10'),
+              color: theme('colors.gray.100'),
               borderLeftColor: theme('colors.gray.700'),
               fontWeight: theme('fontWeight.normal'),
             },
