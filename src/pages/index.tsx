@@ -36,19 +36,13 @@ const Home = () => {
           </div>
           <div className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-3 !px-2">
             <Link href="/about">
-              <a className="my-4 lg:mx-auto link-unstyled link-lg">
-                About me &rarr;
-              </a>
+              <a className="my-4 lg:mx-auto link-unstyled ">About me &rarr;</a>
             </Link>
             <Link href="/writing">
-              <a className="my-4 lg:mx-auto link-unstyled link-lg">
-                Writing &rarr;
-              </a>
+              <a className="my-4 lg:mx-auto link-unstyled ">Writing &rarr;</a>
             </Link>
             <Link href="/stack">
-              <a className="my-4 lg:mx-auto link-unstyled link-lg">
-                My Stack &rarr;
-              </a>
+              <a className="my-4 lg:mx-auto link-unstyled ">My Stack &rarr;</a>
             </Link>
           </div>
         </section>

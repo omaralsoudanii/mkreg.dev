@@ -29,9 +29,7 @@ export default function Writing({ posts }) {
           <p>Stuff I wrote about programming and software</p>
           <p className="text-right">
             <Link href="/tags" passHref>
-              <a className="px-1 link-unstyled link-lg">
-                Browse by Tags &rarr;
-              </a>
+              <a className="mr-1 link-unstyled">Browse by Tags &rarr;</a>
             </Link>
           </p>
         </section>

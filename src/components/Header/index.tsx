@@ -111,12 +111,12 @@ export default function Header() {
           })}
       </div>
 
-      <ul className="hidden app lg:space-x-3 lg:flex lg:flex-row">
+      <ul className="hidden px-6 mx-auto text-base lg:text-lg max-w-prose lg:px-0 lg:space-x-3 lg:flex lg:flex-row">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname
               ? 'nav-md-default shadow-blackHover dark:shadow-whiteHover'
-              : 'nav-md-default   shadow-black dark:shadow-white hover:shadow-blackHover dark:hover:shadow-whiteHover'
+              : 'nav-md-default shadow-black dark:shadow-white hover:shadow-blackHover dark:hover:shadow-whiteHover'
           return (
             <li key={route.href}>
               <Link href={route.href}>

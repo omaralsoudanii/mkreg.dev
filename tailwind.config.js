@@ -1,12 +1,8 @@
 const plugin = require('tailwindcss/plugin')
-
+const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
-  purge: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/data/**/*.{mdx}',
-  ],
+  purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     lineClamp: {
@@ -14,18 +10,6 @@ module.exports = {
       2: 2,
       3: 3,
       5: 5,
-    },
-    fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
     },
     fontFamily: {
       mono: [
@@ -44,27 +28,15 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
       lineHeight: {
-        normal: '1.5',
-        relaxed: '1.7',
+        lg: '1.7777778',
       },
       colors: {
-        gray: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d8d8dc',
-          400: '#aeaeb2',
-          500: '#737373',
-          600: '#545456',
-          700: '#363638',
-          800: '#262626',
-          900: '#111111',
-        },
         dark: 'rgb(22, 27, 34)',
+        'gray-100': 'rgb(245,245,245)',
       },
       boxShadow: {
         white: '0px 0px 0px #ffffff',
@@ -76,76 +48,64 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.black'),
-            '*,*::before,*::after': {
-              borderColor: theme('colors.gray.400'),
-            },
-            fontSize: '1.125em',
-            lineHeight: theme('lineHeight.normal'),
             h1: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
             },
-            h2: {
+            'h2,h3,h4,h5,h6': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
-            },
-            h3: {
-              color: theme('colors.black'),
-              fontWeight: '550',
-            },
-            'h4,h5,h6': {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.medium'),
-            },
-            'ul > li::before': {
-              backgroundColor: theme('colors.gray.800'),
             },
             a: {
               textDecoration: 'none',
               color: 'inherit',
+            },
+            ol: {
+              li: {
+                '&:before': { color: theme('colors.gray.700') },
+              },
+            },
+            ul: {
+              li: {
+                '&:before': { backgroundColor: theme('colors.gray.700') },
+              },
             },
             strong: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
             },
             thead: {
+              color: theme('colors.black'),
               borderBottomColor: theme('colors.gray.700'),
             },
-            borderColor: theme('colors.gray.400'),
             tbody: {
               tr: {
                 borderBottomColor: theme('colors.gray.700'),
               },
             },
-            figure: {
-              figcaption: {
-                color: theme('colors.gray.300'),
-              },
-            },
             blockquote: {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.normal'),
+              color: theme('colors.gray.700'),
+              borderLeftColor: theme('colors.gray.300'),
             },
-          },
-        },
-        lg: {
-          css: {
-            fontSize: '1.25em',
-            lineHeight: theme('lineHeight.relaxed'),
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
           },
         },
         dark: {
           css: {
             color: theme('colors.white'),
-            '*,*::before,*::after': {
-              borderColor: theme('colors.gray.700'),
-            },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.white'),
             },
-            borderColor: theme('colors.gray.400'),
-            'ul > li::before': {
-              backgroundColor: theme('colors.gray.300'),
+            ol: {
+              li: {
+                '&:before': { color: theme('colors.gray.300') },
+              },
+            },
+            ul: {
+              li: {
+                '&:before': { backgroundColor: theme('colors.gray.300') },
+              },
             },
             strong: {
               color: theme('colors.white'),
@@ -161,7 +121,8 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.white'),
+              color: theme('colors.gray.300'),
+              borderLeftColor: theme('colors.gray.700'),
             },
           },
         },
@@ -174,15 +135,8 @@ module.exports = {
         h1: {
           fontWeight: theme('fontWeight.bold'),
         },
-        h2: {
+        'h2,h3,h4,h5,h6': {
           fontWeight: theme('fontWeight.semibold'),
-        },
-        h3: {
-          fontWeight: '550',
-        },
-        'h4,h5,h6': {
-          fontWeight: theme('fontWeight.medium'),
-          letterSpacing: 'normal',
         },
       })
     }),
