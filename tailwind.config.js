@@ -1,5 +1,5 @@
 const plugin = require('tailwindcss/plugin')
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const { fontFamily, colors } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
@@ -32,6 +32,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        gray: colors.truGray,
         dark: 'rgb(22, 27, 34)',
         'gray-100': 'rgb(245,245,245)',
       },
@@ -87,12 +88,10 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.800'),
+              color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.300'),
               fontWeight: theme('fontWeight.normal'),
             },
-            'blockquote p:first-of-type::before': false,
-            'blockquote p:last-of-type::after': false,
           },
         },
         lg: {
@@ -130,7 +129,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.10'),
               borderLeftColor: theme('colors.gray.700'),
               fontWeight: theme('fontWeight.normal'),
             },

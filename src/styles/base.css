@@ -4,8 +4,7 @@
   body {
     @apply subpixel-antialiased text-black bg-gray-100 dark:bg-dark dark:text-white;
     font-variant: common-ligatures contextual;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: 'case', 'cpsp', 'cv01', 'cv10', 'ss01', 'calt';
+    font-feature-settings: 'cv01', 'cv10', 'ss01';
   }
 
   @media screen and (min-device-pixel-ratio: 1.5),

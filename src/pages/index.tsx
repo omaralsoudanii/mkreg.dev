@@ -15,7 +15,9 @@ const Home = () => {
       <Container>
         <section>
           <div className="!mb-10 lg:!mb-24">
-            <h1 className="!font-semibold !mb-4">Omar Alsoudani</h1>
+            <h1 className="!my-4 !text-4xl !tracking-tight">
+              Hi, I'm Omar Alsoudani
+            </h1>
             <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Architect</h2>
             <h2 className="sub-heading">Creator</h2>
@@ -24,14 +26,14 @@ const Home = () => {
           <div className="flex flex-col lg:!mb-16 !mb-10 items-start justify-start divide-y-2 divide-gray-700 dark:divide-gray-400 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
             <div className="pt-6 space-x-2 space-y-5 lg:pb-8">
               <h1 className="!px-0 !font-semibold !my-4 lg:!leading-loose lg:!px-6 lg:border-gray-700 lg:dark:border-gray-300  lg:!border-r-2">
-                Purpose
+                Goal
               </h1>
             </div>
             <p className="!px-0 lg:!px-2 flex flex-col !py-4 !my-0">
-              My digital identity, where I can write notes. Share my knowledge
-              with others, my opinion on some topics, and open-source projects I
-              create and share them here, maybe with a playground or proof of
-              concept.
+              The purpose of this site to be my digital identity, where I can
+              write notes. Share my knowledge with others, my opinion on some
+              topics, and open-source projects I create and share them here.
+              Maybe with a playground or proof of concept.
             </p>
           </div>
           <div className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-3 !px-2">
