@@ -7,7 +7,7 @@ _mk_completions() {
   all_long_opts="--pull --push --restart --build --help "
   all_short_opts="-p -r -b -h "
   all_pull_opts="main"
-  all_restart_opts="mk-nginx mk-next mk-proxy"
+  all_restart_opts="mk-next mk-haproxy"
   case "$prev" in
   --pull | -p)
     COMPREPLY=($(compgen -W "${all_pull_opts}" -- "${cur}"))
