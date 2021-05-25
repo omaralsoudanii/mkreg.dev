@@ -1,7 +1,7 @@
 ---
 title: 'Building my site'
 date: '2021-04-27'
-lastmod: '2021-05-18'
+lastmod: '2021-05-25'
 summary: "High level overview of building and developing my personal site, coding and infrastructure wise."
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
 image: '/static/images/writing/building-mkreg.png'
@@ -10,18 +10,21 @@ image: '/static/images/writing/building-mkreg.png'
 **Frontend** is harder and more complex than what most programmers who don't do any **UI/UX** stuff think. I was one of those until I actually had to build one.
 This a high level talk about building and developing my personal site. Coding and infrastructure wise.
 
-> This post will be updated from time to time as tech emerges and new tooling is used.
+> This post will be updated from time to time as tech emerges and new tooling is used
 
-![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.png)
+![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg-light-house.png)
 
 ## The clueless research
 
 No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. 
+
 FYI I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend. You gotta optimize delivery for the Frontend app after all, whether it's infrastructure based or code wise based.
 
 I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about React like 4 years ago when everything was a class.
 
-So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). I decided to go with Next since I knew React and Next seemed to be always ahead, used more and bigger sites were using it. To be fair it boiled down to the fact that I just knew React syntax, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
+So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). I decided to go with Next since I knew React and Next seemed to be always ahead, used more and bigger sites were using it. 
+
+To be fair it boiled down to the fact that I just knew React syntax, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
 
 ## Technologies used
 
@@ -47,13 +50,13 @@ whether it's about what's rendered, caching or performance
 
 ## Coding and best practices
 
-This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code. However if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
+This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code. 
 
-This is my way of learning things. I read, develop then start progressing in a form of trial and error. Then iterate and fix. Honestly I didn't know that I would enjoy it so much eventually it will become my site.
+However if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
 
-With time, the code should be cleaner by removing some technical debts or using the proper way to implement something.
+This is my way of learning things. I read, develop then start progressing in a form of trial and error. Then iterate and fix., honestly I didn't know that I would enjoy it so much eventually it will become my site.
 
-If you wanna contribute, fix stuff, or whatever feel free to do so. The code is open sourced on Github.
+With time, the code should be cleaner by removing some technical debts or using the proper way to implement something, if you wanna contribute, fix stuff, or whatever feel free to do so. The code is open sourced on Github.
 
 <GithubCard 
     title="omaralsoudanii/mkreg.dev"
@@ -63,18 +66,18 @@ If you wanna contribute, fix stuff, or whatever feel free to do so. The code is 
 
 ## Lessons learned
 
-- Stop wasting your time for a month in a [lab](https://rsms.me/inter/lab/) just to get the perfect thing, nothing is perfect
+- Stop wasting your time for a month in a [lab](https://rsms.me/inter/lab/) just to get the perfect thing, nothing is perfect (Not really, I didn't learn this lesson and I am still in the lab... SEND HELP!!)
 - Iterate and enhance as you go, don't redo everything from scratch after the first failure
 - No knowledge is irrelevant or a waste of time. As I said before this helped me a lot dealing with software on the other side of the spectrum
 - Wanna do something? do it! stop thinking about the perfect execution. When was the last time you did something totally new and it was perfect on the first try?
 
 ## Acknowledgment
 
-![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg-light-house.png)
+![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.png)
 
 This site used alot of things from these resources, sometimes copy pasta of some component design or just some helpers code snippets, or simply by looking at the way things are handled. In the end the app deviated from those due to the rapid learning curve I gained while developing.
 
->Serious talk, I don't copy paste anything That I don't or won't fully understand and neither should you
+>Serious talk, I don't copy paste anything that I don't or won't fully understand and neither should you (unless it's PHP mixed with regex, then go ahead my friend copy paste the whole thing and don't look back)
 
 - [Brian Lovin](https://brianlovin.com/)
 - [Lee Robinson](https://leerob.io/)
@@ -88,7 +91,9 @@ What? of course I included my self, otherwise who do you think will do all the c
 
 ## Infrastructure
 
-I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles, however, the tools mentioned above are running on **$6 VPS**. If you wanna learn more about it, feel free to contact me.
+I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles, I am still figuring out how to structure the content. 
+
+However, the tools mentioned above is just running on a **$6 VPS**. If you wanna learn more about it, feel free to contact me.
 
 ## What's next
 

@@ -1,10 +1,30 @@
 @tailwind utilities;
 
 @layer utilities {
-  .app {
-    @apply px-6 mx-auto text-base lg:text-lg max-w-prose lg:px-0;
+  .text-primary {
+    @apply text-gray-900 dark:text-gray-100;
   }
 
+  .text-secondary {
+    @apply text-gray-800 dark:text-gray-300;
+  }
+
+  .text-tertiary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .text-heading {
+    @apply text-black dark:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight text-heading;
+  }
 
   .filter-none {
     filter: none;
@@ -42,18 +62,6 @@
     }
   }
 
-  .text-primary {
-    @apply text-black dark:text-white;
-  }
-
-  .text-secondary {
-    @apply text-gray-800 dark:text-gray-300;
-  }
-
-  .text-tertiary {
-    @apply text-gray-600 dark:text-gray-400;
-  }
-
   .nav-default {
     @apply flex py-3 text-base font-medium text-primary;
   }
@@ -66,7 +74,7 @@
     @apply bg-dark bg-opacity-10 dark:bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur;
   }
   .nav-inactive {
-    @apply filter-saturate dark:text-white text-secondary;
+    @apply filter-saturate text-primary;
   }
 
   .hdr-sm-btn {
@@ -138,11 +146,11 @@
     @apply hidden;
   }
 
-  .text-heading {
-    @apply text-black dark:text-white;
-  }
-
   .sub-heading {
     @apply font-medium my-1 !important;
+  }
+
+  .title-heading {
+    @apply text-3xl font-bold leading-9 tracking-tight text-heading md:text-4xl md:leading-10 lg:text-6xl lg:leading-14 !important;
   }
 }

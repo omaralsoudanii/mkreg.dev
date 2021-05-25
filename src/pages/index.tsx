@@ -22,31 +22,43 @@ const Home = () => {
             <h2 className="sub-heading">Architect</h2>
             <h2 className="sub-heading">Creator</h2>
           </div>
+        </section>
+        <section className="flex flex-col items-start justify-start divide-y divide-gray-900 dark:divide-gray-100 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
+          <div className="py-4 space-x-2 lg:pt-12 lg:pb-12 md:space-y-5">
+            <h1 className="lg:border-gray-900 title-heading lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
+              Goal
+            </h1>
+          </div>
+          <p className="!px-2 py-4 lg:py-0 !my-0 leading-relaxed max-w-md text-lg">
+            The purpose of this site to be my digital identity, where I can
+            write notes. Share my knowledge with others, my opinion on some
+            topics, and open-source projects I create and share them here. Maybe
+            with a playground or proof of concept.
+          </p>
+        </section>
 
-          <div className="flex flex-col lg:!mb-16 !mb-10 items-start justify-start divide-y-2 divide-gray-700 dark:divide-gray-400 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-16">
-            <div className="pt-6 space-x-2 space-y-5 lg:pb-8">
-              <h1 className="!px-0 !font-semibold !my-4 lg:!leading-loose lg:!px-6 lg:border-gray-700 lg:dark:border-gray-300  lg:!border-r-2">
-                Goal
-              </h1>
-            </div>
-            <p className="!px-0 lg:!px-2 flex flex-col !py-4 !my-0">
-              The purpose of this site to be my digital identity, where I can
-              write notes. Share my knowledge with others, my opinion on some
-              topics, and open-source projects I create and share them here.
-              Maybe with a playground or proof of concept.
-            </p>
-          </div>
-          <div className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-3 !px-2">
-            <Link href="/about">
-              <a className="my-4 lg:mx-auto link-unstyled ">About me &rarr;</a>
-            </Link>
-            <Link href="/writing">
-              <a className="my-4 lg:mx-auto link-unstyled ">Writing &rarr;</a>
-            </Link>
-            <Link href="/stack">
-              <a className="my-4 lg:mx-auto link-unstyled ">My Stack &rarr;</a>
-            </Link>
-          </div>
+        <section className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-4 !px-2">
+          <Link href="/about">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
+              About me &rarr;
+            </a>
+          </Link>
+          <Link href="/writing">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
+              Writing &rarr;
+            </a>
+          </Link>
+          <Link href="/stack">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
+              My Stack &rarr;
+            </a>
+          </Link>
+
+          <Link href="/stack">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
+              Nuggets &rarr;
+            </a>
+          </Link>
         </section>
       </Container>
     </React.Fragment>

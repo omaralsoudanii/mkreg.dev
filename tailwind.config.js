@@ -31,6 +31,15 @@ module.exports = {
       sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
+      spacing: {
+        '9/16': '56.25%',
+      },
+      lineHeight: {
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+      },
       colors: {
         gray: colors.truGray,
         dark: 'rgb(22, 27, 34)',
@@ -45,10 +54,10 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.black'),
+            color: theme('colors.gray.900'),
             h1: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: '740',
             },
             'h2,h3,h4,h5,h6': {
               color: theme('colors.black'),
@@ -75,11 +84,11 @@ module.exports = {
               },
             },
             strong: {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
+              color: theme('colors.gray.900'),
+              fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
               borderBottomColor: theme('colors.gray.700'),
             },
             tbody: {
@@ -101,7 +110,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.white'),
+            color: theme('colors.gray.100'),
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.white'),
             },
@@ -116,11 +125,11 @@ module.exports = {
               },
             },
             strong: {
-              color: theme('colors.white'),
-              fontWeight: theme('fontWeight.semibold'),
+              color: theme('colors.gray.100'),
+              fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.white'),
+              color: theme('colors.gray.100'),
               borderBottomColor: theme('colors.gray.300'),
             },
             tbody: {
@@ -142,7 +151,7 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: '740',
         },
         'h2,h3,h4,h5,h6': {
           fontWeight: theme('fontWeight.semibold'),

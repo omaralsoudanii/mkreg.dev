@@ -24,16 +24,19 @@ export default function Writing({ posts }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="mb-28">
+        <section className="mb-28 space-y-8">
           <h1 className="!mb-8">Writing</h1>
-          <p>Stuff I wrote about programming and software</p>
+          <p>
+            Stuff I write about programming, software with a slight hint of
+            salt.
+          </p>
           <p className="text-right">
             <Link href="/tags">
-              <a className="mr-1 link-unstyled">Browse by Tags &rarr;</a>
+              <a className="mr-1 link-unstyled">Browse by Tags</a>
             </Link>
           </p>
+          <PostsContainer href="/writing" posts={posts} />
         </section>
-        <PostsContainer href="/writing" posts={posts} />
       </Container>
     </React.Fragment>
   )

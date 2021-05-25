@@ -111,7 +111,7 @@ export default function Header() {
           })}
       </div>
 
-      <ul className="hidden max-w-3xl px-4 mx-auto lg:px-0 lg:space-x-3 lg:flex lg:flex-row">
+      <ul className="flex-row hidden max-w-screen-sm px-8 mx-auto space-x-3 lg:flex">
         {RoutesMetadata.map((route) => {
           const navClass =
             route.href === router.pathname

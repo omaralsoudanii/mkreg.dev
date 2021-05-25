@@ -2,9 +2,10 @@
 
 @layer base {
   body {
-    @apply subpixel-antialiased text-black bg-gray-100 dark:bg-dark dark:text-white;
+    @apply subpixel-antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-gray-100;
     font-variant: common-ligatures contextual;
     text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
     font-feature-settings: 'cv01', 'cv10', 'ss01';
   }
 
