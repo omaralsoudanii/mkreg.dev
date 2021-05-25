@@ -6,7 +6,7 @@ import * as React from 'react'
 const Home = () => {
   const meta = {
     title: 'Omar Alsoudani',
-    description: 'Software developer, creator and the king of laziness.',
+    description: 'Software engineer, creator and the king of laziness.',
     JsonLd: false,
   }
   return (
@@ -54,7 +54,7 @@ const Home = () => {
             </a>
           </Link>
 
-          <Link href="/stack">
+          <Link href="/nuggets">
             <a className="my-4 text-lg lg:mx-auto link-unstyled">
               Nuggets &rarr;
             </a>
