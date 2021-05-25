@@ -1,20 +1,32 @@
-## Script helper for building docker , restarting etc... ##
+# Script helper for mkreg.dev
 
-This script assumes your app is in /var/www/mkreg.dev (Yeah i could've made it env var but am too lazy).
+This is a shell script helper for building, restarting the app, pulling from git etc..
+
+### Notice about the repository directory root ###
+- This script use new docker build kit, you can use it via
+
+```sh
+docker buildx install
+```
+
+- This script assumes your app is in **`/var/www/mkreg.dev`** (Yeah i could've made it env var but am too lazy).
 Obviously you wanna change that, 
-simply edit mk.sh the `_rootdir` variable declartion in the file **mk.sh**
+simply edit [`mk.sh`](https://github.com/omaralsoudanii/mkreg.dev/tree/main/docker/scripts/mk.sh) and change `_rootdir` variable declartion to where you cloned the repo
 
 ```sh
 _rootdir="/var/www/mkreg.dev"
 ```
 
-to your app root directory (where you cloned the repo)
+To your app root directory
 
 ```sh
 _rootdir="/usr/local/myapp"
 ```
 
-- Copy `mk.sh` and `mk-completion` to $HOME (this is optional you can keep the shell script within the repo directory, however I prefer to keep excutable in $HOME. You could also symlink it)
+# Installation and usage
+
+- Copy [`mk.sh`](https://github.com/omaralsoudanii/mkreg.dev/tree/main/docker/scripts/mk.sh) and 
+  [`mk.completion`](https://github.com/omaralsoudanii/mkreg.dev/tree/main/docker/scripts/mk.completion) to `$HOME` (this is optional you can keep the shell script within the repo directory, however I prefer to keep excutable in `$HOME`. You could also **symlink** it)
 
 - Give permission to the shell script
 
@@ -47,6 +59,6 @@ mk --help
 ## Tweaking
 
 - If you want to edit what the script does, you need to know bash scripting then just see any command
-in `mk.sh` and follow the convention
+in [`mk.sh`](https://github.com/omaralsoudanii/mkreg.dev/tree/main/docker/scripts/mk.sh) and follow the convention
 
-- If you want to modify auto completion, see `mk-completion.bash` It's pretty much self explanatory
+- If you want to modify auto completion, see [`mk.completion`](https://github.com/omaralsoudanii/mkreg.dev/tree/main/docker/scripts/mk.completion) It's pretty much self explanatory
