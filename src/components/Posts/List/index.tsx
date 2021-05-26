@@ -12,13 +12,12 @@ export default function PostsList({ posts, href }) {
 
   return (
     <div className="space-y-8">
-      {posts.map((frontMatter) => (
+      {posts.map((frontMatter, i) => (
         <div
-          key={frontMatter.slug}
+          key={i}
           className="flex flex-col items-start px-4 py-4 border border-gray-300 rounded dark:bg-dark dark:border-gray-700"
         >
           <Link
-            key={frontMatter.slug}
             passHref
             href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
           >

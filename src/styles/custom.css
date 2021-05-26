@@ -45,20 +45,20 @@
   }
 
   .header-default {
-    @apply py-2 bg-gray-100 border-b border-gray-400 lg:pt-6 lg:pb-3 lg:relative dark:border-opacity-30 border-opacity-20 dark:bg-dark;
+    @apply py-2 bg-light border-b border-gray-400 lg:pt-6 lg:pb-3 lg:relative dark:border-opacity-30 border-opacity-20 dark:bg-dark;
   }
 
   .header-container {
-    @apply fixed top-0 z-10 w-full bg-gray-100 border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 lg:dark:bg-opacity-100 lg:filter-none lg:dark:filter-none filter-blur;
+    @apply fixed top-0 z-10 w-full bg-light border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 lg:dark:bg-opacity-100 lg:filter-none lg:dark:filter-none filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
     .header-container {
-      @apply fixed top-0 z-10 w-full bg-gray-100 border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-dark dark:bg-opacity-100 filter-none;
+      @apply fixed top-0 z-10 w-full bg-light border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-dark dark:bg-opacity-100 filter-none;
     }
 
     .header-default {
-      @apply py-2 bg-gray-100 border-b border-gray-700 lg:pt-5 lg:pb-4 lg:relative dark:border-gray-300 dark:border-opacity-30 border-opacity-20 dark:bg-dark;
+      @apply py-2 bg-light border-b border-gray-700 lg:pt-5 lg:pb-4 lg:relative dark:border-gray-300 dark:border-opacity-30 border-opacity-20 dark:bg-dark;
     }
   }
 

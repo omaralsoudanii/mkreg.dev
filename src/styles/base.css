@@ -2,11 +2,11 @@
 
 @layer base {
   body {
-    @apply subpixel-antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-gray-100;
+    @apply subpixel-antialiased text-gray-900 bg-light dark:bg-dark dark:text-gray-100;
     font-variant: common-ligatures contextual;
     text-rendering: optimizeLegibility;
     letter-spacing: -0.01em;
-    font-feature-settings: 'cv01', 'cv10', 'ss01';
+    font-feature-settings: 'cv01', 'cv10', 'ss01', 'kern' , 'liga' , 'rlig' , 'dlig' , 'calt', 'clig', 'ccmp', 'cpsp';
   }
 
   @media screen and (min-device-pixel-ratio: 1.5),
@@ -15,4 +15,9 @@
       @apply antialiased;
     }
   }
+}
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

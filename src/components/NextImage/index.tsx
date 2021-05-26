@@ -6,6 +6,7 @@ const NextImage = ({
   width,
   height,
   alt,
+  className,
   layout = 'intrinsic',
   quality = 75,
 }: {
@@ -15,8 +16,19 @@ const NextImage = ({
   alt: string
   layout?: 'intrinsic' | 'fixed' | 'responsive'
   quality?: number
+  className?: string
 }): JSX.Element => {
-  return (
+  return className ? (
+    <Image
+      alt={alt}
+      src={src}
+      width={width}
+      height={height}
+      layout={layout}
+      quality={quality}
+      className={className}
+    />
+  ) : (
     <Image
       alt={alt}
       src={src}

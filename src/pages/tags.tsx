@@ -24,7 +24,7 @@ export default function Tags({ tagCount, tags }) {
     <article>
       <Seo data={meta} />
       <section className="flex flex-col items-start justify-start divide-y divide-gray-900 dark:divide-gray-100 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-24">
-        <div className="py-4 space-x-2 lg:pt-6 lg:pb-8 lg:space-y-5">
+        <div className="py-4 lg:pt-6 lg:pb-8">
           <h1 className="title-heading lg:border-r-2 !mb-0 lg:px-6 lg:dark:border-gray-100 lg:border-gray-900">
             Tags
           </h1>
