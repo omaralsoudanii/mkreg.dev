@@ -41,14 +41,4 @@ module.exports = {
       },
     ]
   },
-  rewrites: async () => [
-    {
-      source: '/sitemap.xml',
-      destination: '/api/sitemap',
-    },
-    {
-      source: '/rss.xml',
-      destination: '/api/rss',
-    },
-  ],
 }
