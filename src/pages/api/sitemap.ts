@@ -88,10 +88,7 @@ const handler = async (
     parser: 'html',
   })
 
-  res.setHeader(
-    'cache-control',
-    `s-maxage=${Environment.isr.revalidate}, stale-while-revalidate=${60}`
-  )
+  res.setHeader('cache-control', `public, no-cache`)
   res.setHeader('content-type', 'text/xml')
 
   res.send(formatted)

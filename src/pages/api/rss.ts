@@ -66,10 +66,7 @@ const handler = async (
       })
     )
 
-    res.setHeader(
-      'cache-control',
-      `s-maxage=${isr.revalidate}, stale-while-revalidate=${60}`
-    )
+    res.setHeader('cache-control', `public, no-cache`)
     res.setHeader('content-type', 'text/xml')
 
     res.send(feed.xml({ indent: true }))
@@ -82,10 +79,7 @@ const handler = async (
       description: ogDescription,
       author: ogTitle,
     })
-    res.setHeader(
-      'cache-control',
-      `s-maxage=${isr.revalidate}, stale-while-revalidate=${60}`
-    )
+    res.setHeader('cache-control', `public, no-cache`)
     res.setHeader('content-type', 'text/xml')
 
     res.send(feed.xml({ indent: true }))
