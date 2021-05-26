@@ -15,9 +15,7 @@ const Home = () => {
       <Container>
         <section>
           <div className="!mb-10 lg:!mb-24">
-            <h1 className="!my-4 !text-4xl !tracking-tight">
-              Hi, I'm Omar Alsoudani
-            </h1>
+            <h1 className="!my-4 !text-5xl">Omar Alsoudani</h1>
             <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Architect</h2>
             <h2 className="sub-heading">Creator</h2>

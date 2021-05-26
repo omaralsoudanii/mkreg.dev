@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin')
-const { fontFamily, colors } = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
   purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
@@ -31,9 +32,6 @@ module.exports = {
       sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
-      spacing: {
-        '9/16': '56.25%',
-      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -41,9 +39,10 @@ module.exports = {
         14: '3.5rem',
       },
       colors: {
-        gray: colors.truGray,
+        gray: colors.trueGray,
+        'gray-100': 'rgb(243, 244, 246)',
         dark: 'rgb(22, 27, 34)',
-        light: 'rgb(249, 250, 251)',
+        light: 'whitesmoke',
       },
       boxShadow: {
         white: '0px 0px 0px #ffffff',
@@ -61,7 +60,7 @@ module.exports = {
             },
             'h2,h3,h4,h5,h6': {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
             },
             a: {
               textDecoration: 'none',
@@ -152,9 +151,11 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: '740',
+          letterSpacing: '-0.025em',
         },
         'h2,h3,h4,h5,h6': {
-          fontWeight: theme('fontWeight.semibold'),
+          fontWeight: theme('fontWeight.bold'),
+          letterSpacing: '-0.015em',
         },
       })
     }),

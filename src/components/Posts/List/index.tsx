@@ -10,40 +10,29 @@ export default function PostsList({ posts, href }) {
       </p>
     )
 
-  return (
-    <div className="space-y-8">
-      {posts.map((frontMatter, i) => (
-        <div
-          key={i}
-          className="flex flex-col items-start px-4 py-4 border border-gray-300 rounded dark:bg-dark dark:border-gray-700"
-        >
-          <Link
-            passHref
-            href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
-          >
-            <a className="w-full">
-              <div className="flex flex-wrap">
-                {frontMatter.tags.map((t: string) => (
-                  <span className="inline-block !pt-1 mr-2 text-[15px] font-medium text-tertiary">
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <h2 className="lg:!text-2xl !text-xl !pt-2 !font-semibold !text-heading !my-2">
-                {frontMatter.title}
-              </h2>
-              <p className="!leading-normal !text-base !font-normal text-secondary !my-2">
-                {frontMatter.summary}
-              </p>
-              <span className="inline-flex items-center py-1 pr-3 ml-auto mr-3 text-sm leading-none text-tertiary">
-                <time>{`${dayjs(new Date(frontMatter.date)).format(
-                  'MMMM DD, YYYY'
-                )}`}</time>
-              </span>
-            </a>
-          </Link>
-        </div>
-      ))}
+  return posts.map((frontMatter) => (
+    <div
+      key={frontMatter.title}
+      className="flex flex-col px-6 py-4 border border-gray-300 rounded border-opacity-70 dark:bg-dark dark:border-gray-400 dark:border-opacity-20"
+    >
+      <Link
+        passHref
+        href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+      >
+        <a className="w-full">
+          <span className="!my-0  text-sm leading-none text-secondary">
+            <time>{`${dayjs(new Date(frontMatter.date)).format(
+              'MMMM DD, YYYY'
+            )}`}</time>
+          </span>
+          <h2 className="lg:!text-2xl !leading-snug !text-xl !pt-0 !font-bold !text-heading !mt-0 !mb-3">
+            {frontMatter.title}
+          </h2>
+          <p className="clamp-3 text-base !leading-normal  !font-normal text-tertiary !mb-0 !mt-1">
+            {frontMatter.summary}
+          </p>
+        </a>
+      </Link>
     </div>
-  )
+  ))
 }

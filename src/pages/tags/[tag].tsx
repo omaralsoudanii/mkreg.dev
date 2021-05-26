@@ -24,17 +24,21 @@ export default function Tag({ posts, tag }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="space-y-8">
-          <h1 className="!mb-8">{tag}</h1>
+        <section className="mb-16 space-y-8">
+          <header className="!mb-8">
+            <h1>{tag}</h1>
+          </header>
           <p>
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
-          <p className="!my-2 text-right">
-            <Link href="/writing" passHref>
+          <p className="text-right">
+            <Link href="/writing">
               <a className="mr-1 link-unstyled">Browse all Writing</a>
             </Link>
           </p>
+        </section>
+        <section>
           <PostsContainer href="/writing" posts={posts} />
         </section>
       </Container>
