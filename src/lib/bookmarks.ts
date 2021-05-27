@@ -131,6 +131,12 @@ const Bookmarks = [
     url: `https://cbonte.github.io/haproxy-dconv/2.4/intro.html`,
     icon: 'Haproxy',
   },
+  {
+    title: `Simple, elegant. The golden standard of creating a portfolio`,
+    desc: `The golden standard way of creating a portfolio. Built by a typeface designer, using his infamous humanist sans-serif typeface`,
+    url: `https://github.com/Mishallic/PortfolioNew`,
+    icon: 'React',
+  },
 ]
 
 export default Bookmarks
