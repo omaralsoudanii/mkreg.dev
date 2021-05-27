@@ -41,7 +41,8 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
         'gray-100': 'rgb(243, 244, 246)',
-        dark: 'rgb(17, 24, 39)',
+        // dark: 'rgb(22, 27, 34)',
+        dark: 'rgb(25, 27, 30)',
         light: 'whitesmoke',
       },
       boxShadow: {
