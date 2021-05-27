@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply text-base;
+  }
+  
   body {
     @apply antialiased text-gray-900 bg-light dark:bg-dark dark:text-gray-100;
     font-variant: common-ligatures contextual;

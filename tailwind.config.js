@@ -41,7 +41,7 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
         'gray-100': 'rgb(243, 244, 246)',
-        dark: 'rgb(22, 27, 34)',
+        dark: 'rgb(17, 24, 39)',
         light: 'whitesmoke',
       },
       boxShadow: {
@@ -151,7 +151,7 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: '740',
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.02em',
         },
         'h2,h3,h4,h5,h6': {
           fontWeight: theme('fontWeight.bold'),
