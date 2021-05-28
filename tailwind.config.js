@@ -57,7 +57,8 @@ module.exports = {
         gray: {
           1000: '#171717',
         },
-        dark: 'rgb(22, 27, 34)',
+        dark: 'rgb(25, 30, 37)',
+        // dark: 'rgb(22, 27, 34)',
         light: 'whitesmoke',
       },
       boxShadow: {
@@ -72,11 +73,11 @@ module.exports = {
             color: theme('colors.gray.900'),
             h1: {
               color: '#171717',
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.extrabold'),
             },
             'h2,h3,h4,h5,h6': {
               color: '#171717',
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
             },
             a: {
               textDecoration: 'none',
@@ -98,7 +99,7 @@ module.exports = {
             },
             strong: {
               color: theme('colors.gray.1000'),
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
             },
             thead: {
               color: theme('colors.gray.900'),
@@ -134,7 +135,7 @@ module.exports = {
             },
             strong: {
               color: theme('colors.gray.50'),
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
             },
             tbody: {
               tr: {
@@ -159,10 +160,10 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.extrabold'),
         },
         'h2,h3,h4,h5,h6': {
-          fontWeight: theme('fontWeight.semibold'),
+          fontWeight: theme('fontWeight.bold'),
         },
       })
     }),
