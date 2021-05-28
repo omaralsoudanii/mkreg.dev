@@ -15,10 +15,10 @@ const Home = () => {
       <Container>
         <section>
           <div className="!mb-10 lg:!mb-24">
-            <h1 className="!mb-4 !text-5xl">Omar Alsoudani</h1>
-            <h2 className="!leading-snug sub-heading">Software Engineer</h2>
-            <h2 className="!leading-snug sub-heading">Architect</h2>
-            <h2 className="!leading-snug sub-heading">Creator</h2>
+            <h1 className="!mb-4 text-4xl lg:!text-5xl">Omar</h1>
+            <h2 className="sub-heading">Software Engineer</h2>
+            <h2 className="sub-heading">Architect</h2>
+            <h2 className="sub-heading">Creator</h2>
           </div>
         </section>
         <section className="flex flex-col items-start justify-start divide-y divide-gray-900 dark:divide-gray-100 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">

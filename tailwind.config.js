@@ -39,8 +39,9 @@ module.exports = {
         14: '3.5rem',
       },
       colors: {
-        gray: colors.trueGray,
         // dark: 'rgb(22, 27, 34)',
+        gray: colors.trueGray,
+        'gray-1000': '#050505',
         dark: 'rgb(25, 30, 37)',
         light: 'whitesmoke',
       },
@@ -55,12 +56,12 @@ module.exports = {
           css: {
             color: theme('colors.gray.900'),
             h1: {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
+              color: '#050505',
+              fontWeight: '560',
             },
             'h2,h3,h4,h5,h6': {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.medium'),
+              color: '#050505',
+              fontWeight: '680',
             },
             a: {
               textDecoration: 'none',
@@ -70,6 +71,7 @@ module.exports = {
               li: {
                 '&:before': {
                   backgroundColor: theme('colors.gray.700'),
+                  top: '0.8em',
                 },
               },
             },
@@ -77,6 +79,7 @@ module.exports = {
               li: {
                 '&:before': {
                   backgroundColor: theme('colors.gray.700'),
+                  top: '0.8em',
                 },
               },
             },
@@ -96,6 +99,7 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.300'),
+              fontWeight: 'normal',
             },
           },
         },
@@ -103,7 +107,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.100'),
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.white'),
+              color: theme('colors.gray.50'),
             },
             ol: {
               li: {
@@ -117,7 +121,7 @@ module.exports = {
             },
             strong: {
               color: theme('colors.gray.100'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
             },
             thead: {
               color: theme('colors.gray.100'),
@@ -131,6 +135,7 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.100'),
               borderLeftColor: theme('colors.gray.700'),
+              fontWeight: 'normal',
             },
           },
         },
@@ -138,15 +143,14 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addBase, theme }) {
+    plugin(function ({ addBase }) {
       addBase({
         h1: {
-          fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-0.02em',
+          fontWeight: '560',
+          letterSpacing: '-0.025em',
         },
         'h2,h3,h4,h5,h6': {
-          fontWeight: theme('fontWeight.medium'),
-          letterSpacing: '-0.02em',
+          fontWeight: '680',
         },
       })
     }),
