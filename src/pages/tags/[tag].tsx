@@ -30,7 +30,7 @@ export default function Tag({ posts, tag }) {
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.
           </p>
-          <p className="text-right">
+          <p className="text-right !text-display">
             <Link href="/writing">
               <a className="mr-1 link-unstyled">Browse all Writing</a>
             </Link>

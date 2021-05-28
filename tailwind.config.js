@@ -1,5 +1,4 @@
 const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
   purge: [
@@ -55,7 +54,9 @@ module.exports = {
         14: '3.5rem',
       },
       colors: {
-        gray: colors.trueGray,
+        gray: {
+          1000: '#171717',
+        },
         dark: 'rgb(22, 27, 34)',
         light: 'whitesmoke',
       },
@@ -69,14 +70,18 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.900'),
-            'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.black'),
+            h1: {
+              color: '#171717',
+              fontWeight: theme('fontWeight.bold'),
+            },
+            'h2,h3,h4,h5,h6': {
+              color: '#171717',
+              fontWeight: theme('fontWeight.semibold'),
             },
             a: {
               textDecoration: 'none',
               color: 'inherit',
             },
-            lineHeight: 1.5,
             ol: {
               li: {
                 '&:before': {
@@ -91,11 +96,13 @@ module.exports = {
                 },
               },
             },
-            'strong,thead': {
-              color: theme('colors.gray.900'),
+            strong: {
+              color: theme('colors.gray.1000'),
+              fontWeight: theme('fontWeight.semibold'),
             },
             thead: {
               color: theme('colors.gray.900'),
+              borderBottomColor: theme('colors.gray.700'),
             },
             tbody: {
               tr: {
@@ -105,7 +112,7 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.300'),
-              fontWeight: 'normal',
+              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
@@ -113,7 +120,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.100'),
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.white'),
+              color: theme('colors.gray.50'),
             },
             ol: {
               li: {
@@ -127,9 +134,16 @@ module.exports = {
             },
             strong: {
               color: theme('colors.gray.50'),
+              fontWeight: theme('fontWeight.semibold'),
+            },
+            tbody: {
+              tr: {
+                borderBottomColor: theme('colors.gray.300'),
+              },
             },
             thead: {
               color: theme('colors.gray.100'),
+              borderBottomColor: theme('colors.gray.300'),
             },
             blockquote: {
               color: theme('colors.gray.100'),
@@ -142,13 +156,13 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addBase }) {
+    plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          fontWeight: '800',
+          fontWeight: theme('fontWeight.bold'),
         },
         'h2,h3,h4,h5,h6': {
-          fontWeight: '700',
+          fontWeight: theme('fontWeight.semibold'),
         },
       })
     }),

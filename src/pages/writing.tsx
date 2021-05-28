@@ -30,7 +30,7 @@ export default function Writing({ posts }) {
             Stuff I write about programming, software with a slight hint of
             salt.
           </p>
-          <p className="text-right">
+          <p className="text-right !text-display">
             <Link href="/tags">
               <a className="mr-1 link-unstyled">Browse by Tags</a>
             </Link>

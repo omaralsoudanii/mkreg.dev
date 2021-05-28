@@ -1,7 +1,7 @@
 @tailwind utilities;
 @layer utilities {
   .text-primary {
-    @apply text-gray-900 dark:text-gray-50;
+    @apply text-gray-900 dark:text-gray-100;
   }
 
   .text-secondary {
@@ -12,13 +12,16 @@
     @apply text-gray-600 dark:text-gray-400;
   }
 
+  .text-display {
+    @apply !text-gray-1000 dark:!text-gray-50;
+  }
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-black dark:text-white;
+    @apply text-display;
   }
 
   .filter-none {
@@ -110,7 +113,7 @@
   }
 
   .link-unstyled {
-    @apply  inline-block w-auto lg:link-transition !font-medium lg:shadow-black lg:dark:shadow-white;
+    @apply  inline-block w-auto font-medium !text-display lg:link-transition lg:shadow-black lg:dark:shadow-white;
   }
 
   .link-lg {
