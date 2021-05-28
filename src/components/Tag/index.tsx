@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Tag = ({ name, slug, count }) => {
   return (
-    <div className="mt-2 mb-2 mr-5 text-base lg:text-lg link-unstyled">
+    <div className="mt-2 mb-2 mr-5 link-unstyled">
       <Link href={`/tags/${slug}`}>
         <a>
           {name}

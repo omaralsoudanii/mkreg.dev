@@ -1,21 +1,29 @@
 @tailwind base;
+@tailwind components;
 
 @layer base {
-  html {
-    @apply text-base;
+  /* latin var */
+  @font-face {
+    font-family: Inter;
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    src: url(/static/fonts/Inter-roman.latin.var.woff2) format('woff2');
   }
+  /* latin italic var */
+  @font-face {
+    font-family: Inter;
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: italic;
+    src: url(/static/fonts/Inter-italic.latin.var.woff2) format('woff2');
+  }
+}
 
-  body {
-    @apply subpixel-antialiased bg-light dark:bg-dark;
-    font-variant: common-ligatures contextual;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: 'salt', 'ccmp', 'cpsp';
-  }
-
-  @media screen and (min-device-pixel-ratio: 1.5),
-    screen and (min-resolution: 1.5dppx) {
-    body {
-      @apply antialiased;
-    }
-  }
+html {
+  @apply antialiased;
+  font-size: 1em;
+  font-feature-settings: 'ccmp', 'cpsp', 'cv01', 'cv10', 'ss01', 'kern', 'liga',
+    'calt';
+  font-variant: common-ligatures contextual;
 }

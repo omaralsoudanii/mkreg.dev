@@ -1,6 +1,6 @@
 import * as Icons from '@/components/Icons'
 
-const iconStyle = 'w-12 h-12 lg:w-14 lg:h-14  min-w-sm fill-current'
+const iconStyle = 'w-12 h-12 lg:w-14 lg:h-14  min-w-sm svg-fill'
 const Card = ({ title, url, icon, desc }) => (
   <a key={title} href={url} target="_blank" rel="noopener noreferrer">
     <div className="flex items-center p-4 my-8 border border-gray-400 rounded lg:py-4 lg:px-8 dark:border-gray-700">

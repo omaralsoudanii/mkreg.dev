@@ -15,7 +15,9 @@ const Home = () => {
       <Container>
         <section>
           <div className="!mb-10 lg:!mb-24">
-            <h1 className="!mb-4 text-4xl lg:!text-5xl">Omar</h1>
+            <h1 className="!mb-4 !text-4xl !leading-none !font-medium lg:!text-5xl">
+              Omar Alsoudani
+            </h1>
             <h2 className="sub-heading">Software Engineer</h2>
             <h2 className="sub-heading">Architect</h2>
             <h2 className="sub-heading">Creator</h2>
@@ -23,11 +25,11 @@ const Home = () => {
         </section>
         <section className="flex flex-col items-start justify-start divide-y divide-gray-900 dark:divide-gray-100 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
           <div className="py-4 lg:pt-12 lg:pb-12">
-            <h1 className="lg:border-gray-900 title-heading lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
+            <h1 className="lg:border-gray-900 !font-medium title-heading lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
               Goal
             </h1>
           </div>
-          <p className="!px-2 py-4 lg:py-0 lg:text-xl !my-0 max-w-lg text-lg">
+          <p className="!px-2 py-4 lg:py-0  !my-0 max-w-md text-lg">
             The purpose of this site to be my digital identity, where I can
             write notes. Share my knowledge with others, my opinion on some
             topics, and open-source projects I create and share them here. Maybe
@@ -37,23 +39,23 @@ const Home = () => {
 
         <section className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-4 !px-2">
           <Link href="/about">
-            <a className="my-4 text-lg lg:text-xl lg:mx-auto link-unstyled">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
               About me &rarr;
             </a>
           </Link>
           <Link href="/writing">
-            <a className="my-4 text-lg lg:text-xl lg:mx-auto link-unstyled">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
               Writing &rarr;
             </a>
           </Link>
           <Link href="/stack">
-            <a className="my-4 text-lg lg:text-xl lg:mx-auto link-unstyled">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
               My Stack &rarr;
             </a>
           </Link>
 
           <Link href="/nuggets">
-            <a className="my-4 text-lg lg:text-xl lg:mx-auto link-unstyled">
+            <a className="my-4 text-lg lg:mx-auto link-unstyled">
               Nuggets &rarr;
             </a>
           </Link>

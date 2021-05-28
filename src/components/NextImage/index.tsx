@@ -26,9 +26,7 @@ const NextImage = ({
       height={height}
       layout={layout}
       quality={quality}
-      sizes={`
-            (max-width: 768) 100vw, 50vw
-          `}
+      sizes="66vw"
       className={className}
     />
   ) : (
@@ -38,9 +36,7 @@ const NextImage = ({
       width={width}
       height={height}
       layout={layout}
-      sizes={`
-            (max-width: 768px) 100vw, 50vw
-          `}
+      sizes="66vw"
       quality={quality}
     />
   )

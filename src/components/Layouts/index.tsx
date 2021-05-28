@@ -8,7 +8,7 @@ export function Main({ children }) {
       <Header />
       <main
         id="skip"
-        className="w-full max-w-screen-md px-5 pt-24 pb-8 mx-auto mt-6 lg:pt-16 md:max-w-screen-lg lg:px-2"
+        className="w-full max-w-screen-sm px-5 pt-24 pb-8 mx-auto mt-6 lg:pt-16 md:max-w-screen-lg lg:px-2"
       >
         {children}
         <Footer />

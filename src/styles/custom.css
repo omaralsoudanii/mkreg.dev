@@ -1,20 +1,15 @@
 @tailwind utilities;
-
 @layer utilities {
   .text-primary {
-    @apply text-gray-900 dark:text-gray-100;
+    @apply text-gray-900 dark:text-gray-50;
   }
 
   .text-secondary {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-700 dark:text-gray-200;
   }
 
   .text-tertiary {
     @apply text-gray-600 dark:text-gray-400;
-  }
-
-  .text-heading {
-    @apply text-gray-1000 dark:text-gray-50;
   }
 
   h1,
@@ -23,7 +18,7 @@
   h4,
   h5,
   h6 {
-    @apply text-heading;
+    @apply text-primary;
   }
 
   .filter-none {
@@ -145,9 +140,12 @@
   .task-list-item:before {
     @apply hidden;
   }
+  .svg-fill {
+    @apply fill-[black] dark:fill-[white] text-black dark:text-white;
+  }
 
   .sub-heading {
-    @apply font-medium text-[1.6em] leading-normal my-1 !important;
+    @apply font-medium text-3xl leading-normal my-1 !important;
   }
 
   .title-heading {
