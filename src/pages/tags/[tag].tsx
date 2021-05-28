@@ -24,10 +24,8 @@ export default function Tag({ posts, tag }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="mb-16 space-y-8">
-          <header className="!mb-8">
-            <h1>{tag}</h1>
-          </header>
+        <section className="mb-8">
+          <h1 className="!mb-4">{tag}</h1>
           <p>
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it.

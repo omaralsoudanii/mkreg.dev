@@ -1,5 +1,4 @@
 const plugin = require('tailwindcss/plugin')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
@@ -33,7 +32,20 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      sans: ['Inter', ...fontFamily.sans],
+      sans: [
+        'system-ui',
+        'BlinkMacSystemFont',
+        '-apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
     },
     extend: {
       lineHeight: {
@@ -45,7 +57,7 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
         dark: 'rgb(22, 27, 34)',
-        light: '#f9f9f9',
+        light: 'whitesmoke',
       },
       boxShadow: {
         white: '0px 0px 0px #ffffff',
@@ -57,9 +69,14 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.900'),
+            'h1,h2,h3,h4,h5,h6': {
+              color: theme('colors.black'),
+            },
             a: {
               textDecoration: 'none',
+              color: 'inherit',
             },
+            lineHeight: 1.5,
             ol: {
               li: {
                 '&:before': {
@@ -94,7 +111,10 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.50'),
+            color: theme('colors.gray.100'),
+            'h1,h2,h3,h4,h5,h6': {
+              color: theme('colors.white'),
+            },
             ol: {
               li: {
                 '&:before': { backgroundColor: theme('colors.gray.300') },
@@ -105,11 +125,14 @@ module.exports = {
                 '&:before': { backgroundColor: theme('colors.gray.300') },
               },
             },
-            'strong,thead': {
+            strong: {
               color: theme('colors.gray.50'),
             },
+            thead: {
+              color: theme('colors.gray.100'),
+            },
             blockquote: {
-              color: theme('colors.gray.50'),
+              color: theme('colors.gray.100'),
               borderLeftColor: theme('colors.gray.700'),
               fontWeight: 'normal',
             },
@@ -123,11 +146,9 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: '800',
-          letterSpacing: '-0.025em',
         },
         'h2,h3,h4,h5,h6': {
           fontWeight: '700',
-          letterSpacing: '-0.025em',
         },
       })
     }),

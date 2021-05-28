@@ -24,10 +24,8 @@ export default function Writing({ posts }) {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="space-y-8 mb-16">
-          <header className="!mb-8">
-            <h1>Writing</h1>
-          </header>
+        <section className="mb-8">
+          <h1 className="!mb-4">Writing</h1>
           <p>
             Stuff I write about programming, software with a slight hint of
             salt.

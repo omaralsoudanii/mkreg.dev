@@ -1,29 +1,6 @@
+html {
+  text-size-adjust: 100%;
+  font-size: 1em;
+}
 @tailwind base;
 @tailwind components;
-
-@layer base {
-  /* latin var */
-  @font-face {
-    font-family: Inter;
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
-    src: url(/static/fonts/Inter-roman.latin.var.woff2) format('woff2');
-  }
-  /* latin italic var */
-  @font-face {
-    font-family: Inter;
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: italic;
-    src: url(/static/fonts/Inter-italic.latin.var.woff2) format('woff2');
-  }
-}
-
-html {
-  @apply antialiased;
-  font-size: 1em;
-  font-feature-settings: 'ccmp', 'cpsp', 'cv01', 'cv10', 'ss01', 'kern', 'liga',
-    'calt';
-  font-variant: common-ligatures contextual;
-}

@@ -5,7 +5,7 @@
   }
 
   .text-secondary {
-    @apply text-gray-700 dark:text-gray-200;
+    @apply text-gray-800 dark:text-gray-300;
   }
 
   .text-tertiary {
@@ -18,7 +18,7 @@
   h4,
   h5,
   h6 {
-    @apply text-primary;
+    @apply text-black dark:text-white;
   }
 
   .filter-none {
@@ -105,11 +105,12 @@
   }
 
   .link-transition:hover {
+    @apply lg:shadow-blackHover lg:dark:shadow-whiteHover;
     transition: box-shadow 100ms ease 0s;
   }
 
   .link-unstyled {
-    @apply text-primary lg:link-transition !font-medium lg:shadow-black lg:dark:shadow-white lg:hover:shadow-blackHover lg:dark:hover:shadow-whiteHover;
+    @apply  inline-block w-auto lg:link-transition !font-medium lg:shadow-black lg:dark:shadow-white;
   }
 
   .link-lg {

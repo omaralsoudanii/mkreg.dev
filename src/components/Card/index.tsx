@@ -11,10 +11,8 @@ const Card = ({ title, url, icon, desc }) => (
         })}
       </div>
       <div>
-        <h2 className="!my-1 !font-semibold !tracking-normal !text-lg  lg:!text-xl">
-          {title}
-        </h2>
-        <p className="!my-1 !tracking-normal  text-secondary !font-normal !leading-snug !text-base clamp-5">
+        <h2 className="!my-1 !font-medium  !text-lg  lg:!text-xl">{title}</h2>
+        <p className="!my-1   text-secondary !font-normal !leading-snug text-base clamp-5">
           {desc}
         </p>
       </div>
