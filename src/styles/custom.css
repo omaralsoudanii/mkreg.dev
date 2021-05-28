@@ -6,7 +6,7 @@
   }
 
   .text-secondary {
-    @apply text-gray-800 dark:text-gray-200;
+    @apply text-gray-700 dark:text-gray-300;
   }
 
   .text-tertiary {
@@ -14,7 +14,7 @@
   }
 
   .text-heading {
-    @apply text-black dark:text-white;
+    @apply text-gray-1000 dark:text-gray-50;
   }
 
   h1,
@@ -147,7 +147,7 @@
   }
 
   .sub-heading {
-    @apply font-medium my-1 !important;
+    @apply font-medium text-[1.6em] leading-normal my-1 !important;
   }
 
   .title-heading {
