@@ -145,7 +145,7 @@
   }
 
   .sub-heading {
-    @apply font-medium text-3xl leading-normal my-1 !important;
+    @apply font-medium text-2xl md:text-3xl leading-normal my-1 !important;
   }
 
   .title-heading {

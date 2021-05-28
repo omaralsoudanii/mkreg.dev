@@ -15,7 +15,7 @@ const Home = () => {
       <Container>
         <section>
           <div className="!mb-10 lg:!mb-24">
-            <h1 className="!mb-4 !text-4xl !leading-none !font-medium lg:!text-5xl">
+            <h1 className="!mb-4 !text-4xl !leading-none !font-semibold lg:!text-5xl">
               Omar Alsoudani
             </h1>
             <h2 className="sub-heading">Software Engineer</h2>
@@ -25,7 +25,7 @@ const Home = () => {
         </section>
         <section className="flex flex-col items-start justify-start divide-y divide-gray-900 dark:divide-gray-100 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
           <div className="py-4 lg:pt-12 lg:pb-12">
-            <h1 className="lg:border-gray-900 !font-medium title-heading lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
+            <h1 className="lg:border-gray-900 title-heading lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
               Goal
             </h1>
           </div>
