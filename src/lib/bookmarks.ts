@@ -120,8 +120,8 @@ const Bookmarks = [
     icon: 'Twilio',
   },
   {
-    title: `Software Engineering The Definitive Guide`,
-    desc: `The definitive guide to building software, released April 20,2021 with the latest techniques`,
+    title: `Serving web services the hard way`,
+    desc: `The definitive guide to serve and optimize web services while maintaining stability`,
     url: `https://nginx.org/en/docs/`,
     icon: 'Nginx',
   },
@@ -130,12 +130,6 @@ const Bookmarks = [
     desc: `Comprehensive, proven approach to scale any software service`,
     url: `https://cbonte.github.io/haproxy-dconv/2.4/intro.html`,
     icon: 'Haproxy',
-  },
-  {
-    title: `Simple, elegant. The golden standard of creating a portfolio`,
-    desc: `The golden standard way of creating a portfolio. Built by a typeface designer, using his infamous humanist sans-serif typeface`,
-    url: `https://github.com/Mishallic/PortfolioNew`,
-    icon: 'React',
   },
 ]
 

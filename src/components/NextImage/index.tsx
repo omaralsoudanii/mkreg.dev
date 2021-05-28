@@ -7,7 +7,7 @@ const NextImage = ({
   height,
   alt,
   className,
-  layout = 'intrinsic',
+  layout = 'responsive',
   quality = 75,
 }: {
   src: string
@@ -26,6 +26,9 @@ const NextImage = ({
       height={height}
       layout={layout}
       quality={quality}
+      sizes={`
+            (max-width: 768) 100vw, 50vw
+          `}
       className={className}
     />
   ) : (
@@ -35,6 +38,9 @@ const NextImage = ({
       width={width}
       height={height}
       layout={layout}
+      sizes={`
+            (max-width: 768px) 100vw, 50vw
+          `}
       quality={quality}
     />
   )

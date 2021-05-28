@@ -23,6 +23,10 @@ module.exports = () => (tree) => {
           src={\`${imageNode.url}\`}
           width={${dimensions.width}}
           height={${dimensions.height}}
+          layout='responsive'
+          sizes={\`
+                (max-width: 768) 100vw, 50vw
+              \`}
       />`
 
         // Change node type from p to div to avoid nesting error

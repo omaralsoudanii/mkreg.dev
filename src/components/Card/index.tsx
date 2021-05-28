@@ -1,20 +1,20 @@
 import * as Icons from '@/components/Icons'
 
-const iconStyle = 'w-12 h-12 lg:w-13 lg:h-13  min-w-sm fill-current'
+const iconStyle = 'w-12 h-12 lg:w-14 lg:h-14  min-w-sm fill-current'
 const Card = ({ title, url, icon, desc }) => (
   <a key={title} href={url} target="_blank" rel="noopener noreferrer">
-    <div className="flex items-center p-4 my-8 border border-gray-400 rounded lg:p-4 dark:border-gray-700">
-      <div className={`${iconStyle} ml-0 mr-4 lg:ml-4 lg:mr-8`}>
+    <div className="flex items-center p-4 my-8 border border-gray-400 rounded lg:py-4 lg:px-8 dark:border-gray-700">
+      <div className={`${iconStyle} ml-0 mr-4 lg:ml-2 lg:mr-8`}>
         <span className="sr-only">{title}</span>
         {Icons[icon]({
           className: iconStyle,
         })}
       </div>
       <div>
-        <h2 className="!mb-1 !mt-0 !font-medium !text-heading !text-lg">
+        <h2 className="!my-1 !font-semibold !tracking-normal !text-lg  lg:!text-xl">
           {title}
         </h2>
-        <p className="!my-1 !font-normal !text-base !leading-snug text-secondary clamp-5">
+        <p className="!my-1 !tracking-normal  text-secondary !font-normal !leading-snug !text-base clamp-5">
           {desc}
         </p>
       </div>
