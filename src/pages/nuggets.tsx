@@ -1,8 +1,8 @@
 import Bookmarks from '@/lib/bookmarks'
-import { Container } from '@/components/Container'
 import Seo from '@/components/Seo'
 import * as React from 'react'
 import Card from '@/components/Card'
+import { Container } from '@/components/Container'
 
 function Nuggets() {
   const meta = {
@@ -15,7 +15,7 @@ function Nuggets() {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <section className="mb-8 space-y-8 lg:mb-16">
+        <div className="space-y-8">
           <h1>Nuggets</h1>
           <p>
             Some stuff I bookmark to read later, or a tool I find useful to use.
@@ -24,12 +24,10 @@ function Nuggets() {
             free to peek into what might interest you, If you happen to see
             something misleading or plain wrong. Please contact me!
           </p>
-        </section>
-        <section className="mt-8 space-y-8">
           {Bookmarks.map((bookmark) => (
             <Card key={bookmark.title} {...bookmark} />
           ))}
-        </section>
+        </div>
       </Container>
     </React.Fragment>
   )

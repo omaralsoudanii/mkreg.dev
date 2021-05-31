@@ -62,78 +62,86 @@ export default function Header() {
         ) ?? { href: router.asPath, label: 'MK' }
 
   return (
-    <nav className="lg:header-default header-default header-container">
-      <a href="#skip" className="sr-only focus:not-sr-only">
-        Skip to content
-      </a>
-      <div className="grid grid-cols-1 lg:hidden" ref={node}>
-        <div className="flex items-center">
-          {isExpanded ? (
-            <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
-              <CloseIcon />
-            </div>
-          ) : (
-            <div className="hdr-sm-btn" onClick={() => setExpanded(true)}>
-              <MenuIcon />
-            </div>
-          )}
-          <Link href={currentRoute.href}>
-            <a onClick={() => setExpanded(false)} className="hdr-sm-title">
-              {currentRoute.label}
-            </a>
-          </Link>
-          {mounted && (
-            <div
-              className="hdr-sm-btn"
-              onClick={() => {
-                isExpanded ? setExpanded(false) : null
-                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-              }}
-            >
-              {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
-            </div>
-          )}
+    <React.Fragment>
+      <nav className="lg:hidden header-sm">
+        <a href="#skip" className="sr-only focus:not-sr-only">
+          Skip to content
+        </a>
+        <div className="grid grid-cols-1 lg:hidden" ref={node}>
+          <div className="flex items-center">
+            {isExpanded ? (
+              <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
+                <CloseIcon />
+              </div>
+            ) : (
+              <div className="hdr-sm-btn" onClick={() => setExpanded(true)}>
+                <MenuIcon />
+              </div>
+            )}
+            <Link href={currentRoute.href}>
+              <a onClick={() => setExpanded(false)} className="hdr-sm-title">
+                {currentRoute.label}
+              </a>
+            </Link>
+            {mounted && (
+              <div
+                className="hdr-sm-btn"
+                onClick={() => {
+                  isExpanded ? setExpanded(false) : null
+                  setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+                }}
+              >
+                {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
+              </div>
+            )}
+          </div>
+          {isExpanded &&
+            RoutesMetadata.map((route) => {
+              const navClass =
+                route.href === router.pathname ??
+                router.pathname.includes(route.href)
+                  ? 'flex pl-6  nav-default nav-active'
+                  : 'flex pl-6  nav-default nav-inactive'
+              return (
+                <Link href={route.href} key={route.href}>
+                  <a onClick={() => setExpanded(false)} className={navClass}>
+                    {route.label}
+                  </a>
+                </Link>
+              )
+            })}
         </div>
-        {isExpanded &&
-          RoutesMetadata.map((route) => {
+      </nav>
+      <nav className="hidden mx-auto lg:relative lg:flex lg:header-lg">
+        <a href="#skip" className="sr-only focus:not-sr-only">
+          Skip to content
+        </a>
+        <ul className="flex flex-row w-full max-w-3xl pr-2 mx-auto space-x-3">
+          {RoutesMetadata.map((route) => {
             const navClass =
-              route.href === router.pathname ??
-              router.pathname.includes(route.href)
-                ? 'flex pl-6  nav-default nav-active'
-                : 'flex pl-6  nav-default nav-inactive'
+              route.href === router.pathname
+                ? 'nav-md-default inline-block shadow-black dark:shadow-white'
+                : 'nav-md-default  link-unstyled'
             return (
-              <Link href={route.href} key={route.href}>
-                <a onClick={() => setExpanded(false)} className={navClass}>
-                  {route.label}
-                </a>
-              </Link>
+              <li key={route.href}>
+                <Link href={route.href}>
+                  <a className={navClass}>{route.label}</a>
+                </Link>
+              </li>
             )
           })}
-      </div>
-
-      <ul className="flex-row hidden max-w-2xl mx-auto space-x-3 lg:max-w-3xl lg:flex">
-        {RoutesMetadata.map((route) => {
-          const navClass =
-            route.href === router.pathname
-              ? 'nav-md-default inline-block shadow-black dark:shadow-white'
-              : 'nav-md-default  link-unstyled'
-          return (
-            <li key={route.href}>
-              <Link href={route.href}>
-                <a className={navClass}>{route.label}</a>
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
-      {mounted && (
-        <div
-          className="hidden lg:hdr-cnt-theme-btn lg:inline"
-          onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-        >
-          {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
-        </div>
-      )}
-    </nav>
+        </ul>
+        {mounted && (
+          <div
+            className="inline lg:hdr-cnt-theme-btn"
+            onClick={() =>
+              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+            }
+          >
+            {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </div>
+        )}
+      </nav>
+    </React.Fragment>
   )
 }

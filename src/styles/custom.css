@@ -11,16 +11,14 @@
   .text-tertiary {
     @apply text-gray-600 dark:text-gray-400;
   }
-  .text-display {
-    @apply text-black dark:text-white;
-  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-display;
+    @apply text-primary;
   }
 
   .filter-none {
@@ -41,21 +39,17 @@
     backdrop-filter: saturate(180%) blur(5px);
   }
 
-  .header-default {
-    @apply py-2 bg-white border-b border-gray-400 lg:border-none lg:filter-none lg:pt-6 lg:pb-3 lg:relative dark:border-opacity-30 border-opacity-20 dark:bg-dark;
+  .header-lg {
+    @apply py-2 pt-6 pb-3;
   }
 
-  .header-container {
-    @apply fixed top-0 z-10 w-full bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 lg:dark:bg-opacity-100 lg:filter-none lg:dark:filter-none filter-blur;
+  .header-sm {
+    @apply sticky top-0 z-10 w-full py-2 border-b border-gray-700 bg-light dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
-    .header-container {
-      @apply fixed top-0 z-10 w-full bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-dark dark:bg-opacity-100 filter-none;
-    }
-
-    .header-default {
-      @apply py-2 bg-white border-b border-gray-700 lg:border-none lg:filter-none lg:pt-6 lg:pb-3 lg:relative dark:border-gray-300 dark:border-opacity-30 border-opacity-20 dark:bg-dark;
+    .header-sm {
+      @apply sticky top-0 z-10 w-full py-2 border-b border-gray-700 bg-light dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-dark dark:bg-opacity-100 filter-none;
     }
   }
 
@@ -88,7 +82,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute p-2 font-medium cursor-pointer text-primary right-4 top-3 w-11;
+    @apply absolute p-2 font-medium cursor-pointer text-primary right-20 top-4 w-11;
   }
 
   .btn {
@@ -113,7 +107,7 @@
   }
 
   .link-unstyled {
-    @apply inline-block w-auto font-medium text-primary lg:link-transition;
+    @apply !inline-block !w-auto font-medium !text-primary lg:link-transition;
   }
 
   .link-lg {
@@ -129,9 +123,9 @@
   }
   
   .prose .anchor {
-    @apply absolute invisible;
-    margin-left: -0.75em;
-    width: 30%;
+    @apply absolute invisible w-4/5 max-w-sm lg:max-w-lg;
+    margin-left: -0.8em;
+    padding-right: 0.5em;
     cursor: pointer;
   }
 
@@ -139,8 +133,8 @@
     @apply visible no-underline;
   }
 
-  .prose .anchor:before {
-    @apply text-gray-900 dark:text-gray-100;
+  .prose .anchor:after {
+    @apply text-gray-700 dark:text-gray-300;
     content: '#';
   }
 
@@ -158,11 +152,11 @@
 
 
   .sub-heading {
-    @apply !font-medium text-xl md:text-2xl leading-normal my-1 !important;
+    @apply font-medium text-xl md:text-2xl leading-relaxed my-2 !important;
   }
 
   .title-heading {
-    @apply text-3xl  leading-9  md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
+    @apply text-3xl leading-9 md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
   }
   
   .prose {

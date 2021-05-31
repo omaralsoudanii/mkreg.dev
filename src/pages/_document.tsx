@@ -52,14 +52,8 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
           <meta name="theme-color" content="#050505" />
-          <link
-            rel="preconnect"
-            href="https://rsms.me"
-            crossOrigin="anonymous"
-          />
-          <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
         </Head>
-        <body className="text-black bg-white dark:bg-dark dark:text-white">
+        <body className="text-black bg-light dark:bg-dark dark:text-white">
           <Main />
           <NextScript />
         </body>

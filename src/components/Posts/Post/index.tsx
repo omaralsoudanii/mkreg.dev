@@ -19,8 +19,8 @@ export default function Post({ children, frontMatter }) {
   return (
     <React.Fragment>
       <Seo data={meta} />
-      <article className="w-full max-w-2xl mx-auto mb-16">
-        <h1 className="!py-4 !mb-1 text-center text-3xl  text-black md:text-4xl dark:text-white">
+      <article className="w-full max-w-2xl mx-auto mb-16 lg:max-w-3xl">
+        <h1 className="!pb-4 !pt-0 !mt-0 !mb-1 text-center text-3xl  text-black md:text-4xl dark:text-white">
           {frontMatter.title}
         </h1>
         <div className="grid grid-cols-1 mt-1 !mb-8 !py-2 lg:grid-cols-1">
