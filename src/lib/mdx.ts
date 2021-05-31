@@ -22,11 +22,19 @@ export async function getFileBySlug(type: string, slug?) {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
-        require('remark-autolink-headings'),
-        require('remark-code-titles'),
+        require('remark-slug'),
         MDXImage,
+        [
+          require('remark-autolink-headings'),
+          {
+            linkProperties: {
+              className: ['anchor'],
+            },
+          },
+        ],
+        require('remark-code-titles'),
       ],
-      rehypePlugins: [mdxPrism, require('rehype-slug')],
+      rehypePlugins: [mdxPrism],
     },
   })
 

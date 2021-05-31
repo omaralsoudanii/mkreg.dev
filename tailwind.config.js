@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const { fontFamily, spacing } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: [
@@ -31,20 +32,7 @@ module.exports = {
         'Courier New',
         'monospace',
       ],
-      sans: [
-        'system-ui',
-        'BlinkMacSystemFont',
-        '-apple-system',
-        'Segoe UI',
-        'Roboto',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
-        'sans-serif',
-      ],
+      sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
       lineHeight: {
@@ -54,29 +42,27 @@ module.exports = {
         14: '3.5rem',
       },
       colors: {
-        gray: {
-          1000: '#171717',
-        },
-        dark: 'rgb(25, 30, 37)',
-        // dark: 'rgb(22, 27, 34)',
         light: 'whitesmoke',
       },
       boxShadow: {
-        white: '0px 0px 0px #ffffff',
-        whiteHover: '0px 2px 0px #ffffff',
-        black: '0px 0px 0px #000000',
-        blackHover: '0px 2px 0px #000000',
+        white: '0px 2px 0px #ffffff',
+        black: '0px 2px 0px #000000',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.gray.700'),
             h1: {
-              color: '#171717',
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.extrabold'),
             },
-            'h2,h3,h4,h5,h6': {
-              color: '#171717',
+            'h2,h3': {
+              color: theme('colors.gray.900'),
+              fontWeight: theme('fontWeight.bold'),
+              'scroll-margin-top': spacing[32],
+            },
+            'h4,h5,h6': {
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
             },
             a: {
@@ -86,7 +72,7 @@ module.exports = {
             ol: {
               li: {
                 '&:before': {
-                  backgroundColor: theme('colors.gray.700'),
+                  color: theme('colors.gray.700'),
                 },
               },
             },
@@ -98,11 +84,11 @@ module.exports = {
               },
             },
             strong: {
-              color: theme('colors.gray.1000'),
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.700'),
               borderBottomColor: theme('colors.gray.700'),
             },
             tbody: {
@@ -111,21 +97,20 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.300'),
-              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
         dark: {
           css: {
-            color: theme('colors.gray.100'),
+            color: theme('colors.gray.300'),
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.50'),
             },
             ol: {
               li: {
-                '&:before': { backgroundColor: theme('colors.gray.300') },
+                '&:before': { color: theme('colors.gray.300') },
               },
             },
             ul: {
@@ -143,18 +128,20 @@ module.exports = {
               },
             },
             thead: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.300'),
               borderBottomColor: theme('colors.gray.300'),
             },
             blockquote: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
-              fontWeight: 'normal',
             },
           },
         },
       }),
     },
+  },
+  variants: {
+    typography: ['dark'],
   },
   plugins: [
     plugin(function ({ addBase, theme }) {
@@ -162,7 +149,11 @@ module.exports = {
         h1: {
           fontWeight: theme('fontWeight.extrabold'),
         },
-        'h2,h3,h4,h5,h6': {
+        'h2,h3': {
+          fontWeight: theme('fontWeight.bold'),
+          'scroll-margin-top': spacing[32],
+        },
+        'h4,h5,h6': {
           fontWeight: theme('fontWeight.bold'),
         },
       })

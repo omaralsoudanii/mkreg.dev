@@ -1,11 +1,11 @@
 import NextLink from '@/components/NextLink'
-import NextImage from '@/components/NextImage'
 import Card from '@/components/Card'
+import Image from 'next/image'
 
 const MDXComponents = {
-  Image: NextImage,
   a: NextLink,
   Card,
+  Image,
 }
 
 export default MDXComponents

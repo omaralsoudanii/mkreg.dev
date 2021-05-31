@@ -6,7 +6,7 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-  src: url(/static/fonts/Inter-roman.latin.var.woff2) format('woff2');
+  src: url(/static/fonts/Inter-roman.var.woff2) format('woff2');
 }
 /* latin italic var */
 @font-face {
@@ -14,5 +14,5 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: italic;
-  src: url(/static/fonts/Inter-italic.latin.var.woff2) format('woff2');
+  src: url(/static/fonts/Inter-italic.var.woff2) format('woff2');
 }
