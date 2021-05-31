@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors')
 const { fontFamily, spacing } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
@@ -15,25 +16,6 @@ module.exports = {
       3: 3,
       5: 5,
     },
-    fontFamily: {
-      mono: [
-        'JetBrains Mono',
-        'IBM Plex Mono',
-        'Fira Code',
-        'Menlo',
-        'DejaVu Sans Mono',
-        'Bitstream Vera Sans Mono',
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        'Liberation Mono',
-        'Courier New',
-        'monospace',
-      ],
-      sans: ['Inter', ...fontFamily.sans],
-    },
     extend: {
       lineHeight: {
         11: '2.75rem',
@@ -41,26 +23,49 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
+      fontFamily: {
+        mono: [
+          'JetBrains Mono',
+          'IBM Plex Mono',
+          'Fira Code',
+          'Menlo',
+          'DejaVu Sans Mono',
+          'Bitstream Vera Sans Mono',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'Liberation Mono',
+          'Courier New',
+          'monospace',
+        ],
+        sans: ['Inter', ...fontFamily.sans],
+      },
       boxShadow: {
         white: '0px 2px 0px #ffffff',
         black: '0px 2px 0px #000000',
       },
+      colors: {
+        gray: colors.trueGray,
+        // dark: 'rgb(25, 30, 37)',
+        dark: 'rgb(22, 27, 34)',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.gray.900'),
             h1: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
               fontWeight: theme('fontWeight.extrabold'),
             },
             'h2,h3': {
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
-              'scroll-margin-top': spacing[32],
             },
             'h4,h5,h6': {
-              color: theme('colors.gray.900'),
-              fontWeight: theme('fontWeight.bold'),
+              color: theme('colors.black'),
+              fontWeight: theme('fontWeight.medium'),
             },
             a: {
               textDecoration: 'none',
@@ -69,7 +74,7 @@ module.exports = {
             ol: {
               li: {
                 '&:before': {
-                  color: theme('colors.gray.700'),
+                  color: theme('colors.gray.900'),
                 },
               },
             },
@@ -85,25 +90,26 @@ module.exports = {
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.gray.700'),
-              borderBottomColor: theme('colors.gray.700'),
+              color: theme('colors.gray.900'),
+              borderBottomColor: theme('colors.gray.300'),
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.700'),
+                borderBottomColor: theme('colors.gray.300'),
               },
             },
             blockquote: {
-              color: theme('colors.gray.700'),
+              color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.300'),
+              fontWeight: '400',
             },
           },
         },
         dark: {
           css: {
-            color: theme('colors.gray.300'),
+            color: theme('colors.gray.100'),
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.100'),
+              color: theme('colors.white'),
             },
             ol: {
               li: {
@@ -121,12 +127,12 @@ module.exports = {
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.300'),
+                borderBottomColor: theme('colors.gray.700'),
               },
             },
             thead: {
               color: theme('colors.gray.300'),
-              borderBottomColor: theme('colors.gray.300'),
+              borderBottomColor: theme('colors.gray.700'),
             },
             blockquote: {
               color: theme('colors.gray.300'),
@@ -149,10 +155,9 @@ module.exports = {
         'h2,h3': {
           fontWeight: theme('fontWeight.bold'),
           'scroll-margin-top': spacing[32],
-          letterSpacing: '-.025em',
         },
         'h4,h5,h6': {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.medium'),
           letterSpacing: '-.025em',
         },
       })

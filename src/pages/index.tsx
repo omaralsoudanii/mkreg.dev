@@ -29,7 +29,7 @@ const Home = () => {
               Goal
             </h1>
           </div>
-          <p className="!px-2 py-4 lg:py-0  !my-0 max-w-md text-lg">
+          <p className="!px-2 py-4 lg:py-0  !my-0 max-w-md">
             The purpose of this site to be my digital identity, where I can
             write notes. Share my knowledge with others, my opinion on some
             topics, and open-source projects I create and share them here. Maybe
@@ -39,25 +39,7 @@ const Home = () => {
 
         <section className="grid items-start grid-cols-1 text-left lg:gap-1 lg:items-center lg:text-center lg:grid-cols-4 !px-2">
           <Link href="/about">
-            <a className="my-4 text-lg lg:mx-auto link-unstyled">
-              About me &rarr;
-            </a>
-          </Link>
-          <Link href="/writing">
-            <a className="my-4 text-lg lg:mx-auto link-unstyled">
-              Writing &rarr;
-            </a>
-          </Link>
-          <Link href="/stack">
-            <a className="my-4 text-lg lg:mx-auto link-unstyled">
-              My Stack &rarr;
-            </a>
-          </Link>
-
-          <Link href="/nuggets">
-            <a className="my-4 text-lg lg:mx-auto link-unstyled">
-              Nuggets &rarr;
-            </a>
+            <a className="my-4 link-unstyled">More about me &rarr;</a>
           </Link>
         </section>
       </Container>

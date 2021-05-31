@@ -1,11 +1,24 @@
 @tailwind base;
 
-html {
-  min-width: 360px;
-  scroll-behavior: smooth;
-  font-size: 1em;
+
+
+
+@supports (font-variation-settings: normal) {
+  html {
+    @apply antialiased;
+    font-family: 'Inter var', sans-serif;
+    min-width: 360px;
+    scroll-behavior: smooth;
+    font-size: 1em;
+  }
 }
 
-body {
-  letter-spacing: -0.0125em;
+@supports not (font-variation-settings: normal) {
+  html {
+    @apply antialiased;
+    font-family: 'Inter', sans-serif;
+    min-width: 360px;
+    scroll-behavior: smooth;
+    font-size: 1em;
+  }
 }

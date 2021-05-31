@@ -1,4 +1,3 @@
-import { Container } from '@/components/Container'
 import Seo from '@/components/Seo'
 import { slugify } from '@/lib/utils'
 import dayjs from 'dayjs'
@@ -20,9 +19,11 @@ export default function Post({ children, frontMatter }) {
   return (
     <React.Fragment>
       <Seo data={meta} />
-      <Container>
-        <h1 className="!py-4 !mb-1 text-center">{frontMatter.title}</h1>
-        <div className="grid grid-cols-1 mt-1 !mb-4 !py-2 lg:grid-cols-1">
+      <article className="w-full max-w-2xl mx-auto mb-16">
+        <h1 className="!py-4 !mb-1 text-center text-3xl  text-black md:text-4xl dark:text-white">
+          {frontMatter.title}
+        </h1>
+        <div className="grid grid-cols-1 mt-1 !mb-8 !py-2 lg:grid-cols-1">
           <div className="flex flex-wrap">
             {frontMatter.tags.map((t: string) => (
               <p key={t} className="pr-2 !my-0 !py-1">
@@ -45,8 +46,8 @@ export default function Post({ children, frontMatter }) {
             )}
           </div>
         </div>
-        <div className="mt-8">{children}</div>
-      </Container>
+        <div className="mt-8 prose dark:prose-dark lg:prose-lg">{children}</div>
+      </article>
     </React.Fragment>
   )
 }
