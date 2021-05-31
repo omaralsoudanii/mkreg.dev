@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
           <meta name="theme-color" content="#050505" />
         </Head>
-        <body>
+        <body className="antialiased text-gray-900 bg-gray-100 dark:bg-gray-900 dark:text-red-100">
           <Main />
           <NextScript />
         </body>

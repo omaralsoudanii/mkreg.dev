@@ -41,9 +41,6 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
-      colors: {
-        light: 'whitesmoke',
-      },
       boxShadow: {
         white: '0px 2px 0px #ffffff',
         black: '0px 2px 0px #000000',
@@ -106,7 +103,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.50'),
+              color: theme('colors.gray.100'),
             },
             ol: {
               li: {
@@ -119,7 +116,7 @@ module.exports = {
               },
             },
             strong: {
-              color: theme('colors.gray.50'),
+              color: theme('colors.gray.300'),
               fontWeight: theme('fontWeight.bold'),
             },
             tbody: {
@@ -140,25 +137,25 @@ module.exports = {
       }),
     },
   },
-  variants: {
-    typography: ['dark'],
-  },
   plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-line-clamp'),
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.extrabold'),
+          letterSpacing: '-.025em',
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.bold'),
           'scroll-margin-top': spacing[32],
+          letterSpacing: '-.025em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.bold'),
+          letterSpacing: '-.025em',
         },
       })
     }),
-    require('@tailwindcss/typography'),
-    require('tailwindcss-line-clamp'),
   ],
 }

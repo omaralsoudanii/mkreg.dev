@@ -1,19 +1,11 @@
 @tailwind base;
 
-@layer base {
-  html {
-    @apply text-base;
-    min-width: 360px;
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply antialiased bg-light dark:bg-gray-900;
-    letter-spacing: -0.011em;
-    text-rendering: optimizeLegibility;
-    text-size-adjust: 100%;
-    font-variant: common-ligatures contextual;
-    font-kerning: normal;
-    font-feature-settings: 'cv01', 'cv10', 'ss01', 'kern', 'liga', 'rlig',
-       'calt', 'clig', 'ccmp', 'cpsp';
-  }
+html {
+  min-width: 360px;
+  scroll-behavior: smooth;
+  font-size: 1em;
+}
+
+body {
+  letter-spacing: -0.0125em;
 }

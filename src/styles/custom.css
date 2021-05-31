@@ -40,20 +40,20 @@
   }
 
   .header-default {
-    @apply py-2 border-b border-gray-400 bg-light lg:border-none lg:filter-none lg:pt-6 lg:pb-3 lg:relative dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
+    @apply py-2 bg-gray-100 border-b border-gray-400 lg:border-none lg:filter-none lg:pt-6 lg:pb-3 lg:relative dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
   }
 
   .header-container {
-    @apply fixed top-0 z-10 w-full border-b border-gray-700 bg-light dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-70 lg:dark:bg-opacity-100 lg:filter-none lg:dark:filter-none filter-blur;
+    @apply fixed top-0 z-10 w-full bg-gray-100 border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-70 lg:dark:bg-opacity-100 lg:filter-none lg:dark:filter-none filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
     .header-container {
-      @apply fixed top-0 z-10 w-full border-b border-gray-700 bg-light dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-100 filter-none;
+      @apply fixed top-0 z-10 w-full bg-gray-100 border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-100 filter-none;
     }
 
     .header-default {
-      @apply py-2 border-b border-gray-700 bg-light lg:border-none lg:filter-none lg:pt-6 lg:pb-3 lg:relative dark:border-gray-300 dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
+      @apply py-2 bg-gray-100 border-b border-gray-700 lg:border-none lg:filter-none lg:pt-6 lg:pb-3 lg:relative dark:border-gray-300 dark:border-opacity-30 border-opacity-20 dark:bg-gray-900;
     }
   }
 
@@ -111,28 +111,15 @@
   }
 
   .link-unstyled {
-    @apply inline-block w-auto font-medium text-primary link-transition;
+    @apply inline-block w-auto font-medium text-primary lg:link-transition;
   }
 
   .link-lg {
     @apply text-lg lg:text-xl !font-medium;
   }
 
-  .dark .text-link {
-    color: #68b5fb;
-  }
-
-  .dark .text-link:hover {
-    text-shadow: 0px 0px 1px rgb(59, 130, 246);
-    filter: brightness(111%);
-  }
-
-  .light .text-link {
-    @apply text-blue-500;
-  }
-
-  .light .text-link:hover {
-    text-shadow: 0px 0px 1px rgb(96, 165, 250);
+  .text-link {
+    @apply text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 !important;
   }
 
   .hr-stroke {
@@ -174,5 +161,9 @@
 
   .title-heading {
     @apply text-3xl  leading-9  md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
+  }
+  
+  .prose {
+    @apply !text-primary;
   }
 }
