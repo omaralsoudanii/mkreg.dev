@@ -1,7 +1,5 @@
 # mkreg.dev
 
-> This branch is outdated. I removed NGINX from the setup, I kept it as a reference for NGINX config if 
-> needed in the future 
 
 My personal site powered by
 
