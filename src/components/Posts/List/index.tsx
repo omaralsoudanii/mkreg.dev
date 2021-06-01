@@ -13,9 +13,7 @@ export default function PostsList({ posts, href }) {
     <div key={frontMatter.title} className="flex flex-col items-baseline">
       <Link href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}>
         <a className="inline link-unstyled">
-          <h3 className="text-black dark:text-white !pt-0 !my-0">
-            {frontMatter.title}
-          </h3>
+          <h3 className="text-primary !pt-0 !my-0">{frontMatter.title}</h3>
         </a>
       </Link>
 

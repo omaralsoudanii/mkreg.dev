@@ -4,7 +4,6 @@
   html {
     @apply antialiased font-inter-var;
     min-width: 360px;
-    scroll-behavior: smooth;
     font-size: 1rem;
     letter-spacing: -0.011em;
     text-rendering: optimizeLegibility;
@@ -18,8 +17,8 @@
   html {
     @apply antialiased font-inter;
     min-width: 360px;
-    scroll-behavior: smooth;
     font-size: 1rem;
+    letter-spacing: -0.011em;
     text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
   }

@@ -71,7 +71,6 @@ module.exports = {
             },
             a: {
               textDecoration: 'none',
-              color: 'inherit',
             },
             ol: {
               li: {
@@ -103,7 +102,6 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.300'),
-              fontWeight: '400',
             },
           },
         },
@@ -112,6 +110,9 @@ module.exports = {
             color: theme('colors.gray.300'),
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),
+            },
+            a: {
+              textDecoration: 'none',
             },
             ol: {
               li: {
@@ -139,7 +140,6 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
-              fontWeight: '400',
             },
           },
         },
@@ -153,12 +153,10 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          'scroll-margin-top': spacing[32],
           letterSpacing: '-.025em',
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),
-          'scroll-margin-top': spacing[32],
           letterSpacing: '-.02em',
         },
         'h4,h5,h6': {
@@ -166,6 +164,18 @@ module.exports = {
           letterSpacing: '-.02em',
         },
       })
+    }),
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.scroll-spacing-sm': {
+          'scroll-margin-top': spacing[24],
+        },
+        '.scroll-spacing-lg': {
+          'scroll-margin-top': spacing[12],
+        },
+      }
+
+      addUtilities(newUtilities)
     }),
   ],
 }
