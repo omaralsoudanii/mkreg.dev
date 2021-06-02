@@ -11,7 +11,7 @@
   .text-tertiary {
     @apply text-gray-600 dark:text-gray-400;
   }
-  
+
   h1,
   h2,
   h3,
@@ -98,7 +98,8 @@
     @apply w-full px-4 py-2;
   }
 
-  .link-transition,.text-link-transition {
+  .link-transition,
+  .text-link-transition {
     transition: box-shadow 300ms ease 0s;
   }
 
@@ -153,7 +154,7 @@
   }
 
   .prose img {
-    @apply m-0;
+    @apply m-0 !important;
   }
 
   .sub-heading {
@@ -163,7 +164,7 @@
   .title-heading {
     @apply text-3xl leading-9 md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
   }
-  
+
   .prose {
     @apply !text-primary;
   }

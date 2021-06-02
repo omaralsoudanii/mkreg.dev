@@ -1,6 +1,7 @@
 import { Container } from '@/components/Container'
 import NextImage from '@/components/NextImage'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import * as React from 'react'
 
 export default function MK() {
@@ -23,14 +24,16 @@ export default function MK() {
         />
         <p>
           Well, Congrats on finding this page! Let me introduce you to my
-          favorite human being in the universe. The legend himself Mr.Mark
-          Knopfler.
+          favorite human being in the universe.{' '}
+          <strong>The legend himself:</strong>{' '}
         </p>
+        <h2 className="text-center">Mr.Mark Knopfler</h2>
         <p>
           If you have ever wondered why the hell I have this weird domain name
-          rather than something closer to my name (for SEO blah...), Then I can
-          tell you that it's based on this acronym:
+          rather than something closer to my name (for SEO blah...), then I can
+          tell you that the acronym is based on this:
         </p>
+
         <p className="mx-auto text-center">
           <a
             className="text-link"
@@ -41,14 +44,49 @@ export default function MK() {
             Mark Knopfler Red Electric Guitar
           </a>
         </p>
+
         <p>
-          Everyone has his own "Red Electric Guitar". Seeing this beautiful
-          genuine soul getting his guitar is always a pleasure that puts a smile
-          on my face.
+          If you got the gist of the video then I think we can agree that
+          everyone has his own <strong>"Red Electric Guitar"</strong> in one way
+          or another. Seeing this beautiful genuine soul getting his guitar is
+          always a pleasure that puts a smile on my face.
         </p>
+
         <p>
           So there you go, now you have the answer to the ultimate question of
           life.
+        </p>
+
+        <p className="mx-auto text-center">
+          <a
+            href={Environment.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            Enjoy this golden nugget 👏
+          </a>
+        </p>
+
+        <p>
+          Also this is a small open-sourced <strong>Hugo</strong> app I built
+          and hosted on <strong>Vercel</strong> about the Sultan.
+        </p>
+
+        <p className="mx-auto text-center">
+          <a
+            href="https://mkreg-hugo.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            Check mkreg-hugo @ Vercel
+          </a>
+        </p>
+
+        <p className="font-semibold">
+          If you happen to have some good nuggets about the Sultan, then EMAIL
+          ME ASAP!!
         </p>
       </Container>
     </React.Fragment>
