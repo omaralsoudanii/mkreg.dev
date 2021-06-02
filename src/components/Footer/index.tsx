@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="w-full mx-auto mt-16 prose dark:prose-dark lg:prose-lg hr-stroke">
       <div className="grid items-start grid-cols-1 py-12 text-left footer lg:gap-4 lg:items-center lg:text-center lg:grid-cols-3 ">
-        <div className="flex flex-col items-start px-4 mb-4 space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
+        <div className="flex flex-col items-start mb-4 space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
           <Link href="/">
             <a className="link-unstyled">Home</a>
           </Link>
@@ -16,7 +16,7 @@ export function Footer() {
             <a className="link-unstyled">Stack</a>
           </Link>
         </div>
-        <div className="flex flex-col items-start px-4 mb-4 space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
+        <div className="flex flex-col items-start mb-4 space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
           <a
             href={`mailto:${Environment.social.mail}`}
             target="_blank"
@@ -43,7 +43,7 @@ export function Footer() {
             LinkedIn
           </a>
         </div>
-        <div className="flex flex-col items-start px-4 space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
+        <div className="flex flex-col items-start space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
           <a
             href={Environment.social.rss}
             target="_blank"

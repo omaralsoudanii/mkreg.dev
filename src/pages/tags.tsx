@@ -1,7 +1,9 @@
+import { Container } from '@/components/Container'
 import Seo from '@/components/Seo'
 import Tag from '@/components/Tag'
 import { getAllTags } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 /**
  * Main Tags page
@@ -10,42 +12,70 @@ import { GetStaticProps } from 'next'
  *
  */
 
-export default function Tags({ tagCount, tags }) {
+export default function Tags({ tagCount, tags, charSlice }) {
   const meta = {
     title: `Omar Alsoudani - Tags`,
     description: `Browse my writings, discussions and thoughts by tags.`,
     JsonLd: false,
   }
-  const sortedTags = Object.keys(tagCount).sort(
-    (a, b) => tagCount[b] - tagCount[a]
+
+  const sortedTagsChars = Object.keys(charSlice).sort((a, b) =>
+    a.localeCompare(b)
+  )
+
+  const uniqChars = sortedTagsChars.filter(
+    (c, i, arr) => arr.findIndex((t) => t.charAt(0) === c.charAt(0)) === i
   )
 
   return (
-    <article>
+    <Container>
       <Seo data={meta} />
-      <section className="flex flex-col items-start justify-start divide-y divide-gray-900 dark:divide-gray-100 lg:justify-center lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:mt-24">
-        <div className="py-4 lg:pt-6 lg:pb-8">
-          <h1 className="title-heading lg:border-r-2 !mb-0 lg:px-6 lg:dark:border-gray-100 lg:border-gray-900">
-            Tags
-          </h1>
-        </div>
-        <div className="flex flex-wrap max-w-lg py-4 lg:py-0">
-          {sortedTags.map((t) => (
-            <Tag key={t} name={tags[t]} slug={t} count={tagCount[t]} />
-          ))}
-        </div>
+      <section className="mb-8">
+        <h1 className="!mb-4">Tags</h1>
+        <p>
+          Tags sorted alphabetically then by how many times each tag has been
+          added to my writing
+        </p>
+        <p className="text-right text-secondary">
+          <Link href="/writing">
+            <a className="mr-1 link-unstyled">Browse all writings</a>
+          </Link>
+        </p>
       </section>
-    </article>
+      <section className="grid grid-flow-row gap-6">
+        {uniqChars.map((tc) => (
+          <div key={tc}>
+            <header className="w-full border-b border-gray-300 dark:border-gray-700">
+              <h3 className="!my-2 !font-bold">
+                {charSlice[tc].toUpperCase()}
+              </h3>
+            </header>
+
+            {Object.keys(tags)
+              .filter((t) => t.charAt(0) === tc.charAt(0))
+              .sort((a, b) => tagCount[b] - tagCount[a])
+              .map((item) => (
+                <Tag
+                  className="!my-0 text-base !py-0 !text-secondary"
+                  key={item}
+                  name={tags[item]}
+                  slug={item}
+                  count={tagCount[item]}
+                />
+              ))}
+          </div>
+        ))}
+      </section>
+    </Container>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { tagCount, tags } = await getAllTags('writing')
+  const data = await getAllTags('writing')
 
   return {
     props: {
-      tagCount,
-      tags,
+      ...data,
     },
   }
 }

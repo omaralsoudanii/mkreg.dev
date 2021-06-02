@@ -17,7 +17,7 @@ export default function PostsList({ posts, href }) {
         </a>
       </Link>
 
-      <p className="clamp-3 text-secondary !leading-normal  !mb-3 !mt-1">
+      <p className="clamp-3 text-secondary text-base !leading-normal  !mb-3 !mt-1">
         {frontMatter.summary}
       </p>
 

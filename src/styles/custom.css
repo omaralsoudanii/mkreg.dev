@@ -39,7 +39,7 @@
   }
 
   .header-sm {
-    @apply sticky top-0 z-10 w-full py-2 border-b border-gray-700 bg-light dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 filter-blur;
+    @apply sticky top-0 z-10 w-full py-2 bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-70 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -98,7 +98,7 @@
     @apply w-full px-4 py-2;
   }
 
-  .link-transition {
+  .link-transition,.text-link-transition {
     transition: box-shadow 300ms ease 0s;
   }
 
@@ -116,7 +116,12 @@
   }
 
   .text-link {
-    @apply text-blue-500 font-medium hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 !important;
+    @apply font-medium !text-rose-600 dark:!text-rose-400 lg:text-link-transition !important;
+  }
+
+  .text-link-transition:hover {
+    @apply lg:shadow-rose-600 lg:dark:shadow-rose-400;
+    transition: box-shadow 100ms ease 0s;
   }
 
   .hr-stroke {

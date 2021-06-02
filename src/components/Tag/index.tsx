@@ -1,16 +1,16 @@
 import Link from 'next/link'
 
-const Tag = ({ name, slug, count }) => {
+const Tag = ({ name, slug, count, className }) => {
   return (
-    <div className="mt-2 mb-2 mr-5 link-unstyled">
-      <Link href={`/tags/${slug}`}>
-        <a>
+    <Link href={`/tags/${slug}`}>
+      <a className="!my-3 mr-6  link-unstyled">
+        <span className={className}>
           {name}
           {` `}
           {`(${count})`}
-        </a>
-      </Link>
-    </div>
+        </span>
+      </a>
+    </Link>
   )
 }
 

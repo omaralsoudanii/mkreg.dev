@@ -45,13 +45,16 @@ module.exports = {
       },
       boxShadow: {
         white: '0px 2px 0px #ffffff',
-        black: '0px 2px 0px #000000',
+        black: '0px 2px 0px #171717',
+        'rose-600': '0px 2px 0px #E11D48',
+        'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
         gray: colors.trueGray,
+        rose: colors.rose,
         // dark: 'rgb(25, 30, 37)',
         dark: 'rgb(22, 27, 34)',
-        light: 'whitesmoke',
+        // light: '#F5F7F9',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -157,11 +160,11 @@ module.exports = {
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-.02em',
+          letterSpacing: '-.015em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),
-          letterSpacing: '-.02em',
+          letterSpacing: '-.015em',
         },
       })
     }),

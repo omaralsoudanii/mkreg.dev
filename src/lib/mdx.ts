@@ -82,6 +82,8 @@ export async function getAllTags(type: string) {
   const allFiles = files.concat(pageFiles)
   const tagCount = {}
   const tags = {}
+  const charSlice = {}
+
   // Iterate through each post, putting all found tags into `tags`
   allFiles.forEach((file) => {
     const source =
@@ -91,7 +93,6 @@ export async function getAllTags(type: string) {
         : !fs.statSync(path.join(loc, file)).isDirectory()
         ? fs.readFileSync(path.join(loc, file), 'utf-8')
         : null
-
     if (source) {
       const { data } = matter(source)
       if (data.tags) {
@@ -103,11 +104,12 @@ export async function getAllTags(type: string) {
           } else {
             tagCount[formattedTag] = 1
             tags[formattedTag] = tag
+            charSlice[formattedTag] = tag.charAt(0)
           }
         })
       }
     }
   })
 
-  return { tagCount, tags }
+  return { tagCount, tags, charSlice }
 }
