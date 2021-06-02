@@ -11,7 +11,7 @@ module.exports = {
       use: ['@svgr/webpack'],
     })
 
-    if (!dev && !isServer) {
+    if (!isServer) {
       // Replace React with Preact only in client production build
       Object.assign(config.resolve.alias, {
         react: 'preact/compat',
@@ -20,27 +20,5 @@ module.exports = {
       })
     }
     return config
-  },
-  async headers() {
-    return [
-      {
-        source: '/static/fonts/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/static/(.*)',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-        ],
-      },
-    ]
   },
 }
