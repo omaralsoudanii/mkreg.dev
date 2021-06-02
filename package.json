@@ -19,7 +19,7 @@
     "clean": "rm -rf .next node_modules && yarn cache clean && yarn install && yarn build && yarn start",
     "format": "prettier --write \"src/**/*.{ts,tsx,js}\"",
     "lint": "eslint --fix \"src/**/*.{ts,tsx,js}\"",
-    "generate-icons": "npx @svgr/cli -d src/components/Icons  --ignore-existing --typescript public/static/icons"
+    "generate-icons": "npx @svgr/cli -d public/svgr-icons-tmp  --ignore-existing --typescript public/static/icons"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",

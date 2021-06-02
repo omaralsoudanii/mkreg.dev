@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
-const { fontFamily, spacing } = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: [
@@ -171,10 +171,10 @@ module.exports = {
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
-          'scroll-margin-top': spacing[24],
+          'scroll-margin-top': '5em',
         },
         '.scroll-spacing-lg': {
-          'scroll-margin-top': spacing[12],
+          'scroll-margin-top': '2em',
         },
       }
 

@@ -1,10 +1,10 @@
 import NextLink from '@/components/NextLink'
-import Card from '@/components/Card'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
 const MDXComponents = {
   a: NextLink,
-  Card,
+  Card: dynamic(() => import('../Card')),
   Image,
 }
 
