@@ -4,8 +4,7 @@
   html {
     @apply antialiased font-inter-var;
     min-width: 360px;
-    font-size: 1rem;
-    letter-spacing: -0.011em;
+    letter-spacing: -0.011rem;
     text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
     font-feature-settings: 'cv01', 'cv10', 'ss01', 'kern', 'liga', 'rlig',
@@ -17,8 +16,7 @@
   html {
     @apply antialiased font-inter;
     min-width: 360px;
-    font-size: 1rem;
-    letter-spacing: -0.011em;
+    letter-spacing: -0.011rem;
     text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
   }

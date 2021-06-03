@@ -7,14 +7,14 @@ const renderIcon = (icon) => {
 }
 const Card = ({ title, url, icon, desc }) => (
   <a key={title} href={url} target="_blank" rel="noopener noreferrer">
-    <div className="flex items-center p-4 my-8 border border-gray-400 rounded lg:py-4 lg:px-8 dark:border-gray-700">
+    <div className="flex items-center p-4 my-8 border border-gray-300 rounded lg:py-4 lg:px-8 dark:border-gray-700">
       <div className={`${iconStyle} ml-0 mr-4 lg:ml-2 lg:mr-8`}>
         <span className="sr-only">{title}</span>
         {renderIcon(icon)}
       </div>
       <div>
         <h2 className="!my-1 !font-medium  !text-lg">{title}</h2>
-        <p className="!my-1  !text-secondary text-[0.9rem] lg:text-base !leading-snug !font-normal clamp-5">
+        <p className="!my-1  !text-secondary  lg:text-base !font-normal clamp-5">
           {desc}
         </p>
       </div>

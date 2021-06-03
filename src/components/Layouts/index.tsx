@@ -6,7 +6,7 @@ export function Main({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <main className="flex flex-col items-start justify-center w-full max-w-2xl pt-8 pb-8 mx-auto  mb-16 px-7 lg:pt-12 lg:max-w-3xl lg:px-2">
+      <main className="flex flex-col items-start justify-center w-full max-w-2xl pt-8 pb-8 mx-auto  mb-16 px-6 lg:pt-12 lg:max-w-3xl lg:px-2">
         {children}
         <Footer />
       </main>

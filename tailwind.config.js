@@ -44,32 +44,36 @@ module.exports = {
         'inter-var': ['"Inter var"', ...fontFamily.sans],
       },
       boxShadow: {
-        white: '0px 2px 0px #ffffff',
-        black: '0px 2px 0px #171717',
+        white: '0px 2px 0px #fff',
+        black: '0px 2px 0px #000',
         'rose-600': '0px 2px 0px #E11D48',
         'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
-        gray: colors.trueGray,
+        gray: {
+          700: '#333',
+          900: '#17191c',
+          1000: '#050505',
+          ...colors.trueGray,
+        },
         rose: colors.rose,
         // dark: 'rgb(25, 30, 37)',
-        dark: 'rgb(22, 27, 34)',
         // light: '#F5F7F9',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: '#333',
             h1: {
-              color: theme('colors.gray.900'),
+              color: '#050505',
               fontWeight: theme('fontWeight.bold'),
             },
             'h2,h3': {
-              color: theme('colors.gray.900'),
+              color: '#050505',
               fontWeight: theme('fontWeight.semibold'),
             },
             'h4,h5,h6': {
-              color: theme('colors.gray.900'),
+              color: '#050505',
               fontWeight: theme('fontWeight.medium'),
             },
             a: {
@@ -78,23 +82,23 @@ module.exports = {
             ol: {
               li: {
                 '&:before': {
-                  color: theme('colors.gray.700'),
+                  color: '#333',
                 },
               },
             },
             ul: {
               li: {
                 '&:before': {
-                  backgroundColor: theme('colors.gray.700'),
+                  backgroundColor: theme('colors.gray.300'),
                 },
               },
             },
             strong: {
-              color: theme('colors.gray.700'),
+              color: '#050505',
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
-              color: theme('colors.gray.700'),
+              color: '#333',
               borderBottomColor: theme('colors.gray.300'),
             },
             tbody: {
@@ -103,9 +107,12 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.700'),
+              color: '#333',
               borderLeftColor: theme('colors.gray.300'),
+              fontWeight: '400',
             },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
           },
         },
         dark: {
@@ -124,25 +131,26 @@ module.exports = {
             },
             ul: {
               li: {
-                '&:before': { backgroundColor: theme('colors.gray.300') },
+                '&:before': { backgroundColor: theme('colors.gray.700') },
               },
             },
             strong: {
-              color: theme('colors.gray.300'),
+              color: theme('colors.gray.100'),
               fontWeight: theme('fontWeight.bold'),
             },
             tbody: {
               tr: {
-                borderBottomColor: theme('colors.gray.700'),
+                borderBottomColor: '#333',
               },
             },
             thead: {
               color: theme('colors.gray.300'),
-              borderBottomColor: theme('colors.gray.700'),
+              borderBottomColor: '#333',
             },
             blockquote: {
               color: theme('colors.gray.300'),
-              borderLeftColor: theme('colors.gray.700'),
+              borderLeftColor: '#333',
+              fontWeight: '400',
             },
           },
         },
@@ -156,15 +164,14 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          letterSpacing: '-.025em',
+          letterSpacing: '-.03rem',
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-.015em',
+          letterSpacing: '-.03rem',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),
-          letterSpacing: '-.015em',
         },
       })
     }),

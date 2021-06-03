@@ -20,10 +20,6 @@ module.exports = {
       })
     }
 
-    if (dev) {
-      config.watch = false
-    }
-
     return config
   },
 }
