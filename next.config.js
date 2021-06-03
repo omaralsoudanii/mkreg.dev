@@ -19,6 +19,11 @@ module.exports = {
         'react-dom': 'preact/compat',
       })
     }
+
+    if (dev) {
+      config.watch = false
+    }
+
     return config
   },
 }
