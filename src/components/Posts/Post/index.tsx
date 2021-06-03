@@ -21,9 +21,9 @@ export default function Post({ children, frontMatter }) {
       <Seo data={meta} />
       <article
         id="skip"
-        className="w-full max-w-2xl mx-auto mt-6 mb-16 lg:max-w-3xl"
+        className="w-full mx-auto mt-6 mb-16 prose dark:prose-dark lg:prose-lg max-w-prose"
       >
-        <h1 className="!pb-4 !pt-0 !mt-0 !mb-1 text-center text-3xl   md:text-4xl text-primary">
+        <h1 className="!pb-4 !pt-0 !mt-0 !mb-1 text-center title-heading">
           {frontMatter.title}
         </h1>
         <div className="grid grid-cols-1 mt-1 !mb-8 !py-2 lg:grid-cols-1">
@@ -49,9 +49,7 @@ export default function Post({ children, frontMatter }) {
             )}
           </div>
         </div>
-        <div className="mx-auto mt-8 prose dark:prose-dark lg:prose-lg">
-          {children}
-        </div>
+        <div className="mx-auto mt-8">{children}</div>
       </article>
     </React.Fragment>
   )
