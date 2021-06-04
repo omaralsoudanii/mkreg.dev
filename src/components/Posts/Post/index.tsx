@@ -43,7 +43,7 @@ export default function Post({ children, frontMatter }) {
         <div className="mx-auto mt-6">{children}</div>
       </article>
       <div className="w-full mx-auto !my-0 prose dark:prose-dark lg:prose-lg max-w-prose">
-        <h3 className="text-primary !py-0 !my-1">Writings with similar tags</h3>
+        <h3 className="text-primary !py-0 !my-1">Tags</h3>
         <ul className="!mt-0 !mb-6">
           {frontMatter.tags.map((t: string) => (
             <li key={t}>
@@ -56,16 +56,19 @@ export default function Post({ children, frontMatter }) {
           ))}
         </ul>
 
-        <div className="flex flex-col w-auto mx-auto mt-4 space-y-2 align-baseline">
-          <p>
-            <Link href="/writings">
-              <a className="link-unstyled"> Browse all Writings</a>
+        <div className="flex flex-col w-auto mx-auto mt-6 space-y-4 align-baseline">
+          <p className="text-left !my-1">
+            <Link href="/writing">
+              <a className="inline w-auto link-unstyled">
+                Browse all Writings &rarr;
+              </a>
             </Link>
           </p>
-
-          <p>
-            <Link href="/tags">
-              <a className="link-unstyled"> Browse by Tags</a>
+          <p className="text-left !my-1">
+            <Link href="/nuggets">
+              <a className="inline w-auto link-unstyled">
+                Get some Nuggets &rarr;
+              </a>
             </Link>
           </p>
         </div>

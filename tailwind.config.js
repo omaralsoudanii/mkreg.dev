@@ -40,7 +40,8 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
-        sans: ['Inter', ...fontFamily.sans],
+        inter: ['Inter', ...fontFamily.sans],
+        'inter-var': ['"Inter var"', ...fontFamily.sans],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
@@ -49,17 +50,17 @@ module.exports = {
         'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
-        'gray-700': 'rgb(51, 51, 51)',
+        'gray-700': '#333',
         rose: colors.rose,
-        'rose-500': 'rgb(244, 48, 89)',
+        'rose-500': '#F43059',
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
-        light: 'rgb(249, 249, 249)',
+        light: '#f9f9f9',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: 'rgb(51, 51, 51)',
+            color: '#333',
             h1: {
               color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),

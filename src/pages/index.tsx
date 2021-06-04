@@ -37,12 +37,12 @@ const Home = () => {
 
         <p className="text-left !px-2  py-2 lg:py-4 !my-1">
           <Link href="/about">
-            <a className="inline w-auto text-link">More about me</a>
+            <a className="inline w-auto link-unstyled">More about me &rarr;</a>
           </Link>
         </p>
         <p className="text-left !px-2 py-2 lg:py-4 !my-1">
           <Link href="/writing">
-            <a className="inline w-auto text-link">My writings</a>
+            <a className="inline w-auto link-unstyled">My writings &rarr;</a>
           </Link>
         </p>
       </Container>
