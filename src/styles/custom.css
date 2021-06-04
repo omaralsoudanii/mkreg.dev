@@ -18,7 +18,7 @@
   h4,
   h5,
   h6 {
-    @apply text-gray-1000 dark:text-gray-100 scroll-spacing-sm lg:scroll-spacing-lg !important;
+    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg !important;
   }
 
   .filter-grayscale {

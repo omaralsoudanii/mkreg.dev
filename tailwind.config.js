@@ -52,28 +52,25 @@ module.exports = {
       colors: {
         gray: {
           700: '#333',
-          900: '#17191c',
-          1000: '#050505',
-          ...colors.trueGray,
         },
         rose: colors.rose,
         // dark: 'rgb(25, 30, 37)',
-        // light: '#F5F7F9',
+        dark: 'rgb(22, 27, 34)',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             color: '#333',
             h1: {
-              color: '#050505',
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
             },
             'h2,h3': {
-              color: '#050505',
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.semibold'),
             },
             'h4,h5,h6': {
-              color: '#050505',
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.medium'),
             },
             a: {
@@ -94,7 +91,7 @@ module.exports = {
               },
             },
             strong: {
-              color: '#050505',
+              color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
             },
             thead: {
@@ -109,7 +106,6 @@ module.exports = {
             blockquote: {
               color: '#333',
               borderLeftColor: theme('colors.gray.300'),
-              fontWeight: '400',
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
@@ -131,7 +127,7 @@ module.exports = {
             },
             ul: {
               li: {
-                '&:before': { backgroundColor: theme('colors.gray.700') },
+                '&:before': { backgroundColor: theme('colors.gray.300') },
               },
             },
             strong: {
@@ -150,7 +146,6 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.300'),
               borderLeftColor: '#333',
-              fontWeight: '400',
             },
           },
         },
