@@ -50,12 +50,10 @@ module.exports = {
         'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
-        gray: {
-          700: '#333',
-        },
+        'gray-700': '#333',
         rose: colors.rose,
-        // dark: 'rgb(25, 30, 37)',
-        dark: 'rgb(22, 27, 34)',
+        dark: 'rgb(13, 17, 23)',
+        // dark: 'rgb(22, 27, 34)',
       },
       typography: (theme) => ({
         DEFAULT: {
