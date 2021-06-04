@@ -23,7 +23,7 @@ export default function PostsList({ posts, href }) {
 
       <Link href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}>
         <a className="link-unstyled">
-          <p className="text-tertiary text-base !my-0">Read more &rarr; </p>
+          <p className="text-link text-base !my-0">Read more</p>
         </a>
       </Link>
     </div>

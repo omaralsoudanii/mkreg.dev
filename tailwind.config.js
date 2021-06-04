@@ -40,25 +40,26 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
-        inter: ['Inter', ...fontFamily.sans],
-        'inter-var': ['"Inter var"', ...fontFamily.sans],
+        sans: ['Inter', ...fontFamily.sans],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
-        'rose-600': '0px 2px 0px #E11D48',
+        'rose-500': '0px 2px 0px #F43059',
         'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
-        'gray-700': '#333',
+        'gray-700': 'rgb(51, 51, 51)',
         rose: colors.rose,
-        dark: 'rgb(13, 17, 23)',
-        // dark: 'rgb(22, 27, 34)',
+        'rose-500': 'rgb(244, 48, 89)',
+        // dark: 'rgb(13, 17, 23)',
+        dark: 'rgb(22, 27, 34)',
+        light: 'rgb(249, 249, 249)',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: '#333',
+            color: 'rgb(51, 51, 51)',
             h1: {
               color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
@@ -74,37 +75,6 @@ module.exports = {
             a: {
               textDecoration: 'none',
             },
-            ol: {
-              li: {
-                '&:before': {
-                  color: '#333',
-                },
-              },
-            },
-            ul: {
-              li: {
-                '&:before': {
-                  backgroundColor: theme('colors.gray.300'),
-                },
-              },
-            },
-            strong: {
-              color: theme('colors.gray.900'),
-              fontWeight: theme('fontWeight.bold'),
-            },
-            thead: {
-              color: '#333',
-              borderBottomColor: theme('colors.gray.300'),
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme('colors.gray.300'),
-              },
-            },
-            blockquote: {
-              color: '#333',
-              borderLeftColor: theme('colors.gray.300'),
-            },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
           },
@@ -112,38 +82,30 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1,h2,h3,h4,h5,h6': {
+            'h1,h2,h3,h4,h5,h6,strong': {
               color: theme('colors.gray.100'),
-            },
-            a: {
-              textDecoration: 'none',
             },
             ol: {
               li: {
-                '&:before': { color: theme('colors.gray.300') },
+                '&:before': { color: theme('colors.gray.500') },
               },
             },
             ul: {
               li: {
-                '&:before': { backgroundColor: theme('colors.gray.300') },
+                '&:before': { backgroundColor: theme('colors.gray.500') },
               },
-            },
-            strong: {
-              color: theme('colors.gray.100'),
-              fontWeight: theme('fontWeight.bold'),
             },
             tbody: {
               tr: {
-                borderBottomColor: '#333',
+                borderBottomColor: theme('colors.gray.700'),
               },
             },
             thead: {
-              color: theme('colors.gray.300'),
-              borderBottomColor: '#333',
+              color: theme('colors.gray.100'),
             },
             blockquote: {
               color: theme('colors.gray.300'),
-              borderLeftColor: '#333',
+              borderLeftColor: theme('colors.gray.700'),
             },
           },
         },
@@ -174,7 +136,7 @@ module.exports = {
           'scroll-margin-top': '5em',
         },
         '.scroll-spacing-lg': {
-          'scroll-margin-top': '2em',
+          'scroll-margin-top': '3em',
         },
       }
 
