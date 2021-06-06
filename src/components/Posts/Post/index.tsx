@@ -56,15 +56,15 @@ export default function Post({ children, frontMatter }) {
           ))}
         </ul>
 
-        <div className="flex flex-col w-auto mx-auto mt-6 space-y-4 align-baseline">
-          <p className="text-left !my-1">
+        <div className="flex flex-col w-auto mx-auto mt-6 space-y-8 align-baseline">
+          <p className="text-left !my-2">
             <Link href="/writing">
               <a className="inline w-auto link-unstyled">
                 Browse all Writings &rarr;
               </a>
             </Link>
           </p>
-          <p className="text-left !my-1">
+          <p className="text-left !my-2">
             <Link href="/nuggets">
               <a className="inline w-auto link-unstyled">
                 Get some Nuggets &rarr;
