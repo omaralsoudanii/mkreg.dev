@@ -120,11 +120,11 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          letterSpacing: '-.03rem',
+          letterSpacing: '-.025em',
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-.03rem',
+          letterSpacing: '-.025em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),

@@ -41,38 +41,17 @@ export default function Post({ children, frontMatter }) {
           )}
         </div>
         <div className="mx-auto mt-6">{children}</div>
-      </article>
-      <div className="w-full mx-auto !my-0 prose dark:prose-dark lg:prose-lg max-w-prose">
-        <h3 className="text-primary !py-0 !my-1">Tags</h3>
-        <ul className="!mt-0 !mb-6">
+        <h2 className="!font-medium !py-0 !mt-12 !mb-4">Tags</h2>
+        <div className="flex flex-wrap">
           {frontMatter.tags.map((t: string) => (
-            <li key={t}>
+            <p key={t} className="pr-4 !my-0 !py-1">
               <Link href={`/tags/${slugify(t)}`}>
-                <a className="text-link text-[0.9rem] inline w-auto lg:text-base">
-                  {t}
-                </a>
+                <a className="text-link">{t}</a>
               </Link>
-            </li>
+            </p>
           ))}
-        </ul>
-
-        <div className="flex flex-col w-auto mx-auto mt-6 space-y-8 align-baseline">
-          <p className="text-left !my-2">
-            <Link href="/writing">
-              <a className="inline w-auto link-unstyled">
-                Browse all Writings &rarr;
-              </a>
-            </Link>
-          </p>
-          <p className="text-left !my-2">
-            <Link href="/nuggets">
-              <a className="inline w-auto link-unstyled">
-                Get some Nuggets &rarr;
-              </a>
-            </Link>
-          </p>
         </div>
-      </div>
+      </article>
     </React.Fragment>
   )
 }
