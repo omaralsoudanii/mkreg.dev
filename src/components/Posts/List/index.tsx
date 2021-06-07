@@ -11,7 +11,10 @@ export default function PostsList({ posts, href }) {
 
   return posts.map((frontMatter) => (
     <div key={frontMatter.title} className="flex flex-col items-baseline">
-      <Link href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}>
+      <Link
+        href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+        passHref
+      >
         <a className="inline link-unstyled">
           <h3 className="text-primary !pt-0 !my-0">{frontMatter.title}</h3>
         </a>
@@ -21,7 +24,10 @@ export default function PostsList({ posts, href }) {
         {frontMatter.summary}
       </p>
 
-      <Link href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}>
+      <Link
+        href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+        passHref
+      >
         <a className="link-unstyled">
           <p className="text-link text-base !my-0">Read more</p>
         </a>

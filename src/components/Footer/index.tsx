@@ -12,8 +12,8 @@ export function Footer() {
           <Link href="/tags">
             <a className="link-unstyled">Tags</a>
           </Link>
-          <Link href="/stack">
-            <a className="link-unstyled">Stack</a>
+          <Link href="/writing">
+            <a className="link-unstyled">Writing</a>
           </Link>
         </div>
         <div className="flex flex-col items-start px-2 mb-4 space-y-4 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">

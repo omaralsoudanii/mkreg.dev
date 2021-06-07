@@ -130,9 +130,9 @@
   }
 
   .prose .anchor {
-    @apply absolute invisible w-4/5 max-w-sm lg:max-w-lg;
-    margin-left: -0.8em;
-    padding-right: 0.5em;
+    @apply relative invisible;
+    margin-left: -9.5em;
+    padding-left: 9.75em;
     cursor: pointer;
   }
 
@@ -141,7 +141,7 @@
   }
 
   .prose .anchor:after {
-    @apply text-secondary;
+    @apply text-primary;
     content: '#';
   }
 
@@ -156,7 +156,7 @@
   .prose img {
     @apply m-0 !important;
   }
-
+  
   .sub-heading {
     @apply font-medium text-2xl lg:text-3xl  !tracking-normal my-1 !important;
   }

@@ -5,7 +5,7 @@ import * as React from 'react'
 
 export default function Post({ children, frontMatter }) {
   const meta = {
-    title: frontMatter.title,
+    title: `Omar Alsoudani - ${frontMatter.title}`,
     description: frontMatter.summary,
     image: {
       url: frontMatter?.image,

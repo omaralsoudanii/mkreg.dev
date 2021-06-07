@@ -64,20 +64,9 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.700'),
-            lineHeight: '1.5',
             h1: {
               color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
-            },
-            ol: {
-              li: {
-                '&:before': { top: '0.6em' },
-              },
-            },
-            ul: {
-              li: {
-                '&:before': { top: '0.6em' },
-              },
             },
             'h2,h3': {
               color: theme('colors.gray.900'),

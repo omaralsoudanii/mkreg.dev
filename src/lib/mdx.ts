@@ -30,6 +30,7 @@ export async function getFileBySlug(type: string, slug?) {
             linkProperties: {
               className: ['anchor'],
             },
+            behavior: 'append',
           },
         ],
         require('remark-code-titles'),
@@ -49,7 +50,7 @@ export async function getFileBySlug(type: string, slug?) {
 
 export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(path.join(loc, type))
-  const allPages = fs.readdirSync(path.join(loc))
+  const allPages = fs.readdirSync(loc)
   const allFiles = files.concat(allPages)
 
   return allFiles.reduce((allPosts, postSlug) => {
