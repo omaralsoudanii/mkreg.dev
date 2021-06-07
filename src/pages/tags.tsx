@@ -38,7 +38,7 @@ export default function Tags({ tagCount, tags, charSlice }) {
         </p>
         <p className="text-right text-secondary">
           <Link href="/writing">
-            <a className="mr-1 link-unstyled">Browse all writings</a>
+            <a className="mr-1 link-unstyled">Browse all writings &rarr;</a>
           </Link>
         </p>
       </section>

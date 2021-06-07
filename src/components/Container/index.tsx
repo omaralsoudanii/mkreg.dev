@@ -2,9 +2,11 @@ export function Container({ children }) {
   return (
     <article
       id="skip"
-      className="w-full mx-auto mt-6 prose dark:prose-dark lg:prose-lg max-w-prose"
+      className="flex flex-col items-start justify-center w-full max-w-2xl px-8 py-8 mx-auto my-4 lg:pt-12 lg:px-0 lg:max-w-3xl"
     >
-      {children}
+      <div className="w-full mx-auto prose dark:prose-dark lg:prose-lg !max-w-none">
+        {children}
+      </div>
     </article>
   )
 }

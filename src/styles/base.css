@@ -4,7 +4,7 @@
   html {
     @apply antialiased font-inter-var;
     min-width: 360px;
-    font-size: 1em;
+    font-size: 1rem;
     letter-spacing: -0.01em;
     text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
@@ -17,9 +17,20 @@
   html {
     @apply antialiased font-inter;
     min-width: 360px;
-    font-size: 1em;
+    font-size: 1rem;
     letter-spacing: -0.01em;
     text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
   }
+}
+
+body {
+  @apply bg-light dark:bg-dark;
+  scroll-behavior: smooth;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

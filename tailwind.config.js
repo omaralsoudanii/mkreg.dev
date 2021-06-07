@@ -50,20 +50,30 @@ module.exports = {
         'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
-        'gray-700': '#333',
         rose: colors.rose,
         'rose-500': '#F43059',
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
-        light: '#f9f9f9',
+        light: '#f9fafb',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             color: '#333',
+            lineHeight: '1.5',
             h1: {
               color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.bold'),
+            },
+            ol: {
+              li: {
+                '&:before': { top: '0.6em' },
+              },
+            },
+            ul: {
+              li: {
+                '&:before': { top: '0.6em' },
+              },
             },
             'h2,h3': {
               color: theme('colors.gray.900'),
@@ -102,7 +112,7 @@ module.exports = {
               },
             },
             thead: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.300'),
             },
             blockquote: {
               color: theme('colors.gray.300'),

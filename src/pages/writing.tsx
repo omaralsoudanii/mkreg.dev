@@ -32,7 +32,7 @@ export default function Writing({ posts }) {
           </p>
           <p className="text-right text-secondary">
             <Link href="/tags">
-              <a className="mr-1 link-unstyled">Browse by Tags</a>
+              <a className="mr-1 link-unstyled">Browse by Tags &rarr;</a>
             </Link>
           </p>
         </section>
