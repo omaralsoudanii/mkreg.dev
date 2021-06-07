@@ -1,8 +1,6 @@
 import { Container } from '@/components/Container'
 import Seo from '@/components/Seo'
-import { slugify } from '@/lib/utils'
 import dayjs from 'dayjs'
-import Link from 'next/link'
 import * as React from 'react'
 
 export default function Post({ children, frontMatter }) {
