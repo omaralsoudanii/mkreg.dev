@@ -3,15 +3,15 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className="px-4 py-4">
-      <div className="flex flex-col items-start justify-start lg:justify-center lg:items-center lg:flex-row lg:space-x-10 lg:mt-8">
-        <div className="pt-4">
-          <h1 className="text-6xl leading-loose border-gray-900 lg:text-8xl lg:leading-loose lg:dark:border-gray-100 lg:border-r-8 lg:py-24 lg:px-6">
+    <Container>
+      <div className="flex flex-col items-start justify-start divide-y divide-gray-700 dark:divide-gray-300 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
+        <div className="py-4 lg:pt-20 lg:pb-20">
+          <h1 className="lg:border-gray-900 !text-7xl !leading-loose lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
             404
           </h1>
         </div>
-        <Container>
-          <h1>I tried but didn't find this page</h1>
+        <div className="py-4 lg:!py-0 !my-0 max-w-lg">
+          <h1 className="!my-0">I tried but didn't find this page</h1>
           <p>
             It seems that you're looking for something that used to exist, or
             you spelled something wrong.
@@ -27,8 +27,8 @@ export default function NotFound() {
               Back to Homepage
             </button>
           </Link>
-        </Container>
+        </div>
       </div>
-    </div>
+    </Container>
   )
 }

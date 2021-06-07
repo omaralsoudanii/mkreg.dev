@@ -15,7 +15,7 @@ export default function MK() {
     <React.Fragment>
       <Seo data={meta} />
       <Container>
-        <h1 className="text-center">The Sultan of swing</h1>
+        <h1 className="text-center title-heading">The Sultan of swing</h1>
         <NextImage
           src="/static/images/mk.jpg"
           alt="Mark Knopfler"
@@ -27,14 +27,14 @@ export default function MK() {
           favorite human being in the universe.{' '}
           <strong>The legend himself:</strong>{' '}
         </p>
-        <h2 className="text-center">Mr.Mark Knopfler</h2>
+        <h2 className="!my-8 text-center">Mr.Mark Knopfler</h2>
         <p>
           If you have ever wondered why the hell I have this weird domain name
           rather than something closer to my name (for SEO blah...), then I can
           tell you that the acronym is based on this:
         </p>
 
-        <p className="mx-auto text-center">
+        <p className="font-semibold">
           <a
             className="text-link"
             href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
@@ -48,32 +48,24 @@ export default function MK() {
         <p>
           If you got the gist of the video then I think we can agree that
           everyone has his own <strong>"Red Electric Guitar"</strong> in one way
-          or another. Seeing this beautiful genuine soul getting his guitar is
-          always a pleasure that puts a smile on my face.
+          or another.
         </p>
 
+        <p>
+          Seeing this beautiful genuine soul getting his guitar is always a
+          pleasure that puts a smile on my face.
+        </p>
         <p>
           So there you go, now you have the answer to the ultimate question of
           life.
         </p>
 
-        <p className="mx-auto text-center">
-          <a
-            href={Environment.social.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link"
-          >
-            Enjoy this golden nugget 👏
-          </a>
-        </p>
-
         <p>
-          Also this is a small open-sourced <strong>Hugo</strong> app I built
-          and hosted on <strong>Vercel</strong> about the Sultan.
+          Below is a small open-sourced <strong>Hugo</strong> app I built and
+          hosted on <strong>Vercel</strong> about the Sultan.
         </p>
 
-        <p className="mx-auto text-center">
+        <p className="font-semibold">
           <a
             href="https://mkreg-hugo.vercel.app"
             target="_blank"
@@ -84,9 +76,19 @@ export default function MK() {
           </a>
         </p>
 
+        <p>
+          If you happen to have some good <strong>Nuggets</strong> about the
+          Sultan, then EMAIL ME ASAP!! Meanwhile Enjoy
+        </p>
         <p className="font-semibold">
-          If you happen to have some good nuggets about the Sultan, then EMAIL
-          ME ASAP!!
+          <a
+            href={Environment.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            The Golden Nugget 👏
+          </a>
         </p>
       </Container>
     </React.Fragment>

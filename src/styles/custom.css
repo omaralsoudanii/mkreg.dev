@@ -112,12 +112,8 @@
     @apply !inline-block !w-auto font-medium !text-primary lg:link-transition;
   }
 
-  .link-lg {
-    @apply text-lg lg:text-xl !font-semibold;
-  }
-
   .text-link {
-    @apply font-medium !text-rose-500 dark:!text-rose-400 lg:text-link-transition !important;
+    @apply font-semibold text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
   }
 
   .text-link-transition:hover {
