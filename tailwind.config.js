@@ -54,7 +54,7 @@ module.exports = {
         'rose-500': '#F43059',
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
-        light: '#f9fafb',
+        light: '#f9f9f9',
       },
       typography: (theme) => ({
         DEFAULT: {
