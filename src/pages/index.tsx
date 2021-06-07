@@ -30,7 +30,7 @@ const Home = () => {
               Goal
             </h1>
           </div>
-          <p className="!px-2 !text-secondary py-4 lg:py-0 !my-0 max-w-lg">
+          <p className="!px-2 !text-secondary py-4 !leading-normal lg:py-0 !my-0 max-w-lg">
             The purpose of this site to be my digital identity, where I can
             write notes. Share my knowledge with others, my opinion on some
             topics, and open-source projects I create and share them here. Maybe
