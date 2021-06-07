@@ -52,6 +52,10 @@ module.exports = {
       colors: {
         rose: colors.rose,
         'rose-500': '#F43059',
+        gray: {
+          ...colors.coolGray,
+          700: '#333333',
+        },
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
         light: '#f9f9f9',
@@ -59,7 +63,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: '#333',
+            color: theme('colors.gray.700'),
             lineHeight: '1.5',
             h1: {
               color: theme('colors.gray.900'),
