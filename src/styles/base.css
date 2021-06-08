@@ -1,26 +1,32 @@
 @tailwind base;
 
-html {
-  min-width: 360px;
-  font-size: 1em;
-}
-
 @supports (font-variation-settings: normal) {
-  body {
-    @apply antialiased bg-light dark:bg-dark font-inter-var;
+  html {
+    @apply antialiased font-inter-var;
+    min-width: 360px;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
     font-feature-settings: 'cv01', 'cv10', 'ss01', 'kern', 'liga', 'rlig',
-      'calt', 'clig', 'ccmp', 'cpsp';
-    scroll-behavior: smooth;
+       'calt', 'clig', 'ccmp', 'cpsp';
   }
 }
 
 @supports not (font-variation-settings: normal) {
-  body {
-    @apply antialiased font-inter bg-light dark:bg-dark;
+  html {
+    @apply antialiased font-inter;
+    min-width: 360px;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
     font-variant: common-ligatures contextual;
-    scroll-behavior: smooth;
   }
+}
+
+body {
+  @apply bg-light dark:bg-dark;
+  scroll-behavior: smooth;
 }
 
 #__next {
