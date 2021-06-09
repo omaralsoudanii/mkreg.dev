@@ -56,7 +56,7 @@ export default function Tags({ tagCount, tags, charSlice }) {
               .sort((a, b) => tagCount[b] - tagCount[a])
               .map((item) => (
                 <Tag
-                  className="!my-0 text-base !py-0 !text-secondary"
+                  className="!my-0 text-base !py-0"
                   key={item}
                   name={tags[item]}
                   slug={item}

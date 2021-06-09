@@ -113,7 +113,7 @@
   }
 
   .text-link {
-    @apply font-semibold text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
+    @apply font-medium text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
   }
 
   .text-link-transition:hover {

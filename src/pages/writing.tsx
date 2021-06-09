@@ -4,7 +4,6 @@ import Seo from '@/components/Seo'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
-import * as React from 'react'
 
 /**
  * Main writing page
@@ -21,26 +20,23 @@ export default function Writing({ posts }) {
   }
 
   return (
-    <React.Fragment>
+    <Container>
       <Seo data={meta} />
-      <Container>
-        <section className="mb-8">
-          <h1 className="!mb-4">Writing</h1>
-          <p>
-            Stuff I write about programming, software with a slight hint of
-            salt.
-          </p>
-          <p className="text-right text-secondary">
-            <Link href="/tags">
-              <a className="mr-1 link-unstyled">Browse by Tags &rarr;</a>
-            </Link>
-          </p>
-        </section>
-        <section>
-          <PostsContainer href="/writing" posts={posts} />
-        </section>
-      </Container>
-    </React.Fragment>
+      <section className="mb-8">
+        <h1 className="!mb-4">Writing</h1>
+        <p>
+          Stuff I write about programming, software with a slight hint of salt.
+        </p>
+        <p className="text-right text-secondary">
+          <Link href="/tags">
+            <a className="mr-1 link-unstyled">Browse by Tags &rarr;</a>
+          </Link>
+        </p>
+      </section>
+      <section>
+        <PostsContainer href="/writing" posts={posts} />
+      </section>
+    </Container>
   )
 }
 

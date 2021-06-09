@@ -6,7 +6,6 @@ import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
 import { slugify } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
-import * as React from 'react'
 
 /**
  *
@@ -21,26 +20,24 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <React.Fragment>
+    <Container>
       <Seo data={meta} />
-      <Container>
-        <section className="mb-8">
-          <h1 className="!mb-4">{tag}</h1>
-          <p>
-            Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
-            related to it.
-          </p>
-          <p className="text-right text-secondary">
-            <Link href="/writing">
-              <a className="mr-1 link-unstyled">Browse all Writing &rarr;</a>
-            </Link>
-          </p>
-        </section>
-        <section>
-          <PostsContainer href="/writing" posts={posts} />
-        </section>
-      </Container>
-    </React.Fragment>
+      <section className="mb-8">
+        <h1 className="!mb-4">{tag}</h1>
+        <p>
+          Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
+          related to it.
+        </p>
+        <p className="text-right text-secondary">
+          <Link href="/writing">
+            <a className="mr-1 link-unstyled">Browse all Writing &rarr;</a>
+          </Link>
+        </p>
+      </section>
+      <section>
+        <PostsContainer href="/writing" posts={posts} />
+      </section>
+    </Container>
   )
 }
 

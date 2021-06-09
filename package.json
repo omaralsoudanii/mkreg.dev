@@ -14,6 +14,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "build-check": "yarn tsc && yarn lint && yarn format && yarn build && yarn start",
     "type-check": "tsc",
     "export": "next export",
     "clean": "rm -rf .next node_modules && yarn cache clean && yarn install && yarn build && yarn start",

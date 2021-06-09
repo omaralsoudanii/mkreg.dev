@@ -6,12 +6,14 @@ interface JsonLd {
   '@context': string
   '@type': string
   headline?: any
-  keywords?: any
+  keywords?: Array<string>
   url: string
   datePublished?: any
-  description: any
+  description: string
+  sameAs: Array<string>
+  image: string
   author: { '@type': string; name: string } | { '@type': string; name: string }
-  name?: any
+  name?: string
 }
 
 export default function Seo({ data }) {
@@ -42,10 +44,16 @@ export default function Seo({ data }) {
       url: canonical,
       datePublished: meta.date,
       description: meta.description,
+      image: Environment.siteUrl.concat(meta.image.url),
       author: {
         '@type': 'Person',
         name: Environment.ogTitle,
       },
+      sameAs: [
+        Environment.social.github,
+        Environment.social.twitter,
+        Environment.social.linkedin,
+      ],
     }
   } else {
     meta.type = 'website'
@@ -53,19 +61,25 @@ export default function Seo({ data }) {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
       url: canonical,
-      name: meta.title,
+      name: Environment.ogTitle,
+      headline: meta.title,
       author: {
         '@type': 'Person',
         name: Environment.ogTitle,
       },
+      image: Environment.siteUrl.concat(meta.image.url),
       description: meta.description,
+      sameAs: [
+        Environment.social.github,
+        Environment.social.twitter,
+        Environment.social.linkedin,
+      ],
     }
   }
 
   return (
     <Head>
       <title key="title">{meta.title}</title>
-
       <meta name="robots" content="follow, index" />
       <meta name="googlebot" content="index,follow" />
 
