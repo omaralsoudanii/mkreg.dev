@@ -1,6 +1,5 @@
 const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: [
@@ -40,8 +39,6 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
-        inter: ['Inter', ...fontFamily.sans],
-        'inter-var': ['"Inter var"', ...fontFamily.sans],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
@@ -54,11 +51,11 @@ module.exports = {
         'rose-500': '#F43059',
         gray: {
           ...colors.coolGray,
-          700: '#333333',
+          700: '#333',
         },
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
-        light: '#f9f9f9',
+        light: '#fff',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -123,11 +120,9 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          letterSpacing: '-.025em',
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: '-.025em',
         },
         'h4,h5,h6': {
           fontWeight: theme('fontWeight.medium'),
