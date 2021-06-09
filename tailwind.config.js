@@ -2,11 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
-  purge: [
-    './src/pages/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-    './src/data/**/*.{mdx}',
-  ],
+  purge: ['./src/**/*.{ts,tsx,js}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     lineClamp: {
@@ -62,28 +58,47 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             h1: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
               fontWeight: theme('fontWeight.bold'),
             },
-            'h2,h3': {
-              color: theme('colors.gray.900'),
+            h2: {
+              color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
             },
-            'h4,h5,h6': {
+            h3: {
               color: theme('colors.gray.900'),
               fontWeight: theme('fontWeight.medium'),
+            },
+            lineHeight: '1.6',
+            'ul > li::before': {
+              top: '0.6em',
+            },
+            'ol > li::before': {
+              top: '0.6em',
             },
             a: {
               textDecoration: 'none',
             },
-            'blockquote p:first-of-type::before': false,
-            'blockquote p:last-of-type::after': false,
+          },
+        },
+        lg: {
+          css: {
+            lineHeight: '1.77',
+            'ul > li::before': {
+              top: '0.5em',
+            },
+            'ol > li::before': {
+              top: '0.5em',
+            },
           },
         },
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1,h2,h3,h4,h5,h6,strong': {
+            'h1,h2': {
+              color: theme('colors.white'),
+            },
+            'h3,strong': {
               color: theme('colors.gray.100'),
             },
             ol: {
@@ -120,11 +135,14 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
+          lineHeight: '1.25',
+          fontSize: '2.25em',
         },
-        'h2,h3': {
+        h2: {
           fontWeight: theme('fontWeight.semibold'),
+          lineHeight: '1.25',
         },
-        'h4,h5,h6': {
+        h3: {
           fontWeight: theme('fontWeight.medium'),
         },
       })
@@ -132,10 +150,10 @@ module.exports = {
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
-          'scroll-margin-top': '5em',
+          'scroll-margin-top': '3.5em',
         },
         '.scroll-spacing-lg': {
-          'scroll-margin-top': '3em',
+          'scroll-margin-top': '2em',
         },
       }
 

@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import Link from 'next/link'
 
 export default function PostsList({ posts, href }) {
@@ -10,28 +11,26 @@ export default function PostsList({ posts, href }) {
     )
 
   return posts.map((frontMatter) => (
-    <div key={frontMatter.title} className="flex flex-col items-baseline">
-      <Link
-        href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
-        passHref
-      >
-        <a className="inline link-unstyled">
-          <h3 className="text-primary !pt-0 !my-0">{frontMatter.title}</h3>
-        </a>
-      </Link>
-
-      <p className="clamp-3 text-secondary text-base !leading-normal  !mb-3 !mt-1">
-        {frontMatter.summary}
-      </p>
-
-      <Link
-        href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
-        passHref
-      >
-        <a className="link-unstyled">
-          <p className="text-link text-base !my-0">Read more</p>
-        </a>
-      </Link>
-    </div>
+    <Link
+      key={frontMatter.title}
+      href={`${frontMatter.page ? '' : href}/${frontMatter.slug}`}
+      passHref
+    >
+      <a className="inline-block w-full">
+        <div className="w-full mb-12">
+          <div className="flex flex-col justify-between lg:flex-row">
+            <h2 className="!text-xl lg:!text-2xl !mb-0 w-full !mt-0 text-display">
+              {frontMatter.title}
+            </h2>
+            <p className="w-32 !font-normal !text-base text-left text-tertiary lg:text-right !mb-1 lg:!mb-0">
+              {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
+            </p>
+          </div>
+          <p className="!font-normal lg:!py-1 !my-0 !text-base text-secondary clamp-3">
+            {frontMatter.summary}
+          </p>
+        </div>
+      </a>
+    </Link>
   ))
 }

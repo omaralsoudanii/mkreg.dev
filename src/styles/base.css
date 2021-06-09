@@ -1,18 +1,30 @@
 @tailwind base;
 
 html {
-  @apply antialiased;
   min-width: 360px;
   font-size: 1em;
 }
 
 body {
-  @apply bg-light dark:bg-dark text-base;
+  @apply text-base antialiased bg-light dark:bg-dark;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
 #__next {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
 }

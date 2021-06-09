@@ -12,13 +12,17 @@
     @apply text-gray-600 dark:text-gray-400;
   }
 
+  .text-display {
+    @apply text-black dark:text-white;
+  }
+
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg !important;
+  h2 {
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
+  }
+
+  h3 {
+    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg;
   }
 
   .filter-grayscale {
@@ -109,11 +113,11 @@
   }
 
   .link-unstyled {
-    @apply !inline-block !w-auto font-medium !text-primary lg:link-transition;
+    @apply inline-block w-auto font-medium text-primary lg:link-transition !important;
   }
 
   .text-link {
-    @apply font-medium text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
+    @apply font-medium w-auto text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
   }
 
   .text-link-transition:hover {
@@ -133,7 +137,7 @@
   }
 
   .anchor:hover {
-    @apply visible no-underline;
+    @apply visible;
   }
 
   .prose .anchor:after {
@@ -142,7 +146,7 @@
   }
 
   .prose *:hover > .anchor {
-    @apply visible no-underline;
+    @apply visible;
   }
 
   .svg-fill {
@@ -152,9 +156,9 @@
   .prose img {
     @apply m-0 !important;
   }
-  
+
   .sub-heading {
-    @apply font-medium text-2xl lg:text-3xl  !tracking-normal my-1 !important;
+    @apply font-medium text-2xl lg:text-3xl  my-1 !important;
   }
 
   .title-heading {

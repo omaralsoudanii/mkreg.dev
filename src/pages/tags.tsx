@@ -36,9 +36,9 @@ export default function Tags({ tagCount, tags, charSlice }) {
           Tags sorted alphabetically then by how many times each tag has been
           added to my writing
         </p>
-        <p className="text-right text-secondary">
+        <p className="text-right">
           <Link href="/writing">
-            <a className="mr-1 link-unstyled">Browse all writings &rarr;</a>
+            <a className="mr-1 link-unstyled">Browse all Writings</a>
           </Link>
         </p>
       </section>
