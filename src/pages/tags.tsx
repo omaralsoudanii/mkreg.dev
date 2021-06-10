@@ -30,7 +30,7 @@ export default function Tags({ tagCount, tags, charSlice }) {
   return (
     <Container>
       <Seo data={meta} />
-      <section className="mb-8">
+      <section className="mb-8 space-y-8">
         <h1 className="!mb-4">Tags</h1>
         <p>
           Tags sorted alphabetically then by how many times each tag has been

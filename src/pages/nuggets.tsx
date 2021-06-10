@@ -14,8 +14,8 @@ function Nuggets() {
   return (
     <Container>
       <Seo data={meta} />
-      <div className="space-y-8">
-        <h1>Nuggets</h1>
+      <section className="mb-8 space-y-8">
+        <h1 className="!mb-4">Nuggets</h1>
         <p>
           Some stuff I bookmark to read later, or a tool I find useful to use.
           These recommendations are based on my opinion, doesn't mean they are
@@ -23,10 +23,12 @@ function Nuggets() {
           free to peek into what might interest you, If you happen to see
           something misleading or plain wrong. Please contact me!
         </p>
+      </section>
+      <section>
         {Bookmarks.map((bookmark) => (
           <Card key={bookmark.title} {...bookmark} />
         ))}
-      </div>
+      </section>
     </Container>
   )
 }

@@ -25,6 +25,10 @@
     @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg;
   }
 
+  .skip-content-nav {
+    @apply absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-display focus:translate-y-3 focus:top-4 left-60 -top-2;
+  }
+
   .filter-grayscale {
     filter: grayscale(100%);
   }
@@ -39,7 +43,7 @@
   }
 
   .header-lg {
-    @apply py-2 pt-6 pb-3;
+    @apply py-4;
   }
 
   .header-sm {
@@ -87,7 +91,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply absolute p-2 font-medium cursor-pointer text-primary right-20 top-4 w-11;
+    @apply p-2 font-medium cursor-pointer text-primary  w-11;
   }
 
   .btn {

@@ -22,7 +22,7 @@ export default function Writing({ posts }) {
   return (
     <Container>
       <Seo data={meta} />
-      <section className="mb-8">
+      <section className="mb-8 space-y-8">
         <h1 className="!mb-4">Writing</h1>
         <p>
           Stuff I write about programming, software with a slight hint of salt.

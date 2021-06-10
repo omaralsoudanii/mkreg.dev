@@ -64,9 +64,6 @@ export default function Header() {
   return (
     <React.Fragment>
       <nav className="lg:hidden header-sm">
-        <a href="#skip" className="sr-only focus:not-sr-only">
-          Skip to content
-        </a>
         <div className="grid grid-cols-1 lg:hidden" ref={node}>
           <div className="flex items-center">
             {isExpanded ? (
@@ -112,28 +109,26 @@ export default function Header() {
             })}
         </div>
       </nav>
-      <nav className="hidden mx-auto lg:relative lg:flex lg:header-lg">
-        <a href="#skip" className="sr-only focus:not-sr-only">
+      <nav className="hidden lg:items-center lg:justify-between lg:w-full lg:max-w-3xl lg:mx-auto lg:flex lg:header-lg">
+        <a href="#skip" className="skip-content-nav">
           Skip to content
         </a>
-        <ul className="flex flex-row w-full max-w-3xl pr-2 mx-auto space-x-3">
+        <div className="space-x-3">
           {RoutesMetadata.map((route) => {
             const navClass =
               route.href === router.pathname
                 ? 'nav-md-default inline-block shadow-black dark:shadow-white'
                 : 'nav-md-default  link-unstyled'
             return (
-              <li key={route.href}>
-                <Link href={route.href}>
-                  <a className={navClass}>{route.label}</a>
-                </Link>
-              </li>
+              <Link key={route.href} href={route.href}>
+                <a className={navClass}>{route.label}</a>
+              </Link>
             )
           })}
-        </ul>
+        </div>
         {mounted && (
           <div
-            className="inline lg:hdr-cnt-theme-btn"
+            className="lg:hdr-cnt-theme-btn"
             onClick={() =>
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }

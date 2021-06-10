@@ -150,7 +150,7 @@ module.exports = {
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
-          'scroll-margin-top': '3.5em',
+          'scroll-margin-top': '4em',
         },
         '.scroll-spacing-lg': {
           'scroll-margin-top': '2em',
