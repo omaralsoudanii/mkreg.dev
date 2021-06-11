@@ -14,7 +14,7 @@ function Nuggets() {
   return (
     <Container>
       <Seo data={meta} />
-      <section className="mb-8 space-y-8">
+      <section className="mb-8 space-y-8 lg:mb-16">
         <h1 className="!mb-4">Nuggets</h1>
         <p>
           Some stuff I bookmark to read later, or a tool I find useful to use.

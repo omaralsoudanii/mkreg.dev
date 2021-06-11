@@ -74,11 +74,7 @@ module.exports = {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.extrabold'),
             },
-            h2: {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
-            },
-            h3: {
+            'h2,h3': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
             },
@@ -97,8 +93,11 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1,h2,h3,strong': {
+            'h1,h2,h3': {
               color: theme('colors.white'),
+            },
+            strong: {
+              color: theme('colors.gray.100'),
             },
             ol: {
               li: {
@@ -133,7 +132,7 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.extrabold'),
         },
         'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),

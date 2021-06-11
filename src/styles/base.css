@@ -6,8 +6,6 @@ html {
 }
 
 body {
-  @apply text-base antialiased bg-light dark:bg-dark;
-  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
 

@@ -13,13 +13,13 @@ export default function MK() {
   return (
     <Container>
       <Seo data={meta} />
-      <h1 className="text-center title-heading">The Sultan of swing</h1>
       <NextImage
         src="/static/images/mk.jpg"
         alt="Mark Knopfler"
-        width={3000}
-        height={2400}
+        width={1280}
+        height={915}
       />
+      <h1 className="text-center title-heading">The Sultan of swing</h1>
       <p>
         Well, Congrats on finding this page! Let me introduce you to my favorite
         human being in the universe. <strong>The legend himself:</strong>{' '}

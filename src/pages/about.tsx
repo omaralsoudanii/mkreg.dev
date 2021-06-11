@@ -41,7 +41,7 @@ export default function About() {
             In short, the technology you are gonna use is a tool to solve the
             problem. Understanding the problem and identifying the core cause is
             more valuable for me. You can find what I "think" am capable of in
-            my{' '}
+            my
             <Link href="/stack">
               <a className="text-link"> Stack </a>
             </Link>

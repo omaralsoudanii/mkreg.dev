@@ -63,8 +63,8 @@ export default function Header() {
 
   return (
     <React.Fragment>
-      <nav className="lg:hidden header-sm">
-        <div className="grid grid-cols-1 lg:hidden" ref={node}>
+      <nav className="pb-28 lg:hidden">
+        <div className="grid grid-cols-1 header-sm lg:hidden" ref={node}>
           <div className="flex items-center">
             {isExpanded ? (
               <div className="hdr-sm-btn" onClick={() => setExpanded(false)}>
@@ -109,11 +109,11 @@ export default function Header() {
             })}
         </div>
       </nav>
-      <nav className="hidden lg:items-center lg:justify-between lg:w-full lg:max-w-3xl lg:mx-auto lg:flex lg:header-lg">
+      <nav className="items-center justify-between hidden w-full max-w-3xl mx-auto mb-8 lg:flex header-lg">
         <a href="#skip" className="skip-content-nav">
           Skip to content
         </a>
-        <div className="space-x-3">
+        <div className="space-x-6">
           {RoutesMetadata.map((route) => {
             const navClass =
               route.href === router.pathname
