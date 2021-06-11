@@ -35,6 +35,20 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
+        sans: [
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          '"Roboto"',
+          '"Oxygen"',
+          '"Ubuntu"',
+          '"Cantarell"',
+          '"Fira Sans"',
+          '"Droid Sans"',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
@@ -46,8 +60,7 @@ module.exports = {
         rose: colors.rose,
         'rose-500': '#F43059',
         gray: {
-          ...colors.coolGray,
-          700: '#333',
+          700: '#333333',
         },
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
@@ -59,15 +72,15 @@ module.exports = {
             color: theme('colors.gray.700'),
             h1: {
               color: theme('colors.black'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.extrabold'),
             },
             h2: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
             },
             h3: {
-              color: theme('colors.gray.900'),
-              fontWeight: theme('fontWeight.medium'),
+              color: theme('colors.black'),
+              fontWeight: theme('fontWeight.semibold'),
             },
             lineHeight: '1.6',
             'ul > li::before': {
@@ -81,25 +94,11 @@ module.exports = {
             },
           },
         },
-        lg: {
-          css: {
-            lineHeight: '1.77',
-            'ul > li::before': {
-              top: '0.5em',
-            },
-            'ol > li::before': {
-              top: '0.5em',
-            },
-          },
-        },
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1,h2': {
+            'h1,h2,h3,strong': {
               color: theme('colors.white'),
-            },
-            'h3,strong': {
-              color: theme('colors.gray.100'),
             },
             ol: {
               li: {
@@ -135,22 +134,16 @@ module.exports = {
       addBase({
         h1: {
           fontWeight: theme('fontWeight.bold'),
-          lineHeight: '1.25',
-          fontSize: '2.25em',
         },
-        h2: {
+        'h2,h3': {
           fontWeight: theme('fontWeight.semibold'),
-          lineHeight: '1.25',
-        },
-        h3: {
-          fontWeight: theme('fontWeight.medium'),
         },
       })
     }),
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
-          'scroll-margin-top': '4em',
+          'scroll-margin-top': '5em',
         },
         '.scroll-spacing-lg': {
           'scroll-margin-top': '2em',

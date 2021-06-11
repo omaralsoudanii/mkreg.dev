@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <Container>
       <Seo data={meta} />
-      <div className="!mb-10 !mt-0 lg:!mb-24">
-        <h1 className="!mt-0 !mb-4 !text-3xl lg:!text-4xl !font-semibold">
+      <div className="!mb-10 lg:!mb-24">
+        <h1 className="!mb-4 !text-3xl lg:!text-4xl !font-semibold">
           Hey, I'm Omar Alsoudani
         </h1>
         <h2 className="sub-heading">Creator</h2>

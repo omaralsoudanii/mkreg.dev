@@ -17,12 +17,8 @@
   }
 
   h1,
-  h2 {
+  h2,h3 {
     @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
-  }
-
-  h3 {
-    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg;
   }
 
   .skip-content-nav {
