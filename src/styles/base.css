@@ -3,11 +3,8 @@
 html {
   font-size: 1em;
   line-height: 1.5;
-  
-}
-
-body {
   text-rendering: optimizeLegibility;
+  
 }
 
 #__next {

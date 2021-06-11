@@ -42,13 +42,13 @@ module.exports = {
           '"Segoe UI"',
           'Roboto',
           'Inter',
-          '"Helvetica Neue"',
-          '"Oxygen"',
           'Arial',
           '"Noto Sans"',
           '"Ubuntu"',
           '"Fira Sans"',
           '"Droid Sans"',
+          '"Oxygen"',
+          '"Helvetica Neue"',
           'sans-serif',
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',
@@ -78,10 +78,6 @@ module.exports = {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.extrabold'),
             },
-            strong: {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.bold'),
-            },
             'h2,h3': {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.semibold'),
@@ -101,7 +97,7 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1,h2,h3,strong': {
+            'h1,h2,h3': {
               color: theme('colors.white'),
             },
             ol: {
@@ -119,7 +115,7 @@ module.exports = {
                 borderBottomColor: theme('colors.gray.700'),
               },
             },
-            thead: {
+            'thead,strong': {
               color: theme('colors.gray.300'),
             },
             blockquote: {
