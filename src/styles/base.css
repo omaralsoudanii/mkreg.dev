@@ -1,8 +1,9 @@
 @tailwind base;
 
 html {
-  min-width: 360px;
   font-size: 1em;
+  line-height: 1.5;
+  
 }
 
 body {

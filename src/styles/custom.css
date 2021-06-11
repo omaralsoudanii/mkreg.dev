@@ -16,8 +16,12 @@
     @apply text-black dark:text-white;
   }
 
+  strong {
+    @apply text-display;
+  }
   h1,
-  h2,h3 {
+  h2,
+  h3 {
     @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
   }
 
@@ -117,11 +121,11 @@
   }
 
   .text-link {
-    @apply font-medium w-auto text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
+    @apply font-medium w-auto text-rose-600 dark:text-rose-400 lg:text-link-transition !important;
   }
 
   .text-link-transition:hover {
-    @apply lg:shadow-rose-500 lg:dark:shadow-rose-400;
+    @apply lg:shadow-rose-600 lg:dark:shadow-rose-400;
     transition: box-shadow 100ms ease 0s;
   }
 

@@ -40,25 +40,29 @@ module.exports = {
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
-          '"Roboto"',
+          'Roboto',
+          'Inter',
+          '"Helvetica Neue"',
           '"Oxygen"',
+          'Arial',
+          '"Noto Sans"',
           '"Ubuntu"',
-          '"Cantarell"',
           '"Fira Sans"',
           '"Droid Sans"',
-          '"Helvetica Neue"',
           'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
         ],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
-        'rose-500': '0px 2px 0px #F43059',
+        'rose-600': '0px 2px 0px #e11d48',
         'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
         rose: colors.rose,
-        'rose-500': '#F43059',
         gray: {
           700: '#333333',
         },
@@ -73,6 +77,10 @@ module.exports = {
             h1: {
               color: theme('colors.black'),
               fontWeight: theme('fontWeight.extrabold'),
+            },
+            strong: {
+              color: theme('colors.black'),
+              fontWeight: theme('fontWeight.bold'),
             },
             'h2,h3': {
               color: theme('colors.black'),
@@ -93,11 +101,8 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1,h2,h3': {
+            'h1,h2,h3,strong': {
               color: theme('colors.white'),
-            },
-            strong: {
-              color: theme('colors.gray.100'),
             },
             ol: {
               li: {
