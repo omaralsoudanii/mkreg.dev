@@ -82,7 +82,6 @@ export default function Seo({ data }) {
       <title key="title">{meta.title}</title>
       <meta name="robots" content="follow, index" />
       <meta name="googlebot" content="index,follow" />
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta property="og:url" content={canonical} />
       <link rel="canonical" href={canonical} />
 

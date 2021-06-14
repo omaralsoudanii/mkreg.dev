@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.{ts,tsx,js}'],
+  purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     lineClamp: {
@@ -19,41 +19,8 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        mono: [
-          'JetBrains Mono',
-          'IBM Plex Mono',
-          'Fira Code',
-          'Menlo',
-          'DejaVu Sans Mono',
-          'Bitstream Vera Sans Mono',
-          'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'Liberation Mono',
-          'Courier New',
-          'monospace',
-        ],
-        sans: [
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          'Inter',
-          'Arial',
-          '"Noto Sans"',
-          '"Ubuntu"',
-          '"Fira Sans"',
-          '"Droid Sans"',
-          '"Oxygen"',
-          '"Helvetica Neue"',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-        ],
+        mono: 'var(--font-mono)',
+        sans: 'var(--font-sans)',
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
@@ -63,9 +30,6 @@ module.exports = {
       },
       colors: {
         rose: colors.rose,
-        gray: {
-          700: '#333333',
-        },
         // dark: 'rgb(13, 17, 23)',
         dark: 'rgb(22, 27, 34)',
         light: '#fff',
