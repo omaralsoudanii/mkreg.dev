@@ -13,20 +13,17 @@
   }
 
   .text-display {
-    @apply text-black dark:text-white;
+    @apply text-gray-900 dark:text-gray-100;
   }
 
-  strong {
-    @apply text-display;
-  }
   h1,
   h2,
   h3 {
-    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
+    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg;
   }
 
   .skip-content-nav {
-    @apply absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-display focus:translate-y-3 focus:top-4 left-60 -top-2;
+    @apply absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
   }
 
   .filter-grayscale {
@@ -47,7 +44,7 @@
   }
 
   .header-sm {
-    @apply fixed z-10 w-full py-2 border-b border-gray-700 bg-light dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
+    @apply fixed z-10 w-full py-2 bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -162,10 +159,22 @@
   }
 
   .sub-heading {
-    @apply font-medium text-2xl lg:text-3xl  my-1 !important;
+    @apply font-medium text-2xl lg:text-3xl leading-loose  my-1 !important;
   }
 
   .title-heading {
     @apply text-3xl leading-9 md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
+  }
+  
+  a,
+  area,
+  button,
+  [role='button'],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
   }
 }

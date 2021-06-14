@@ -1,9 +1,4 @@
 
 @import 'base.css';
-
-/*! purgecss start ignore */
-@import 'syntax.css';
-/*! purgecss end ignore */
-
 @import 'tailwindcss/components';
 @import 'custom.css';

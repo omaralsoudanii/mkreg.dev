@@ -26,7 +26,7 @@ export default function PostsList({ posts, href }) {
               {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
             </p>
           </div>
-          <p className="!font-normal lg:!py-1 !my-0 !text-base text-secondary clamp-3">
+          <p className="!font-normal lg:!py-1 !my-0 !text-base text-tertiary clamp-3">
             {frontMatter.summary}
           </p>
         </div>
