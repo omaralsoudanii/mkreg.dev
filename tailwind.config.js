@@ -63,15 +63,15 @@ module.exports = {
               textDecoration: 'none',
             },
             h1: {
-              fontWeight: '700',
+              fontWeight: theme('fontWeight.extrabold'),
               color: theme('colors.gray.900'),
             },
             h2: {
-              fontWeight: '700',
+              fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
             },
             h3: {
-              fontWeight: '600',
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
@@ -104,7 +104,7 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.200'),
-              fontWeight: '400',
+              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
@@ -114,19 +114,7 @@ module.exports = {
             a: {
               textDecoration: 'none',
             },
-            h1: {
-              fontWeight: '700',
-              color: theme('colors.gray.100'),
-            },
-            h2: {
-              fontWeight: '700',
-              color: theme('colors.gray.100'),
-            },
-            h3: {
-              fontWeight: '600',
-              color: theme('colors.gray.100'),
-            },
-            'h4,h5,h6': {
+            'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),
             },
             code: {
@@ -152,7 +140,7 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.100'),
               borderLeftColor: theme('colors.gray.700'),
-              fontWeight: '400',
+              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
@@ -162,13 +150,18 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-line-clamp'),
-    plugin(function ({ addBase }) {
+    plugin(function ({ addBase, theme }) {
       addBase({
-        'h1,h2': {
-          fontWeight: '700',
+        h1: {
+          fontWeight: theme('fontWeight.extrabold'),
+          letterSpacing: theme('letterSpacing.tight'),
+        },
+        h2: {
+          fontWeight: theme('fontWeight.bold'),
+          letterSpacing: theme('letterSpacing.tight'),
         },
         h3: {
-          fontWeight: '600',
+          fontWeight: theme('fontWeight.semibold'),
         },
       })
     }),
