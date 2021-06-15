@@ -1,3 +1,20 @@
 @tailwind base;
 
+html {
+  height: 100%;
+  touch-action: manipulation;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'cv01', 'cv10';
+}
 
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}

@@ -1,7 +1,7 @@
-import { Container } from '@/components/Container'
+import ProseLayout from '@/components/Layouts/ProseLayout'
+import SectionContainer from '@/components/SectionContainer'
 import Seo from '@/components/Seo'
 import Link from 'next/link'
-import * as React from 'react'
 
 export default function About() {
   const meta = {
@@ -11,9 +11,9 @@ export default function About() {
   }
 
   return (
-    <React.Fragment>
+    <SectionContainer>
       <Seo data={meta} />
-      <Container>
+      <ProseLayout>
         <section>
           <h1 className="mb-4">About me</h1>
           <p>
@@ -67,7 +67,7 @@ export default function About() {
             </Link>
           </p>
         </section>
-      </Container>
-    </React.Fragment>
+      </ProseLayout>
+    </SectionContainer>
   )
 }

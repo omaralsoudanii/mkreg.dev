@@ -23,7 +23,6 @@ export async function getFileBySlug(type: string, slug?) {
     mdxOptions: {
       remarkPlugins: [
         require('remark-slug'),
-        MDXImage,
         [
           require('remark-autolink-headings'),
           {
@@ -34,6 +33,7 @@ export async function getFileBySlug(type: string, slug?) {
           },
         ],
         require('remark-code-titles'),
+        MDXImage,
       ],
       rehypePlugins: [mdxPrism],
     },

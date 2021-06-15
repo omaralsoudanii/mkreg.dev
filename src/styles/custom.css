@@ -40,11 +40,11 @@
   }
 
   .header-lg {
-    @apply mt-4 mb-20;
+    @apply flex;
   }
 
   .header-sm {
-    @apply fixed z-10 w-full py-2 bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 z-10  w-full py-2 bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -57,6 +57,14 @@
     .header-sm {
       @apply bg-opacity-100 dark:bg-opacity-100 !important;
     }
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-1 text-left py-12 lg:py-16  lg:gap-40 m-auto lg:items-stretch lg:text-center lg:grid-cols-3 prose dark:prose-dark lg:prose-lg;
+  }
+
+  .footer-column {
+    @apply flex flex-col items-start  space-y-8 py-4 px-3 lg:items-center;
   }
 
   .nav-default {
@@ -88,7 +96,7 @@
   }
 
   .hdr-cnt-theme-btn {
-    @apply p-2 font-medium cursor-pointer text-primary w-11;
+    @apply w-8 h-8 p-1 ml-4 mr-4 rounded sm:ml-4 text-primary cursor-pointer;
   }
 
   .btn {
@@ -161,20 +169,18 @@
   .sub-heading {
     @apply font-medium text-2xl lg:text-3xl leading-loose  my-1 !important;
   }
-
   .title-heading {
     @apply text-3xl leading-9 md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
   }
+  .text-h1 {
+    @apply text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold text-primary !important;
+  }
   
-  a,
-  area,
-  button,
-  [role='button'],
-  input,
-  label,
-  select,
-  summary,
-  textarea {
-    touch-action: manipulation;
+  .text-h2 {
+    @apply text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-primary !important;
+  }
+
+  .text-h3 {
+    @apply text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-primary tracking-tight !important;
   }
 }

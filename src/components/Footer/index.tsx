@@ -1,73 +1,49 @@
 import { Environment } from '@/lib/environment'
-import Link from 'next/link'
+import NextLink from '@/components/NextLink'
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mt-auto mb-auto lg:max-w-3xl">
-      <div className="grid items-start w-full grid-cols-1 py-12 text-left lg:py-16 dark:prose-dark lg:prose-lg hr-stroke lg:gap-20 lg:items-center lg:text-center lg:grid-cols-3 ">
-        <div className="flex flex-col items-start px-6 mb-8 space-y-8 lg:px-0 lg:m-0 lg:items-center">
-          <Link href="/">
-            <a className="link-unstyled">Home</a>
-          </Link>
-          <Link href="/tags">
-            <a className="link-unstyled">Tags</a>
-          </Link>
-          <Link href="/writing">
-            <a className="link-unstyled">Writing</a>
-          </Link>
+    <footer>
+      <hr className="border-t border-gray-400 dark:border-gray-700" />
+      <div className="footer-grid">
+        <div className="footer-column">
+          <NextLink className="link-unstyled" href="/">
+            Home
+          </NextLink>
+          <NextLink className="link-unstyled" href="/writing">
+            Writing
+          </NextLink>
+          <NextLink className="link-unstyled" href="/nuggets">
+            Nuggets
+          </NextLink>
         </div>
-        <div className="flex flex-col items-start px-6 mb-8 space-y-8 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
-          <a
+        <div className="footer-column">
+          <NextLink href={Environment.social.github} className="link-unstyled">
+            Github
+          </NextLink>
+          <NextLink
             href={`mailto:${Environment.social.mail}`}
-            target="_blank"
-            rel="noopener noreferrer"
             className="link-unstyled"
           >
             Contact
-          </a>
-          <a
-            href={Environment.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-unstyled"
-          >
-            Github
-          </a>
-
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-unstyled"
+          </NextLink>
+          <NextLink
             href={Environment.social.linkedin}
+            className="link-unstyled"
           >
             LinkedIn
-          </a>
+          </NextLink>
         </div>
-        <div className="flex flex-col items-start px-6 space-y-8 lg:space-y-8 lg:px-0 lg:m-0 lg:items-center">
-          <a
-            href={Environment.social.rss}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-unstyled"
-          >
+        <div className="footer-column">
+          <NextLink className="link-unstyled" href={Environment.social.rss}>
             RSS
-          </a>
-          <a
-            href={Environment.social.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-unstyled"
-          >
+          </NextLink>
+          <NextLink href={Environment.social.twitter} className="link-unstyled">
             Twitter
-          </a>
-          <a
-            href={Environment.social.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-unstyled"
-          >
+          </NextLink>
+          <NextLink href={Environment.social.youtube} className="link-unstyled">
             YouTube
-          </a>
+          </NextLink>
         </div>
       </div>
     </footer>
