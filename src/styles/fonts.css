@@ -158,7 +158,7 @@
   font-display: swap;
   font-style: normal;
   font-named-instance: 'Regular';
-  src: url(/static/fonts/Inter-roman.var.woff2) format('woff2');
+  src: url(/static/fonts/Inter15-roman.var.woff2) format('woff2');
 }
 
 @font-face {
@@ -167,5 +167,5 @@
   font-display: swap;
   font-style: italic;
   font-named-instance: 'Italic';
-  src: url(/static/fonts/Inter-italic.var.woff2) format('woff2');
+  src: url(/static/fonts/Inter15-roman-italic.var.woff2) format('woff2');
 }

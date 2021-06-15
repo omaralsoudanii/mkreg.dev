@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
@@ -32,6 +33,7 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
+        sans: ['Inter', ...fontFamily.sans],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
