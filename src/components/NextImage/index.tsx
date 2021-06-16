@@ -7,7 +7,7 @@ const NextImage = ({
   height,
   alt = 'Omar Alsoudani',
   className,
-  layout = 'responsive',
+  layout = 'intrinsic',
   quality = 75,
 }: {
   src: string
@@ -26,7 +26,6 @@ const NextImage = ({
       height={height}
       layout={layout}
       quality={quality}
-      sizes={`(max-width: 640px) 66vw,(max-width: 1200px) 50vw, 100vw`}
       className={className}
     />
   ) : (
@@ -36,7 +35,6 @@ const NextImage = ({
       width={width}
       height={height}
       layout={layout}
-      sizes={`(max-width: 640px) 66vw,(max-width: 1200px) 50vw, 100vw`}
       quality={quality}
     />
   )

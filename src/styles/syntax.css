@@ -47,27 +47,11 @@
     white-space: normal;
   }
 
-  .dark  .token.attr-name {
-    color: rgb(173, 219, 103);
-    font-style: italic;
-  }
-
-  .light  .token.attr-name {
-    color: rgb(0, 128, 0);
-    font-style: italic;
-  }
-
-  .dark  .token.comment {
-    color: rgb(128, 147, 147);
-  }
-
-  .light  .token.comment {
-    color: rgb(106, 115, 125);
-  }
 
   .dark  .token.string,
   .dark  .token.url {
-    color: rgb(173, 219, 103);
+    /* color: rgb(178 235 92); */
+    color: rgb(176 247 69);
   }
 
   .light  .token.string,

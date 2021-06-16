@@ -3,7 +3,11 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
-  purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  purge: [
+    './src/pages/**/*.{ts,tsx}',
+    './src/components/**/*.{ts,tsx}',
+    './src/lib/**/*.{ts,tsx}',
+  ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
@@ -38,20 +42,19 @@ module.exports = {
       boxShadow: {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
-        'rose-600': '0px 2px 0px #e11d48',
-        'rose-400': '0px 2px 0px #FB7185',
       },
       colors: {
         blue: colors.lightBlue,
         code: {
-          green: '#b5f4a5',
+          green: '#b2eb5c',
           yellow: '#ffe484',
-          purple: '#d9a9ff',
-          red: '#ff8383',
-          blue: '#93ddfd',
+          purple: '#d2a8ff',
+          red: '#ff7b72',
+          rose: '#FB7185',
+          blue: '#79c0ff',
           white: '#fff',
+          gray: '#f9f9f9',
         },
-        rose: colors.rose,
         // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
@@ -61,6 +64,7 @@ module.exports = {
             color: theme('colors.gray.700'),
             a: {
               textDecoration: 'none',
+              code: { color: theme('colors.blue.400') },
             },
             h1: {
               fontWeight: theme('fontWeight.extrabold'),
@@ -100,11 +104,10 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.500'),
             },
-            strong: { color: theme('colors.gray.600') },
+            strong: { color: theme('colors.gray.900') },
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.200'),
-              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
@@ -113,6 +116,7 @@ module.exports = {
             color: theme('colors.gray.300'),
             a: {
               textDecoration: 'none',
+              code: { color: theme('colors.blue.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),
@@ -140,7 +144,6 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.100'),
               borderLeftColor: theme('colors.gray.700'),
-              fontWeight: theme('fontWeight.normal'),
             },
           },
         },

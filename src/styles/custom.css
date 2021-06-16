@@ -12,10 +12,6 @@
     @apply text-gray-600 dark:text-gray-400;
   }
 
-  .text-display {
-    @apply text-gray-900 dark:text-gray-100;
-  }
-
   h1,
   h2,
   h3 {
@@ -23,80 +19,58 @@
   }
 
   .skip-content-nav {
-    @apply absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
-  }
-
-  .filter-grayscale {
-    filter: grayscale(100%);
-  }
-
-  .filter-saturate {
-    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
-    filter: brightness(105%) saturate(200%) contrast(1);
+    @apply hidden sm:inline absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
   }
 
   .filter-blur {
     backdrop-filter: saturate(180%) blur(4px);
   }
 
-  .header-lg {
-    @apply flex;
-  }
-
   .header-sm {
-    @apply fixed top-0 left-0 z-10  w-full py-2 bg-white border-b border-gray-700 dark:border-gray-300 dark:border-opacity-30 border-opacity-20 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
-    .filter-blur,
-    .filter-saturate,
-    .filter-grayscale {
-      @apply filter-none backdrop-filter-none !important;
-    }
-
     .header-sm {
-      @apply bg-opacity-100 dark:bg-opacity-100 !important;
+      @apply bg-opacity-100 dark:bg-opacity-100 filter-none backdrop-filter-none !important;
     }
   }
 
   .footer-grid {
-    @apply grid grid-cols-1 text-left py-12 lg:py-16  lg:gap-40 m-auto lg:items-stretch lg:text-center lg:grid-cols-3 prose dark:prose-dark lg:prose-lg;
+    @apply grid grid-cols-1 text-left py-12   lg:gap-20 m-auto lg:items-stretch lg:text-center lg:grid-cols-3 text-base sm:text-base lg:text-lg;
   }
 
   .footer-column {
-    @apply flex flex-col items-start  space-y-8 py-4 px-3 lg:items-center;
+    @apply flex flex-col items-start  space-y-8 p-4 lg:items-center;
   }
 
   .nav-default {
-    @apply flex py-3 text-base font-medium text-primary;
-  }
-
-  .nav-md-default {
-    @apply px-6 py-2 mx-2 font-medium text-primary;
+    @apply flex py-4 text-base font-medium text-primary;
   }
 
   .nav-active {
-    @apply bg-gray-900 bg-opacity-10 dark:bg-opacity-10 dark:bg-gray-400 text-primary filter-blur;
+    @apply bg-gray-900 bg-opacity-10 dark:bg-opacity-10 dark:bg-gray-400  filter-blur;
   }
 
   .nav-inactive {
-    @apply filter-saturate text-primary;
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
   }
 
   .hdr-sm-btn {
-    @apply flex-auto px-4 py-3 mx-2 font-medium cursor-pointer text-primary;
+    @apply flex-auto px-6 py-4 font-medium cursor-pointer text-primary;
   }
 
   .hdr-sm-title {
-    @apply w-full px-2 py-3 text-base font-medium cursor-pointer text-primary;
+    @apply w-full p-4 self-center text-base font-medium cursor-pointer text-primary;
   }
 
   .hdr-sm-btn svg {
-    @apply w-6 cursor-pointer;
+    @apply w-6;
   }
 
   .hdr-cnt-theme-btn {
-    @apply w-8 h-8 p-1 ml-4 mr-4 rounded sm:ml-4 text-primary cursor-pointer;
+    @apply w-8 h-8  p-1 ml-4 mr-4 text-primary cursor-pointer;
   }
 
   .btn {
@@ -111,8 +85,7 @@
     @apply w-full px-4 py-2;
   }
 
-  .link-transition,
-  .text-link-transition {
+  .link-transition {
     transition: box-shadow 300ms ease 0s;
   }
 
@@ -126,17 +99,9 @@
   }
 
   .text-link {
-    @apply font-medium w-auto text-rose-600 dark:text-rose-400 lg:text-link-transition !important;
+    @apply font-medium w-auto text-blue-500  hover:text-blue-600 dark:hover:text-blue-400 !important;
   }
 
-  .text-link-transition:hover {
-    @apply lg:shadow-rose-600 lg:dark:shadow-rose-400;
-    transition: box-shadow 100ms ease 0s;
-  }
-
-  .hr-stroke {
-    @apply border-t border-gray-400 dark:border-gray-700;
-  }
 
   .prose .anchor {
     @apply relative invisible;
@@ -169,8 +134,9 @@
   .sub-heading {
     @apply font-medium text-2xl lg:text-3xl leading-loose  my-1 !important;
   }
+
   .title-heading {
-    @apply text-3xl leading-9 md:text-5xl md:leading-10 lg:text-6xl lg:leading-14 !important;
+    @apply text-3xl leading-9 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 !important;
   }
   .text-h1 {
     @apply text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold text-primary !important;
@@ -183,4 +149,9 @@
   .text-h3 {
     @apply text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-primary tracking-tight !important;
   }
+
+  .post-title {
+    @apply text-3xl font-bold leading-9  sm:text-4xl sm:leading-10 md:text-5xl md:leading-14;
+  }
+
 }

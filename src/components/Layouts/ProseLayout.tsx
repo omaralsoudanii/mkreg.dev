@@ -1,7 +1,7 @@
 export default function ProseLayout({ children }) {
   return (
-    <article id="skip" className="mx-auto prose dark:prose-dark lg:prose-lg">
+    <div id="skip" className="prose dark:prose-dark lg:prose-lg !max-w-[75ch]">
       {children}
-    </article>
+    </div>
   )
 }

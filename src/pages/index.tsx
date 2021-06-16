@@ -1,48 +1,41 @@
-import ProseLayout from '@/components/Layouts/ProseLayout'
-import SectionContainer from '@/components/SectionContainer'
+import MDXComponents from '@/components/MDXComponents'
+import * as React from 'react'
+import { getFileBySlug } from '@/lib/mdx'
+import { GetStaticProps } from 'next'
+import { MDXRemote } from 'next-mdx-remote'
 import Seo from '@/components/Seo'
-import Link from 'next/link'
 
-const Home = () => {
+function Home({ mdxSource, frontMatter }) {
   const meta = {
-    title: 'Omar Alsoudani',
-    description: 'Software engineer, creator and the king of laziness.',
-    JsonLd: false,
+    title: `Omar Alsoudani - ${frontMatter.title}`,
+    description: frontMatter.summary,
+    image: {
+      url: frontMatter?.image,
+      alt: frontMatter.title,
+    },
+    tags: frontMatter?.tags,
+    JsonLd: true,
   }
   return (
-    <SectionContainer>
+    <React.Fragment>
       <Seo data={meta} />
-      <ProseLayout>
-        <div className="!mb-10 lg:!mb-24">
-          <h1 className="!mb-4 !text-3xl lg:!text-4xl !font-semibold">
-            Hey, I'm Omar Alsoudani
-          </h1>
-          <h2 className="sub-heading">Creator</h2>
-          <h2 className="sub-heading">Architect</h2>
-          <h2 className="sub-heading">Software Engineer</h2>
-        </div>
-        <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-700 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
-          <div className="py-4 lg:pt-12 lg:pb-12">
-            <h1 className="lg:border-gray-900 title-heading lg:ml-0 !mb-0 px-0 lg:!px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
-              Goal
-            </h1>
+      <div className="divide-y mx-auto">
+        <header id="skip" className="pb-4">
+          <h1 className="post-title">Hi, I'm Omar Alsoudani</h1>
+        </header>
+        <div className="items-start space-y-2 xl:space-y-0">
+          <div className="pt-8 pb-8 prose dark:prose-dark lg:prose-lg !max-w-[75ch]">
+            <MDXRemote {...mdxSource} components={MDXComponents} />
           </div>
-          <p className="px-0 lg:!px-2 py-4 lg:py-0 !text-secondary  !my-0 max-w-md">
-            The purpose of this site to be my digital identity, where I can
-            write notes. Share my knowledge with others, my opinion on some
-            topics, and open-source projects I create and share them here. Maybe
-            with a playground or proof of concept.
-          </p>
         </div>
-
-        <p className="text-left px-0 lg:!px-2  py-2 lg:py-4 !my-1">
-          <Link href="/about">
-            <a className="inline w-auto text-link">More about me</a>
-          </Link>
-        </p>
-      </ProseLayout>
-    </SectionContainer>
+      </div>
+    </React.Fragment>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const post = await getFileBySlug('about')
+  return { props: post }
 }
 
 export default Home

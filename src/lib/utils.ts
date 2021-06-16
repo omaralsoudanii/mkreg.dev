@@ -16,3 +16,11 @@ export const unSlugify = (slug: string) =>
       /\w\S*/g,
       (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
     )
+
+export const dateSortDesc = (a, b) => {
+  if (a > b) return -1
+  if (a < b) return 1
+  return 0
+}
+
+export const formatSlug = (slug: string) => slug.replace(/\.mdx/, '')

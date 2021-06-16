@@ -1,4 +1,4 @@
-import { Container } from '@/components/Container'
+import ProseLayout from '@/components/Layouts/ProseLayout'
 import PostsContainer from '@/components/Posts/Container'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
@@ -20,7 +20,7 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <Container>
+    <ProseLayout>
       <Seo data={meta} />
       <section className="mb-8">
         <h1 className="!mb-4">{tag}</h1>
@@ -37,7 +37,7 @@ export default function Tag({ posts, tag }) {
       <section>
         <PostsContainer href="/writing" posts={posts} />
       </section>
-    </Container>
+    </ProseLayout>
   )
 }
 
