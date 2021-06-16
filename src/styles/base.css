@@ -1,6 +1,6 @@
 @tailwind base;
 
-/* @layer base {
+@layer base {
   @font-face {
     font-family: 'Inter';
     font-weight: 100 900;
@@ -18,15 +18,15 @@
     font-named-instance: 'Italic';
     src: url(/static/fonts/Inter15-roman-italic.var.woff2) format('woff2');
   }
-} */
-a,
-area,
-button,
-[role='button'],
-input,
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
+  a,
+  area,
+  button,
+  [role='button'],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
 }

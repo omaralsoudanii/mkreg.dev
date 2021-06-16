@@ -4,7 +4,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  optimizeFonts: true,
+  optimizeFonts: false,
   compress: false,
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
