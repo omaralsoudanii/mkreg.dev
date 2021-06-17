@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
@@ -32,6 +33,7 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
+        sans: ['Inter', ...fontFamily.sans],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
@@ -63,11 +65,11 @@ module.exports = {
               code: { color: theme('colors.rose.500') },
             },
             h1: {
-              fontWeight: theme('fontWeight.extrabold'),
+              fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
             },
             h2: {
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             h3: {
@@ -146,17 +148,18 @@ module.exports = {
       }),
     },
   },
+  variants: {
+    typography: ['dark'],
+  },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwindcss-line-clamp'),
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          fontWeight: theme('fontWeight.extrabold'),
+          fontWeight: theme('fontWeight.bold'),
           letterSpacing: theme('letterSpacing.tight'),
         },
         h2: {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.semibold'),
           letterSpacing: theme('letterSpacing.tight'),
         },
         h3: {
@@ -176,5 +179,7 @@ module.exports = {
 
       addUtilities(newUtilities)
     }),
+    require('tailwindcss-line-clamp'),
+    require('@tailwindcss/typography'),
   ],
 }

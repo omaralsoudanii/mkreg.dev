@@ -1,13 +1,19 @@
 @tailwind base;
 
-a,
-area,
-button,
-[role='button'],
-input,
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  a,
+  area,
+  button,
+  [role='button'],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
 }
