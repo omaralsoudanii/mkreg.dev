@@ -82,7 +82,7 @@ export default function Post({
                     <div className="flex xl:block">
                       <dl className="whitespace-nowrap">
                         <dt className="sr-only">Name</dt>
-                        <dd className="text-primary text-base  leading-5 font-semibold pb-2">
+                        <dd className="text-display text-base  leading-5 font-semibold pb-2">
                           {Environment.ogTitle}
                         </dd>
                         <div className="flex flex-wrap">

@@ -66,18 +66,18 @@ module.exports = {
             },
             h1: {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             h2: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             h3: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             'h4,h5,h6': {
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             code: {
               color: theme('colors.pink.500'),
@@ -117,7 +117,7 @@ module.exports = {
               code: { color: theme('colors.rose.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.100'),
+              color: theme('colors.white'),
             },
             code: {
               backgroundColor: theme('colors.gray.800'),
