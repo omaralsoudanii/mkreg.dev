@@ -1,5 +1,4 @@
 import MDXComponents from '@/components/MDXComponents'
-import * as React from 'react'
 import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
@@ -17,11 +16,11 @@ function Home({ mdxSource, frontMatter }) {
     JsonLd: true,
   }
   return (
-    <React.Fragment>
+    <article>
       <Seo data={meta} />
       <div className="divide-y divide-gray-300 dark:divide-gray-700 mx-auto">
         <header id="skip" className="pb-4">
-          <h1 className="text-h2 font-bold">Hi, I'm Omar</h1>
+          <h1 className="text-h3 font-bold">Hi, I'm Omar</h1>
         </header>
         <div className="items-start space-y-2 xl:space-y-0">
           <div className="pt-8 pb-8 prose dark:prose-dark lg:prose-lg !max-w-[80ch]">
@@ -29,7 +28,7 @@ function Home({ mdxSource, frontMatter }) {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </article>
   )
 }
 

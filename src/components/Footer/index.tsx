@@ -7,8 +7,8 @@ export default function Footer() {
       <hr className="border-t  border-gray-300 dark:border-gray-600" />
       <div className="footer-grid">
         <div className="footer-column">
-          <NextLink className="link-unstyled" href="/">
-            Home
+          <NextLink className="link-unstyled" href="/tags">
+            Tags
           </NextLink>
           <NextLink className="link-unstyled" href="/writing">
             Writing

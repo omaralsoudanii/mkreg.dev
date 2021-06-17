@@ -53,31 +53,36 @@ module.exports = {
           gray: '#f9f9f9',
         },
         rose: colors.rose,
+        gray: {
+          800: '#1d1f20',
+          ...colors.coolGray,
+        },
         dark: 'rgb(22, 27, 34)',
+        light: 'whitesmoke',
         // 'dark-blue': 'rgb(17,18,19)',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.gray.800'),
             a: {
               textDecoration: 'none',
               code: { color: theme('colors.rose.500') },
             },
             h1: {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             h2: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             h3: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             code: {
               color: theme('colors.pink.500'),
@@ -117,7 +122,7 @@ module.exports = {
               code: { color: theme('colors.rose.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.white'),
+              color: theme('colors.gray.100'),
             },
             code: {
               backgroundColor: theme('colors.gray.800'),

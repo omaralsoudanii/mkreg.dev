@@ -14,8 +14,9 @@
   }
 
   .text-display {
-    @apply text-black dark:text-white;
+    @apply text-primary;
   }
+  
   h1,
   h2,
   h3 {
@@ -31,7 +32,7 @@
   }
 
   .header-sm {
-    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-light border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -123,7 +124,7 @@
   }
 
   .text-h3 {
-    @apply text-2xl sm:text-4xl lg:text-5xl text-display !important;
+    @apply text-2xl sm:text-4xl lg:text-5xl leading-none  text-display !important;
   }
 
   .post-title {

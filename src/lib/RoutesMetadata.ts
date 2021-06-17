@@ -1,9 +1,5 @@
 const RoutesMetadata = [
   {
-    label: 'Home',
-    href: '/',
-  },
-  {
     label: 'Writing',
     href: '/writing',
   },
@@ -14,6 +10,10 @@ const RoutesMetadata = [
   {
     label: 'Tags',
     href: '/tags',
+  },
+  {
+    label: 'Home',
+    href: '/',
   },
 ]
 
