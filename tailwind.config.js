@@ -1,13 +1,8 @@
 const colors = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
-  purge: [
-    './src/pages/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-    './src/lib/**/*.{ts,tsx}',
-  ],
+  purge: ['./src/**/*.{ts,tsx,js}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
@@ -37,14 +32,14 @@ module.exports = {
           'Courier New',
           'monospace',
         ],
-        sans: ['Inter', ...fontFamily.sans],
       },
       boxShadow: {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
+        'rose-400': '0px 2px 0px #fb7185',
+        'rose-500': '0px 2px 0px #f43f5e',
       },
       colors: {
-        blue: colors.lightBlue,
         code: {
           green: '#b2eb5c',
           yellow: '#ffe484',
@@ -55,7 +50,8 @@ module.exports = {
           white: '#fff',
           gray: '#f9f9f9',
         },
-        // dark: 'rgb(22, 27, 34)',
+        rose: colors.rose,
+        dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
       typography: (theme) => ({
@@ -64,7 +60,7 @@ module.exports = {
             color: theme('colors.gray.700'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.blue.400') },
+              code: { color: theme('colors.rose.500') },
             },
             h1: {
               fontWeight: theme('fontWeight.extrabold'),
@@ -116,7 +112,7 @@ module.exports = {
             color: theme('colors.gray.300'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.blue.400') },
+              code: { color: theme('colors.rose.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),

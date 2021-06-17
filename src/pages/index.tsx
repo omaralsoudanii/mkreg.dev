@@ -19,12 +19,12 @@ function Home({ mdxSource, frontMatter }) {
   return (
     <React.Fragment>
       <Seo data={meta} />
-      <div className="divide-y mx-auto">
+      <div className="divide-y divide-gray-300 dark:divide-gray-700 mx-auto">
         <header id="skip" className="pb-4">
-          <h1 className="post-title">Hi, I'm Omar Alsoudani</h1>
+          <h1 className="text-h2 font-bold">Hi, I'm Omar</h1>
         </header>
         <div className="items-start space-y-2 xl:space-y-0">
-          <div className="pt-8 pb-8 prose dark:prose-dark lg:prose-lg !max-w-[75ch]">
+          <div className="pt-8 pb-8 prose dark:prose-dark lg:prose-lg !max-w-[80ch]">
             <MDXRemote {...mdxSource} components={MDXComponents} />
           </div>
         </div>

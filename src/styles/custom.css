@@ -27,7 +27,7 @@
   }
 
   .header-sm {
-    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -37,7 +37,7 @@
   }
 
   .footer-grid {
-    @apply grid grid-cols-1 text-left py-12   lg:gap-20 m-auto lg:items-stretch lg:text-center lg:grid-cols-3 text-base sm:text-base lg:text-lg;
+    @apply grid grid-cols-1 text-left py-12 lg:gap-20 m-auto lg:items-stretch lg:text-center lg:grid-cols-3 text-base sm:text-base lg:text-lg;
   }
 
   .footer-column {
@@ -85,7 +85,7 @@
     @apply w-full px-4 py-2;
   }
 
-  .link-transition {
+  .link-transition, .text-link-transition {
     transition: box-shadow 300ms ease 0s;
   }
 
@@ -99,7 +99,12 @@
   }
 
   .text-link {
-    @apply font-medium w-auto text-blue-500  hover:text-blue-600 dark:hover:text-blue-400 !important;
+    @apply font-medium w-auto text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
+  }
+
+  .text-link-transition:hover {
+    @apply lg:shadow-rose-500 lg:dark:shadow-rose-400;
+    transition: box-shadow 100ms ease 0s;
   }
 
 
@@ -131,27 +136,20 @@
     @apply m-0 !important;
   }
 
-  .sub-heading {
-    @apply font-medium text-2xl lg:text-3xl leading-loose  my-1 !important;
-  }
-
-  .title-heading {
-    @apply text-3xl leading-9 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 !important;
-  }
   .text-h1 {
-    @apply text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold text-primary !important;
+    @apply text-4xl sm:text-6xl lg:text-7xl leading-none text-primary !important;
   }
   
   .text-h2 {
-    @apply text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-primary !important;
+    @apply text-3xl sm:text-5xl lg:text-6xl leading-none text-primary !important;
   }
 
   .text-h3 {
-    @apply text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-primary tracking-tight !important;
+    @apply text-2xl sm:text-4xl lg:text-5xl text-primary !important;
   }
 
   .post-title {
-    @apply text-3xl font-bold leading-9  sm:text-4xl sm:leading-10 md:text-5xl md:leading-14;
+    @apply text-3xl leading-9 text-primary sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 !important;
   }
 
 }

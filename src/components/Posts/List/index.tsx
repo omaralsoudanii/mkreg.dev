@@ -11,7 +11,7 @@ export default function PostsList({ posts, href }) {
     )
 
   return posts.map((frontMatter) => (
-    <Link key={frontMatter.title} href={`${href}/${frontMatter.slug}`} passHref>
+    <Link key={frontMatter.slug} href={`${href}/${frontMatter.slug}`} passHref>
       <a className="inline-block w-full">
         <div className="w-full mb-12">
           <div className="flex flex-col justify-between lg:flex-row">
