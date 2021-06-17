@@ -115,19 +115,19 @@
   }
 
   .text-h1 {
-    @apply text-4xl sm:text-6xl lg:text-7xl leading-none text-primary !important;
+    @apply text-4xl sm:text-6xl lg:text-7xl leading-none text-display !important;
   }
 
   .text-h2 {
-    @apply text-3xl sm:text-5xl lg:text-6xl leading-none text-primary !important;
+    @apply text-3xl sm:text-5xl lg:text-6xl leading-none text-display !important;
   }
 
   .text-h3 {
-    @apply text-2xl sm:text-4xl lg:text-5xl text-primary !important;
+    @apply text-2xl sm:text-4xl lg:text-5xl text-display !important;
   }
 
   .post-title {
-    @apply text-3xl leading-9 text-primary sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 !important;
+    @apply text-3xl leading-9 text-display sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 !important;
   }
 
   .link-transition,
