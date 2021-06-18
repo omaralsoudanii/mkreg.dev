@@ -92,7 +92,7 @@
 
   .prose .anchor {
     @apply invisible;
-    padding-left: 0.125em;
+    padding-left: 0.25em;
     cursor: pointer;
   }
 
@@ -156,7 +156,8 @@
   .svg-fill {
     @apply fill-[black] dark:fill-[white] text-black dark:text-white;
   }
+  .default-prose {
+    @apply prose dark:prose-dark lg:prose-lg !max-w-[75ch];
+  }
 }
-.default-prose {
-  @apply prose dark:prose-dark lg:prose-lg !max-w-[75ch];
-}
+

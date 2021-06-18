@@ -20,7 +20,7 @@ function Home({ mdxSource, frontMatter }) {
       <Seo data={meta} />
       <div className="divide-y divide-gray-300 dark:divide-gray-700 mx-auto">
         <header id="skip" className="pb-4">
-          <h1 className="text-h3 font-bold">Hi, I'm Omar</h1>
+          <h1 className="post-title">Hi, I'm Omar</h1>
         </header>
         <div className="pt-8 pb-8 default-prose">
           <MDXRemote {...mdxSource} components={{ a: NextLink }} />

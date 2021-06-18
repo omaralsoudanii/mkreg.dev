@@ -23,7 +23,7 @@ export default function Post({
   }
 
   return (
-    <article id="skip" className="px-2">
+    <article id="skip">
       <Seo data={meta} />
       <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <header className="xl:pb-6">
