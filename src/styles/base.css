@@ -1,6 +1,15 @@
 @tailwind base;
 
 @layer base {
+  
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+  }
+
   a,
   area,
   button,

@@ -4,9 +4,6 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  optimizeFonts: false,
-  cleanUrls: true,
-  trailingSlash: false,
   compress: false,
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
