@@ -14,7 +14,7 @@
   }
 
   .text-display {
-    @apply text-primary;
+    @apply text-gray-900 dark:text-gray-100;
   }
   
   h1,
@@ -32,7 +32,7 @@
   }
 
   .header-sm {
-    @apply fixed top-0 left-0 py-1 z-10 w-full bg-light border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
@@ -91,9 +91,8 @@
   }
 
   .prose .anchor {
-    @apply relative invisible;
-    margin-left: -9.5em;
-    padding-left: 9.75em;
+    @apply invisible;
+    padding-left: 0.125em;
     cursor: pointer;
   }
 
@@ -109,7 +108,6 @@
   .prose *:hover > .anchor {
     @apply visible;
   }
-
 
   .prose img {
     @apply m-0 !important;
@@ -146,11 +144,11 @@
   }
 
   .text-link {
-    @apply font-medium w-auto text-rose-500 dark:text-rose-400 lg:text-link-transition !important;
+    @apply font-medium w-auto text-rose-600 dark:text-rose-400 lg:text-link-transition !important;
   }
 
   .text-link-transition:hover {
-    @apply lg:shadow-rose-500 lg:dark:shadow-rose-400;
+    @apply lg:shadow-rose-600 lg:dark:shadow-rose-400;
     transition: box-shadow 100ms ease 0s;
   }
 
@@ -158,4 +156,7 @@
   .svg-fill {
     @apply fill-[black] dark:fill-[white] text-black dark:text-white;
   }
+}
+.default-prose {
+  @apply prose dark:prose-dark lg:prose-lg !max-w-[75ch];
 }

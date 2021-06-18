@@ -1,4 +1,3 @@
-import dayjs from 'dayjs'
 import { promises as fs } from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -7,6 +6,7 @@ import { URL } from 'url'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Environment } from '@/lib/environment'
+import { FormatDate } from '@/lib/utils'
 
 const handler = async (
   _: NextApiRequest,
@@ -74,7 +74,7 @@ const handler = async (
     feed.item({
       title: ogTitle,
       url: siteUrl,
-      date: dayjs(new Date()).format('YYYY-MM-DD'),
+      date: FormatDate(new Date()),
       description: ogDescription,
       author: ogTitle,
     })

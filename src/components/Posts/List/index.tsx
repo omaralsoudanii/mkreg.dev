@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import { FormatDate } from '@/lib/utils'
 import Link from 'next/link'
 
 export default function PostsList({ posts, href }) {
@@ -19,7 +19,7 @@ export default function PostsList({ posts, href }) {
               {frontMatter.title}
             </h2>
             <p className="w-32 !font-normal !text-base text-left text-tertiary lg:text-right !mb-1 lg:!mb-0">
-              {`${dayjs(new Date(frontMatter.date)).format('MMMM DD, YYYY')}`}
+              {`${FormatDate(frontMatter.date)}`}
             </p>
           </div>
           <p className="!font-normal lg:!py-1 !my-0 !text-base text-tertiary clamp-3">

@@ -24,3 +24,11 @@ export const dateSortDesc = (a, b) => {
 }
 
 export const formatSlug = (slug: string) => slug.replace(/\.mdx/, '')
+
+export const FormatDate = (value: string | number | Date): string => {
+  return new Date(value).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+}

@@ -1,7 +1,7 @@
-import MDXComponents from '@/components/MDXComponents'
 import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
+import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 
 function Home({ mdxSource, frontMatter }) {
@@ -22,10 +22,8 @@ function Home({ mdxSource, frontMatter }) {
         <header id="skip" className="pb-4">
           <h1 className="text-h3 font-bold">Hi, I'm Omar</h1>
         </header>
-        <div className="items-start space-y-2 xl:space-y-0">
-          <div className="pt-8 pb-8 prose dark:prose-dark lg:prose-lg !max-w-[80ch]">
-            <MDXRemote {...mdxSource} components={MDXComponents} />
-          </div>
+        <div className="pt-8 pb-8 default-prose">
+          <MDXRemote {...mdxSource} components={{ a: NextLink }} />
         </div>
       </div>
     </article>

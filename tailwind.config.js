@@ -39,7 +39,7 @@ module.exports = {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
         'rose-400': '0px 2px 0px #fb7185',
-        'rose-500': '0px 2px 0px #f43f5e',
+        'rose-600': '0px 2px 0px #e1302a',
       },
       colors: {
         code: {
@@ -49,25 +49,23 @@ module.exports = {
           red: '#ff7b72',
           rose: '#FB7185',
           blue: '#79c0ff',
-          white: '#fff',
+          white: '#ffffff', // no shit?
           gray: '#f9f9f9',
         },
-        rose: colors.rose,
-        gray: {
-          800: '#1d1f20',
-          ...colors.coolGray,
+        rose: {
+          600: '#e1302a', //'rgb(225 48 42)'
+          ...colors.rose,
         },
         dark: 'rgb(22, 27, 34)',
-        light: 'whitesmoke',
         // 'dark-blue': 'rgb(17,18,19)',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.800'),
+            color: theme('colors.gray.700'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.rose.500') },
+              code: { color: theme('colors.rose.600') },
             },
             h1: {
               fontWeight: theme('fontWeight.bold'),
@@ -152,9 +150,6 @@ module.exports = {
         },
       }),
     },
-  },
-  variants: {
-    typography: ['dark'],
   },
   plugins: [
     plugin(function ({ addBase, theme }) {
