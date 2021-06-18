@@ -1,13 +1,13 @@
 @tailwind base;
 
 @layer base {
-  
-  html {
-    @apply antialiased;
-  }
-
   body {
     text-rendering: optimizeLegibility;
+  }
+  @supports (font-variation-settings: normal) {
+    body {
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10';
+    }
   }
 
   a,
