@@ -1,4 +1,4 @@
- @font-face {
+/* @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 100;
@@ -150,4 +150,22 @@
   font-display: swap;
   src: url(/static/fonts/Inter-BlackItalic.woff2) format('woff2'),
     url(/static/fonts/Inter-BlackItalic.woff) format('woff');
+} */
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: optional;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/static/fonts/Inter-roman.var.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: optional;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url(/static/fonts/Inter-italic.var.woff2) format('woff2');
 }
