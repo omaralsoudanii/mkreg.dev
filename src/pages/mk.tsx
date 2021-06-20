@@ -13,7 +13,7 @@ export default function MK() {
   return (
     <ProseLayout>
       <Seo data={meta} />
-      <h1 className="lg:!mb-16 lg:mt-8 text-center block !text-4xl !font-black xl:!text-8xl">
+      <h1 className="lg:!mb-16 lg:mt-8 text-center block !text-4xl !font-black xl:!text-7xl">
         The Sultan of swing
       </h1>
       <div className="!space-y-4 lg:!space-y-8">
@@ -27,7 +27,7 @@ export default function MK() {
           Congrats on finding this page! Let me introduce you to my favorite
           human being in the universe.{' '}
         </p>
-        <h1 className="text-center block !text-4xl !font-black xl:!text-8xl">
+        <h1 className="text-center block !text-4xl !font-black xl:!text-7xl">
           Mark Knopfler
         </h1>
         <p>
@@ -80,10 +80,7 @@ export default function MK() {
             Check mkreg-hugo @ Vercel
           </a>
         </p>
-        <p>
-          If you happen to have some good <strong>Nuggets</strong> about the
-          Sultan, then EMAIL ME ASAP!! Meanwhile Enjoy
-        </p>
+        <p>Meanwhile Enjoy</p>
         <p className="!font-bold !text-center">
           <a
             href={Environment.social.youtube}

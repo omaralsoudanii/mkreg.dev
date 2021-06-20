@@ -1,38 +1,34 @@
-import { getFileBySlug } from '@/lib/mdx'
-import { GetStaticProps } from 'next'
-import { MDXRemote } from 'next-mdx-remote'
-import NextLink from '@/components/NextLink'
+import ProseLayout from '@/components/Layouts/ProseLayout'
 import Seo from '@/components/Seo'
+import Link from 'next/link'
 
-function Home({ mdxSource, frontMatter }) {
+const Home = () => {
   const meta = {
-    title: `Omar Alsoudani - ${frontMatter.title}`,
-    description: frontMatter.summary,
-    image: {
-      url: frontMatter?.image,
-      alt: frontMatter.title,
-    },
-    tags: frontMatter?.tags,
-    JsonLd: true,
+    title: 'Omar Alsoudani',
+    description: 'Software engineer, creator and the king of laziness.',
+    JsonLd: false,
   }
   return (
-    <article>
+    <ProseLayout>
       <Seo data={meta} />
-      <div className="divide-y divide-gray-300 dark:divide-gray-700 mx-auto">
-        <header id="skip" className="pb-4">
-          <h1 className="post-title">Hi, I'm Omar</h1>
-        </header>
-        <div className="pt-8 pb-8 default-prose">
-          <MDXRemote {...mdxSource} components={{ a: NextLink }} />
-        </div>
-      </div>
-    </article>
+      <article className="flex flex-col mb-8 lg:mb-20 space-y-6">
+        <h1 className="!mb-1 !font-medium !text-2xl md:!text-3xl lg:!text-4xl">
+          Hi, I'm Omar Alsoudani
+        </h1>
+        <p>
+          This site is my digital identity, where I'm writing notes, share my
+          knowledge with others, writing about some topics. Open-sourced
+          projects I create and share them here. Maybe with a playground or
+          proof of concept.
+        </p>
+        <p className="self-end">
+          <Link href="/about">
+            <a className="mr-1 text-link">More about me</a>
+          </Link>
+        </p>
+      </article>
+    </ProseLayout>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const post = await getFileBySlug('about')
-  return { props: post }
 }
 
 export default Home
