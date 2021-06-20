@@ -44,11 +44,13 @@ export default function Header() {
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }}
           >
-            {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
-              <SunIcon />
-            ) : (
-              <MoonIcon />
-            )}
+            {mounted ? (
+              theme === 'dark' || resolvedTheme === 'dark' ? (
+                <SunIcon />
+              ) : (
+                <MoonIcon />
+              )
+            ) : null}
           </div>
         </div>
         {isExpanded &&
@@ -80,11 +82,13 @@ export default function Header() {
           className="hidden sm:block sm:hdr-cnt-theme-btn"
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
-          {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
-            <SunIcon />
-          ) : (
-            <MoonIcon />
-          )}
+          {mounted ? (
+            theme === 'dark' || resolvedTheme === 'dark' ? (
+              <SunIcon />
+            ) : (
+              <MoonIcon />
+            )
+          ) : null}
         </div>
       </nav>
     </React.Fragment>

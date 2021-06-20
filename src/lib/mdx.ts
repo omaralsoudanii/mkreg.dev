@@ -115,14 +115,12 @@ export async function getAllFilesFrontMatter(type: string) {
 
 export async function getAllTags(type: string) {
   const files = fs.readdirSync(path.join(loc, type))
-  const pageFiles = fs.readdirSync(loc)
-  const allFiles = files.concat(pageFiles)
   const tagCount = {}
   const tags = {}
   const charSlice = {}
 
   // Iterate through each post, putting all found tags into `tags`
-  allFiles.forEach((file) => {
+  files.forEach((file) => {
     const source =
       fs.existsSync(path.join(loc, type, file)) &&
       !fs.statSync(path.join(loc, type, file)).isDirectory()

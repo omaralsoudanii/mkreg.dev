@@ -1,6 +1,7 @@
 import ProseLayout from '@/components/Layouts/ProseLayout'
 import PostsContainer from '@/components/Posts/Container'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
@@ -47,6 +48,7 @@ export default function Writing({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const { revalidate } = Environment.isr
   const WritingData = await getAllFilesFrontMatter('writing')
   const posts = WritingData.sort(
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
@@ -56,5 +58,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
+    revalidate: revalidate,
   }
 }

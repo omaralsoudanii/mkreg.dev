@@ -48,7 +48,7 @@ export default function Tag({ posts, tag }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   let tag: string
-
+  const { revalidate } = Environment.isr
   const allPosts = await getAllFilesFrontMatter('writing')
 
   const filteredPosts = allPosts.filter((post) =>
@@ -63,19 +63,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { posts: filteredPosts, tag: tag },
+    revalidate: revalidate,
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { enable } = Environment.isr
   const { tagCount } = await getAllTags('writing')
-  if (!Object.keys(tagCount).length) return { paths: [], fallback: enable }
+  if (!Object.keys(tagCount).length) return { paths: [], fallback: 'blocking' }
   return {
     paths: Object.keys(tagCount).map((tag) => ({
       params: {
         tag,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }

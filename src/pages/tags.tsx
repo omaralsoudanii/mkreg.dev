@@ -1,6 +1,7 @@
 import ProseLayout from '@/components/Layouts/ProseLayout'
 import Seo from '@/components/Seo'
 import Tag from '@/components/Tag'
+import { Environment } from '@/lib/environment'
 import { getAllTags } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
@@ -52,6 +53,8 @@ export default function Tags({ sortedData }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const { revalidate } = Environment.isr
+
   const { tagCount, tags, charSlice } = await getAllTags('writing')
 
   // dont ask..., it's probably the worst implementation done here
@@ -85,5 +88,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       sortedData,
     },
+    revalidate: revalidate,
   }
 }

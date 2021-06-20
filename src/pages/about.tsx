@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 
 function About({ mdxSource, frontMatter }) {
   const meta = {
@@ -31,8 +32,9 @@ function About({ mdxSource, frontMatter }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const { revalidate } = Environment.isr
   const post = await getFileBySlug('about')
-  return { props: post }
+  return { props: post, revalidate: revalidate }
 }
 
 export default About
