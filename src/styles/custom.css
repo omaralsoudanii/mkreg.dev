@@ -16,10 +16,13 @@
   .text-display {
     @apply text-gray-900 dark:text-gray-100;
   }
-  
+
   h1,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
   }
 
@@ -152,12 +155,27 @@
     transition: box-shadow 100ms ease 0s;
   }
 
+  .default-prose {
+    @apply prose dark:prose-dark lg:prose-lg !max-w-[70ch];
+  }
 
   .svg-fill {
     @apply fill-[black] dark:fill-[white] text-black dark:text-white;
   }
-  .default-prose {
-    @apply prose dark:prose-dark lg:prose-lg !max-w-[75ch];
+
+  .clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .clamp-2 {
+    -webkit-line-clamp: 2;
+  }
+  .clamp-3 {
+    -webkit-line-clamp: 3;
+  }
+  .clamp-5 {
+    -webkit-line-clamp: 5;
   }
 }
-

@@ -22,7 +22,7 @@ export default function PostsList({ posts, href }) {
               {`${FormatDate(frontMatter.date)}`}
             </p>
           </div>
-          <p className="!font-normal lg:!py-1 !my-0 !text-base text-tertiary clamp-3">
+          <p className="!font-normal lg:!py-1 !my-0 !text-base text-tertiary clamp clamp-3">
             {frontMatter.summary}
           </p>
         </div>
