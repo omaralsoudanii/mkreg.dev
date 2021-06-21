@@ -11,21 +11,23 @@ const Home = () => {
   return (
     <ProseLayout>
       <Seo data={meta} />
-      <article className="flex flex-col mb-8 lg:mb-20 space-y-6">
-        <h1 className="!mb-1 !font-medium !text-2xl md:!text-3xl lg:!text-4xl">
-          Hi, I'm Omar Alsoudani
-        </h1>
-        <p>
-          This site is my digital identity, where I'm writing notes, share my
-          knowledge with others, writing about some topics. Open-sourced
-          projects I create and share them here. Maybe with a playground or
-          proof of concept.
-        </p>
-        <p className="self-end">
-          <Link href="/about">
-            <a className="mr-1 text-link">More about me</a>
-          </Link>
-        </p>
+      <article className="mx-auto">
+        <header>
+          <h1 className="post-title !mb-2">Hi, I'm Omar Alsoudani</h1>
+        </header>
+        <section className="flex flex-col">
+          <p>
+            This site is my digital identity, where I'm writing notes, share my
+            knowledge with others, writing about some topics. Open-sourced
+            projects I create and share them here. Maybe with a playground or
+            proof of concept.
+          </p>
+          <p className="self-end">
+            <Link href="/about">
+              <a className="mr-1 text-link">About me</a>
+            </Link>
+          </p>
+        </section>
       </article>
     </ProseLayout>
   )
