@@ -1,4 +1,5 @@
 import ProseLayout from '@/components/Layouts/ProseLayout'
+import SectionContainer from '@/components/SectionContainer'
 import Seo from '@/components/Seo'
 import Tag from '@/components/Tag'
 import { Environment } from '@/lib/environment'
@@ -21,34 +22,42 @@ export default function Tags({ sortedData }) {
   }
 
   return (
-    <ProseLayout>
-      <Seo data={meta} />
-      <section className="mb-8 space-y-8 lg:mb-16">
-        <h1 className="!mb-4">Tags</h1>
-        <p>
-          Articles tags sorted alphabetically then by how many times each tag
-          has been added to my articles
-        </p>
-        <p className="text-right">
-          <Link href="/writing">
-            <a className="mr-1 link-unstyled">Browse all Writings</a>
-          </Link>
-        </p>
-      </section>
-      <section className="grid grid-flow-row gap-6">
-        {sortedData.map((item: { character: string; characterTags: any[] }) => (
-          <div key={item.character}>
-            <header className="w-full border-b border-gray-300 dark:border-gray-700">
-              <h2 className="!my-2 !font-bold">{item.character}</h2>
-            </header>
+    <SectionContainer>
+      <ProseLayout>
+        <Seo data={meta} />
+        <section className="mb-8 space-y-8 lg:mb-16">
+          <h1 className="!mb-4">Tags</h1>
+          <p>
+            Articles tags sorted alphabetically then by how many times each tag
+            has been added to my articles
+          </p>
+          <p className="text-right">
+            <Link href="/writing">
+              <a className="mr-1 link-unstyled">Browse all Writings</a>
+            </Link>
+          </p>
+        </section>
+        <section className="grid grid-flow-row gap-6">
+          {sortedData.map(
+            (item: { character: string; characterTags: any[] }) => (
+              <div key={item.character}>
+                <header className="w-full border-b border-gray-300 dark:border-gray-700">
+                  <h2 className="!my-2 !font-bold">{item.character}</h2>
+                </header>
 
-            {item.characterTags.map((tag) => (
-              <Tag className="!my-0 text-base !py-0" key={tag.slug} {...tag} />
-            ))}
-          </div>
-        ))}
-      </section>
-    </ProseLayout>
+                {item.characterTags.map((tag) => (
+                  <Tag
+                    className="!my-0 text-base !py-0"
+                    key={tag.slug}
+                    {...tag}
+                  />
+                ))}
+              </div>
+            )
+          )}
+        </section>
+      </ProseLayout>
+    </SectionContainer>
   )
 }
 

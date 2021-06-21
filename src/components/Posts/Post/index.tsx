@@ -1,4 +1,5 @@
 import NextLink from '@/components/NextLink'
+import SectionContainer from '@/components/SectionContainer'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
@@ -23,7 +24,7 @@ export default function Post({
   }
 
   return (
-    <div>
+    <SectionContainer>
       <Seo data={meta} />
       <div className="xl:divide-y xl:divide-gray-300 xl:dark:divide-gray-700">
         <header className="xl:pb-6">
@@ -141,6 +142,6 @@ export default function Post({
           </aside>
         </div>
       </div>
-    </div>
+    </SectionContainer>
   )
 }

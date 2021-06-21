@@ -1,4 +1,5 @@
 import { getFileBySlug } from '@/lib/mdx'
+import SectionContainer from '@/components/SectionContainer'
 import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import NextLink from '@/components/NextLink'
@@ -17,17 +18,17 @@ function About({ mdxSource, frontMatter }) {
     JsonLd: true,
   }
   return (
-    <article>
+    <SectionContainer>
       <Seo data={meta} />
-      <div className="divide-y divide-gray-300 dark:divide-gray-700 mx-auto">
+      <div className="divide-y divide-gray-200 dark:divide-gray-700 mx-auto">
         <header id="skip" className="pb-4">
           <h1 className="post-title">About</h1>
         </header>
-        <div className="pt-8 pb-8 default-prose">
+        <article className="pt-8 pb-8 default-prose">
           <MDXRemote {...mdxSource} components={{ a: NextLink }} />
-        </div>
+        </article>
       </div>
-    </article>
+    </SectionContainer>
   )
 }
 
