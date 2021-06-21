@@ -65,7 +65,7 @@ module.exports = {
             color: theme('colors.gray.700'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.rose.600') },
+              code: { color: theme('colors.blue.400') },
             },
             h1: {
               fontWeight: theme('fontWeight.bold'),
@@ -117,7 +117,7 @@ module.exports = {
             color: theme('colors.gray.300'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.rose.400') },
+              code: { color: theme('colors.blue.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),
