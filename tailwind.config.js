@@ -56,7 +56,7 @@ module.exports = {
           600: '#e1302a', //'rgb(225 48 42)'
           ...colors.rose,
         },
-        dark: 'rgb(22, 27, 34)',
+        // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
       typography: (theme) => ({

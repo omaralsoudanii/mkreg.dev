@@ -35,7 +35,7 @@
   }
 
   .header-sm {
-    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-300 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {
