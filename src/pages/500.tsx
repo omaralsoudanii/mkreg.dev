@@ -5,9 +5,11 @@ import Link from 'next/link'
 export default function ServerError() {
   return (
     <ProseLayout>
-      <div className="flex flex-col items-start justify-start lg:justify-center lg:items-center lg:space-x-10 lg:mt-8">
+      <div className="flex flex-col justify-center items-center lg:space-x-10 lg:mt-8">
         <div className="px-1 lg:px-0">
-          <h1 className="lg:pt-0">Internal server error</h1>
+          <header>
+            <h1 className="post-title lg:pt-0">Internal server error</h1>
+          </header>
           <p>
             The server is currently unavailable for some reason. Obviously, it's
             not my fault, I ran the code on my machine and it's working fine.

@@ -45,11 +45,11 @@
   }
 
   .footer-grid {
-    @apply grid grid-cols-1 text-left py-12 lg:gap-20 m-auto lg:items-stretch lg:text-center lg:grid-cols-3 text-base sm:text-base lg:text-lg;
+    @apply grid grid-cols-1 text-left py-12 lg:gap-20 m-auto lg:items-stretch lg:text-center lg:grid-cols-3;
   }
 
   .footer-column {
-    @apply flex flex-col items-start  space-y-8 p-4 lg:items-center;
+    @apply flex flex-col items-start  space-y-8 py-4 px-2 lg:items-center;
   }
 
   .nav-default {
@@ -117,19 +117,19 @@
   }
 
   .text-h1 {
-    @apply text-4xl sm:text-6xl lg:text-7xl leading-none text-display !important;
+    @apply text-3xl sm:text-4xl lg:text-7xl leading-none text-display !important;
   }
 
   .text-h2 {
-    @apply text-3xl sm:text-5xl lg:text-6xl leading-none text-display !important;
+    @apply text-3xl sm:text-4xl lg:text-6xl leading-none text-display !important;
   }
 
   .text-h3 {
-    @apply text-2xl sm:text-4xl lg:text-5xl leading-none  text-display !important;
+    @apply text-3xl sm:text-4xl lg:text-5xl leading-none  text-display !important;
   }
 
   .post-title {
-    @apply text-3xl leading-9 text-display sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 !important;
+    @apply text-3xl leading-9 font-extrabold text-display sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 !important;
   }
 
   .link-transition,
@@ -147,17 +147,19 @@
   }
 
   .text-link {
-    @apply font-medium w-auto text-rose-600 dark:text-rose-400 lg:text-link-transition !important;
+    @apply font-medium w-auto text-blue-600 dark:text-blue-400 lg:text-link-transition !important;
   }
 
   .text-link-transition:hover {
-    @apply lg:shadow-rose-600 lg:dark:shadow-rose-400;
+    @apply lg:shadow-blue-600 lg:dark:shadow-blue-400;
     transition: box-shadow 100ms ease 0s;
   }
 
   .default-prose {
-    @apply prose dark:prose-dark lg:prose-lg w-full max-w-none;
+    @apply prose dark:prose-dark lg:prose-lg w-full max-w-[75ch] mx-auto;
+    letter-spacing: -0.01rem;
   }
+
 
   .svg-fill {
     @apply fill-[black] dark:fill-[white] text-black dark:text-white;

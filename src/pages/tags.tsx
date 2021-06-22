@@ -23,14 +23,16 @@ export default function Tags({ sortedData }) {
     <ProseLayout>
       <Seo data={meta} />
       <section className="mb-8 space-y-8 lg:mb-16">
-        <h1 className="!mb-4">Tags</h1>
+        <header>
+          <h1 className="post-title !mb-4">Tags</h1>
+        </header>
         <p>
           Articles tags sorted alphabetically then by how many times each tag
           has been added to my articles
         </p>
         <p className="text-right">
           <Link href="/writing">
-            <a className="mr-1 link-unstyled">Browse all Writings</a>
+            <a className="mr-1 link-unstyled">Browse all Writing</a>
           </Link>
         </p>
       </section>

@@ -1,5 +1,8 @@
 @tailwind base;
 
+body {
+  text-rendering: optimizeLegibility;
+}
 
 a,
 area,

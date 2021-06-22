@@ -14,8 +14,10 @@ function Nuggets() {
     <ProseLayout>
       <Seo data={meta} />
 
-      <section className="mb-8 space-y-8 lg:mb-16">
-        <h1 className="!mb-4">Nuggets</h1>
+      <section className="mb-8 lg:mb-16">
+        <header>
+          <h1 className="post title !mb-4">Nuggets</h1>
+        </header>
         <p>
           Some stuff I bookmark to read later, or a tool I find useful to use.
           These recommendations are based on my opinion, doesn't mean they are

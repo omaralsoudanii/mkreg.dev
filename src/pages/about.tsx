@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
+import ProseLayout from '@/components/Layouts/ProseLayout'
 
 function About({ mdxSource, frontMatter }) {
   const meta = {
@@ -17,17 +18,17 @@ function About({ mdxSource, frontMatter }) {
     JsonLd: true,
   }
   return (
-    <article>
+    <ProseLayout>
       <Seo data={meta} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700 mx-auto">
-        <header id="skip" className="pb-4">
-          <h1 className="post-title">About</h1>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <header>
+          <h1 className="post-title !mb-2">About</h1>
         </header>
-        <div className="pt-8 pb-8 default-prose">
+        <article>
           <MDXRemote {...mdxSource} components={{ a: NextLink }} />
-        </div>
+        </article>
       </div>
-    </article>
+    </ProseLayout>
   )
 }
 

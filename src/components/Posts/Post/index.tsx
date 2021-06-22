@@ -23,11 +23,11 @@ export default function Post({
   }
 
   return (
-    <div>
+    <article>
       <Seo data={meta} />
-      <div className="xl:divide-y xl:divide-gray-300 xl:dark:divide-gray-700">
-        <header className="xl:pb-6">
-          <div className="space-y-3 text-center">
+      <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <header id="skip" className="xl:pb-6">
+          <div className="space-y-2 text-center">
             <dl>
               <dt className="sr-only">Published on</dt>
               <dd>
@@ -46,35 +46,33 @@ export default function Post({
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
           <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-4 xl:col-span-3 xl:col-start-2 xl:row-span-2">
-            <article id="skip" className="pt-10 pb-8 default-prose">
-              {children}
-            </article>
+            <div className="pt-10 pb-8 default-prose">{children}</div>
           </div>
           <aside className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
-            <dl className="pb-2 xl:pb-4  flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
+            <dl className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
               <dt className="sr-only">Author</dt>
               <dd>
                 <div className="flex xl:block pb-1">
                   <dl className="whitespace-nowrap">
                     <dt className="sr-only">Name</dt>
-                    <dd className="text-secondary text-base  leading-5 font-medium pb-2">
+                    <dd className="!font-medium  text-display text-base pb-1">
                       {Environment.ogTitle}
                     </dd>
                     <div className="flex flex-wrap">
                       <dt className="sr-only">Github</dt>
-                      <dd className="mr-3 py-1 text-sm font-medium">
+                      <dd className="mr-3  py-0">
                         <NextLink
                           href={Environment.social.github}
-                          className="text-link text-base  leading-5"
+                          className="text-link inline-block text-base "
                         >
                           Github
                         </NextLink>
                       </dd>
                       <dt className="sr-only">Twitter</dt>
-                      <dd className="mr-3 py-1 text-sm font-medium">
+                      <dd className="mr-3 py-0">
                         <NextLink
                           href={Environment.social.twitter}
-                          className="text-link text-base  leading-5"
+                          className="text-link inline-block text-base "
                         >
                           Twitter
                         </NextLink>
@@ -83,20 +81,22 @@ export default function Post({
                   </dl>
                 </div>
               </dd>
-              <dt className="sr-only">Updated on</dt>
-              <dd className=" font-medium text-sm text-secondary pb-4">
+              <dt className="sr-only">Modified on</dt>
+              <dd className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
                 <time dateTime={lastmod}>
-                  {`Modified ${FormatDate(lastmod)}`}
+                  {`Last Modified ${FormatDate(lastmod)}`}
                 </time>
               </dd>
             </dl>
             {tags && (
               <div className="py-3 xl:py-6">
-                <h2 className="text-base  pb-2  text-secondary">Tags</h2>
+                <h2 className="pb-2 text-base !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
+                  Tagged with
+                </h2>
                 <div className="flex flex-wrap">
                   {tags.map((t: string) => (
                     <NextLink
-                      className="mr-4 py-1 text-sm text-link"
+                      className="mr-4 !text-sm my-1 text-link"
                       key={t}
                       href={`/tags/${slugify(t)}`}
                     >
@@ -110,8 +110,8 @@ export default function Post({
               <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                 {prev && (
                   <div>
-                    <h2 className="text-base pb-2 text-secondary">
-                      Previous Post
+                    <h2 className="text-base pb-2 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
+                      Previous Article
                     </h2>
                     <div>
                       <NextLink
@@ -125,7 +125,9 @@ export default function Post({
                 )}
                 {next && (
                   <div>
-                    <h2 className="text-base pb-2 text-secondary">Next Post</h2>
+                    <h2 className="text-base pb-2 !font-medium  text-gray-500 dark:text-gray-400">
+                      Next Article
+                    </h2>
                     <div>
                       <NextLink
                         className="text-link text-base"
@@ -141,6 +143,6 @@ export default function Post({
           </aside>
         </div>
       </div>
-    </div>
+    </article>
   )
 }

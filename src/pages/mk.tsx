@@ -13,21 +13,23 @@ export default function MK() {
   return (
     <ProseLayout>
       <Seo data={meta} />
-      <h1 className="lg:!mb-16 lg:mt-8 text-center block !text-4xl !font-black xl:!text-7xl">
-        The Sultan of swing
-      </h1>
+      <header>
+        <h1 className="lg:!mb-16 lg:mt-8 text-center block !text-4xl !font-black xl:!text-7xl">
+          The Sultan of swing
+        </h1>
+      </header>
       <div className="!space-y-4 lg:!space-y-8">
         <NextImage
-          src="/static/images/mk.jpg"
-          alt="Mark Knopfler"
-          width={1280}
-          height={915}
+          src="/static/images/sultan.jpg"
+          alt="The Sultan of swing"
+          width={3000}
+          height={2400}
         />
         <p>
           Congrats on finding this page! Let me introduce you to my favorite
           human being in the universe.{' '}
         </p>
-        <h1 className="text-center block !text-4xl !font-black xl:!text-7xl">
+        <h1 className="text-center block  !text-4xl !font-black xl:!text-7xl">
           Mark Knopfler
         </h1>
         <p>
@@ -56,13 +58,13 @@ export default function MK() {
           pleasure that puts a smile on my face. So there you go, now you have
           the answer to the ultimate question of life.
         </p>
-        <NextImage
-          src="/static/images/sultan.jpg"
-          alt="The Sultan of swing"
-          width={3000}
-          height={2400}
-        />
 
+        <NextImage
+          src="/static/images/mk.jpg"
+          alt="Mark Knopfler"
+          width={1280}
+          height={915}
+        />
         <p>
           This is a biography about
           <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>

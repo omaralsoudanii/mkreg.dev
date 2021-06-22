@@ -24,7 +24,9 @@ export default function Tag({ posts, tag }) {
       <Seo data={meta} />
       <div className="divide-y divide-gray-300 dark:divide-gray-700">
         <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
-          <h1 className="!mb-4">{tag}</h1>
+          <header>
+            <h1 className="post-title !mb-4">{tag}</h1>
+          </header>
           <p>
             Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
             related to it. Please note that the list ordered by newest published

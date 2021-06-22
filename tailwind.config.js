@@ -38,8 +38,8 @@ module.exports = {
       boxShadow: {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
-        'rose-400': '0px 2px 0px #fb7185',
-        'rose-600': '0px 2px 0px #e1302a',
+        'blue-400': '0px 2px 0px #60a5fa',
+        'blue-600': '0px 2px 0px #246cff',
       },
       colors: {
         code: {
@@ -52,9 +52,9 @@ module.exports = {
           white: '#ffffff', // no shit?
           gray: '#f9f9f9',
         },
-        rose: {
-          600: '#e1302a', //'rgb(225 48 42)'
-          ...colors.rose,
+        blue: {
+          ...colors.blue,
+          600: '#246cff',
         },
         // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
@@ -65,7 +65,8 @@ module.exports = {
             color: theme('colors.gray.700'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.pink.500') },
+              color: null,
+              code: { color: theme('colors.blue.600') },
             },
             h1: {
               fontWeight: theme('fontWeight.bold'),
@@ -99,7 +100,6 @@ module.exports = {
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
-              fontWeight: '600',
               color: theme('colors.gray.500'),
             },
             'ul li:before': {
@@ -107,8 +107,9 @@ module.exports = {
             },
             strong: { color: theme('colors.gray.900') },
             blockquote: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.200'),
+              fontStyle: 'normal',
             },
           },
         },
@@ -117,7 +118,8 @@ module.exports = {
             color: theme('colors.gray.300'),
             a: {
               textDecoration: 'none',
-              code: { color: theme('colors.pink.500') },
+              color: null,
+              code: { color: theme('colors.blue.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),
@@ -127,7 +129,6 @@ module.exports = {
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {
-              fontWeight: '600',
               color: theme('colors.gray.400'),
             },
             'ul li:before': {
@@ -143,7 +144,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
             },
           },
@@ -171,10 +172,10 @@ module.exports = {
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
-          'scroll-margin-top': '5em',
+          'scroll-margin-top': '15vh',
         },
         '.scroll-spacing-lg': {
-          'scroll-margin-top': '2em',
+          'scroll-margin-top': '5vh',
         },
       }
 

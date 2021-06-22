@@ -12,8 +12,8 @@ export default function PostsList({ posts, href }) {
 
   return posts.map((frontMatter) => (
     <Link key={frontMatter.slug} href={`${href}/${frontMatter.slug}`} passHref>
-      <a className="inline-block w-full">
-        <div className="w-full mb-12">
+      <a className="inline-block py-6 lg:py-8 w-full">
+        <div className="w-full">
           <div className="flex flex-col justify-between lg:flex-row">
             <h2 className="!text-xl lg:!text-2xl !mb-0 w-full !mt-0 text-display">
               {frontMatter.title}
