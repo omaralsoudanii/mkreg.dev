@@ -2,7 +2,6 @@ import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import NextLink from '@/components/NextLink'
-import SectionContainer from '@/components/SectionContainer'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import ProseLayout from '@/components/Layouts/ProseLayout'
@@ -19,19 +18,17 @@ function About({ mdxSource, frontMatter }) {
     JsonLd: true,
   }
   return (
-    <SectionContainer>
-      <ProseLayout>
-        <Seo data={meta} />
-        <article>
-          <header>
-            <h1 className="post-title !mb-2">About</h1>
-          </header>
-          <div>
-            <MDXRemote {...mdxSource} components={{ a: NextLink }} />
-          </div>
-        </article>
-      </ProseLayout>
-    </SectionContainer>
+    <ProseLayout>
+      <Seo data={meta} />
+      <article>
+        <header>
+          <h1 className="post-title !mb-2">About</h1>
+        </header>
+        <div>
+          <MDXRemote {...mdxSource} components={{ a: NextLink }} />
+        </div>
+      </article>
+    </ProseLayout>
   )
 }
 
