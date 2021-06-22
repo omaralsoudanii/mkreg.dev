@@ -3,8 +3,8 @@ import NextLink from '@/components/NextLink'
 
 export default function Footer() {
   return (
-    <footer className="mt-16  mx-auto max-w-4xl w-full">
-      <hr className="border-t  border-gray-300 dark:border-gray-600" />
+    <footer className="mt-16">
+      <hr className="border-t border-gray-200 dark:border-gray-700" />
       <div className="footer-grid">
         <div className="footer-column">
           <NextLink className="link-unstyled" href="/">

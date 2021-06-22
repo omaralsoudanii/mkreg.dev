@@ -1,6 +1,6 @@
 export default function ProseLayout({ children }) {
   return (
-    <div id="skip" className="default-prose mx-auto">
+    <div id="skip" className="default-prose">
       {children}
     </div>
   )

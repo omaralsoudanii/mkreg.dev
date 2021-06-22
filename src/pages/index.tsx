@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <ProseLayout>
       <Seo data={meta} />
-      <article className="divide-y divide-gray-200 dark:divide-gray-700 mx-auto">
+      <article>
         <header>
           <h1 className="post-title !mb-2">Hi, I'm Omar Alsoudani</h1>
         </header>

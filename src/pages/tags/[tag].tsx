@@ -22,28 +22,26 @@ export default function Tag({ posts, tag }) {
   return (
     <ProseLayout>
       <Seo data={meta} />
-      <div className="divide-y divide-gray-300 dark:divide-gray-700">
-        <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
-          <header>
-            <h1 className="post-title !mb-4">{tag}</h1>
-          </header>
-          <p>
-            Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
-            related to it. Please note that the list ordered by newest published
-            articles, however some times I modify or update some info on older
-            articles, I'll probably make some sort of filteration when I have
-            time.
-          </p>
-          <p className="self-end">
-            <Link href="/writing">
-              <a className="mr-1 link-unstyled">Browse all Writing</a>
-            </Link>
-          </p>
-        </section>
-        <section>
-          <PostsContainer href="/writing" posts={posts} />
-        </section>
-      </div>
+      <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
+        <header>
+          <h1 className="post-title !mb-0">{tag}</h1>
+        </header>
+        <p>
+          Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
+          related to it. Please note that the list ordered by newest published
+          articles, however some times I modify or update some info on older
+          articles, I'll probably make some sort of filteration when I have
+          time.
+        </p>
+        <p className="self-end">
+          <Link href="/writing">
+            <a className="mr-1 link-unstyled">Browse all Writing</a>
+          </Link>
+        </p>
+      </section>
+      <section>
+        <PostsContainer href="/writing" posts={posts} />
+      </section>
     </ProseLayout>
   )
 }
