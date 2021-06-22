@@ -39,7 +39,7 @@ export default function Tags({ sortedData }) {
       <section className="grid grid-flow-row gap-6">
         {sortedData.map((item: { character: string; characterTags: any[] }) => (
           <div key={item.character}>
-            <header className="w-full border-b border-gray-300 dark:border-gray-700">
+            <header className="w-full border-b border-gray-200 dark:border-gray-700">
               <h2 className="!my-2 !font-bold">{item.character}</h2>
             </header>
 

@@ -1,5 +1,4 @@
 import NextLink from '@/components/NextLink'
-import SectionContainer from '@/components/SectionContainer'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
@@ -24,7 +23,7 @@ export default function Post({
   }
 
   return (
-    <SectionContainer>
+    <div>
       <Seo data={meta} />
       <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <header id="skip" className="xl:pb-6">
@@ -47,7 +46,7 @@ export default function Post({
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
           <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-4 xl:col-span-3 xl:col-start-2 xl:row-span-2">
-            <div className="pt-10 pb-8 default-prose">{children}</div>
+            <div className="pt-10 pb-8 post-prose">{children}</div>
           </div>
           <aside className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
             <dl className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
@@ -144,6 +143,6 @@ export default function Post({
           </aside>
         </div>
       </article>
-    </SectionContainer>
+    </div>
   )
 }

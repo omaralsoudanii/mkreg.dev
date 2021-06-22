@@ -156,9 +156,12 @@
   }
 
   .default-prose {
-    @apply prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-prose mx-auto;
+    @apply prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[70ch];
   }
 
+  .post-prose {
+    @apply prose dark:prose-dark lg:prose-lg w-full max-w-none mx-auto;
+  }
 
   .svg-fill {
     @apply fill-[black] dark:fill-[white] text-black dark:text-white;
