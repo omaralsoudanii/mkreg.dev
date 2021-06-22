@@ -1,17 +1,2 @@
 @tailwind base;
-
-body {
-  text-rendering: optimizeLegibility;
-}
-
-a,
-area,
-button,
-[role='button'],
-input,
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
-}
+@tailwind components;
