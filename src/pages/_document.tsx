@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/static/fonts/Inter15-roman.var.woff2"
+            href="/static/fonts/Interv19/Inter19-roman-latin.var.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

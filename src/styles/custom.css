@@ -156,7 +156,7 @@
   }
 
   .default-prose {
-    @apply prose dark:prose-dark lg:prose-lg !max-w-[70ch];
+    @apply prose dark:prose-dark lg:prose-lg w-full max-w-none;
   }
 
   .svg-fill {

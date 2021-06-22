@@ -66,11 +66,10 @@ export async function getFileBySlug(type: string, slug?) {
           return (tree) => {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             visit(tree, 'element', (node: Node, _index, _parent) => {
-              let className =
-                (node.properties as NodeProperties).className || []
-              const [token, type] = className
+              const nodeProps = node.properties as NodeProperties
+              const [token, type] = nodeProps.className || []
               if (token === 'token') {
-                className = [tokenClassNames[type]]
+                nodeProps.className = [token, type, tokenClassNames[type]]
               }
             })
           }

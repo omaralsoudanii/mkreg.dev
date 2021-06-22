@@ -1,9 +1,5 @@
 @tailwind base;
 
-body {
-  text-rendering: optimizeLegibility;
-  font-feature-settings: 'cv01', 'cv02', 'ss01', 'cv10', 'kern', 'liga', 'calt';
-}
 
 a,
 area,
