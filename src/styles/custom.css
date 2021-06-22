@@ -156,8 +156,7 @@
   }
 
   .default-prose {
-    @apply prose dark:prose-dark lg:prose-lg w-full max-w-[75ch] mx-auto;
-    letter-spacing: -0.01rem;
+    @apply prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto;
   }
 
 
