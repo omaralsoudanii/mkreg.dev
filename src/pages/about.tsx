@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
-import ProseLayout from '@/components/Layouts/ProseLayout'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 
 function About({ mdxSource, frontMatter }) {
   const meta = {
@@ -17,7 +17,7 @@ function About({ mdxSource, frontMatter }) {
     JsonLd: true,
   }
   return (
-    <ProseLayout>
+    <ProseContainer>
       <Seo data={meta} />
       <article>
         <header>
@@ -27,7 +27,7 @@ function About({ mdxSource, frontMatter }) {
           <MDXRemote {...mdxSource} components={{ a: NextLink }} />
         </div>
       </article>
-    </ProseLayout>
+    </ProseContainer>
   )
 }
 

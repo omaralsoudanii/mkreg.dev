@@ -1,4 +1,4 @@
-import ProseLayout from '@/components/Layouts/ProseLayout'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
 import Link from 'next/link'
 
@@ -9,7 +9,7 @@ const Home = () => {
     JsonLd: false,
   }
   return (
-    <ProseLayout>
+    <ProseContainer>
       <Seo data={meta} />
       <article>
         <header>
@@ -36,7 +36,7 @@ const Home = () => {
           </p>
         </section>
       </article>
-    </ProseLayout>
+    </ProseContainer>
   )
 }
 

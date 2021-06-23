@@ -1,7 +1,7 @@
 import Bookmarks from '@/lib/bookmarks'
 import Seo from '@/components/Seo'
 import Card from '@/components/Card'
-import ProseLayout from '@/components/Layouts/ProseLayout'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 
 function Nuggets() {
   const meta = {
@@ -11,7 +11,7 @@ function Nuggets() {
   }
 
   return (
-    <ProseLayout>
+    <ProseContainer>
       <Seo data={meta} />
 
       <section className="mb-8 lg:mb-16">
@@ -31,7 +31,7 @@ function Nuggets() {
           <Card key={bookmark.title} {...bookmark} />
         ))}
       </section>
-    </ProseLayout>
+    </ProseContainer>
   )
 }
 

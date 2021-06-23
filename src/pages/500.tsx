@@ -1,10 +1,10 @@
-import ProseLayout from '@/components/Layouts/ProseLayout'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 import NextImage from '@/components/NextImage'
 import Link from 'next/link'
 
 export default function ServerError() {
   return (
-    <ProseLayout>
+    <ProseContainer>
       <div className="flex flex-col justify-center items-center lg:space-x-10 lg:mt-8">
         <div className="px-1 lg:px-0">
           <header>
@@ -33,6 +33,6 @@ export default function ServerError() {
           </Link>
         </div>
       </div>
-    </ProseLayout>
+    </ProseContainer>
   )
 }

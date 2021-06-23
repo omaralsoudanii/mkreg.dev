@@ -3,7 +3,7 @@ import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
 
-export default function Post({
+export default function PostLayout({
   children,
   frontMatter,
   prev = null,

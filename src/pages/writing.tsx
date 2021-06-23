@@ -1,5 +1,5 @@
-import ProseLayout from '@/components/Layouts/ProseLayout'
-import PostsContainer from '@/components/Posts/Container'
+import ProseContainer from '@/components/Layouts/ProseContainer'
+import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
@@ -20,7 +20,7 @@ export default function Writing({ posts }) {
   }
 
   return (
-    <ProseLayout>
+    <ProseContainer>
       <Seo data={meta} />
       <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
         <header>
@@ -34,14 +34,14 @@ export default function Writing({ posts }) {
         </p>
         <p className="self-end">
           <Link href="/tags">
-            <a className="mr-1 link-unstyled">Browse by Tags</a>
+            <a className="mr-1 text-link">Browse by Tags</a>
           </Link>
         </p>
       </section>
       <section>
-        <PostsContainer href="/writing" posts={posts} />
+        <PostsList href="/writing" posts={posts} />
       </section>
-    </ProseLayout>
+    </ProseContainer>
   )
 }
 

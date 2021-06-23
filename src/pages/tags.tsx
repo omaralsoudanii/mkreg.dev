@@ -1,4 +1,4 @@
-import ProseLayout from '@/components/Layouts/ProseLayout'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
 import Tag from '@/components/Tag'
 import { getAllTags } from '@/lib/mdx'
@@ -20,7 +20,7 @@ export default function Tags({ sortedData }) {
   }
 
   return (
-    <ProseLayout>
+    <ProseContainer>
       <Seo data={meta} />
       <section className="mb-8 space-y-8 lg:mb-16">
         <header>
@@ -32,7 +32,7 @@ export default function Tags({ sortedData }) {
         </p>
         <p className="text-right">
           <Link href="/writing">
-            <a className="mr-1 link-unstyled">Browse all Writing</a>
+            <a className="mr-1 text-link">Browse all Writing</a>
           </Link>
         </p>
       </section>
@@ -49,7 +49,7 @@ export default function Tags({ sortedData }) {
           </div>
         ))}
       </section>
-    </ProseLayout>
+    </ProseContainer>
   )
 }
 

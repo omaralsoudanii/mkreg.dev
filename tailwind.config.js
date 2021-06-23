@@ -56,6 +56,10 @@ module.exports = {
           ...colors.blue,
           600: '#246cff',
         },
+        gray: {
+          ...colors.coolGray,
+          700: '#333',
+        },
         // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
@@ -69,19 +73,19 @@ module.exports = {
               code: { color: theme('colors.blue.600') },
             },
             h1: {
-              fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.gray.900'),
+              fontWeight: theme('fontWeight.extrabold'),
+              color: theme('colors.black'),
             },
             h2: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             h3: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             'h4,h5,h6': {
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             code: {
               color: theme('colors.pink.500'),
@@ -122,7 +126,7 @@ module.exports = {
               code: { color: theme('colors.blue.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.100'),
+              color: theme('colors.white'),
             },
             code: {
               backgroundColor: theme('colors.gray.800'),
@@ -157,7 +161,7 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.extrabold'),
           letterSpacing: theme('letterSpacing.tight'),
         },
         h2: {

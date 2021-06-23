@@ -1,5 +1,4 @@
 import MDXComponents from '@/components/MDXComponents'
-import Post from '@/components/Posts/Post'
 import {
   getAllFilesName,
   getFileBySlug,
@@ -8,6 +7,7 @@ import {
 import { dateSortDesc, formatSlug } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
+import Post from '@/components/Layouts/Post'
 
 /**
  *

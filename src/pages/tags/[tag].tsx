@@ -1,5 +1,5 @@
-import ProseLayout from '@/components/Layouts/ProseLayout'
-import PostsContainer from '@/components/Posts/Container'
+import ProseContainer from '@/components/Layouts/ProseContainer'
+import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
@@ -20,7 +20,7 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <ProseLayout>
+    <ProseContainer>
       <Seo data={meta} />
       <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
         <header>
@@ -35,14 +35,14 @@ export default function Tag({ posts, tag }) {
         </p>
         <p className="self-end">
           <Link href="/writing">
-            <a className="mr-1 link-unstyled">Browse all Writing</a>
+            <a className="mr-1 text-link">Browse all Writing</a>
           </Link>
         </p>
       </section>
       <section>
-        <PostsContainer href="/writing" posts={posts} />
+        <PostsList href="/writing" posts={posts} />
       </section>
-    </ProseLayout>
+    </ProseContainer>
   )
 }
 
