@@ -6,8 +6,7 @@ const NextImage = ({
   width,
   height,
   alt = 'Omar Alsoudani',
-  className,
-  layout = 'intrinsic',
+  layout = 'responsive',
   quality = 75,
 }: {
   src: string
@@ -16,28 +15,16 @@ const NextImage = ({
   alt?: string
   layout?: 'intrinsic' | 'fixed' | 'responsive'
   quality?: number
-  className?: string
-}): JSX.Element => {
-  return className ? (
-    <Image
-      alt={alt}
-      src={src}
-      width={width}
-      height={height}
-      layout={layout}
-      quality={quality}
-      className={className}
-    />
-  ) : (
-    <Image
-      alt={alt}
-      src={src}
-      width={width}
-      height={height}
-      layout={layout}
-      quality={quality}
-    />
-  )
-}
+}): JSX.Element => (
+  <Image
+    alt={alt}
+    src={src}
+    width={width}
+    height={height}
+    sizes={`(max-width: 640px) 33vw,(max-width: 764px) 500vw, 100vw`}
+    layout={layout}
+    quality={quality}
+  />
+)
 
 export default NextImage

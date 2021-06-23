@@ -7,9 +7,6 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
-      spacing: {
-        '9/16': '56.25%',
-      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -55,10 +52,6 @@ module.exports = {
         blue: {
           ...colors.blue,
           600: '#246cff',
-        },
-        gray: {
-          ...colors.coolGray,
-          700: '#333',
         },
         // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
