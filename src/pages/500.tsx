@@ -8,7 +8,7 @@ export default function ServerError() {
       <div className="flex flex-col justify-center items-center lg:space-x-10 lg:mt-8">
         <div className="px-1 lg:px-0">
           <header>
-            <h1 className="post-title lg:pt-0">Internal server error</h1>
+            <h1 className="page-heading lg:pt-0">Internal server error</h1>
           </header>
           <p>
             The server is currently unavailable for some reason. Obviously, it's

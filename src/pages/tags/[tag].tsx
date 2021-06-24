@@ -24,7 +24,7 @@ export default function Tag({ posts, tag }) {
       <Seo data={meta} />
       <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
         <header>
-          <h1 className="post-title !mb-0">{tag}</h1>
+          <h1 className="page-heading !mb-0">{tag}</h1>
         </header>
         <p>
           Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
@@ -35,7 +35,7 @@ export default function Tag({ posts, tag }) {
         </p>
         <p className="self-end">
           <Link href="/writing">
-            <a className="mr-1 text-link">Browse all Writing</a>
+            <a className="mr-1 primary-link">Browse all Writing</a>
           </Link>
         </p>
       </section>

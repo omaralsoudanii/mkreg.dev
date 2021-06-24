@@ -40,7 +40,7 @@ export default function MK() {
           </p>
           <p className="font-bold text-center">
             <a
-              className="text-link"
+              className="primary-link"
               href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
               target="_blank"
               rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export default function MK() {
               href="https://mkreg-hugo.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-link"
+              className="primary-link"
             >
               Check mkreg-hugo @ Vercel
             </a>
@@ -89,7 +89,7 @@ export default function MK() {
               href={Environment.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-link"
+              className="primary-link"
             >
               The Golden Nugget 👏
             </a>

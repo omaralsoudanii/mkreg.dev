@@ -21,7 +21,7 @@ function About({ mdxSource, frontMatter }) {
       <Seo data={meta} />
       <article>
         <header>
-          <h1 className="post-title !mb-2">About</h1>
+          <h1 className="page-heading !mb-2">About</h1>
         </header>
         <div>
           <MDXRemote {...mdxSource} components={{ a: NextLink }} />

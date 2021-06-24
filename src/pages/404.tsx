@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function NotFound() {
   return (
     <ProseContainer>
-      <div className="flex flex-col items-start justify-start divide-y divide-gray-700 dark:divide-gray-300 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
+      <div className="flex flex-col items-start justify-start divide-y divide-gray-700 dark:divide-gray-200 lg:items-center lg:divide-y-0 lg:flex-row lg:space-x-6 lg:my-20">
         <div className="py-4 lg:pt-20 lg:pb-20">
           <h1 className="lg:border-gray-900 !text-7xl !leading-loose lg:ml-0 !mb-0 px-2 lg:border-r-2 lg:dark:border-gray-100 lg:pr-6 lg:pl-0">
             404

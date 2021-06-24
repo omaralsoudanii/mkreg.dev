@@ -13,9 +13,9 @@ const Home = () => {
       <Seo data={meta} />
       <article>
         <header>
-          <h1 className="post-title !mb-2">Hi, I'm Omar Alsoudani</h1>
+          <h1 className="page-heading !mb-2">Hi, I'm Omar Alsoudani</h1>
         </header>
-        <section className="flex flex-col">
+        <section>
           <p>
             This is my personal site. Where I'm writing notes, Writing about
             some topics, and open-source projects I create and share them here.
@@ -31,7 +31,7 @@ const Home = () => {
           </p>
           <p className="self-start">
             <Link href="/about">
-              <a className="mr-1 text-link">Learn more about me</a>
+              <a className="mr-1 primary-link">Learn more about me</a>
             </Link>
           </p>
         </section>

@@ -61,7 +61,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              textDecoration: 'none',
+              textDecoration: null,
               color: null,
               code: { color: theme('colors.blue.600') },
             },
@@ -79,21 +79,6 @@ module.exports = {
             },
             'h4,h5,h6': {
               color: theme('colors.black'),
-            },
-            code: {
-              color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.100'),
-              paddingLeft: '4px',
-              paddingRight: '4px',
-              paddingTop: '2px',
-              paddingBottom: '2px',
-              borderRadius: '0.25rem',
-            },
-            'code:before': {
-              content: 'none',
-            },
-            'code:after': {
-              content: 'none',
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
@@ -114,15 +99,12 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              textDecoration: 'none',
+              textDecoration: null,
               color: null,
               code: { color: theme('colors.blue.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.white'),
-            },
-            code: {
-              backgroundColor: theme('colors.gray.800'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {

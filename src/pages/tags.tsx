@@ -24,7 +24,7 @@ export default function Tags({ sortedData }) {
       <Seo data={meta} />
       <section className="mb-8 space-y-8 lg:mb-16">
         <header>
-          <h1 className="post-title !mb-4">Tags</h1>
+          <h1 className="page-heading !mb-4">Tags</h1>
         </header>
         <p>
           Articles tags sorted alphabetically then by how many times each tag
@@ -32,7 +32,7 @@ export default function Tags({ sortedData }) {
         </p>
         <p className="text-right">
           <Link href="/writing">
-            <a className="mr-1 text-link">Browse all Writing</a>
+            <a className="mr-1 primary-link">Browse all Writing</a>
           </Link>
         </p>
       </section>
@@ -40,12 +40,18 @@ export default function Tags({ sortedData }) {
         {sortedData.map((item: { character: string; characterTags: any[] }) => (
           <div key={item.character}>
             <header className="w-full border-b border-gray-200 dark:border-gray-700">
-              <h2 className="!my-2 !font-bold">{item.character}</h2>
+              <h2 className="!my-3 !font-bold">{item.character}</h2>
             </header>
 
-            {item.characterTags.map((tag) => (
-              <Tag className="!my-0 text-base !py-0" key={tag.slug} {...tag} />
-            ))}
+            <div className="flex space-x-6 flex-row">
+              {item.characterTags.map((tag) => (
+                <Tag
+                  className="!my-0 text-base !py-3"
+                  key={tag.slug}
+                  {...tag}
+                />
+              ))}
+            </div>
           </div>
         ))}
       </section>

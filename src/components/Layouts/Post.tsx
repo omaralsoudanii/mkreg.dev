@@ -38,7 +38,7 @@ export default function PostLayout({
                 </time>
               </dd>
             </dl>
-            <h1 className="post-title mb-8 sm:mb-16">{title}</h1>
+            <h1 className="page-heading mb-8 sm:mb-16">{title}</h1>
           </div>
         </header>
         <div
@@ -63,7 +63,7 @@ export default function PostLayout({
                       <dd className="mr-3  py-0">
                         <NextLink
                           href={Environment.social.github}
-                          className="text-link inline-block text-base "
+                          className="primary-link inline-block text-base "
                         >
                           Github
                         </NextLink>
@@ -72,7 +72,7 @@ export default function PostLayout({
                       <dd className="mr-3 py-0">
                         <NextLink
                           href={Environment.social.twitter}
-                          className="text-link inline-block text-base "
+                          className="primary-link inline-block text-base "
                         >
                           Twitter
                         </NextLink>
@@ -96,7 +96,7 @@ export default function PostLayout({
                 <div className="flex flex-wrap">
                   {tags.map((t: string) => (
                     <NextLink
-                      className="mr-4 !text-sm my-1 text-link"
+                      className="mr-4 !text-sm my-1 primary-link"
                       key={t}
                       href={`/tags/${slugify(t)}`}
                     >
@@ -115,7 +115,7 @@ export default function PostLayout({
                     </h2>
                     <div>
                       <NextLink
-                        className=" text-base text-link"
+                        className=" text-base primary-link"
                         href={`/writing/${prev.slug}`}
                       >
                         {prev.title}
@@ -130,7 +130,7 @@ export default function PostLayout({
                     </h2>
                     <div>
                       <NextLink
-                        className="text-link text-base"
+                        className="primary-link text-base"
                         href={`/writing/${next.slug}`}
                       >
                         {next.title}

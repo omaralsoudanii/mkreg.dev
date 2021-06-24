@@ -1,12 +1,12 @@
 const Bookmarks = [
   {
-    title: `Chmod Calculator`,
+    title: `Chmod calculator`,
     desc: `Convert Linux file permissions between different formats`,
     url: `https://chmod-calculator.com/`,
     icon: 'Linux',
   },
   {
-    title: `SSL Labs`,
+    title: `SSL labs`,
     desc: `Test your SSL certificate strength`,
     url: `https://www.ssllabs.com/ssltest/`,
     icon: 'Openssl',
@@ -18,7 +18,7 @@ const Bookmarks = [
     icon: 'Mozilla',
   },
   {
-    title: `AWS EC2 Comparison`,
+    title: `AWS EC2 comparison`,
     desc: `A simple page where you can compare AWS EC2 instances using different filters and variables`,
     url: `https://instances.vantage.sh/`,
     icon: 'Aws',
@@ -30,7 +30,7 @@ const Bookmarks = [
     icon: 'Cloudflare',
   },
   {
-    title: `NGINX configs`,
+    title: `NGINX optimized configs`,
     desc: `Out of the box optimized and sane configuration for NGINX. Explained and documented`,
     url: `https://github.com/h5bp/server-configs-nginx`,
     icon: 'Github',
@@ -43,7 +43,7 @@ const Bookmarks = [
   },
   {
     title: `Fastify boilerplate`,
-    desc: `Fastify, the new kid in town. This is a feature-complete application with well-structured and documented code. Made by one of the lead maintainers of the framework`,
+    desc: `This is a feature-complete Fastify application with well-structured and documented code. Made by one of the lead maintainers of the framework`,
     url: `https://github.com/delvedor/fastify-example/`,
     icon: 'Fastify',
   },
@@ -66,7 +66,7 @@ const Bookmarks = [
     icon: 'Mysql',
   },
   {
-    title: `NGINX High throughput and low latency`,
+    title: `NGINX high-throughput`,
     desc: `From a Dropbox engineer, a must-read article for infrastructure engineers, about optimizing NGINX high-throughput.`,
     url: `https://dropbox.tech/infrastructure/optimizing-web-servers-for-high-throughput-and-low-latency/`,
     icon: 'Dropbox',
@@ -84,13 +84,13 @@ const Bookmarks = [
     icon: 'Medium',
   },
   {
-    title: `Designing ElasticSearch Clusters`,
+    title: `Designing ElasticSearch clusters`,
     desc: `Pros and cons about ElasticSearch clusters design architectures. Something to consider before integrating Elastic into your stack`,
     url: `https://thoughts.t37.net/designing-the-perfect-elasticsearch-cluster-the-almost-definitive-guide-e614eabc1a87/`,
     icon: 'Medium',
   },
   {
-    title: `Simple Icons`,
+    title: `Simple icons`,
     desc: `The site I am using for the icons you see. It has over 1500 Free SVG icons for popular brands all on one page`,
     url: `https://simpleicons.org/`,
     icon: 'Simpleicons',
@@ -120,13 +120,13 @@ const Bookmarks = [
     icon: 'Twilio',
   },
   {
-    title: `Serving web services the hard way`,
+    title: `Your only Web Server`,
     desc: `The definitive guide to serve and optimize web services while maintaining stability`,
     url: `https://nginx.org/en/docs/`,
     icon: 'Nginx',
   },
   {
-    title: `The Art of Scalability`,
+    title: `The Art of scalability`,
     desc: `Comprehensive, proven approach to scale any software service`,
     url: `https://cbonte.github.io/haproxy-dconv/2.4/intro.html`,
     icon: 'Haproxy',

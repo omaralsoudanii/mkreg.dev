@@ -24,7 +24,7 @@ export default function Writing({ posts }) {
       <Seo data={meta} />
       <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
         <header>
-          <h1 className="post-title !mb-0">Writing</h1>
+          <h1 className="page-heading !mb-0">Writing</h1>
         </header>
         <p>
           Stuff I write about programming, software with a slight hint of salt.
@@ -34,7 +34,7 @@ export default function Writing({ posts }) {
         </p>
         <p className="self-end">
           <Link href="/tags">
-            <a className="mr-1 text-link">Browse by Tags</a>
+            <a className="mr-1 primary-link">Browse by Tags</a>
           </Link>
         </p>
       </section>

@@ -1,4 +1,5 @@
-import '@/styles/main.css'
+import '@/styles/global.css'
+
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
