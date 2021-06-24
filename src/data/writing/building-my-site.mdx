@@ -4,18 +4,17 @@ date: '2021-04-27'
 lastmod: '2021-06-17'
 summary: "High level overview of building and developing my personal site, coding and infrastructure wise. Lessons learned and acknowledgments to resources I used varying from tutorials to personal portfolios that I liked their design"
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
-image: '/static/images/writing/building-this-site/building-mkreg-ts.png'
+image: '/static/images/writing/building-this-site/building-mkreg.jpg'
 ---
 
-![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg-ts.png)
-
-## The realization 
+## Introduction
 
 **Front-end** is harder and more complex than what most programmers who don't do any **UI/UX** stuff think. I was one of those until I actually had to build one.
 This a high level talk about building and developing my personal site. Coding and infrastructure wise.
 
+![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.jpg)
 
-## The clueless research
+## Research phase
 
 No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. 
 
@@ -29,17 +28,17 @@ I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and 
 
 To be fair it boiled down to the fact that **I just knew React syntax**, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
 
-## Technologies used
+## Technologies
 
 > This post will be updated from time to time as tech emerges and new tooling is used
 
-- [HAProxy](https://www.haproxy.org/)  HAProxy is not just a **"loadbalancer"**, it's the perfect combo with Cloudflare.
+- [HAProxy](https://www.haproxy.org/)  HAProxy is not just a **"loadbalancer"**. It's the perfect combo with Cloudflare.
 
 -  [~~NGINX~~](https://nginx.org/)  Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
 
   Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
 
-  > If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Not gonna even dispute it. And this is coming from someone who puts NGINX on his best softwares he used.
+  > If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his best softwares he used.
 
 - [Docker](https://www.docker.com/) You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure. 
 
@@ -79,7 +78,7 @@ To be fair it boiled down to the fact that **I just knew React syntax**, I don't
 
 ## Coding and best practices
 
-This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code. 
+This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are.
 
 However if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
 
@@ -87,7 +86,7 @@ This is my way of learning things. I read, develop then start progressing in a f
 
 With time, the code should be cleaner by removing some technical debts or using the proper way to implement something. 
 
-If you wanna contribute, fix stuff, or whatever feel free to do so. The code is open sourced on GitHub.
+If you wanna contribute, fix stuff, or whatever feel free to do so. The code is open-sourced on GitHub.
 
 <Card 
     title="omaralsoudanii/mkreg.dev"

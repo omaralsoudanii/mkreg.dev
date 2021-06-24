@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
-      <div className="flex flex-col justify-center min-h-screen">
+      <div className="flex flex-col justify-between min-h-screen">
         <header className="sm:flex py-12 mb-6 sm:items-center sm:justify-between">
           <div>
             <a href="#skip" className="skip-content-nav">

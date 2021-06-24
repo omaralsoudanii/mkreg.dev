@@ -9,11 +9,11 @@ import NextLink from '@/components/NextLink'
 
 export default function Footer() {
   const iconStyle =
-    'fill-current text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 h-6 w-6'
+    'fill-current text-gray-700 dark:text-gray-200 mx-1 hover:text-blue-600 dark:hover:text-blue-400 h-[1.65rem] w-[1.65rem]'
   return (
-    <footer className="mt-16">
+    <footer>
       <div className="flex flex-col items-center py-4 mt-16">
-        <div className="flex mb-3 space-x-4">
+        <div className="flex mb-4 space-x-4">
           <NextLink
             className="no-underline"
             href={`mailto:${Environment.social.mail}`}
@@ -42,20 +42,12 @@ export default function Footer() {
             <SvgTwitter className={iconStyle} />
           </NextLink>
         </div>
-        <div className="flex space-x-2 mb-4 text-sm text-gray-500 dark:text-gray-400">
+        <div className="flex space-x-1 mb-8  font-medium text-base text-gray-500 dark:text-gray-400">
           <div>{Environment.ogTitle}</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
           <div>MK</div>
-        </div>
-        <div className="mb-8">
-          <NextLink
-            href="/"
-            className="no-underline text-base font-medium text-gray-500 dark:text-gray-400"
-          >
-            Home
-          </NextLink>
         </div>
       </div>
     </footer>
