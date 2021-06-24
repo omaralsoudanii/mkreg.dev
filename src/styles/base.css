@@ -4,6 +4,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+#__next {
+  @apply flex flex-col justify-between min-h-full bg-white dark:bg-gray-900;
+}
+
 @layer base {
   .prose .anchor {
     @apply invisible;

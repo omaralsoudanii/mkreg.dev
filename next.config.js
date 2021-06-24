@@ -1,5 +1,4 @@
 module.exports = {
-  webpack5: true,
   strictPostcssConfiguration: true,
   eslint: {
     ignoreDuringBuilds: true,
