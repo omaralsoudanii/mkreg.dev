@@ -26,7 +26,7 @@ export default function PostLayout({
     <div>
       <Seo data={meta} />
       <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-        <header id="skip" className="xl:pb-6">
+        <header id="skip" className="pb-6 xl:pb-8">
           <div className="space-y-2 text-center">
             <dl>
               <dt className="sr-only">Published on</dt>

@@ -82,14 +82,6 @@ body {
     @apply hidden sm:inline absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
   }
 
-  .footer-grid {
-    @apply grid grid-cols-1 text-left py-12 lg:gap-20 m-auto lg:items-stretch lg:text-center lg:grid-cols-3;
-  }
-
-  .footer-column {
-    @apply flex flex-col items-start  space-y-8 py-4 px-2 lg:items-center;
-  }
-
   .nav-default {
     @apply flex py-4 text-base font-medium text-primary;
   }
