@@ -143,7 +143,7 @@ body {
   }
 
   .link-unstyled {
-    @apply w-auto font-medium text-primary no-underline lg:link-transition !important;
+    @apply w-auto font-medium text-primary no-underline !important;
   }
 
   .link-unstyled:hover {
@@ -151,7 +151,7 @@ body {
   }
 
   .primary-link {
-    @apply font-medium w-auto text-blue-600 no-underline dark:text-blue-400 lg:link-transition !important;
+    @apply font-medium w-auto text-blue-600 no-underline dark:text-blue-400 !important;
   }
 
   .primary-link:hover {
@@ -175,7 +175,7 @@ body {
   }
 
   .link-hover-transition {
-    transition: box-shadow 100ms ease 0s;
+    transition: box-shadow 300ms ease 0s;
   }
 
   .clamp {
