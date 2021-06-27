@@ -46,7 +46,7 @@ export default function Tags({ sortedData }) {
             <div className="flex space-x-6 flex-row">
               {item.characterTags.map((tag) => (
                 <Tag
-                  className="!my-0 text-base !py-3"
+                  className="!my-0 text-base !pt-3"
                   key={tag.slug}
                   {...tag}
                 />
