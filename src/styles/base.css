@@ -1,8 +1,11 @@
 @tailwind base;
 
-body {
+html {
+  @apply antialiased;
+  touch-action: manipulation;
   text-rendering: optimizeLegibility;
 }
+
 
 #__next {
   @apply flex flex-col h-full justify-between bg-white dark:bg-gray-900;
