@@ -4,8 +4,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-#__next {
+/* #__next {
   @apply flex flex-col h-full justify-between bg-white dark:bg-gray-900;
+} */
+
+#__next {
+  @apply bg-white dark:bg-gray-900;
 }
 
 @layer base {
