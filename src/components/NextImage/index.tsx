@@ -22,7 +22,6 @@ const NextImage = ({
     width={width}
     height={height}
     layout={layout}
-    sizes={`100vw`}
     quality={quality}
   />
 )

@@ -15,7 +15,7 @@ module.exports = () => (tree) => {
       // only local files
       if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
         const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
-
+        const quality = 75
         // Convert original node to next/image
         imageNode.type = 'jsx'
         imageNode.value = `<Image
@@ -23,8 +23,8 @@ module.exports = () => (tree) => {
           src={\`${imageNode.url}\`}
           width={${dimensions.width}}
           height={${dimensions.height}}
+          quality={${quality}}
           layout="responsive"
-          sizes="100vw"
       />`
 
         // Change node type from p to div to avoid nesting error

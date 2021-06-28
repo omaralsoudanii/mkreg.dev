@@ -12,7 +12,7 @@ export default function MK() {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark sm:prose-lg lg:prose-xl w-full max-w-none sm:max-w-prose mx-auto"
+      className="prose dark:prose-dark sm:prose-lg lg:prose-xl w-full max-w-none mx-auto"
     >
       <Seo data={meta} />
       <header>
@@ -24,8 +24,8 @@ export default function MK() {
         <NextImage
           src="/static/images/sultan.jpg"
           alt="The Sultan of swing"
-          width={3000}
-          height={2400}
+          width={768}
+          height={614}
         />
         <p>
           Congrats on finding this page! Let me introduce you to my favorite
@@ -64,13 +64,13 @@ export default function MK() {
         <NextImage
           src="/static/images/mk.jpg"
           alt="Mark Knopfler"
-          width={1280}
-          height={915}
+          width={768}
+          height={549}
         />
         <p>
           This is a biography about
           <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>
-          and Dire Straits. Built using{' '}
+          and <strong>Dire Straits</strong>. Built using{' '}
           <strong>Hugo static sites generator</strong>, open-sourced and hosted
           on <strong>Vercel</strong>
         </p>
@@ -84,7 +84,7 @@ export default function MK() {
             Check mkreg-hugo @ Vercel
           </a>
         </p>
-        <p>Meanwhile Enjoy</p>
+        <p>Here, Hold onto this</p>
         <p className="!font-semibold !text-center">
           <a
             href={Environment.social.youtube}
@@ -92,7 +92,7 @@ export default function MK() {
             rel="noopener noreferrer"
             className="primary-link !font-semibold"
           >
-            The Golden Nugget 👏
+            Golden Nugget 👏
           </a>
         </p>
       </div>
