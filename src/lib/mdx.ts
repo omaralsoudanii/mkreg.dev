@@ -2,40 +2,14 @@ import { formatSlug, slugify } from '@/lib/utils'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
-import visit from 'unist-util-visit'
 import path from 'path'
+import mdxPrism from 'mdx-prism'
 import MDXImage from './MDXImage'
-import { Node } from 'unist'
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
 
 export async function getAllFilesName(type: string) {
   return fs.readdirSync(path.join(loc, type))
-}
-
-const tokenClassNames = {
-  tag: 'text-code-red',
-  'attr-name': 'text-code-yellow',
-  'attr-value': 'text-code-green',
-  'class-name': 'text-code-yellow',
-  namespace: 'text-code-yellow',
-  deleted: 'text-code-red',
-  operator: 'text-code-rose',
-  inserted: 'text-code-green',
-  punctuation: 'text-code-white',
-  doctype: 'text-code-gray',
-  selector: 'text-code-gray',
-  keyword: 'text-code-purple',
-  property: 'text-code-purple',
-  string: 'text-code-green',
-  function: 'text-code-blue',
-  boolean: 'text-code-red',
-  comment: 'text-gray-400 italic',
-}
-
-interface NodeProperties {
-  className?: string[]
-  style?: string | string[]
 }
 
 export async function getFileBySlug(type: string, slug?) {
@@ -60,21 +34,7 @@ export async function getFileBySlug(type: string, slug?) {
         require('remark-code-titles'),
         MDXImage,
       ],
-      rehypePlugins: [
-        require('@mapbox/rehype-prism'),
-        () => {
-          return (tree) => {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            visit(tree, 'element', (node: Node, _index, _parent) => {
-              const nodeProps = node.properties as NodeProperties
-              const [token, type] = nodeProps.className || []
-              if (token === 'token') {
-                nodeProps.className = [token, type, tokenClassNames[type]]
-              }
-            })
-          }
-        },
-      ],
+      rehypePlugins: [mdxPrism],
     },
   })
 

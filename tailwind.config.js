@@ -7,6 +7,9 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        '9/16': '56.25%',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -19,16 +22,7 @@ module.exports = {
           'IBM Plex Mono',
           'Fira Code',
           'Menlo',
-          'DejaVu Sans Mono',
-          'Bitstream Vera Sans Mono',
-          'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'Liberation Mono',
-          'Courier New',
-          'monospace',
+          ...fontFamily.mono,
         ],
         sans: ['Inter', ...fontFamily.sans],
       },
@@ -39,20 +33,11 @@ module.exports = {
         'blue-600': '0px 2px 0px #246cff',
       },
       colors: {
-        code: {
-          green: '#b2eb5c',
-          yellow: '#ffe484',
-          purple: '#d2a8ff',
-          red: '#ff7b72',
-          rose: '#FB7185',
-          blue: '#79c0ff',
-          white: '#ffffff', // no shit?
-          gray: '#f9f9f9',
-        },
         blue: {
           ...colors.blue,
           600: '#246cff',
         },
+        'code-dark': 'rgb(19, 25, 39)',
         // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
@@ -70,7 +55,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h2: {
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
             },
             h3: {
@@ -160,7 +145,7 @@ module.exports = {
             letterSpacing: theme('letterSpacing.tight'),
           },
           h2: {
-            fontWeight: theme('fontWeight.semibold'),
+            fontWeight: theme('fontWeight.bold'),
             letterSpacing: theme('letterSpacing.tight'),
           },
           h3: {

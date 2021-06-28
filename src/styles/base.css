@@ -6,7 +6,7 @@
   }
 
   body {
-    @apply antialiased;
+    @apply text-black bg-white dark:bg-gray-900 dark:text-white antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
       'calt';
     text-rendering: optimizeLegibility;
