@@ -67,18 +67,18 @@ module.exports = {
             },
             h1: {
               fontWeight: theme('fontWeight.extrabold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             h2: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             h3: {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
@@ -91,7 +91,6 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.200'),
-              fontStyle: 'normal',
             },
           },
         },
@@ -104,7 +103,7 @@ module.exports = {
               code: { color: theme('colors.blue.400') },
             },
             'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.white'),
+              color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {
@@ -134,27 +133,49 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     plugin(function ({ addBase, theme }) {
-      addBase({
-        h1: {
-          fontWeight: theme('fontWeight.extrabold'),
-          letterSpacing: theme('letterSpacing.tight'),
+      addBase([
+        {
+          '@font-face': {
+            fontFamily: 'Inter',
+            fontWeight: '100 900',
+            fontStyle: 'normal',
+            fontNamedInstance: 'Regular',
+            fontDisplay: 'swap',
+            src: 'url("/static/fonts/Inter-roman.var-latin.woff2") format("woff2")',
+          },
         },
-        h2: {
-          fontWeight: theme('fontWeight.semibold'),
-          letterSpacing: theme('letterSpacing.tight'),
+        {
+          '@font-face': {
+            fontFamily: 'Inter',
+            fontWeight: '100 900',
+            fontStyle: 'italic',
+            fontNamedInstance: 'Italic',
+            fontDisplay: 'swap',
+            src: 'url("/static/fonts/Inter-italic.var-latin.woff2") format("woff2")',
+          },
         },
-        h3: {
-          fontWeight: theme('fontWeight.semibold'),
+        {
+          h1: {
+            fontWeight: theme('fontWeight.extrabold'),
+            letterSpacing: theme('letterSpacing.tight'),
+          },
+          h2: {
+            fontWeight: theme('fontWeight.semibold'),
+            letterSpacing: theme('letterSpacing.tight'),
+          },
+          h3: {
+            fontWeight: theme('fontWeight.semibold'),
+          },
         },
-      })
+      ])
     }),
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
-          'scroll-margin-top': '15vh',
+          'scroll-margin-top': '4em',
         },
         '.scroll-spacing-lg': {
-          'scroll-margin-top': '5vh',
+          'scroll-margin-top': '1em',
         },
       }
 

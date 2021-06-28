@@ -9,7 +9,7 @@ import NextLink from '@/components/NextLink'
 
 export default function Footer() {
   const iconStyle =
-    'fill-current text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 h-6 w-6'
+    'svg-fill text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 h-6 w-6'
   return (
     <footer>
       <div className="flex flex-col items-center mt-20">

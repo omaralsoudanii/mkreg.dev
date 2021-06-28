@@ -1,34 +1,19 @@
 @tailwind base;
 
-html {
-  @apply antialiased;
-  touch-action: manipulation;
-  text-rendering: optimizeLegibility;
-}
-
-
-#__next {
-  @apply flex flex-col h-full justify-between bg-white dark:bg-gray-900;
-}
-
 @layer base {
-  .prose .anchor {
-    @apply invisible;
-    padding-left: 0.3em;
-    cursor: pointer;
+  html {
+    touch-action: manipulation;
   }
 
-  .anchor:hover {
-    @apply visible;
+  body {
+    @apply antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
+      'calt';
+    text-rendering: optimizeLegibility;
   }
 
-  .prose .anchor:after {
-    @apply text-primary;
-    content: '#';
-  }
-
-  .prose *:hover > .anchor {
-    @apply visible;
+  #__next {
+    @apply h-full bg-white dark:bg-gray-900;
   }
 
   .default-prose {
@@ -68,7 +53,7 @@ html {
   }
 
   .text-display {
-    @apply text-black dark:text-white;
+    @apply text-gray-900 dark:text-gray-100;
   }
 
   .header-sm {
@@ -197,5 +182,24 @@ html {
 
   .heading-default {
     @apply text-3xl sm:text-4xl text-display !important;
+  }
+
+  .prose .anchor {
+    @apply invisible;
+    padding-left: 0.3em;
+    cursor: pointer;
+  }
+
+  .anchor:hover {
+    @apply visible;
+  }
+
+  .prose .anchor:after {
+    @apply text-primary;
+    content: '#';
+  }
+
+  .prose *:hover > .anchor {
+    @apply visible;
   }
 }

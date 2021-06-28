@@ -6,12 +6,10 @@ const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex flex-col justify-between min-h-screen">
-        <header className="sm:flex py-12 mb-6 sm:items-center sm:justify-between">
-          <div>
-            <a href="#skip" className="skip-content-nav">
-              Skip to content
-            </a>
-          </div>
+        <header className="sm:flex py-12 mb-6 sm:items-center sm:justify-end">
+          <a href="#skip" className="skip-content-nav">
+            Skip to content
+          </a>
           <Header />
         </header>
         <main className="mb-auto">{children}</main>
