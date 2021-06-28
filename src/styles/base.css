@@ -3,6 +3,7 @@
 @layer base {
   html {
     touch-action: manipulation;
+    scroll-behavior: smooth;
   }
 
   body {
