@@ -42,8 +42,10 @@ module.exports = {
           300: 'rgb(214, 216, 220)',
           ...colors.coolGray,
         },
-        dark: 'rgb(23 25 28)',
+        // dark: 'rgb(23 25 28)',
         // dark: 'rgb(22, 27, 34)',
+        dark: 'rgb(16, 21, 31)',
+        // dark: 'rgb(18 22 33)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
       typography: (theme) => ({
@@ -79,9 +81,11 @@ module.exports = {
             },
             strong: { color: theme('colors.gray.900') },
             blockquote: {
-              color: theme('colors.gray.700'),
+              color: theme('colors.gray.800'),
               borderLeftColor: theme('colors.gray.200'),
             },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
           },
         },
         dark: {
@@ -112,7 +116,7 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.300'),
+              color: theme('colors.gray.200'),
               borderLeftColor: theme('colors.gray.700'),
             },
           },
