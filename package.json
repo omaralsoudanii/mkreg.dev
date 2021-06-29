@@ -65,7 +65,8 @@
     "remark-stringify": "^9.0.1",
     "typescript": "4.3.4",
     "unified": "^9.2.1",
-    "unist-util-visit": "2.0.3"
+    "unist-util-visit": "2.0.3",
+    "webpack": "^5.41.1"
   },
   "lint-staged": {
     "*.+(ts|tsx,js)": [
