@@ -2,18 +2,22 @@
 
 @layer base {
   html {
+    @apply text-base;
     touch-action: manipulation;
+    overflow-y: scroll;
   }
 
   body {
-    @apply text-black bg-white dark:bg-gray-900 dark:text-white antialiased;
+    @apply text-black bg-white dark:bg-dark dark:text-white antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
       'calt';
     text-rendering: optimizeLegibility;
+    letter-spacing: .3px;
+    word-wrap: break-word;
   }
 
   #__next {
-    @apply h-full bg-white dark:bg-gray-900;
+    @apply h-full bg-white dark:bg-dark;
   }
 
   .default-prose {
@@ -57,7 +61,7 @@
   }
 
   .header-sm {
-    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-200 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-200 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {

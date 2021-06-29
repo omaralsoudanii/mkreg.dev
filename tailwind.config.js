@@ -38,6 +38,11 @@ module.exports = {
           600: '#246cff',
         },
         'code-dark': 'rgb(19, 25, 39)',
+        gray: {
+          300: 'rgb(214, 216, 220)',
+          ...colors.coolGray,
+        },
+        dark: 'rgb(23 25 28)',
         // dark: 'rgb(22, 27, 34)',
         // 'dark-blue': 'rgb(17,18,19)',
       },
@@ -55,7 +60,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h2: {
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             h3: {
@@ -145,11 +150,12 @@ module.exports = {
             letterSpacing: theme('letterSpacing.tight'),
           },
           h2: {
-            fontWeight: theme('fontWeight.bold'),
-            letterSpacing: theme('letterSpacing.tight'),
+            fontWeight: theme('fontWeight.semibold'),
+            letterSpacing: '-.02em',
           },
           h3: {
-            fontWeight: theme('fontWeight.semibold'),
+            fontWeight: theme('fontWeight.medium'),
+            letterSpacing: '-.02em',
           },
         },
       ])
