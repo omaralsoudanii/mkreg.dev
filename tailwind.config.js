@@ -7,9 +7,6 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
-      spacing: {
-        '9/16': '56.25%',
-      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -37,9 +34,9 @@ module.exports = {
           ...colors.blue,
           600: '#246cff',
         },
-        'code-dark': 'rgb(13, 17, 23)',
+        'code-dark': 'rgb(22, 27, 34)',
         // dark: 'rgb(23 25 28)',
-        dark: 'rgb(22, 27, 34)',
+        dark: '#0e141b',
         // darkest: 'rgb(13, 17, 23)',
         // dark: 'rgb(16, 21, 31)',
         // dark: 'rgb(18 22 33)',
@@ -76,10 +73,11 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.500'),
             },
-            strong: { color: theme('colors.gray.900') },
+            strong: { color: theme('colors.gray.700') },
             blockquote: {
               color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.200'),
+              fontStyle: 'normal',
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
@@ -103,7 +101,7 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.gray.100') },
+            strong: { color: theme('colors.gray.300') },
             thead: {
               color: theme('colors.gray.100'),
             },
@@ -152,11 +150,11 @@ module.exports = {
           },
           h2: {
             fontWeight: theme('fontWeight.semibold'),
-            letterSpacing: '-.02em',
+            letterSpacing: theme('letterSpacing.tight'),
           },
           h3: {
-            fontWeight: theme('fontWeight.medium'),
-            letterSpacing: '-.02em',
+            fontWeight: theme('fontWeight.semibold'),
+            letterSpacing: theme('letterSpacing.tight'),
           },
         },
       ])

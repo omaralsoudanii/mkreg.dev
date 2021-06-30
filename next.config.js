@@ -3,7 +3,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  compress: false,
+  compress: process.env.compress === 'true',
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,
