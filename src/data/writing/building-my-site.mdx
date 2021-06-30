@@ -1,70 +1,86 @@
 ---
 title: 'Building my site'
 date: '2021-04-27'
-lastmod: '2021-06-17'
+lastmod: '2021-06-30'
 summary: "High level overview of building and developing my personal site, coding and infrastructure wise. Lessons learned and acknowledgments to resources I used varying from tutorials to personal portfolios that I liked their design"
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
 image: '/static/images/writing/building-this-site/building-mkreg.jpg'
 ---
 
-## Introduction
-
-**Front-end** is harder and more complex than what most programmers who don't do any **UI/UX** stuff think. I was one of those until I actually had to build one.
-This a high level talk about building and developing my personal site. Coding and infrastructure wise.
-
 ![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.jpg)
 
-## Research phase
-
-No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. 
-
-I consider in-depth knowledge when building Front-end applications is valuable for someone who focuses on Back-end,   you gotta optimize delivery for the Front-end app after all, whether it's infrastructure based or code wise based.
-
-I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about React like 4 years ago when everything was a class. 
-
-So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). 
-
-I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and **Next** seemed to be always ahead, used more and bigger sites were using it. 
-
-To be fair it boiled down to the fact that **I just knew React syntax**, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
-
-## Technologies
+Front-end is harder and more complex than what most programmers who don't do any UI/UX stuff think. I was one of those until I actually had to build one. This a high level talk about building and developing my personal site. Coding and infrastructure wise.
 
 > This post will be updated from time to time as tech emerges and new tooling is used
 
-- [HAProxy](https://www.haproxy.org/)  HAProxy is not just a **"loadbalancer"**. It's the perfect combo with Cloudflare.
+## Table of contents
 
--  [~~NGINX~~](https://nginx.org/)  Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
+1.  [Research phase](/writing/building-my-site#research-phase)
+2.  [Technologies](/writing/building-my-site#technologies)
+3.  [FAQ](/writing/building-my-site#faq)
+4.  [Coding and best practices](/writing/building-my-site#coding-and-best-practices)
+5.  [Lessons learned](/writing/building-my-site#lessons-learned)
+6.  [Acknowledgment](/writing/building-my-site#acknowledgment)
+7.  [Infrastructure](/writing/building-my-site#infrastructure)
+8.  [What's next](/writing/building-my-site#whats-next)
 
-  Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
+## Research phase
 
-  > If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his best softwares he used.
+No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend, you gotta optimize delivery for the Frontend app after all, whether it's infrastructure based or code wise based.
 
-- [Docker](https://www.docker.com/) You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure. 
+I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about **React** like 4 years ago when everything was a class. So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). 
 
-  Or one of my favorites: I declare that this image layer is not in the **build cache**, I am going to rebuild the whole thing now. 
+I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and [Next.js](https://nextjs.org/) seemed to be always ahead, used more and bigger sites were using it. **To be fair it boiled down to the fact that I just knew React syntax**, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
 
-  Please have a seat till rebuilding every image included in your build is done, then you can launch your **Dockerized app**!
+## Technologies
 
-  **Best regards, **
+### HAProxy
 
-  **Docker buildx**
+HAProxy is not just a **"loadbalancer"**. It's the perfect combo with Cloudflare.
 
-- [Cloudflare](https://cloudflare.com/) Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff, to the degree that i believe their free plan is a steal. 
+### ~~NGINX~~ ###
 
-  Kudos to Cloudflare for having this amazing service. 
+Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
 
-- [TypeScript](https://www.typescriptlang.org/) Well, why not?
+Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
 
-- [Next.js](https://nextjs.org/) 🤔
+> If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his top 3 favorite software.
 
-- [MDX](https://mdxjs.com/) Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
+### Docker
 
-- [Tailwindcss](https://tailwindcss.com/) Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. 
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure. 
 
-  Sadly I'm not that guy so I suffered trying to.... uhhh, you know the **CSS** stuff where you put font-size and hope it works on mobile too, and why the hell this **H1** is BIGGER than everything???
+Or one of my favorites: 
 
-- [Vercel](https://vercel.com/)  Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
+I declare that this image layer is not in the **build cache**, I am going to rebuild the whole thing now. Please have a seat till rebuilding every image included in your build is done, then you can launch your **Dockerized app**!
+
+**Best regards, **
+
+**Docker buildx**
+
+### Cloudflare
+
+Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff, to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
+
+### TypeScript
+
+Well, why not?
+
+### Next.js
+
+Hmm 🤔
+
+### MDX
+
+Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
+
+### Tailwindcss
+
+Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell this **H1** is BIGGER than everything???
+
+### Vercel
+
+Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
 
 ## FAQ
 
@@ -105,9 +121,7 @@ If you wanna contribute, fix stuff, or whatever feel free to do so. The code is 
 
 ## Acknowledgment
 
-I used a lot of things from these resources, sometimes copy pasta of some component design, maybe just some helpers code snippets, or simply by looking at the way things are handled. 
-
-In the end the app deviated from those due to the rapid learning curve I gained while developing.
+I used a lot of things from these resources, sometimes copy pasta of some component design, maybe just some helpers code snippets, or simply by looking at the way things are handled. In the end the app deviated from those due to the rapid learning curve I gained while developing.
 
 - [Brian Lovin](https://brianlovin.com/)
 - [Lee Robinson](https://leerob.io/)
@@ -123,12 +137,10 @@ What? of course I included my self, otherwise who do you think will do all the c
 
 ## Infrastructure
 
-I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles. 
-
-I am still figuring out how to structure the content, however the tools mentioned above is just running on a **$6 VPS**, if you wanna learn more about it, feel free to contact me.
+I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles. I am still figuring out how to structure the content, however if you wanna learn more about it, feel free to contact me.
 
 ## What's next
 
-I will keep iterating and enhancing the app, code-wise, **UI/UX** (yeah right...), tooling and content.
+I will keep iterating and enhancing the app, code-wise, UI/UX (yeah right...), tooling and content.
 
 If you have some suggestions then contact me!
