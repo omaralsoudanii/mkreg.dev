@@ -2,9 +2,7 @@
 
 @layer base {
   html {
-    @apply text-base;
     touch-action: manipulation;
-    overflow-y: scroll;
   }
 
   body {
@@ -12,7 +10,6 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
       'calt';
     text-rendering: optimizeLegibility;
-    word-wrap: break-word;
   }
 
   #__next {

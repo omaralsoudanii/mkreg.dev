@@ -55,7 +55,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h3: {
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.medium'),
               color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
@@ -72,7 +72,6 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.200'),
-              fontStyle: 'normal',
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
@@ -96,7 +95,7 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.gray.300') },
+            strong: { color: theme('colors.gray.200') },
             thead: {
               color: theme('colors.gray.100'),
             },
@@ -145,11 +144,11 @@ module.exports = {
           },
           h2: {
             fontWeight: theme('fontWeight.semibold'),
-            letterSpacing: theme('letterSpacing.tight'),
+            letterSpacing: '-.02em',
           },
           h3: {
-            fontWeight: theme('fontWeight.semibold'),
-            letterSpacing: theme('letterSpacing.tight'),
+            fontWeight: theme('fontWeight.medium'),
+            letterSpacing: '-.015em',
           },
         },
       ])

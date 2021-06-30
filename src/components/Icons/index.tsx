@@ -1,35 +1,33 @@
-import dynamic from 'next/dynamic'
-
-export const Aws = dynamic(() => import('./Aws'))
-export const Cloudflare = dynamic(() => import('./Cloudflare'))
-export const Curl = dynamic(() => import('./Curl'))
-export const Docker = dynamic(() => import('./Docker'))
-export const Dropbox = dynamic(() => import('./Dropbox'))
-export const Elastic = dynamic(() => import('./Elastic'))
-export const Fastify = dynamic(() => import('./Fastify'))
-export const Go = dynamic(() => import('./Go'))
-export const Haproxy = dynamic(() => import('./Haproxy'))
-export const Java = dynamic(() => import('./Java'))
-export const Javascript = dynamic(() => import('./Javascript'))
-export const Letsencrypt = dynamic(() => import('./Letsencrypt'))
-export const Linux = dynamic(() => import('./Linux'))
-export const Mariadb = dynamic(() => import('./Mariadb'))
-export const Medium = dynamic(() => import('./Medium'))
-export const Mozilla = dynamic(() => import('./Mozilla'))
-export const Mysql = dynamic(() => import('./Mysql'))
-export const Nextjs = dynamic(() => import('./Nextjs'))
-export const Nginx = dynamic(() => import('./Nginx'))
-export const Nodejs = dynamic(() => import('./Nodejs'))
-export const Openssl = dynamic(() => import('./Openssl'))
-export const React = dynamic(() => import('./React'))
-export const Simpleicons = dynamic(() => import('./Simpleicons'))
-export const Stackoverflow = dynamic(() => import('./Stackoverflow'))
-export const Twilio = dynamic(() => import('./Twilio'))
-export const Typescript = dynamic(() => import('./Typescript'))
-export const Vercel = dynamic(() => import('./Vercel'))
-export const Github = dynamic(() => import('./Github'))
-export const Gmail = dynamic(() => import('./Gmail'))
-export const Rss = dynamic(() => import('./Rss'))
-export const Linkedin = dynamic(() => import('./Linkedin'))
-export const Youtube = dynamic(() => import('./Youtube'))
-export const Twitter = dynamic(() => import('./Twitter'))
+export { default as Aws } from './Aws'
+export { default as Cloudflare } from './Cloudflare'
+export { default as Curl } from './Curl'
+export { default as Docker } from './Docker'
+export { default as Dropbox } from './Dropbox'
+export { default as Elastic } from './Elastic'
+export { default as Fastify } from './Fastify'
+export { default as Github } from './Github'
+export { default as Go } from './Go'
+export { default as Haproxy } from './Haproxy'
+export { default as Java } from './Java'
+export { default as Javascript } from './Javascript'
+export { default as Letsencrypt } from './Letsencrypt'
+export { default as Linux } from './Linux'
+export { default as Mariadb } from './Mariadb'
+export { default as Medium } from './Medium'
+export { default as Mozilla } from './Mozilla'
+export { default as Mysql } from './Mysql'
+export { default as Nextjs } from './Nextjs'
+export { default as Nginx } from './Nginx'
+export { default as Nodejs } from './Nodejs'
+export { default as Openssl } from './Openssl'
+export { default as React } from './React'
+export { default as Simpleicons } from './Simpleicons'
+export { default as Stackoverflow } from './Stackoverflow'
+export { default as Twilio } from './Twilio'
+export { default as Typescript } from './Typescript'
+export { default as Vercel } from './Vercel'
+export { default as Twitter } from './Twitter'
+export { default as Youtube } from './Youtube'
+export { default as Linkedin } from './Linkedin'
+export { default as Rss } from './Rss'
+export { default as Gmail } from './Gmail'

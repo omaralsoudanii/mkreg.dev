@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/static/fonts/Inter15-roman.var.woff2",
+      "source": "/static/fonts/Inter-roman.var-latin.woff2",
       "headers": [
         {
           "key": "Cache-Control",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "source": "/static/fonts/Inter15-roman-italic.var.woff2",
+      "source": "/static/fonts/Inter-italic.var-latin.woff2",
       "headers": [
         {
           "key": "Cache-Control",
