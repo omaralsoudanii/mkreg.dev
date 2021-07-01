@@ -34,11 +34,11 @@ I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and 
 
 ## Technologies
 
-### HAProxy
+- ### HAProxy
 
 HAProxy is not just a **"loadbalancer"**. It's the perfect combo with Cloudflare.
 
-### ~~NGINX~~ ###
+- ###  ~~NGINX~~ ###
 
 Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
 
@@ -46,7 +46,7 @@ Updated: Currently I removed NGINX since I already have HAProxy to serve the app
 
 > If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his top 3 favorite software.
 
-### Docker
+- ### Docker
 
 You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure. 
 
@@ -54,31 +54,31 @@ Or one of my favorites:
 
 I declare that this image layer is not in the **build cache**, I am going to rebuild the whole thing now. Please have a seat till rebuilding every image included in your build is done, then you can launch your **Dockerized app**!
 
-**Best regards, **
+Best regards, 
 
-**Docker buildx**
+Docker buildx
 
-### Cloudflare
+- ### Cloudflare
 
 Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff, to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
 
-### TypeScript
+- ### TypeScript
 
 Well, why not?
 
-### Next.js
+- ### Next.js
 
 Hmm 🤔
 
-### MDX
+- ### MDX
 
 Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
 
-### Tailwindcss
+- ### Tailwindcss
 
 Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell this **H1** is BIGGER than everything???
 
-### Vercel
+- ### Vercel
 
 Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
 
