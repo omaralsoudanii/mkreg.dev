@@ -26,5 +26,6 @@ jobs:
           password: ${{ secrets.VMI_PASS }}
           script: |
             echo $CR_PAT | docker login ghcr.io -u omaralsoudani --password-stdin
+            mkcd
             docker-compose pull mk-next
             docker-compose up -d --no-deps
