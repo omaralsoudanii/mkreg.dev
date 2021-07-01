@@ -51,11 +51,11 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h2: {
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
             },
             h3: {
-              fontWeight: theme('fontWeight.medium'),
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
@@ -95,7 +95,7 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.gray.200') },
+            strong: { color: theme('colors.gray.300') },
             thead: {
               color: theme('colors.gray.100'),
             },
@@ -143,12 +143,12 @@ module.exports = {
             letterSpacing: theme('letterSpacing.tight'),
           },
           h2: {
-            fontWeight: theme('fontWeight.semibold'),
-            letterSpacing: '-.02em',
+            fontWeight: theme('fontWeight.bold'),
+            letterSpacing: theme('letterSpacing.tight'),
           },
           h3: {
-            fontWeight: theme('fontWeight.medium'),
-            letterSpacing: '-.015em',
+            fontWeight: theme('fontWeight.semibold'),
+            letterSpacing: '-.02em',
           },
         },
       ])
