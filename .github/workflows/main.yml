@@ -1,0 +1,31 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u omaralsoudanii --password-stdin
+      - name: Pull image to use as a cache
+        run: docker pull ghcr.io/omaralsoudanii/mkreg:latest || exit 0
+      - name: Build Docker image
+        run: docker build . --cache-from ghcr.io/omaralsoudanii/mkreg:latest --tag ghcr.io/omaralsoudanii/mkreg:latest
+      - name: Push the image to GitHub Container Registry
+        run: docker push ghcr.io/omaralsoudanii/mkreg:latest
+      - name: VMI - pull image and run app containters
+        uses: fifsky/ssh-action@master
+        with:
+          host: ${{ secrets.VMI_ADDR }}
+          user: ghci 
+          key: ${{ secrets.VMI_PASS }}
+          command: |
+            echo $CR_PAT | docker login ghcr.io -u omaralsoudani --password-stdin
+            mkcd
+            cd docker
+            docker-compose pull mk-next
+            docker-compose up -d --no-deps
