@@ -19,12 +19,12 @@ jobs:
       - name: Push the image to GitHub Container Registry
         run: docker push ghcr.io/omaralsoudanii/mkreg:latest
       - name: VMI - pull image and run app containters
-        uses: appleboy/ssh-action@master
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.VMI_ADDR }}
-          username: ghci 
-          password: ${{ secrets.VMI_PASS }}
-          script: |
+          user: ghci 
+          key: ${{ secrets.VMI_PASS }}
+          command: |
             echo $CR_PAT | docker login ghcr.io -u omaralsoudani --password-stdin
             mkcd
             cd docker
