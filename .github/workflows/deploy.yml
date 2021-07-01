@@ -15,9 +15,7 @@ jobs:
       - name: Pull image to use as a cache
         run: docker pull ghcr.io/omaralsoudanii/mkreg:latest || exit 0
       - name: Build Docker image
-        run: | 
-         mkcd
-         docker build . --cache-from ghcr.io/omaralsoudanii/mkreg:latest --tag ghcr.io/omaralsoudanii/mkreg:latest
+        run: docker build . --cache-from ghcr.io/omaralsoudanii/mkreg:latest --tag ghcr.io/omaralsoudanii/mkreg:latest
       - name: Push the image to GitHub Container Registry
         run: docker push ghcr.io/omaralsoudanii/mkreg:latest
       - name: VMI - pull image and run app containters
