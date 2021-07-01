@@ -2,7 +2,6 @@ name: Deploy
 on:
   push:
     branches:
-      # Run deploy job on every push to the main branch
       - main
 jobs:
   deploy:
