@@ -55,7 +55,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h3: {
-              fontWeight: theme('fontWeight.semibold'),
+              fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
@@ -144,10 +144,10 @@ module.exports = {
           },
           h2: {
             fontWeight: theme('fontWeight.bold'),
-            letterSpacing: theme('letterSpacing.tight'),
+            letterSpacing: '-.02em',
           },
           h3: {
-            fontWeight: theme('fontWeight.semibold'),
+            fontWeight: theme('fontWeight.bold'),
             letterSpacing: '-.02em',
           },
         },
