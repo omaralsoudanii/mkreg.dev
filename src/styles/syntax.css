@@ -13,9 +13,9 @@
 .mdx-marker {
   @apply block px-4 -mx-4 bg-gray-50 border-l-4 border-gray-900 dark:border-gray-100 dark:bg-code-dark;
 }
-
+code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-100  bg-gray-50 text-gray-900 dark:text-gray-100 dark:border-opacity-30 dark:border-gray-700 dark:bg-code-dark mt-0 mb-0 font-mono;
+  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-opacity-30 dark:border-gray-700 dark:bg-code-dark mt-0 mb-0 font-mono;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -35,23 +35,6 @@ pre[class*='language-'] {
   hyphens: none;
 }
 
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection,
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  background-color: #47a3f3;
-  color: #fefefe;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  background-color: #47a3f3;
-  color: #fefefe;
-}
 
 @media print {
   code[class*='language-'],
@@ -101,7 +84,7 @@ pre[class*='language-'] {
 }
 
 .token.variable {
-  @apply text-gray-900 dark:text-gray-100;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .dark .token.number {
@@ -196,5 +179,5 @@ pre::-webkit-scrollbar {
 
 pre:not([class*='language-']),
 code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-code-dark;
+  @apply text-gray-700 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-code-dark;
 }

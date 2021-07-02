@@ -84,12 +84,16 @@ export default function PostLayout({
                   </dl>
                 </div>
               </dd>
-              <dt className="sr-only">Modified on</dt>
-              <dd className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
-                <time dateTime={lastmod}>
-                  {`Last Modified ${FormatDate(lastmod)}`}
-                </time>
-              </dd>
+              {lastmod && (
+                <>
+                  <dt className="sr-only">Modified on</dt>
+                  <dd className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
+                    <time dateTime={lastmod}>
+                      {`Last Modified ${FormatDate(lastmod)}`}
+                    </time>
+                  </dd>
+                </>
+              )}
             </dl>
             {tags && (
               <div className="py-3 xl:py-6">

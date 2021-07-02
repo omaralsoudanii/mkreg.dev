@@ -34,7 +34,7 @@ module.exports = {
           ...colors.blue,
           600: '#246cff',
         },
-        'code-dark': 'rgb(19, 25, 39)',
+        'code-dark': 'rgb(30, 35, 42)',
         dark: 'rgb(22, 27, 34)',
       },
       typography: (theme) => ({
@@ -144,11 +144,11 @@ module.exports = {
           },
           h2: {
             fontWeight: theme('fontWeight.bold'),
-            letterSpacing: '-.02em',
+            letterSpacing: theme('letterSpacing.tight'),
           },
           h3: {
-            fontWeight: theme('fontWeight.bold'),
-            letterSpacing: '-.01em',
+            fontWeight: theme('fontWeight.semibold'),
+            letterSpacing: '-.02em',
           },
         },
       ])
