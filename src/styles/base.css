@@ -141,6 +141,15 @@
   .primary-link:hover {
     @apply lg:shadow-blue-600 lg:dark:shadow-blue-400 lg:link-hover-transition;
   }
+
+  .footer-grid {
+    @apply grid grid-cols-1  py-12 lg:gap-28 m-auto lg:items-start lg:grid-cols-3;
+  }
+
+  .footer-column {
+    @apply flex flex-col items-start  space-y-8 py-4 px-2 lg:items-center;
+  }
+
 }
 
 @tailwind utilities;

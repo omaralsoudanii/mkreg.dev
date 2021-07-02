@@ -1,14 +1,15 @@
 import Bookmarks from '@/lib/bookmarks'
 import Seo from '@/components/Seo'
-import Card from '@/components/Card'
 import ProseContainer from '@/components/Layouts/ProseContainer'
-
+import dynamic from 'next/dynamic'
 function Nuggets() {
   const meta = {
     title: 'Omar Alsoudani - Nuggets',
     description: 'Resources and bookmarks for the readers',
     JsonLd: false,
   }
+
+  const Card = dynamic(() => import('../components/Card'))
 
   return (
     <ProseContainer>
