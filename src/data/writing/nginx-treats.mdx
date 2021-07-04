@@ -1,6 +1,7 @@
 ---
 title: 'NGINX Treats'
 date: '2021-07-02'
+lastmod: '2021-07-04'
 summary: "An overall overview that covers useful NGINX tips, enhancements, gotchas and best practices I've learned throughout using it for years"
 tags: ['NGINX']
 image: '/static/images/writing/nginx-treats/nginx-mkreg.png'
@@ -16,7 +17,7 @@ This article talks about the open sourced version of NGINX, an attempt to share 
 
 Although NGINX can be used as a loadbalancer (layer 4). The content here only covers layer 7 capabilities of NGINX. 
 
-> If you are curios about the layers and their numbering, it's based on the OSI model. You can read about it in details at [OSI model - Wikipedia](https://en.wikipedia.org/wiki/OSI_model)
+> If you are curious about the layers and their numbering, it's based on the OSI model. You can read about it in details at [OSI model - Wikipedia](https://en.wikipedia.org/wiki/OSI_model)
 
 ## Table of contents
 
@@ -210,7 +211,7 @@ Then we have a server block that listen to both ports 80 and 443 IPv4 and IPv6, 
 
 We provide the empty value variable for `ssl_certificate` and `ssl_certificate_key` with the addition of `ssl_ciphers aNULL` NGINX won't complain about invalid cert, because the provided cipher means no authentication required.
 
-Now any access through IP will get 444 status code error, the only problem is (again am not a security expert) using aNULL could open your server to other vulnerabilities. Now it's up to you if you want this or not, you remove the HTTPS part and use it for HTTP only, if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`
+Now any access through IP will get 444 status code error, the only problem is (again am not a security expert) using aNULL could open your server to other vulnerabilities. Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only, if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`
 
 #### Headers placement
 
@@ -274,10 +275,19 @@ Obviously this article doesn't cover everything. NGINX is one of those tools tha
 
 I might write another article about topics I didn't cover including
 
-- Dealing SSL certificate, from the issuing the cert to creating a configuration optimized for performance while maintaining security, and a bonus auto renewal functionality.
-- Compression algorithms, Brotli and Gzip
-- Caching static and dynamic responses via different NGINX modules
+- Dealing with SSL certificate, from issuing the cert to creating a configuration optimized for performance while maintaining security, and a bonus auto renewal functionality.
+- Compression algorithms, Brotli and Gzip.
+- Caching static and dynamic responses via different NGINX modules. How and when to invalidate stale data
 - Docker setup
+
+Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them
+
+<Card
+    title="MKREG NGINX configuration"
+    desc="NGINX configuration in conjunction with HAProxy, Cloudflare and Docker"
+    url="https://github.com/omaralsoudanii/mkreg.dev/tree/with-nginx/docker/nginx"
+    icon="Github"
+/>
 
 Feel free to contact me via the links provided in the footer if there is outdated, wrong info provided here or if you would like to rant about something I wrote (I know you do)
 
