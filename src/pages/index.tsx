@@ -35,7 +35,7 @@ const Home = () => {
             </Link>
           </p>
           <p className="self-start">
-            <Link href="/about">
+            <Link href="/writing">
               <a className="mr-1 primary-link">Browse my Writing</a>
             </Link>
           </p>
