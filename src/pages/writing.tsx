@@ -27,7 +27,7 @@ export default function Writing({ posts }) {
           <h1 className="page-heading !mb-0">Writing</h1>
         </header>
         <p>
-          Stuff I write about programmin and software development with a slight
+          Stuff I write about programming and software development with a slight
           hint of salt. Please note that the list ordered by newest published
           articles, however some times I modify or update some info on older
           articles, I'll probably make some sort of filteration when I have
