@@ -46,7 +46,7 @@ Some general tips and concepts to checkout, adapt and tune with time.
 
 ![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-tips-mkreg.jpg)
 
-#### Do you even need NGINX?
+### Do you even need NGINX?
 
 Before starting with anything, understand the use case of introducing NGINX to your stack, have a good knowledge about your **environment**, **hardware capabilities** and **limitations**. 
 
@@ -54,19 +54,19 @@ Know what NGINX is supposed to do here. Act as a proxy server? maybe a caching l
 
 If you can't answer these questions or don't know then you might not need it from the beginning and there is better solutions to your problem.
 
-#### The holy grail of NGINX configuration
+### The holy grail of NGINX configuration
 
 There is no such thing as one set of configurations that fits all products. Every configuration you set along their values depends on the product use case. Although, you could make it as a generic configuration boilerplate then tune it differently based on what you're working with.
 
-#### Separation of concerns
+### Separation of concerns
 
 Just like Backend, Frontend and probably anything related to programming, don't write your whole configuration in one file. Follow the DRY concept and split them based on what they do, for common security headers you could have `security.conf`, for compression you would be having a `compression.conf` and so on. This way your configuration is **reusable**, **maintainable** and **more** (AKA am too lazy to mention).
 
-#### Preparations 
+### Preparations 
 
 For new products, know what NGINX modules you will need or might need in the future. `nginx -V` will output what modules NGINX was compiled with. This is important because you will have to re-compile NGINX if you want to add more modules. For established products this might be not feasible in some production environments where the time spent doing that doesn't justify the added value of those new modules.
 
-#### Validating the result
+### Validating the result
 
 Test, then test and finally test. Sometimes asserting that your configuration is optimal can be tricky, you could be having invalid results due to unknown circumstances. Maybe your hosting platform was stable at one time, on another it wasn't, it could be a misuse of the testing method. 
 
@@ -75,7 +75,7 @@ For example benchmarking throughput by hitting a single endpoint rather than cre
 <Card 
     title="Benchmarking NGINX"
     desc="Best practices to follow when benchmarking NGINX, created by NGINX team"
-    url="http://pages.nginx.com/rs/nginx/images/WP_Benchmarketing_042314.PDF"
+    url="https://pages.nginx.com/rs/nginx/images/WP_Benchmarketing_042314.PDF"
     icon="Nginx"
 />
 
@@ -87,7 +87,7 @@ Based on the above, take what I'm writing with a grain of salt and test it again
 
 For me **Performance** doesn't mean speed. It means **stability**, **resilience**, **resources consumption** and **speed** combined together, which I will include in this section.
 
-#### Location blocks
+### Location blocks
 Sooner or later you're gonna have location blocks to match paths according to a pattern by using **regex expressions**. 
 
 ```nginx
@@ -97,10 +97,10 @@ location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
 ```
 If NGINX matches those locations a lot (in another words, the matched location is regularly requested) then you could improve the performance of the matching process by enabling **PCRE JIT**, this directive enables NGINX to evaluate and store the **regex expressions** at the time of configuration parsing (on NGINX startup). To enable it simply add `pcre_jit on` on top of your main configuration file.
 
-#### Access log
+### Access log
 NGINX `access_log` logs every request (not just the path request, everything requested in the page), which you probably don't need. Disable it with `access_log  off` in your main configuration file **http** block.
 
-#### Send file
+### Send file
 With `send_file` directive enabled, set `sendfile_max_chunk` to a low value to prevent `send_file` from transfer ing large amount of data (a big image or a font file) because the default of `sendfile_max_chunk` is 0 which means unlimited by adjusting the value from **0** to **512k** for example then `send_file` will send the data in 512k chunks. The whole point of this is to prevent a connection from blocking a worker process and destabilize your app throughput.
 
 ```nginx
@@ -108,7 +108,7 @@ sendfile   on;
 sendfile_max_chunk 512k;
 ```
 
-#### Hashmaps
+### Hashmaps
 In addition to **PCRE JIT** optimization, for other looks ups NGINX use hash tables. Here some directives with their default values, which controls the size of those tables, tune them based on your hardware specs. A detailed guide on their usage can be found on [Setting up hashes](https://nginx.org/en/docs/hash.html) (**you should start here**) which also refers the directive usage documentation. 
 
 ```nginx
@@ -123,7 +123,7 @@ Documentation for the above can be found at [HTTP core module](https://nginx.org
 
 After tweaking the values the benefits is not only a faster responses, but also more stability because this speeds up key search in hash tables then we would have less memory access and a decreased pressure on the CPU.
 
-#### Proxy buffering
+### Proxy buffering
 Proxy buffering directive(s) controls how NGINX handles transferring the response from the **proxied server** to the **client**. This is a large topic that I might write about it in separate article, however personally I follow this rules:
 
 - If the buffers value is too low then NGINX response will have high latency, so I keep increasing
@@ -155,7 +155,7 @@ Actually, you know what? you could also start from the [configuration root folde
 
 This is some stuff I found somewhere on the internet randomly, or while I'm researching a specific topic, issues, maybe from an article I read somewhere. Who knows!
 
-#### The host IP address
+### The host IP address
 
 I'm definitely not a security expert, but I don't want NGINX to be accessible by requesting the host IP address rather than the domain name, whether it's from browser or something like Curl.
 
@@ -213,7 +213,7 @@ We provide the empty value variable for `ssl_certificate` and `ssl_certificate_k
 
 Now any access through IP will get 444 status code error, the only problem is (again am not a security expert) using aNULL could open your server to other vulnerabilities. Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only, if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`
 
-#### Headers placement
+### Headers placement
 
 There is 2 kinds of adding headers in NGINX. The first would be `add_header` and the second is `proxy_set_header` .
 

@@ -75,6 +75,12 @@ module.exports = {
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
+            'code:before': {
+              content: 'none',
+            },
+            'code:after': {
+              content: 'none',
+            },
           },
         },
         dark: {
@@ -95,7 +101,7 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.gray.300') },
+            strong: { color: theme('colors.gray.200') },
             thead: {
               color: theme('colors.gray.100'),
             },

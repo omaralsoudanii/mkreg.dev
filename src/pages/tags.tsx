@@ -27,8 +27,8 @@ export default function Tags({ sortedData }) {
           <h1 className="page-heading !mb-4">Tags</h1>
         </header>
         <p>
-          Articles tags sorted alphabetically then by how many times each tag
-          has been added to my articles
+          Writing tags sorted alphabetically then by how many times each tag has
+          been added to my articles
         </p>
         <p className="text-right">
           <Link href="/writing">
