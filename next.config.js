@@ -1,5 +1,7 @@
 module.exports = {
-  strictPostcssConfiguration: true,
+  future: {
+    strictPostcssConfiguration: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

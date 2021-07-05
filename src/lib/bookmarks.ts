@@ -6,6 +6,12 @@ const Bookmarks = [
     icon: 'Linux',
   },
   {
+    title: `Terminal color scheme`,
+    desc: `Visual Terminal color scheme designer. Which you can set as your terminal profile, from custom colors to predefined themes`,
+    url: `https://terminal.sexy/`,
+    icon: 'Linux',
+  },
+  {
     title: `SSL labs`,
     desc: `Test your SSL certificate strength`,
     url: `https://www.ssllabs.com/ssltest/`,
@@ -48,7 +54,7 @@ const Bookmarks = [
     icon: 'Fastify',
   },
   {
-    title: `NGINX threading`,
+    title: `NGINX thead pools`,
     desc: `Interesting read about NGINX thread pools. Seems like a good experiment to see it's benefit serving static content`,
     url: `https://www.nginx.com/blog/thread-pools-boost-performance-9x/`,
     icon: 'Nginx',
@@ -96,7 +102,7 @@ const Bookmarks = [
     icon: 'Simpleicons',
   },
   {
-    title: `High Performance Go`,
+    title: `High performance Go`,
     desc: `Diagnosing performance problems in your Go applications and fix them. Workshop by Dave Cheney`,
     url: `https://dave.cheney.net/high-performance-go-workshop/sydney-2019.html#license_and_materials/`,
     icon: 'Go',
