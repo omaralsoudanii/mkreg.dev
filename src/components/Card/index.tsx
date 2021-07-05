@@ -13,7 +13,7 @@ const Card = ({ title, url, icon, desc }) => (
         {renderIcon(icon)}
       </div>
       <div>
-        <h2 className="!my-1 !font-medium  !text-lg">{title}</h2>
+        <h2 className="!my-1 !font-medium  !text-lg md:!text-xl">{title}</h2>
         <p className="!my-1  !text-secondary text-base !leading-snug !font-normal clamp clamp-5">
           {desc}
         </p>

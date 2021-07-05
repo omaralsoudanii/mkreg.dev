@@ -15,7 +15,7 @@ const Home = () => {
         <header>
           <h1 className="page-heading !mb-2">Hi, I'm Omar Alsoudani</h1>
         </header>
-        <section>
+        <div>
           <p>
             This is my personal site. Where I'm writing notes, Writing about
             some topics, and open-source projects I create and share them here.
@@ -34,7 +34,12 @@ const Home = () => {
               <a className="mr-1 primary-link">Learn more about me</a>
             </Link>
           </p>
-        </section>
+          <p className="self-start">
+            <Link href="/about">
+              <a className="mr-1 primary-link">Browse my Writing</a>
+            </Link>
+          </p>
+        </div>
       </article>
     </ProseContainer>
   )
