@@ -1,9 +1,8 @@
 import { formatSlug, slugify } from '@/lib/utils'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { serialize } from 'next-mdx-remote/serialize'
+import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
-import mdxPrism from 'mdx-prism'
 import MDXImage from './MDXImage'
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
@@ -17,10 +16,33 @@ export async function getFileBySlug(type: string, slug?) {
     ? fs.readFileSync(path.join(loc, type, `${slug}.mdx`), 'utf8')
     : fs.readFileSync(path.join(loc, `${type}.mdx`), 'utf8')
 
-  const { data, content } = matter(source)
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [
+  // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
+  if (process.platform === 'win32') {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      'node_modules',
+      'esbuild',
+      'esbuild.exe'
+    )
+  } else {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      'node_modules',
+      'esbuild',
+      'bin',
+      'esbuild'
+    )
+  }
+
+  const { frontmatter, code } = await bundleMDX(source, {
+    // mdx imports can be automatically source from the components directory
+    cwd: path.join(process.cwd(), 'src', 'components'),
+    xdmOptions(options) {
+      // this is the recommended way to add custom remark/rehype plugins:
+      // The syntax might look weird, but it protects you in case we add/remove
+      // plugins in the future.
+      options.remarkPlugins = [
+        ...(options.remarkPlugins ?? []),
         require('remark-slug'),
         [
           require('remark-autolink-headings'),
@@ -31,18 +53,23 @@ export async function getFileBySlug(type: string, slug?) {
             behavior: 'append',
           },
         ],
+        require('remark-gfm'),
         require('remark-code-titles'),
         MDXImage,
-      ],
-      rehypePlugins: [mdxPrism],
+      ]
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        require('@mapbox/rehype-prism'),
+      ]
+      return options
     },
   })
 
   return {
-    mdxSource,
+    mdxSource: code,
     frontMatter: {
       slug: slug ? formatSlug(slug) : type,
-      ...data,
+      ...frontmatter,
     },
   }
 }

@@ -4,10 +4,11 @@ import {
   getFileBySlug,
   getAllFilesFrontMatter,
 } from '@/lib/mdx'
+import Post from '@/components/Layouts/Post'
 import { dateSortDesc, formatSlug } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { MDXRemote } from 'next-mdx-remote'
-import Post from '@/components/Layouts/Post'
+import * as React from 'react'
+import { getMDXComponent } from 'mdx-bundler/client'
 
 /**
  *
@@ -17,9 +18,12 @@ import Post from '@/components/Layouts/Post'
 
 export default function MDXPost({ post, prev, next }) {
   const { mdxSource, frontMatter } = post
+  // it's generally a good idea to memoize this function call to
+  // avoid re-creating the component every render.
+  const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
     <Post frontMatter={frontMatter} prev={prev} next={next}>
-      <MDXRemote {...mdxSource} components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </Post>
   )
 }

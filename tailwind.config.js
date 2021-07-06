@@ -75,12 +75,6 @@ module.exports = {
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
-            'code:before': {
-              content: 'none',
-            },
-            'code:after': {
-              content: 'none',
-            },
           },
         },
         dark: {
@@ -165,7 +159,7 @@ module.exports = {
           'scroll-margin-top': '4em',
         },
         '.scroll-spacing-lg': {
-          'scroll-margin-top': '1em',
+          'scroll-margin-top': '2em',
         },
       }
 
