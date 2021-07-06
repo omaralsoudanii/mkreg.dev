@@ -108,7 +108,7 @@ fi
 if [[ $_arg_build == "on" ]]; then
   echo "Building docker......"
   cd $_rootdir/docker
-  docker buildx bake --progress=plain
+  docker buildx bake
   docker-compose up -d
   docker restart mk-haproxy
   echo "Docker build completed"
