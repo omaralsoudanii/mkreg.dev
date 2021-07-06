@@ -175,5 +175,5 @@ pre {
 
 pre:not([class*='language-']),
 code:not([class*='language-']) {
-  @apply text-gray-800 font-medium bg-gray-50 dark:bg-code-dark  dark:text-gray-100 p-1;
+  @apply text-gray-900 font-medium bg-gray-50 dark:bg-code-dark  dark:text-gray-100 p-1;
 }
