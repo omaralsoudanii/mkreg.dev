@@ -148,7 +148,7 @@ module.exports = {
           },
           h3: {
             fontWeight: theme('fontWeight.medium'),
-            letterSpacing: '-0.015em',
+            letterSpacing: theme('letterSpacing.tight'),
           },
         },
       ])
