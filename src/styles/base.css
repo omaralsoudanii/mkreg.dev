@@ -30,6 +30,18 @@
   h6 {
     @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
   }
+
+  ::-moz-selection {
+    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+    text-shadow: none;
+  }
+  
+  
+  ::selection {
+    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+    text-shadow: none;
+  }
+
 }
 
 @layer components {
@@ -186,21 +198,19 @@
   }
 
   .prose .anchor {
-    @apply invisible;
-    padding-left: 0.5em;
-    cursor: pointer;
+    @apply opacity-0 cursor-pointer text-blue-600 dark:text-blue-400 pl-2;
+    transition: opacity 200ms ease 0s;
   }
 
-  .anchor:hover {
-    @apply visible;
+  .anchor:hover,.anchor:focus {
+    @apply opacity-100;
   }
 
   .prose .anchor:after {
-    @apply text-primary;
     content: '#';
   }
 
-  .prose *:hover > .anchor {
-    @apply visible;
+  .prose *:hover > .anchor , .prose *:focus > .anchor {
+    @apply opacity-100;
   }
 }

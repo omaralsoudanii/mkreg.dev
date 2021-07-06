@@ -36,15 +36,6 @@ pre[class*='language-'] {
 }
 
 
-@media print {
-  code[class*='language-'],
-  pre[class*='language-'] {
-    text-shadow: none;
-    background-color: #47a3f3;
-    color: #fefefe;
-  }
-}
-
 /* Code blocks */
 pre[class*='language-'] {
   overflow: auto;
@@ -177,7 +168,12 @@ pre::-webkit-scrollbar {
   display: none;
 }
 
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 pre:not([class*='language-']),
 code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 p-1 border border-gray-100 dark:border-code-dark rounded bg-gray-100 dark:bg-code-dark;
+  @apply text-gray-800 font-medium bg-gray-50 dark:bg-code-dark  dark:text-gray-100 p-1;
 }

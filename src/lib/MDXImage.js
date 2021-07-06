@@ -2,7 +2,8 @@ const visit = require('unist-util-visit')
 const sizeOf = require('image-size')
 const fs = require('fs')
 
-module.exports = () => (tree) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+module.exports = (options) => (tree) => {
   visit(
     tree,
     // only visit p tags that contain an img element
@@ -15,17 +16,22 @@ module.exports = () => (tree) => {
       // only local files
       if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
         const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
-        const quality = 75
+
         // Convert original node to next/image
-        imageNode.type = 'jsx'
-        imageNode.value = `<Image
-          alt={\`${imageNode.alt}\`} 
-          src={\`${imageNode.url}\`}
-          width={${dimensions.width}}
-          height={${dimensions.height}}
-          quality={${quality}}
-          layout="responsive"
-      />`
+        ;(imageNode.type = 'mdxJsxFlowElement'),
+          (imageNode.name = 'Image'),
+          (imageNode.attributes = [
+            { type: 'mdxJsxAttribute', name: 'alt', value: imageNode.alt },
+            { type: 'mdxJsxAttribute', name: 'src', value: imageNode.url },
+            { type: 'mdxJsxAttribute', name: 'layout', value: 'responsive' },
+            { type: 'mdxJsxAttribute', name: 'quality', value: 75 },
+            { type: 'mdxJsxAttribute', name: 'width', value: dimensions.width },
+            {
+              type: 'mdxJsxAttribute',
+              name: 'height',
+              value: dimensions.height,
+            },
+          ])
 
         // Change node type from p to div to avoid nesting error
         node.type = 'div'
