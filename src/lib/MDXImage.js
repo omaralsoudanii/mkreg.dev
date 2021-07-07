@@ -1,3 +1,4 @@
+// taken from tailwind-nextjs-starter-blog https://github.com/timlrx/tailwind-nextjs-starter-blog
 const visit = require('unist-util-visit')
 const sizeOf = require('image-size')
 const fs = require('fs')

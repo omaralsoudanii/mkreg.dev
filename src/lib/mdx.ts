@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
 import MDXImage from './MDXImage'
+import remarkCodeTitles from './remarkCodeTitles'
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
 
@@ -54,7 +55,7 @@ export async function getFileBySlug(type: string, slug?) {
           },
         ],
         require('remark-gfm'),
-        require('remark-code-titles'),
+        remarkCodeTitles,
         MDXImage,
       ]
       options.rehypePlugins = [
