@@ -1,5 +1,5 @@
 .remark-code-title {
-  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark;
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-tertiary;
 }
 
 .remark-code-title + div > pre {
@@ -17,7 +17,7 @@ h4 + div > pre , h4 + .remark-code-title {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-opacity-30 dark:border-gray-700 dark:bg-code-dark mt-0 mb-0 font-mono;
+  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-opacity-30 dark:border-gray-700 dark:bg-dark-secondary mt-0 mb-0 font-mono;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -177,5 +177,5 @@ pre {
 
 pre:not([class*='language-']),
 code:not([class*='language-']) {
-  @apply text-gray-900 font-medium bg-gray-50 dark:bg-code-dark  dark:text-gray-100 p-1;
+  @apply text-gray-900 font-medium bg-gray-50 dark:bg-dark-secondary  dark:text-gray-100 p-1;
 }

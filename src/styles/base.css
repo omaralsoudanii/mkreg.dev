@@ -8,14 +8,14 @@
   }
 
   body {
-    @apply text-black bg-white dark:bg-dark dark:text-white antialiased;
+    @apply text-black bg-white dark:bg-dark-primary dark:text-white antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
       'calt';
     text-rendering: optimizeLegibility;
   }
 
   #__next {
-    @apply h-full bg-white dark:bg-dark;
+    @apply h-full bg-white dark:bg-dark-primary;
   }
 
   .svg-fill {
@@ -62,7 +62,7 @@
   }
 
   .header-sm {
-    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-200 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark dark:bg-opacity-80 filter-blur;
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-200 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark-primary dark:bg-opacity-80 filter-blur;
   }
 
   @supports not (backdrop-filter: none) {

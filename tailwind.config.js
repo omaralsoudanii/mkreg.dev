@@ -34,8 +34,11 @@ module.exports = {
           ...colors.blue,
           600: '#246cff',
         },
-        'code-dark': 'rgb(30, 35, 42)',
-        dark: 'rgb(22, 27, 34)',
+        dark: {
+          primary: 'rgb(22, 27, 34)',
+          secondary: 'rgb(30, 35, 42)',
+          tertiary: '(33, 38,45)',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
