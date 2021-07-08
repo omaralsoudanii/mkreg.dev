@@ -23,4 +23,7 @@ module.exports = {
 
     return config
   },
+  images: {
+    disableStaticImages: true,
+  },
 }
