@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Image from 'next/image'
 
 const NextImage = ({
@@ -6,7 +5,7 @@ const NextImage = ({
   width,
   height,
   alt = 'Omar Alsoudani',
-  layout = 'intrinsic',
+  layout = 'responsive',
 }: {
   src: string
   width: number
