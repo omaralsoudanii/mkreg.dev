@@ -45,13 +45,15 @@ export async function getFileBySlug(type: string, slug?) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
         require('remark-slug'),
-        require('remark-autolink-headings'),
-        {
-          linkProperties: {
-            className: ['anchor'],
+        [
+          require('remark-autolink-headings'),
+          {
+            linkProperties: {
+              className: ['anchor'],
+            },
+            behavior: 'append',
           },
-          behavior: 'append',
-        },
+        ],
         require('remark-gfm'),
         remarkCodeTitles,
         MDXImage,
@@ -60,14 +62,6 @@ export async function getFileBySlug(type: string, slug?) {
         ...(options.rehypePlugins ?? []),
         require('@mapbox/rehype-prism'),
       ]
-      return options
-    },
-    esbuildOptions: (options) => {
-      options.loader = {
-        ...options.loader,
-        '.js': 'jsx',
-        '.ts': 'tsx',
-      }
       return options
     },
   })

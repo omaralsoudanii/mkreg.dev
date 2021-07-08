@@ -52,6 +52,7 @@
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "fileloader": "^2.0.0",
     "globby": "^11.0.4",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
