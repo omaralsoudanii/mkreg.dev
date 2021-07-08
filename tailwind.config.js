@@ -7,6 +7,9 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        '9/16': '56.25%',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -37,7 +40,7 @@ module.exports = {
         dark: {
           primary: 'rgb(22, 27, 34)',
           secondary: 'rgb(30, 35, 42)',
-          tertiary: '(33, 38,45)',
+          tertiary: 'rgb(38, 43, 50)',
         },
       },
       typography: (theme) => ({
@@ -58,10 +61,11 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h3: {
-              fontWeight: theme('fontWeight.medium'),
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             'h4,h5,h6': {
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             hr: { borderColor: theme('colors.gray.200') },
@@ -150,7 +154,11 @@ module.exports = {
             letterSpacing: theme('letterSpacing.tight'),
           },
           h3: {
-            fontWeight: theme('fontWeight.medium'),
+            fontWeight: theme('fontWeight.semibold'),
+            letterSpacing: theme('letterSpacing.tight'),
+          },
+          'h4,h5,h6': {
+            fontWeight: theme('fontWeight.semibold'),
             letterSpacing: theme('letterSpacing.tight'),
           },
         },

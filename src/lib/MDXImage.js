@@ -24,8 +24,6 @@ module.exports = (options) => (tree) => {
           (imageNode.attributes = [
             { type: 'mdxJsxAttribute', name: 'alt', value: imageNode.alt },
             { type: 'mdxJsxAttribute', name: 'src', value: imageNode.url },
-            { type: 'mdxJsxAttribute', name: 'layout', value: 'responsive' },
-            { type: 'mdxJsxAttribute', name: 'quality', value: 75 },
             { type: 'mdxJsxAttribute', name: 'width', value: dimensions.width },
             {
               type: 'mdxJsxAttribute',

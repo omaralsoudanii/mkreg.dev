@@ -1,6 +1,7 @@
 ---
 title: 'Linux commands for me'
 date: '2021-07-07'
+lastmod: '2021-07-08'
 summary: "Incremental list useful of Linux useful commands covering many tools and programs that I use when needed"
 tags: ['Linux','Docker','SQL','PHP','MongoDB']
 image: '/static/images/writing/linux-bin-bash/linux-bash-mkreg.jpeg'
@@ -10,7 +11,7 @@ image: '/static/images/writing/linux-bin-bash/linux-bash-mkreg.jpeg'
 
 This article is not about something specific, this is just a list of commands for various Linux programs and tools, some might be simple, others useless. Some might be great, so to clarify this list is what **I** find useful for **me**, you can look through it and who knows? maybe you'll like some of it
 
-> The list will be incrementally changed, could be daily or maybe once a month. Every time I find something interesting or new that I actually use whether it's for a new program or a just a new command, I will add it here.
+> The list will be incrementally changed, could be daily or maybe once a month. Every time I find something interesting or new that I actually use whether it's for a new program or a just a new command, Adding it here doesn't make sense, I'll think of a way to split each topic, maybe with a new layout for better UI/UX.
 
 ![Omar Alsoudani - Linux](/static/images/writing/linux-bin-bash/linux-bash-mkreg.jpeg)
 
@@ -33,20 +34,24 @@ cat /var/log/app.log.2 | grep "api/users" | wc -l
 #### Curl a request with form-data uploading a file using  and get some speed info
 
 ```bash:HTTP2
-curl -w '\nEstablish Connection: %{time_connect}s\nTTFB: %{time_starttransfer}s\n \
-	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' \
-	--http2 --location --request POST 'https://www.somedomain.com/uploadfile' \
-	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' --form 'file=@/home/some_file.csv' \
+curl -w '\nEstablish Connection: %{time_connect}s \ 
+	\nTTFB: %{time_starttransfer}s\n  \
+	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http2  \
+	--location --request POST 'https://www.somedomain.com/uploadfile' \
+	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' \
+	--form 'file=@/home/some_file.csv' \
 	--form 'file=@/home/another_file.csv'
 ```
 
 This specific thing is important due to the nature of how **HTTP2** works, uploading files could be slower unless you tune your web-server **HTTP2** initial window. Try it with **HTTP1.1** and see the difference
 
 ```bash:HTTP1.1
-curl -w '\nEstablish Connection: %{time_connect}s\nTTFB: %{time_starttransfer}s\n \
-	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' \
-	--http1.1 --location --request POST 'https://www.somedomain.com/uploadfile' \
-	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' --form 'file=@/home/some_file.csv' \
+curl -w '\nEstablish Connection: %{time_connect}s \
+	\nTTFB: %{time_starttransfer}s\n \
+	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http1.1 \
+	--location --request POST 'https://www.somedomain.com/uploadfile' \
+	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' \ 
+	--form 'file=@/home/some_file.csv' \
 	--form 'file=@/home/another_file.csv'
 ```
 
@@ -140,32 +145,35 @@ docker exec -it node_app npm install
 
 #### Export MySQL database from a container to a directory using `mysqldump` and execute command
 
--    **Full database structure and data**
+-    Full database structure and data
      
         ```bash
-        docker exec -i app_mysql-server-57_1 mysqldump -uroot -proot --databases mydb_name --skip-comments > /Documents/db.sql
+        docker exec -i app_mysql-server-57_1 mysqldump \ 
+        -uroot -proot --databases mydb_name --skip-comments > /Documents/db.sql
         ```
--    **Specified table structure and data** 
+-    Specified table structure and data 
      
         ```bash
-        docker exec -i app_mysql-server-57_1 mysqldump -uroot -proot mydb_name mytable_name > /Documents/db.sql
+        docker exec -i app_mysql-server-57_1 mysqldump \ 
+        -uroot -proot mydb_name mytable_name > /Documents/db.sql
         ```
--    **Specific table structure and data that matches a where clause**
+-    Specific table structure and data that matches a where clause
      
         ```bash
-        docker exec app_mysql mysqldump -uroot -proot mydb_name --tables mytable_name --where="id>5 limit 5000000" > mytable_name.sql
+        docker exec app_mysql mysqldump \ 
+        -uroot -proot mydb_name --tables mytable_name --where="id>5 limit 5000000" > mytable_name.sql
         ```
 
 
 
 #### SSH into a container using execute command
 
--    **For alpine images, only sh is available** 
+-    For alpine images, only sh is available 
      
         ```bash
         docker exec -it app_server sh
         ```
--    **For other images,  bash is available**
+-    For other images,  bash is available
      
         ```bash
         docker exec -it app_server bash
@@ -235,20 +243,22 @@ docker system df
 
 #### Export MySQL database to a directory with `mysqldump`
 
--    **Full database structure and data** 
+-    Full database structure and data 
      
         ```bash
-        mysqldump -uroot -proot --databases mydb_name --skip-comments > /Documents/db.sql
+        mysqldump -uroot -proot --databases mydb_name \ 
+        --skip-comments > /Documents/db.sql
         ```
--    **Specified table structure and data** 
+-    Specified table structure and data 
      
         ```bash
         mysqldump -uroot -proot mydb_name mytable_name > /Documents/db.sql
         ```
--    **A specific table structure and data that matches a where clause**
+-    A specific table structure and data that matches a where clause
      
         ```bash
-        mysqldump -uroot -proot mydb_name --tables mytable_name --where="id>5 limit 5000000" > mytable_name.sql
+        mysqldump -uroot -proot mydb_name --tables mytable_name \ 
+        --where="id>5 limit 5000000" > mytable_name.sql
         ```
 
 #### Change MySQL CLI pager to `less` 
@@ -325,7 +335,7 @@ db.collection_name.dropIndex({field_name:1})
 >
 > Nope, I won't stop. This is my calling, now come and see the project I'm working on then say that again.
 >
-> This is  just a <sup>**Joke**</sup> . I love PHP and use **Laravel** (Now that's the real **joke**)
+> This is  just a <sup>**Joke**</sup> . I love PHP and use **Laravel** (Now this is a **Joke**)
 
 #### Run a script using specific PHP version, and passing environment variables to the script
 
@@ -335,16 +345,14 @@ WEBSITE=www.reddit.com ENVIROMENT=development  /usr/bin/php7.4 -f /var/www/swool
 
 #### Enable/Disable PHP modules for a specific PHP version (needs root permission)
 
--    **Enable**
+```bash:Enable
+sudo phpenmod -v 7.4 xdebug
+```
+<br/>
      
-        ```bash
-        sudo phpenmod -v 7.4 xdebug
-        ```
--    **Disable** 
-     
-        ```bash
-        sudo phpdismod -v 7.4 curl
-        ```
+```bash:Disable
+sudo phpdismod -v 7.4 curl
+```
 
 #### Check the PHP settings of your installed version
 
