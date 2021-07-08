@@ -25,13 +25,15 @@ This article is not about something specific, this is just a list of commands fo
 
 ## General
 
-#### Find out how many lines a file contains a phrase
+### Find out how many lines a file contains a phrase
 
 ```bash
 cat /var/log/app.log.2 | grep "api/users" | wc -l
 ```
 
-#### Curl a request with form-data uploading a file using  and get some speed info
+### Curl request details
+
+Curl a request with form-data uploading a file using and get some speed info
 
 ```bash:HTTP2
 curl -w '\nEstablish Connection: %{time_connect}s \ 
@@ -64,48 +66,60 @@ You can refer to the write out command in Curl (You can find it Nuggets section 
     icon="Curl"
 />
 
-#### Check network speed of the host you are in
+### Network speed test
+
+Check network speed of the host you are in, this is very useful to get actual results about the bandwidth of say your VPS server or your home setup.
+
 
 ```bash
 sudo ln -s /usr/bin/python3 /usr/bin/python
 curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 ```
 
-This is very useful to get actual results about the bandwidth of say your VPS server or your home setup.
 
-#### Check all mounted hard drives disk usage size
+### Disk usage
+
+Check hard drives disk usage size on your machine, or the host you logged into.
+
+The whole drive
 
 ```bash
 df -h
 ```
 
-#### Check current directory disk usage size
+The current directory
 
 ```bash
 du -sh *
 ```
 
-#### Tail all incoming new lines for log file(s)
+### Tailing logs
+
+tail all incoming new lines for log file(s)
 
 ```bash
 tail -f -n0 *-error_logs.log
 ```
 
-#### Find if file(s) exists in the current directory/sub-directories, and list found file(s) locations
+### Find file(s)
+
+Find if file(s) exists in the current directory/sub-directories, and list found file(s) locations
+
+**Note:** This needs **sudo** to look in directories that requires root permission, it will also list of all files and directories in the current directory if it finds nothing, I will look into it and fix later.
 
 ```bash
 find . -name "*-logs.json" | xargs ls -lh
 ```
 
-**Note:** This needs **sudo** to look in directories that requires root permission, it will also list of all files and directories in the current directory if it finds nothing, I will look into it and fix later.
+### process(es) details
+Find if process(es) are currently running, and list process(es) details (root process/child processes) if found
 
-#### Find if process(es) are currently running, and list process(es) details (root process/child processes) if found
 
 ```bash
 ps aux | grep mysql
 ```
 
-#### Start/Restart a service with a different user
+### manage service(es) with different users
 
 ```bash
 sudo -u www-data service nginx start
@@ -116,34 +130,37 @@ sudo -u omar service netdata restart
 
 ![Omar Alsoudani - Linux Docker](/static/images/writing/linux-bin-bash/linux-bash-docker-mkreg.jpeg)
 
-#### Build and run a docker compose file
+### Docker compose
 
-This builds the images and run their containers assuming the default compose file name is docker-compose.yml
+This builds the images and run their containers assuming the default compose file name is docker-compose.yml, or by specifying it's file name.
+
+Default file name
 
 ```bash
 docker-compose up  --build -d
 ```
-
-#### Build and run docker compose file by specifying it's  file name
+Different file name
 
 ```bash
 docker-compose  -f docker-compose.development.yml up  --build -d
 ```
 
-#### Build a docker compose file with fresh start
-This builds images and run their containers while ignoring the current existing images cache (useful for multi-stage builds, when you just want to re-build everything with fresh layers)
+Build images and run their containers while ignoring the current existing images cache (useful for multi-stage builds, when you just want to re-build everything with fresh layers)
 
 ```bash
 docker-compose build  --no-cache
 ```
+### exec command
 
-#### Execute a command from a container
+This executes a command from a container
 
 ```bash
 docker exec -it node_app npm install
 ```
 
-#### Export MySQL database from a container to a directory using `mysqldump` and execute command
+### Exporting MySQL database
+
+Export data from a Docker MySQL container to a directory using `mysqldump` and execute command
 
 -    Full database structure and data
      
@@ -166,7 +183,7 @@ docker exec -it node_app npm install
 
 
 
-#### SSH into a container using execute command
+### SSH into a container
 
 -    For alpine images, only sh is available 
      
@@ -179,34 +196,39 @@ docker exec -it node_app npm install
         docker exec -it app_server bash
         ```
 
-#### Preview a docker compose file configuration found in the specified path
+### Testing config
+
+Preview and validate a docker compose file configuration found in the specified path
+
 
 ```bash
 docker-compose -f docker-compose.development.yml config
 ```
 
-#### Delete all stopped containers and unused images/networks/volumes and non persistent volumes and their networks
+### Deleting data
 
-```bash
+Delete all stopped containers and unused images/networks/volumes and non persistent volumes and their networks
+
+**WARNING:** Beware that all stopped containers, and unused images/networks/volumes will be deleted, so if you have something stopped but want to use it later, or you want the image cache layers, then don't do this.
+
+```bash:Everything
 docker system prune -a
 ```
-**WARNING:** Beware that all stopped containers, and unused images/networks/volumes will be deleted, so if you have something stopped but want to use it later then don't do this.
+<br/>
 
-#### Delete all unused networks
-
-```bash
+```bash:Networks
 docker network prune
 ```
 
-#### Delete all unused volumes
+<br/>
 
-```bash
+```bash:Volumes
 docker volume ls -qf dangling=true | xargs -r docker volume rm
 ```
 
-#### Tailing container logs
+### Tailing logs
 
-This gets you the latest 100 line
+This gets you the latest 100 line from a container
 
 ```bash
 docker logs --tail 100 -f app_server
@@ -218,13 +240,13 @@ This finds lines that contains a phrase and print the containing line, 3 lines b
 docker logs -f --tail 10000  app_server | grep -B3 -A3 "api/users"
 ```
 
-#### System wide information for Docker
+### System wide info
 
 ```bash
 docker system info
 ```
 
-#### Docker disk usage info for the whole machine
+### Disk usage
 
 ```bash:Detailed
 docker system df -v
@@ -241,7 +263,9 @@ docker system df
 
 ![Omar Alsoudani - Linux MySQL](/static/images/writing/linux-bin-bash/linux-bash-mysql-mkreg.png)
 
-#### Export MySQL database to a directory with `mysqldump`
+### Exporting data
+
+Export MySQL database to a directory with `mysqldump`
 
 -    Full database structure and data 
      
@@ -261,15 +285,15 @@ docker system df
         --where="id>5 limit 5000000" > mytable_name.sql
         ```
 
-#### Change MySQL CLI pager to `less` 
+### Changing CLI pager 
 
- Using `less` helps readability when viewing large sets of data from queries in the terminal. Use this after you login into    MySQL shell
+ This Changes MySQL CLI pager to `less`. Using `less` helps readability when viewing large sets of data from queries in the terminal. Use this after you login into MySQL shell
 
 ```bash
 pager less -R -S
 ```
 
-#### Enable and use profiling
+### Using Profiling
 
 In your current MySQL session you can enable profiling to debug and tune queries performance
 
@@ -285,43 +309,45 @@ SHOW PROFILE CPU FOR QUERY 2;
 
 ![Omar Alsoudani - MongoDB](/static/images/writing/linux-bin-bash/linux-bash-mongodb-mkreg.jpg)
 
-#### Show all databases
+### All databases
 
 ```js
 show dbs
 ```
 
-#### Select a databases to work on
+### Select a database
 
 ```js
 use mydb_name
 ```
 
-#### Show all collections for a selected database
+### All collections for a database
 
 ```js
 show collections
 ```
 
-#### Create a new collection in a selected database
+### Create a new collection for a database
 
 ```js
 db.createCollection("collection_name")
 ```
 
-#### Get all indexes for a collection
+### All indexes for a collection
 
 ```js
 db.collection_name.getIndexes()
 ```
 
-#### Create a new index on a field in a collection
+### New Index
+This creates a new index on a field in a collection for a selected database
 
 ```js
 db.collection_name.createIndex({field_name:1})
 ```
 
-#### Drop an index from a field in a collection
+### Dropping Index
+This drops a new index on a field in a collection for a selected database
 
 ```js
 db.collection_name.dropIndex({field_name:1})
@@ -337,13 +363,16 @@ db.collection_name.dropIndex({field_name:1})
 >
 > This is  just a <sup>**Joke**</sup> . I love PHP and use **Laravel** (Now this is a **Joke**)
 
-#### Run a script using specific PHP version, and passing environment variables to the script
+### Running scripts
+Run a script using specific PHP version, and passing environment variables to the script
 
 ```bash
 WEBSITE=www.reddit.com ENVIROMENT=development  /usr/bin/php7.4 -f /var/www/swoole/server.php 
 ```
 
-#### Enable/Disable PHP modules for a specific PHP version (needs root permission)
+### Managing modules
+
+Enable/Disable PHP modules for a specific PHP version (needs root permission)
 
 ```bash:Enable
 sudo phpenmod -v 7.4 xdebug
@@ -354,7 +383,8 @@ sudo phpenmod -v 7.4 xdebug
 sudo phpdismod -v 7.4 curl
 ```
 
-#### Check the PHP settings of your installed version
+### Checking settings
+Check the PHP settings of your installed version
 
 ```bash
 php -i

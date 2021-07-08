@@ -105,7 +105,7 @@ export default function PostLayout({
                 <div className="flex flex-wrap">
                   {tags.map((t: string) => (
                     <NextLink
-                      className="mr-4 !text-sm my-1 primary-link"
+                      className="mr-4 !text-base my-2 primary-link"
                       key={t}
                       href={`/tags/${slugify(t)}`}
                     >

@@ -7,7 +7,7 @@
 }
 
 h4 + div > pre , h4 + .remark-code-title {
-  @apply mt-2 lg:mt-4 !important;
+  @apply mt-4 !important;
 }
 
 .task-list-item:before {
