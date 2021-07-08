@@ -24,8 +24,8 @@ export default function MK() {
         <NextImage
           src="/static/images/sultan.jpg"
           alt="The Sultan of swing"
-          width={768}
-          height={614}
+          width={3000}
+          height={2400}
         />
         <p>
           Congrats on finding this page! Let me introduce you to my favorite
@@ -64,8 +64,8 @@ export default function MK() {
         <NextImage
           src="/static/images/mk.jpg"
           alt="Mark Knopfler"
-          width={768}
-          height={549}
+          width={1280}
+          height={915}
         />
         <p>
           This is a biography about
