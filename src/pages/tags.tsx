@@ -1,6 +1,5 @@
 import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
-import Tag from '@/components/Tag'
 import { getAllTags } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
@@ -45,11 +44,15 @@ export default function Tags({ sortedData }) {
 
             <div className="flex space-x-6 flex-row">
               {item.characterTags.map((tag) => (
-                <Tag
-                  className="!my-0 text-base !pt-3"
-                  key={tag.slug}
-                  {...tag}
-                />
+                <Link href={`/tags/${tag.slug}`} passHref>
+                  <a className="link-unstyled">
+                    <p className="!my-0 text-base !pt-3">
+                      {tag.name}
+                      {` `}
+                      {`(${tag.count})`}
+                    </p>
+                  </a>
+                </Link>
               ))}
             </div>
           </div>
