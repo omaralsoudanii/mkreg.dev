@@ -1,6 +1,6 @@
 ---
 title: 'Building my site'
-date: '2021-04-27'
+date: '2021-07-11'
 lastmod: '2021-07-02'
 summary: "High level overview of building and developing my personal site, coding and infrastructure wise. Lessons learned and acknowledgments to resources I used varying from tutorials to personal portfolios that I liked their design"
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
@@ -36,15 +36,15 @@ I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and 
 
 ### HAProxy
 
-HAProxy is not just a **"loadbalancer"**. It's the perfect combo with Cloudflare.
+HAProxy is not just a **"Load Balancer"**. It's the perfect combo with Cloudflare.
 
-### ~~NGINX~~ ###
+### NGINX ###
 
 Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
 
 Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
 
-> If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his top 3 favorite software.
+If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his top 3 favorite software.
 
 ### Docker
 
