@@ -15,29 +15,26 @@ export default function MK() {
       className="prose dark:prose-dark sm:prose-lg lg:prose-xl w-full max-w-none mx-auto"
     >
       <Seo data={meta} />
-      <header>
-        <h1 className="lg:!mb-16 lg:mt-8 !tracking-tighter text-center block !text-4xl !font-black xl:!text-[5rem]">
-          The Sultan of swing
-        </h1>
-      </header>
       <div className="!space-y-4 lg:!space-y-8">
+        <header>
+          <h1 className="lg:!mb-16 lg:mt-8 !leading-none text-center block !text-4xl !font-black xl:!text-[5rem]">
+            The Sultan of swing
+          </h1>
+        </header>
         <NextImage
           src="/static/images/sultan.jpg"
           alt="The Sultan of swing"
           width={3000}
           height={2400}
         />
-        <p>
-          Congrats on finding this page! Let me introduce you to my favorite
-          human being in the universe.{' '}
-        </p>
-        <h1 className="text-center block !tracking-tighter !text-4xl !font-black xl:!text-[5rem]">
+        <h1 className="text-center block !leading-none !text-4xl !font-black xl:!text-[5rem]">
           Mark Knopfler
         </h1>
         <p>
-          If you have ever wondered why the hell I have this weird domain name
-          rather than something closer to my name (for SEO blah...), then I can
-          tell you that the acronym is based on:
+          Congrats on finding this page! Let me introduce you to my favorite
+          human being in the universe. If you have ever wondered why the hell I
+          have this weird domain name rather than something closer to my name
+          (for SEO blah...), then I can tell you that the acronym is based on:
         </p>
         <p className="!font-semibold text-center">
           <a
