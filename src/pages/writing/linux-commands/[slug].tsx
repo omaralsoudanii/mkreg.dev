@@ -1,11 +1,7 @@
 import MDXComponents from '@/components/MDXComponents'
-import {
-  getAllFilesName,
-  getFileBySlug,
-  getAllFilesFrontMatter,
-} from '@/lib/mdx'
+import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
 import Post from '@/components/Layouts/Post'
-import { dateSortDesc, formatSlug } from '@/lib/utils'
+import { formatSlug } from '@/lib/utils'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import * as React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
@@ -16,37 +12,31 @@ import { getMDXComponent } from 'mdx-bundler/client'
  *
  */
 
-export default function MDXPost({ post, prev, next }) {
+export default function MDXPost({ post, parentPost }) {
   const { mdxSource, frontMatter } = post
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
   const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
-    <Post frontMatter={frontMatter} prev={prev} next={next}>
+    <Post frontMatter={frontMatter} parentPost={parentPost}>
       <Component components={MDXComponents as any} />
     </Post>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allFrontMatter = await getAllFilesFrontMatter('writing')
-  const allPosts = allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
-  const postIndex = allPosts.findIndex(
-    (post) => formatSlug(post.slug) === params.slug
-  )
-  const prev = allPosts[postIndex + 1] || null
-  const next = allPosts[postIndex - 1] || null
-  if (prev) prev.path = '/writing'
-  if (next) next.path = '/writing'
-  const post = await getFileBySlug('writing', params.slug)
-
+  const post = await getFileBySlug('writing/linux-commands', params.slug)
+  const parentPost = {
+    title: 'Linux commands for me',
+    path: '/writing/linux-commands',
+  }
   return {
-    props: { post, prev, next },
+    props: { post, parentPost },
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getAllFilesName('writing')
+  const posts = await getAllFilesName('writing/linux-commands')
 
   return {
     paths: posts.map((p) => ({

@@ -2,12 +2,14 @@ import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
+import * as React from 'react'
 
 export default function PostLayout({
   children,
   frontMatter,
   prev = null,
   next = null,
+  parentPost = null,
 }) {
   const { date, title, tags, lastmod, summary } = frontMatter
 
@@ -115,7 +117,7 @@ export default function PostLayout({
                 </div>
               </div>
             )}
-            {(next || prev) && (
+            {(next || prev) && !parentPost && (
               <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                 {prev && (
                   <div>
@@ -125,7 +127,7 @@ export default function PostLayout({
                     <div>
                       <NextLink
                         className=" text-base primary-link"
-                        href={`/writing/${prev.slug}`}
+                        href={`${prev.path}/${prev.slug}`}
                       >
                         {prev.title}
                       </NextLink>
@@ -140,13 +142,43 @@ export default function PostLayout({
                     <div>
                       <NextLink
                         className="primary-link text-base"
-                        href={`/writing/${next.slug}`}
+                        href={`${next.path}/${next.slug}`}
                       >
                         {next.title}
                       </NextLink>
                     </div>
                   </div>
                 )}
+              </div>
+            )}
+            {!next && !prev && parentPost && (
+              <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                <div>
+                  <h2 className="text-base pb-2 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
+                    Article
+                  </h2>
+                  <div>
+                    <NextLink
+                      className=" text-base primary-link"
+                      href={`${parentPost.path}`}
+                    >
+                      {parentPost.title}
+                    </NextLink>
+                  </div>
+                </div>
+                <div>
+                  <h2 className="text-base pb-2 !font-medium  text-gray-500 dark:text-gray-400">
+                    Browse
+                  </h2>
+                  <div>
+                    <NextLink
+                      className="primary-link text-base"
+                      href="/writing"
+                    >
+                      Browse all Writing
+                    </NextLink>
+                  </div>
+                </div>
               </div>
             )}
           </aside>

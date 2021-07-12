@@ -23,6 +23,12 @@ export const dateSortDesc = (a, b) => {
   return 0
 }
 
+export const dateSortAsc = (a, b) => {
+  if (a > b) return 1
+  if (a < b) return -1
+  return 0
+}
+
 export const formatSlug = (slug: string) => slug.replace(/\.mdx/, '')
 
 export const FormatDate = (value: string | number | Date): string => {

@@ -45,7 +45,7 @@ export default function Tags({ sortedData }) {
             <div className="flex space-x-6 flex-row">
               {item.characterTags.map((tag) => (
                 <Link href={`/tags/${tag.slug}`} passHref>
-                  <a className="link-unstyled">
+                  <a className="primary-link">
                     <p className="!my-0 text-base !pt-3">
                       {tag.name}
                       {` `}

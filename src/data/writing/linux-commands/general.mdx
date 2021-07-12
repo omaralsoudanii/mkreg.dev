@@ -1,0 +1,127 @@
+---
+title: 'General Linux commands'
+date: '2021-07-13'
+lastmod: '2021-07-13'
+summary: "Incremental list of useful Linux commands"
+image: '/static/images/writing/linux-commands/linux-bash-mkreg.jpeg'
+---
+
+![Omar Alsoudani - Linux](/static/images/writing/linux-commands/linux-bash-mkreg.jpeg)
+
+## Overview
+
+This page covers general commands using Linux. Not specific to any program, some could be used for debugging, others might be validating something or simply getting some info about a running process. 
+
+Browse the full list of topics:
+
+1.  [General Linux commands](/writing/linux-commands/general)
+2.  [Docker Commands](/writing/linux-commands/docker) 
+3.  [MySQL Commands](/writing/linux-commands/mysql)
+4.  [MongoDB Commands](/writing/linux-commands/mongodb)
+5.  [PHP Commands](/writing/linux-commands/php)
+
+
+
+## Commands
+
+### Find out how many lines a file contains a phrase
+
+```bash
+cat /var/log/app.log.2 | grep "api/users" | wc -l
+```
+
+### Curl request details
+
+Curl a request with form-data uploading a file using and get some speed info
+
+```bash:HTTP2
+curl -w '\nEstablish Connection: %{time_connect}s \ 
+	\nTTFB: %{time_starttransfer}s\n  \
+	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http2  \
+	--location --request POST 'https://www.somedomain.com/uploadfile' \
+	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' \
+	--form 'file=@/home/some_file.csv' \
+	--form 'file=@/home/another_file.csv'
+```
+
+This specific thing is important due to the nature of how **HTTP2** works, uploading files could be slower unless you tune your web-server **HTTP2** initial window. Try it with **HTTP1.1** and see the difference
+
+```bash:HTTP1.1
+curl -w '\nEstablish Connection: %{time_connect}s \
+	\nTTFB: %{time_starttransfer}s\n \
+	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http1.1 \
+	--location --request POST 'https://www.somedomain.com/uploadfile' \
+	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' \ 
+	--form 'file=@/home/some_file.csv' \
+	--form 'file=@/home/another_file.csv'
+```
+
+You can refer to the write out command in Curl (You can find it Nuggets section too)
+
+<Card
+    title="Curl write out"
+    desc="Get detailed information about a request sent through Curl using the write out option -w, which has a large range of variables that you can include in the output"
+    url="https://everything.curl.dev/usingcurl/verbose/writeout/"
+    icon="Curl"
+/>
+
+### Network speed test
+
+Check network speed of the host you are in, this is very useful to get actual results about the bandwidth of say your VPS server or your home setup.
+
+
+```bash
+sudo ln -s /usr/bin/python3 /usr/bin/python
+curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+```
+
+
+### Disk usage
+
+Check hard drives disk usage size on your machine, or the host you logged into.
+
+The whole drive
+
+```bash
+df -h
+```
+
+The current directory
+
+```bash
+du -sh *
+```
+
+### Tailing logs
+
+tail all incoming new lines for log file(s)
+
+```bash
+tail -f -n0 *-error_logs.log
+```
+
+### Find file(s)
+
+Find if file(s) exists in the current directory/sub-directories, and list found file(s) locations
+
+**Note:** This needs **sudo** to look in directories that requires root permission, it will also list of all files and directories in the current directory if it finds nothing, I will look into it and fix later.
+
+```bash
+find . -name "*-logs.json" | xargs ls -lh
+```
+
+### process(es) details
+
+Find if process(es) are currently running, and list process(es) details (root process/child processes) if found
+
+
+```bash
+ps aux | grep mysql
+```
+
+### manage service(es) with different users
+
+```bash
+sudo -u www-data service nginx start
+sudo -u omar service netdata restart
+```
