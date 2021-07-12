@@ -155,11 +155,11 @@ export default function PostLayout({
               <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                 <div>
                   <h2 className="text-base pb-2 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
-                    Article
+                    Main Article
                   </h2>
                   <div>
                     <NextLink
-                      className=" text-base primary-link"
+                      className="text-base primary-link"
                       href={`${parentPost.path}`}
                     >
                       {parentPost.title}
@@ -168,7 +168,7 @@ export default function PostLayout({
                 </div>
                 <div>
                   <h2 className="text-base pb-2 !font-medium  text-gray-500 dark:text-gray-400">
-                    Browse
+                    Read more
                   </h2>
                   <div>
                     <NextLink
