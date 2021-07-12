@@ -1,19 +1,22 @@
-import { promises as fs } from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
-import RSS from 'rss'
-import { URL } from 'url'
+const { promises: fs } = require('fs')
+const path = require('path')
+const RSS = require('rss')
+const matter = require('gray-matter')
+const { URL } = require('url')
 
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { Environment } from '@/lib/environment'
-import { FormatDate } from '@/lib/utils'
+const FormatDate = (value) => {
+  return new Date(value).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+}
 
-const handler = async (
-  _: NextApiRequest,
-  res: NextApiResponse
-): Promise<void> => {
-  const { siteUrl, ogTitle, ogImage, ogDescription, isr } = Environment
-
+;(async () => {
+  const siteUrl = 'https://mkreg.dev'
+  const ogTitle = 'Omar Alsoudani'
+  const ogImage = '/static/images/mk.jpg'
+  const ogDescription = 'Software developer, creator and the king of laziness.'
   const feedOptions = {
     title: ogTitle,
     description: ogDescription,
@@ -21,7 +24,6 @@ const handler = async (
     feed_url: new URL('rss.xml', siteUrl),
     site_url: new URL('', siteUrl),
     image_url: new URL(ogImage, siteUrl),
-    ttl: isr.revalidate,
     custom_namespaces: {
       content: `http://purl.org/rss/1.0/modules/content/`,
       media: `http://search.yahoo.com/mrss/`,
@@ -29,7 +31,7 @@ const handler = async (
   }
   const feed = new RSS(feedOptions)
 
-  const dirs = ['writing']
+  const dirs = ['writing', 'writing/linux-commands']
   try {
     await Promise.all(
       dirs.map(async (dir) => {
@@ -66,9 +68,7 @@ const handler = async (
       })
     )
 
-    res.setHeader('content-type', 'text/xml')
-
-    res.send(feed.xml({ indent: true }))
+    fs.writeFile('public/rss.xml', feed.xml({ indent: true }))
   } catch (e) {
     // fallback default
     feed.item({
@@ -78,10 +78,6 @@ const handler = async (
       description: ogDescription,
       author: ogTitle,
     })
-    res.setHeader('content-type', 'text/xml')
-
-    res.send(feed.xml({ indent: true }))
+    await fs.writeFile('public/rss.xml', feed.xml({ indent: true }))
   }
-}
-
-export default handler
+})()
