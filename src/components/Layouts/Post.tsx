@@ -51,7 +51,7 @@ export default function PostLayout({
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
           <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-4 xl:col-span-3 xl:col-start-2 xl:row-span-2">
-            <div className="pt-10 pb-8 prose dark:prose-dark lg:prose-lg w-full max-w-none mx-auto">
+            <div className="pt-10 pb-8 prose dark:prose-dark lg:prose-lg w-full max-w-none">
               {children}
             </div>
           </div>
