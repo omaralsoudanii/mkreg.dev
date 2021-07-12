@@ -16,7 +16,7 @@ This page covers Docker specific commands on Linux. You can use it as a referenc
 
 ### Docker compose
 
-This builds the images and run their containers assuming the default compose file name is docker-compose.yml, or by specifying it's file name.
+This builds the images and run their containers assuming the default compose file name is docker-compose.yml, or by specifying the file name.
 
 Default file name
 
@@ -30,11 +30,25 @@ Different file name
 docker-compose  -f docker-compose.development.yml up  --build -d
 ```
 
-Build images and run their containers while ignoring the current existing images cache (useful for multi-stage builds, when you just want to re-build everything with fresh layers)
+More than one file. This gives you the ability to add more than one file, and docker will combine them into and single configuration. Docker will build the configuration by the order of the files supplied, so subsequent files will add configuration or override (in case the configuration directive was in two files) to their predecessors
+
+```bash
+docker-compose -f docker-compose.base.yml -f docker-compose.proxy.yml -f docker-compose.migration.yml up --build -d
+```
+
+Build images and run their containers **while ignoring the current existing images cache** (useful for multi-stage builds, when you just want to re-build everything with fresh layers)
 
 ```bash
 docker-compose build  --no-cache
 ```
+
+The same as above but this time also **attempt to pull the latest version of the images**. The pull argument might be useless for you if your images are pinned to an exact version. For example this NodeJS image `node:14.16.1-alpine` specifies the major, minor and patch with the tag alpine, so the pull argument will do nothing. Meanwhile this NodeJS image `node:alpine ` will **attempt** to pull the latest non-breaking changes **LTS** version, basically it will update the minor and patch versions.
+
+```bash
+docker-compose build  --no-cache --pull
+```
+
+> Although I said non-breaking, you never know with docker. So I always prefer the pinning to exact version and update  the image myself manually. Unless ofcourse I'm too lazy to do that, then I use the second method. Which is the case in this site!
 
 ### exec command
 
@@ -116,6 +130,14 @@ docker network prune
 docker volume ls -qf dangling=true | xargs -r docker volume rm
 ```
 
+**Note:** If you are using volumes managed by docker instead of bind volumes by declaring them in a docker-compose file. Beware that you might accidentally wipe the whole data by issuing the following
+
+```` bash
+docker-compose down -v
+````
+
+`down` tells docker to remove all containers and images from the running compose file. `-v` tells docker to also **wipe any managed volumes**
+
 ### Tailing logs
 
 This gets you the latest 100 line from a container
@@ -148,3 +170,11 @@ docker system df -v
 ```bash:Overview
 docker system df
 ```
+
+## All topics
+
+1.  [General Linux commands](/writing/linux-commands/general)
+2.  [Docker Commands](/writing/linux-commands/docker) 
+3.  [MySQL Commands](/writing/linux-commands/mysql)
+4.  [MongoDB Commands](/writing/linux-commands/mongodb)
+5.  [PHP Commands](/writing/linux-commands/php)

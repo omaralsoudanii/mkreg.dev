@@ -42,7 +42,7 @@ Export MySQL database to a directory with `mysqldump`
 
 This Changes **MySQL CLI** pager to `less`. Using `less` helps readability when viewing large sets of data from queries in the terminal. Use this after you login into the MySQL shell
 
-```bash
+```mysql
 pager less -R -S
 ```
 
@@ -50,7 +50,7 @@ pager less -R -S
 
 In your current MySQL session you can enable profiling to debug and tune queries performance
 
-```sql
+```mysql
 SET profiling = 1;
 select * from table_name where field_name like '%omar%';
 SHOW PROFILES;
@@ -58,3 +58,10 @@ SHOW PROFILE FOR QUERY 1; ## 1 is the ID from SHOW PROFILES
 SHOW PROFILE CPU FOR QUERY 2;
 ```
 
+## All topics
+
+1.  [General Linux commands](/writing/linux-commands/general)
+2.  [Docker Commands](/writing/linux-commands/docker) 
+3.  [MySQL Commands](/writing/linux-commands/mysql)
+4.  [MongoDB Commands](/writing/linux-commands/mongodb)
+5.  [PHP Commands](/writing/linux-commands/php)
