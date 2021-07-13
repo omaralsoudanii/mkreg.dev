@@ -18,19 +18,19 @@ This page covers Docker specific commands on Linux. You can use it as a referenc
 
 This builds the images and run their containers assuming the default compose file name is docker-compose.yml, or by specifying the file name.
 
-Default file name
+**Default file name**
 
 ```bash
 docker-compose up  --build -d
 ```
 
-Different file name
+**Different file name**
 
 ```bash
 docker-compose  -f docker-compose.development.yml up  --build -d
 ```
 
-More than one file. This gives you the ability to add more than one file, and docker will combine them into and single configuration. Docker will build the configuration by the order of the files supplied, so subsequent files will add configuration or override (in case the configuration directive was in two files) to their predecessors
+**More than one file.** This gives you the ability to add more than one file, and **docker will combine them into and single configuration**. Docker will build the configuration by the order of the files supplied, so subsequent files will add configuration or override (in case the configuration directive was in two files) to their predecessors
 
 ```bash
 docker-compose -f docker-compose.base.yml -f docker-compose.proxy.yml -f docker-compose.migration.yml up --build -d
@@ -87,13 +87,13 @@ Export data from a Docker MySQL container to a directory using `mysqldump` and e
 
 ### SSH into a container
 
--    For alpine images, only sh is available 
+-    For **alpine** images, only sh is available 
 
         ```bash
      docker exec -it app_server sh
         ```
 
--    For other images,  bash is available
+-    For **other** images,  bash is available
 
         ```bash
      docker exec -it app_server bash
@@ -130,7 +130,7 @@ docker network prune
 docker volume ls -qf dangling=true | xargs -r docker volume rm
 ```
 
-**Note:** If you are using volumes managed by docker instead of bind volumes by declaring them in a docker-compose file. Beware that you might accidentally wipe the whole data by issuing the following
+**Note:** If you are using **volumes managed by docker** instead of bind volumes by declaring them in a docker-compose file. Beware that you might accidentally wipe the whole data by issuing the following
 
 ```` bash
 docker-compose down -v
