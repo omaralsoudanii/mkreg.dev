@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build && node ./src/lib/sitemap.js && node ./src/lib/rss.js",
+    "build": "next build",
     "start": "next start",
     "build-check": "yarn tsc && yarn lint && yarn format && yarn build && yarn start",
     "type-check": "tsc",
