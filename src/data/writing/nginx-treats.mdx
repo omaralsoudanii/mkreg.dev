@@ -205,7 +205,7 @@ server {
 
 We create a map and assign the value to the variable `$empty` , the map have just a default condition with the empty string value so `$empty` value would be.... empty!
 
-![Omar Alsoudani - NGINX Treats](/static/images/Yo-Dawg.jpg)
+![Omar Alsoudani - NGINX Treats](/static/images/dawg-mkreg.jpg)
 
 Then we have a server block that listen to both ports 80 and 443 IPv4 and IPv6, this block is the default server block in NGINX by adding `default_server` in the listen directive and the server name is anonymous, in another words NGINX will use this block if it can't find the route in every other defined server blocks. Which is the case we need, accessing through IP address will not match the other server blocks, just make sure you name them by your domain name.
 

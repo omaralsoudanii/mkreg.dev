@@ -42,6 +42,10 @@
     text-shadow: none;
   }
 
+  .prose img {
+    @apply m-0 !important;
+  }
+
 }
 
 @layer components {
