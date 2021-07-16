@@ -200,12 +200,10 @@
 
   .prose .anchor {
     @apply opacity-0 cursor-pointer text-blue-600 dark:text-blue-400 pl-2;
-    transition: opacity 200ms ease 0s;
+    transition: opacity 150ms ease 0s;
   }
 
-  .anchor:hover,
-  .anchor:target,
-  .anchor:focus {
+  .anchor:hover {
     @apply opacity-100;
   }
 
@@ -213,9 +211,7 @@
     content: '#';
   }
 
-  .prose *:hover > .anchor,
-  .prose *:target > .anchor,
-  .prose *:focus > .anchor {
+  .prose *:hover > .anchor {
     @apply opacity-100;
   }
 }
