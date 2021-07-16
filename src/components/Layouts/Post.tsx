@@ -22,13 +22,13 @@ export default function PostLayout({
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = new Number(data?.total)
 
-  // 5 min preventing adding a new view, so i can get a realistic number
+  // 2 min preventing adding a new view, so i can get a realistic number
   const registerView = async (isNew: boolean) => {
     if (isNew === null) {
       await fetch(`/api/views/${slug}`, {
         method: 'POST',
       })
-      setLocalStorage(slug as string, data?.total + 1, 300000)
+      setLocalStorage(slug as string, data?.total + 1, 120000)
     }
   }
 
