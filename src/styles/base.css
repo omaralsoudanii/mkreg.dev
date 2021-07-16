@@ -203,7 +203,8 @@
     transition: opacity 150ms ease 0s;
   }
 
-  .anchor:hover {
+  .anchor:hover,
+  .anchor:focus {
     @apply opacity-100;
   }
 
@@ -211,7 +212,8 @@
     content: '#';
   }
 
-  .prose *:hover > .anchor {
+  .prose *:hover > .anchor,
+  .prose *:focus > .anchor {
     @apply opacity-100;
   }
 }
