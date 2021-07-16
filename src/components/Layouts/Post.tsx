@@ -3,6 +3,8 @@ import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
 import * as React from 'react'
+import useSWR from 'swr'
+import fetcher from '@/lib/fetcher'
 
 export default function PostLayout({
   children,
@@ -11,7 +13,18 @@ export default function PostLayout({
   next = null,
   parentPost = null,
 }) {
-  const { date, title, tags, lastmod, summary } = frontMatter
+  const { date, title, tags, lastmod, summary, slug } = frontMatter
+  const { data } = useSWR(`/api/views/${slug}`, fetcher)
+  const views = new Number(data?.total)
+
+  React.useEffect(() => {
+    const registerView = () =>
+      fetch(`/api/views/${slug}`, {
+        method: 'POST',
+      })
+
+    registerView()
+  }, [slug])
 
   const meta = {
     title: `Omar Alsoudani - ${title}`,
@@ -57,6 +70,12 @@ export default function PostLayout({
           </div>
           <aside className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
             <dl className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
+              <dt className="sr-only">Views</dt>
+              <div className="flex xl:block pb-1">
+                <dd className="font-medium text-base leading-6 text-secondary">{`${
+                  views > 0 ? views.toLocaleString() : '–––'
+                } Views`}</dd>
+              </div>
               <dt className="sr-only">Author</dt>
               <dd>
                 <div className="flex xl:block pb-1">
@@ -89,14 +108,14 @@ export default function PostLayout({
                 </div>
               </dd>
               {lastmod && (
-                <>
+                <React.Fragment>
                   <dt className="sr-only">Modified on</dt>
                   <dd className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
                     <time dateTime={lastmod}>
                       {`Last Modified ${FormatDate(lastmod)}`}
                     </time>
                   </dd>
-                </>
+                </React.Fragment>
               )}
             </dl>
             {tags && (
