@@ -23,9 +23,9 @@ export default function PostLayout({
   const views = new Number(data?.total)
 
   // 5 min preventing adding a new view, so i can get a realistic number
-  const registerView = (isNew: boolean) => {
+  const registerView = async (isNew: boolean) => {
     if (isNew === null) {
-      fetch(`/api/views/${slug}`, {
+      await fetch(`/api/views/${slug}`, {
         method: 'POST',
       })
       setLocalStorage(slug as string, data?.total + 1, 300000)
@@ -57,17 +57,14 @@ export default function PostLayout({
       >
         <header className="pb-6 xl:pb-8">
           <div className="space-y-2 text-center">
-            <dl>
-              <dt className="sr-only">Published on</dt>
-              <dd>
-                <time dateTime={date}>
-                  <p className="font-medium text-base  leading-6 text-secondary">
-                    {`${FormatDate(date)}`}
-                  </p>
-                </time>
-              </dd>
-            </dl>
-            <h1 className="page-heading mb-8 sm:mb-16">{title}</h1>
+            <p className="font-medium text-base lg:text-lg  text-gray-500 dark:text-gray-400">
+              <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
+              {`    •    `}
+              <span className="px-2 !font-medium">
+                {views > 0 ? views.toLocaleString() : '–––'} Views{' '}
+              </span>
+            </p>
+            <h1 className="page-heading mb-4 sm:mb-8">{title}</h1>
           </div>
         </header>
         <div
@@ -81,12 +78,6 @@ export default function PostLayout({
           </div>
           <aside className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
             <dl className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
-              <dt className="sr-only">Views</dt>
-              <div className="flex xl:block pb-1">
-                <dd className="font-medium text-base leading-6 text-secondary">{`${
-                  views > 0 ? views.toLocaleString() : '–––'
-                } Views`}</dd>
-              </div>
               <dt className="sr-only">Author</dt>
               <dd>
                 <div className="flex xl:block pb-1">
