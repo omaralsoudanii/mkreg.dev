@@ -1,7 +1,12 @@
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
-import { FormatDate, slugify } from '@/lib/utils'
+import {
+  FormatDate,
+  getLocalStorage,
+  setLocalStorage,
+  slugify,
+} from '@/lib/utils'
 import * as React from 'react'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
@@ -17,13 +22,19 @@ export default function PostLayout({
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = new Number(data?.total)
 
-  React.useEffect(() => {
-    const registerView = () =>
+  // 5 min preventing adding a new view, so i can get a realistic number
+  const registerView = (isNew: boolean) => {
+    if (isNew === null) {
       fetch(`/api/views/${slug}`, {
         method: 'POST',
       })
+      setLocalStorage(slug as string, data?.total + 1, 300000)
+    }
+  }
 
-    registerView()
+  React.useEffect(() => {
+    const isNew = getLocalStorage(slug as string)
+    registerView(isNew)
   }, [slug])
 
   const meta = {
