@@ -10,10 +10,8 @@ const Pre = (props) => {
   }
 
   const onExit = () => {
-    setTimeout(() => {
-      setHovered(false)
-      setCopied(false)
-    }, 300)
+    setHovered(false)
+    setCopied(false)
   }
 
   const onCopy = () => {
@@ -35,7 +33,7 @@ const Pre = (props) => {
         <button
           aria-label="Copy code"
           type="button"
-          className={`absolute right-3 top-3 w-9 h-9 p-1 rounded border-2 bg-gray-300 dark:bg-[#282e33] ${
+          className={`absolute right-3 top-3 w-7 h-7 p-1 rounded border-2 bg-gray-300 dark:bg-[#282e33] ${
             copied
               ? 'focus:outline-none focus:border-blue-600 border-blue-600 dark:border-blue-400 dark:focus:border-blue-400'
               : 'border-gray-200 dark:border-[#6e7681]'

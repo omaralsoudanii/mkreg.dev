@@ -35,8 +35,7 @@
     @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
     text-shadow: none;
   }
-  
-  
+
   ::selection {
     @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
     text-shadow: none;
@@ -45,7 +44,6 @@
   .prose img {
     @apply m-0 !important;
   }
-
 }
 
 @layer components {
@@ -158,7 +156,6 @@
   .footer-column {
     @apply flex flex-col items-start  space-y-8 py-4 px-2 lg:items-center;
   }
-
 }
 
 @layer utilities {
@@ -206,7 +203,9 @@
     transition: opacity 200ms ease 0s;
   }
 
-  .anchor:hover,.anchor:focus {
+  .anchor:hover,
+  .anchor:target,
+  .anchor:focus {
     @apply opacity-100;
   }
 
@@ -214,7 +213,9 @@
     content: '#';
   }
 
-  .prose *:hover > .anchor , .prose *:focus > .anchor {
+  .prose *:hover > .anchor,
+  .prose *:target > .anchor,
+  .prose *:focus > .anchor {
     @apply opacity-100;
   }
 }
