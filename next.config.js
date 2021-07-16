@@ -23,7 +23,4 @@ module.exports = {
 
     return config
   },
-  generateBuildId: async () => {
-    return 'mk-next'
-  },
 }
