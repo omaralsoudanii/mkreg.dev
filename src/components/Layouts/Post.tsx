@@ -49,7 +49,7 @@ export default function PostLayout({
   }
 
   return (
-    <div>
+    <React.Fragment>
       <Seo data={meta} />
       <article
         id="skip"
@@ -76,50 +76,39 @@ export default function PostLayout({
               {children}
             </div>
           </div>
-          <aside className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
-            <dl className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
-              <dt className="sr-only">Author</dt>
-              <dd>
-                <div className="flex xl:block pb-1">
-                  <dl className="whitespace-nowrap">
-                    <dt className="sr-only">Name</dt>
-                    <dd className="!font-medium  text-display text-base pb-1">
-                      {Environment.ogTitle}
-                    </dd>
-                    <div className="flex flex-wrap">
-                      <dt className="sr-only">Github</dt>
-                      <dd className="mr-3  py-0">
-                        <NextLink
-                          href={Environment.social.github}
-                          className="primary-link inline-block text-base "
-                        >
-                          Github
-                        </NextLink>
-                      </dd>
-                      <dt className="sr-only">Twitter</dt>
-                      <dd className="mr-3 py-0">
-                        <NextLink
-                          href={Environment.social.twitter}
-                          className="primary-link inline-block text-base "
-                        >
-                          Twitter
-                        </NextLink>
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              </dd>
+          <div className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
+            <div className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
               {lastmod && (
-                <React.Fragment>
-                  <dt className="sr-only">Modified on</dt>
-                  <dd className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
-                    <time dateTime={lastmod}>
-                      {`Last Modified ${FormatDate(lastmod)}`}
-                    </time>
-                  </dd>
-                </React.Fragment>
+                <p className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
+                  {`Last Modified ${FormatDate(lastmod)}`}
+                </p>
               )}
-            </dl>
+              <div className="flex xl:block">
+                <div className="whitespace-nowrap  pb-1">
+                  <p className="!font-medium text-display text-base pb-1">
+                    {Environment.ogTitle}
+                  </p>
+                  <div className="flex flex-wrap">
+                    <p className="mr-3  py-0">
+                      <NextLink
+                        href={Environment.social.github}
+                        className="primary-link inline-block text-base "
+                      >
+                        Github
+                      </NextLink>
+                    </p>
+                    <p className="mr-3 py-0">
+                      <NextLink
+                        href={Environment.social.twitter}
+                        className="primary-link inline-block text-base "
+                      >
+                        Twitter
+                      </NextLink>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             {tags && (
               <div className="py-3 xl:py-6">
                 <h2 className="pb-2 text-base !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
@@ -145,14 +134,12 @@ export default function PostLayout({
                     <h2 className="text-base pb-2 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
                       Previous Article
                     </h2>
-                    <div>
-                      <NextLink
-                        className=" text-base primary-link"
-                        href={`${prev.path}/${prev.slug}`}
-                      >
-                        {prev.title}
-                      </NextLink>
-                    </div>
+                    <NextLink
+                      className="text-base primary-link"
+                      href={`${prev.path}/${prev.slug}`}
+                    >
+                      {prev.title}
+                    </NextLink>
                   </div>
                 )}
                 {next && (
@@ -160,51 +147,48 @@ export default function PostLayout({
                     <h2 className="text-base pb-2 !font-medium  text-gray-500 dark:text-gray-400">
                       Next Article
                     </h2>
-                    <div>
-                      <NextLink
-                        className="primary-link text-base"
-                        href={`${next.path}/${next.slug}`}
-                      >
-                        {next.title}
-                      </NextLink>
-                    </div>
+                    <NextLink
+                      className="primary-link text-base"
+                      href={`${next.path}/${next.slug}`}
+                    >
+                      {next.title}
+                    </NextLink>
                   </div>
                 )}
               </div>
             )}
             {!next && !prev && parentPost && (
-              <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                <div>
+              <React.Fragment>
+                <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                   <h2 className="text-base pb-2 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
                     Main Article
                   </h2>
-                  <div>
-                    <NextLink
-                      className="text-base primary-link"
-                      href={`${parentPost.path}`}
-                    >
-                      {parentPost.title}
-                    </NextLink>
-                  </div>
+                  <NextLink
+                    className="text-base primary-link"
+                    href={`${parentPost.path}`}
+                  >
+                    {parentPost.title}
+                  </NextLink>
                 </div>
-                <div>
-                  <h2 className="text-base pb-2 !font-medium  text-gray-500 dark:text-gray-400">
-                    Read more
-                  </h2>
-                  <div>
-                    <NextLink
-                      className="primary-link text-base"
-                      href="/writing"
-                    >
-                      Browse all Writing
-                    </NextLink>
-                  </div>
+                <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                  <NextLink
+                    className="primary-link text-base pb-2"
+                    href="/writing"
+                  >
+                    Browse all Writing
+                  </NextLink>
+                  <NextLink
+                    className="primary-link text-base pb-2"
+                    href="/tags"
+                  >
+                    Browse by Tags
+                  </NextLink>
                 </div>
-              </div>
+              </React.Fragment>
             )}
-          </aside>
+          </div>
         </div>
       </article>
-    </div>
+    </React.Fragment>
   )
 }
