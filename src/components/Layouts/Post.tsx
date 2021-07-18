@@ -3,8 +3,8 @@ import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import {
   FormatDate,
-  getLocalStorage,
-  setLocalStorage,
+  getSessionStorage,
+  setSessionStorage,
   slugify,
 } from '@/lib/utils'
 import * as React from 'react'
@@ -22,18 +22,18 @@ export default function PostLayout({
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = new Number(data?.total)
 
-  // 2 min preventing adding a new view, so i can get a realistic number
-  const registerView = async (isNew: boolean) => {
+  // preventing adding a new view as long as there is a session, so i can get a realistic number
+  const registerView = (isNew: boolean) => {
     if (isNew === null) {
-      await fetch(`/api/views/${slug}`, {
+      setSessionStorage(slug as string, data?.total + 1)
+      fetch(`/api/views/${slug}`, {
         method: 'POST',
       })
-      setLocalStorage(slug as string, data?.total + 1, 120000)
     }
   }
 
   React.useEffect(() => {
-    const isNew = getLocalStorage(slug as string)
+    const isNew = getSessionStorage(slug as string)
     registerView(isNew)
   }, [slug])
 
@@ -79,7 +79,7 @@ export default function PostLayout({
           <div className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
             <div className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
               {lastmod && (
-                <p className=" !font-medium  text-gray-500 dark:text-gray-400 text-sm pb-4">
+                <p className="!font-medium  text-gray-500 dark:text-gray-400 text-base pb-4">
                   {`Last Modified ${FormatDate(lastmod)}`}
                 </p>
               )}
