@@ -6,7 +6,7 @@ import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from './icons'
 import RoutesMetadata from '@/lib/RoutesMetadata'
 
 export default function Header() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   // When mounted on client, now we can show the UI
   React.useEffect(() => setMounted(true), [])
@@ -44,13 +44,7 @@ export default function Header() {
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }}
           >
-            {mounted ? (
-              theme === 'dark' || resolvedTheme === 'dark' ? (
-                <SunIcon />
-              ) : (
-                <MoonIcon />
-              )
-            ) : null}
+            {mounted && (resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />)}
           </div>
         </div>
         {isExpanded &&
@@ -82,13 +76,7 @@ export default function Header() {
           className="hidden sm:block sm:hdr-cnt-theme-btn"
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
-          {mounted ? (
-            theme === 'dark' || resolvedTheme === 'dark' ? (
-              <SunIcon />
-            ) : (
-              <MoonIcon />
-            )
-          ) : null}
+          {mounted && (resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />)}
         </div>
       </nav>
     </React.Fragment>
