@@ -43,12 +43,16 @@ export default function PostLayout({
         id="skip"
         className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700"
       >
-        <header className="pb-6 xl:pb-8">
+        <header className="pb-4 xl:pb-8">
           <div className="space-y-3 text-center">
-            <p className="font-medium text-base lg:text-lg text-tertiary">
-              {`${FormatDate(date)}`}
+            <p className="font-medium text-base lg:text-lg  text-gray-500 dark:text-gray-400">
+              <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
+              {`    •    `}
+              <span className="px-2 !font-medium">
+                <ArticleViews slug={slug} />
+              </span>
             </p>
-            <h1 className="page-heading mb-4 sm:mb-8">{title}</h1>
+            <h1 className="page-heading mb-4 xl:mb-8">{title}</h1>
           </div>
         </header>
         <div
@@ -56,7 +60,7 @@ export default function PostLayout({
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
           <div className="xl:pb-4 xl:col-span-3 xl:col-start-2 xl:row-span-2">
-            <div className="pt-10 pb-8 prose dark:prose-dark lg:prose-lg w-full !max-w-none">
+            <div className="xl:pt-10 xl:pb-8 pb-4 pt-5 prose dark:prose-dark lg:prose-lg w-full !max-w-none">
               {children}
             </div>
           </div>
@@ -65,9 +69,6 @@ export default function PostLayout({
               <div className="flex flex-col">
                 <p className="!font-medium text-display text-base  py-1">
                   {Environment.ogTitle}
-                </p>
-                <p className="!font-medium  text-tertiary text-base py-1">
-                  <ArticleViews slug={slug} />
                 </p>
                 {lastmod && (
                   <p className="!font-medium  text-tertiary text-base py-1">
