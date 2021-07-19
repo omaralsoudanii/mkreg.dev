@@ -1,12 +1,13 @@
-.remark-code-title {
-  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-tertiary;
+.prose .remark-code-title {
+  @apply px-5 py-3 text-sm md:text-base font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-tertiary;
 }
 
-.remark-code-title + div > pre {
+.prose .remark-code-title + div > pre {
   @apply mt-0 rounded-t-none;
 }
 
-h4 + div > pre , h4 + .remark-code-title {
+.prose h4 + div > pre,
+.prose h4 + .remark-code-title {
   @apply mt-4 !important;
 }
 
@@ -17,7 +18,7 @@ h4 + div > pre , h4 + .remark-code-title {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-opacity-30 dark:border-gray-700 dark:bg-dark-secondary mt-0 mb-0 font-mono;
+  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -37,145 +38,91 @@ pre[class*='language-'] {
   hyphens: none;
 }
 
-
 /* Code blocks */
-pre[class*='language-'] {
+.prose pre[class*='language-'] {
   overflow: auto;
 }
 
-:not(pre) > code[class*='language-'] {
+.prose :not(pre) > code[class*='language-'] {
   padding: 0.1em;
   white-space: normal;
 }
 
-.dark .token.attr-name {
-  color: rgb(173, 219, 103);
+.token.attr-name {
+  @apply text-[#008000] dark:text-[#addb67];
   font-style: italic;
 }
 
-.light .token.attr-name {
-  color: rgb(0, 128, 0);
-  font-style: italic;
+
+.token.comment {
+  @apply text-gray-500;
 }
 
-.dark .token.comment {
-  color: rgb(128, 147, 147);
-}
 
-.light .token.comment {
-  color: rgb(106, 115, 125);
-}
-
-.dark .token.string,
-.dark .token.url {
-  color: rgb(173, 219, 103);
-}
-
-.light .token.string,
-.light .token.url {
-  color: rgb(0, 128, 0);
+.token.string,
+.token.url {
+  @apply text-[#008000] dark:text-[#addb67];
 }
 
 .token.variable {
   @apply text-gray-700 dark:text-gray-300;
 }
 
-.dark .token.number {
-  color: rgb(247, 140, 108);
+.token.number {
+  @apply text-[#e36209] dark:text-[#f78c6c];
 }
 
-.light .token.number {
-  color: rgb(227, 98, 9);
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function {
+  @apply text-blue-500 dark:text-blue-400;
 }
 
-.dark .token.builtin,
-.dark .token.char,
-.dark .token.constant,
-.dark .token.function {
-  color: rgb(130, 170, 255);
+.token.punctuation {
+  @apply text-purple-500 dark:text-purple-400;
 }
 
-.light .token.builtin,
-.light .token.char,
-.light .token.constant,
-.light .token.function {
-  color: rgb(0, 92, 197);
-}
-
-.dark .token.punctuation {
-  color: rgb(199, 146, 234);
-}
-
-.light .token.punctuation {
-  color: rgb(133, 89, 162);
-}
-
-.dark .token.selector,
-.dark .token.doctype {
-  color: rgb(199, 146, 234);
+.token.selector,
+.token.doctype {
+  @apply text-indigo-500 dark:text-indigo-400;
   font-style: 'italic';
 }
 
-.light .token.selector,
-.light .token.doctype {
-  color: rgb(133, 89, 162);
-  font-style: 'italic';
+.token.class-name {
+  @apply text-yellow-500 dark:text-yellow-400;
 }
 
-.dark .token.class-name {
-  color: rgb(255, 203, 139);
+
+.token.tag,
+.token.operator,
+.token.keyword {
+  @apply text-pink-500 dark:text-pink-400;
 }
 
-.light .token.class-name {
-  color: rgb(166, 108, 38);
+.token.boolean {
+  @apply text-red-500 dark:text-red-400;
 }
 
-.dark .token.tag,
-.dark .token.operator,
-.dark .token.keyword {
-  color: #ffa7c4;
+.token.property {
+  @apply text-[#63cdc3] dark:text-[#80cbc4];
 }
 
-.light .token.tag,
-.light .token.operator,
-.light .token.keyword {
-  color: #ff4884;
+.token.namespace {
+  @apply text-sky-500 dark:text-sky-400;
 }
 
-.dark .token.boolean {
-  color: rgb(255, 88, 116);
-}
-
-.light .token.boolean {
-  color: rgb(215, 58, 73);
-}
-
-.dark .token.property {
-  color: rgb(128, 203, 196);
-}
-
-.light .token.property {
-  color: rgb(99, 205, 195);
-}
-
-.dark .token.namespace {
-  color: rgb(178, 204, 214);
-}
-
-.light .token.namespace {
-  color: rgb(113, 178, 205);
-}
-
-pre::-webkit-scrollbar {
+.prose pre::-webkit-scrollbar {
   display: none;
 }
 
-pre {
+.prose pre {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-pre:not([class*='language-']),
-code:not([class*='language-']) {
-  @apply text-gray-900 font-medium bg-gray-50 dark:bg-dark-tertiary  dark:text-gray-100 p-1;
+.prose pre:not([class*='language-']),
+.prose code:not([class*='language-']) {
+  @apply text-gray-900 font-medium bg-gray-100 dark:bg-dark-tertiary  dark:text-gray-100 p-1;
 }

@@ -3,8 +3,8 @@ import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import {
   FormatDate,
-  getSessionStorage,
-  setSessionStorage,
+  setLocalStorage,
+  getLocalStorage,
   slugify,
 } from '@/lib/utils'
 import * as React from 'react'
@@ -22,18 +22,18 @@ export default function PostLayout({
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = new Number(data?.total)
 
-  // preventing adding a new view as long as there is a session, so i can get a realistic number
-  const registerView = (isNew: boolean) => {
+  // 2 min preventing adding a new view, so i can get a realistic number
+  const registerView = async (isNew: boolean) => {
     if (isNew === null) {
-      setSessionStorage(slug as string, data?.total + 1)
-      fetch(`/api/views/${slug}`, {
+      await fetch(`/api/views/${slug}`, {
         method: 'POST',
       })
+      setLocalStorage(slug as string, data?.total + 1, 120000)
     }
   }
 
   React.useEffect(() => {
-    const isNew = getSessionStorage(slug as string)
+    const isNew = getLocalStorage(slug as string)
     registerView(isNew)
   }, [slug])
 
@@ -92,7 +92,7 @@ export default function PostLayout({
                     <p className="mr-3  py-0">
                       <NextLink
                         href={Environment.social.github}
-                        className="primary-link inline-block text-base "
+                        className="primary-link  text-base "
                       >
                         Github
                       </NextLink>
@@ -100,7 +100,7 @@ export default function PostLayout({
                     <p className="mr-3 py-0">
                       <NextLink
                         href={Environment.social.twitter}
-                        className="primary-link inline-block text-base "
+                        className="primary-link  text-base "
                       >
                         Twitter
                       </NextLink>
@@ -111,13 +111,13 @@ export default function PostLayout({
             </div>
             {tags && (
               <div className="py-3 xl:py-6">
-                <h2 className="pb-2 text-base !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
+                <h2 className="text-base py-1 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
                   Tagged with
                 </h2>
                 <div className="flex flex-wrap">
                   {tags.map((t: string) => (
                     <NextLink
-                      className="mr-4 !text-base my-2 primary-link"
+                      className="mr-4 !text-base my-1 primary-link"
                       key={t}
                       href={`/tags/${slugify(t)}`}
                     >
@@ -159,7 +159,7 @@ export default function PostLayout({
             )}
             {!next && !prev && parentPost && (
               <React.Fragment>
-                <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                <div className="flex flex-col py-4 xl:block xl:space-y-8 xl:py-8">
                   <h2 className="text-base pb-2 !tracking-normal !font-medium  text-gray-500 dark:text-gray-400">
                     Main Article
                   </h2>
@@ -170,19 +170,20 @@ export default function PostLayout({
                     {parentPost.title}
                   </NextLink>
                 </div>
-                <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                  <NextLink
-                    className="primary-link text-base pb-2"
-                    href="/writing"
-                  >
-                    Browse all Writing
-                  </NextLink>
-                  <NextLink
-                    className="primary-link text-base pb-2"
-                    href="/tags"
-                  >
-                    Browse by Tags
-                  </NextLink>
+                <div className="flex flex-row sm:flex-col justify-between py-4 xl:flex-col xl:space-y-4">
+                  <p className="py-2">
+                    <NextLink
+                      className="primary-link text-base"
+                      href="/writing"
+                    >
+                      Browse all Writing
+                    </NextLink>
+                  </p>
+                  <p className="py-2">
+                    <NextLink className="primary-link text-base" href="/tags">
+                      Browse by Tags
+                    </NextLink>
+                  </p>
                 </div>
               </React.Fragment>
             )}

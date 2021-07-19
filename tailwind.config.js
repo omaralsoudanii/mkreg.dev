@@ -7,9 +7,6 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
-      spacing: {
-        '9/16': '56.25%',
-      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -30,13 +27,14 @@ module.exports = {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
         'blue-400': '0px 2px 0px #60a5fa',
-        'blue-600': '0px 2px 0px #246cff',
+        'blue-600': '0px 2px 0px #1a73e8',
       },
       colors: {
         blue: {
           ...colors.blue,
-          600: '#246cff',
+          600: '#1a73e8',
         },
+        sky: colors.sky,
         dark: {
           primary: 'rgb(22, 27, 34)',
           secondary: 'rgb(30, 35, 42)',

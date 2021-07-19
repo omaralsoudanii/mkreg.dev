@@ -39,15 +39,21 @@ export const FormatDate = (value: string | number | Date): string => {
   })
 }
 
-export const setSessionStorage = (key: string, value: any) => {
+export const setLocalStorage = (key: string, value: any, ttl: number) => {
+  const now = new Date()
+
+  // `item` is an object which contains the original value
+  // as well as the time when it's supposed to expire
   const item = {
     value: value,
+    expiry: now.getTime() + ttl,
   }
-  sessionStorage.setItem(key, JSON.stringify(item))
+  localStorage.setItem(key, JSON.stringify(item))
 }
 
-export const getSessionStorage = (key: string) => {
-  const itemStr = sessionStorage.getItem(key)
+export const getLocalStorage = (key: string) => {
+  const now = new Date()
+  const itemStr = localStorage.getItem(key)
 
   // if the item doesn't exist, return null
   if (!itemStr) {
@@ -56,5 +62,12 @@ export const getSessionStorage = (key: string) => {
 
   const item = JSON.parse(itemStr)
 
+  // compare the expiry time of the item with the current time
+  if (now.getTime() > item.expiry) {
+    // If the item is expired, delete the item from storage
+    // and return null
+    localStorage.removeItem(key)
+    return null
+  }
   return item.value
 }

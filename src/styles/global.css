@@ -1,2 +1,4 @@
 @import 'base.css';
 @import 'syntax.css';
+@import 'tailwindcss/components';
+@import 'utilities.css';
