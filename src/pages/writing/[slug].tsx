@@ -1,14 +1,16 @@
+import * as React from 'react'
+
+import { getMDXComponent } from 'mdx-bundler/client'
+import { GetStaticPaths, GetStaticProps } from 'next'
+
+import Post from '@/components/Layouts/Post'
 import MDXComponents from '@/components/MDXComponents'
 import {
   getAllFilesName,
   getFileBySlug,
   getAllFilesFrontMatter,
 } from '@/lib/mdx'
-import Post from '@/components/Layouts/Post'
 import { dateSortDesc, formatSlug } from '@/lib/utils'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import * as React from 'react'
-import { getMDXComponent } from 'mdx-bundler/client'
 
 /**
  *

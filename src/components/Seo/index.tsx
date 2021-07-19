@@ -1,6 +1,7 @@
-import { Environment } from '@/lib/environment'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+
+import { Environment } from '@/lib/environment'
 
 interface JsonLd {
   '@context': string

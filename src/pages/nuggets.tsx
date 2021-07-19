@@ -1,7 +1,7 @@
-import Bookmarks from '@/lib/bookmarks'
-import Seo from '@/components/Seo'
 import Card from '@/components/Card'
 import ProseContainer from '@/components/Layouts/ProseContainer'
+import Seo from '@/components/Seo'
+import Bookmarks from '@/lib/bookmarks'
 
 function Nuggets() {
   const meta = {

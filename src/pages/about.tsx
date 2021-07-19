@@ -1,10 +1,12 @@
-import { getFileBySlug } from '@/lib/mdx'
+import * as React from 'react'
+
+import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticProps } from 'next'
+
+import ProseContainer from '@/components/Layouts/ProseContainer'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
-import ProseContainer from '@/components/Layouts/ProseContainer'
-import * as React from 'react'
-import { getMDXComponent } from 'mdx-bundler/client'
+import { getFileBySlug } from '@/lib/mdx'
 
 function About({ mdxSource, frontMatter }) {
   const meta = {

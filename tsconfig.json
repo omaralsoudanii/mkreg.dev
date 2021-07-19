@@ -30,5 +30,5 @@
     "src/**/*.tsx",
     "src/**/*.mdx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["./out/**/*", "./node_modules/**/*"]
 }

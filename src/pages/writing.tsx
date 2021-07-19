@@ -1,9 +1,10 @@
-import ProseContainer from '@/components/Layouts/ProseContainer'
-import PostsList from '@/components/Layouts/PostsList'
-import Seo from '@/components/Seo'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
+
+import PostsList from '@/components/Layouts/PostsList'
+import ProseContainer from '@/components/Layouts/ProseContainer'
+import Seo from '@/components/Seo'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 /**
  * Main writing page

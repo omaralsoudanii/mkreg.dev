@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // taken from tailwind-nextjs-starter-blog https://github.com/timlrx/tailwind-nextjs-starter-blog
 
 import visit from 'unist-util-visit'

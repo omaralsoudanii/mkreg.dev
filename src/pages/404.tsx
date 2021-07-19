@@ -1,5 +1,6 @@
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import Link from 'next/link'
+
+import ProseContainer from '@/components/Layouts/ProseContainer'
 
 export default function NotFound() {
   return (

@@ -1,7 +1,8 @@
-import { FormatDate } from '@/lib/utils'
 import Link from 'next/link'
 import useSWR from 'swr'
+
 import fetcher from '@/lib/fetcher'
+import { FormatDate } from '@/lib/utils'
 
 export default function PostsList({ posts, href }) {
   return (

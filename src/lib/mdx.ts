@@ -1,8 +1,11 @@
-import { formatSlug, slugify } from '@/lib/utils'
 import fs from 'fs'
+import path from 'path'
+
 import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
-import path from 'path'
+
+import { formatSlug, slugify } from '@/lib/utils'
+
 import MDXImage from './MDXImage'
 import remarkCodeTitles from './remarkCodeTitles'
 const root = path.join(process.cwd(), 'src')

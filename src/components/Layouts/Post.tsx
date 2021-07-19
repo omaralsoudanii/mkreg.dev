@@ -1,9 +1,10 @@
+import * as React from 'react'
+
+import ArticleViews from '@/components/ArticleViews'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
-import ArticleViews from '@/components/ArticleViews'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
-import * as React from 'react'
 
 const editUrl = (slug: string) =>
   `${Environment.social.github}/mkreg.dev/edit/main/src/data/${slug}.mdx`

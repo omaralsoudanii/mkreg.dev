@@ -14,16 +14,16 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "build-check": "yarn tsc && yarn lint && yarn format && yarn build && yarn start",
-    "type-check": "tsc",
+    "build-check": "yarn ts && yarn lint && yarn build && yarn start",
+    "ts": "tsc --noEmit --pretty",
     "export": "next export",
-    "clean": "rm -rf .next node_modules && yarn cache clean && yarn install && yarn build && yarn start",
-    "format": "prettier --write src/**/*.{ts,tsx,js}",
-    "lint": "eslint --fix src/**/*.{ts,tsx,js}",
+    "clean": "rm -rf .next node_modules && yarn cache clean && yarn && yarn build && yarn start",
+    "lint": "next lint",
     "generate-icons": "npx @svgr/cli -d public/svgr-icons-tmp  --ignore-existing --typescript public/static/icons"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.7.0",
+    "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
     "gray-matter": "^4.0.3",
@@ -44,7 +44,6 @@
     "tailwindcss": "^2.2.4"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.5.0",
     "@types/node": "^16.3.3",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
@@ -53,10 +52,10 @@
     "eslint": "^7.31.0",
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-unused-imports": "^1.1.2",
     "globby": "^11.0.4",
-    "husky": "^6.0.0",
-    "lint-staged": "^11.0.1",
     "prettier": "^2.3.2",
     "prettier-eslint": "^12.0.0",
     "rehype": "^11.0.0",
@@ -67,12 +66,5 @@
     "unified": "^9.2.1",
     "unist-util-visit": "2.0.3"
   },
-  "lint-staged": {
-    "*.+(ts|tsx,js)": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
-  "pre-commit": "tsc && lint:staged",
   "license": "MIT"
 }

@@ -1,9 +1,12 @@
 import * as React from 'react'
+
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useTheme } from 'next-themes'
-import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from './icons'
+
 import RoutesMetadata from '@/lib/RoutesMetadata'
+
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from './icons'
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme()

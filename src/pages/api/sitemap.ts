@@ -1,10 +1,10 @@
 /* eslint-disable no-useless-escape */
 import globby from 'globby'
-import prettier from 'prettier'
-import { getAllTags } from '@/lib/mdx'
-
 import type { NextApiRequest, NextApiResponse } from 'next'
+import prettier from 'prettier'
+
 import { Environment } from '@/lib/environment'
+import { getAllTags } from '@/lib/mdx'
 
 const handler = async (
   _: NextApiRequest,

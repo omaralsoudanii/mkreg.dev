@@ -1,4 +1,3 @@
-import { Environment } from '@/lib/environment'
 import Document, {
   DocumentContext,
   Head,
@@ -6,6 +5,8 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
+
+import { Environment } from '@/lib/environment'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

@@ -1,6 +1,7 @@
+import Link from 'next/link'
+
 import ProseContainer from '@/components/Layouts/ProseContainer'
 import NextImage from '@/components/NextImage'
-import Link from 'next/link'
 
 export default function ServerError() {
   return (

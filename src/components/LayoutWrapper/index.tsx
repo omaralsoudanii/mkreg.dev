@@ -1,6 +1,6 @@
-import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import SectionContainer from '@/components/SectionContainer'
 
 const LayoutWrapper = ({ children }) => {
   return (

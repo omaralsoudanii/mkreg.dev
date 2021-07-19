@@ -1,5 +1,5 @@
-import { Environment } from '@/lib/environment'
 import NextLink from '@/components/NextLink'
+import { Environment } from '@/lib/environment'
 
 export default function Footer() {
   return (

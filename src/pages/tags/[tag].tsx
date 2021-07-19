@@ -1,11 +1,12 @@
-import ProseContainer from '@/components/Layouts/ProseContainer'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import Link from 'next/link'
+
 import PostsList from '@/components/Layouts/PostsList'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
 import { slugify } from '@/lib/utils'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import Link from 'next/link'
 
 /**
  *

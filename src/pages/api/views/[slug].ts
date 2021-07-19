@@ -1,5 +1,6 @@
-import db from '@/lib/planetscale'
 import { NextApiRequest, NextApiResponse } from 'next'
+
+import db from '@/lib/planetscale'
 
 const handler = async (
   req: NextApiRequest,
