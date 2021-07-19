@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getFileBySlug('writing/linux-commands', params.slug)
   const parentPost = {
     title: 'Linux commands for me',
-    path: '/writing/linux-commands',
+    path: 'writing/linux-commands',
   }
   return {
     props: { post, parentPost },
