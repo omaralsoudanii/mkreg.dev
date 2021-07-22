@@ -77,6 +77,7 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.200'),
+              fontStyle: 'normal',
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
