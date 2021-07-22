@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   html {
@@ -29,5 +31,188 @@
   ::selection {
     @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
     text-shadow: none;
+  }
+
+  .text-primary {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  .text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .text-tertiary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .text-display {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
+  }
+
+  .skip-content-nav {
+    @apply absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
+  }
+}
+
+@layer utilities {
+  .header-sm {
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-200 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark-primary dark:bg-opacity-80 filter-blur;
+  }
+
+  @supports not (backdrop-filter: none) {
+    .header-sm {
+      @apply bg-opacity-100 dark:bg-opacity-100 filter-none backdrop-filter-none !important;
+    }
+  }
+
+  .nav-default {
+    @apply flex py-4 text-base font-medium text-primary;
+  }
+
+  .nav-active {
+    @apply bg-gray-900 bg-opacity-10 dark:bg-opacity-10 dark:bg-gray-400  filter-blur;
+  }
+
+  .nav-inactive {
+    @apply filter-saturate;
+  }
+
+  .hdr-sm-btn {
+    @apply flex-auto px-6 py-4 font-medium cursor-pointer text-primary;
+  }
+
+  .hdr-sm-title {
+    @apply w-full p-4 self-center text-base font-medium cursor-pointer text-primary;
+  }
+
+  .hdr-sm-btn svg {
+    @apply w-6;
+  }
+
+  .hdr-cnt-theme-btn {
+    @apply w-8 h-8  p-1 ml-4 mr-4 text-primary cursor-pointer;
+  }
+
+  .btn {
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-base font-medium;
+  }
+
+  .btn-primary {
+    @apply text-white bg-black dark:text-black dark:bg-white;
+  }
+
+  .btn-large {
+    @apply w-full px-4 py-2;
+  }
+
+  .text-h1 {
+    @apply heading-default lg:text-7xl leading-none !important;
+  }
+
+  .text-h2 {
+    @apply heading-default lg:text-6xl leading-none  !important;
+  }
+
+  .text-h3 {
+    @apply heading-default lg:text-5xl leading-none !important;
+  }
+
+  .page-heading {
+    @apply heading-default leading-9 sm:leading-10 md:text-5xl md:leading-14 !important;
+  }
+
+  .link-unstyled {
+    @apply w-auto font-medium text-primary no-underline !important;
+  }
+
+  .link-unstyled:hover {
+    @apply lg:shadow-black lg:dark:shadow-white lg:link-hover-transition;
+  }
+
+  .primary-link {
+    @apply font-medium w-auto text-blue-600 no-underline dark:text-blue-400 !important;
+  }
+
+  .primary-link:hover {
+    @apply lg:shadow-blue-600 lg:dark:shadow-blue-400 lg:link-hover-transition;
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-1  py-12 lg:gap-12 m-auto lg:items-start lg:grid-cols-3;
+  }
+
+  .footer-column {
+    @apply flex flex-col items-start  space-y-8 py-4 px-2 lg:items-center;
+  }
+
+  .filter-blur {
+    backdrop-filter: saturate(180%) blur(4px);
+  }
+
+  .filter-saturate {
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
+
+  .link-transition {
+    transition: box-shadow 300ms ease 0s;
+  }
+
+  .link-hover-transition {
+    transition: box-shadow 300ms ease 0s;
+  }
+
+  .clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .clamp-2 {
+    -webkit-line-clamp: 2;
+  }
+
+  .clamp-3 {
+    -webkit-line-clamp: 3;
+  }
+
+  .clamp-5 {
+    -webkit-line-clamp: 5;
+  }
+
+  .heading-default {
+    @apply text-3xl sm:text-4xl text-display !important;
+  }
+
+  .prose .anchor {
+    @apply opacity-0 cursor-pointer text-blue-600 dark:text-blue-400 pl-2;
+    transition: opacity 150ms ease 0s;
+  }
+
+  .anchor:hover,
+  .anchor:focus {
+    @apply opacity-100;
+  }
+
+  .prose .anchor:after {
+    content: '#';
+  }
+
+  .prose *:hover > .anchor,
+  .prose *:focus > .anchor {
+    @apply opacity-100;
+  }
+
+  .prose img {
+    @apply m-0 !important;
   }
 }
