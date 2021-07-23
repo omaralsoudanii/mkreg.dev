@@ -40,7 +40,7 @@ Build images and run their containers **while ignoring the current existing imag
 docker-compose build  --no-cache
 ```
 
-The same as above but this time also **attempt to pull the latest version of the images**. The pull argument might be useless for you if your images are pinned to an exact version. For example this NodeJS image `node:14.16.1-alpine` specifies the major, minor and patch with the tag alpine, so the pull argument will do nothing. Meanwhile this NodeJS image `node:alpine ` will **attempt** to pull the latest non-breaking changes **LTS** version, basically it will update the minor and patch versions.
+The same as above but this time also **attempt to pull the latest version of the images**. The pull argument might be useless for you if your images are pinned to an exact version. For example this NodeJS image `node:14.16.1-alpine` specifies the major, minor and patch with the tag alpine, so the pull argument will do nothing. Meanwhile this NodeJS image `node:alpine` will **attempt** to pull the latest non-breaking changes **LTS** version, basically it will update the minor and patch versions.
 
 ```bash
 docker-compose build  --no-cache --pull

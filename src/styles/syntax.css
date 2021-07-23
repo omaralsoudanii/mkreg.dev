@@ -18,7 +18,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-50  bg-gray-50 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
+  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -120,7 +120,11 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-[#40b61c] font-mono font-normal bg-gray-50 dark:bg-dark-tertiary  dark:text-[#addb67] py-1 px-2;
+  @apply text-gray-800 font-medium bg-gray-100 dark:bg-dark-tertiary  dark:text-gray-200 px-2 py-1;
   font-feature-settings: normal;
   letter-spacing: normal;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
 }
