@@ -185,6 +185,10 @@
     -webkit-line-clamp: 3;
   }
 
+  .clamp-4 {
+    -webkit-line-clamp: 4;
+  }
+
   .clamp-5 {
     -webkit-line-clamp: 5;
   }

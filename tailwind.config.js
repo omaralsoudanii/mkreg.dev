@@ -26,14 +26,13 @@ module.exports = {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
         'blue-400': '0px 2px 0px #60a5fa',
-        'blue-600': '0px 2px 0px #0070f3',
+        'blue-600': '0px 2px 0px #246cff',
       },
       colors: {
         blue: {
           ...colors.blue,
-          600: '#0070f3',
+          600: '#246cff',
         },
-        violet: colors.violet,
         dark: {
           primary: 'rgb(22, 27, 34)',
           secondary: 'rgb(30, 35, 42)',
@@ -80,6 +79,12 @@ module.exports = {
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
+            'code:before': {
+              content: 'none',
+            },
+            'code:after': {
+              content: 'none',
+            },
           },
         },
         dark: {

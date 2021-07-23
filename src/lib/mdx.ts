@@ -6,7 +6,7 @@ import { bundleMDX } from 'mdx-bundler'
 
 import { formatSlug, slugify } from '@/lib/utils'
 
-import MDXImage from './MDXImage'
+import mdxImage from './mdx-image'
 import remarkCodeTitles from './remarkCodeTitles'
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
@@ -39,6 +39,7 @@ export async function getFileBySlug(type: string, slug?) {
   }
 
   const { frontmatter, code } = await bundleMDX(source, {
+    cwd: path.join(process.cwd(), 'src', 'components'),
     xdmOptions(options) {
       // this is the recommended way to add custom remark/rehype plugins:
       // The syntax might look weird, but it protects you in case we add/remove
@@ -57,7 +58,7 @@ export async function getFileBySlug(type: string, slug?) {
         ],
         require('remark-gfm'),
         remarkCodeTitles,
-        MDXImage,
+        mdxImage,
       ]
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
@@ -67,11 +68,6 @@ export async function getFileBySlug(type: string, slug?) {
     },
     esbuildOptions(options) {
       options.target = ['es2015']
-      options.loader = {
-        ...options.loader,
-        '.js': 'jsx',
-        '.ts': 'tsx',
-      }
       return options
     },
   })

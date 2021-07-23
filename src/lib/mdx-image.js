@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable no-undef */
+/* eslint-disable */
 // taken from tailwind-nextjs-starter-blog https://github.com/timlrx/tailwind-nextjs-starter-blog
-import visit from 'unist-util-visit'
-import sizeOf from 'image-size'
-import { existsSync } from 'fs'
+const visit = require('unist-util-visit')
+const sizeOf = require('image-size')
+const fs = require('fs')
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default (options) => (tree) => {
+module.exports = (options) => (tree) => {
   visit(
     tree,
     // only visit p tags that contain an img element
@@ -17,7 +15,7 @@ export default (options) => (tree) => {
       const imageNode = node.children.find((n) => n.type === 'image')
 
       // only local files
-      if (existsSync(`${process.cwd()}/public${imageNode.url}`)) {
+      if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
         const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
 
         // Convert original node to next/image

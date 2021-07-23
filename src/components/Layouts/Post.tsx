@@ -42,9 +42,9 @@ export default function PostLayout({
       <Seo data={meta} />
       <article
         id="skip"
-        className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700"
+        className="lg:divide-y lg:divide-gray-200 lg:dark:divide-gray-700"
       >
-        <header className="pb-4 xl:pb-8">
+        <header className="pb-4 lg:pb-8">
           <div className="space-y-3 text-center">
             <p className="font-medium text-base lg:text-lg  text-gray-500 dark:text-gray-400">
               <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
@@ -53,22 +53,22 @@ export default function PostLayout({
                 <ArticleViews slug={slug} />
               </span>
             </p>
-            <h1 className="page-heading mb-4 xl:mb-8">{title}</h1>
+            <h1 className="page-heading mb-4 lg:mb-8">{title}</h1>
           </div>
         </header>
         <div
-          className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6"
+          className=" divide-y divide-gray-200 lg:divide-y-0 dark:divide-gray-700 lg:grid lg:gap-4 lg:grid-cols-4"
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
-          <div className="xl:pb-4 xl:col-span-3 xl:col-start-2 xl:row-span-2">
-            <div className="xl:pt-10 xl:pb-8 pb-4 pt-5 prose dark:prose-dark lg:prose-lg w-full !max-w-none">
+          <div className="lg:py-10 py-5 lg:col-span-3 lg:col-start-2 lg:row-span-3">
+            <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-[70ch]">
               {children}
             </div>
           </div>
-          <div className="divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 pt-8 xl:pt-12  xl:row-start-2">
-            <div className="pb-2 xl:pb-4 flex flex-col xl:flex-row xl:block xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
+          <div className="divide-gray-200  lg:divide-y dark:divide-gray-700 lg:row-start-1 pt-10   lg:col-start-1">
+            <div className="pb-10  flex flex-col lg:flex-row lg:block lg:border-b lg:border-gray-200 lg:dark:border-gray-700">
               <div className="flex flex-col">
-                <p className="!font-medium text-display text-base  py-1">
+                <p className="!font-medium text-display text-base py-1">
                   {Environment.ogTitle}
                 </p>
                 {lastmod && (
@@ -78,11 +78,11 @@ export default function PostLayout({
                 )}
               </div>
             </div>
-            <div className="py-4 xl:py-8">
+            <div className="py-4 lg:py-8">
               <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                 Article
               </h2>
-              <div className="flex xl:block justify-between">
+              <div className="flex lg:block justify-between">
                 <p className="py-2">
                   <NextLink
                     className="primary-link text-base"
@@ -103,7 +103,7 @@ export default function PostLayout({
             </div>
 
             {tags && (
-              <div className="py-4 xl:py-8">
+              <div className="py-4 lg:py-8">
                 <h2 className="text-base py-2 !tracking-normal !font-medium  text-tertiary">
                   Tagged with
                 </h2>
@@ -121,7 +121,7 @@ export default function PostLayout({
               </div>
             )}
             {(next || prev) && !parentPost && (
-              <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+              <div className="flex justify-between py-4 lg:block lg:space-y-8 lg:py-8">
                 {prev && (
                   <div>
                     <h2 className="text-base pb-2 !tracking-normal !font-medium  text-tertiary">
@@ -151,7 +151,7 @@ export default function PostLayout({
               </div>
             )}
             {!next && !prev && parentPost && (
-              <div className="flex flex-col py-4 xl:block xl:space-y-8 xl:py-8">
+              <div className="flex flex-col py-4 lg:block lg:space-y-8 lg:py-8">
                 <h2 className="text-base pb-2 !tracking-normal !font-medium  text-tertiary">
                   Continue reading
                 </h2>

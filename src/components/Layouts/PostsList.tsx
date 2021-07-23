@@ -34,7 +34,7 @@ const Row = ({ href, frontMatter }) => {
           <p className="!font-medium !text-base lg:!text-lg text-left !pt-1 !pb-2 text-tertiary !my-0">
             {views > 0 ? views.toLocaleString() : '–––'} Views
           </p>
-          <p className="!font-normal lg:!py-1 lg:!text-lg !my-0 !text-base text-tertiary clamp clamp-3">
+          <p className="!font-normal lg:!py-1 lg:!text-lg !my-0 !text-base text-tertiary clamp clamp-4">
             {frontMatter.summary}
           </p>
         </div>

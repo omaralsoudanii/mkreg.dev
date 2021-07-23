@@ -65,7 +65,7 @@ export default function Header() {
             )
           })}
       </nav>
-      <nav className="hidden sm:flex sm:items-center sm:text-base xl:mr-24 sm:leading-5">
+      <nav className="hidden sm:flex sm:items-center sm:text-base lg:mr-24 sm:leading-5">
         <div className="hidden sm:block">
           {RoutesMetadata.map((link) => (
             <Link key={link.label} href={link.href}>
