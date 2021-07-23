@@ -18,8 +18,7 @@ module.exports = {
           'JetBrains Mono',
           'IBM Plex Mono',
           'Fira Code',
-          'Menlo',
-          ...fontFamily.mono,
+          ...fontFamily.mono
         ],
         sans: ['Inter', ...fontFamily.sans],
       },
@@ -27,14 +26,13 @@ module.exports = {
         white: '0px 2px 0px #fff',
         black: '0px 2px 0px #000',
         'blue-400': '0px 2px 0px #60a5fa',
-        'blue-600': '0px 2px 0px #1a73e8',
+        'blue-600': '0px 2px 0px #0070f3',
       },
       colors: {
         blue: {
           ...colors.blue,
-          600: '#1a73e8',
+          600: '#0070f3',
         },
-        sky: colors.sky,
         dark: {
           primary: 'rgb(22, 27, 34)',
           secondary: 'rgb(30, 35, 42)',

@@ -49,7 +49,7 @@ pre[class*='language-'] {
 }
 
 .token.attr-name {
-  @apply text-[#008000] dark:text-[#addb67];
+  @apply text-[#4ea837] dark:text-[#addb67];
   font-style: italic;
 }
 
@@ -61,7 +61,7 @@ pre[class*='language-'] {
 
 .token.string,
 .token.url {
-  @apply text-[#008000] dark:text-[#addb67];
+  @apply text-[#4ea837] dark:text-[#addb67];
 }
 
 .token.variable {
@@ -72,7 +72,7 @@ pre[class*='language-'] {
   @apply text-[#e36209] dark:text-[#f78c6c];
 }
 
-
+.token.namespace,
 .token.builtin,
 .token.char,
 .token.constant,
@@ -109,10 +109,6 @@ pre[class*='language-'] {
   @apply text-[#63cdc3] dark:text-[#80cbc4];
 }
 
-.token.namespace {
-  @apply text-sky-500 dark:text-sky-400;
-}
-
 .prose pre::-webkit-scrollbar {
   display: none;
 }
@@ -124,5 +120,13 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-900 font-medium bg-gray-100 dark:bg-dark-tertiary  dark:text-gray-100 p-1;
+  @apply  text-purple-600 font-medium dark:text-purple-400;
+  font-feature-settings: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 }
