@@ -15,7 +15,7 @@ There are all kind of web servers and each stand out from the rest by having uni
 
 This article talks about the open sourced version of NGINX, an attempt to share some knowledge, best practices and things to avoid. 
 
-Although NGINX can be used as a loadbalancer (layer 4). The content here only covers layer 7 capabilities of NGINX. 
+Although NGINX can be used as a **loadbalancer (layer 4)**, the content here only covers **layer 7** capabilities of NGINX. 
 
 > If you are curious about the layers and their numbering, it's based on the OSI model. You can read about it in details at [OSI model - Wikipedia](https://en.wikipedia.org/wiki/OSI_model)
 
@@ -30,11 +30,15 @@ Although NGINX can be used as a loadbalancer (layer 4). The content here only co
 
 ## Why do I need this?
 
-Your web server(s) is one the most crucial part in your infrastructure stack, even a small enhancement could have a large impact on your product. Although it is NGINX specific, web servers tend to share some common behavior and patterns. Hence reading it even if you use something else, this might provide you with a different ideas when building and tuning your server.
+Your web server(s) is one the most crucial part in your infrastructure stack, even a small enhancement could have a large impact on your product. 
+
+Although it’s NGINX specific — web servers tend to share some common behavior and patterns. Reading this will provide you with a different ideas when building and tuning your server whether you are using NGINX or something different. 
 
 ## Introduction
 
-This is by no means a comprehensive list of everything about NGINX, for that always refer to the documentation. This is more like pieces of knowledge I learned through trial and error, ranging from common enhancements to some gotchas and correct usage of some features.
+This is not a comprehensive list of everything about NGINX, for that always refer to the documentation. 
+
+This is more like pieces of knowledge I learned through trial and error, ranging from common enhancements to some gotchas and correct usage of some features.
 
 Keep in mind this is based on my experience, so it's highly advised to test things and make sure it's stable before using it in a production server. 
 
@@ -56,19 +60,31 @@ If you can't answer these questions or don't know then you might not need it fro
 
 ### The holy grail of NGINX configuration
 
-There is no such thing as one set of configurations that fits all products. Every configuration you set along their values depends on the product use case. Although, you could make it as a generic configuration boilerplate then tune it differently based on what you're working with.
+There is no such thing as one set of configurations that fits all products, every configuration you set along their values depends on the product use case. 
+
+Although, you could make it as a generic configuration boilerplate — tune it differently based on what you're working with.
 
 ### Separation of concerns
 
-Just like Backend, Frontend and probably anything related to programming, don't write your whole configuration in one file. Follow the DRY concept and split them based on what they do, for common security headers you could have `security.conf`, for compression you would be having a `compression.conf` and so on. This way your configuration is **reusable**, **maintainable** and **more** (AKA am too lazy to mention).
+Just like Backend, Frontend and probably anything related to programming — don't write your whole configuration in one file. Follow the DRY concept and split them based on what they do. 
+
+For common security headers you could have `security.conf` and for compression you would be having a `compression.conf` and so on. 
+
+This way your configuration is **reusable**, **maintainable** and **more** — AKA am too lazy to mention.
 
 ### Preparations 
 
-For new products, know what NGINX modules you will need or might need in the future. `nginx -V` will output what modules NGINX was compiled with. This is important because you will have to re-compile NGINX if you want to add more modules. For established products this might be not feasible in some production environments where the time spent doing that doesn't justify the added value of those new modules.
+For new products — know what NGINX modules you will need or might need in the future, `nginx -V` will output what modules NGINX was compiled with. 
+
+This is important because you will have to re-compile NGINX if you want to add more modules. 
+
+For established products this might be not feasible in some production environments where the time spent doing that doesn't justify the added value of those new modules.
 
 ### Validating the result
 
-Test, then test and finally test. Sometimes asserting that your configuration is optimal can be tricky, you could be having invalid results due to unknown circumstances. Maybe your hosting platform was stable at one time, on another it wasn't, it could be a misuse of the testing method. 
+Test, then test and finally test. Sometimes asserting that your configuration is optimal can be tricky, you could be having invalid results due to unknown circumstances. 
+
+Maybe your hosting platform was stable at one time, on another it wasn't or it could be a misuse of the testing method. 
 
 For example benchmarking throughput by hitting a single endpoint rather than creating a realistic usage scenario in production.
 
@@ -85,7 +101,12 @@ Based on the above, take what I'm writing with a grain of salt and test it again
 
 ![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-performance-mkreg.png)
 
-For me **Performance** doesn't mean speed. It means **stability**, **resilience**, **resources consumption** and **speed** combined together, which I will include in this section.
+For me **Performance** doesn't mean **speed** — it’s a combination of:
+
+1. **Stability**
+2. **Resilience**
+3. **Resources consumption**
+4. **Speed**
 
 ### Location blocks
 Sooner or later you're gonna have location blocks to match paths according to a pattern by using **regex expressions**. 
@@ -95,13 +116,25 @@ location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
 	proxy_pass http://my-server;
 }
 ```
-If NGINX matches those locations a lot (in another words, the matched location is regularly requested) then you could improve the performance of the matching process by enabling **PCRE JIT**, this directive enables NGINX to evaluate and store the **regex expressions** at the time of configuration parsing (on NGINX startup). To enable it simply add `pcre_jit on` on top of your main configuration file.
+If NGINX matches those locations a lot. In another words — the matched location is regularly requested. 
+
+You could improve the performance of the matching process by enabling **PCRE JIT** — assuming you have NGINX compiled with **PCRE** module. 
+
+This directive enables NGINX to evaluate and store the **regex expressions matching** process at the time of configuration parsing which happens on NGINX startup. 
+
+To enable it simply add `pcre_jit on` on top of your main configuration file.
 
 ### Access log
-NGINX `access_log` logs every request (not just the path request, everything requested in the page), which you probably don't need. Disable it with `access_log  off` in your main configuration file **http** block.
+NGINX `access_log` logs every request — not just the path of the request, also everything requested in the page.
+
+Which you probably don't need. Disable it with `access_log  off` in your main configuration file **http** block.
 
 ### Send file
-With `send_file` directive enabled, set `sendfile_max_chunk` to a low value to prevent `send_file` from transfer ing large amount of data (a big image or a font file) because the default of `sendfile_max_chunk` is 0 which means unlimited by adjusting the value from **0** to **512k** for example then `send_file` will send the data in 512k chunks. The whole point of this is to prevent a connection from blocking a worker process and destabilize your app throughput.
+With `send_file` directive enabled, set `sendfile_max_chunk` to a low value to prevent `send_file` from transfering large amount of data — like images or font files.
+
+Because the default of `sendfile_max_chunk` is **0** which means unlimited by adjusting the value from **0** to **512k** for example then `send_file` will send the data in **512k** chunks. 
+
+The whole point of this is to prevent a connection from blocking a worker process and destabilize your app throughput.
 
 ```nginx
 sendfile   on;
@@ -109,7 +142,9 @@ sendfile_max_chunk 512k;
 ```
 
 ### Hashmaps
-In addition to **PCRE JIT** optimization, for other looks ups NGINX use hash tables. Here some directives with their default values, which controls the size of those tables, tune them based on your hardware specs. A detailed guide on their usage can be found on [Setting up hashes](https://nginx.org/en/docs/hash.html) (**you should start here**) which also refers the directive usage documentation. 
+In addition to **PCRE JIT** optimization — for other looks ups NGINX use hash tables. Here some directives with their default values that controls the size of those tables — tune them based on your hardware specs. 
+
+A detailed guide on their usage can be found on [Setting up hashes](https://nginx.org/en/docs/hash.html) **you should start from this link**. It also refers the directive usage documentation. 
 
 ```nginx
 http {
@@ -118,19 +153,22 @@ http {
 }
 ```
 
-also checkout `types_hash_max_size` and hash tables used by the proxy module `proxy_headers_hash_bucket_size` and `proxy_headers_hash_max_size`
-Documentation for the above can be found at [HTTP core module](https://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_bucket_size) and [HTTP proxy module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html)
+also checkout `types_hash_max_size` and hash tables used by the proxy module `proxy_headers_hash_bucket_size` and `proxy_headers_hash_max_size`.
 
-After tweaking the values the benefits is not only a faster responses, but also more stability because this speeds up key search in hash tables then we would have less memory access and a decreased pressure on the CPU.
+Documentations for the above can be found at [HTTP core module](https://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_bucket_size) and [HTTP proxy module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html).
+
+After tweaking the values the benefits is not only a faster responses — but also more stability because this speeds up key search in hash tables then we would have less memory access and a decreased pressure on the CPU.
 
 ### Proxy buffering
-Proxy buffering directive(s) controls how NGINX handles transferring the response from the **proxied server** to the **client**. This is a large topic that I might write about it in separate article, however personally I follow this rules:
+Proxy buffering directive(s) controls how NGINX handles transferring the response from the **proxied server** to the **client**. 
 
-- If the buffers value is too low then NGINX response will have high latency, so I keep increasing
-- If the buffers value is high then you will destabilize your server by allocating too much buffers in the memory (per request)
+This is a large topic that I might write about it in separate article, however personally I follow this rules:
+
+- If the buffers value is too low then NGINX response will have high latency, so I keep increasing.
+- If the buffers value is high then you will destabilize your server by allocating too much buffers in the memory (per request).
 - After trial and error tuning the buffers for something in between and I start seeing improved performance, then this is the correct value for this specific product on this specific hardware
 - After reaching point #3 if the response doesn’t fit in the buffer size I allocated, NGINX would have to save part of it on disk temporary, send the rest then read the temp file and send the remaining. This can be tuned by allowing NGINX to allocate everything in the memory instead for this particular case, this is up to you on how you control it but I prefer keeping the memory stable and let NGINX write temp files for those edge cases.
-- Refer to [Proxy buffering Documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering) for more details
+- Refer to [Proxy buffering Documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering) for more details.
 
 
 
@@ -142,36 +180,39 @@ The following topics will **not be covered** here, maybe I'll write another arti
  - `worker_connections`
  - `worker_rlimit_nofile`
  - `worker_cpu_affinity`
- - [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option
  - NGINX multi-threading and thread pools
+ - [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option
 
-The first 4 directives needs a lot of research before you apply them, however I have used NGINX on this site before [removing it](https://mkreg.dev/writing/building-my-site#haproxy). I kept NGINX configuration on a separate branch. For those 4 directive you can read my [configuration file](https://github.com/omaralsoudanii/mkreg.dev/blob/with-nginx/docker/nginx/conf/nginx.conf)  which has a brief documentation about them.
+The first 4 directives needs a lot of research before you apply them — however I have used NGINX on this site before [removing it](https://mkreg.dev/writing/building-my-site#haproxy). 
+
+I kept NGINX configuration on a separate branch. For those 4 directive you can read my [configuration file](https://github.com/omaralsoudanii/mkreg.dev/blob/with-nginx/docker/nginx/conf/nginx.conf) which has a brief documentation about them.
 	
 For compression there is also a [configuration file](https://github.com/omaralsoudanii/mkreg.dev/blob/with-nginx/docker/nginx/conf/compression.conf) documented.
 	
-Actually, you know what? you could also start from the [configuration root folder](https://github.com/omaralsoudanii/mkreg.dev/tree/with-nginx/docker/nginx) and read the rest. Some weird things used as a workaround for handling some Next.js issues sending non optimized headers for a self-hosted site, this instance is backed by HAProxy (I know what you're thinking but it's actually faster in this use case) so there this is some proxy protocol stuff you can ignore.
+Actually, you know what? you could also start from the [configuration root folder](https://github.com/omaralsoudanii/mkreg.dev/tree/with-nginx/docker/nginx) and read the rest. 
+
+You might find some weird things used as a workaround for handling some **Next.js** issues sending non optimized headers for my self-hosted site.
+
+This instance is backed by **HAProxy** (I know what you're thinking but it's actually faster in this use case) so there this is some proxy protocol stuff you can ignore.
 
 ## Gotchas
 
-This is some stuff I found somewhere on the internet randomly, or while I'm researching a specific topic, issues, maybe from an article I read somewhere. Who knows!
+This is some stuff I found somewhere on the internet — randomly, while I'm researching a specific topic, issues, maybe from an article I read somewhere. Who knows!
 
 ### The host IP address
 
-I'm definitely not a security expert, but I don't want NGINX to be accessible by requesting the host IP address rather than the domain name, whether it's from browser or something like Curl.
+I'm definitely not a security expert — but I don't want NGINX to be accessible by requesting the host IP address rather than the domain name regardless of the client.
 
-> Examples (with dummy IP) would be something like these
+> Examples (with dummy IP) would be something like these:
 >
 > HTTP request on port 80 => 78.555.666.33 
 >
-> Another HTTP request on port 80 => http://78.555.666.33
->
-> 
->
 > HTTPS request on port 443 => 78.555.666.33:443
 >
-> Antoher HTTPS request on port 443 => https://78.555.666.33
 
-After some research the solutions I found basically covers the non-HTTPS part and NGINX will return whatever error or page you decide. However for HTTPS I found nothing, the response would be returned from the browser with the known **Invalid certificate error page**
+After some research the solutions I found basically covers the non-HTTPS part and NGINX will return whatever error or page you decide. 
+
+However for HTTPS I found nothing — the response would be returned from the browser with the known **Invalid certificate error page**.
 
 ![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-certpage-mkreg.png)
 
@@ -179,9 +220,13 @@ Which makes sense! How? Well, when you generated your certificate from whatever 
 
 You could go down the rabbit hole looking for a way to get a certificate that works with IP address and if it works you solve the problem.
 
-> I have no clue if there is a way to issue a cert for IP address neither care about it
+> I have no clue if there is a way to issue a cert for IP address neither care about it.
+>
+> Also you shouldn't rely on IP address anyway — with many deployments on various cloud providers you’re gonna have to deal with floating IP(s) and DNS resolvers.
 
-On some random day, debugging random issue I found a way to block accessing your application through IP address regardless of the HTTP protocol, then you return whatever you want, Try it on a site that uses Cloudflare and Cloudflare will show a page that you can't access the site from IP address. Guess who use Cloudflare ☝️ ?
+On some random day, debugging random issue I found a way to block accessing your application through IP address regardless of the HTTP protocol, then you return whatever you want. 
+
+Try it on a site that uses Cloudflare, Cloudflare will show a page that you can't access the site from an IP address, guess who use Cloudflare ☝️ ?
 
 The suggestion came from a [NGINX Issue](https://trac.nginx.org/nginx/ticket/195#comment:6) which basically use **aNULL** cipher (Okay Okay don't start raging now... it's just an experiment !) here is the work around
 
@@ -203,19 +248,27 @@ server {
 }
 ```
 
-We create a map and assign the value to the variable `$empty` , the map have just a default condition with the empty string value so `$empty` value would be.... empty!
+We create a map and assign the value to the variable `$empty`, the map have just a default condition with the empty string value so `$empty` value would be.... empty!
+
+Then we have a server block that listen to both ports 80 and 443 IPv4 and IPv6. 
+
+This block is the default server block in NGINX by adding `default_server` in the listen directive and the server name is anonymous — in another words NGINX will use this block if it can't find the route in every other defined server blocks. 
+
+Which is the case we need, accessing the server through IP address will not match the other server blocks — just make sure every other block has a `server_name` added with your domain and sub-domains values.
+
+After we provide the empty value variable for `ssl_certificate` and `ssl_certificate_key` with the addition of `ssl_ciphers aNULL`.
+
+NGINX won't complain about invalid cert — because the provided cipher means no authentication required.
 
 ![Omar Alsoudani - NGINX Treats](/static/images/dawg-mkreg.jpg)
 
-Then we have a server block that listen to both ports 80 and 443 IPv4 and IPv6, this block is the default server block in NGINX by adding `default_server` in the listen directive and the server name is anonymous, in another words NGINX will use this block if it can't find the route in every other defined server blocks. Which is the case we need, accessing through IP address will not match the other server blocks, just make sure you name them by your domain name.
+Now any access through the server IP will return a 444 status code error — the only problem is (again am not a security expert) using aNULL could open your server to other vulnerabilities. 
 
-We provide the empty value variable for `ssl_certificate` and `ssl_certificate_key` with the addition of `ssl_ciphers aNULL` NGINX won't complain about invalid cert, because the provided cipher means no authentication required.
-
-Now any access through IP will get 444 status code error, the only problem is (again am not a security expert) using aNULL could open your server to other vulnerabilities. Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only, if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`
+Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only, if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`.
 
 ### Headers placement
 
-There is 2 kinds of adding headers in NGINX. The first would be `add_header` and the second is `proxy_set_header` .
+There is 2 kinds of adding headers in NGINX. The first would be `add_header` and the second is `proxy_set_header`.
 
 `proxy_set_header` enables NGINX to send more request headers to the proxied server in addition to the headers the client sent, so this directive is internal between NGINX and the proxied server.
 
@@ -237,11 +290,15 @@ server {
 }
 ````
 
-The client would receive two headers,  `value3` and `value4`, `value1` and `value2` will not be sent because the location block `add_header` directives overrides the previous configuration level which is `server`
+The client would receive the two headers  `value3` and `value4` . 
+
+`value1` and `value2` will not be sent because the location block `add_header` directives overrides the previous configuration level which is `server`.
 
 To make sure all your headers are sent you need to add all of them in the same configuration level, same thing applies to `proxy_set_header`.
 
-Now this is annoying specially if you have large configuration, we can solve it by using the method I suggested in the Tips section. Separate configuration files so they can be reusable, so a good practice is to create two files, one for the proxy headers and one for the client headers, then simply include the file in the level you would want to apply the headers for.  
+Now this is annoying specially if you have large configuration. We can solve it by using the method I suggested in the Tips section. 
+
+Separate configuration files so they can be reusable — a good practice is to create two files, one for the proxy headers and another for the client headers. Then simply include the file in the level you would want to apply the headers for. 
 
 ````nginx
 server {
@@ -277,10 +334,10 @@ I might write another article about topics I didn't cover including
 
 - Dealing with SSL certificate, from issuing the cert to creating a configuration optimized for performance while maintaining security, and a bonus auto renewal functionality.
 - Compression algorithms, Brotli and Gzip.
-- Caching static and dynamic responses via different NGINX modules. How and when to invalidate stale data
-- Docker setup
+- Caching static and dynamic responses via different NGINX modules. How and when to invalidate stale data.
+- Docker setup.
 
-Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them
+Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them.
 
 <Card
     title="omaralsoudanii/mkreg.dev"
@@ -289,6 +346,4 @@ Most of the above implementation can be found in my repo. With a bit of adjustme
     icon="Github"
 />
 
-Feel free to contact me via the links provided in the footer if there is outdated, wrong info provided here or if you would like to rant about something I wrote (I know you do)
-
-Seriously even if you have some questions, contact me.
+Feel free to contact me via the links provided in the footer if there is outdated, wrong info provided here or if you would like to rant about something I wrote (I know you do). Seriously even if you have some questions, contact me.

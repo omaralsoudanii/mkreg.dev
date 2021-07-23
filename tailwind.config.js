@@ -33,6 +33,7 @@ module.exports = {
           ...colors.blue,
           600: '#0070f3',
         },
+        violet: colors.violet,
         dark: {
           primary: 'rgb(22, 27, 34)',
           secondary: 'rgb(30, 35, 42)',

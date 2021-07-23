@@ -120,7 +120,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply  text-purple-600 font-medium dark:text-purple-400;
+  @apply  text-violet-600 font-medium dark:text-violet-400;
   font-feature-settings: normal;
   letter-spacing: normal;
   word-spacing: normal;
