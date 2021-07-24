@@ -1,6 +1,5 @@
 import { PSDB } from 'planetscale-node'
 
-const branch = process.env.PLANETSCALE_BRANCH === 'main' ? 'main' : 'dev'
-const db = new PSDB(branch)
+const db = new PSDB(process.env.PLANETSCALE_BRANCH)
 
 export default db

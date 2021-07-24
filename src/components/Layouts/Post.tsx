@@ -46,7 +46,7 @@ export default function PostLayout({
       >
         <header className="pb-4 lg:pb-8">
           <div className="space-y-3 text-center">
-            <p className="font-medium text-base lg:text-lg  text-gray-500 dark:text-gray-400">
+            <p className="text-base lg:text-lg  text-tertiary">
               <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
               {`    •    `}
               <span className="px-2 !font-medium">
@@ -60,30 +60,48 @@ export default function PostLayout({
           className=" divide-y divide-gray-200 lg:divide-y-0 dark:divide-gray-700 lg:grid lg:gap-4 lg:grid-cols-4"
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
-          <div className="lg:py-10 py-5 lg:col-span-3 lg:col-start-2 lg:row-span-3">
-            <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-[70ch]">
+          <div className="py-6 lg:col-span-3 lg:col-start-2 lg:row-span-3">
+            <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-[75ch]">
               {children}
             </div>
           </div>
-          <div className="divide-gray-200  lg:divide-y dark:divide-gray-700 lg:row-start-1 pt-10   lg:col-start-1">
-            <div className="pb-10  flex flex-col lg:flex-row lg:block lg:border-b lg:border-gray-200 lg:dark:border-gray-700">
-              <div className="flex flex-col">
-                <p className="!font-medium text-display text-base py-1">
+          <div className="divide-gray-200  lg:divide-y dark:divide-gray-700 lg:row-start-1 py-4 lg:col-start-1">
+            <div className="flex flex-col lg:flex-row lg:block lg:border-b lg:border-gray-200 lg:dark:border-gray-700">
+              <div className="flex py-4 lg:py-8 flex-col">
+                <h2 className="!font-medium  text-tertiary text-base py-1">
                   {Environment.ogTitle}
-                </p>
-                {lastmod && (
-                  <p className="!font-medium  text-tertiary text-base py-1">
-                    {`Modified ${FormatDate(lastmod)}`}
+                </h2>
+                <div className="flex flex-wrap py-1">
+                  <p className="pr-4">
+                    <NextLink
+                      href={Environment.social.github}
+                      className="primary-link inline-block text-base "
+                    >
+                      Github
+                    </NextLink>
                   </p>
+                  <p>
+                    <NextLink
+                      href={Environment.social.twitter}
+                      className="primary-link inline-block text-base "
+                    >
+                      Twitter
+                    </NextLink>
+                  </p>
+                </div>
+                {lastmod && (
+                  <h2 className="!font-medium !tracking-normal  text-tertiary text-base py-1">
+                    {`Modified ${FormatDate(lastmod)}`}
+                  </h2>
                 )}
               </div>
             </div>
             <div className="py-4 lg:py-8">
               <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
-                Article
+                See also
               </h2>
               <div className="flex lg:block justify-between">
-                <p className="py-2">
+                <p className="py-1">
                   <NextLink
                     className="primary-link text-base"
                     href={editUrl(fullPath)}
@@ -91,7 +109,7 @@ export default function PostLayout({
                     {'Edit on GitHub'}
                   </NextLink>
                 </p>
-                <p className="py-2">
+                <p className="py-1">
                   <NextLink
                     href={discussUrl(fullPath)}
                     className="primary-link text-base"
@@ -104,7 +122,7 @@ export default function PostLayout({
 
             {tags && (
               <div className="py-4 lg:py-8">
-                <h2 className="text-base py-2 !tracking-normal !font-medium  text-tertiary">
+                <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                   Tagged with
                 </h2>
                 <div className="flex flex-wrap">
@@ -124,7 +142,7 @@ export default function PostLayout({
               <div className="flex justify-between py-4 lg:block lg:space-y-8 lg:py-8">
                 {prev && (
                   <div>
-                    <h2 className="text-base pb-2 !tracking-normal !font-medium  text-tertiary">
+                    <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                       Previous Article
                     </h2>
                     <NextLink
@@ -137,7 +155,7 @@ export default function PostLayout({
                 )}
                 {next && (
                   <div>
-                    <h2 className="text-base pb-2 !font-medium  text-tertiary">
+                    <h2 className="text-base py-1 !font-medium !tracking-normal text-tertiary">
                       Next Article
                     </h2>
                     <NextLink
@@ -152,7 +170,7 @@ export default function PostLayout({
             )}
             {!next && !prev && parentPost && (
               <div className="flex flex-col py-4 lg:block lg:space-y-8 lg:py-8">
-                <h2 className="text-base pb-2 !tracking-normal !font-medium  text-tertiary">
+                <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                   Continue reading
                 </h2>
                 <NextLink

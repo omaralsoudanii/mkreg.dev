@@ -51,7 +51,7 @@ export async function getFileBySlug(type: string, slug?) {
           require('remark-autolink-headings'),
           {
             linkProperties: {
-              className: ['anchor'],
+              className: ['heading-anchor'],
             },
             behavior: 'append',
           },

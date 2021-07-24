@@ -59,7 +59,7 @@
   }
 
   .skip-content-nav {
-    @apply absolute px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
+    @apply hidden absolute sm:inline-block px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:top-4 left-60 -top-2;
   }
 }
 
@@ -197,26 +197,47 @@
     @apply text-3xl sm:text-4xl text-display !important;
   }
 
-  .prose .anchor {
-    @apply opacity-0 cursor-pointer text-blue-600 dark:text-blue-400 pl-2;
-    transition: opacity 150ms ease 0s;
+  .heading-anchor {
+    @apply cursor-pointer text-tertiary !font-normal opacity-0;
+    font-size: inherit;
+    padding-left: .375em;
+    transition: all 150ms linear;
   }
 
-  .anchor:hover,
-  .anchor:focus {
-    @apply opacity-100;
+  .heading-anchor:hover, .heading-anchor:focus {
+    @apply text-blue-600 dark:text-blue-400;
   }
 
-  .prose .anchor:after {
+  .heading-anchor:hover,
+  .heading-anchor:active  {
+    outline-width: 0 !important;
+  }
+
+  .heading-anchor:after {
     content: '#';
   }
 
-  .prose *:hover > .anchor,
-  .prose *:focus > .anchor {
+    h1:hover  .heading-anchor,
+    h2:hover  .heading-anchor,
+    h3:hover  .heading-anchor,
+    h4:hover  .heading-anchor,
+    h1:focus  .heading-anchor,
+    h2:focus  .heading-anchor,
+    h3:focus  .heading-anchor,
+    h4:focus  .heading-anchor {
     @apply opacity-100;
   }
 
+  /* from https://leerob.io/ */
   .prose img {
-    @apply m-0 !important;
+    /* Don't apply styles to next/image */
+    @apply m-0;
   }
+  
+  .prose > :first-child {
+    /* Override removing top margin, causing layout shift */
+    margin-top: 1.25em !important;
+    margin-bottom: 1.25em !important;
+  }
+
 }

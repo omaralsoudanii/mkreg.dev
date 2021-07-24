@@ -1,3 +1,4 @@
 node_modules
 out
 tailwind.config.js
+next.config.js
