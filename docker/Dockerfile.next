@@ -4,7 +4,7 @@ FROM node:14-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN --mount=type=cache,id=yarn,sharing=locked,target=/usr/local/share/.cache/yarn yarn install --frozen-lockfile
 
 # Rebuild the source code only when needed
 FROM node:14-alpine AS builder
@@ -21,6 +21,7 @@ ENV NODE_ENV production
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
+
 
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
