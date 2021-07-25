@@ -11,6 +11,7 @@ My personal site powered by
 - [MDX](https://mdxjs.com/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Vercel](https://vercel.com/)
+- [PlanetScale](https://www.planetscale.com/)
 
 ## Compatibility
 

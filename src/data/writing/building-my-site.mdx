@@ -1,13 +1,15 @@
 ---
 title: 'Building my site'
 date: '2021-04-11'
-lastmod: '2021-07-11'
-summary: "High level overview of building and developing my personal site, coding and infrastructure wise. Lessons learned and acknowledgments to resources I used varying from tutorials to personal portfolios that I liked their design"
+lastmod: '2021-07-25'
+summary: "High level overview of building and developing my personal site, coding and infrastructure wise"
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
 image: '/static/images/writing/building-this-site/building-mkreg.jpg'
 ---
 
 ![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.jpg)
+
+## Introduction
 
 Front-end is harder and more complex than what most programmers who don't do any UI/UX stuff think. I was one of those until I actually had to build one. This a high level talk about building and developing my personal site. Coding and infrastructure wise.
 
@@ -40,27 +42,17 @@ HAProxy is not just a **"Load Balancer"**. It's the perfect combo with Cloudflar
 
 ### NGINX ###
 
-Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
-
 Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
 
-If most of the site is served by Cloudflare and the revalidation is handled by HAProxy which is faster in this case because I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model) which HAProxy is miles ahead in this area compared to NGINX. Can't even dispute that. And this is coming from someone who puts NGINX on his top 3 favorite software.
+Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time. If most of the site is served by Cloudflare and the revalidation is handled by a proxy server – then in this case I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model). Because the whole thing basically dependent on latency and response time – and ofcourse HAProxy is miles ahead in this area compared to NGINX.
 
 ### Docker
 
-You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure. 
-
-Or one of my favorites: 
-
-I declare that this image layer is not in the **build cache**, I am going to rebuild the whole thing now. Please have a seat till rebuilding every image included in your build is done, then you can launch your **Dockerized app**!
-
-Best regards, 
-
-Docker buildx
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure – anyway Docker is default for me on new apps so I do the build image stuff.
 
 ### Cloudflare
 
-Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff, to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
+Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff – to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
 
 ### TypeScript
 
@@ -81,6 +73,10 @@ Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHS
 ### Vercel
 
 Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
+
+### PlanetScale
+
+I recently added PlanetScale – which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach – I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not – for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
 
 
 ## FAQ
