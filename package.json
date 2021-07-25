@@ -40,11 +40,11 @@
     "remark-slug": "^6.1.0",
     "rss": "^1.2.2",
     "swr": "^0.5.6",
-    "tailwindcss": "^2.2.6"
+    "tailwindcss": "^2.2.7"
   },
   "devDependencies": {
-    "@types/node": "^16.4.1",
-    "@types/react": "^17.0.14",
+    "@types/node": "^16.4.2",
+    "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
