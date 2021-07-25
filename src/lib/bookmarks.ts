@@ -1,33 +1,33 @@
 const Bookmarks = [
   {
-    title: `Chmod calculator`,
-    desc: `Convert Linux file permissions between different formats`,
-    url: `https://chmod-calculator.com/`,
-    icon: 'Linux',
-  },
-  {
-    title: `Terminal color scheme`,
-    desc: `Visual Terminal color scheme designer. Which you can set as your terminal profile, from custom colors to predefined themes`,
-    url: `https://terminal.sexy/`,
-    icon: 'Linux',
-  },
-  {
-    title: `SSL labs`,
-    desc: `Test your SSL certificate strength`,
-    url: `https://www.ssllabs.com/ssltest/`,
-    icon: 'Openssl',
-  },
-  {
     title: `moz://a SSL generator`,
     desc: `Sane SSL config generator for most web servers and load balancers, I recommend the intermediate config`,
     url: `https://ssl-config.mozilla.org/`,
     icon: 'Mozilla',
   },
   {
+    title: `Chmod calculator`,
+    desc: `Convert Linux file permissions between different formats`,
+    url: `https://chmod-calculator.com/`,
+    icon: 'Linux',
+  },
+  {
     title: `AWS EC2 comparison`,
     desc: `A simple page where you can compare AWS EC2 instances using different filters and variables`,
     url: `https://instances.vantage.sh/`,
     icon: 'Aws',
+  },
+  {
+    title: `CDN Planet`,
+    desc: `A site dedicated on providing a comprehensive―facts, figures, and tools―to help you select the right CDN`,
+    url: `https://www.cdnplanet.com/`,
+    icon: 'Mk',
+  },
+  {
+    title: `SSL labs`,
+    desc: `Test your SSL certificate strength`,
+    url: `https://www.ssllabs.com/ssltest/`,
+    icon: 'Openssl',
   },
   {
     title: `Cloudflare and Cache-Control`,
@@ -40,6 +40,12 @@ const Bookmarks = [
     desc: `Out of the box optimized and sane configuration for NGINX. Explained and documented`,
     url: `https://github.com/h5bp/server-configs-nginx`,
     icon: 'Github',
+  },
+  {
+    title: `Terminal color scheme`,
+    desc: `Visual Terminal color scheme designer. Which you can set as your terminal profile, from custom colors to predefined themes`,
+    url: `https://terminal.sexy/`,
+    icon: 'Linux',
   },
   {
     title: `Curl write out`,
