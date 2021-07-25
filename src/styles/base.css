@@ -233,11 +233,5 @@
     /* Don't apply styles to next/image */
     @apply m-0;
   }
-  
-  .prose > :first-child {
-    /* Override removing top margin, causing layout shift */
-    margin-top: 1.25em !important;
-    margin-bottom: 1.25em !important;
-  }
 
 }
