@@ -35,7 +35,6 @@ const handler = async (
     await Promise.all(
       dirs.map(async (dir) => {
         const p = path.join(process.cwd(), 'src', 'data', dir)
-
         const posts = await fs.readdir(p)
 
         await Promise.all(
