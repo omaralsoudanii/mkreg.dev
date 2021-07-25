@@ -24,8 +24,6 @@ const handler = async (
     '!src/pages/500.tsx',
     '!src/data/*.mdx',
   ])
-  console.log(sitePages)
-
   const pages = sitePages.concat(tagPage)
 
   const sitemap = `
