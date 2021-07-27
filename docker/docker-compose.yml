@@ -5,8 +5,8 @@ services:
       context: ../
       dockerfile: docker/Dockerfile.next
     image: mk-next
-    volumes:
-      - mk-next-img:/app/.next/cache/images
+    # volumes:
+    # - mk-next-img:/app/.next/cache/images
     env_file:
       - ../.env
     container_name: mk-next
@@ -39,7 +39,7 @@ services:
 networks:
   mk_prod:
 
-volumes:
-  mk-next-img:
-    driver: local
-    name: mk-next-img
+      #volumes:
+      #mk-next-img:
+      #driver: local
+      #name: mk-next-img
