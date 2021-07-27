@@ -15,7 +15,7 @@
     {
       "files": ["./src/**/*.ts", "./src/**/*.tsx"],
       "plugins": ["@typescript-eslint", "unused-imports"],
-      "extends": ["next", "plugin:prettier/recommended"],
+      "extends": ["plugin:prettier/recommended", "next"],
       "parserOptions": {
         "project": "./tsconfig.json"
       },

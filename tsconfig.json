@@ -28,7 +28,8 @@
     "src/**/*.ts",
     "src/components/Icons/*.svg",
     "src/**/*.tsx",
-    "src/**/*.mdx"
+    "src/**/*.mdx",
+    "src/**/*.js"
   ],
   "exclude": ["./out/**/*", "./node_modules/**/*"]
 }
