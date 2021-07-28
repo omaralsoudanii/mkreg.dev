@@ -13,6 +13,14 @@ My personal site powered by
 - [Vercel](https://vercel.com/)
 - [PlanetScale](https://www.planetscale.com/)
 
+
+## Speedlify
+
+[Speedlify](https://github.com/zachleat/speedlify) is a tool that automate continuous performance measurements.
+
+Check here to see my results: [mkreg-speedlify](https://mkreg-speedlify.netlify.app/mk/)
+
+To generate the results, I have this [Repository](https://github.com/omaralsoudanii/speedlify) deployed on Netlify
 ## Compatibility
 
 If for some reason the app fails to start, it might be due incompatible Node version.
