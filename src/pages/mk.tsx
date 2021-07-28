@@ -12,7 +12,7 @@ export default function MK() {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark sm:prose-lg lg:prose-xl w-full max-w-none mx-auto"
+      className="prose dark:prose-dark md:prose-lg lg:prose-xl w-full max-w-none mx-auto"
     >
       <Seo data={meta} />
       <div className="!space-y-4 lg:!space-y-8">

@@ -46,16 +46,18 @@
   }
 
   .text-display {
-    @apply text-gray-900 dark:text-gray-100;
+    @apply text-black dark:text-white;
   }
-
+  
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2 {
     @apply text-display scroll-spacing-sm lg:scroll-spacing-lg;
+  }
+  
+
+  h3,
+  h4 {
+    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg;
   }
   
   .skip-content-nav {
@@ -127,7 +129,7 @@
   }
 
   .page-heading {
-    @apply heading-default leading-9 sm:leading-10 md:text-5xl md:leading-14 !important;
+    @apply heading-default leading-9 md:leading-10 lg:text-5xl lg:leading-14 !important;
   }
 
   .link-unstyled {

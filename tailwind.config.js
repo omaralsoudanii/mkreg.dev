@@ -48,19 +48,11 @@ module.exports = {
               color: null,
               code: { color: theme('colors.blue.600') },
             },
-            h1: {
-              fontWeight: theme('fontWeight.extrabold'),
-              color: theme('colors.gray.900'),
-            },
-            h2: {
+            'h1,h2': {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.white'),
             },
-            h3: {
-              fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
-            },
-            'h4,h5,h6': {
+            'h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
@@ -95,7 +87,11 @@ module.exports = {
               color: null,
               code: { color: theme('colors.blue.400') },
             },
-            'h1,h2,h3,h4,h5,h6': {
+            'h1,h2': {
+              fontWeight: theme('fontWeight.bold'),
+              color: theme('colors.black'),
+            },
+            'h3,h4': {
               color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },
@@ -148,19 +144,11 @@ module.exports = {
           },
         },
         {
-          h1: {
-            fontWeight: theme('fontWeight.extrabold'),
-            letterSpacing: theme('letterSpacing.tight'),
-          },
-          h2: {
+          'h1,h2': {
             fontWeight: theme('fontWeight.bold'),
             letterSpacing: theme('letterSpacing.tight'),
           },
-          h3: {
-            fontWeight: theme('fontWeight.semibold'),
-            letterSpacing: theme('letterSpacing.tight'),
-          },
-          'h4,h5,h6': {
+          'h3,h4': {
             fontWeight: theme('fontWeight.semibold'),
             letterSpacing: theme('letterSpacing.tight'),
           },
