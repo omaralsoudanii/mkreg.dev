@@ -61,7 +61,7 @@
   }
   
   .skip-content-nav {
-    @apply hidden opacity-0 absolute md:inline px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:opacity-100 focus:top-4 left-60 -top-2;
+    @apply hidden opacity-0 absolute sm:inline px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:opacity-100 focus:top-4 left-60 -top-2;
   }
 }
 
@@ -129,7 +129,7 @@
   }
 
   .page-heading {
-    @apply heading-default leading-9 md:leading-10 lg:text-5xl lg:leading-14 !important;
+    @apply heading-default leading-9 sm:leading-10 lg:text-5xl lg:leading-14 !important;
   }
 
   .link-unstyled {

@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 text-sm md:text-base font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-tertiary;
+  @apply px-5 py-3 text-sm sm:text-base font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-tertiary;
 }
 
 .prose .remark-code-title + div > pre {
