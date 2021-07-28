@@ -50,7 +50,7 @@ module.exports = {
             },
             'h1,h2': {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.white'),
+              color: theme('colors.black'),
             },
             'h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
@@ -89,7 +89,7 @@ module.exports = {
             },
             'h1,h2': {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.black'),
+              color: theme('colors.white'),
             },
             'h3,h4': {
               color: theme('colors.gray.100'),
