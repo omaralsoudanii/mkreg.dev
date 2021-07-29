@@ -34,9 +34,9 @@ module.exports = {
           600: '#246cff',
         },
         dark: {
-          primary: 'rgb(26, 29, 34)',// #161b22
-          secondary: 'rgb(29, 32, 37)',// #181D24
-          tertiary: 'rgb(32, 35, 40)',
+          primary: 'rgb(22, 27, 34)',// #161b22
+          secondary: 'rgb(29, 34, 41)',// #181D24
+          tertiary: 'rgb(33, 38, 45)',
         },
       },
       typography: (theme) => ({
