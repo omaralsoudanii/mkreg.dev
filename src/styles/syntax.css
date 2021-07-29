@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply px-5 py-3 text-sm sm:text-base font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-tertiary;
+  @apply px-5 py-3 text-sm font-mono sm:text-base font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 dark:border-opacity-40  dark:text-gray-200 dark:border-gray-700 dark:bg-dark-secondary;
 }
 
 .prose .remark-code-title + div > pre {
@@ -18,7 +18,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
+  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-tertiary dark:bg-dark-tertiary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -48,66 +48,70 @@ pre[class*='language-'] {
   white-space: normal;
 }
 
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-[#e36209] dark:text-[#f78c6c];
+}
+
+.token.punctuation {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.comment
+ {
+  @apply text-gray-500;
+}
+
+.token.property,
+.token.tag,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-[#4ea837] dark:text-[#addb67];
+}
+
+.token.namespace,
+.token.selector,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-purple-500 dark:text-purple-400;
+}
+
+.token.operator,
+.token.entity {
+  @apply text-indigo-500 dark:text-indigo-400;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-pink-500 dark:text-pink-400;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-yellow-500 dark:text-yellow-400;
+}
+
 .token.attr-name {
   @apply text-[#4ea837] dark:text-[#addb67];
   font-style: italic;
 }
-
-
-.token.comment {
-  @apply text-gray-500;
-}
-
 
 .token.string,
 .token.url {
   @apply text-[#4ea837] dark:text-[#addb67];
 }
 
-.token.variable {
-  @apply text-gray-700 dark:text-gray-300;
-}
-
-.token.number {
-  @apply text-[#e36209] dark:text-[#f78c6c];
-}
-
-.token.namespace,
-.token.builtin,
-.token.char,
-.token.constant,
-.token.function {
-  @apply text-blue-500 dark:text-blue-400;
-}
-
-.token.punctuation {
-  @apply text-purple-500 dark:text-purple-400;
-}
-
-.token.selector,
-.token.doctype {
-  @apply text-indigo-500 dark:text-indigo-400;
-  font-style: 'italic';
-}
-
-.token.class-name {
-  @apply text-yellow-500 dark:text-yellow-400;
-}
-
-
-.token.tag,
-.token.operator,
-.token.keyword {
-  @apply text-pink-500 dark:text-pink-400;
-}
-
-.token.boolean {
-  @apply text-red-500 dark:text-red-400;
-}
-
-.token.property {
-  @apply text-[#63cdc3] dark:text-[#80cbc4];
-}
 
 .prose pre::-webkit-scrollbar {
   display: none;
@@ -120,7 +124,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-700 font-medium bg-gray-100 dark:bg-dark-tertiary  dark:text-gray-200 px-2 py-1;
+  @apply text-[#4ea837] dark:text-[#addb67] font-medium bg-gray-100 dark:bg-dark-tertiary  px-2 py-1;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;
