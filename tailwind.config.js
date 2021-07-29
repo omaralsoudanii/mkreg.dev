@@ -119,6 +119,9 @@ module.exports = {
       }),
     },
   },
+  variants: {
+
+  },
   plugins: [
     require('@tailwindcss/typography'),
     plugin(function ({ addBase, theme }) {
