@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import useSWR from 'swr'
 
-import fetcher from '@/lib/fetcher'
+import ArticleViews from '@/components/ArticleViews'
 import { FormatDate } from '@/lib/utils'
 
 export default function PostsList({ posts, href }) {
@@ -17,8 +16,6 @@ export default function PostsList({ posts, href }) {
 }
 
 const Row = ({ href, frontMatter }) => {
-  const { data } = useSWR(`/api/views/${frontMatter.slug}`, fetcher)
-  const views = data?.total
   return (
     <Link key={frontMatter.slug} href={`${href}/${frontMatter.slug}`} passHref>
       <a className="inline-block my-4 py-2 lg:my-6 w-full">
@@ -32,7 +29,7 @@ const Row = ({ href, frontMatter }) => {
             </p>
           </div>
           <p className="!font-medium !text-base lg:!text-lg text-left !py-1 text-tertiary !my-0">
-            {views > 0 ? views.toLocaleString() : '–––'} Views
+            <ArticleViews slug={frontMatter.slug} />
           </p>
           <p className="!font-normal lg:!py-0 lg:!text-lg !my-0 !text-base text-tertiary clamp clamp-3">
             {frontMatter.summary}

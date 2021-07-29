@@ -4,6 +4,7 @@ import ArticleViews from '@/components/ArticleViews'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
+import Fetcher from '@/lib/fetcher'
 import { FormatDate, slugify } from '@/lib/utils'
 
 const editUrl = (slug: string) =>
@@ -20,6 +21,12 @@ export default function PostLayout({
   parentPost = null,
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
+  const encodedSlug = encodeURIComponent(slug)
+  const url = '/api/views/'
+  const fullUrl = url.concat(encodedSlug)
+  React.useEffect(() => {
+    Fetcher(fullUrl, { method: 'POST' })
+  }, [fullUrl])
 
   const fullPath =
     parentPost && parentPost?.path

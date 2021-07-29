@@ -1,21 +1,10 @@
 import * as React from 'react'
 
-import useSWR from 'swr'
-
-import fetcher from '@/lib/fetcher'
+import { useCurrentViews } from '@/lib/hooks'
 
 export default function ArticleViews({ slug }) {
-  const { data } = useSWR(`/api/views/${slug}`, fetcher)
+  const data = useCurrentViews(slug)
   const views = new Number(data?.total)
-
-  React.useEffect(() => {
-    const registerView = () =>
-      fetch(`/api/views/${slug}`, {
-        method: 'POST',
-      })
-
-    registerView()
-  }, [slug])
 
   return (
     <React.Fragment>
