@@ -68,6 +68,11 @@ export async function getFileBySlug(type: string, slug?) {
     },
     esbuildOptions(options) {
       options.target = ['es2015']
+      options.loader = {
+        ...options.loader,
+        '.js': 'jsx',
+        '.tsx': 'tsx',
+      }
       return options
     },
   })

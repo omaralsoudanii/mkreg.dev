@@ -68,7 +68,7 @@ export default function PostLayout({
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
           <div className="py-6 lg:col-span-3 lg:col-start-2 lg:row-span-3">
-            <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-[75ch]">
+            <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-none">
               {children}
             </div>
           </div>

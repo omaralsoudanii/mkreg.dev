@@ -17,7 +17,7 @@ export default function MK() {
       <Seo data={meta} />
       <div className="!space-y-4 lg:!space-y-8">
         <header>
-          <h1 className="lg:!mb-16 lg:mt-8 !leading-none text-center block !text-4xl !font-black lg:!text-[5rem]">
+          <h1 className="lg:!mb-16 lg:mt-8 !leading-none text-center block !text-4xl !font-black lg:!text-[6rem]">
             The Sultan of swing
           </h1>
         </header>
@@ -27,7 +27,7 @@ export default function MK() {
           width={3000}
           height={2400}
         />
-        <h1 className="text-center block !leading-none !text-4xl !font-black lg:!text-[5rem]">
+        <h1 className="text-center block !leading-none !text-4xl !font-black lg:!text-[6rem]">
           Mark Knopfler
         </h1>
         <p>

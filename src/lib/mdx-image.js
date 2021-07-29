@@ -34,7 +34,7 @@ module.exports = (options) => (tree) => {
           ])
 
         // Change node type from p to div to avoid nesting error
-        node.type = 'div'
+        node.type = 'mdxJsxFlowElement'
         node.children = [imageNode]
       }
     }
