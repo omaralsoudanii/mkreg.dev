@@ -34,8 +34,8 @@ module.exports = {
           600: '#246cff',
         },
         dark: {
-          primary: 'rgb(22, 27, 34)',// #161b22
-          secondary: 'rgb(29, 34, 41)',// #181D24
+          secondary: 'rgb(22, 27, 34)',// #161b22
+          primary: 'rgb(29, 34, 41)',// #181D24
           tertiary: 'rgb(33, 38, 45)',
         },
       },
