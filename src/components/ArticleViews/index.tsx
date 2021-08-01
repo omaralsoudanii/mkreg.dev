@@ -1,9 +1,14 @@
 import * as React from 'react'
 
-import { useCurrentViews } from '@/lib/hooks'
+import useSWR from 'swr'
+
+import Fetcher from '@/lib/fetcher'
 
 export default function ArticleViews({ slug }) {
-  const data = useCurrentViews(slug)
+  const encodedSlug = encodeURIComponent(slug)
+  const fetch = () => Fetcher(`/api/views/${encodedSlug}`, { method: 'GET' })
+
+  const { data } = useSWR(['/api/views/', encodedSlug], fetch)
   const views = new Number(data?.total)
 
   return (

@@ -22,8 +22,7 @@ export default function PostLayout({
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
   const encodedSlug = encodeURIComponent(slug)
-  const url = '/api/views/'
-  const fullUrl = url.concat(encodedSlug)
+  const fullUrl = `/api/views/${encodedSlug}`
   React.useEffect(() => {
     Fetcher(fullUrl, { method: 'POST' })
   }, [fullUrl])
