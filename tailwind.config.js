@@ -129,7 +129,7 @@ module.exports = {
             fontWeight: '100 900',
             fontStyle: 'normal',
             fontNamedInstance: 'Regular',
-            fontDisplay: 'swap',
+            fontDisplay: 'optional',
             src: 'url("/static/fonts/Inter-roman.var-latin.woff2") format("woff2")',
           },
         },
