@@ -7,7 +7,7 @@ const NextImage = ({
   width,
   height,
   alt = 'Omar Alsoudani',
-  layout = 'responsive',
+  layout = 'intrinsic',
 }: {
   src: any
   width: number

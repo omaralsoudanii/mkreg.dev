@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { getMDXComponent } from 'mdx-bundler/client'
+import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Post from '@/components/Layouts/Post'
@@ -25,7 +25,7 @@ export default function MDXPost({ post, prev, next }) {
   const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
     <Post frontMatter={frontMatter} prev={prev} next={next}>
-      <Component components={MDXComponents as any} />
+      <Component components={MDXComponents as ComponentMap} />
     </Post>
   )
 }
