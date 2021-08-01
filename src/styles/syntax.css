@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply py-3 px-6 text-sm font-mono sm:text-base font-bold text-gray-800 bg-gray-200 border border-gray-200   dark:text-gray-200 dark:border-dark-secondary dark:bg-dark-secondary;
+  @apply p-3 text-sm font-mono sm:text-base font-bold text-gray-700 bg-gray-200 border border-gray-200   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
 }
 
 .prose .remark-code-title + div > pre {
@@ -17,7 +17,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-tertiary dark:bg-dark-tertiary mt-0 mb-0 font-mono !important;
+  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -47,12 +47,6 @@ pre[class*='language-'] {
   white-space: normal;
 }
 
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  @apply text-[#e36209] dark:text-[#f78c6c];
-}
-
 .token.punctuation {
   @apply text-gray-700 dark:text-gray-300;
 }
@@ -61,43 +55,10 @@ pre[class*='language-'] {
   @apply text-gray-500;
 }
 
-.token.property,
-.token.tag,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  @apply text-[#4ea837] dark:text-[#addb67];
-}
-
-.token.namespace,
-.token.selector,
-.token.char,
-.token.builtin,
-.token.inserted {
-  @apply text-purple-500 dark:text-purple-400;
-}
-
-.token.operator,
-.token.entity {
-  @apply text-indigo-500 dark:text-indigo-400;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  @apply text-blue-500 dark:text-blue-400;
-}
-
-.token.function,
-.token.class-name {
-  @apply text-pink-500 dark:text-pink-400;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  @apply text-yellow-500 dark:text-yellow-400;
+.token.entity,
+.token.tag
+.token.operator {
+  @apply text-purple-600 dark:text-purple-400;
 }
 
 .token.attr-name {
@@ -108,6 +69,60 @@ pre[class*='language-'] {
 .token.string,
 .token.url {
   @apply text-[#4ea837] dark:text-[#addb67];
+}
+
+.token.symbol,
+.token.deleted,
+.token.inserted,
+.token.builtin,
+.token.char,
+.token.number {
+  @apply text-[#ff6600] dark:text-[#f78c6c];
+}
+
+.token.keyword,
+.token.property-access,
+.token.method,
+.token.class-name,
+.token.constant,
+.token.function {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.token.punctuation {
+  @apply text-gray-600 dark:text-gray-400;
+}
+
+.token.prolog,
+.token.doctype,
+.token.cdata, .token.selector,
+.token.doctype {
+  @apply text-[#8559a2] dark:text-[#c792ea];
+  font-style: 'italic';
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-amber-600 dark:text-amber-400;
+}
+
+.token.atrule,
+.token.attr-value
+ {
+  @apply text-pink-600 dark:text-pink-400;
+}
+
+.token.boolean {
+  @apply text-[#d73a49] dark:text-[#e97689];
+}
+
+.token.property {
+  @apply text-[#63cdc3] dark:text-[#80cbc4];
+}
+
+.token.namespace {
+  @apply text-[#71b2cd] dark:text-[#b2ccd6];
 }
 
 .prose pre::-webkit-scrollbar {
@@ -121,7 +136,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-700 dark:text-gray-200 px-2 py-1 dark:border-dark-tertiary bg-gray-100 dark:bg-dark-tertiary;
+  @apply text-gray-800 dark:text-gray-200 px-2 py-1 sm:!font-medium   dark:border-dark-tertiary bg-gray-100 dark:bg-dark-tertiary;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;

@@ -3,7 +3,7 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
-  purge: [ './src/**/*.{js,jsx,ts,tsx,mdx}'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
@@ -33,10 +33,11 @@ module.exports = {
           ...colors.blue,
           600: '#246cff',
         },
+        amber:colors.amber,
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22
-          secondary: 'rgb(29, 34, 41)', // #181D24
-          tertiary: 'rgb(33, 38, 45)',
+          secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
+          tertiary: 'rgb(40, 45, 52)', // #282d34
         },
       },
       typography: (theme) => ({
