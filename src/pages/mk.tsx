@@ -1,7 +1,10 @@
-import NextImage from '@/components/NextImage'
+import NextImage from 'next/image'
+
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 
+import MKPic from '../../public/static/images/mk.jpg'
+import TheSulatn from '../../public/static/images/sultan.jpg'
 export default function MK() {
   const meta = {
     title: 'Omar Alsoudani - The Sultan of swing',
@@ -12,29 +15,27 @@ export default function MK() {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark md:prose-lg lg:prose-xl w-full max-w-none mx-auto"
+      className="prose dark:prose-dark md:prose-lg lg:prose-xl w-full !max-w-none mx-auto"
     >
       <Seo data={meta} />
       <div className="!space-y-4 lg:!space-y-8">
         <header>
-          <h1 className="lg:!mb-16 lg:mt-8 !leading-none text-center block !text-4xl !font-black lg:!text-[6rem]">
+          <h1 className="lg:!my-4  text-center !text-4xl !font-black lg:!text-8xl">
             The Sultan of swing
           </h1>
         </header>
-        <NextImage
-          src="/static/images/sultan.jpg"
-          alt="The Sultan of swing"
-          width={3000}
-          height={2400}
-        />
-        <h1 className="text-center block !leading-none !text-4xl !font-black lg:!text-[6rem]">
+        <NextImage src={TheSulatn} alt="The Sultan of swing" />
+        <p>
+          Congrats on finding this page! Let me introduce you to my favorite
+          human being in the universe.
+        </p>
+        <h1 className="text-center italic  !text-4xl !font-black lg:!text-8xl">
           Mark Knopfler
         </h1>
         <p>
-          Congrats on finding this page! Let me introduce you to my favorite
-          human being in the universe. If you have ever wondered why the hell I
-          have this weird domain name rather than something closer to my name
-          (for SEO blah...), then I can tell you that the acronym is based on:
+          If you have ever wondered why the hell I have this weird domain name
+          rather than something closer to my name (for SEO blah...), then I can
+          tell you that the acronym—<strong>MKREG</strong>—is based on:
         </p>
         <p className="!font-semibold text-center">
           <a
@@ -58,12 +59,7 @@ export default function MK() {
           the answer to the ultimate question of life.
         </p>
 
-        <NextImage
-          src="/static/images/mk.jpg"
-          alt="Mark Knopfler"
-          width={1280}
-          height={915}
-        />
+        <NextImage src={MKPic} alt="Mark Knopfler" />
         <p>
           This is a biography about
           <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>

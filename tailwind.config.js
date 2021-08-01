@@ -3,7 +3,7 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.{tsx,ts,js,mdx}'],
+  purge: [ './src/**/*.{js,jsx,ts,tsx,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
@@ -18,7 +18,7 @@ module.exports = {
           'JetBrains Mono',
           'IBM Plex Mono',
           'Fira Code',
-          ...fontFamily.mono
+          ...fontFamily.mono,
         ],
         sans: ['Inter', ...fontFamily.sans],
       },
@@ -34,8 +34,8 @@ module.exports = {
           600: '#246cff',
         },
         dark: {
-          primary: 'rgb(22, 27, 34)',// #161b22
-          secondary: 'rgb(29, 34, 41)',// #181D24
+          primary: 'rgb(22, 27, 34)', // #161b22
+          secondary: 'rgb(29, 34, 41)', // #181D24
           tertiary: 'rgb(33, 38, 45)',
         },
       },
@@ -120,7 +120,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {
@@ -133,5 +132,6 @@ module.exports = {
 
       addUtilities(newUtilities)
     }),
+    require('@tailwindcss/typography'),
   ],
 }
