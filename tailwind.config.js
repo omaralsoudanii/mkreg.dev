@@ -121,40 +121,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    plugin(function ({ addBase, theme }) {
-      addBase([
-        {
-          '@font-face': {
-            fontFamily: 'Inter',
-            fontWeight: '100 900',
-            fontStyle: 'normal',
-            fontNamedInstance: 'Regular',
-            fontDisplay: 'optional',
-            src: 'url("/static/fonts/Inter-roman.var-latin.woff2") format("woff2")',
-          },
-        },
-        {
-          '@font-face': {
-            fontFamily: 'Inter',
-            fontWeight: '100 900',
-            fontStyle: 'italic',
-            fontNamedInstance: 'Italic',
-            fontDisplay: 'swap',
-            src: 'url("/static/fonts/Inter-italic.var-latin.woff2") format("woff2")',
-          },
-        },
-        {
-          'h1,h2': {
-            fontWeight: theme('fontWeight.bold'),
-            letterSpacing: theme('letterSpacing.tight'),
-          },
-          'h3,h4': {
-            fontWeight: theme('fontWeight.semibold'),
-            letterSpacing: theme('letterSpacing.tight'),
-          },
-        },
-      ])
-    }),
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.scroll-spacing-sm': {

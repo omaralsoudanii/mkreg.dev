@@ -1,12 +1,12 @@
 {
   "name": "Omar Alsoudani",
   "short_name": "MK",
+  "description": "Software developer, creator and the king of laziness.",
   "icons": [
     {
       "src": "/meta/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/meta/maskable_icon.png",
@@ -22,6 +22,9 @@
   ],
   "theme_color": "#161b22",
   "background_color": "#161b22",
-  "start_url": "https://mkreg.dev/",
-  "display": "standalone"
+  "display": "standalone",
+  "dir": "ltr",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "start_url": "/"
 }

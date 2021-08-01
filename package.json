@@ -19,6 +19,7 @@
     "export": "next export",
     "clean": "rm -rf .next node_modules && yarn cache clean && yarn && yarn build && yarn start",
     "lint": "next lint",
+    "css": "yarn prettier --write **/*.css",
     "generate-icons": "npx @svgr/cli -d public/svgr-icons-tmp  --ignore-existing --typescript public/static/icons"
   },
   "dependencies": {

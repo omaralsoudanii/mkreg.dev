@@ -15,7 +15,6 @@
   @apply hidden;
 }
 
-
 code[class*='language-'],
 pre[class*='language-'] {
   @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-tertiary dark:bg-dark-tertiary mt-0 mb-0 font-mono !important;
@@ -58,8 +57,7 @@ pre[class*='language-'] {
   @apply text-gray-700 dark:text-gray-300;
 }
 
-.token.comment
- {
+.token.comment {
   @apply text-gray-500;
 }
 
@@ -112,7 +110,6 @@ pre[class*='language-'] {
   @apply text-[#4ea837] dark:text-[#addb67];
 }
 
-
 .prose pre::-webkit-scrollbar {
   display: none;
 }
@@ -124,7 +121,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-700 dark:text-gray-200 px-1 py-0.5 sm:px-2 sm:py-1 border border-gray-100 dark:border-dark-tertiary bg-gray-100 dark:bg-dark-tertiary;
+  @apply text-gray-700 dark:text-gray-200 px-2 py-1 dark:border-dark-tertiary bg-gray-100 dark:bg-dark-tertiary;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;
