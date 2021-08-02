@@ -19,8 +19,8 @@ export default function MK() {
     >
       <Seo data={meta} />
       <div className="!space-y-4 lg:!space-y-8">
-        <header>
-          <h1 className="lg:!my-4  text-center !text-4xl !font-black lg:!text-8xl">
+        <header className="my-16">
+          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-[7rem]">
             The Sultan of swing
           </h1>
         </header>
@@ -29,7 +29,7 @@ export default function MK() {
           Congrats on finding this page! Let me introduce you to my favorite
           human being in the universe.
         </p>
-        <h1 className="text-center italic  !text-4xl !font-black lg:!text-8xl">
+        <h1 className="text-center italic  !text-4xl !font-extrabold lg:!text-[7rem]">
           Mark Knopfler
         </h1>
         <p>
