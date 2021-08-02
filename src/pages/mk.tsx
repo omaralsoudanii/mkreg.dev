@@ -20,7 +20,7 @@ export default function MK() {
       <Seo data={meta} />
       <div className="!space-y-4 lg:!space-y-8">
         <header className="my-16">
-          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-[7rem]">
+          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-7xl lg:!leading-none">
             The Sultan of swing
           </h1>
         </header>
@@ -29,9 +29,11 @@ export default function MK() {
           Congrats on finding this page! Let me introduce you to my favorite
           human being in the universe.
         </p>
-        <h1 className="text-center italic  !text-4xl !font-extrabold lg:!text-[7rem]">
-          Mark Knopfler
-        </h1>
+        <header className="my-16">
+          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-7xl lg:!leading-none">
+            Mark Knopfler
+          </h1>
+        </header>
         <p>
           If you have ever wondered why the hell I have this weird domain name
           rather than something closer to my name (for SEO blah...), then I can
