@@ -23,10 +23,11 @@ module.exports = {
         sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
-        blue: {
-          ...colors.blue,
-          600: '#246cff',
+        gray: {
+          ...colors.coolGray,
+          50: '#FAFAFA',
         },
+        'blue-600': '#246cff',
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22
           secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
@@ -42,13 +43,13 @@ module.exports = {
               color: null,
               code: { color: theme('colors.blue.600') },
             },
-            'h1,h2': {
+            'h1': {
               fontWeight: theme('fontWeight.bold'),
               color: theme('colors.black'),
             },
-            'h3,h4': {
+            'h2,h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
@@ -81,8 +82,11 @@ module.exports = {
               color: null,
               code: { color: theme('colors.blue.400') },
             },
-            'h1,h2,h3,h4': {
+            h1: {
               color: theme('colors.white'),
+            },
+            'h2,h3,h4': {
+              color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {

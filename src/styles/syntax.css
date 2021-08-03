@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply p-3 text-sm font-mono sm:text-base font-bold text-gray-700 bg-gray-200 border border-gray-200   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+  @apply p-3 text-sm font-mono sm:text-base font-bold text-gray-700 bg-gray-100 border border-gray-100   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
 }
 
 .prose .remark-code-title + div > pre {
@@ -17,7 +17,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-100  bg-gray-100 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
+  @apply border border-gray-50  bg-gray-50 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -131,7 +131,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 px-2 py-1  bg-gray-100 dark:bg-dark-tertiary;
+  @apply text-gray-800 dark:text-gray-200 !font-normal !font-mono px-2 py-1  bg-gray-100 dark:bg-dark-tertiary;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;

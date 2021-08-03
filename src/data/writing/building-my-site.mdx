@@ -44,15 +44,15 @@ HAProxy is not just a **"Load Balancer"**. It's the perfect combo with Cloudflar
 
 Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
 
-Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time. If most of the site is served by Cloudflare and the revalidation is handled by a proxy server – then in this case I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model). Because the whole thing basically dependent on latency and response time – and ofcourse HAProxy is miles ahead in this area compared to NGINX.
+Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time. If most of the site is served by Cloudflare and the revalidation is handled by a proxy server—then in this case I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model). Because the whole thing basically dependent on latency and response time—ofcourse HAProxy is miles ahead in this area compared to NGINX.
 
 ### Docker
 
-You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure – anyway Docker is default for me on new apps so I do the build image stuff.
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure—anyway Docker is default for me on new apps so I do the build image stuff.
 
 ### Cloudflare
 
-Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff – to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
+Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff—to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
 
 ### TypeScript
 
@@ -76,7 +76,7 @@ Used as a staging server. It's perfect since you know Vercel will always output 
 
 ### PlanetScale
 
-I recently added PlanetScale – which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach – I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not – for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
+I recently added PlanetScale—which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach—I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not—for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
 
 
 ## FAQ
