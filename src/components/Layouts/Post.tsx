@@ -4,7 +4,6 @@ import ArticleViews from '@/components/ArticleViews'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
-import Fetcher from '@/lib/fetcher'
 import { FormatDate, slugify } from '@/lib/utils'
 
 const editUrl = (slug: string) =>
@@ -24,7 +23,12 @@ export default function PostLayout({
   const encodedSlug = encodeURIComponent(slug)
   const fullUrl = `/api/views/${encodedSlug}`
   React.useEffect(() => {
-    Fetcher(fullUrl, { method: 'POST' })
+    const registerView = () =>
+      fetch(fullUrl, {
+        method: 'POST',
+      })
+
+    registerView()
   }, [fullUrl])
 
   const fullPath =
@@ -74,7 +78,7 @@ export default function PostLayout({
           <div className="divide-gray-200  lg:divide-y dark:divide-gray-700 lg:row-start-1 py-4 lg:col-start-1">
             <div className="flex flex-col lg:flex-row lg:block lg:border-b lg:border-gray-200 lg:dark:border-gray-700">
               <div className="flex py-4 lg:py-8 flex-col">
-                <h2 className="!font-medium  text-tertiary text-base py-1">
+                <h2 className="!font-medium !tracking-normal  text-tertiary text-base py-1">
                   {Environment.ogTitle}
                 </h2>
                 <div className="flex flex-wrap py-1">

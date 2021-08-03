@@ -47,17 +47,12 @@ pre[class*='language-'] {
   white-space: normal;
 }
 
-.token.punctuation {
-  @apply text-gray-700 dark:text-gray-300;
-}
-
 .token.comment {
-  @apply text-gray-500;
+  @apply text-gray-600 dark:text-gray-400;
 }
 
 .token.entity,
-.token.tag
-.token.operator {
+.token.tag .token.operator {
   @apply text-purple-600 dark:text-purple-400;
 }
 
@@ -90,12 +85,13 @@ pre[class*='language-'] {
 }
 
 .token.punctuation {
-  @apply text-gray-600 dark:text-gray-400;
+  @apply text-gray-500;
 }
 
 .token.prolog,
 .token.doctype,
-.token.cdata, .token.selector,
+.token.cdata,
+.token.selector,
 .token.doctype {
   @apply text-[#8559a2] dark:text-[#c792ea];
   font-style: 'italic';
@@ -104,12 +100,11 @@ pre[class*='language-'] {
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-amber-600 dark:text-amber-400;
+  @apply text-yellow-600 dark:text-yellow-400;
 }
 
 .token.atrule,
-.token.attr-value
- {
+.token.attr-value {
   @apply text-pink-600 dark:text-pink-400;
 }
 
@@ -136,7 +131,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 px-2 py-1 sm:!font-medium   dark:border-dark-tertiary bg-gray-100 dark:bg-dark-tertiary;
+  @apply text-gray-800 dark:text-gray-200 px-2 py-1  bg-gray-100 dark:bg-dark-tertiary;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;

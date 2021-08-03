@@ -23,7 +23,7 @@
 
   h3,
   h4 {
-    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg font-semibold;
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-semibold;
   }
 
   .header-sm {
@@ -97,19 +97,11 @@
   }
 
   .link-unstyled {
-    @apply w-auto font-medium text-primary no-underline !important;
-  }
-
-  .link-unstyled:hover {
-    @apply lg:shadow-black lg:dark:shadow-white lg:link-hover-transition;
+    @apply w-auto text-primary font-medium  !important;
   }
 
   .primary-link {
-    @apply font-medium w-auto text-blue-600 no-underline dark:text-blue-400 !important;
-  }
-
-  .primary-link:hover {
-    @apply lg:shadow-blue-600 lg:dark:shadow-blue-400 lg:link-hover-transition;
+    @apply w-auto text-blue-600 font-medium dark:text-blue-400 !important;
   }
 
   .footer-grid {
@@ -127,14 +119,6 @@
   .filter-saturate {
     -webkit-filter: brightness(105%) saturate(200%) contrast(1);
     filter: brightness(105%) saturate(200%) contrast(1);
-  }
-
-  .link-transition {
-    transition: box-shadow 300ms ease 0s;
-  }
-
-  .link-hover-transition {
-    transition: box-shadow 300ms ease 0s;
   }
 
   .clamp {

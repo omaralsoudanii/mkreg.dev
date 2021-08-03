@@ -22,18 +22,11 @@ module.exports = {
         ],
         sans: ['Inter', ...fontFamily.sans],
       },
-      boxShadow: {
-        white: '0px 2px 0px #fff',
-        black: '0px 2px 0px #000',
-        'blue-400': '0px 2px 0px #60a5fa',
-        'blue-600': '0px 2px 0px #246cff',
-      },
       colors: {
         blue: {
           ...colors.blue,
-          600: '#246cff',
+          600: '#1662ff',
         },
-        amber:colors.amber,
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22
           secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
@@ -55,7 +48,7 @@ module.exports = {
             },
             'h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.black'),
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
@@ -88,12 +81,8 @@ module.exports = {
               color: null,
               code: { color: theme('colors.blue.400') },
             },
-            'h1,h2': {
-              fontWeight: theme('fontWeight.bold'),
+            'h1,h2,h3,h4': {
               color: theme('colors.white'),
-            },
-            'h3,h4': {
-              color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {
