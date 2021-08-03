@@ -16,7 +16,7 @@ function Nuggets() {
 
       <section className="mb-8 lg:mb-16">
         <header>
-          <h1 className="post title !mb-4">Nuggets</h1>
+          <h1 className="page-heading !mb-4">Nuggets</h1>
         </header>
         <p>
           Some stuff I bookmark to read later, or a tool I find useful to use.

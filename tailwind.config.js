@@ -25,7 +25,7 @@ module.exports = {
       colors: {
         blue: {
           ...colors.blue,
-          600: '#1662ff',
+          600: '#246cff',
         },
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22
