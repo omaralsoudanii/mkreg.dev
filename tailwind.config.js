@@ -1,4 +1,3 @@
-const colors = require('tailwindcss/colors')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 module.exports = {
@@ -15,18 +14,21 @@ module.exports = {
       },
       fontFamily: {
         mono: [
-          'JetBrains Mono',
-          'IBM Plex Mono',
-          'Fira Code',
-          ...fontFamily.mono,
+          '"JetBrains Mono"',
+          '"IBM Plex Mono"',
+          '"Fira Code"',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          '"Liberation Mono"',
+          '"Courier New"',
+          'monospace',
+          'ui-monospace',
         ],
         sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
-        gray: {
-          ...colors.coolGray,
-          50: '#FAFAFA',
-        },
         'blue-600': '#246cff',
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22

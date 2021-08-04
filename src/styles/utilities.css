@@ -20,14 +20,12 @@
     @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-bold tracking-[-0.022em];
   }
 
-  h2
-  {
+  h2 {
     @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg font-semibold tracking-[-0.018em];
-  } 
-  
+  }
+
   h3,
-  h4
-  {
+  h4 {
     @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg font-semibold tracking-[-0.016em];
   }
 
@@ -100,7 +98,7 @@
   .page-heading {
     @apply heading-default leading-9 sm:leading-10 lg:text-5xl lg:leading-14 !important;
   }
-  
+
   .link-unstyled {
     @apply w-auto text-primary font-medium  lg:hover:transition-colors lg:hover:text-gray-500 lg:dark:hover:text-gray-300  !important;
   }

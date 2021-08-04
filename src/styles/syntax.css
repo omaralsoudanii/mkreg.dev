@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply p-3 text-sm font-mono sm:text-base font-bold text-gray-700 bg-gray-100 border border-gray-100   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+  @apply p-3 text-sm font-mono sm:text-base font-bold text-gray-700 bg-gray-200 border border-gray-200   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
 }
 
 .prose .remark-code-title + div > pre {
@@ -17,7 +17,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply border border-gray-50  bg-gray-50 text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
+  @apply border border-[whitesmoke] bg-[whitesmoke] font-medium text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -48,22 +48,21 @@ pre[class*='language-'] {
 }
 
 .token.comment {
-  @apply text-gray-600 dark:text-gray-400;
+  @apply text-gray-500;
 }
 
-.token.entity,
-.token.tag .token.operator {
-  @apply text-purple-600 dark:text-purple-400;
+.token.entity {
+  @apply text-indigo-600 dark:text-indigo-400;
 }
 
 .token.attr-name {
-  @apply text-[#4ea837] dark:text-[#addb67];
+  @apply text-[#22863a] dark:text-[#addb67];
   font-style: italic;
 }
 
 .token.string,
 .token.url {
-  @apply text-[#4ea837] dark:text-[#addb67];
+  @apply text-[#22863a] dark:text-[#addb67];
 }
 
 .token.symbol,
@@ -72,20 +71,22 @@ pre[class*='language-'] {
 .token.builtin,
 .token.char,
 .token.number {
-  @apply text-[#ff6600] dark:text-[#f78c6c];
+  @apply text-[#d73a49] dark:text-[#f16472];
+}
+.token.tag,
+.token.operator,
+.token.property-access {
+  @apply text-pink-600 dark:text-pink-400;
 }
 
 .token.keyword,
-.token.property-access,
 .token.method,
-.token.class-name,
-.token.constant,
 .token.function {
   @apply text-blue-600 dark:text-blue-400;
 }
 
 .token.punctuation {
-  @apply text-gray-500;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .token.prolog,
@@ -93,23 +94,22 @@ pre[class*='language-'] {
 .token.cdata,
 .token.selector,
 .token.doctype {
-  @apply text-[#8559a2] dark:text-[#c792ea];
+  @apply text-purple-600 dark:text-[#c792ea];
   font-style: 'italic';
 }
 
+.token.class-name,
+.token.constant,
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-yellow-600 dark:text-yellow-400;
+  @apply text-[#e36209] dark:text-[#f78c6c];
 }
 
+.token.boolean,
 .token.atrule,
 .token.attr-value {
-  @apply text-pink-600 dark:text-pink-400;
-}
-
-.token.boolean {
-  @apply text-[#d73a49] dark:text-[#e97689];
+  @apply text-red-600 dark:text-red-400;
 }
 
 .token.property {
@@ -131,7 +131,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 !font-normal !font-mono px-2 py-1  bg-gray-100 dark:bg-dark-tertiary;
+  @apply text-gray-800 dark:text-gray-200 font-normal font-mono px-2 py-1  bg-[whitesmoke] dark:bg-dark-tertiary !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;

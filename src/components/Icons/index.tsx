@@ -1,34 +1,36 @@
-export { default as Aws } from './Aws.svg'
-export { default as Cloudflare } from './Cloudflare.svg'
-export { default as Curl } from './Curl.svg'
-export { default as Docker } from './Docker.svg'
-export { default as Dropbox } from './Dropbox.svg'
-export { default as Elastic } from './Elastic.svg'
-export { default as Fastify } from './Fastify.svg'
-export { default as Github } from './Github.svg'
-export { default as Go } from './Go.svg'
-export { default as Haproxy } from './Haproxy.svg'
-export { default as Java } from './Java.svg'
-export { default as Javascript } from './Javascript.svg'
-export { default as Letsencrypt } from './Letsencrypt.svg'
-export { default as Linux } from './Linux.svg'
-export { default as Mariadb } from './Mariadb.svg'
-export { default as Medium } from './Medium.svg'
-export { default as Mozilla } from './Mozilla.svg'
-export { default as Mysql } from './Mysql.svg'
-export { default as Nextjs } from './Nextjs.svg'
-export { default as Nginx } from './Nginx.svg'
-export { default as Nodejs } from './Nodejs.svg'
-export { default as Openssl } from './Openssl.svg'
-export { default as React } from './React.svg'
-export { default as Simpleicons } from './Simpleicons.svg'
-export { default as Stackoverflow } from './Stackoverflow.svg'
-export { default as Twilio } from './Twilio.svg'
-export { default as Typescript } from './Typescript.svg'
-export { default as Vercel } from './Vercel.svg'
-export { default as Twitter } from './Twitter.svg'
-export { default as Youtube } from './Youtube.svg'
-export { default as Linkedin } from './Linkedin.svg'
-export { default as Rss } from './Rss.svg'
-export { default as Gmail } from './Gmail.svg'
-export { default as Mk } from './Mk.svg'
+import dynamic from 'next/dynamic'
+
+export const Aws = dynamic(() => import('./Aws.svg'))
+export const Cloudflare = dynamic(() => import('./Cloudflare.svg'))
+export const Curl = dynamic(() => import('./Curl.svg'))
+export const Docker = dynamic(() => import('./Docker.svg'))
+export const Dropbox = dynamic(() => import('./Dropbox.svg'))
+export const Elastic = dynamic(() => import('./Elastic.svg'))
+export const Fastify = dynamic(() => import('./Fastify.svg'))
+export const Github = dynamic(() => import('./Github.svg'))
+export const Go = dynamic(() => import('./Go.svg'))
+export const Haproxy = dynamic(() => import('./Haproxy.svg'))
+export const Java = dynamic(() => import('./Java.svg'))
+export const Javascript = dynamic(() => import('./Javascript.svg'))
+export const Letsencrypt = dynamic(() => import('./Letsencrypt.svg'))
+export const Linux = dynamic(() => import('./Linux.svg'))
+export const Mariadb = dynamic(() => import('./Mariadb.svg'))
+export const Medium = dynamic(() => import('./Medium.svg'))
+export const Mozilla = dynamic(() => import('./Mozilla.svg'))
+export const Mysql = dynamic(() => import('./Mysql.svg'))
+export const Nextjs = dynamic(() => import('./Nextjs.svg'))
+export const Nginx = dynamic(() => import('./Nginx.svg'))
+export const Nodejs = dynamic(() => import('./Nodejs.svg'))
+export const Openssl = dynamic(() => import('./Openssl.svg'))
+export const React = dynamic(() => import('./React.svg'))
+export const Simpleicons = dynamic(() => import('./Simpleicons.svg'))
+export const Stackoverflow = dynamic(() => import('./Stackoverflow.svg'))
+export const Twilio = dynamic(() => import('./Twilio.svg'))
+export const Typescript = dynamic(() => import('./Typescript.svg'))
+export const Vercel = dynamic(() => import('./Vercel.svg'))
+export const Twitter = dynamic(() => import('./Twitter.svg'))
+export const Youtube = dynamic(() => import('./Youtube.svg'))
+export const Linkedin = dynamic(() => import('./Linkedin.svg'))
+export const Rss = dynamic(() => import('./Rss.svg'))
+export const Gmail = dynamic(() => import('./Gmail.svg'))
+export const Mk = dynamic(() => import('./Mk.svg'))

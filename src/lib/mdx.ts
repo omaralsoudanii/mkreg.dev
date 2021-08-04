@@ -101,6 +101,10 @@ export async function getAllFilesFrontMatter(type: string) {
     }
     const { data } = matter(source)
 
+    if (data?.draft === true) {
+      return [...allPosts]
+    }
+
     return [
       {
         ...data,
