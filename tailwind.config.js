@@ -45,7 +45,7 @@ module.exports = {
               color: null,
               code: { color: theme('colors.blue.600') },
             },
-            'h1': {
+            h1: {
               fontWeight: theme('fontWeight.bold'),
               color: theme('colors.black'),
             },

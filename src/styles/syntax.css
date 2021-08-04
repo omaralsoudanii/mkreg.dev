@@ -15,9 +15,11 @@
   @apply hidden;
 }
 
-code[class*='language-'],
+code[class*='language-'] {
+  @apply bg-transparent !important;
+}
 pre[class*='language-'] {
-  @apply border border-[whitesmoke] bg-[whitesmoke] font-medium text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
+  @apply border border-gray-100   bg-gray-100     text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary mt-0 mb-0 font-mono !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   text-align: left;
@@ -131,7 +133,7 @@ pre[class*='language-'] {
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 font-normal font-mono px-2 py-1  bg-[whitesmoke] dark:bg-dark-tertiary !important;
+  @apply text-gray-800 dark:text-gray-200 font-normal   px-2 py-1 rounded  bg-gray-100 dark:bg-dark-tertiary !important;
   font-feature-settings: normal;
   letter-spacing: normal;
   white-space: pre;
