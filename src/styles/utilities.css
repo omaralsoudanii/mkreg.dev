@@ -182,9 +182,12 @@
     @apply opacity-100;
   }
 
-  /* from https://leerob.io/ */
+  .prose p {
+    @apply break-words !important;
+    word-break: break-word !important;
+  }
+
   .prose img {
-    /* Don't apply styles to next/image */
-    @apply m-0 !important;
+    @apply w-full rounded-md !important;
   }
 }

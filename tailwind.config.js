@@ -1,10 +1,27 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
+    fontFamily: {
+      mono: [
+        '"JetBrains Mono"',
+        '"IBM Plex Mono"',
+        '"Fira Code"',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        '"Liberation Mono"',
+        '"Courier New"',
+        'monospace',
+        'ui-monospace',
+      ],
+      sans: ['Inter', ...fontFamily.sans],
+    },
     extend: {
       lineHeight: {
         11: '2.75rem',
@@ -12,28 +29,17 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
-      fontFamily: {
-        mono: [
-          '"JetBrains Mono"',
-          '"IBM Plex Mono"',
-          '"Fira Code"',
-          'SFMono-Regular',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          '"Liberation Mono"',
-          '"Courier New"',
-          'monospace',
-          'ui-monospace',
-        ],
-        sans: ['Inter', ...fontFamily.sans],
-      },
+
       colors: {
         'blue-600': '#246cff',
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22
           secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
           tertiary: 'rgb(40, 45, 52)', // #282d34
+        },
+        gray: {
+          ...colors.coolGray,
+          50: '#f6f8fa',
         },
       },
       typography: (theme) => ({
@@ -43,7 +49,6 @@ module.exports = {
             a: {
               textDecoration: null,
               color: null,
-              code: { color: theme('colors.blue.600') },
             },
             h1: {
               fontWeight: theme('fontWeight.bold'),
@@ -82,7 +87,6 @@ module.exports = {
             a: {
               textDecoration: null,
               color: null,
-              code: { color: theme('colors.blue.400') },
             },
             h1: {
               color: theme('colors.white'),

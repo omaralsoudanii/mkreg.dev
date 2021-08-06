@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply p-3 text-sm font-mono sm:text-base font-bold text-gray-700 bg-gray-200 border border-gray-200   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+  @apply font-mono text-sm lg:text-base font-bold lg:font-medium py-3 px-4 text-gray-800 bg-gray-50  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
 }
 
 .prose .remark-code-title + div > pre {
@@ -11,23 +11,31 @@
   @apply mt-4 !important;
 }
 
-.task-list-item:before {
-  @apply hidden;
+.prose a code {
+  @apply px-1 -mx-1 font-medium no-underline bg-gray-100 rounded-sm dark:bg-dark-tertiary  text-blue-600  dark:text-blue-400 !important;
 }
 
-code[class*='language-'] {
+.prose pre::-webkit-scrollbar {
+  display: none;
+}
+
+.prose pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.prose code[class*='language-'] {
   @apply bg-transparent !important;
 }
 
-pre[class*='language-'],
-code[class*='language-'] {
-  @apply border border-gray-100 bg-gray-100  text-gray-700 dark:text-gray-300 dark:border-dark-secondary dark:bg-dark-secondary  !important;
+.prose pre[class*='language-'] {
+  @apply border border-gray-50 bg-gray-50  font-mono  text-gray-800 dark:text-gray-200 dark:border-dark-secondary dark:bg-dark-secondary  !important;
   font-feature-settings: normal;
-  letter-spacing: normal;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  letter-spacing: normal;
   word-wrap: normal;
   line-height: 1.5;
 
@@ -41,7 +49,6 @@ code[class*='language-'] {
   hyphens: none;
 }
 
-/* Code blocks */
 .prose pre[class*='language-'] {
   overflow: auto;
 }
@@ -51,16 +58,28 @@ code[class*='language-'] {
   white-space: normal;
 }
 
+.prose pre:not([class*='language-']),
+.prose code:not([class*='language-']) {
+  @apply text-gray-800 dark:text-gray-200 text-sm lg:text-base font-semibold font-mono  lg:font-medium  px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
+}
+
+@media print {
+  .prose code[class*='language-'],
+  .prose pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
 .token.entity,
 .token.punctuation {
-  @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-800 dark:text-gray-200;
 }
 
 .token.cdata,
 .token.comment,
 .token.doctype,
 .token.prolog {
-  @apply text-gray-500;
+  @apply text-gray-500 dark:text-gray-400;
 }
 
 .token.atrule,
@@ -70,7 +89,7 @@ code[class*='language-'] {
 .token.keyword,
 .token.property,
 .token.selector {
-  @apply text-blue-600 dark:text-blue-400;
+  @apply text-blue-500 dark:text-blue-400;
 }
 
 .token.attr-name,
@@ -85,7 +104,7 @@ code[class*='language-'] {
 .token.class-name,
 .token.method,
 .token.function {
-  @apply text-[#e0276a] dark:text-pink-400;
+  @apply text-pink-500 dark:text-pink-400;
 }
 
 .token.boolean,
@@ -95,31 +114,23 @@ code[class*='language-'] {
 .token.builtin,
 .token.char,
 .token.number {
-  @apply text-red-600 dark:text-red-400;
+  @apply text-purple-500 dark:text-purple-400;
 }
 
 .token.tag,
 .token.operator,
 .token.property-access {
-  @apply text-purple-600 dark:text-purple-400;
+  @apply text-yellow-500 dark:text-yellow-400;
 }
 
-.prose pre::-webkit-scrollbar {
-  display: none;
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
 }
 
-.prose pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.prose pre:not([class*='language-']),
-.prose code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 font-normal px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
-  font-feature-settings: normal;
-  letter-spacing: normal;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
+.token.entity {
+  cursor: help;
 }
