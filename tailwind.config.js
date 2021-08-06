@@ -54,7 +54,11 @@ module.exports = {
               fontWeight: theme('fontWeight.bold'),
               color: theme('colors.black'),
             },
-            'h2,h3,h4': {
+            h2: {
+              fontWeight: theme('fontWeight.bold'),
+              color: theme('colors.black'),
+            },
+            'h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
@@ -88,10 +92,10 @@ module.exports = {
               textDecoration: null,
               color: null,
             },
-            h1: {
+            'h1,h2': {
               color: theme('colors.white'),
             },
-            'h2,h3,h4': {
+            'h3,h4': {
               color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },

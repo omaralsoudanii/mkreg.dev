@@ -21,7 +21,7 @@
   }
 
   h2 {
-    @apply text-primary scroll-spacing-sm lg:scroll-spacing-lg font-semibold tracking-[-0.018em];
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-bold tracking-[-0.018em];
   }
 
   h3,

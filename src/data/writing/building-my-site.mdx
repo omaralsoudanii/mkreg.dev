@@ -36,7 +36,7 @@ I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and 
 
 ## Technologies
 
-- **HAProxy & NGINX**
+### HAProxy & NGINX
 
   Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
 
@@ -44,43 +44,45 @@ I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and 
 
     Because the whole thing basically dependent on latency and response time—ofcourse HAProxy is miles ahead in this area compared to NGINX—it’s not just a **"Load Balancer"**—a perfect combo with Cloudflare.
 
-  - **Updated at August 06,2021**—I bought a new much better server to satisfy my obsession with **AMD EPYC** processors—to be honest the old server was limited, specially in the bandwidth department part (less than 200Mbit/s) so I can’t experiment much—and again as I mentioned before, the whole thing depends on latency except about ~10% of requests—that 10% needs processing power and someone bored so he keeps on switching and checking results. Well this time I have a better processors, better memory—it’s has fewer cores and memory, but quality beats quantity most of the time, sometimes it’s the opposite, depends on your app and what it does. Well you can check the changes from this [commit](https://github.com/omaralsoudanii/mkreg.dev/commit/261fd4da358318a3f85bcca7d054881942d43af5) (and some stupid fixes after it)
+  - **Updated at August 06,2021**—I bought a new much better server to satisfy my obsession with **AMD EPYC** processors—to be honest the old server was limited, specially in the bandwidth department part (less than 200Mbit/s) so I can’t experiment much—and again as I mentioned before, the whole thing depends on latency except about ~10% of requests.
+
+    That 10% needs processing power and someone bored so he keeps on switching and checking results. Well this time I have a better processors, better memory—it’s has fewer cores and memory, but quality beats quantity most of the time, sometimes it’s the opposite, depends on your app and what it does. Well you can check the changes from this [commit](https://github.com/omaralsoudanii/mkreg.dev/commit/261fd4da358318a3f85bcca7d054881942d43af5) (and some stupid fixes after it).
 
     The summary of this is NGINX spikes weren’t a concern anymore and the latency thing? it’s just a bad hardware that was slow to process stuff but we benefited alot from HAProxy in the old one (read the first update above)—of course just reverting the configuration of NGINX was not enough. 
-
+    
     I updated the docker image—implemented a **mini CDN** using NGINX proxy caching and last but not least I used my NGINX brotli compression settings rather than Cloudflare—I have a stupid hunch that Cloudflare have a better Gzip implementation, but their brotli is either misused with high compression level or simply the NGINX one I have is just better (yes I know I know… I change this thing more than the change that happens in the Front-end ecosystem).
 
-- **Docker**
+### Docker
 
-  You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure—anyway Docker is default for me on new apps so I do the build image stuff.
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure—anyway Docker is default for me on new apps so I do the build image stuff.
 
-- **Cloudflare**
+### Cloudflare
 
-  Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff—to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
+Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff—to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
 
-- **TypeScript**
+### TypeScript
 
-  Well, why not?
+Well, why not?
 
-- **Next.js**
+### Next.js
 
-  Hmm 🤔
+Hmm 🤔
 
-- **MDX**
+### MDX
 
-  Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
+Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
 
-- **Tailwindcss**
+### Tailwindcss
 
-  Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell this **H1** is BIGGER than everything???
+Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell this **H1** is BIGGER than everything???
 
-- **Vercel**
+### Vercel
 
-  Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
+Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
 
-- **PlanetScale**
+### PlanetScale
 
-  I recently added PlanetScale—which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach—I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not—for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
+I recently added PlanetScale—which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach—I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not—for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
 
 
 ## FAQ
