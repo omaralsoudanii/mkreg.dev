@@ -89,7 +89,7 @@
 .token.keyword,
 .token.property,
 .token.selector {
-  @apply text-blue-500 dark:text-blue-400;
+  @apply text-blue-600 dark:text-blue-400;
 }
 
 .token.attr-name,
@@ -104,7 +104,7 @@
 .token.class-name,
 .token.method,
 .token.function {
-  @apply text-pink-500 dark:text-pink-400;
+  @apply text-pink-600 dark:text-pink-400;
 }
 
 .token.boolean,
@@ -114,13 +114,13 @@
 .token.builtin,
 .token.char,
 .token.number {
-  @apply text-purple-500 dark:text-purple-400;
+  @apply text-purple-600 dark:text-purple-400;
 }
 
 .token.tag,
 .token.operator,
 .token.property-access {
-  @apply text-yellow-500 dark:text-yellow-400;
+  @apply text-indigo-600 dark:text-indigo-400;
 }
 
 .token.important,
