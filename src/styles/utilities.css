@@ -190,4 +190,7 @@
   .prose img {
     @apply w-full rounded-md !important;
   }
+  .prose hr {
+    @apply my-[2em] lg:my-[2.1em] !important;
+  }
 }
