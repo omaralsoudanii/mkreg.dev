@@ -17,19 +17,19 @@ services:
       - mk_prod
  
 
-  mk-haproxy:
+  mk-nginx:
     build:
-      context: ./haproxy
-      dockerfile: Dockerfile.prod
-    image: mk-haproxy
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    image: mk-nginx
     depends_on:
       - mk-next
-    container_name: mk-haproxy
+    container_name: mk-nginx
     restart: unless-stopped
     volumes:
-      - ./ssl/cf/haproxy_ecc.pem:/etc/haproxy/ssl/haproxy_ecc.pem:ro
-      - ./ssl/cf/priv.key:/etc/haproxy/ssl/priv.key:ro
-      - ./ssl/dh/dhparam-2048.pem:/etc/haproxy/ssl/dhparam-2048.pem:ro
+      - ./ssl/cf/ecc.pem:/etc/nginx/ssl/ecc.pem:ro
+      - ./ssl/cf/priv.key:/etc/nginx/ssl/priv.key:ro
+      - ./ssl/dh/dhparam-2048.pem:/etc/nginx/ssl/dhparam-2048.pem:ro
     ports:
       - 80:80
       - 443:443
