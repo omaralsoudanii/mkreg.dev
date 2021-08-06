@@ -1,8 +1,9 @@
-import Bookmarks from '@/lib/bookmarks'
-import { Container } from '@/components/Container'
-import Seo from '@/components/Seo'
 import * as React from 'react'
+
 import Card from '@/components/Card'
+import ProseContainer from '@/components/Layouts/ProseContainer'
+import Seo from '@/components/Seo'
+import Bookmarks from '@/lib/bookmarks'
 
 function Nuggets() {
   const meta = {
@@ -11,27 +12,29 @@ function Nuggets() {
     JsonLd: false,
   }
 
+  const Component = React.useMemo(() => Card, [])
+
   return (
-    <React.Fragment>
+    <ProseContainer>
       <Seo data={meta} />
-      <Container>
-        <section className="mb-8 space-y-8 lg:mb-16">
-          <h1>Nuggets</h1>
-          <p>
-            Some stuff I bookmark to read later, or a tool I find useful to use.
-            These recommendations are based on my opinion, doesn't mean they are
-            necessary or must-read. Some of them are debatable, not facts. Feel
-            free to peek into what might interest you, If you happen to see
-            something misleading or plain wrong. Please contact me!
-          </p>
-        </section>
-        <section className="mt-8 space-y-8">
-          {Bookmarks.map((bookmark) => (
-            <Card key={bookmark.title} {...bookmark} />
-          ))}
-        </section>
-      </Container>
-    </React.Fragment>
+
+      <section className="mb-8 lg:mb-16">
+        <header>
+          <h1 className="page-heading !mb-4">Nuggets</h1>
+        </header>
+        <p>
+          Some stuff I bookmark to read later, or a tool I find useful to use.
+          These recommendations are based on my opinion. Feel free to peek into
+          what might interest you. If you happen to see something misleading or
+          plain wrong, please contact me
+        </p>
+      </section>
+      <section>
+        {Bookmarks.map((bookmark) => (
+          <Component key={bookmark.title} {...bookmark} />
+        ))}
+      </section>
+    </ProseContainer>
   )
 }
 

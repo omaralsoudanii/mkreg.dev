@@ -1,18 +1,32 @@
 @tailwind base;
-
 @layer base {
-  body {
-    @apply subpixel-antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-gray-100;
-    font-variant: common-ligatures contextual;
-    text-rendering: optimizeLegibility;
-    letter-spacing: -0.01em;
-    font-feature-settings: 'cv01', 'cv10', 'ss01';
+  html {
+    touch-action: manipulation;
   }
 
-  @media screen and (min-device-pixel-ratio: 1.5),
-    screen and (min-resolution: 1.5dppx) {
-    body {
-      @apply antialiased;
-    }
+  body {
+    @apply text-black bg-white dark:bg-dark-primary dark:text-white antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
+      'calt';
+    text-rendering: optimizeLegibility;
+  }
+
+  #__next {
+    @apply h-full bg-white dark:bg-dark-primary;
+  }
+
+  .svg-fill {
+    @apply fill-[black] dark:fill-[white] text-black dark:text-white;
+  }
+
+  /* ubuntu colors */
+  ::-moz-selection {
+    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+    text-shadow: none;
+  }
+
+  ::selection {
+    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+    text-shadow: none;
   }
 }

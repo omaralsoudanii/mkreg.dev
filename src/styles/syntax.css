@@ -1,0 +1,136 @@
+.prose .remark-code-title {
+  @apply font-mono text-sm lg:text-base font-bold lg:font-medium py-3 px-4 text-gray-800 bg-gray-50  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+}
+
+.prose .remark-code-title + div > pre {
+  @apply mt-0 rounded-t-none;
+}
+
+.prose h4 + div > pre,
+.prose h4 + .remark-code-title {
+  @apply mt-4 !important;
+}
+
+.prose a code {
+  @apply px-1 -mx-1 font-medium no-underline bg-gray-100 rounded-sm dark:bg-dark-tertiary  text-blue-600  dark:text-blue-400 !important;
+}
+
+.prose pre::-webkit-scrollbar {
+  display: none;
+}
+
+.prose pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.prose code[class*='language-'] {
+  @apply bg-transparent !important;
+}
+
+.prose pre[class*='language-'] {
+  @apply border border-gray-50 bg-gray-50  font-mono  text-gray-800 dark:text-gray-200 dark:border-dark-secondary dark:bg-dark-secondary  !important;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  letter-spacing: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.prose pre[class*='language-'] {
+  overflow: auto;
+}
+
+.prose :not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  white-space: normal;
+}
+
+.prose pre:not([class*='language-']),
+.prose code:not([class*='language-']) {
+  @apply text-gray-800 dark:text-gray-200 text-sm lg:text-base font-semibold font-mono  lg:font-medium  px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
+}
+
+@media print {
+  .prose code[class*='language-'],
+  .prose pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+.token.entity,
+.token.punctuation {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.token.atrule,
+.token.constant,
+.token.delimiter,
+.token.delimiter important,
+.token.keyword,
+.token.property,
+.token.selector {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.token.attr-name,
+.token.url,
+.token.color,
+.token.string,
+.token.variable {
+  @apply text-[#22863a] dark:text-[#addb67];
+}
+
+.token.attr-value,
+.token.class-name,
+.token.method,
+.token.function {
+  @apply text-pink-600 dark:text-pink-400;
+}
+
+.token.boolean,
+.token.symbol,
+.token.deleted,
+.token.inserted,
+.token.builtin,
+.token.char,
+.token.number {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.token.tag,
+.token.operator,
+.token.property-access {
+  @apply text-indigo-600 dark:text-indigo-400;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}

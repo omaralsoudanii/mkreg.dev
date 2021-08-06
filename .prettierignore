@@ -2,3 +2,4 @@
 .vercel
 .cache
 node_modules
+docker

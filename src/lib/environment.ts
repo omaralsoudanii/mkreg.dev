@@ -12,7 +12,6 @@ const resolveNumber = (value: string | undefined, defaultValue: number) => {
 
 export interface EnvironmentProps {
   siteUrl: string
-  CF_BEACON: boolean
   NODE_ENV: string
   ogImage: string
   ogDescription: string
@@ -34,7 +33,6 @@ export interface EnvironmentProps {
 
 export const Environment: EnvironmentProps = {
   siteUrl: process.env.SITE_URL ?? 'https://mkreg.dev',
-  CF_BEACON: resolveBool(process.env.CF_BEACON, false),
   NODE_ENV: process.env.NODE_ENV ?? 'production',
   ogTitle: 'Omar Alsoudani',
   ogDescription: 'Software developer, creator and the king of laziness.',

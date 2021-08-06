@@ -1,8 +1,16 @@
-import MDXComponents from '@/components/MDXComponents'
-import Post from '@/components/Posts/Post'
-import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
+import * as React from 'react'
+
+import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { MDXRemote } from 'next-mdx-remote'
+
+import Post from '@/components/Layouts/Post'
+import MDXComponents from '@/components/MDXComponents'
+import {
+  getAllFilesName,
+  getFileBySlug,
+  getAllFilesFrontMatter,
+} from '@/lib/mdx'
+import { dateSortDesc, formatSlug } from '@/lib/utils'
 
 /**
  *
@@ -10,19 +18,32 @@ import { MDXRemote } from 'next-mdx-remote'
  *
  */
 
-export default function MDXPost({ mdxSource, frontMatter }) {
+export default function MDXPost({ post, prev, next }) {
+  const { mdxSource, frontMatter } = post
+  // it's generally a good idea to memoize this function call to
+  // avoid re-creating the component every render.
+  const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
-    <Post frontMatter={frontMatter}>
-      <MDXRemote {...mdxSource} components={MDXComponents} />
+    <Post frontMatter={frontMatter} prev={prev} next={next}>
+      <Component components={MDXComponents as ComponentMap} />
     </Post>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const allFrontMatter = await getAllFilesFrontMatter('writing')
+  const allPosts = allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
+  const postIndex = allPosts.findIndex(
+    (post) => formatSlug(post.slug) === params.slug
+  )
+  const prev = allPosts[postIndex + 1] || null
+  const next = allPosts[postIndex - 1] || null
+  if (prev) prev.path = '/writing'
+  if (next) next.path = '/writing'
   const post = await getFileBySlug('writing', params.slug)
 
   return {
-    props: post,
+    props: { post, prev, next },
   }
 }
 
@@ -32,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: posts.map((p) => ({
       params: {
-        slug: p.replace(/\.mdx/, ''),
+        slug: formatSlug(p),
       },
     })),
     fallback: false,

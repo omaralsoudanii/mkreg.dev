@@ -1,95 +1,109 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
-const { fontFamily, colors } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
-  purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
-    lineClamp: {
-      1: 1,
-      2: 2,
-      3: 3,
-      5: 5,
-    },
     fontFamily: {
       mono: [
-        'JetBrains Mono',
-        'IBM Plex Mono',
-        'Fira Code',
-        'Menlo',
-        'DejaVu Sans Mono',
-        'Bitstream Vera Sans Mono',
-        'ui-monospace',
+        '"JetBrains Mono"',
+        '"IBM Plex Mono"',
+        '"Fira Code"',
         'SFMono-Regular',
         'Menlo',
         'Monaco',
         'Consolas',
-        'Liberation Mono',
-        'Courier New',
+        '"Liberation Mono"',
+        '"Courier New"',
         'monospace',
+        'ui-monospace',
       ],
       sans: ['Inter', ...fontFamily.sans],
     },
     extend: {
-      spacing: {
-        '9/16': '56.25%',
-      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
         13: '3.25rem',
         14: '3.5rem',
       },
+
       colors: {
-        gray: colors.truGray,
-        dark: 'rgb(22, 27, 34)',
-        'gray-100': 'rgb(245,245,245)',
-      },
-      boxShadow: {
-        white: '0px 0px 0px #ffffff',
-        whiteHover: '0px 2px 0px #ffffff',
-        black: '0px 0px 0px #000000',
-        blackHover: '0px 2px 0px #000000',
+        'blue-600': '#246cff',
+        dark: {
+          primary: 'rgb(22, 27, 34)', // #161b22
+          secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
+          tertiary: 'rgb(40, 45, 52)', // #282d34
+        },
+        gray: {
+          ...colors.coolGray,
+          50: '#f6f8fa',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
-            h1: {
-              color: theme('colors.black'),
-              fontWeight: '740',
-            },
-            'h2,h3,h4,h5,h6': {
-              color: theme('colors.black'),
-              fontWeight: theme('fontWeight.semibold'),
-            },
+            color: theme('colors.gray.700'),
             a: {
-              textDecoration: 'none',
-              color: 'inherit',
+              textDecoration: null,
+              color: null,
             },
-            ol: {
-              li: {
-                '&:before': {
-                  backgroundColor: theme('colors.gray.700'),
-                  top: '0.8em',
-                },
-              },
-            },
-            ul: {
-              li: {
-                '&:before': {
-                  backgroundColor: theme('colors.gray.700'),
-                  top: '0.8em',
-                },
-              },
-            },
-            strong: {
-              color: theme('colors.gray.900'),
+            h1: {
               fontWeight: theme('fontWeight.bold'),
+              color: theme('colors.black'),
             },
-            thead: {
+            'h2,h3,h4': {
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
-              borderBottomColor: theme('colors.gray.700'),
+            },
+            hr: { borderColor: theme('colors.gray.200') },
+            'ol li:before': {
+              color: theme('colors.gray.500'),
+            },
+            'ul li:before': {
+              backgroundColor: theme('colors.gray.500'),
+            },
+            strong: { color: theme('colors.gray.700') },
+            blockquote: {
+              color: theme('colors.gray.700'),
+              borderLeftColor: theme('colors.gray.200'),
+              fontStyle: 'normal',
+            },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
+            'code:before': {
+              content: 'none',
+            },
+            'code:after': {
+              content: 'none',
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              textDecoration: null,
+              color: null,
+            },
+            h1: {
+              color: theme('colors.white'),
+            },
+            'h2,h3,h4': {
+              color: theme('colors.gray.100'),
+            },
+            hr: { borderColor: theme('colors.gray.700') },
+            'ol li:before': {
+              color: theme('colors.gray.400'),
+            },
+            'ul li:before': {
+              backgroundColor: theme('colors.gray.400'),
+            },
+            strong: { color: theme('colors.gray.200') },
+            thead: {
+              color: theme('colors.gray.100'),
             },
             tbody: {
               tr: {
@@ -97,50 +111,8 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.900'),
-              borderLeftColor: theme('colors.gray.300'),
-              fontWeight: theme('fontWeight.normal'),
-            },
-          },
-        },
-        lg: {
-          css: {
-            lineHeight: '1.8',
-          },
-        },
-        dark: {
-          css: {
-            color: theme('colors.gray.100'),
-            'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.white'),
-            },
-            ol: {
-              li: {
-                '&:before': { backgroundColor: theme('colors.gray.300') },
-              },
-            },
-            ul: {
-              li: {
-                '&:before': { backgroundColor: theme('colors.gray.300') },
-              },
-            },
-            strong: {
-              color: theme('colors.gray.100'),
-              fontWeight: theme('fontWeight.bold'),
-            },
-            thead: {
-              color: theme('colors.gray.100'),
-              borderBottomColor: theme('colors.gray.300'),
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme('colors.gray.300'),
-              },
-            },
-            blockquote: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
-              fontWeight: theme('fontWeight.normal'),
             },
           },
         },
@@ -148,17 +120,18 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addBase, theme }) {
-      addBase({
-        h1: {
-          fontWeight: '740',
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.scroll-spacing-sm': {
+          'scroll-margin-top': '4em',
         },
-        'h2,h3,h4,h5,h6': {
-          fontWeight: theme('fontWeight.semibold'),
+        '.scroll-spacing-lg': {
+          'scroll-margin-top': '2em',
         },
-      })
+      }
+
+      addUtilities(newUtilities)
     }),
     require('@tailwindcss/typography'),
-    require('tailwindcss-line-clamp'),
   ],
 }

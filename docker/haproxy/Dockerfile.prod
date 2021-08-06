@@ -9,4 +9,4 @@ ENV HAPROXY_USER=haproxy
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 
 # start with the specified configs
-CMD ["haproxy", "-db", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
+CMD ["haproxy", "-W", "-db", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]

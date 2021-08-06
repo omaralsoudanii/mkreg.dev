@@ -35,8 +35,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-.vscode
-
 # post build
 /public/tags/
 /public/*.xml

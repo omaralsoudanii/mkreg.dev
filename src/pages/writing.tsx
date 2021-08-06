@@ -1,10 +1,10 @@
-import { Container } from '@/components/Container'
-import PostsContainer from '@/components/Posts/Container'
-import Seo from '@/components/Seo'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
-import * as React from 'react'
+
+import PostsList from '@/components/Layouts/PostsList'
+import ProseContainer from '@/components/Layouts/ProseContainer'
+import Seo from '@/components/Seo'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 /**
  * Main writing page
@@ -21,24 +21,29 @@ export default function Writing({ posts }) {
   }
 
   return (
-    <React.Fragment>
+    <ProseContainer>
       <Seo data={meta} />
-      <Container>
-        <section className="mb-28 space-y-8">
-          <h1 className="!mb-8">Writing</h1>
-          <p>
-            Stuff I write about programming, software with a slight hint of
-            salt.
-          </p>
-          <p className="text-right">
-            <Link href="/tags">
-              <a className="mr-1 link-unstyled">Browse by Tags</a>
-            </Link>
-          </p>
-          <PostsContainer href="/writing" posts={posts} />
-        </section>
-      </Container>
-    </React.Fragment>
+      <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
+        <header>
+          <h1 className="page-heading !mb-0">Writing</h1>
+        </header>
+        <p>
+          Stuff I write about programming and software development with a slight
+          hint of salt. Please note that the list ordered by newest published
+          articles, however some times I modify or update some info on older
+          articles, I'll probably make some sort of filteration when I have
+          time.
+        </p>
+        <p className="self-end">
+          <Link href="/tags">
+            <a className="mr-1 primary-link">Browse by Tags</a>
+          </Link>
+        </p>
+      </section>
+      <section>
+        <PostsList href="/writing" posts={posts} />
+      </section>
+    </ProseContainer>
   )
 }
 

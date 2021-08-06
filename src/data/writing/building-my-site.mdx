@@ -1,43 +1,83 @@
 ---
 title: 'Building my site'
-date: '2021-04-27'
-lastmod: '2021-05-25'
-summary: "High level overview of building and developing my personal site, coding and infrastructure wise."
+date: '2021-04-11'
+lastmod: '2021-07-25'
+summary: "High level overview of building and developing my personal site, coding and infrastructure wise"
 tags: ['TypeScript','NGINX','HAProxy','Next.js','Cloudflare','Docker']
-image: '/static/images/writing/building-mkreg.png'
+image: '/static/images/writing/building-this-site/building-mkreg.jpg'
 ---
 
-**Frontend** is harder and more complex than what most programmers who don't do any **UI/UX** stuff think. I was one of those until I actually had to build one.
-This a high level talk about building and developing my personal site. Coding and infrastructure wise.
+![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.jpg)
+
+## Introduction
+
+Front-end is harder and more complex than what most programmers who don't do any UI/UX stuff think. I was one of those until I actually had to build one. This a high level talk about building and developing my personal site. Coding and infrastructure wise.
 
 > This post will be updated from time to time as tech emerges and new tooling is used
 
-![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg-light-house.png)
+## Table of contents
 
-## The clueless research
+1.  [Research phase](/writing/building-my-site#research-phase)
+2.  [Technologies](/writing/building-my-site#technologies)
+3.  [FAQ](/writing/building-my-site#faq)
+4.  [Coding and best practices](/writing/building-my-site#coding-and-best-practices)
+5.  [Lessons learned](/writing/building-my-site#lessons-learned)
+6.  [Acknowledgment](/writing/building-my-site#acknowledgment)
+7.  [Infrastructure](/writing/building-my-site#infrastructure)
+8.  [What's next](/writing/building-my-site#whats-next)
 
-No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. 
+## Research phase
 
-FYI I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend. You gotta optimize delivery for the Frontend app after all, whether it's infrastructure based or code wise based.
+No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend, you gotta optimize delivery for the Frontend app after all, whether it's infrastructure based or code wise based.
 
-I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about React like 4 years ago when everything was a class.
+I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about **React** like 4 years ago when everything was a class. So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). 
 
-So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). I decided to go with Next since I knew React and Next seemed to be always ahead, used more and bigger sites were using it. 
+I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and [Next.js](https://nextjs.org/) seemed to be always ahead, used more and bigger sites were using it. **To be fair it boiled down to the fact that I just knew React syntax**, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
 
-To be fair it boiled down to the fact that I just knew React syntax, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
+## Technologies
 
-## Technologies used
+### HAProxy
 
-- [HAProxy](https://www.haproxy.org/) HAProxy is not just a "loadbalancer". Perfect combo with Cloudflare
-- [NGINX](https://nginx.org/) Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time
-- [Docker](https://www.docker.com/) You kinda hate Docker, but you want the benefits as well. So here we are
-- [Cloudflare](https://cloudflare.com/) Takes care of delivering 99.9% of the app for a specified period of time that i can set
-- [TypeScript](https://www.typescriptlang.org/) Well, why not?
-- [Next.js](https://nextjs.org/) 🤔
-- [MDX](https://mdxjs.com/) Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice
-- [Tailwindcss](https://tailwindcss.com/) I saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing works so I knew it would be a perfect fit
-- [Vercel](https://vercel.com/) Used as a staging server. It's perfect since you know Vercel will always output the correct result
-whether it's about what's rendered, caching or performance
+HAProxy is not just a **"Load Balancer"**. It's the perfect combo with Cloudflare.
+
+### NGINX ###
+
+Updated: Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities.
+
+Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time. If most of the site is served by Cloudflare and the revalidation is handled by a proxy server—then in this case I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model). Because the whole thing basically dependent on latency and response time—ofcourse HAProxy is miles ahead in this area compared to NGINX.
+
+### Docker
+
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure—anyway Docker is default for me on new apps so I do the build image stuff.
+
+### Cloudflare
+
+Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff—to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
+
+### TypeScript
+
+Well, why not?
+
+### Next.js
+
+Hmm 🤔
+
+### MDX
+
+Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
+
+### Tailwindcss
+
+Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell this **H1** is BIGGER than everything???
+
+### Vercel
+
+Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
+
+### PlanetScale
+
+I recently added PlanetScale—which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach—I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not—for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
+
 
 ## FAQ
 
@@ -45,39 +85,40 @@ whether it's about what's rendered, caching or performance
 - Indeed this is overkill
 - No this is not a waste of time, I learn by doing and I treat this site as a playground
 - No, it didn't take me a lot of time setting up those, I do these on daily basis
+- Nope, I'm still bad using **CSS**
 - No those are not dependencies, You can clone or fork the repository and deploy it on [Vercel](https://vercel.com/)
-- After the end result, I learned some things regarding both Frontend and Backend. I might write something about it later with more details
+- After the end result, I learned some things regarding both Front-end and Back-end. I might write something about it later with more details
 
 ## Coding and best practices
 
-This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are. You won't find much in the code. 
+This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are.
 
 However if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
 
-This is my way of learning things. I read, develop then start progressing in a form of trial and error. Then iterate and fix., honestly I didn't know that I would enjoy it so much eventually it will become my site.
+This is my way of learning things. I read, develop then start progressing in a form of trial and error. Then iterate and fix, honestly I didn't know that I would enjoy it so much eventually it would become a real thing.
 
-With time, the code should be cleaner by removing some technical debts or using the proper way to implement something, if you wanna contribute, fix stuff, or whatever feel free to do so. The code is open sourced on Github.
+With time, the code should be cleaner by removing some technical debts or using the proper way to implement something. 
 
-<GithubCard 
+If you wanna contribute, fix stuff, or whatever feel free to do so. The code is open-sourced on GitHub.
+
+<Card 
     title="omaralsoudanii/mkreg.dev"
     desc="Omar Alsoudani personal site https://mkreg.dev/"
     url="https://github.com/omaralsoudanii/mkreg.dev"
+    icon="Github"
 />
 
 ## Lessons learned
 
-- Stop wasting your time for a month in a [lab](https://rsms.me/inter/lab/) just to get the perfect thing, nothing is perfect (Not really, I didn't learn this lesson and I am still in the lab... SEND HELP!!)
+- Stop wasting your time for a month in a [lab](https://rsms.me/inter/lab/) just to get the perfect thing, nothing is perfect (Not really, I didn't learn this lesson and I am still in the lab)
 - Iterate and enhance as you go, don't redo everything from scratch after the first failure
 - No knowledge is irrelevant or a waste of time. As I said before this helped me a lot dealing with software on the other side of the spectrum
 - Wanna do something? do it! stop thinking about the perfect execution. When was the last time you did something totally new and it was perfect on the first try?
+- Don't be like me
 
 ## Acknowledgment
 
-![Omar Alsoudani - Building my personal site](/static/images/writing/building-this-site/building-mkreg.png)
-
-This site used alot of things from these resources, sometimes copy pasta of some component design or just some helpers code snippets, or simply by looking at the way things are handled. In the end the app deviated from those due to the rapid learning curve I gained while developing.
-
->Serious talk, I don't copy paste anything that I don't or won't fully understand and neither should you (unless it's PHP mixed with regex, then go ahead my friend copy paste the whole thing and don't look back)
+I used a lot of things from these resources, sometimes copy pasta of some component design, maybe just some helpers code snippets, or simply by looking at the way things are handled. In the end the app deviated from those due to the rapid learning curve I gained while developing.
 
 - [Brian Lovin](https://brianlovin.com/)
 - [Lee Robinson](https://leerob.io/)
@@ -89,14 +130,14 @@ This site used alot of things from these resources, sometimes copy pasta of some
 
 What? of course I included my self, otherwise who do you think will do all the copy pasta or even write this post??
 
+> Serious talk, I don't copy paste anything that I don't or won't fully understand and neither should you. (unless it's **PHP** mixed with **regex**, then go ahead my friend copy pasta the whole thing and don't look back)
+
 ## Infrastructure
 
-I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles, I am still figuring out how to structure the content. 
-
-However, the tools mentioned above is just running on a **$6 VPS**. If you wanna learn more about it, feel free to contact me.
+I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles. I am still figuring out how to structure the content, however if you wanna learn more about it, feel free to contact me.
 
 ## What's next
 
-I will keep iterating and enhancing the app, code-wise, **UI/UX** (yeah right...), tooling and content.
+I will keep iterating and enhancing the app, code-wise, UI/UX (yeah right...), tooling and content.
 
 If you have some suggestions then contact me!

@@ -1,9 +1,8 @@
 module.exports = {
-  future: {
-    webpack5: true,
-    strictPostcssConfiguration: true,
+  eslint: {
+    ignoreDuringBuilds: true,
   },
-  compress: process.env.NODE_ENV === 'development',
+  compress: process.env.compress === 'true',
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -18,38 +17,7 @@ module.exports = {
         'react-dom': 'preact/compat',
       })
     }
+
     return config
   },
-  async headers() {
-    return [
-      {
-        source: '/static/fonts/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000',
-          },
-        ],
-      },
-      {
-        source: '/static/(.*)',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-        ],
-      },
-    ]
-  },
-  rewrites: async () => [
-    {
-      source: '/sitemap.xml',
-      destination: '/api/sitemap',
-    },
-    {
-      source: '/rss.xml',
-      destination: '/api/rss',
-    },
-  ],
 }

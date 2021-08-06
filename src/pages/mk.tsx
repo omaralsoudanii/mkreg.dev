@@ -1,8 +1,10 @@
-import { Container } from '@/components/Container'
-import NextImage from '@/components/NextImage'
-import Seo from '@/components/Seo'
-import * as React from 'react'
+import NextImage from 'next/image'
 
+import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
+
+import MKPic from '../../public/static/images/mk.jpg'
+import TheSulatn from '../../public/static/images/sultan.jpg'
 export default function MK() {
   const meta = {
     title: 'Omar Alsoudani - The Sultan of swing',
@@ -11,29 +13,35 @@ export default function MK() {
   }
 
   return (
-    <React.Fragment>
+    <article
+      id="skip"
+      className="prose dark:prose-dark md:prose-lg lg:prose-xl w-full !max-w-none mx-auto"
+    >
       <Seo data={meta} />
-      <Container>
-        <h1 className="text-center">The Sultan of swing</h1>
-        <NextImage
-          src="/static/images/mk.jpg"
-          alt="Mark Knopfler"
-          width={3000}
-          height={2400}
-        />
+      <div className="!space-y-4 lg:!space-y-8">
+        <header className="my-4 lg:my-16">
+          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-[7rem] lg:!leading-none">
+            The Sultan of swing
+          </h1>
+        </header>
+        <NextImage src={TheSulatn} alt="The Sultan of swing" />
         <p>
-          Well, Congrats on finding this page! Let me introduce you to my
-          favorite human being in the universe. The legend himself Mr.Mark
-          Knopfler.
+          Congrats on finding this page! Let me introduce you to my favorite
+          human being in the universe.
         </p>
+        <header className="my-4 lg:my-16">
+          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-[7rem] lg:!leading-none">
+            Mark Knopfler
+          </h1>
+        </header>
         <p>
           If you have ever wondered why the hell I have this weird domain name
-          rather than something closer to my name (for SEO blah...), Then I can
-          tell you that it's based on this acronym:
+          rather than something closer to my name (for SEO blah...), then I can
+          tell you that the acronym—<strong>MKREG</strong>—is based on:
         </p>
-        <p className="mx-auto text-center">
+        <p className="!font-semibold text-center">
           <a
-            className="text-link"
+            className="primary-link !font-semibold"
             href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
             target="_blank"
             rel="noopener noreferrer"
@@ -41,16 +49,48 @@ export default function MK() {
             Mark Knopfler Red Electric Guitar
           </a>
         </p>
+
         <p>
-          Everyone has his own "Red Electric Guitar". Seeing this beautiful
-          genuine soul getting his guitar is always a pleasure that puts a smile
-          on my face.
+          If you got the gist of the video then I think we can agree that
+          everyone has his own <strong>"Red Electric Guitar"</strong> in one way
+          or another.
         </p>
         <p>
-          So there you go, now you have the answer to the ultimate question of
-          life.
+          Seeing this beautiful genuine soul getting his guitar is always a
+          pleasure that puts a smile on my face. So there you go, now you have
+          the answer to the ultimate question of life.
         </p>
-      </Container>
-    </React.Fragment>
+
+        <NextImage src={MKPic} alt="Mark Knopfler" />
+        <p>
+          This is a biography about
+          <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>
+          and <strong>Dire Straits</strong>. Built using{' '}
+          <strong>Hugo static sites generator</strong>, open-sourced and hosted
+          on <strong>Vercel</strong>
+        </p>
+        <p className="!font-semibold text-center">
+          <a
+            href="https://mkreg-hugo.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primary-link !font-semibold"
+          >
+            Check mkreg-hugo @ Vercel
+          </a>
+        </p>
+        <p>Here, Hold onto this</p>
+        <p className="!font-semibold !text-center">
+          <a
+            href={Environment.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primary-link !font-semibold"
+          >
+            Golden Nugget 👏
+          </a>
+        </p>
+      </div>
+    </article>
   )
 }

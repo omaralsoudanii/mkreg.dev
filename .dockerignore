@@ -1,5 +1,4 @@
-node_modules
 yarn-error.log
-docker
-docker/Dockerfile.next
 .next
+node_modules
+docker?

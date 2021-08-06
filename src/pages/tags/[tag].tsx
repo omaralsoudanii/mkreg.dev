@@ -1,12 +1,12 @@
-import { Container } from '@/components/Container'
-import PostsContainer from '@/components/Posts/Container'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import Link from 'next/link'
+
+import PostsList from '@/components/Layouts/PostsList'
+import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
 import { slugify } from '@/lib/utils'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import Link from 'next/link'
-import * as React from 'react'
 
 /**
  *
@@ -21,24 +21,29 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <React.Fragment>
+    <ProseContainer>
       <Seo data={meta} />
-      <Container>
-        <section className="space-y-8">
-          <h1 className="!mb-8">{tag}</h1>
-          <p>
-            Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
-            related to it.
-          </p>
-          <p className="!my-2 text-right">
-            <Link href="/writing" passHref>
-              <a className="mr-1 link-unstyled">Browse all Writing</a>
-            </Link>
-          </p>
-          <PostsContainer href="/writing" posts={posts} />
-        </section>
-      </Container>
-    </React.Fragment>
+      <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
+        <header>
+          <h1 className="page-heading !mb-0">{tag}</h1>
+        </header>
+        <p>
+          Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
+          related to it. Please note that the list ordered by newest published
+          articles, however some times I modify or update some info on older
+          articles, I'll probably make some sort of filteration when I have
+          time.
+        </p>
+        <p className="self-end">
+          <Link href="/writing">
+            <a className="mr-1 primary-link">Browse all Writing</a>
+          </Link>
+        </p>
+      </section>
+      <section>
+        <PostsList href="/writing" posts={posts} />
+      </section>
+    </ProseContainer>
   )
 }
 

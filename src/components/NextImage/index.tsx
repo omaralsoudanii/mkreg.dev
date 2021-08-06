@@ -1,31 +1,19 @@
-import * as React from 'react'
 import Image from 'next/image'
 
 const NextImage = ({
   src,
   width,
   height,
-  alt,
+  alt = 'Omar Alsoudani',
   layout = 'intrinsic',
-  quality = 75,
 }: {
-  src: string
+  src: any
   width: number
   height: number
-  alt: string
-  layout?: 'intrinsic' | 'fixed' | 'responsive'
-  quality?: number
-}): JSX.Element => {
-  return (
-    <Image
-      alt={alt}
-      src={src}
-      width={width}
-      height={height}
-      layout={layout}
-      quality={quality}
-    />
-  )
-}
+  alt?: string
+  layout?: 'responsive' | 'fill' | 'fixed' | 'intrinsic'
+}): JSX.Element => (
+  <Image layout={layout} alt={alt} src={src} width={width} height={height} />
+)
 
 export default NextImage

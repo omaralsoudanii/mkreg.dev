@@ -1,4 +1,3 @@
-import { Environment } from '@/lib/environment'
 import Document, {
   DocumentContext,
   Head,
@@ -7,16 +6,24 @@ import Document, {
   NextScript,
 } from 'next/document'
 
+import { Environment } from '@/lib/environment'
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
-
   render() {
     return (
       <Html lang="en">
         <Head>
+          <link
+            rel="preload"
+            href="/static/fonts/Inter-roman.var-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           <link
             rel="alternate"
             type="application/rss+xml"
@@ -51,7 +58,7 @@ export default class MyDocument extends Document {
           <meta name="application-name" content="MK" />
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="msapplication-config" content="/meta/browserconfig.xml" />
-          <meta name="theme-color" content="#050505" />
+          <meta name="theme-color" content="#161b22" />
         </Head>
         <body>
           <Main />

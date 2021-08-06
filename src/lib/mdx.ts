@@ -1,11 +1,13 @@
-import { slugify } from '@/lib/utils'
 import fs from 'fs'
-import matter from 'gray-matter'
-import { serialize } from 'next-mdx-remote/serialize'
-import mdxPrism from 'mdx-prism'
 import path from 'path'
-import MDXImage from './MDXImage'
 
+import matter from 'gray-matter'
+import { bundleMDX } from 'mdx-bundler'
+
+import { formatSlug, slugify } from '@/lib/utils'
+
+import mdxImage from './mdx-image'
+import remarkCodeTitles from './remarkCodeTitles'
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
 
@@ -18,39 +20,79 @@ export async function getFileBySlug(type: string, slug?) {
     ? fs.readFileSync(path.join(loc, type, `${slug}.mdx`), 'utf8')
     : fs.readFileSync(path.join(loc, `${type}.mdx`), 'utf8')
 
-  const { data, content } = matter(source)
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [
-        require('remark-autolink-headings'),
-        require('remark-code-titles'),
-        MDXImage,
-      ],
-      rehypePlugins: [mdxPrism, require('rehype-slug')],
+  // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
+  if (process.platform === 'win32') {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      'node_modules',
+      'esbuild',
+      'esbuild.exe'
+    )
+  } else {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      'node_modules',
+      'esbuild',
+      'bin',
+      'esbuild'
+    )
+  }
+
+  const { frontmatter, code } = await bundleMDX(source, {
+    xdmOptions(options) {
+      // this is the recommended way to add custom remark/rehype plugins:
+      // The syntax might look weird, but it protects you in case we add/remove
+      // plugins in the future.
+      options.remarkPlugins = [
+        ...(options.remarkPlugins ?? []),
+        require('remark-slug'),
+        [
+          require('remark-autolink-headings'),
+          {
+            linkProperties: {
+              className: ['heading-anchor'],
+            },
+            behavior: 'append',
+          },
+        ],
+        require('remark-gfm'),
+        remarkCodeTitles,
+        mdxImage,
+      ]
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        require('@mapbox/rehype-prism'),
+      ]
+      return options
+    },
+    esbuildOptions(options) {
+      options.target = ['es2015']
+      options.loader = {
+        ...options.loader,
+        '.js': 'jsx',
+        '.tsx': 'tsx',
+      }
+      return options
     },
   })
 
   return {
-    mdxSource,
+    mdxSource: code,
     frontMatter: {
-      slug: slug ? slug.replace(/\.mdx/, '') : type,
-      ...data,
+      slug: slug ? formatSlug(slug) : type,
+      ...frontmatter,
     },
   }
 }
 
 export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(path.join(loc, type))
-  const allPages = fs.readdirSync(path.join(loc))
-  const allFiles = files.concat(allPages)
 
-  return allFiles.reduce((allPosts, postSlug) => {
+  return files.reduce((allPosts, postSlug) => {
     const source =
       fs.existsSync(path.join(loc, type, postSlug)) &&
       !fs.statSync(path.join(loc, type, postSlug)).isDirectory()
         ? fs.readFileSync(path.join(loc, type, postSlug), 'utf-8')
-        : !fs.statSync(path.join(loc, postSlug)).isDirectory()
-        ? fs.readFileSync(path.join(loc, postSlug), 'utf-8')
         : null
 
     if (!source) {
@@ -58,10 +100,14 @@ export async function getAllFilesFrontMatter(type: string) {
     }
     const { data } = matter(source)
 
+    if (data?.draft === true) {
+      return [...allPosts]
+    }
+
     return [
       {
         ...data,
-        slug: postSlug.replace('.mdx', ''),
+        slug: formatSlug(postSlug),
       },
       ...allPosts,
     ]
@@ -70,20 +116,17 @@ export async function getAllFilesFrontMatter(type: string) {
 
 export async function getAllTags(type: string) {
   const files = fs.readdirSync(path.join(loc, type))
-  const pageFiles = fs.readdirSync(loc)
-  const allFiles = files.concat(pageFiles)
   const tagCount = {}
   const tags = {}
+  const charSlice = {}
+
   // Iterate through each post, putting all found tags into `tags`
-  allFiles.forEach((file) => {
+  files.forEach((file) => {
     const source =
       fs.existsSync(path.join(loc, type, file)) &&
       !fs.statSync(path.join(loc, type, file)).isDirectory()
         ? fs.readFileSync(path.join(loc, type, file), 'utf-8')
-        : !fs.statSync(path.join(loc, file)).isDirectory()
-        ? fs.readFileSync(path.join(loc, file), 'utf-8')
         : null
-
     if (source) {
       const { data } = matter(source)
       if (data.tags) {
@@ -95,11 +138,12 @@ export async function getAllTags(type: string) {
           } else {
             tagCount[formattedTag] = 1
             tags[formattedTag] = tag
+            charSlice[formattedTag] = tag.charAt(0)
           }
         })
       }
     }
   })
 
-  return { tagCount, tags }
+  return { tagCount, tags, charSlice }
 }

@@ -1,0 +1,67 @@
+---
+title: 'MySQL Linux commands'
+date: '2021-07-13'
+lastmod: '2021-07-13'
+summary: "Incremental list of useful MySQL commands using Linux"
+image: '/static/images/writing/linux-commands/linux-bash-mysql-mkreg.png'
+---
+
+![Omar Alsoudani - Linux MySQL](/static/images/writing/linux-commands/linux-bash-mysql-mkreg.png)
+
+## Overview
+
+This page covers MySQL specific commands using Linux. some of them related to the **MySQL CLI**, others could be used from another program. You can use it as a reference in case you want to do some task quickly, or you might find something new and beneficial when using MySQL. 
+
+## Commands
+
+### Exporting data
+
+Export MySQL database to a directory with `mysqldump`
+
+-    Full database structure and data 
+
+        ```bash
+     mysqldump -uroot -proot --databases mydb_name \ 
+     --skip-comments > /Documents/db.sql
+        ```
+
+-    Specified table structure and data 
+
+        ```bash
+     mysqldump -uroot -proot mydb_name mytable_name > /Documents/db.sql
+        ```
+
+-    A specific table structure and data that matches a where clause
+
+        ```bash
+     mysqldump -uroot -proot mydb_name --tables mytable_name \ 
+     --where="id>5 limit 5000000" > mytable_name.sql
+        ```
+
+### Changing CLI pager 
+
+This Changes **MySQL CLI** pager to `less`. Using `less` helps readability when viewing large sets of data from queries in the terminal. Use this after you login into the MySQL shell
+
+```sql
+pager less -R -S
+```
+
+### Using Profiling
+
+In your current MySQL session you can enable profiling to debug and tune queries performance
+
+```sql
+SET profiling = 1;
+select * from table_name where field_name like '%omar%';
+SHOW PROFILES;
+SHOW PROFILE FOR QUERY 1; ## 1 is the ID from SHOW PROFILES
+SHOW PROFILE CPU FOR QUERY 2;
+```
+
+## All topics
+
+1.  [General Linux commands](/writing/linux-commands/linux-general)
+2.  [Docker Commands](/writing/linux-commands/linux-docker) 
+3.  [MySQL Commands](/writing/linux-commands/linux-mysql)
+4.  [MongoDB Commands](/writing/linux-commands/linux-mongodb)
+5.  [PHP Commands](/writing/linux-commands/linux-php)
