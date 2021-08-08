@@ -38,9 +38,13 @@ I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and 
 
 List of technologies I have used on this site – some of them I stopped using or found another tool – you can read about each below.
 
+### Docker
+
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure – anyway Docker is default for me on new apps so I do the build image stuff.
+
 ### HAProxy & NGINX
 
-Well it's either NGINX or HAProxy or both. I keep experimenting so this list is bound to change from time to time.
+Well it's either NGINX or HAProxy or both – I keep experimenting so this list is bound to change from time to time.
 
 #### Updated at June 17,2021
 
@@ -57,10 +61,6 @@ That 10% needs processing power and someone bored so he keeps on switching and c
 The summary of this is NGINX spikes weren’t a concern anymore and the latency thing? it’s just a bad hardware that was slow to process stuff but we benefited alot from HAProxy in the old one (read the first update above) – of course just reverting the configuration of NGINX was not enough. 
 
 I updated the docker image – implemented a **mini CDN** using NGINX proxy caching and last but not least I used my NGINX brotli compression settings rather than Cloudflare – I have a stupid hunch that Cloudflare have a better Gzip implementation, but their brotli is either misused with high compression level or simply the NGINX one I have is just better (yes I know I know… I change this thing more than the change that happens in the Front-end ecosystem).
-
-### Docker
-
-You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure – anyway Docker is default for me on new apps so I do the build image stuff.
 
 ### Cloudflare
 

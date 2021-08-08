@@ -40,6 +40,7 @@ module.exports = {
         gray: {
           ...colors.coolGray,
           50: '#f6f8fa',
+          1000: '#050505',
         },
       },
       typography: (theme) => ({
@@ -51,16 +52,12 @@ module.exports = {
               color: null,
             },
             h1: {
-              fontWeight: theme('fontWeight.extrabold'),
-              color: theme('colors.gray.900'),
-            },
-            h2: {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.1000'),
             },
-            'h3,h4': {
+            'h2,h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.1000'),
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
@@ -93,7 +90,7 @@ module.exports = {
               color: null,
             },
             'h1,h2,h3,h4': {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.50'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {
