@@ -61,10 +61,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       slugify(t).includes(params.tag as string)
     )
   }
-  const { revalidate, enable } = Environment.isr
+
   return {
     props: { posts: filteredPosts, tag: tag },
-    revalidate: enable ? revalidate : 0,
   }
 }
 
@@ -78,6 +77,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         tag,
       },
     })),
-    fallback: enable ? 'blocking' : false,
+    fallback: false,
   }
 }

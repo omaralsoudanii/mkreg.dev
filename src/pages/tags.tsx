@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
 import { getAllTags } from '@/lib/mdx'
 
 /**
@@ -93,11 +92,10 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     sortedData.push({ character, characterTags })
   })
-  const { revalidate, enable } = Environment.isr
+
   return {
     props: {
       sortedData,
     },
-    revalidate: enable ? revalidate : 0,
   }
 }

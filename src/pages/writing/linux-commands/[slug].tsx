@@ -5,7 +5,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Post from '@/components/Layouts/Post'
 import MDXComponents from '@/components/MDXComponents'
-import { Environment } from '@/lib/environment'
 import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
 import { formatSlug } from '@/lib/utils'
 
@@ -29,26 +28,24 @@ export default function MDXPost({ post, parentPost }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getFileBySlug('writing/linux-commands', params.slug)
-  const { revalidate, enable } = Environment.isr
   const parentPost = {
     title: 'Linux commands for me',
     path: 'writing/linux-commands',
   }
   return {
     props: { post, parentPost },
-    revalidate: enable ? revalidate : 0,
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllFilesName('writing/linux-commands')
-  const { enable } = Environment.isr
+
   return {
     paths: posts.map((p) => ({
       params: {
         slug: formatSlug(p),
       },
     })),
-    fallback: enable ? 'blocking' : false,
+    fallback: false,
   }
 }
