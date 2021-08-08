@@ -37,7 +37,8 @@ const handler = async (
           [date, req.query.slug]
         )
         const total = rows.length ? rows[0].count + 1 : 0
-        return res.status(200).json({
+        res.setHeader('Cache-Control', 'no-cache')
+        return res.json({
           total: total,
         })
       }
@@ -45,7 +46,8 @@ const handler = async (
 
     if (req.method === 'GET') {
       const total = rows.length ? rows[0].count : 0
-      return res.status(200).json({ total: total })
+      res.setHeader('Cache-Control', 'no-cache')
+      return res.json({ total: total })
     }
   } catch (e) {
     console.log(e)
