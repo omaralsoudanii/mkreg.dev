@@ -51,12 +51,12 @@ module.exports = {
               color: null,
             },
             h1: {
-              fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.black'),
+              fontWeight: theme('fontWeight.extrabold'),
+              color: theme('colors.gray.900'),
             },
             h2: {
               fontWeight: theme('fontWeight.bold'),
-              color: theme('colors.black'),
+              color: theme('colors.gray.900'),
             },
             'h3,h4': {
               fontWeight: theme('fontWeight.semibold'),
@@ -92,10 +92,7 @@ module.exports = {
               textDecoration: null,
               color: null,
             },
-            'h1,h2': {
-              color: theme('colors.white'),
-            },
-            'h3,h4': {
+            'h1,h2,h3,h4': {
               color: theme('colors.gray.100'),
             },
             hr: { borderColor: theme('colors.gray.700') },

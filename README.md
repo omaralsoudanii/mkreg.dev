@@ -3,7 +3,8 @@
 
 My personal site powered by
 
-- [HAProxy](https://www.haproxy.org/)
+- [NGINX](https://www.nginx.org/)
+- [HAProxy](https://www.haproxy.org/) (stopped using it for now)
 - [Docker](https://www.docker.com/)
 - [Cloudflare](https://cloudflare.com/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -13,14 +14,6 @@ My personal site powered by
 - [Vercel](https://vercel.com/)
 - [PlanetScale](https://www.planetscale.com/)
 
-
-## Speedlify
-
-[Speedlify](https://github.com/zachleat/speedlify) is a tool that automate continuous performance measurements.
-
-Check here to see my results: [mkreg-speedlify](https://mkreg-speedlify.netlify.app/mk/)
-
-To generate the results, I have this [Repository](https://github.com/omaralsoudanii/speedlify) deployed on Netlify
 ## Compatibility
 
 If for some reason the app fails to start, it might be due incompatible Node version.
@@ -52,3 +45,11 @@ Read about the [installation](https://github.com/omaralsoudanii/mkreg.dev/tree/m
 The app can be deployed to Vercel without extra dependencies. 
 
 Fork or clone the app then deploy, don't forget to add the environment variables through Vercel dashboard.
+
+## Speedlify
+
+[Speedlify](https://github.com/zachleat/speedlify) is a tool that automate continuous performance measurements.
+
+Check here to see my results: [mkreg-speedlify](https://mkreg-speedlify.netlify.app)
+
+To generate the results, I have this [Repository](https://github.com/omaralsoudanii/speedlify) deployed on Netlify
