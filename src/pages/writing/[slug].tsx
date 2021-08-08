@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Post from '@/components/Layouts/Post'
 import MDXComponents from '@/components/MDXComponents'
+import { Environment } from '@/lib/environment'
 import {
   getAllFilesName,
   getFileBySlug,
@@ -33,6 +34,7 @@ export default function MDXPost({ post, prev, next }) {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allFrontMatter = await getAllFilesFrontMatter('writing')
   const allPosts = allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
+  const { revalidate, enable } = Environment.isr
   const postIndex = allPosts.findIndex(
     (post) => formatSlug(post.slug) === params.slug
   )
@@ -44,18 +46,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { post, prev, next },
+    revalidate: enable ? revalidate : 0,
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllFilesName('writing')
-
+  const { enable } = Environment.isr
   return {
     paths: posts.map((p) => ({
       params: {
         slug: formatSlug(p),
       },
     })),
-    fallback: false,
+    fallback: enable ? 'blocking' : false,
   }
 }

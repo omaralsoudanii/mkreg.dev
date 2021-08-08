@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next'
 import ProseContainer from '@/components/Layouts/ProseContainer'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import { getFileBySlug } from '@/lib/mdx'
 
 function About({ mdxSource, frontMatter }) {
@@ -39,7 +40,11 @@ function About({ mdxSource, frontMatter }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const post = await getFileBySlug('about')
-  return { props: post }
+  const { revalidate, enable } = Environment.isr
+  return {
+    props: post,
+    revalidate: enable ? revalidate : 0,
+  }
 }
 
 export default About

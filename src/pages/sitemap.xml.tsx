@@ -19,6 +19,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     '!src/pages/_*.tsx',
     '!src/pages/api',
     '!src/pages/404.tsx',
+    '!src/pages/sitemap.xml.tsx',
+    '!src/pages/rss.xml.tsx',
     '!src/pages/500.tsx',
     '!src/data/*.mdx',
   ])

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PostsList from '@/components/Layouts/PostsList'
 import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 /**
@@ -53,9 +54,12 @@ export const getStaticProps: GetStaticProps = async () => {
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
   )
 
+  const { revalidate, enable } = Environment.isr
+
   return {
     props: {
       posts,
     },
+    revalidate: enable ? revalidate : 0,
   }
 }
