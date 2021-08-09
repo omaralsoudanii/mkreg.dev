@@ -51,7 +51,7 @@ module.exports = {
               color: null,
             },
             h1: {
-              fontWeight: theme('fontWeight.extrabold'),
+              fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
             }, 
             h2: {
