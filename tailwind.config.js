@@ -31,7 +31,7 @@ module.exports = {
       },
 
       colors: {
-        'blue-600': '#246cff',
+        'blue-600': '#1a73e8',
         dark: {
           primary: 'rgb(22, 27, 34)', // #161b22
           secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
@@ -53,7 +53,7 @@ module.exports = {
             h1: {
               fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),
-            }, 
+            },
             h2: {
               fontWeight: theme('fontWeight.bold'),
               color: theme('colors.gray.900'),

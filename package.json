@@ -20,11 +20,10 @@
     "clean": "rm -rf .next node_modules && yarn cache clean && yarn && yarn build && yarn start",
     "lint": "next lint",
     "css": "yarn prettier --write **/*.css && yarn prettier --write tailwind.config.js",
-    "generate-icons": "npx @svgr/cli -d public/svgr-icons-tmp  --ignore-existing --typescript public/static/icons"
+    "generate-icons": "npx @svgr/cli -d src/components/Icons  --ignore-existing --typescript src/components/Icons"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.7.0",
-    "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
     "gray-matter": "^4.0.3",
@@ -44,6 +43,7 @@
     "tailwindcss": "^2.2.7"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
     "@types/node": "^16.4.13",
     "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",

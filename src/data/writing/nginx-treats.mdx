@@ -84,11 +84,13 @@ Test, then test and finally test. Sometimes asserting that your configuration is
 
 For example benchmarking throughput by hitting a single endpoint rather than creating a realistic usage scenario in production.
 
+import Nginx from '@/components/Icons/Nginx';
+
 <Card 
     title="Benchmarking NGINX"
     desc="Best practices to follow when benchmarking NGINX, created by NGINX team"
     url="https://pages.nginx.com/rs/nginx/images/WP_Benchmarketing_042314.PDF"
-    icon="Nginx"
+    Icon={Nginx}
 />
 
 Based on the above – take what I'm writing with a grain of salt and test it again for the fourth time, make a bet with a colleague to break your new setup. 
@@ -342,11 +344,13 @@ I might write another article about topics I didn't cover including
 
 Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them.
 
+import Github from '@/components/Icons/Github';
+
 <Card
     title="omaralsoudanii/mkreg.dev"
     desc="NGINX configuration in conjunction with HAProxy, Cloudflare and Docker for https://mkreg.dev/"
     url="https://github.com/omaralsoudanii/mkreg.dev/tree/with-nginx/docker/nginx"
-    icon="Github"
+    Icon={Github}
 />
 
 Feel free to contact me via the links provided in the footer if there is outdated, wrong info provided here or if you would like to rant about something I wrote (I know you do). Seriously even if you have some questions, contact me.

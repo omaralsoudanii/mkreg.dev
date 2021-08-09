@@ -12,8 +12,6 @@ function Nuggets() {
     JsonLd: false,
   }
 
-  const Component = React.useMemo(() => Card, [])
-
   return (
     <ProseContainer>
       <Seo data={meta} />
@@ -31,7 +29,7 @@ function Nuggets() {
       </section>
       <section>
         {Bookmarks.map((bookmark) => (
-          <Component key={bookmark.title} {...bookmark} />
+          <Card key={bookmark.title} {...bookmark} />
         ))}
       </section>
     </ProseContainer>
