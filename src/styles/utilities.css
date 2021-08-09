@@ -13,20 +13,20 @@
   }
 
   .text-display {
-    @apply text-gray-1000 dark:text-gray-50;
+    @apply text-gray-900 dark:text-gray-100;
   }
 
   h1 {
-    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-bold tracking-[-0.022em];
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-extrabold tracking-tight;
   }
 
   h2 {
-    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-semibold tracking-[-0.018em];
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-bold tracking-tight;
   }
 
   h3,
   h4 {
-    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-semibold tracking-[-0.016em];
+    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-semibold;
   }
 
   .header-sm {
