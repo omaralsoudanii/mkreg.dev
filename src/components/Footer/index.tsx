@@ -28,14 +28,18 @@ export default function Footer() {
             Contact
           </NextLink>
           <NextLink
-            href={Environment.social.linkedin}
+            href={Environment.social.speedlify}
             className="link-unstyled"
           >
-            LinkedIn
+            Speedlify
           </NextLink>
         </div>
         <div className="footer-column">
-          <NextLink className="link-unstyled" href={Environment.social.rss}>
+          <NextLink
+            className="link-unstyled"
+            prefetch={false}
+            href={`${Environment.siteUrl}${Environment.social.rss}`}
+          >
             RSS
           </NextLink>
           <NextLink href={Environment.social.twitter} className="link-unstyled">

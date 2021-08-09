@@ -19,6 +19,7 @@ export interface EnvironmentProps {
   social: {
     github: string
     rss: string
+    speedlify: string
     linkedin: string
     youtube: string
     mail: string
@@ -45,6 +46,8 @@ export const Environment: EnvironmentProps = {
       'https://www.youtube.com/channel/UCiYs0vL7tkkCK4yF_YhfyEQ/playlists',
     linkedin:
       process.env.LINKEDIN_URL ?? 'https://www.linkedin.com/in/omaralsoudani',
+    speedlify:
+      process.env.SPEEDLIFY_URL ?? 'https://mkreg-speedlify.netlify.app',
     mail: process.env.EMAIL_ADDR ?? 'omaralsoudani@gmail.com',
     twitter: process.env.TWITTER_URL ?? 'https://twitter.com/omaralsoudani',
   },
