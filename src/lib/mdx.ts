@@ -17,7 +17,7 @@ const loc = path.join(root, 'data')
 
 function HeadingContent(node: Node | Node[]) {
   return [
-    h('span.sr-only', `Read the ${toString(node)} section`),
+    h('span.sr-only px-4', `Reading ${toString(node)} section`),
     h('span.icon.icon-link', { ariaHidden: 'true' }),
   ]
 }
