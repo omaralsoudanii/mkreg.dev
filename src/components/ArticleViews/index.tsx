@@ -5,10 +5,9 @@ import useSWR from 'swr'
 import Fetcher from '@/lib/fetcher'
 
 export default function ArticleViews({ slug }) {
-  const encodedSlug = encodeURIComponent(slug)
-  const fetch = () => Fetcher(`/api/views/${encodedSlug}`, { method: 'GET' })
+  const fetch = () => Fetcher(`/api/views/${slug}`, { method: 'GET' })
 
-  const { data } = useSWR(['/api/views/', encodedSlug], fetch)
+  const { data } = useSWR(`/api/views/${slug}`, fetch)
   const views = new Number(data?.total)
 
   return (

@@ -40,6 +40,8 @@
     @apply hidden opacity-0 absolute sm:inline px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:opacity-100 focus:top-4 left-60 -top-2;
   }
 
+
+
   .nav-default {
     @apply flex py-4 text-base font-medium text-primary;
   }
@@ -166,6 +168,16 @@
 
   .heading-anchor:after {
     content: '#';
+  }
+
+  .sr-anchor:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
   }
 
   h1:hover .heading-anchor,

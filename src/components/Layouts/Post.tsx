@@ -1,11 +1,12 @@
 import * as React from 'react'
 
+import { mutate } from 'swr'
+
 import ArticleViews from '@/components/ArticleViews'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { FormatDate, slugify } from '@/lib/utils'
-
 const editUrl = (slug: string) =>
   `${Environment.social.github}/mkreg.dev/edit/main/src/data/${slug}.mdx`
 const discussUrl = (slug: string) =>
@@ -20,12 +21,16 @@ export default function PostLayout({
   parentPost = null,
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
+
   const encodedSlug = encodeURIComponent(slug)
   const fullUrl = `/api/views/${encodedSlug}`
+
   React.useEffect(() => {
     const registerView = () =>
       fetch(fullUrl, {
         method: 'POST',
+      }).then(() => {
+        mutate(fullUrl)
       })
 
     registerView()
@@ -60,7 +65,7 @@ export default function PostLayout({
               <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
               {`    •    `}
               <span className="px-2 !font-medium">
-                <ArticleViews slug={slug} />
+                <ArticleViews slug={encodedSlug} />
               </span>
             </p>
             <h1 className="page-heading mb-4 lg:mb-8">{title}</h1>

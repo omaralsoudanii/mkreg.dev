@@ -2,8 +2,6 @@ import fs from 'fs'
 import path from 'path'
 
 import matter from 'gray-matter'
-import h from 'hastscript'
-import toString from 'mdast-util-to-string'
 import { bundleMDX } from 'mdx-bundler'
 import { Node } from 'unist'
 
@@ -12,12 +10,15 @@ import { formatSlug, slugify } from '@/lib/utils'
 import mdxImage from './mdx-image'
 import remarkCodeTitles from './remarkCodeTitles'
 
+const h = require('hastscript')
+const toString = require('mdast-util-to-string')
+
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
 
 function HeadingContent(node: Node | Node[]) {
   return [
-    h('span.sr-only px-4', `Reading ${toString(node)} section`),
+    h('span.sr-only', 'Read the "', toString(node), '" section'),
     h('span.icon.icon-link', { ariaHidden: 'true' }),
   ]
 }
@@ -60,11 +61,11 @@ export async function getFileBySlug(type: string, slug?) {
         [
           require('remark-autolink-headings'),
           {
+            behavior: 'append',
             linkProperties: {
               className: ['heading-anchor'],
             },
             content: HeadingContent,
-            behavior: 'append',
           },
         ],
         require('remark-gfm'),

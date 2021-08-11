@@ -29,7 +29,7 @@ const Row = ({ href, frontMatter }) => {
             </p>
           </div>
           <p className="!font-medium !text-base lg:!text-lg text-left !py-1 text-tertiary !my-0">
-            <ArticleViews slug={frontMatter.slug} />
+            <ArticleViews slug={encodeURIComponent(frontMatter.slug)} />
           </p>
           <p className="!font-normal lg:!py-0 lg:!text-lg !my-0 !text-base text-tertiary clamp clamp-3">
             {frontMatter.summary}
