@@ -3,22 +3,14 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
-  purge: './src/**/*.{js,jsx,ts,tsx,mdx}',
+  purge: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
       mono: [
         '"JetBrains Mono"',
         '"IBM Plex Mono"',
-        '"Fira Code"',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-        'ui-monospace',
+        ...fontFamily.mono,
       ],
       sans: ['Inter', ...fontFamily.sans],
     },
