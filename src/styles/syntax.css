@@ -1,5 +1,5 @@
 .prose .remark-code-title {
-  @apply font-mono text-sm lg:text-base font-bold lg:font-medium py-3 px-4 text-gray-800 bg-gray-50  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+  @apply font-mono text-sm md:text-base font-bold md:font-medium py-3 px-4 text-gray-800 bg-gray-50  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
 }
 
 .prose .remark-code-title + div > pre {
@@ -60,7 +60,7 @@
 
 .prose pre:not([class*='language-']),
 .prose code:not([class*='language-']) {
-  @apply text-gray-800 dark:text-gray-200 text-sm lg:text-base font-semibold font-mono  lg:font-medium  px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
+  @apply text-gray-800 dark:text-gray-200 text-sm md:text-base font-semibold font-mono  md:font-medium  px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
 }
 
 @media print {

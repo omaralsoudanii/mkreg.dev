@@ -15,12 +15,12 @@ export default function MK() {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark md:prose-lg lg:prose-xl w-full !max-w-none mx-auto"
+      className="prose dark:prose-dark md:prose-lg w-full !max-w-none mx-auto"
     >
       <Seo data={meta} />
-      <div className="!space-y-4 lg:!space-y-8">
-        <header className="my-4 lg:my-16">
-          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-[7rem] lg:!leading-none">
+      <div className="!space-y-4 md:!space-y-8">
+        <header className="my-4 md:my-16">
+          <h1 className="md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none">
             The Sultan of swing
           </h1>
         </header>
@@ -29,8 +29,8 @@ export default function MK() {
           Congrats on finding this page! Let me introduce you to my favorite
           human being in the universe.
         </p>
-        <header className="my-4 lg:my-16">
-          <h1 className="lg:!my-4  text-center !text-4xl !font-extrabold lg:!text-[7rem] lg:!leading-none">
+        <header className="my-4 md:my-16">
+          <h1 className="md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none">
             Mark Knopfler
           </h1>
         </header>

@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Post from '@/components/Layouts/Post'
 import MDXComponents from '@/components/MDXComponents'
+import { Environment } from '@/lib/environment'
 import {
   getAllFilesName,
   getFileBySlug,
@@ -44,6 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { post, prev, next },
+    revalidate: Environment.isr.revalidate,
   }
 }
 
@@ -56,6 +58,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: formatSlug(p),
       },
     })),
-    fallback: false,
+    fallback: Environment.isr.enable ? 'blocking' : false,
   }
 }

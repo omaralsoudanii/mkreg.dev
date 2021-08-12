@@ -18,12 +18,12 @@
 
   h1,
   h2 {
-    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-bold tracking-tight;
+    @apply text-display scroll-spacing-sm md:scroll-spacing-lg font-bold tracking-tight;
   }
 
   h3,
   h4 {
-    @apply text-display scroll-spacing-sm lg:scroll-spacing-lg font-semibold;
+    @apply text-display scroll-spacing-sm md:scroll-spacing-lg font-semibold;
   }
 
   .header-sm {
@@ -37,7 +37,7 @@
   }
 
   .skip-content-nav {
-    @apply hidden opacity-0 absolute sm:inline px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:opacity-100 focus:top-4 left-60 -top-2;
+    @apply hidden opacity-0 absolute md:inline px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:opacity-100 focus:top-4 left-60 -top-2;
   }
 
   .nav-default {
@@ -81,35 +81,35 @@
   }
 
   .text-h1 {
-    @apply heading-default lg:text-7xl leading-none !important;
+    @apply heading-default md:text-7xl leading-none !important;
   }
 
   .text-h2 {
-    @apply heading-default lg:text-6xl leading-none  !important;
+    @apply heading-default md:text-6xl leading-none  !important;
   }
 
   .text-h3 {
-    @apply heading-default lg:text-5xl leading-none !important;
+    @apply heading-default md:text-5xl leading-none !important;
   }
 
   .page-heading {
-    @apply heading-default leading-9 sm:leading-10 lg:text-5xl lg:leading-14 !important;
+    @apply heading-default leading-9 md:leading-10 md:text-5xl lg:leading-14 !important;
   }
 
   .link-unstyled {
-    @apply w-auto text-primary font-medium  lg:hover:transition-colors lg:hover:text-gray-500 lg:dark:hover:text-gray-300  !important;
+    @apply w-auto text-primary font-medium  md:hover:transition-colors md:hover:text-gray-500 md:dark:hover:text-gray-300  !important;
   }
 
   .primary-link {
-    @apply w-auto text-blue-600 font-medium dark:text-blue-400 lg:hover:transition-colors lg:hover:text-blue-400 lg:dark:hover:text-blue-300 !important;
+    @apply w-auto text-blue-600 font-medium dark:text-blue-400 md:hover:transition-colors md:hover:text-blue-400 md:dark:hover:text-blue-300 !important;
   }
 
   .footer-grid {
-    @apply grid grid-cols-1  py-12 lg:gap-12 m-auto lg:items-start lg:grid-cols-3;
+    @apply grid grid-cols-1  py-12 md:gap-12 m-auto md:items-start md:grid-cols-3;
   }
 
   .footer-column {
-    @apply flex flex-col items-start  space-y-8 py-4 px-2 lg:items-center;
+    @apply flex flex-col items-start  space-y-8 py-4 px-2 md:items-center;
   }
 
   .filter-blur {
@@ -144,7 +144,7 @@
   }
 
   .heading-default {
-    @apply text-3xl sm:text-4xl text-display !important;
+    @apply text-3xl md:text-4xl text-display !important;
   }
 
   .heading-anchor {
@@ -198,6 +198,6 @@
     @apply w-full rounded-md !important;
   }
   .prose hr {
-    @apply my-[2em] lg:my-[2.1em] !important;
+    @apply my-[2em] md:my-[2.1em] !important;
   }
 }

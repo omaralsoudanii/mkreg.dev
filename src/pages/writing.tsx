@@ -2,8 +2,8 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
 import PostsList from '@/components/Layouts/PostsList'
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 /**
@@ -21,9 +21,12 @@ export default function Writing({ posts }) {
   }
 
   return (
-    <ProseContainer>
+    <article
+      id="skip"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+    >
       <Seo data={meta} />
-      <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
+      <section className="flex flex-col mb-8 md:mb-20 space-y-6">
         <header>
           <h1 className="page-heading !mb-0">Writing</h1>
         </header>
@@ -43,7 +46,7 @@ export default function Writing({ posts }) {
       <section>
         <PostsList href="/writing" posts={posts} />
       </section>
-    </ProseContainer>
+    </article>
   )
 }
 
@@ -57,5 +60,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
+    revalidate: Environment.isr.revalidate,
   }
 }

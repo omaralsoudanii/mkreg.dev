@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <React.Fragment>
-      <nav className="grid grid-cols-1 header-sm sm:hidden">
+      <nav className="grid grid-cols-1 header-sm md:hidden">
         <div className="flex items-center">
           <div className="hdr-sm-btn" onClick={() => setExpanded(!isExpanded)}>
             {isExpanded ? <CloseIcon /> : <MenuIcon />}
@@ -65,18 +65,18 @@ export default function Header() {
             )
           })}
       </nav>
-      <nav className="hidden sm:flex sm:items-center sm:text-base lg:mr-24 sm:leading-5">
-        <div className="hidden sm:block">
+      <nav className="hidden md:flex md:items-center md:text-base md:mr-24 md:leading-5">
+        <div className="hidden md:block">
           {RoutesMetadata.map((link) => (
             <Link key={link.label} href={link.href}>
-              <a className="font-medium link-unstyled sm:my-2 sm:py-2 mx-2 sm:px-2">
+              <a className="font-medium link-unstyled md:my-2 md:py-2 mx-2 md:px-2">
                 {link.label}
               </a>
             </Link>
           ))}
         </div>
         <div
-          className="hidden sm:block sm:hdr-cnt-theme-btn"
+          className="hidden md:block md:hdr-cnt-theme-btn"
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
           {mounted && (resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />)}

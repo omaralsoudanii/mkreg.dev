@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import Card from '@/components/Card'
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
 import Bookmarks from '@/lib/bookmarks'
 
@@ -13,10 +12,13 @@ function Nuggets() {
   }
 
   return (
-    <ProseContainer>
+    <article
+      id="skip"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+    >
       <Seo data={meta} />
 
-      <section className="mb-8 lg:mb-16">
+      <section className="mb-8 md:mb-16">
         <header>
           <h1 className="page-heading !mb-4">Nuggets</h1>
         </header>
@@ -32,7 +34,7 @@ function Nuggets() {
           <Card key={bookmark.title} {...bookmark} />
         ))}
       </section>
-    </ProseContainer>
+    </article>
   )
 }
 

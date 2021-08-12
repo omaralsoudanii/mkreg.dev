@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import { getAllTags } from '@/lib/mdx'
 
 /**
@@ -20,9 +20,12 @@ export default function Tags({ sortedData }) {
   }
 
   return (
-    <ProseContainer>
+    <article
+      id="skip"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+    >
       <Seo data={meta} />
-      <section className="mb-8 space-y-8 lg:mb-16">
+      <section className="mb-8 space-y-8 md:mb-16">
         <header>
           <h1 className="page-heading !mb-4">Tags</h1>
         </header>
@@ -59,7 +62,7 @@ export default function Tags({ sortedData }) {
           </div>
         ))}
       </section>
-    </ProseContainer>
+    </article>
   )
 }
 
@@ -97,5 +100,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       sortedData,
     },
+    revalidate: Environment.isr.revalidate,
   }
 }

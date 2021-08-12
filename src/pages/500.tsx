@@ -1,15 +1,17 @@
 import Link from 'next/link'
 
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import NextImage from '@/components/NextImage'
 
 export default function ServerError() {
   return (
-    <ProseContainer>
-      <div className="flex flex-col justify-center items-center lg:space-x-10 lg:mt-8">
-        <div className="px-1 lg:px-0">
+    <div
+      id="skip"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+    >
+      <div className="flex flex-col justify-center items-center md:space-x-10 md:mt-8">
+        <div className="px-1 md:px-0">
           <header>
-            <h1 className="page-heading lg:pt-0">Internal server error</h1>
+            <h1 className="page-heading md:pt-0">Internal server error</h1>
           </header>
           <p>
             The server is currently unavailable for some reason. Obviously, it's
@@ -34,6 +36,6 @@ export default function ServerError() {
           </Link>
         </div>
       </div>
-    </ProseContainer>
+    </div>
   )
 }

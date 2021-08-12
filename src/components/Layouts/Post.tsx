@@ -57,32 +57,32 @@ export default function PostLayout({
       <Seo data={meta} />
       <article
         id="skip"
-        className="lg:divide-y lg:divide-gray-200 lg:dark:divide-gray-700"
+        className="md:divide-y md:divide-gray-200 md:dark:divide-gray-700"
       >
-        <header className="pb-4 lg:pb-8">
+        <header className="pb-4 md:pb-8">
           <div className="space-y-3 text-center">
-            <p className="text-base lg:text-lg  text-tertiary">
+            <p className="text-base md:text-lg  text-tertiary">
               <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
               {`    •    `}
               <span className="px-2 !font-medium">
                 <ArticleViews slug={encodedSlug} />
               </span>
             </p>
-            <h1 className="page-heading mb-4 lg:mb-8">{title}</h1>
+            <h1 className="page-heading mb-4 md:mb-8">{title}</h1>
           </div>
         </header>
         <div
-          className=" divide-y divide-gray-200 lg:divide-y-0 dark:divide-gray-700 lg:grid lg:gap-4 lg:grid-cols-4"
+          className=" divide-y divide-gray-200 md:divide-y-0 dark:divide-gray-700 md:grid md:gap-4 md:grid-cols-4"
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
-          <div className="py-6 lg:col-span-3 lg:col-start-2 lg:row-span-3">
-            <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-none">
+          <div className="py-6 md:col-span-3 md:col-start-2 md:row-span-3">
+            <div className="prose dark:prose-dark md:prose-lg w-full mx-auto !max-w-none">
               {children}
             </div>
           </div>
-          <div className="divide-gray-200  lg:divide-y dark:divide-gray-700 lg:row-start-1 py-4 lg:col-start-1">
-            <div className="flex flex-col lg:flex-row lg:block lg:border-b lg:border-gray-200 lg:dark:border-gray-700">
-              <div className="flex py-4 lg:py-8 flex-col">
+          <div className="divide-gray-200  md:divide-y dark:divide-gray-700 md:row-start-1 py-4 md:col-start-1">
+            <div className="flex flex-col md:flex-row md:block md:border-b md:border-gray-200 md:dark:border-gray-700">
+              <div className="flex py-4 md:py-8 flex-col">
                 <h2 className="!font-medium !tracking-normal  text-tertiary text-base py-1">
                   {Environment.ogTitle}
                 </h2>
@@ -111,11 +111,11 @@ export default function PostLayout({
                 )}
               </div>
             </div>
-            <div className="py-4 lg:py-8">
+            <div className="py-4 md:py-8">
               <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                 See also
               </h2>
-              <div className="flex lg:block justify-between">
+              <div className="flex md:block justify-between">
                 <p className="py-1">
                   <NextLink
                     className="primary-link text-base"
@@ -136,7 +136,7 @@ export default function PostLayout({
             </div>
 
             {tags && (
-              <div className="py-4 lg:py-8">
+              <div className="py-4 md:py-8">
                 <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                   Tagged with
                 </h2>
@@ -154,7 +154,7 @@ export default function PostLayout({
               </div>
             )}
             {(next || prev) && !parentPost && (
-              <div className="flex justify-between py-4 lg:block lg:space-y-8 lg:py-8">
+              <div className="flex justify-between py-4 md:block md:space-y-8 md:py-8">
                 {prev && (
                   <div>
                     <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
@@ -184,7 +184,7 @@ export default function PostLayout({
               </div>
             )}
             {!next && !prev && parentPost && (
-              <div className="flex flex-col py-4 lg:block lg:space-y-8 lg:py-8">
+              <div className="flex flex-col py-4 md:block md:space-y-8 md:py-8">
                 <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                   Continue reading
                 </h2>

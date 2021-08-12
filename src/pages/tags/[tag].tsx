@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
 
 import PostsList from '@/components/Layouts/PostsList'
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
@@ -21,9 +20,12 @@ export default function Tag({ posts, tag }) {
   }
 
   return (
-    <ProseContainer>
+    <article
+      id="skip"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+    >
       <Seo data={meta} />
-      <section className="flex flex-col mb-8 lg:mb-20 space-y-6">
+      <section className="flex flex-col mb-8 md:mb-20 space-y-6">
         <header>
           <h1 className="page-heading !mb-0">{tag}</h1>
         </header>
@@ -43,7 +45,7 @@ export default function Tag({ posts, tag }) {
       <section>
         <PostsList href="/writing" posts={posts} />
       </section>
-    </ProseContainer>
+    </article>
   )
 }
 
@@ -64,19 +66,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { posts: filteredPosts, tag: tag },
+    revalidate: Environment.isr.revalidate,
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { enable } = Environment.isr
   const { tagCount } = await getAllTags('writing')
-  if (!Object.keys(tagCount).length) return { paths: [], fallback: enable }
   return {
     paths: Object.keys(tagCount).map((tag) => ({
       params: {
         tag,
       },
     })),
-    fallback: false,
+    fallback: Environment.isr.enable ? 'blocking' : false,
   }
 }

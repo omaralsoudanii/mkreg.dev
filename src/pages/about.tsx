@@ -3,9 +3,9 @@ import * as React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticProps } from 'next'
 
-import ProseContainer from '@/components/Layouts/ProseContainer'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
 import { getFileBySlug } from '@/lib/mdx'
 
 function About({ mdxSource, frontMatter }) {
@@ -23,9 +23,9 @@ function About({ mdxSource, frontMatter }) {
   // avoid re-creating the component every render.
   const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
-    <ProseContainer>
+    <div className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto">
       <Seo data={meta} />
-      <article>
+      <article id="skip">
         <header>
           <h1 className="page-heading !mb-2">About</h1>
         </header>
@@ -33,13 +33,13 @@ function About({ mdxSource, frontMatter }) {
           <Component {...mdxSource} components={{ a: NextLink }} />
         </div>
       </article>
-    </ProseContainer>
+    </div>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const post = await getFileBySlug('about')
-  return { props: post }
+  return { props: post, revalidate: Environment.isr.revalidate }
 }
 
 export default About
