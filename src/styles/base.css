@@ -1,14 +1,16 @@
 @tailwind base;
 @layer base {
   html {
-    touch-action: manipulation;
+    min-width: 320px;
   }
 
   body {
-    @apply text-black bg-white dark:bg-dark-primary dark:text-white antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv10', 'kern', 'liga',
-      'calt';
+    @apply text-black bg-white dark:bg-dark-primary break-words dark:text-white antialiased;
+    font-feature-settings: 'ss01', 'cv07', 'cv10', 'kern', 'liga', 'calt';
+    touch-action: manipulation;
     text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   #__next {

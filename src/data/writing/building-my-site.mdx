@@ -11,60 +11,59 @@ image: '/static/images/writing/building-this-site/building-mkreg.jpg'
 
 ## Introduction
 
-Front-end is harder and more complex than what most programmers who don't do any UI/UX stuff think. I was one of those until I actually had to build one. This a high level talk about building and developing my personal site. Coding and infrastructure wise.
+Front-end is harder and more complex than most programmers who don't do any UI/UX stuff think. I was one of those until I actually had to build one. This is a high-level talk about building and developing my personal site. Coding and infrastructure wise.
 
 > This post will be updated from time to time as tech emerges and new tooling is used
 
 ## Table of contents
 
-1.  [Research phase](#research-phase)
-2.  [Technologies](#technologies)
-3.  [FAQ](#faq)
-4.  [Coding and best practices](#coding-and-best-practices)
-5.  [Lessons learned](#lessons-learned)
-6.  [Acknowledgment](#acknowledgment)
-7.  [Infrastructure](#infrastructure)
-8.  [What's next](#whats-next)
+1. [Research phase](#research-phase)
+2. [Technologies](#technologies)
+3. [FAQ](#faq)
+4. [Coding and best practices](#coding-and-best-practices)
+5. [Lessons learned](#lessons-learned)
+6. [Acknowledgment](#acknowledgment)
+7. [Infrastructure](#infrastructure)
+8. [What's next](#whats-next)
 
 ## Research phase
 
-No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend, you gotta optimize delivery for the Frontend app after all, whether it's infrastructure based or code wise based.
+No idea how I just decided to have my own personal site, guess I was bored and wanted to learn something not related to my specialty. I consider in-depth knowledge when building Frontend applications is valuable for someone who focuses on Backend, you gotta optimize delivery for the Frontend app after all, whether it's infrastructure-based or code-wise based.
 
-I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about **React** like 4 years ago when everything was a class. So I started my research about the good stuff. Basically the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). 
+I never worked on these new frameworks although I understand and know the concepts and how they work under the hood and I've watched a [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) about **React** like 4 years ago when everything was a class. So I started my research about the good stuff. Basically, the end result was to decide between [Nuxt.js](https://nuxtjs.org/) or [Next.js](https://nextjs.org/). 
 
-I decided to go with  [Next.js](https://nextjs.org/) since I knew **React** and [Next.js](https://nextjs.org/) seemed to be always ahead, used more and bigger sites were using it. **To be fair it boiled down to the fact that I just knew React syntax**, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
+I decided to go with [Next.js](https://nextjs.org/) since I knew **React** and [Next.js](https://nextjs.org/) seemed to be always ahead, used more and bigger sites were using it. **To be fair it boiled down to the fact that I just knew React syntax**, I don't have that much free time to learn another syntax, so you could say the whole research thing is baseless and the result is just a matter of personal preference.
 
 ## Technologies
 
-List of technologies I have used on this site—some of them I stopped using or found another tool—you can read about each below.
+List of technologies I have used on this site – some of them I stopped using or found another tool – you can read about each below.
 
 ### Docker
 
-You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure—anyway Docker is default for me on new apps so I do the build image stuff.
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure – anyway Docker is the default for me on new apps so I do the build image stuff.
 
 ### HAProxy & NGINX
 
-Well it's either NGINX or HAProxy or both—I keep experimenting so this list is bound to change from time to time.
-
+Well, it's either NGINX or HAProxy or both – I keep experimenting so this list is bound to change from time to time.
 #### Updated at June 17,2021
 
-Currently I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful specially when I'm not utilizing any of it's capabilities—If most of the site is served by Cloudflare and the revalidation is handled by a proxy server—then in this case I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model). 
+Currently, I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful especially when I'm not utilizing any of its capabilities – If most of the site is served by Cloudflare and the revalidation is handled by a proxy server – then, in this case, I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model). 
 
-Because the whole thing basically dependent on latency and response time—ofcourse HAProxy is miles ahead in this area compared to NGINX—it’s not just a **"Load Balancer"**—a perfect combo with Cloudflare.
+Because the whole thing is primarily dependent on latency and response time – of course, HAProxy is miles ahead in this area compared to NGINX, it’s not just a "Load Balancer" – a perfect combo with Cloudflare.
 
 #### Updated at August 06,2021
 
-I bought a new much better server to satisfy my obsession with **AMD EPYC** processors—to be honest the old server was limited, specially in the bandwidth department part (less than 200Mbit/s) so I can’t experiment much—and again as I mentioned before, the whole thing depends on latency except about ~10% of requests.
+I bought a new much better server to satisfy my obsession with **AMD EPYC** processors – to be honest, the old server was limited, especially in the bandwidth department part (less than 200Mbit/s) so I can’t experiment much – and again as I mentioned before, the whole thing depends on latency except about ~10% of requests.
 
-That 10% needs processing power and someone bored so he keeps on switching and checking results. Well this time I have a better processors, better memory—it’s has fewer cores and memory, but quality beats quantity most of the time, sometimes it’s the opposite, depends on your app and what it does. Well you can check the changes from this [commit](https://github.com/omaralsoudanii/mkreg.dev/commit/261fd4da358318a3f85bcca7d054881942d43af5) (and some stupid fixes after it).
+Getting bored and annoyed about the remaining ~10% mentioned above, I kept on switching configs and checking the result. Well this time I have better processors, better memory – it has fewer cores and memory, but quality beats quantity most of the time, sometimes it’s the opposite, depends on your app and what it does. Well, you can check the changes from this [commit](https://github.com/omaralsoudanii/mkreg.dev/commit/261fd4da358318a3f85bcca7d054881942d43af5) – and some stupid fixes after it.
 
-The summary of this is NGINX spikes weren’t a concern anymore and the latency thing? it’s just a bad hardware that was slow to process stuff but we benefited alot from HAProxy in the old one (read the first update above)—of course just reverting the configuration of NGINX was not enough. 
+The summary of this is NGINX spikes weren’t a concern anymore and the latency thing? it’s just bad hardware that was slow to process stuff but we benefited a lot from HAProxy in the old one (read the first update above) – of course just reverting the configuration of NGINX was not enough. 
 
-I updated the docker image—implemented a **mini CDN** using NGINX proxy caching and last but not least I used my NGINX brotli compression settings rather than Cloudflare—I have a stupid hunch that Cloudflare have a better Gzip implementation, but their brotli is either misused with high compression level or simply the NGINX one I have is just better (yes I know I know… I change this thing more than the change that happens in the Front-end ecosystem).
+I updated the docker image – implemented a **mini CDN** using NGINX proxy caching and last but not least I used my NGINX **Brotli** compression settings rather than Cloudflare – I have a stupid hunch that Cloudflare has a better **Gzip** implementation, but their **Brotli** is either misused with high compression level or simply the NGINX one I have is just better – yes I know I know… I change this thing more than the changes that happen in the Front-end ecosystem.
 
 ### Cloudflare
 
-Takes care of delivering 99.9% of the app for a specified period of time that i can set. In fact it does so much stuff—to the degree that i believe their free plan is a steal. Kudos to them for having this amazing service. 
+Takes care of delivering 99.9% of the app for a specified time that I can set. In fact, it does so much stuff – to the degree that I believe their free plan is a steal. Kudos to them for having this amazing service. 
 
 ### TypeScript
 
@@ -76,28 +75,27 @@ Hmm 🤔
 
 ### MDX
 
-Since we're building a minimal app and not over engineering stuff 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
+Since we're building a minimal app and not over over-engineering 👆, MDX seemed like a good choice here (don't believe what I say, I didn't even know what MDX was).
 
-### Tailwindcss
+### TailwindCSS
 
-Honestly I just saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and every thing worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell this **H1** is BIGGER than everything???
+Honestly, I saw this [guy](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ) just adding class names to stuff and everything worked perfectly, so I knew it would be a perfect fit. Sadly I'm not that guy so I suffered trying to.... uh, you know the **CSS** stuff where you put font-size and hope it works on mobile as well, and why the hell is this **H1** is BIGGER than everything???
 
 ### Vercel
 
-Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching or performance, also it's nice to mimic their approach, a good learning experience. 
+Used as a staging server. It's perfect since you know Vercel will always output the correct result. Whether it's about what's rendered, caching, or performance, also it's nice to mimic their approach, a good learning experience. 
 
 ### PlanetScale
 
-I recently added PlanetScale—which is kinda new service anyway. Seeing it’s built on top of MySQL with a server-less approach—I decided to give it a go because I kinda need a database eventually and testing server-less stuff is good experience so why not—for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
-
+I recently added PlanetScale – which is a new service anyway. Seeing it’s built on top of MySQL with a server-less approach – I decided to give it a go because I kinda need a database eventually and testing serverless stuff is a good experience so why not – for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
 
 ## FAQ
 
 - Yes I know I don't need any of this
 - Indeed this is overkill
 - No this is not a waste of time, I learn by doing and I treat this site as a playground
-- No, it didn't take me a lot of time setting up those, I do these on daily basis
-- Nope, I'm still bad using **CSS**
+- No, it didn't take me a lot of time setting up the infrastructure, I do that almost daily
+- Nope, I'm still bad at using **CSS**
 - No those are not dependencies, You can clone or fork the repository and deploy it on [Vercel](https://vercel.com/)
 - After the end result, I learned some things regarding both Front-end and Back-end. I might write something about it later with more details
 
@@ -105,7 +103,7 @@ I recently added PlanetScale—which is kinda new service anyway. Seeing it’s 
 
 This project is by no means represents a good example of how to build an app. Honestly, I didn't even think I would finish it but here we are.
 
-However if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
+However, if you are like me, then maybe you could benefit from some gotchas that prevent you from wasting time.
 
 This is my way of learning things. I read, develop then start progressing in a form of trial and error. Then iterate and fix, honestly I didn't know that I would enjoy it so much eventually it would become a real thing.
 
@@ -126,13 +124,13 @@ import Github from '@/components/Icons/Github';
 
 - Stop wasting your time for a month in a [lab](https://rsms.me/inter/lab/) just to get the perfect thing, nothing is perfect (Not really, I didn't learn this lesson and I am still in the lab)
 - Iterate and enhance as you go, don't redo everything from scratch after the first failure
-- No knowledge is irrelevant or a waste of time. As I said before this helped me a lot dealing with software on the other side of the spectrum
+- No knowledge is irrelevant or a waste of time. As I said before this helped me a lot dealing with the other side of the spectrum technology-wise
 - Wanna do something? do it! stop thinking about the perfect execution. When was the last time you did something totally new and it was perfect on the first try?
 - Don't be like me
 
 ## Acknowledgment
 
-I used a lot of things from these resources, sometimes copy pasta of some component design, maybe just some helpers code snippets, or simply by looking at the way things are handled. In the end the app deviated from those due to the rapid learning curve I gained while developing.
+I used a lot of things from these resources, sometimes copypasta of some component design, maybe just some helpers code snippets, or simply by looking at the way things are handled. In the end, the app deviated from those due to the rapid learning curve I gained while developing.
 
 - [Brian Lovin](https://brianlovin.com/)
 - [Lee Robinson](https://leerob.io/)
@@ -142,16 +140,16 @@ I used a lot of things from these resources, sometimes copy pasta of some compon
 - [Jamify.org](https://www.jamify.org/)
 - [Omar Alsoudani](https://mkreg.dev/)
 
-What? of course I included my self, otherwise who do you think will do all the copy pasta or even write this post??
+What? of course I included myself, otherwise who do you think will do all the copypasta or even write this post??
 
-> Serious talk, I don't copy paste anything that I don't or won't fully understand and neither should you. (unless it's **PHP** mixed with **regex**, then go ahead my friend copy pasta the whole thing and don't look back)
+> Serious talk, I don't copy-paste anything that I don't or won't fully understand and neither should you. (unless it's **PHP** mixed with **regex**, then go ahead my friend copypasta the whole thing and don't look back)
 
 ## Infrastructure
 
-I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles. I am still figuring out how to structure the content, however if you wanna learn more about it, feel free to contact me.
+I won't be discussing the infrastructure in this post due to a large amount of information, I might split that into a series of articles. I am still figuring out how to structure the content, however, if you wanna learn more about it, feel free to contact me.
 
 ## What's next
 
-I will keep iterating and enhancing the app, code-wise, UI/UX (yeah right...), tooling and content.
+I will keep iterating and enhancing the app, code-wise, UI/UX (yeah right...), tooling and, content.
 
 If you have some suggestions then contact me!
