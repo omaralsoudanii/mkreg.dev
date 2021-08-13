@@ -22,7 +22,6 @@ export interface EnvironmentProps {
     speedlify: string
     linkedin: string
     youtube: string
-    mail: string
     twitter: string
   }
   isr: {
@@ -48,7 +47,6 @@ export const Environment: EnvironmentProps = {
       process.env.LINKEDIN_URL ?? 'https://www.linkedin.com/in/omaralsoudani',
     speedlify:
       process.env.SPEEDLIFY_URL ?? 'https://mkreg-speedlify.netlify.app',
-    mail: process.env.EMAIL_ADDR ?? 'omaralsoudani@gmail.com',
     twitter: process.env.TWITTER_URL ?? 'https://twitter.com/omaralsoudani',
   },
   isr: {

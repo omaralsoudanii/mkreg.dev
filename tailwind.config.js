@@ -7,11 +7,7 @@ module.exports = {
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
-      mono: [
-        '"JetBrains Mono"',
-        '"IBM Plex Mono"',
-        ...fontFamily.mono,
-      ],
+      mono: ['"JetBrains Mono"', '"IBM Plex Mono"', ...fontFamily.mono],
       sans: ['Inter', ...fontFamily.sans],
     },
     extend: {

@@ -22,7 +22,7 @@ export default function Tags({ sortedData }) {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto mb-8 md:mb-16"
     >
       <Seo data={meta} />
       <section className="mb-8 space-y-8 md:mb-16">
@@ -42,15 +42,17 @@ export default function Tags({ sortedData }) {
       <section className="grid grid-flow-row gap-6">
         {sortedData.map((item: { character: string; characterTags: any[] }) => (
           <div key={item.character}>
-            <header className="w-full border-b border-gray-200 dark:border-gray-700">
-              <h2 className="!my-3 !font-bold">{item.character}</h2>
+            <header className="w-full border-b border-gray-300 dark:border-gray-700">
+              <h2 className="!my-2 md:!my-3 !font-semibold">
+                {item.character}
+              </h2>
             </header>
 
-            <div className="flex space-x-6 flex-row">
+            <div className="flex space-x-6 flex-row !my-2 md:!my-3">
               {item.characterTags.map((tag) => (
                 <Link key={tag.slug} href={`/tags/${tag.slug}`} passHref>
-                  <a className="primary-link">
-                    <p className="!my-0 text-base !pt-3">
+                  <a className="md:hover:transition-colors md:hover:text-gray-500 md:dark:hover:text-gray-400 text-gray-800 dark:text-gray-200">
+                    <p className="text-base !my-0 !py-2">
                       {tag.name}
                       {` `}
                       {`(${tag.count})`}

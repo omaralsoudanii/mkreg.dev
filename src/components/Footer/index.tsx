@@ -22,16 +22,13 @@ export default function Footer() {
             Github
           </NextLink>
           <NextLink
-            href={`mailto:${Environment.social.mail}`}
+            href={Environment.social.linkedin}
             className="link-unstyled"
           >
-            Contact
+            LinkedIn
           </NextLink>
-          <NextLink
-            href={Environment.social.speedlify}
-            className="link-unstyled"
-          >
-            Speedlify
+          <NextLink href={Environment.social.twitter} className="link-unstyled">
+            Twitter
           </NextLink>
         </div>
         <div className="footer-column">
@@ -42,11 +39,14 @@ export default function Footer() {
           >
             RSS
           </NextLink>
-          <NextLink href={Environment.social.twitter} className="link-unstyled">
-            Twitter
-          </NextLink>
           <NextLink href={Environment.social.youtube} className="link-unstyled">
             YouTube
+          </NextLink>
+          <NextLink
+            href={Environment.social.speedlify}
+            className="link-unstyled"
+          >
+            Speedlify
           </NextLink>
         </div>
       </div>
