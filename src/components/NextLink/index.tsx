@@ -5,18 +5,25 @@ const NextLink = ({
   className = 'primary-link',
   prefetch,
   children,
+  ...props
 }: {
   href: string
   className?: string
   prefetch?: boolean
+  props?: any
   children: JSX.Element | (JSX.Element | string)[] | string
 }): JSX.Element => {
-  const Internal = href.startsWith('/') || href.startsWith('#')
+  const Internal = href.startsWith('/')
+  const Hashed = href.startsWith('#')
 
   return Internal ? (
     <Link href={href} prefetch={prefetch}>
       <a className={className}>{children}</a>
     </Link>
+  ) : Hashed ? (
+    <a href={href} className={className} {...props}>
+      {children}
+    </a>
   ) : (
     <a
       href={href}

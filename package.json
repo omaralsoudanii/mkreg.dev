@@ -14,12 +14,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "build-check": "yarn ts && yarn lint && yarn build && yarn start",
+    "build-check": "yarn format && yarn ts && yarn lint && yarn build && yarn start",
     "ts": "tsc --noEmit --pretty",
     "export": "next export",
     "clean": "rm -rf .next node_modules && yarn cache clean && yarn && yarn build && yarn start",
     "lint": "next lint",
-    "css": "yarn prettier --write **/*.css && yarn prettier --write tailwind.config.js",
+    "format": "yarn prettier --write **/*.css && yarn prettier --write tailwind.config.js",
     "generate-icons": "npx @svgr/cli -d src/components/Icons  --ignore-existing --typescript src/components/Icons"
   },
   "dependencies": {

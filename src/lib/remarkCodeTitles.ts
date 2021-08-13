@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-// taken from tailwind-nextjs-starter-blog https://github.com/timlrx/tailwind-nextjs-starter-blog
-
+import { Parent } from 'unist'
 import visit from 'unist-util-visit'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function (options) {
-  return (tree) =>
-    visit(tree, 'code', (node, index) => {
+export default function codeTitles() {
+  return (tree: Parent & { lang?: string }) =>
+    visit(tree, 'code', (node: Parent & { lang?: string }, index) => {
       const nodeLang = node.lang || ''
       let language = ''
       let title = ''

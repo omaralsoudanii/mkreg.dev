@@ -10,7 +10,10 @@ function Nuggets() {
     description: 'Resources and bookmarks for the readers',
     JsonLd: false,
   }
-
+  const Component = React.useMemo(() => Card, [])
+  const renderNuggets = Bookmarks.map((bookmark) => (
+    <Component key={bookmark.title} {...bookmark} />
+  ))
   return (
     <article
       id="skip"
@@ -29,11 +32,7 @@ function Nuggets() {
           plain wrong, please contact me
         </p>
       </section>
-      <section>
-        {Bookmarks.map((bookmark) => (
-          <Card key={bookmark.title} {...bookmark} />
-        ))}
-      </section>
+      <section>{renderNuggets}</section>
     </article>
   )
 }

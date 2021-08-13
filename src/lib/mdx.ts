@@ -3,12 +3,10 @@ import path from 'path'
 
 import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
-import { Node } from 'unist'
 
+import mdxImage from '@/lib/mdxImage'
+import remarkCodeTitles from '@/lib/remarkCodeTitles'
 import { formatSlug, slugify } from '@/lib/utils'
-
-import mdxImage from './mdx-image'
-import remarkCodeTitles from './remarkCodeTitles'
 
 const h = require('hastscript')
 const toString = require('mdast-util-to-string')
@@ -16,10 +14,10 @@ const toString = require('mdast-util-to-string')
 const root = path.join(process.cwd(), 'src')
 const loc = path.join(root, 'data')
 
-function HeadingContent(node: Node | Node[]) {
+function hashContent(node) {
   return [
-    h('span.sr-only', 'Read the "', toString(node), '" section'),
-    h('span.icon.icon-link', { ariaHidden: 'true' }),
+    h('span.visually-hidden', 'Read the “', toString(node), '” section'),
+    h('span.icon.icon-link', { ariaHidden: true }),
   ]
 }
 
@@ -63,9 +61,10 @@ export async function getFileBySlug(type: string, slug?) {
           {
             behavior: 'append',
             linkProperties: {
-              className: ['heading-anchor'],
+              ariaHidden: true,
+              tabIndex: -1,
             },
-            content: HeadingContent,
+            content: hashContent,
           },
         ],
         require('remark-gfm'),

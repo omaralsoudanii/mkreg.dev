@@ -147,45 +147,47 @@
     @apply text-3xl md:text-4xl text-display !important;
   }
 
-  .heading-anchor {
+  span.icon.icon-link {
     @apply cursor-pointer text-tertiary !font-normal opacity-0;
     font-size: inherit;
     padding-left: 0.375em;
     transition: all 150ms linear;
   }
 
-  .heading-anchor:hover,
-  .heading-anchor:focus {
-    @apply text-blue-600 dark:text-blue-400;
-  }
-
-  .heading-anchor:hover,
-  .heading-anchor:active {
-    outline-width: 0 !important;
-  }
-
-  .heading-anchor:after {
-    content: '#';
-  }
-
-  .sr-anchor:not(:focus):not(:active) {
+  .visually-hidden {
+    border: 0;
     clip: rect(0 0 0 0);
-    clip-path: inset(50%);
     height: 1px;
+    margin: -1px;
     overflow: hidden;
+    padding: 0;
     position: absolute;
     white-space: nowrap;
     width: 1px;
   }
 
-  h1:hover .heading-anchor,
-  h2:hover .heading-anchor,
-  h3:hover .heading-anchor,
-  h4:hover .heading-anchor,
-  h1:focus .heading-anchor,
-  h2:focus .heading-anchor,
-  h3:focus .heading-anchor,
-  h4:focus .heading-anchor {
+  span.icon.icon-link:hover,
+  span.icon.icon-link:focus {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  span.icon.icon-link:hover,
+  span.icon.icon-link:active {
+    outline-width: 0 !important;
+  }
+
+  span.icon.icon-link:after {
+    content: '#';
+  }
+
+  h1:hover span.icon.icon-link,
+  h2:hover span.icon.icon-link,
+  h3:hover span.icon.icon-link,
+  h4:hover span.icon.icon-link,
+  h1:focus span.icon.icon-link,
+  h2:focus span.icon.icon-link,
+  h3:focus span.icon.icon-link,
+  h4:focus span.icon.icon-link {
     @apply opacity-100;
   }
 
@@ -198,6 +200,6 @@
     @apply w-full rounded-md !important;
   }
   .prose hr {
-    @apply my-[2em] md:my-[2.1em] !important;
+    @apply my-[2em]  md:my-[2.1em] !important;
   }
 }
