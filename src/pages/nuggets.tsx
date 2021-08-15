@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Card from '@/components/Card'
 import Seo from '@/components/Seo'
 import Bookmarks from '@/lib/bookmarks'
@@ -10,10 +8,7 @@ function Nuggets() {
     description: 'Resources and bookmarks for the readers',
     JsonLd: false,
   }
-  const Component = React.useMemo(() => Card, [])
-  const renderNuggets = Bookmarks.map((bookmark) => (
-    <Component key={bookmark.title} {...bookmark} />
-  ))
+
   return (
     <article
       id="skip"
@@ -32,7 +27,11 @@ function Nuggets() {
           plain wrong, please contact me
         </p>
       </section>
-      <section>{renderNuggets}</section>
+      <section>
+        {Bookmarks.map((bookmark) => (
+          <Card key={bookmark.title} {...bookmark} />
+        ))}
+      </section>
     </article>
   )
 }
