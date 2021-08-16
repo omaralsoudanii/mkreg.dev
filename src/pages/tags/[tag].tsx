@@ -66,7 +66,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { posts: filteredPosts, tag: tag },
-    revalidate: Environment.isr.revalidate,
   }
 }
 
@@ -78,6 +77,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         tag,
       },
     })),
-    fallback: Environment.isr.enable ? 'blocking' : false,
+    fallback: false,
   }
 }

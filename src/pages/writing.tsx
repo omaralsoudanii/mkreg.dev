@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 /**
@@ -60,6 +59,5 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
-    revalidate: Environment.isr.revalidate,
   }
 }

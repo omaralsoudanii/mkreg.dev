@@ -2,7 +2,6 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
 import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
 import { getAllTags } from '@/lib/mdx'
 
 /**
@@ -102,6 +101,5 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       sortedData,
     },
-    revalidate: Environment.isr.revalidate,
   }
 }
