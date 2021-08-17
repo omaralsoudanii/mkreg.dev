@@ -277,7 +277,7 @@ Now any access through the server IP will return a 444 status code error the onl
 
 Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only – if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`.
 
-**Updated at August 07,2021**:
+**Updated at August 17,2021**:
 
 I tried the new directive `ssl_reject_handshake` instead of the **aNULL** hack with my NGINX setup, and it worked – Yeah… now I’m calling my previous solution a hack after finding a better one, typical programmer behavior.
 
