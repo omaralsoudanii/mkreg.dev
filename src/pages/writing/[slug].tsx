@@ -1,4 +1,7 @@
-import * as React from 'react'
+
+
+
+import { useMemo } from 'react'
 
 import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -22,7 +25,7 @@ export default function MDXPost({ post, prev, next }) {
   const { mdxSource, frontMatter } = post
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
-  const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
+  const Component =  useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
     <Post frontMatter={frontMatter} prev={prev} next={next}>
       <Component components={MDXComponents as ComponentMap} />

@@ -1,10 +1,12 @@
-import NextImage from 'next/image'
 
-import Seo from '@/components/Seo'
-import { Environment } from '@/lib/environment'
+
+import NextImage from 'next/image'
 
 import MKPic from '../../public/static/images/mk.jpg'
 import TheSulatn from '../../public/static/images/sultan.jpg'
+import Seo from '@/components/Seo'
+import { Environment } from '@/lib/environment'
+
 export default function MK() {
   const meta = {
     title: 'Omar Alsoudani - The Sultan of swing',

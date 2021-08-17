@@ -5,8 +5,12 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2015",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -16,19 +20,21 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "checkJs": true,
     "strict": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
     "next-env.d.ts",
-    "fileTypes.d.ts",
     "src/**/*.ts",
-    "src/components/Icons/*.svg",
-    "src/**/*.tsx",
-    "src/**/*.mdx"
+    "src/**/*.tsx"
   ],
-  "exclude": ["./out/**/*", "./node_modules/**/*"]
+  "exclude": [
+    "node_modules"
+  ]
 }

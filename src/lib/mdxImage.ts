@@ -1,12 +1,13 @@
-import fs from 'fs'
+import {existsSync} from 'fs'
 
 import sizeOf from 'image-size'
 import { Parent, Node, Literal } from 'unist'
-import visit from 'unist-util-visit'
+import { Test } from 'unist-util-is'
+import { visit } from 'unist-util-visit'
 
 export default function mdxImage() {
   return (tree: Node) => {
-    visit<Node>(
+    visit<Node, Test>(
       tree,
       // only visit p tags that contain an img element
       (node: Parent): node is Parent =>
@@ -23,7 +24,7 @@ export default function mdxImage() {
           (n) => n.type === 'image'
         ) as ImageNode
 
-        if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
+        if (existsSync(`${process.cwd()}/public${imageNode.url}`)) {
           const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
 
           // Convert original node to next/image

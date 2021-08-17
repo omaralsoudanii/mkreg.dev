@@ -1,6 +1,7 @@
 {
   "search.exclude": {
-    "package-lock.json": true
+    "package-lock.json": true,
+    "yarn.lock": true
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": false,
