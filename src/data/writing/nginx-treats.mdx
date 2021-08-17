@@ -1,7 +1,7 @@
 ---
 title: 'NGINX Treats'
 date: '2021-07-02'
-lastmod: '2021-08-1'
+lastmod: '2021-08-17'
 summary: "Overview that covers useful NGINX tips – enhancements and best practices I've learned by using it for years"
 tags: ['NGINX','Performance']
 image: '/static/images/writing/nginx-treats/nginx-mkreg.png'
@@ -235,6 +235,8 @@ Which makes sense! How? Well, when you generated your certificate from whatever 
 >
 > Also, you shouldn't rely on IP addresses anyway – with many deployments on various cloud providers you’re gonna have to deal with floating IP(s), DNS resolvers (why did you call it Route 53??!).
 
+**Note**: read the update below this section for the updated more secure solution
+
 On some random day, debugging random issue I found a way to block access to your application through IP address regardless of the HTTP protocol, then you return whatever you want.
 
 Cloudflare already has this built-in, try it on a site that uses Cloudflare, it will show a page that you can't access the site from an IP address, guess who uses Cloudflare ☝️ ?
@@ -274,6 +276,30 @@ After we provide the empty value variable for `ssl_certificate`, `ssl_certificat
 Now any access through the server IP will return a 444 status code error the only problem is (again not a security expert) using **aNULL** could open your server to other vulnerabilities. 
 
 Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only – if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`.
+
+**Updated at August 07,2021**:
+
+I tried the new directive `ssl_reject_handshake` instead of the **aNULL** hack with my NGINX setup, and it worked – Yeah… now I’m calling my previous solution a hack after finding a better one, typical programmer behavior.
+
+```nginx:mk-next.conf
+ server {
+     listen 80 default_server;
+     listen [::]:80 default_server;
+     listen 443 default_server;
+     listen [::]:443 default_server;
+     server_name _;
+     ssl_reject_handshake on;
+     location / {
+         return 444;
+     }
+ }
+```
+
+This directive was added recently, so check the [documentation](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_reject_handshake) to see if you can add it - otherwise you can use the original **hack** mentioned above. 
+
+On a serious note, I had no problem with the old method but I’d advice you to consult someone with security expertise – if you feel that you have provoked the security expertise when mentioning the above, do me a favor and don’t cite me as a resource 🤔.
+
+And this is the updated snippet for this site [nextjs.conf](https://github.com/omaralsoudanii/mkreg.dev/blob/af23c2ee5021496011f2816ce8e6eab51827f941/docker/nginx/conf.d/nextjs.conf#L7)
 
 ### Headers placement
 
@@ -343,6 +369,7 @@ I might write another article about topics I didn't cover including
 - Compression algorithms, Brotli and Gzip.
 - Caching static and dynamic responses via different NGINX modules. How and when to invalidate stale data.
 - Docker setup.
+- Creating a NGINX server from installation, configuration, dealing with SSL to serving content live.
 
 Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them.
 
