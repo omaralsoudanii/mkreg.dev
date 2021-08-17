@@ -1,69 +1,36 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
-  "settings": {
-    "react": {
-      "pragma": "React",
-      "version": "detect"
-    }
-  },
-  "overrides": [
-    // Configuration for TypeScript files
-    {
-      "files": ["./src/**/*.ts", "./src/**/*.tsx"],
-      "plugins": ["@typescript-eslint", "unused-imports"],
-      "extends": ["plugin:prettier/recommended", "next"],
-      "parserOptions": {
-        "project": "./tsconfig.json"
-      },
-      "parser": "@typescript-eslint/parser",
-      "rules": {
-        "prettier/prettier": [
-          "error",
+  "extends": ["prettier", "next"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+    "@next/next/no-img-element": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/no-unescaped-entities": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
           {
-            "singleQuote": true
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
           }
         ],
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/camelcase": "off",
-        "@typescript-eslint/ban-ts-ignore": "off",
-        "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
-        "@next/next/no-img-element": "off", // We currently not using next/image because it isn't supported with SSG mode
-        "import/order": [
-          "error",
-          {
-            "groups": ["builtin", "external", "internal"],
-            "pathGroups": [
-              {
-                "pattern": "react",
-                "group": "external",
-                "position": "before"
-              }
-            ],
-            "pathGroupsExcludedImportTypes": ["react"],
-            "newlines-between": "always",
-            "alphabetize": {
-              "order": "asc",
-              "caseInsensitive": true
-            }
-          }
-        ],
-        "import/prefer-default-export": "off",
-        "@typescript-eslint/no-unused-vars": "off",
-        "react/no-unescaped-entities": "off",
-        "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars": [
-          "error",
-          { "argsIgnorePattern": "^_" }
-        ]
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
-    }
-  ]
+    ]
+  }
 }

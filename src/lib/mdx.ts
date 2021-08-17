@@ -1,45 +1,49 @@
-import fs from 'fs'
-import path from 'path'
+import { readdirSync, readFileSync, existsSync, statSync } from 'fs'
+import { join } from 'path'
 
 import matter from 'gray-matter'
+import { Element } from 'hast'
+import {h} from 'hastscript'
+import { toString } from 'mdast-util-to-string'
 import { bundleMDX } from 'mdx-bundler'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypePrism from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 
 import mdxImage from '@/lib/mdxImage'
-import remarkCodeTitles from '@/lib/remarkCodeTitles'
 import { formatSlug, slugify } from '@/lib/utils'
 
-const h = require('hastscript')
-const toString = require('mdast-util-to-string')
+const root = join(process.cwd(), 'src')
+const loc = join(root, 'data')
 
-const root = path.join(process.cwd(), 'src')
-const loc = path.join(root, 'data')
-
-function hashContent(node) {
+function hashContent(node: Element) {
   return [
-    h('span.visually-hidden', 'Read the “', toString(node), '” section'),
+    h('span.visually-hidden', `Read the “ ${toString(node)} ” section`),
     h('span.icon.icon-link', { ariaHidden: true }),
   ]
 }
 
 export async function getAllFilesName(type: string) {
-  return fs.readdirSync(path.join(loc, type))
+  return readdirSync(join(loc, type))
 }
 
 export async function getFileBySlug(type: string, slug?) {
   const source = slug
-    ? fs.readFileSync(path.join(loc, type, `${slug}.mdx`), 'utf8')
-    : fs.readFileSync(path.join(loc, `${type}.mdx`), 'utf8')
+    ? readFileSync(join(loc, type, `${slug}.mdx`), 'utf8')
+    : readFileSync(join(loc, `${type}.mdx`), 'utf8')
 
   // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
   if (process.platform === 'win32') {
-    process.env.ESBUILD_BINARY_PATH = path.join(
+    process.env.ESBUILD_BINARY_PATH = join(
       process.cwd(),
       'node_modules',
       'esbuild',
       'esbuild.exe'
     )
   } else {
-    process.env.ESBUILD_BINARY_PATH = path.join(
+    process.env.ESBUILD_BINARY_PATH = join(
       process.cwd(),
       'node_modules',
       'esbuild',
@@ -55,9 +59,14 @@ export async function getFileBySlug(type: string, slug?) {
       // plugins in the future.
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
-        require('remark-slug'),
+        remarkGfm,
+        mdxImage,
+      ]
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeSlug,
         [
-          require('remark-autolink-headings'),
+          rehypeAutolinkHeadings,
           {
             behavior: 'append',
             linkProperties: {
@@ -67,13 +76,8 @@ export async function getFileBySlug(type: string, slug?) {
             content: hashContent,
           },
         ],
-        require('remark-gfm'),
-        remarkCodeTitles,
-        mdxImage,
-      ]
-      options.rehypePlugins = [
-        ...(options.rehypePlugins ?? []),
-        require('@mapbox/rehype-prism'),
+        rehypeCodeTitles,
+        rehypePrism as any,
       ]
       return options
     },
@@ -86,7 +90,7 @@ export async function getFileBySlug(type: string, slug?) {
         '.tsx': 'tsx',
         '.svg': 'tsx',
       }
-      options.tsconfig = path.join(process.cwd(), 'tsconfig.json')
+      options.tsconfig = join(process.cwd(), 'tsconfig.json')
       return options
     },
     globals: { Card: 'Card' },
@@ -102,13 +106,13 @@ export async function getFileBySlug(type: string, slug?) {
 }
 
 export async function getAllFilesFrontMatter(type: string) {
-  const files = fs.readdirSync(path.join(loc, type))
+  const files = readdirSync(join(loc, type))
 
   return files.reduce((allPosts, postSlug) => {
     const source =
-      fs.existsSync(path.join(loc, type, postSlug)) &&
-      !fs.statSync(path.join(loc, type, postSlug)).isDirectory()
-        ? fs.readFileSync(path.join(loc, type, postSlug), 'utf-8')
+      existsSync(join(loc, type, postSlug)) &&
+      !statSync(join(loc, type, postSlug)).isDirectory()
+        ? readFileSync(join(loc, type, postSlug), 'utf-8')
         : null
 
     if (!source) {
@@ -131,7 +135,7 @@ export async function getAllFilesFrontMatter(type: string) {
 }
 
 export async function getAllTags(type: string) {
-  const files = fs.readdirSync(path.join(loc, type))
+  const files = readdirSync(join(loc, type))
   const tagCount = {}
   const tags = {}
   const charSlice = {}
@@ -139,9 +143,9 @@ export async function getAllTags(type: string) {
   // Iterate through each post, putting all found tags into `tags`
   files.forEach((file) => {
     const source =
-      fs.existsSync(path.join(loc, type, file)) &&
-      !fs.statSync(path.join(loc, type, file)).isDirectory()
-        ? fs.readFileSync(path.join(loc, type, file), 'utf-8')
+      existsSync(join(loc, type, file)) &&
+      !statSync(join(loc, type, file)).isDirectory()
+        ? readFileSync(join(loc, type, file), 'utf-8')
         : null
     if (source) {
       const { data } = matter(source)

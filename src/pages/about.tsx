@@ -1,4 +1,5 @@
-import * as React from 'react'
+
+import { useMemo } from 'react'
 
 import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticProps } from 'next'
@@ -6,6 +7,7 @@ import { GetStaticProps } from 'next'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { getFileBySlug } from '@/lib/mdx'
+
 
 function About({ mdxSource, frontMatter }) {
   const meta = {
@@ -20,7 +22,7 @@ function About({ mdxSource, frontMatter }) {
   }
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
-  const Component = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
+  const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   return (
     <div className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto">
       <Seo data={meta} />
