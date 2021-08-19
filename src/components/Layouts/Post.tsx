@@ -19,18 +19,12 @@ export default function PostLayout({
   parentPost = null,
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
-
   const encodedSlug = encodeURIComponent(slug)
-  const fullUrl = `/api/views/${encodedSlug}`
-
   useEffect(() => {
-    const registerView = () =>
-      fetch(fullUrl, {
-        method: 'POST',
-      })
-
-    registerView()
-  }, [fullUrl])
+    fetch(`/api/views/${encodedSlug}`, {
+      method: 'POST',
+    })
+  }, [encodedSlug])
 
   const fullPath =
     parentPost && parentPost?.path
@@ -140,6 +134,7 @@ export default function PostLayout({
                   {tags.map((t: string) => (
                     <NextLink
                       className="mr-4 my-2 !text-base  primary-link"
+                      prefetch={false}
                       key={t}
                       href={`/tags/${slugify(t)}`}
                     >
