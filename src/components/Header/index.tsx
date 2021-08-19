@@ -1,18 +1,21 @@
-import * as React from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from './icons'
+import Close from '@/components/Icons/Close'
+import Menu from '@/components/Icons/Menu'
+import Moon from '@/components/Icons/Moon'
+import Sun from '@/components/Icons/Sun'
 import RoutesMetadata from '@/lib/RoutesMetadata'
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted, setMounted] = useState(false)
   // When mounted on client, now we can show the UI
-  React.useEffect(() => setMounted(true), [])
-  const [isExpanded, setExpanded] = React.useState(false)
+  useEffect(() => setMounted(true), [])
+  const [isExpanded, setExpanded] = useState(false)
   const router = useRouter()
   const routerName = router.pathname
   const routerPath = router.asPath
@@ -27,11 +30,11 @@ export default function Header() {
         ) ?? { href: routerPath, label: 'MK' }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <nav className="grid grid-cols-1 header-sm md:hidden">
         <div className="flex items-center">
           <div className="hdr-sm-btn" onClick={() => setExpanded(!isExpanded)}>
-            {isExpanded ? <CloseIcon /> : <MenuIcon />}
+            {isExpanded ? <Close /> : <Menu />}
           </div>
 
           <Link href={currentRoute.href}>
@@ -46,7 +49,7 @@ export default function Header() {
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }}
           >
-            {mounted && (resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />)}
+            {mounted && (resolvedTheme === 'dark' ? <Sun /> : <Moon />)}
           </div>
         </div>
         {isExpanded &&
@@ -78,9 +81,9 @@ export default function Header() {
           className="hidden md:block md:hdr-cnt-theme-btn"
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
-          {mounted && (resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />)}
+          {mounted && (resolvedTheme === 'dark' ? <Sun /> : <Moon />)}
         </div>
       </nav>
-    </React.Fragment>
+    </Fragment>
   )
 }

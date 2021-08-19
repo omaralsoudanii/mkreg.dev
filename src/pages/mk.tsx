@@ -1,5 +1,3 @@
-
-
 import NextImage from 'next/image'
 
 import MKPic from '../../public/static/images/mk.jpg'

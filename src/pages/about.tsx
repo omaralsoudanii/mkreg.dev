@@ -1,4 +1,3 @@
-
 import { useMemo } from 'react'
 
 import { getMDXComponent } from 'mdx-bundler/client'
@@ -7,7 +6,6 @@ import { GetStaticProps } from 'next'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { getFileBySlug } from '@/lib/mdx'
-
 
 function About({ mdxSource, frontMatter }) {
   const meta = {
@@ -31,7 +29,7 @@ function About({ mdxSource, frontMatter }) {
           <h1 className="page-heading !mb-2">About</h1>
         </header>
         <div>
-          <Component {...mdxSource} components={{ a: NextLink }} />
+          <Component components={{ a: NextLink }} />
         </div>
       </article>
     </div>

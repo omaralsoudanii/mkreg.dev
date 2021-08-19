@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 function SvgHaproxy(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg

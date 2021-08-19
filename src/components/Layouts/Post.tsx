@@ -1,6 +1,4 @@
-import * as React from 'react'
-
-import { mutate } from 'swr'
+import { Fragment, useEffect } from 'react'
 
 import ArticleViews from '@/components/ArticleViews'
 import NextLink from '@/components/NextLink'
@@ -25,12 +23,10 @@ export default function PostLayout({
   const encodedSlug = encodeURIComponent(slug)
   const fullUrl = `/api/views/${encodedSlug}`
 
-  React.useEffect(() => {
+  useEffect(() => {
     const registerView = () =>
       fetch(fullUrl, {
         method: 'POST',
-      }).then(() => {
-        mutate(fullUrl)
       })
 
     registerView()
@@ -53,7 +49,7 @@ export default function PostLayout({
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Seo data={meta} />
       <article
         id="skip"
@@ -199,6 +195,6 @@ export default function PostLayout({
           </div>
         </div>
       </article>
-    </React.Fragment>
+    </Fragment>
   )
 }

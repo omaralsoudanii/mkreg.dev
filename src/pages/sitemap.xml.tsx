@@ -1,4 +1,4 @@
-import globby from 'globby'
+import { globby } from 'globby'
 import { GetServerSideProps } from 'next'
 import prettier from 'prettier'
 

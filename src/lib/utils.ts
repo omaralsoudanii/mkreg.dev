@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-escape */
-export const slugify = (str: string) =>
+export const slugify = (str: string): string =>
   str &&
   str
     .trim()
@@ -17,19 +16,25 @@ export const unSlugify = (slug: string) =>
       (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
     )
 
-export const dateSortDesc = (a, b) => {
+export const dateSortDesc = (
+  a: number | string | Date,
+  b: number | string | Date
+): number => {
   if (a > b) return -1
   if (a < b) return 1
   return 0
 }
 
-export const dateSortAsc = (a, b) => {
+export const dateSortAsc = (
+  a: number | string | Date,
+  b: number | string | Date
+): number => {
   if (a > b) return 1
   if (a < b) return -1
   return 0
 }
 
-export const formatSlug = (slug: string) => slug.replace(/\.mdx/, '')
+export const formatSlug = (slug: string): string => slug.replace(/\.mdx/, '')
 
 export const FormatDate = (value: string | number | Date): string => {
   return new Date(value).toLocaleDateString('en-US', {
@@ -39,7 +44,7 @@ export const FormatDate = (value: string | number | Date): string => {
   })
 }
 
-export const setLocalStorage = (key: string, value: any, ttl: number) => {
+export const setLocalStorage = (key: string, value: any, ttl: number): void => {
   const now = new Date()
 
   // `item` is an object which contains the original value
@@ -51,7 +56,7 @@ export const setLocalStorage = (key: string, value: any, ttl: number) => {
   localStorage.setItem(key, JSON.stringify(item))
 }
 
-export const getLocalStorage = (key: string) => {
+export const getLocalStorage = (key: string): void => {
   const now = new Date()
   const itemStr = localStorage.getItem(key)
 

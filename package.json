@@ -20,8 +20,8 @@
     "export": "next export",
     "clean": "rm -rf .next node_modules && yarn cache clean && yarn && yarn build && yarn start",
     "lint": "next lint",
-    "css": "yarn prettier --write **/*.css && yarn prettier --write tailwind.config.js",
-    "generate-icons": "npx @svgr/cli -d src/components/Icons  --ignore-existing --typescript src/components/Icons"
+    "format": "yarn prettier --write **/*.{css,tsx,ts,js}",
+    "generate-icons": "npx @svgr/cli -d src/components/Icons  --ignore-existing --typescript src/components/Icons && rm -f src/components/Icons/index.tsx"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
@@ -48,7 +48,7 @@
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "globby": "^11.0.4",
+    "globby": "^12.0.1",
     "image-size": "^1.0.0",
     "prettier": "^2.3.2",
     "rehype": "^12.0.0",

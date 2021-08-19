@@ -10,8 +10,8 @@ const NextLink = ({
   href: string
   className?: string
   prefetch?: boolean
-  props?: any
   children: JSX.Element | (JSX.Element | string)[] | string
+  props?: any
 }): JSX.Element => {
   const Internal = href.startsWith('/')
   const Hashed = href.startsWith('#')

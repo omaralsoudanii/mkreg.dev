@@ -3,7 +3,7 @@ import { join } from 'path'
 
 import matter from 'gray-matter'
 import { Element } from 'hast'
-import {h} from 'hastscript'
+import { h } from 'hastscript'
 import { toString } from 'mdast-util-to-string'
 import { bundleMDX } from 'mdx-bundler'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -82,7 +82,6 @@ export async function getFileBySlug(type: string, slug?) {
       return options
     },
     esbuildOptions(options) {
-      options.target = ['es2015']
       options.treeShaking = true
       options.minify = true
       options.loader = {

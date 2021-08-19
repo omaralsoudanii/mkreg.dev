@@ -1,4 +1,4 @@
-import {existsSync} from 'fs'
+import { existsSync } from 'fs'
 
 import sizeOf from 'image-size'
 import { Parent, Node, Literal } from 'unist'

@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs'
-import path from 'path'
+import { join } from 'path'
 import { URL } from 'url'
 
 import matter from 'gray-matter'
@@ -33,13 +33,13 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   try {
     await Promise.all(
       dirs.map(async (dir) => {
-        const p = path.join(process.cwd(), 'src', 'data', dir)
+        const p = join(process.cwd(), 'src', 'data', dir)
         const posts = await fs.readdir(p)
 
         await Promise.all(
           posts.map(async (name) => {
             try {
-              const content = await fs.readFile(path.join(p, name))
+              const content = await fs.readFile(join(p, name))
               const frontmatter = matter(content)
 
               const resolvedDir =
