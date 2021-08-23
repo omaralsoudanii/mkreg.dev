@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { FormatDate } from '@/lib/utils'
 
 /**
  * Main writing page
@@ -22,12 +23,12 @@ export default function Writing({ posts }) {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto mb-8 md:mb-16"
     >
       <Seo data={meta} />
-      <section className="flex flex-col mb-8 md:mb-20 space-y-6">
+      <section className="mb-8 space-y-8 md:mb-16">
         <header>
-          <h1 className="page-heading !mb-0">Writing</h1>
+          <h1 className="page-heading !mb-4">Writing</h1>
         </header>
         <p>
           Stuff I write about programming and software development with a slight
@@ -36,13 +37,13 @@ export default function Writing({ posts }) {
           articles, I'll probably make some sort of filteration when I have
           time.
         </p>
-        <p className="self-end">
+        <p className="text-right">
           <Link href="/tags">
             <a className="mr-1 primary-link">Browse by Tags</a>
           </Link>
         </p>
       </section>
-      <section>
+      <section className="mt-8">
         <PostsList href="/writing" posts={posts} />
       </section>
     </article>
@@ -56,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
   ).map((post) => {
     return {
       title: post.title,
-      date: post.date,
+      date: FormatDate(post.date),
       summary: post.summary,
       slug: post.slug,
     }

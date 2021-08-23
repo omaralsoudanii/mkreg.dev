@@ -5,7 +5,7 @@ import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
-import { slugify } from '@/lib/utils'
+import { FormatDate, slugify } from '@/lib/utils'
 
 /**
  *
@@ -42,7 +42,7 @@ export default function Tag({ posts, tag }) {
           </Link>
         </p>
       </section>
-      <section>
+      <section className="mt-8">
         <PostsList href="/writing" posts={posts} />
       </section>
     </article>
@@ -54,9 +54,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const allPosts = await getAllFilesFrontMatter('writing')
 
-  const filteredPosts = allPosts.filter((post) =>
-    post.tags.map((t: string) => slugify(t)).includes(params.tag)
-  )
+  const filteredPosts = allPosts
+    .filter((post) =>
+      post.tags.map((t: string) => slugify(t)).includes(params.tag)
+    )
+    .map((post) => {
+      return {
+        title: post.title,
+        date: FormatDate(post.date),
+        summary: post.summary,
+        slug: post.slug,
+        tags: post.tags,
+      }
+    })
 
   if (filteredPosts.length) {
     tag = filteredPosts[0].tags.find((t: string) =>
