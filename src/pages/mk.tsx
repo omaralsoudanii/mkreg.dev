@@ -1,4 +1,4 @@
-import NextImage from 'next/image'
+import Image from 'next/image'
 
 import MKPic from '../../public/static/images/mk.jpg'
 import TheSulatn from '../../public/static/images/sultan.jpg'
@@ -24,7 +24,7 @@ export default function MK() {
             The Sultan of swing
           </h1>
         </header>
-        <NextImage src={TheSulatn} alt="The Sultan of swing" />
+        <Image src={TheSulatn} alt="The Sultan of swing" />
         <p>
           Congrats on finding this page! Let me introduce you to my favorite
           human being in the universe.
@@ -61,7 +61,7 @@ export default function MK() {
           the answer to the ultimate question of life.
         </p>
 
-        <NextImage src={MKPic} alt="Mark Knopfler" />
+        <Image src={MKPic} alt="Mark Knopfler" />
         <p>
           This is a biography about
           <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>

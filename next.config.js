@@ -10,7 +10,12 @@ module.exports = {
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: { memo: true },
+        },
+      ],
     })
 
     if (!dev && !isServer) {

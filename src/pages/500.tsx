@@ -1,6 +1,5 @@
+import Image from 'next/image'
 import Link from 'next/link'
-
-import NextImage from '@/components/NextImage'
 
 export default function ServerError() {
   return (
@@ -21,7 +20,7 @@ export default function ServerError() {
             <strong>index_v17_final.html</strong>
           </p>
           <figure className="!my-8">
-            <NextImage
+            <Image
               src="/static/images/docker.jpeg"
               width={604}
               height={403}

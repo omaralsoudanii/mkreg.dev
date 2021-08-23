@@ -1,13 +1,15 @@
-import Card from '@/components/Card'
-import Seo from '@/components/Seo'
-import Bookmarks from '@/lib/bookmarks'
+import { GetStaticProps } from 'next'
 
-function Nuggets() {
+import Seo from '@/components/Seo'
+import { Bookmarks, BookmarkIcon } from '@/lib/bookmarks'
+
+function Nuggets({ posts }) {
   const meta = {
     title: 'Omar Alsoudani - Nuggets',
     description: 'Resources and bookmarks for the readers',
     JsonLd: false,
   }
+  const iconStyle = 'w-12 h-12 md:w-14 md:h-14  min-w-sm svg-fill'
 
   return (
     <article
@@ -28,12 +30,51 @@ function Nuggets() {
         </p>
       </section>
       <section>
-        {Bookmarks.map((bookmark) => (
-          <Card key={bookmark.title} {...bookmark} />
-        ))}
+        {posts.map((post) => {
+          const Icon = BookmarkIcon(post.Icon)
+          return (
+            <a
+              key={post.title}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="flex items-center py-2 px-4 my-8 border border-gray-200 rounded md:py-4 md:px-8 dark:border-opacity-40 dark:border-gray-700">
+                <div className={`${iconStyle} ml-0 mr-4 md:ml-2 md:mr-8`}>
+                  <span className="sr-only">{post.title}</span>
+                  <Icon className={iconStyle} />
+                </div>
+                <div>
+                  <h2 className="!my-1 !font-medium  !text-lg md:!text-xl">
+                    {post.title}
+                  </h2>
+                  <p className="!my-1  !text-secondary !text-[0.9rem] md:!text-base !leading-snug !font-normal clamp clamp-5">
+                    {post.desc}
+                  </p>
+                </div>
+              </div>
+            </a>
+          )
+        })}
       </section>
     </article>
   )
 }
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await Bookmarks()
+  const posts = data.map((bookmark) => {
+    return {
+      title: bookmark.title,
+      desc: bookmark.desc,
+      url: new URL(bookmark.url).toString(),
+      Icon: bookmark.Icon,
+    }
+  })
 
+  return {
+    props: {
+      posts,
+    },
+  }
+}
 export default Nuggets

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { getMDXComponent } from 'mdx-bundler/client'
+import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Post from '@/components/Layouts/Post'
@@ -15,13 +15,13 @@ import { formatSlug } from '@/lib/utils'
  */
 
 export default function MDXPost({ post, parentPost }) {
-  const { mdxSource, frontMatter } = post
+  const { code, frontMatter } = post
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
-  const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
+  const Component = useMemo(() => getMDXComponent(code), [code])
   return (
     <Post frontMatter={frontMatter} parentPost={parentPost}>
-      <Component components={MDXComponents as any} />
+      <Component components={MDXComponents as ComponentMap} />
     </Post>
   )
 }

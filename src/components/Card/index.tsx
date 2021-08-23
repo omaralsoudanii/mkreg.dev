@@ -5,9 +5,9 @@ const Card = ({
   desc,
 }: {
   title: string
-  desc: string
   url: string
   Icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+  desc: string
 }) => {
   const iconStyle = 'w-12 h-12 md:w-14 md:h-14  min-w-sm svg-fill'
   return (

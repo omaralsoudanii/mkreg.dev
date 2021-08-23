@@ -82,21 +82,19 @@ export async function getFileBySlug(type: string, slug?) {
       return options
     },
     esbuildOptions(options) {
-      options.treeShaking = true
-      options.minify = true
       options.loader = {
         ...options.loader,
         '.tsx': 'tsx',
+        '.js': 'jsx',
         '.svg': 'tsx',
       }
-      options.tsconfig = join(process.cwd(), 'tsconfig.json')
       return options
     },
     globals: { Card: 'Card' },
   })
 
   return {
-    mdxSource: code,
+    code,
     frontMatter: {
       slug: slug ? formatSlug(slug) : type,
       ...frontmatter,

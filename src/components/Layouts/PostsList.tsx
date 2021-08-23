@@ -1,12 +1,20 @@
 import Link from 'next/link'
+import useSWR from 'swr'
 
-import ArticleViews from '@/components/ArticleViews'
+import Fetcher from '@/lib/fetcher'
 import { FormatDate } from '@/lib/utils'
+
+type frontMatter = {
+  title: string
+  date: string | number | Date
+  summary: string
+  slug: string
+}
 
 export default function PostsList({ posts, href }) {
   return (
     <div className="mt-8">
-      {posts.map((frontMatter) => {
+      {posts.map((frontMatter: frontMatter) => {
         return (
           <Row key={frontMatter.title} href={href} frontMatter={frontMatter} />
         )
@@ -16,6 +24,11 @@ export default function PostsList({ posts, href }) {
 }
 
 const Row = ({ href, frontMatter }) => {
+  const { data } = useSWR(
+    `/api/views/${encodeURIComponent(frontMatter.slug)}`,
+    Fetcher
+  )
+  const views = new Number(data?.total)
   return (
     <Link key={frontMatter.slug} href={`${href}/${frontMatter.slug}`} passHref>
       <a className="inline-block my-4 py-2 md:my-6 w-full">
@@ -29,7 +42,7 @@ const Row = ({ href, frontMatter }) => {
             </p>
           </div>
           <p className="!font-medium !text-base md:!text-lg text-left !py-1 text-tertiary !my-0">
-            <ArticleViews slug={encodeURIComponent(frontMatter.slug)} />
+            {views > 0 ? views.toLocaleString() : '–––'} views
           </p>
           <p className="!font-normal md:!py-0 md:!text-lg !my-0 !text-base text-tertiary clamp clamp-3">
             {frontMatter.summary}

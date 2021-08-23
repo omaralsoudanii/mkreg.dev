@@ -3,79 +3,65 @@ import { useRouter } from 'next/router'
 
 import { Environment } from '@/lib/environment'
 
-interface JsonLd {
+type JsonLd = {
   '@context': string
-  '@type': string
-  headline?: any
+  '@type'?: string
+  headline: any
   keywords?: Array<string>
   url: string
   datePublished?: any
   description: string
   sameAs: Array<string>
   image: string
-  author: { '@type': string; name: string } | { '@type': string; name: string }
+  author: { '@type': string; name: string }
   name?: string
 }
 
 export default function Seo({ data }) {
+  const {
+    siteUrl,
+    ogTitle,
+    ogDescription,
+    ogImage,
+    social: { github, linkedin, twitter },
+  } = Environment
   const router = useRouter()
-  const canonical = `${Environment.siteUrl}${router.asPath}`
+  const canonical = `${siteUrl}${router.asPath}`
   const meta = {
-    title: Environment.ogTitle,
-    description: Environment.ogDescription,
+    title: ogTitle,
+    description: ogDescription,
     type: 'article',
     locale: 'en_US',
     image: {
-      url: Environment.ogImage,
-      alt: Environment.ogTitle,
+      url: ogImage,
+      alt: ogTitle,
     },
     ...data,
   }
 
-  let JsonLd: JsonLd
+  const imageUrl = `${siteUrl}${meta.image.url}`
+
+  const JsonLd: JsonLd = {
+    '@context': 'http://schema.org',
+    sameAs: [github, twitter, linkedin],
+    url: canonical,
+    description: meta.description,
+    headline: meta.title,
+    image: imageUrl,
+    author: {
+      '@type': 'Person',
+      name: ogTitle,
+    },
+  }
 
   if (meta.JsonLd) {
-    JsonLd = {
-      '@context': 'http://schema.org',
-      '@type': 'Article',
-      headline: meta.title,
-      keywords: meta.tags?.length
-        ? meta.tags.join(' ,')
-        : [Environment.ogTitle],
-      url: canonical,
-      datePublished: meta.date,
-      description: meta.description,
-      image: Environment.siteUrl.concat(meta.image.url),
-      author: {
-        '@type': 'Person',
-        name: Environment.ogTitle,
-      },
-      sameAs: [
-        Environment.social.github,
-        Environment.social.twitter,
-        Environment.social.linkedin,
-      ],
-    }
+    JsonLd['@type'] = 'Article'
+    JsonLd['keywords'] = meta.tags?.length ? meta.tags.join(' ,') : [ogTitle]
+    JsonLd['datePublished'] = meta.date
   } else {
     meta.type = 'website'
-    JsonLd = {
-      '@context': 'http://schema.org',
-      '@type': 'WebSite',
-      url: canonical,
-      name: Environment.ogTitle,
-      headline: meta.title,
-      author: {
-        '@type': 'Person',
-        name: Environment.ogTitle,
-      },
-      image: Environment.siteUrl.concat(meta.image.url),
-      description: meta.description,
-      sameAs: [
-        Environment.social.github,
-        Environment.social.twitter,
-        Environment.social.linkedin,
-      ],
-    }
+    JsonLd['@type'] = 'WebSite'
+    JsonLd['name'] = ogTitle
   }
 
   return (
@@ -101,16 +87,8 @@ export default function Seo({ data }) {
       <meta key="type" property="og:type" content={meta.type} />
       <meta property="og:locale" content={meta.locale} />
 
-      <meta
-        key="ogImg"
-        property="og:image"
-        content={`${Environment.siteUrl}${meta.image.url}`}
-      />
-      <meta
-        key="twitImg"
-        name="twitter:image"
-        content={`${Environment.siteUrl}${meta.image.url}`}
-      />
+      <meta key="ogImg" property="og:image" content={imageUrl} />
+      <meta key="twitImg" name="twitter:image" content={imageUrl} />
       <meta key="imgAlt" property="og:image:alt" content={meta.image.alt} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@omaralsoudani" />

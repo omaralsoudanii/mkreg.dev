@@ -53,7 +53,14 @@ export const getStaticProps: GetStaticProps = async () => {
   const WritingData = await getAllFilesFrontMatter('writing')
   const posts = WritingData.sort(
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
-  )
+  ).map((post) => {
+    return {
+      title: post.title,
+      date: post.date,
+      summary: post.summary,
+      slug: post.slug,
+    }
+  })
 
   return {
     props: {

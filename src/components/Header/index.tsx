@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
@@ -8,7 +8,6 @@ import Close from '@/components/Icons/Close'
 import Menu from '@/components/Icons/Menu'
 import Moon from '@/components/Icons/Moon'
 import Sun from '@/components/Icons/Sun'
-import RoutesMetadata from '@/lib/RoutesMetadata'
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -16,6 +15,24 @@ export default function Header() {
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
   const [isExpanded, setExpanded] = useState(false)
+  const RoutesMetadata = [
+    {
+      label: 'Home',
+      href: '/',
+    },
+    {
+      label: 'About',
+      href: '/about',
+    },
+    {
+      label: 'Writing',
+      href: '/writing',
+    },
+    {
+      label: 'Nuggets',
+      href: '/nuggets',
+    },
+  ]
   const router = useRouter()
   const routerName = router.pathname
   const routerPath = router.asPath

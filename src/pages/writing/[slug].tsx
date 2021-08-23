@@ -19,10 +19,10 @@ import { dateSortDesc, formatSlug } from '@/lib/utils'
  */
 
 export default function MDXPost({ post, prev, next }) {
-  const { mdxSource, frontMatter } = post
+  const { code, frontMatter } = post
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
-  const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
+  const Component = useMemo(() => getMDXComponent(code), [code])
   return (
     <Post frontMatter={frontMatter} prev={prev} next={next}>
       <Component components={MDXComponents as ComponentMap} />
@@ -41,9 +41,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (prev) prev.path = '/writing'
   if (next) next.path = '/writing'
   const post = await getFileBySlug('writing', params.slug)
-
   return {
-    props: { post, prev, next },
+    props: {
+      post,
+      prev: prev
+        ? { slug: prev.slug, path: prev.path, title: prev.title }
+        : null,
+      next: next
+        ? { slug: next.slug, path: next.path, title: next.title }
+        : null,
+    },
   }
 }
 
