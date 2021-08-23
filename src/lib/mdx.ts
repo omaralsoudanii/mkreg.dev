@@ -82,12 +82,16 @@ export async function getFileBySlug(type: string, slug?) {
       return options
     },
     esbuildOptions(options) {
+      options.target = ['es2015']
+      options.treeShaking = true
+      options.minify = true
       options.loader = {
         ...options.loader,
         '.tsx': 'tsx',
-        '.js': 'jsx',
         '.svg': 'tsx',
+        '.js': 'jsx',
       }
+      options.tsconfig = join(process.cwd(), 'tsconfig.json')
       return options
     },
     globals: { Card: 'Card' },
