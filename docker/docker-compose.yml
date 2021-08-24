@@ -30,6 +30,7 @@ services:
       - ./ssl/cf/ecc.pem:/etc/nginx/ssl/ecc.pem:ro
       - ./ssl/cf/priv.key:/etc/nginx/ssl/priv.key:ro
       - ./ssl/dh/dhparam-2048.pem:/etc/nginx/ssl/dhparam-2048.pem:ro
+      - /var/log/nginx:/var/log/nginx
     ports:
       - 80:80
       - 443:443
