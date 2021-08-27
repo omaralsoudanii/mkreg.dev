@@ -1,32 +1,37 @@
 ---
 title: 'Stack'
 date: '2021-04-15'
-lastmod: '2021-07-25'
-summary: "My collection of technologies and tools that I use frequently – grown over the years I've been programming"
+lastmod: '2021-08-27'
+summary: "My software development stack, some I use frequently ‒ some occasionally and the rest rarely or I have used in the past"
 tags: ['Stack']
 image: '/static/images/writing/stack/stack.png'
 ---
 
 ![Omar Alsoudani - Technologies and tools I use frequently](/static/images/writing/stack/stack.png)
 
-## Introduction
-
-My collection of technologies and tools from programming languages to editors. Most of these have grown over the years I've started programming – some of them I consider my self well-versed – others I'm capable enough to be up and running in short time.
-
-> Naturally this page will be updated frequently with the latest tech and tools
-
 ## Table of contents
 
 - [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
-- [Coding](#coding)
+- [Programming languages](#programming-languages)
 - [Databases](#databases)
 - [Infrastructure](#infrastructure)
 - [Tools](#tools)
 - [Stuff for developing](#stuff-for-developing)
 - [Workstation](#workstation)
 
-## Coding
+## Introduction
+
+My collection of technologies and tools, the list grown over the past couple of years, some I consider my self well-versed 
+
+The rest I'm capable enough to be up and running in short time – this depends on what I’m currently using, usually when you stop using a software tool, you would need some time to catch up with the ecosystem and changes to that tool.
+
+> Naturally this page will be updated with new technologies that I’ll use
+
+## Programming languages
+
+When I thought about what programming languages I’ve actually used, it boiled down to the list below – saying “used”  doesn’t imply I’ve used it for a project at my workplace.
+
+It means that I can work on a project that uses any of the below (assuming I might be rusty on some, so I’ll need a couple of weeks (less maybe? who knows!) – it doesn’t matter where and why I’ve used it.
 
 - [JavaScript](https://pbs.twimg.com/media/ChnulxvW0AEUs1J?format=jpg&name=large) & [TypeScript](https://www.typescriptlang.org/)
   
@@ -40,50 +45,57 @@ My collection of technologies and tools from programming languages to editors. M
 
 ## Databases
 
+You could debate that some of these are not databases, which is kinda correct for some of those – however all of them deals with storage one way or another, I can even say they all part of the Infrastructure (see below) but this seemed more suitable – my usage for those could differ as well.
+
 - [MySQL](https://www.mysql.com/) & [MariaDB](https://mariadb.org/)
-  
 - [PostgreSQL](https://www.postgresql.org/)
-  
-- [ElasticSearch](https://www.elastic.co/) & [ELK](https://www.elastic.co/what-is/elk-stack)
-  
+- [ElasticSearch](https://www.elastic.co/)
 - [Redis](https://redis.io/)
-  
 - [Memcached](https://memcached.org/)
-  
 - [MongoDB](https://www.mongodb.com/)
-  
 - [AWS S3](https://aws.amazon.com/s3/)
 
 ## Infrastructure
 
+These tools are the core parts of building software – choosing the right tool probably have higher impact than deciding if you want MySQL or MariaDB (to a certain degree…).
+
 - [HAProxy](https://www.haproxy.org/)
 - [NGINX](https://nginx.org/)
 - [Cloudflare](https://cloudflare.com/)
+- [AWS](https://aws.amazon.com/)
+- Cloud providers with self managed servers (we give you a server, you build and maintain the software) – only **Linux** distributions (**Debian** & **RHEL** based)
 - [Docker](https://www.docker.com/)
-- [Podman](https://podman.io/)
 - [Apache](https://httpd.apache.org/)
-- [AWS](https://aws.amazon.com/) **EC2**, **S3** & **Cloudfront**
+- [ELK](https://www.elastic.co/elastic-stack/) – ElasticSearch stack for Observability
+- [Grafana](https://grafana.com/)
+- [InfluxDB](https://www.influxdata.com/products/influxdb/) & [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/)
 - [0MQ](https://zeromq.org/)
 - [RabbitMQ](https://www.rabbitmq.com/)
-- Bare metal cloud providers, only **Linux** distros (**Debian** & **RHEL** based)
+- [Podman](https://podman.io/)
 
 ## Tools
 
-- [Vagrant](https://www.vagrantup.com/)
+Helps me work faster, produce more accurate results – tools that serve one purpose while maintaining reliability.
+
 - [acme.sh](https://github.com/acmesh-official/acme.sh/)
 - [1.1.1.1](https://1.1.1.1/)
-- [Vercel](https://vercel.com/)
+- [Vercel](https://vercel.com/) – why this is here not Infrastructure? Good question! and mostly because I use it for testing or some random project I’m working on for absolutely no reason, visit this page in 4 years maybe I would have it figured out. 
 - [NVM](https://github.com/nvm-sh/nvm/)
 - [Vegeta](https://github.com/tsenart/vegeta)
 - [Brave Browser](https://brave.com/)
+- [Bitwarden](https://bitwarden.com/)
 - [Update Golang](https://github.com/udhos/update-golang) Upgrading Golang version is probably the most annoying thing about the language. This is a script that upgrade and fetch the latest Golang version (stable ones)
 - Recently I started using [Notion](https://www.notion.so/) as a reminder and calendar for what's next!
 
 ## Stuff for developing
 
-- [Visual Studio Code](https://code.visualstudio.com/) As the main editor. [Vim](https://github.com/omaralsoudanii/vimrc/) when I can, config is a fork from [amix/vimrc](https://github.com/amix/vimrc/) with minor tweaks like deleting plugins I don't need and  some theme adjustments. 
+I made this list, just to criticize some tools in a passive aggressive manner.
 
-  Sometimes I use [IntelliJ IDEA](https://www.jetbrains.com/idea/) when I wanna work on a language, actually I'll let that up to you to guess WHAT language is locked to using an **IDE** that decides to reserve 20GB of RAM while editing a small program.
+- [Visual Studio Code](https://code.visualstudio.com/) As the main editor, [Vim](https://github.com/omaralsoudanii/vimrc/) when I can – config is a fork from [amix/vimrc](https://github.com/amix/vimrc/) with some minor tweaks, sometimes I use [IntelliJ IDEA](https://www.jetbrains.com/idea/) when I wanna work on a language – Uhm… actually I'll let that up to you to guess which language (runs on 20 bazillion devices).
+
+   
+
+  And it forces you to be vendor-locked to a specific **IDE** that decides to reserve 20GB of RAM while editing a small program. Nah IDEA is amazing, it’s just my computer.. or the 2000 line function that someone wrote 🤔
 
 - Whatever Terminal comes with the distro I have. Currently **GNOME** Terminal with customized colors using [terminal.sexy](https://terminal.sexy), however when I had **KDE** I loved the simplicity of **Konsole**.
 
@@ -91,11 +103,11 @@ My collection of technologies and tools from programming languages to editors. M
 
 - [Fzf](https://github.com/junegunn/fzf/)
 
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for coding stuff, [Inter](https://rsms.me/inter/) for reading
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for coding stuff, [Inter](https://rsms.me/inter/) for reading.
 
-- [Reddit](https://www.reddit.com/) and [Hacker News](https://news.ycombinator.com/) with the old design, I'll just stop visiting if they remove it. Browsing those sites is a sign that I have some chore work to do, or stuck on something stupid
+- [Reddit](https://www.reddit.com/) and [Hacker News](https://news.ycombinator.com/) with the old design, I'll just stop visiting if they remove it. Browsing those sites is a sign that I have some chore work to do, or stuck on something stupid.
 
-- [The Sultan](https://www.youtube.com/channel/UCiYs0vL7tkkCK4yF_YhfyEQ/playlists) 24/7 on shuffle mode
+- [The Sultan](https://www.youtube.com/channel/UCiYs0vL7tkkCK4yF_YhfyEQ/playlists) 24/7 on shuffle mode.
 
 - [GitHub mobile](https://github.com/mobile) Lately I've been enjoying GitHub on mobile (Android) when I'm just bored. I browse the explore tab and check new stuff, sometimes I find something I'm interested in using.
 
@@ -105,10 +117,10 @@ An ancient desktop PC that you don't even wanna know about (Yes I do whine when 
 
 It's not that bad, here's the specs according to **neofetch**:
 
-- M.2 NVMe SSD
-- 40 GB RAM (I guess it's 2400MHz)
-- NVIDIA GeForce GTX 1070. Hold your thoughts, this is running on [Linux](/static/images/writing/stack/linus-torvalds-middle-finger.jpg) OS
-- Intel I7-6700 (8) @ 4.000GHz. Not sure what the hell is this, but I know it's old and probably the bottle neck (and the bloated software we use daily)
-- Ubuntu 20.04.2 LTS
+- M.2 NVMe SSD.
+- 32 GB RAM – I guess it's 2400MHz, but the BIOS wants to run it on 2100MHz.
+- NVIDIA GeForce GTX 1070. Hold your thoughts, this is running on [Linux](/static/images/writing/stack/linus-torvalds-middle-finger.jpg) OS.
+- Intel I7-6700 (8) @ 4.000GHz, not sure what the hell this CPU generation is from, but I know it's old and probably the bottle neck (and the bloated software we use daily – with the addition of Spectre patch…).
+- Ubuntu 20.04.2 LTS – stable and nothing to complain about, hence I hate it.
 - The worst screen ever created, the all mighty **ASUS VG248QE**
-- A motherboard
+- A motherboard.

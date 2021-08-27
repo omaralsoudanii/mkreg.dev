@@ -17,15 +17,13 @@ export default function PostLayout({
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
   const encodedSlug = encodeURIComponent(slug)
-
+  const { data } = useSWR(`/api/views/${encodedSlug}`, Fetcher)
+  const views = new Number(data?.total)
   useEffect(() => {
-    fetch(`/api/views/${encodedSlug}`, {
+    Fetcher(`/api/views/${encodedSlug}`, {
       method: 'POST',
     })
   }, [encodedSlug])
-
-  const { data } = useSWR(`/api/views/${encodedSlug}`, Fetcher)
-  const views = new Number(data?.total)
 
   const fullPath =
     parentPost && parentPost?.path
