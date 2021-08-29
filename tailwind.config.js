@@ -1,9 +1,9 @@
+const colors = require('tailwindcss/colors')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
+  purge: ['src/pages/**/*.tsx', 'src/components/**/*.tsx', 'src/lib/**/*.ts'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
