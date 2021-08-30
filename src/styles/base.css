@@ -1,40 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
-  html {
-    min-width: 320px;
-  }
-
-  body {
-    @apply text-black bg-white dark:bg-dark-primary break-words dark:text-white antialiased;
-    font-feature-settings: 'ss01', 'cv07', 'cv10', 'kern', 'liga', 'calt';
-    touch-action: manipulation;
-    text-rendering: optimizeLegibility;
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-
-  #__next {
-    @apply h-full bg-white dark:bg-dark-primary;
-  }
-
-  .svg-fill {
-    @apply fill-[black] dark:fill-[white] text-black dark:text-white;
-  }
-
-  /* ubuntu colors */
-  ::-moz-selection {
-    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
-    text-shadow: none;
-  }
-
-  ::selection {
-    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
-    text-shadow: none;
-  }
+html {
+  min-width: 320px;
+  touch-action: manipulation;
 }
 
+body {
+  font-feature-settings: 'ss01', 'cv07', 'cv10', 'kern', 'liga', 'calt';
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+#__next {
+  @apply h-full bg-white dark:bg-dark-primary;
+}
+
+.svg-fill {
+  @apply fill-[black] dark:fill-[white] text-black dark:text-white;
+}
+
+/* ubuntu colors */
+::-moz-selection {
+  @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+  text-shadow: none;
+}
+
+::selection {
+  @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+  text-shadow: none;
+}
 @layer utilities {
   .text-primary {
     @apply text-gray-900 dark:text-gray-100;
@@ -50,6 +46,14 @@
 
   .text-display {
     @apply text-gray-900 dark:text-gray-100;
+  }
+
+  .scroll-spacing-sm {
+    scroll-margin-top: 4em;
+  }
+
+  .scroll-spacing-lg {
+    scroll-margin-top: 2em;
   }
 
   h1,
@@ -117,19 +121,19 @@
   }
 
   .text-h1 {
-    @apply heading-default md:text-7xl leading-none !important;
+    @apply text-3xl md:text-4xl text-display lg:text-7xl leading-none !important;
   }
 
   .text-h2 {
-    @apply heading-default md:text-6xl leading-none  !important;
+    @apply text-3xl md:text-4xl text-display lg:text-6xl leading-none  !important;
   }
 
   .text-h3 {
-    @apply heading-default md:text-5xl leading-none !important;
+    @apply text-3xl md:text-4xl text-display lg:text-5xl leading-none !important;
   }
 
   .page-heading {
-    @apply heading-default leading-9 md:leading-10 md:text-5xl lg:leading-14 !important;
+    @apply text-3xl md:text-4xl text-display leading-9 md:leading-10 lg:text-5xl lg:leading-14 !important;
   }
 
   .link-unstyled {
@@ -180,7 +184,7 @@
   }
 
   .heading-default {
-    @apply text-3xl md:text-4xl text-display !important;
+    @apply text-3xl md:text-4xl text-display;
   }
 
   span.icon.icon-link {

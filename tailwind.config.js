@@ -1,9 +1,8 @@
 const colors = require('tailwindcss/colors')
 const { fontFamily } = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
-  purge: ['src/pages/**/*.tsx', 'src/components/**/*.tsx', 'src/lib/**/*.ts'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
@@ -108,19 +107,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    plugin(function ({ addUtilities }) {
-      const newUtilities = {
-        '.scroll-spacing-sm': {
-          'scroll-margin-top': '4em',
-        },
-        '.scroll-spacing-lg': {
-          'scroll-margin-top': '2em',
-        },
-      }
-
-      addUtilities(newUtilities)
-    }),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 }

@@ -36,11 +36,11 @@
     "react-dom": "^17.0.2",
     "sharp": "^0.29.0",
     "swr": "^1.0.0",
-    "tailwindcss": "^2.2.8"
+    "tailwindcss": "^2.2.9"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
-    "@types/node": "^16.7.5",
+    "@types/node": "^16.7.6",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "autoprefixer": "^10.3.3",

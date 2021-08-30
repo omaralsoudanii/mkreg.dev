@@ -21,7 +21,7 @@ export default function Tags({ sortedData }) {
   return (
     <article
       id="skip"
-      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto mb-8 md:mb-16"
+      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto mb-8 md:mb-16"
     >
       <Seo data={meta} />
       <section className="mb-8 space-y-8 md:mb-16">

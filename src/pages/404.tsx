@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div
       id="skip"
-      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto"
     >
       <div className="flex flex-col items-start justify-start divide-y divide-gray-700 dark:divide-gray-200 md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:my-20">
         <div className="py-4 md:pt-20 md:pb-20">

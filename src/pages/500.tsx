@@ -5,7 +5,7 @@ export default function ServerError() {
   return (
     <div
       id="skip"
-      className="prose dark:prose-dark md:prose-lg w-full max-w-none md:max-w-[75ch] mx-auto"
+      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto"
     >
       <div className="flex flex-col justify-center items-center md:space-x-10 md:mt-8">
         <div className="px-1 md:px-0">
