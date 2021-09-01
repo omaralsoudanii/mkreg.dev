@@ -10,25 +10,25 @@ export default function Footer() {
           <NextLink className="link-unstyled" href="/">
             Home
           </NextLink>
+          <NextLink className="link-unstyled" href="/about">
+            About
+          </NextLink>
           <NextLink className="link-unstyled" href="/writing">
             Writing
-          </NextLink>
-          <NextLink className="link-unstyled" href="/nuggets">
-            Nuggets
           </NextLink>
         </div>
         <div className="footer-column">
           <NextLink href={Environment.social.github} className="link-unstyled">
             Github
           </NextLink>
+          <NextLink href={Environment.social.twitter} className="link-unstyled">
+            Twitter
+          </NextLink>
           <NextLink
             href={Environment.social.linkedin}
             className="link-unstyled"
           >
             LinkedIn
-          </NextLink>
-          <NextLink href={Environment.social.twitter} className="link-unstyled">
-            Twitter
           </NextLink>
         </div>
         <div className="footer-column">
@@ -39,14 +39,11 @@ export default function Footer() {
           >
             RSS
           </NextLink>
+          <NextLink className="link-unstyled" href="/nuggets">
+            Nuggets
+          </NextLink>
           <NextLink href={Environment.social.youtube} className="link-unstyled">
             YouTube
-          </NextLink>
-          <NextLink
-            href={Environment.social.speedlify}
-            className="link-unstyled"
-          >
-            Speedlify
           </NextLink>
         </div>
       </div>

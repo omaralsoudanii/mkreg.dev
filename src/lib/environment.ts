@@ -25,7 +25,6 @@ interface EnvironmentProps {
   social: {
     github: string
     rss: string
-    speedlify: string
     linkedin: string
     youtube: string
     twitter: string
@@ -51,8 +50,6 @@ export const Environment: EnvironmentProps = {
       'https://www.youtube.com/channel/UCiYs0vL7tkkCK4yF_YhfyEQ/playlists',
     linkedin:
       process.env.LINKEDIN_URL ?? 'https://www.linkedin.com/in/omaralsoudani',
-    speedlify:
-      process.env.SPEEDLIFY_URL ?? 'https://mkreg-speedlify.netlify.app',
     twitter: process.env.TWITTER_URL ?? 'https://twitter.com/omaralsoudani',
   },
   isr: {
