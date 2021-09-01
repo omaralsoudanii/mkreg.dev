@@ -45,11 +45,3 @@ Read about the [installation](https://github.com/omaralsoudanii/mkreg.dev/tree/m
 The app can be deployed to Vercel without extra dependencies. 
 
 Fork or clone the app then deploy, don't forget to add the environment variables through Vercel dashboard.
-
-## Speedlify
-
-[Speedlify](https://github.com/zachleat/speedlify) is a tool that automate continuous performance measurements.
-
-Check here to see my results: [mkreg-speedlify](https://mkreg-speedlify.netlify.app)
-
-To generate the results, I have this [Repository](https://github.com/omaralsoudanii/speedlify) deployed on Netlify
