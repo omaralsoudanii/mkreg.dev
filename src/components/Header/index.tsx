@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react'
+import * as React from 'react'
 
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
@@ -11,10 +11,10 @@ import Sun from '@/components/Icons/Sun'
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = React.useState(false)
   // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), [])
-  const [isExpanded, setExpanded] = useState(false)
+  React.useEffect(() => setMounted(true), [])
+  const [isExpanded, setExpanded] = React.useState(false)
   const RoutesMetadata = [
     {
       label: 'Home',
@@ -47,7 +47,7 @@ export default function Header() {
         ) ?? { href: routerPath, label: 'MK' }
 
   return (
-    <Fragment>
+    <React.Fragment>
       <nav className="grid grid-cols-1 header-sm md:hidden">
         <div className="flex items-center">
           <div className="hdr-sm-btn" onClick={() => setExpanded(!isExpanded)}>
@@ -101,6 +101,6 @@ export default function Header() {
           {mounted && (resolvedTheme === 'dark' ? <Sun /> : <Moon />)}
         </div>
       </nav>
-    </Fragment>
+    </React.Fragment>
   )
 }
