@@ -91,10 +91,8 @@ export async function getFileBySlug(type: string, slug?) {
         '.svg': 'tsx',
         '.js': 'jsx',
       }
-      options.tsconfig = join(process.cwd(), 'tsconfig.json')
       return options
     },
-    globals: { Card: 'Card' },
   })
 
   return {
