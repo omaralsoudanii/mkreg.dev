@@ -8,6 +8,9 @@ import { Environment } from '@/lib/environment'
 import Fetcher from '@/lib/fetcher'
 import { FormatDate, slugify } from '@/lib/utils'
 
+const fetcher = (slug: string) =>
+  fetch(`/api/views/${slug}`).then((r) => r.json())
+
 export default function PostLayout({
   children,
   frontMatter,
@@ -16,9 +19,11 @@ export default function PostLayout({
   parentPost = null,
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
+
   const encodedSlug = encodeURIComponent(slug)
-  const { data } = useSWR(`/api/views/${encodedSlug}`, Fetcher)
+  const { data } = useSWR(encodedSlug, fetcher)
   const views = new Number(data?.total)
+
   useEffect(() => {
     Fetcher(`/api/views/${encodedSlug}`, {
       method: 'POST',
@@ -54,7 +59,7 @@ export default function PostLayout({
             <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
             {`    •    `}
             <span className="px-2 !font-medium">
-              {views > 0 ? views.toLocaleString() : '–––'} views
+              {views > 0 ? `${views.toLocaleString()} views` : '––– views'}
             </span>
           </p>
           <h1 className="page-heading mb-4 md:mb-8">{title}</h1>

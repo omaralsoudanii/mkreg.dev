@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import useSWR from 'swr'
 
-import Fetcher from '@/lib/fetcher'
-
 type frontMatter = {
   title: string
   date: string
@@ -10,15 +8,14 @@ type frontMatter = {
   slug: string
 }
 
-const GetViews = (slug: string) => {
-  const { data } = useSWR(`/api/views/${slug}`, Fetcher)
-  const views = new Number(data?.total)
-  return views
-}
+const fetcher = (slug: string) =>
+  fetch(`/api/views/${slug}`).then((r) => r.json())
 
 export default function PostsList({ posts, href }) {
   return posts.map((frontMatter: frontMatter) => {
-    const views = GetViews(encodeURIComponent(frontMatter.slug))
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { data } = useSWR(encodeURIComponent(frontMatter.slug), fetcher)
+    const views = new Number(data?.total)
     return (
       <Link
         key={frontMatter.slug}
@@ -36,7 +33,7 @@ export default function PostsList({ posts, href }) {
               </p>
             </div>
             <p className="!font-medium !text-base md:!text-lg text-left !py-1 text-tertiary !my-0">
-              {views > 0 ? views.toLocaleString() : '–––'} views
+              {views > 0 ? `${views.toLocaleString()} views` : '––– views'}
             </p>
             <p className="!font-normal md:!py-0 md:!text-lg !my-0 !text-base text-tertiary clamp clamp-5">
               {frontMatter.summary}
