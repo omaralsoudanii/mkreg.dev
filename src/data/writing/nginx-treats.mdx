@@ -7,6 +7,10 @@ tags: ['NGINX','Performance']
 image: '/static/images/writing/nginx-treats/nginx-mkreg.png'
 ---
 
+import Card from '@/components/Card/index.tsx';
+import Nginx from '@/components/Icons/Nginx';
+import Github from '@/components/Icons/Github';
+
 ![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-mkreg.png)
 
 I've invested a lot of time since I've started programming on infrastructure – a web server is a crucial part of that.
@@ -84,7 +88,6 @@ Test, then test, and finally test. Sometimes asserting that your configuration i
 
 For example, benchmarking throughput by hitting a single endpoint rather than creating a realistic usage scenario in production.
 
-import Nginx from '@/components/Icons/Nginx';
 
 <Card 
     title="Benchmarking NGINX"
@@ -372,8 +375,6 @@ I might write another article about topics I didn't cover including
 - Creating a NGINX server from installation, configuration, dealing with SSL to serving content live.
 
 Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them.
-
-import Github from '@/components/Icons/Github';
 
 <Card
     title="omaralsoudanii/mkreg.dev"
