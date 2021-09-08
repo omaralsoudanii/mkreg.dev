@@ -5,7 +5,7 @@ import { Parent, Node, Literal } from 'unist'
 import { Test } from 'unist-util-is'
 import { visit } from 'unist-util-visit'
 
-export default function mdxImage() {
+export default function mdxImage(): (tree: Node) => void {
   return (tree: Node) => {
     visit<Node, Test>(
       tree,
