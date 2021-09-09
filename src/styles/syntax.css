@@ -1,34 +1,34 @@
-.prose .rehype-code-title {
-  @apply font-mono text-sm md:text-base font-bold md:font-medium py-3 px-4 text-gray-800 bg-gray-50  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+.rehype-code-title {
+  @apply text-sm md:text-base font-bold md:font-semibold py-3 px-6 text-gray-800 bg-gray-100  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
 }
 
-.prose .rehype-code-title + div > pre {
+.rehype-code-title + div > pre {
   @apply mt-0 rounded-t-none;
 }
 
-.prose h4 + div > pre,
-.prose h4 + .rehype-code-title {
+h4 + div > pre,
+h4 + .rehype-code-title {
   @apply mt-4 !important;
 }
 
-.prose a code {
+a code {
   @apply px-1 -mx-1 font-medium no-underline bg-gray-100 rounded-sm dark:bg-dark-tertiary  text-blue-600  dark:text-blue-400 !important;
 }
 
-.prose pre::-webkit-scrollbar {
+pre::-webkit-scrollbar {
   display: none;
 }
 
-.prose pre {
+pre {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-.prose code[class*='language-'] {
+code[class*='language-'] {
   @apply bg-transparent !important;
 }
 
-.prose pre[class*='language-'] {
+pre[class*='code-container'] {
   @apply border border-gray-50 bg-gray-50  font-mono  text-gray-800 dark:text-gray-200 dark:border-dark-secondary dark:bg-dark-secondary  !important;
   font-feature-settings: normal;
   text-align: left;
@@ -42,30 +42,39 @@
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-
+  overflow: auto;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
 }
 
-.prose pre[class*='language-'] {
-  overflow: auto;
+/* .code-line {
+  @apply pl-4 -mx-4 border-l-4 border-gray-50  dark:border-dark-secondary;
 }
 
-.prose :not(pre) > code[class*='language-'] {
+.highlight-line {
+  @apply -mx-4 bg-gray-700 bg-opacity-50 border-l-4 border-blue-400;
+}
+
+.line-number::before {
+  @apply pr-4 -ml-2 text-gray-500 dark:text-gray-400;
+  content: attr(line);
+} */
+
+:not(pre) > code[class*='language-'] {
   padding: 0.1em;
   white-space: normal;
 }
 
-.prose pre:not([class*='language-']),
-.prose code:not([class*='language-']) {
+pre:not([class*='code-container']),
+code:not([class*='language-']) {
   @apply text-gray-800 dark:text-gray-200 text-sm md:text-base font-semibold font-mono  md:font-medium  px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
 }
 
 @media print {
-  .prose code[class*='language-'],
-  .prose pre[class*='language-'] {
+  code[class*='language-'],
+  pre[class*='code-container'] {
     text-shadow: none;
   }
 }

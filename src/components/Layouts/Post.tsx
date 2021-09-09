@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import * as React from 'react'
 
 import useSWR from 'swr'
 
@@ -24,7 +24,7 @@ export default function PostLayout({
   const { data } = useSWR(encodedSlug, fetcher)
   const views = new Number(data?.total)
 
-  useEffect(() => {
+  React.useEffect(() => {
     Fetcher(`/api/views/${encodedSlug}`, {
       method: 'POST',
     })
@@ -70,7 +70,7 @@ export default function PostLayout({
         style={{ gridTemplateRows: 'auto 1fr' }}
       >
         <div className="py-6 md:col-span-3 md:col-start-2 md:row-span-3">
-          <div className="prose dark:prose-dark lg:prose-lg w-full mx-auto !max-w-none">
+          <div className="prose dark:prose-dark xl:prose-lg w-full mx-auto !max-w-none">
             {children}
           </div>
         </div>

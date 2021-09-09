@@ -77,22 +77,20 @@ export async function getFileBySlug(type: string, slug?) {
           },
         ],
         rehypeCodeTitles,
-        rehypePrism as any,
+        rehypePrism,
       ]
       return options
     },
     esbuildOptions(options) {
       options.target = ['es2015']
-      options.treeShaking = true
-      options.minify = true
       options.loader = {
         ...options.loader,
         '.tsx': 'tsx',
         '.svg': 'tsx',
-        '.js': 'jsx',
       }
       return options
     },
+    globals: { Card: 'Card' },
   })
 
   return {
