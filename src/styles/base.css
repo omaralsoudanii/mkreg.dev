@@ -1,4 +1,171 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: optional;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/static/fonts/Inter-roman.var-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/static/fonts/Inter-italic.var-latin.woff2') format('woff2');
+}
+
+.rehype-code-title {
+  @apply text-sm md:text-base font-bold md:font-semibold py-3 px-6 text-gray-800 bg-gray-100  border-b border-[#dadde1]   dark:text-gray-200 dark:border-dark-tertiary dark:bg-dark-tertiary;
+}
+
+.rehype-code-title + div > pre {
+  @apply mt-0 rounded-t-none;
+}
+
+h4 + div > pre,
+h4 + .rehype-code-title {
+  @apply mt-4 !important;
+}
+
+a code {
+  @apply px-1 -mx-1 font-medium no-underline bg-gray-100 rounded-sm dark:bg-dark-tertiary  text-blue-600  dark:text-blue-400 !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+code[class*='language-'] {
+  @apply bg-transparent !important;
+}
+
+pre[class*='code-container'] {
+  @apply border border-gray-50 bg-gray-50  font-mono  text-gray-800 dark:text-gray-200 dark:border-dark-secondary dark:bg-dark-secondary  !important;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  letter-spacing: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  overflow: auto;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* .code-line {
+  @apply pl-4 -mx-4 border-l-4 border-gray-50  dark:border-dark-secondary;
+}
+
+.highlight-line {
+  @apply -mx-4 bg-gray-700 bg-opacity-50 border-l-4 border-blue-400;
+}
+
+.line-number::before {
+  @apply pr-4 -ml-2 text-gray-500 dark:text-gray-400;
+  content: attr(line);
+} */
+
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  white-space: normal;
+}
+
+pre:not([class*='code-container']),
+code:not([class*='language-']) {
+  @apply text-gray-800 dark:text-gray-200 text-sm md:text-base font-semibold font-mono  md:font-medium  px-2 py-1 rounded bg-gray-100 dark:bg-dark-tertiary !important;
+}
+
+@media print {
+  code[class*='language-'],
+  pre[class*='code-container'] {
+    text-shadow: none;
+  }
+}
+
+.token.entity,
+.token.punctuation {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.token.atrule,
+.token.constant,
+.token.delimiter,
+.token.delimiter important,
+.token.keyword,
+.token.property,
+.token.selector {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.token.attr-name,
+.token.url,
+.token.color,
+.token.string,
+.token.variable {
+  @apply text-[#22863a] dark:text-[#addb67];
+}
+
+.token.attr-value,
+.token.class-name,
+.token.method,
+.token.function {
+  @apply text-pink-600 dark:text-pink-400;
+}
+
+.token.boolean,
+.token.symbol,
+.token.deleted,
+.token.inserted,
+.token.builtin,
+.token.char,
+.token.number {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.token.tag,
+.token.operator,
+.token.property-access {
+  @apply text-indigo-600 dark:text-indigo-400;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
 @layer base {
   html {
     min-width: 360px;
@@ -30,5 +197,206 @@
   ::selection {
     @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
     text-shadow: none;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  .text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .text-tertiary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .text-display {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  .scroll-spacing-sm {
+    scroll-margin-top: 4em;
+  }
+
+  .scroll-spacing-lg {
+    scroll-margin-top: 2em;
+  }
+
+  h1,
+  h2 {
+    @apply text-display scroll-spacing-sm md:scroll-spacing-lg font-bold tracking-tight;
+  }
+
+  h3,
+  h4 {
+    @apply text-display scroll-spacing-sm md:scroll-spacing-lg font-semibold;
+  }
+
+  .header-sm {
+    @apply fixed top-0 left-0 py-1 z-10 w-full bg-white border-b border-gray-200 dark:border-gray-700 dark:border-opacity-40 border-opacity-40 bg-opacity-70 dark:bg-dark-primary dark:bg-opacity-80 filter-blur;
+  }
+
+  @supports not (backdrop-filter: none) {
+    .header-sm {
+      @apply bg-opacity-100 dark:bg-opacity-100 filter-none backdrop-filter-none !important;
+    }
+  }
+
+  .skip-content-nav {
+    @apply hidden opacity-0 absolute md:inline px-4 py-2 transition-transform duration-200 transform -translate-y-12 text-primary focus:translate-y-3 focus:opacity-100 focus:top-4 left-60 -top-2;
+  }
+
+  .nav-default {
+    @apply flex py-4 text-base font-medium text-primary;
+  }
+
+  .nav-active {
+    @apply bg-gray-900 bg-opacity-10 dark:bg-opacity-10 dark:bg-gray-400  filter-blur;
+  }
+
+  .nav-inactive {
+    @apply filter-saturate;
+  }
+
+  .hdr-sm-btn {
+    @apply flex-auto px-6 py-4 font-medium cursor-pointer text-primary;
+  }
+
+  .hdr-sm-title {
+    @apply w-full p-4 self-center text-base font-medium cursor-pointer text-primary;
+  }
+
+  .hdr-sm-btn svg {
+    @apply w-6;
+  }
+
+  .hdr-cnt-theme-btn {
+    @apply w-8 h-8  p-1 ml-4 mr-4 text-primary cursor-pointer;
+  }
+
+  .btn {
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-base font-medium;
+  }
+
+  .btn-primary {
+    @apply text-white bg-black dark:text-black dark:bg-white;
+  }
+
+  .btn-large {
+    @apply w-full px-4 py-2;
+  }
+
+  .page-heading {
+    @apply text-3xl sm:text-4xl text-display leading-9 sm:leading-10 md:text-5xl md:leading-14 !important;
+  }
+
+  .link-unstyled {
+    @apply w-auto text-primary font-medium  md:hover:transition-colors md:hover:text-gray-500 md:dark:hover:text-gray-300  !important;
+  }
+
+  .primary-link {
+    @apply w-auto text-blue-600 font-medium dark:text-blue-400 md:hover:transition-colors md:hover:text-blue-400 md:dark:hover:text-blue-300 !important;
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-1  py-12 md:gap-12 m-auto md:items-start md:grid-cols-3;
+  }
+
+  .footer-column {
+    @apply flex flex-col items-start  space-y-8 py-4 px-2 md:items-center;
+  }
+
+  .filter-blur {
+    backdrop-filter: saturate(180%) blur(4px);
+  }
+
+  .filter-saturate {
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
+
+  .clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .clamp-2 {
+    -webkit-line-clamp: 2;
+  }
+
+  .clamp-3 {
+    -webkit-line-clamp: 3;
+  }
+
+  .clamp-4 {
+    -webkit-line-clamp: 4;
+  }
+
+  .clamp-5 {
+    -webkit-line-clamp: 5;
+  }
+
+  .heading-default {
+    @apply text-3xl md:text-4xl text-display;
+  }
+
+  span.icon.icon-link {
+    @apply cursor-pointer text-tertiary !font-normal opacity-0;
+    font-size: inherit;
+    padding-left: 0.375em;
+    transition: all 150ms linear;
+  }
+
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  span.icon.icon-link:hover,
+  span.icon.icon-link:focus {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  span.icon.icon-link:hover,
+  span.icon.icon-link:active {
+    outline-width: 0 !important;
+  }
+
+  span.icon.icon-link:after {
+    content: '#';
+  }
+
+  h1:hover span.icon.icon-link,
+  h2:hover span.icon.icon-link,
+  h3:hover span.icon.icon-link,
+  h4:hover span.icon.icon-link,
+  h1:focus span.icon.icon-link,
+  h2:focus span.icon.icon-link,
+  h3:focus span.icon.icon-link,
+  h4:focus span.icon.icon-link {
+    @apply opacity-100;
+  }
+
+  .prose p {
+    @apply break-words !important;
+    word-break: break-word !important;
+  }
+
+  .prose img {
+    @apply w-full rounded-md !important;
+  }
+  .prose hr {
+    @apply my-[2em]  md:my-[2.1em] !important;
   }
 }
