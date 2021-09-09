@@ -1,8 +1,9 @@
-import { useMemo } from 'react'
+import * as React from 'react'
 
 import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
+import Card from '@/components/Card'
 import Post from '@/components/Layouts/Post'
 import MDXComponents from '@/components/MDXComponents'
 import { getAllFilesName, getFileBySlug } from '@/lib/mdx'
@@ -18,7 +19,10 @@ export default function MDXPost({ post, parentPost }) {
   const { code, frontMatter } = post
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
-  const Component = useMemo(() => getMDXComponent(code), [code])
+  const Component = React.useMemo(
+    () => getMDXComponent(code, { Card: Card }),
+    [code]
+  )
   return (
     <Post frontMatter={frontMatter} parentPost={parentPost}>
       <Component components={MDXComponents as ComponentMap} />

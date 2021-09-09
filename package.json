@@ -25,7 +25,10 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.4",
+    "esbuild": "^0.12.25",
     "gray-matter": "^4.0.3",
+    "image-size": "^1.0.0",
     "mdx-bundler": "^6.0.1",
     "next": "^11.1.2",
     "next-themes": "^0.0.15",
@@ -34,33 +37,28 @@
     "preact": "^10.5.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rehype-autolink-headings": "^6.1.0",
+    "rehype-code-titles": "^1.0.3",
+    "rehype-prism-plus": "^1.0.0",
+    "rehype-slug": "^5.0.0",
+    "remark-gfm": "^2.0.0",
+    "rss": "^1.2.2",
     "sharp": "^0.29.1",
     "swr": "^1.0.0",
-    "tailwindcss": "^2.2.14"
+    "tailwindcss": "^2.2.14",
+    "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
-    "autoprefixer": "^10.3.4",
-    "esbuild": "^0.12.25",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "globby": "^12.0.2",
-    "image-size": "^1.0.0",
     "prettier": "^2.3.2",
-    "rehype": "^12.0.0",
-    "rehype-autolink-headings": "^6.1.0",
-    "rehype-code-titles": "^1.0.3",
-    "rehype-prism-plus": "^0.0.6",
-    "rehype-slug": "^5.0.0",
-    "remark-gfm": "2.0.0",
-    "rss": "^1.2.2",
-    "typescript": "^4.4.2",
-    "unified": "^10.1.0",
-    "unist-util-visit": "4.0.0"
+    "typescript": "^4.4.2"
   },
   "license": "MIT"
 }

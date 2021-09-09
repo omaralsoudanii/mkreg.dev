@@ -88,20 +88,8 @@
     @apply w-full px-4 py-2;
   }
 
-  .text-h1 {
-    @apply text-3xl md:text-4xl text-display lg:text-7xl leading-none !important;
-  }
-
-  .text-h2 {
-    @apply text-3xl md:text-4xl text-display lg:text-6xl leading-none  !important;
-  }
-
-  .text-h3 {
-    @apply text-3xl md:text-4xl text-display lg:text-5xl leading-none !important;
-  }
-
   .page-heading {
-    @apply text-3xl md:text-4xl text-display leading-9 md:leading-10 lg:text-5xl lg:leading-14 !important;
+    @apply text-3xl sm:text-4xl text-display leading-9 sm:leading-10 md:text-5xl md:leading-14 !important;
   }
 
   .link-unstyled {
