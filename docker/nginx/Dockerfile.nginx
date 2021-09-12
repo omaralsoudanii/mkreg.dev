@@ -1,4 +1,4 @@
-ARG NGINX_VERSION=1.21.2
+ARG NGINX_VERSION=1.21.3
 
 # headers-more-nginx module repo latest commit
 # https://github.com/openresty/headers-more-nginx-module.git
