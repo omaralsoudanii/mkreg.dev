@@ -13,7 +13,7 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 import mdxImage from '@/lib/mdxImage'
-import { formatSlug, slugify } from '@/lib/utils'
+import { FormatDate, formatSlug, slugify } from '@/lib/utils'
 
 const root = join(process.cwd(), 'src')
 const loc = join(root, 'data')
@@ -97,6 +97,8 @@ export async function getFileBySlug(type: string, slug?) {
     code,
     frontMatter: {
       slug: slug ? formatSlug(slug) : type,
+      date: FormatDate(frontmatter.date),
+      lastmod: FormatDate(frontmatter.lastmod),
       ...frontmatter,
     },
   }
@@ -124,6 +126,7 @@ export async function getAllFilesFrontMatter(type: string) {
     return [
       {
         ...data,
+        date: FormatDate(data.date),
         slug: formatSlug(postSlug),
       },
       ...allPosts,

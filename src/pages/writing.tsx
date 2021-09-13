@@ -4,7 +4,6 @@ import Link from 'next/link'
 import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { FormatDate } from '@/lib/utils'
 
 /**
  * Main writing page
@@ -57,9 +56,9 @@ export const getStaticProps: GetStaticProps = async () => {
   ).map((post) => {
     return {
       title: post.title,
-      date: FormatDate(post.date),
+      date: post.date,
       summary: post.summary,
-      slug: post.slug,
+      slug: encodeURIComponent(post.slug),
     }
   })
 

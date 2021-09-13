@@ -1,15 +1,10 @@
 import * as React from 'react'
 
-import useSWR from 'swr'
-
+import Views from '../Views'
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
-import Fetcher from '@/lib/fetcher'
-import { FormatDate, slugify } from '@/lib/utils'
-
-const fetcher = (slug: string) =>
-  fetch(`/api/views/${slug}`).then((r) => r.json())
+import { slugify } from '@/lib/utils'
 
 export default function PostLayout({
   children,
@@ -20,21 +15,22 @@ export default function PostLayout({
 }) {
   const { date, title, tags, lastmod, summary, slug } = frontMatter
 
-  const encodedSlug = encodeURIComponent(slug)
-  const { data } = useSWR(encodedSlug, fetcher)
-  const views = new Number(data?.total)
-
   React.useEffect(() => {
-    Fetcher(`/api/views/${encodedSlug}`, {
+    fetch(`/api/views/${slug}`, {
       method: 'POST',
     })
-  }, [encodedSlug])
+  }, [slug])
 
   const fullPath =
     parentPost && parentPost?.path
       ? parentPost.path.concat(`/${slug}`)
       : `writing/${slug}`
 
+  const TwitterUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
+    `${Environment.siteUrl}/${fullPath}`
+  )}&src=typed_query`
+
+  const GithubUrl = `${Environment.social.github}/mkreg.dev/edit/main/src/data/${fullPath}.mdx`
   const meta = {
     title: `Omar Alsoudani - ${title}`,
     description: summary,
@@ -56,10 +52,10 @@ export default function PostLayout({
       <header className="pb-4 md:pb-8">
         <div className="space-y-3 text-center">
           <p className="text-base md:text-lg  text-tertiary">
-            <span className="px-2 !font-medium">{`${FormatDate(date)}`}</span>
+            <span className="px-2 !font-medium">{`${date}`}</span>
             {`    •    `}
             <span className="px-2 !font-medium">
-              {views > 0 ? `${views.toLocaleString()} views` : '––– views'}
+              <Views encodedSlug={slug} />
             </span>
           </p>
           <h1 className="page-heading mb-4 md:mb-8">{title}</h1>
@@ -100,7 +96,7 @@ export default function PostLayout({
               </div>
               {lastmod && (
                 <h2 className="!font-medium !tracking-normal  text-tertiary text-base py-1">
-                  {`Modified ${FormatDate(lastmod)}`}
+                  {`Modified ${lastmod}`}
                 </h2>
               )}
             </div>
@@ -111,20 +107,12 @@ export default function PostLayout({
             </h2>
             <div className="flex md:block justify-between">
               <p className="py-1">
-                <NextLink
-                  className="primary-link text-base"
-                  href={`${Environment.social.github}/mkreg.dev/edit/main/src/data/${fullPath}.mdx`}
-                >
+                <NextLink className="primary-link text-base" href={GithubUrl}>
                   {'Edit on GitHub'}
                 </NextLink>
               </p>
               <p className="py-1">
-                <NextLink
-                  href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-                    `${Environment.siteUrl}/${fullPath}`
-                  )}&src=typed_query`}
-                  className="primary-link text-base"
-                >
+                <NextLink href={TwitterUrl} className="primary-link text-base">
                   {'Discuss on Twitter'}
                 </NextLink>
               </p>
