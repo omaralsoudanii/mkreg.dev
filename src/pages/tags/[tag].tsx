@@ -5,7 +5,7 @@ import PostsList from '@/components/Layouts/PostsList'
 import Seo from '@/components/Seo'
 import { Environment } from '@/lib/environment'
 import { getAllFilesFrontMatter, getAllTags } from '@/lib/mdx'
-import { FormatDate, slugify } from '@/lib/utils'
+import { slugify } from '@/lib/utils'
 
 /**
  *
@@ -61,9 +61,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .map((post) => {
       return {
         title: post.title,
-        date: FormatDate(post.date),
+        date: post.date,
         summary: post.summary,
-        slug: post.slug,
+        slug: encodeURIComponent(post.slug),
         tags: post.tags,
       }
     })

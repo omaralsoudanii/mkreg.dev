@@ -3,7 +3,6 @@ import * as React from 'react'
 import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-import Card from '@/components/Card'
 import Post from '@/components/Layouts/Post'
 import MDXComponents from '@/components/MDXComponents'
 import {
@@ -23,10 +22,7 @@ export default function MDXPost({ post, prev, next }) {
   const { code, frontMatter } = post
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
-  const Component = React.useMemo(
-    () => getMDXComponent(code, { Card: Card }),
-    [code]
-  )
+  const Component = React.useMemo(() => getMDXComponent(code), [code])
   return (
     <Post frontMatter={frontMatter} prev={prev} next={next}>
       <Component components={MDXComponents as ComponentMap} />
@@ -45,14 +41,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (prev) prev.path = '/writing'
   if (next) next.path = '/writing'
   const post = await getFileBySlug('writing', params.slug)
+  post.frontMatter.slug = encodeURIComponent(post.frontMatter.slug)
   return {
     props: {
       post,
       prev: prev
-        ? { slug: prev.slug, path: prev.path, title: prev.title }
+        ? {
+            slug: encodeURIComponent(prev.slug),
+            path: prev.path,
+            title: prev.title,
+          }
         : null,
       next: next
-        ? { slug: next.slug, path: next.path, title: next.title }
+        ? {
+            slug: encodeURIComponent(next.slug),
+            path: next.path,
+            title: next.title,
+          }
         : null,
     },
   }
