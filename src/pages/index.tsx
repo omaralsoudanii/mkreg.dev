@@ -19,7 +19,7 @@ const Home = () => {
       </header>
       <div>
         <p>
-          This is my personal site. Where I'm writing notes, Writing about some
+          This is my personal site. Where I'm writing notes, writing about some
           topics, and open-source projects I create and share them here. Some
           sections could serve as a playground for me to experiment with some
           ideas, proof of concepts, or anything comes to mind.
