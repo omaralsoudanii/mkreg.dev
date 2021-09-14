@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout
       - name: SSH Remote Build
         uses: appleboy/ssh-action@master
         with:
@@ -19,8 +17,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script_stop: true
-          script: |
-            whoami
-            ls -al
+          use_insecure_cipher: true
+          script: whoami
 
