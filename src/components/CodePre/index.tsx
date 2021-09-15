@@ -26,12 +26,7 @@ const Pre = (props: {
   }
 
   return (
-    <div
-      ref={textInput}
-      onMouseEnter={onEnter}
-      onMouseLeave={onExit}
-      className="relative"
-    >
+    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative">
       {hovered && (
         <button
           aria-label="Copy code"
@@ -49,9 +44,7 @@ const Pre = (props: {
             stroke="currentColor"
             fill="none"
             className={
-              copied
-                ? 'text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300'
+              copied ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
             }
           >
             {copied ? (

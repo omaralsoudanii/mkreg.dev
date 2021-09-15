@@ -19,17 +19,16 @@ const Home = () => {
       </header>
       <div>
         <p>
-          This is my personal site. Where I'm writing notes, writing about some
-          topics, and open-source projects I create and share them here. Some
-          sections could serve as a playground for me to experiment with some
-          ideas, proof of concepts, or anything comes to mind.
+          This is my personal site. Where I'm writing notes, writing about some topics, and
+          open-source projects I create and share them here. Some sections could serve as a
+          playground for me to experiment with some ideas, proof of concepts, or anything comes to
+          mind.
         </p>
         <p className="!py-2">
-          I'm aiming to keep it simple. It's still a work in progress! however
-          I'll try to balance between adding content and enhancing the site
-          itself. If you have a project in mind that aligns with my skills and
-          would like a chat. You can reach me via any of the links provided in
-          the footer, I'm also available for open-source projects!
+          I'm aiming to keep it simple. It's still a work in progress! however I'll try to balance
+          between adding content and enhancing the site itself. If you have a project in mind that
+          aligns with my skills and would like a chat. You can reach me via any of the links
+          provided in the footer, I'm also available for open-source projects!
         </p>
         <p className="self-start py-1">
           <Link href="/about">

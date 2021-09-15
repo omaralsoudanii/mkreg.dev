@@ -30,11 +30,10 @@ export default function Writing({ posts }) {
           <h1 className="page-heading !mb-4">Writing</h1>
         </header>
         <p>
-          Stuff I write about programming and software development with a slight
-          hint of salt. Please note that the list ordered by newest published
-          articles, however some times I modify or update some info on older
-          articles, I'll probably make some sort of filteration when I have
-          time.
+          Stuff I write about programming and software development with a slight hint of salt.
+          Please note that the list ordered by newest published articles, however some times I
+          modify or update some info on older articles, I'll probably make some sort of filteration
+          when I have time.
         </p>
         <p className="text-right">
           <Link href="/tags">
@@ -51,16 +50,16 @@ export default function Writing({ posts }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const WritingData = await getAllFilesFrontMatter('writing')
-  const posts = WritingData.sort(
-    (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
-  ).map((post) => {
-    return {
-      title: post.title,
-      date: post.date,
-      summary: post.summary,
-      slug: encodeURIComponent(post.slug),
+  const posts = WritingData.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))).map(
+    (post) => {
+      return {
+        title: post.title,
+        date: post.date,
+        summary: post.summary,
+        slug: encodeURIComponent(post.slug),
+      }
     }
-  })
+  )
 
   return {
     props: {

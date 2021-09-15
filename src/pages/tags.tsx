@@ -29,8 +29,8 @@ export default function Tags({ sortedData }) {
           <h1 className="page-heading !mb-4">Tags</h1>
         </header>
         <p>
-          Writing tags sorted alphabetically then by how many times each tag has
-          been added to my articles
+          Writing tags sorted alphabetically then by how many times each tag has been added to my
+          articles
         </p>
         <p className="text-right">
           <Link href="/writing">
@@ -42,9 +42,7 @@ export default function Tags({ sortedData }) {
         {sortedData.map((item: { character: string; characterTags: any[] }) => (
           <div key={item.character}>
             <header className="w-full border-b border-gray-300 dark:border-gray-700">
-              <h2 className="!my-2 md:!my-3 !font-semibold">
-                {item.character}
-              </h2>
+              <h2 className="!my-2 md:!my-3 !font-semibold">{item.character}</h2>
             </header>
 
             <div className="flex space-x-6 flex-row !my-2 md:!my-3">
@@ -73,9 +71,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // dont ask..., it's probably the worst implementation done here
   // but who cares this runs at build time (yeah yeah.. I'll revisit this if i use ISR)
   // see https://mkreg.dev/tags
-  const sortedTagsChars = Object.keys(charSlice).sort((a, b) =>
-    a.localeCompare(b)
-  )
+  const sortedTagsChars = Object.keys(charSlice).sort((a, b) => a.localeCompare(b))
 
   const sortedData = []
   const uniqChars = sortedTagsChars.filter(

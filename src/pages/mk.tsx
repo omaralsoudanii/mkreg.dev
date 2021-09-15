@@ -13,10 +13,7 @@ export default function MK() {
   }
 
   return (
-    <article
-      id="skip"
-      className="prose dark:prose-dark lg:prose-lg w-full !max-w-none mx-auto"
-    >
+    <article id="skip" className="prose dark:prose-dark lg:prose-lg w-full !max-w-none mx-auto">
       <Seo data={meta} />
       <div className="!space-y-4 md:!space-y-8">
         <header className="my-4 md:my-16">
@@ -26,8 +23,8 @@ export default function MK() {
         </header>
         <Image src={TheSulatn} alt="The Sultan of swing" />
         <p>
-          Congrats on finding this page! Let me introduce you to my favorite
-          human being in the universe.
+          Congrats on finding this page! Let me introduce you to my favorite human being in the
+          universe.
         </p>
         <header className="my-4 md:my-16">
           <h1 className="md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none">
@@ -35,9 +32,9 @@ export default function MK() {
           </h1>
         </header>
         <p>
-          If you have ever wondered why the hell I have this weird domain name
-          rather than something closer to my name (for SEO blah...), then I can
-          tell you that the acronym—<strong>MKREG</strong>—is based on:
+          If you have ever wondered why the hell I have this weird domain name rather than something
+          closer to my name (for SEO blah...), then I can tell you that the acronym—
+          <strong>MKREG</strong>—is based on:
         </p>
         <p className="!font-semibold text-center">
           <a
@@ -51,14 +48,13 @@ export default function MK() {
         </p>
 
         <p>
-          If you got the gist of the video then I think we can agree that
-          everyone has his own <strong>"Red Electric Guitar"</strong> in one way
-          or another.
+          If you got the gist of the video then I think we can agree that everyone has his own{' '}
+          <strong>"Red Electric Guitar"</strong> in one way or another.
         </p>
         <p>
-          Seeing this beautiful genuine soul getting his guitar is always a
-          pleasure that puts a smile on my face. So there you go, now you have
-          the answer to the ultimate question of life.
+          Seeing this beautiful genuine soul getting his guitar is always a pleasure that puts a
+          smile on my face. So there you go, now you have the answer to the ultimate question of
+          life.
         </p>
 
         <Image src={MKPic} alt="Mark Knopfler" />
@@ -66,8 +62,8 @@ export default function MK() {
           This is a biography about
           <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>
           and <strong>Dire Straits</strong>. Built using{' '}
-          <strong>Hugo static sites generator</strong>, open-sourced and hosted
-          on <strong>Vercel</strong>
+          <strong>Hugo static sites generator</strong>, open-sourced and hosted on{' '}
+          <strong>Vercel</strong>
         </p>
         <p className="!font-semibold text-center">
           <a

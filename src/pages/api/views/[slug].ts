@@ -2,10 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getViews, insertView } from '@/lib/planetscale'
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse
-): Promise<void> => {
+const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   try {
     if (req.method === 'POST') {
       const result = await insertView(req.query.slug)

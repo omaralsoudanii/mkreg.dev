@@ -11,8 +11,7 @@ export default function mdxImage(): (tree: Node) => void {
       tree,
       // only visit p tags that contain an img element
       (node: Parent): node is Parent =>
-        node.type === 'paragraph' &&
-        node.children.some((n) => n.type === 'image'),
+        node.type === 'paragraph' && node.children.some((n) => n.type === 'image'),
       (node: Parent) => {
         type ImageNode = Parent & {
           url: string
@@ -20,9 +19,7 @@ export default function mdxImage(): (tree: Node) => void {
           name: string
           attributes: (Literal & { name: string })[]
         }
-        const imageNode = node.children.find(
-          (n) => n.type === 'image'
-        ) as ImageNode
+        const imageNode = node.children.find((n) => n.type === 'image') as ImageNode
 
         if (existsSync(`${process.cwd()}/public${imageNode.url}`)) {
           const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)

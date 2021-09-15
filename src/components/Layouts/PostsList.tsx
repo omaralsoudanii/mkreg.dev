@@ -12,11 +12,7 @@ type frontMatter = {
 export default function PostsList({ posts, href }) {
   return posts.map((frontMatter: frontMatter) => {
     return (
-      <Link
-        key={frontMatter.slug}
-        href={`${href}/${frontMatter.slug}`}
-        passHref
-      >
+      <Link key={frontMatter.slug} href={`${href}/${frontMatter.slug}`} passHref>
         <a className="inline-block my-4 py-2 md:my-6 w-full">
           <div className="w-full">
             <div className="flex flex-col justify-between md:flex-row md:items-center">

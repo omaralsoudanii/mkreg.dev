@@ -42,12 +42,9 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
               const content = await fs.readFile(join(p, name))
               const frontmatter = matter(content)
 
-              const resolvedDir =
-                dir === '' ? dir.concat('/') : '/'.concat(dir, '/')
+              const resolvedDir = dir === '' ? dir.concat('/') : '/'.concat(dir, '/')
 
-              const url = name
-                ? siteUrl.concat(resolvedDir, name.replace(/\.mdx?/, ''))
-                : siteUrl
+              const url = name ? siteUrl.concat(resolvedDir, name.replace(/\.mdx?/, '')) : siteUrl
 
               feed.item({
                 title: frontmatter.data.title ?? ogTitle,

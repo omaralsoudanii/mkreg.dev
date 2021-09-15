@@ -30,11 +30,10 @@ export default function Tag({ posts, tag }) {
           <h1 className="page-heading !mb-0">{tag}</h1>
         </header>
         <p>
-          Topics, guides and thoughts I wrote about <strong>{tag}</strong> or
-          related to it. Please note that the list ordered by newest published
-          articles, however some times I modify or update some info on older
-          articles, I'll probably make some sort of filteration when I have
-          time.
+          Topics, guides and thoughts I wrote about <strong>{tag}</strong> or related to it. Please
+          note that the list ordered by newest published articles, however some times I modify or
+          update some info on older articles, I'll probably make some sort of filteration when I
+          have time.
         </p>
         <p className="self-end">
           <Link href="/writing">
@@ -55,9 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allPosts = await getAllFilesFrontMatter('writing')
 
   const filteredPosts = allPosts
-    .filter((post) =>
-      post.tags.map((t: string) => slugify(t)).includes(params.tag)
-    )
+    .filter((post) => post.tags.map((t: string) => slugify(t)).includes(params.tag))
     .map((post) => {
       return {
         title: post.title,
@@ -69,9 +66,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     })
 
   if (filteredPosts.length) {
-    tag = filteredPosts[0].tags.find((t: string) =>
-      slugify(t).includes(params.tag as string)
-    )
+    tag = filteredPosts[0].tags.find((t: string) => slugify(t).includes(params.tag as string))
   }
 
   return {

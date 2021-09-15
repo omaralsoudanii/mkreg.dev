@@ -11,24 +11,15 @@ export const unSlugify = (slug: string) =>
   slug &&
   slug
     .replace(/\-/g, ' ')
-    .replace(
-      /\w\S*/g,
-      (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-    )
+    .replace(/\w\S*/g, (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
 
-export const dateSortDesc = (
-  a: number | string | Date,
-  b: number | string | Date
-): number => {
+export const dateSortDesc = (a: number | string | Date, b: number | string | Date): number => {
   if (a > b) return -1
   if (a < b) return 1
   return 0
 }
 
-export const dateSortAsc = (
-  a: number | string | Date,
-  b: number | string | Date
-): number => {
+export const dateSortAsc = (a: number | string | Date, b: number | string | Date): number => {
   if (a > b) return 1
   if (a < b) return -1
   return 0

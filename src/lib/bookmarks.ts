@@ -39,7 +39,7 @@ export const Bookmarks = async () => [
   },
   {
     title: `CDN Planet`,
-    desc: `A site dedicated on providing a comprehensive―facts, figures, and tools―to help you select the right CDN`,
+    desc: `A site dedicated on providing a comprehensive – facts, figures, and tools – to help you select the right CDN`,
     url: `https://www.cdnplanet.com/`,
     Icon: 'Mk',
   },
@@ -187,4 +187,4 @@ const Icons = {
   Twilio,
 }
 
-export const BookmarkIcon = (icon: string) => Icons[icon]
+export const BookmarkIcon = (icon: string): any => Icons[icon]

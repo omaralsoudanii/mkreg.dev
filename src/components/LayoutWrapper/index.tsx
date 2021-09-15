@@ -9,7 +9,7 @@ const LayoutWrapper = ({ children }) => {
         Skip to content
       </a>
       <div className="flex flex-col justify-between min-h-screen">
-        <header className="md:flex py-12 mb-6 md:items-center md:justify-end">
+        <header className="md:flex py-12 mb-4 md:items-center md:justify-end">
           <Header />
         </header>
         <main className="mb-auto">{children}</main>

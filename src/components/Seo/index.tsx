@@ -78,11 +78,7 @@ export default function Seo({ data }) {
 
       <meta key="description" name="description" content={meta.description} />
       <meta key="ogDesc" property="og:description" content={meta.description} />
-      <meta
-        key="twDesc"
-        name="twitter:description"
-        content={meta.description}
-      />
+      <meta key="twDesc" name="twitter:description" content={meta.description} />
 
       <meta key="type" property="og:type" content={meta.type} />
       <meta property="og:locale" content={meta.locale} />

@@ -22,9 +22,7 @@ export default function PostLayout({
   }, [slug])
 
   const fullPath =
-    parentPost && parentPost?.path
-      ? parentPost.path.concat(`/${slug}`)
-      : `writing/${slug}`
+    parentPost && parentPost?.path ? parentPost.path.concat(`/${slug}`) : `writing/${slug}`
 
   const TwitterUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `${Environment.siteUrl}/${fullPath}`
@@ -43,10 +41,7 @@ export default function PostLayout({
   }
 
   return (
-    <article
-      id="skip"
-      className="md:divide-y md:divide-gray-200 md:dark:divide-gray-700"
-    >
+    <article id="skip" className="md:divide-y md:divide-gray-200 md:dark:divide-gray-700">
       <Seo data={meta} />
 
       <header className="pb-4 md:pb-8">
@@ -95,9 +90,7 @@ export default function PostLayout({
                 </p>
               </div>
               {lastmod && (
-                <h2 className="!font-medium !tracking-normal  text-tertiary text-base py-1">
-                  {`Modified ${lastmod}`}
-                </h2>
+                <h2 className="!font-medium !tracking-normal  text-tertiary text-base py-1">{`Modified ${lastmod}`}</h2>
               )}
             </div>
           </div>
@@ -145,10 +138,7 @@ export default function PostLayout({
                   <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                     Previous Article
                   </h2>
-                  <NextLink
-                    className="text-base primary-link"
-                    href={`${prev.path}/${prev.slug}`}
-                  >
+                  <NextLink className="text-base primary-link" href={`${prev.path}/${prev.slug}`}>
                     {prev.title}
                   </NextLink>
                 </div>
@@ -158,10 +148,7 @@ export default function PostLayout({
                   <h2 className="text-base py-1 !font-medium !tracking-normal text-tertiary">
                     Next Article
                   </h2>
-                  <NextLink
-                    className="primary-link text-base"
-                    href={`${next.path}/${next.slug}`}
-                  >
+                  <NextLink className="primary-link text-base" href={`${next.path}/${next.slug}`}>
                     {next.title}
                   </NextLink>
                 </div>
@@ -173,10 +160,7 @@ export default function PostLayout({
               <h2 className="text-base py-1 !tracking-normal !font-medium  text-tertiary">
                 Continue reading
               </h2>
-              <NextLink
-                className="text-base primary-link"
-                href={`/${parentPost.path}`}
-              >
+              <NextLink className="text-base primary-link" href={`/${parentPost.path}`}>
                 {parentPost.title}
               </NextLink>
             </div>

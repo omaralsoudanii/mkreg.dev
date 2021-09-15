@@ -12,8 +12,6 @@ const NextImage = ({
   height: number
   alt?: string
   layout?: 'responsive' | 'fill' | 'fixed' | 'intrinsic'
-}): JSX.Element => (
-  <Image layout={layout} alt={alt} src={src} width={width} height={height} />
-)
+}): JSX.Element => <Image layout={layout} alt={alt} src={src} width={width} height={height} />
 
 export default NextImage
