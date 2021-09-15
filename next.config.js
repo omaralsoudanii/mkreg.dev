@@ -7,7 +7,6 @@ module.exports = {
       use: [
         {
           loader: '@svgr/webpack',
-          options: { memo: true },
         },
       ],
     })
