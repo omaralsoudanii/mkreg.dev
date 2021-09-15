@@ -87,10 +87,7 @@ function SvgHaproxy(props: React.SVGProps<SVGSVGElement>) {
         </g>
       </symbol>
       <defs>
-        <path
-          id="Haproxy_svg__B"
-          d="M58.237 18.332l.013-1.88 1.916.013-.013 1.88z"
-        />
+        <path id="Haproxy_svg__B" d="M58.237 18.332l.013-1.88 1.916.013-.013 1.88z" />
       </defs>
     </svg>
   )

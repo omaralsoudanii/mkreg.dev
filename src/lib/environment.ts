@@ -1,17 +1,11 @@
 // Environment variables that can be used to override the defaults
-const resolveBool = (
-  value: string | undefined,
-  defaultValue: boolean
-): boolean => {
+const resolveBool = (value: string | undefined, defaultValue: boolean): boolean => {
   if (!value) return defaultValue
   if (value === 'true') return true
   return false
 }
 
-const resolveNumber = (
-  value: string | undefined,
-  defaultValue: number
-): number => {
+const resolveNumber = (value: string | undefined, defaultValue: number): number => {
   if (!value) return defaultValue
   return parseInt(value, 10)
 }
@@ -48,8 +42,7 @@ export const Environment: EnvironmentProps = {
     youtube:
       process.env.YOUTUBE_URL ??
       'https://www.youtube.com/channel/UCiYs0vL7tkkCK4yF_YhfyEQ/playlists',
-    linkedin:
-      process.env.LINKEDIN_URL ?? 'https://www.linkedin.com/in/omaralsoudani',
+    linkedin: process.env.LINKEDIN_URL ?? 'https://www.linkedin.com/in/omaralsoudani',
     twitter: process.env.TWITTER_URL ?? 'https://twitter.com/omaralsoudani',
   },
   isr: {

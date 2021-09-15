@@ -42,9 +42,10 @@ export default function Header() {
           href: '/',
           label: 'Home',
         }
-      : RoutesMetadata.filter((r) => r.href !== '/').find((r) =>
-          routerName.includes(r.href)
-        ) ?? { href: routerPath, label: 'MK' }
+      : RoutesMetadata.filter((r) => r.href !== '/').find((r) => routerName.includes(r.href)) ?? {
+          href: routerPath,
+          label: 'MK',
+        }
 
   return (
     <React.Fragment>
@@ -88,9 +89,7 @@ export default function Header() {
         <div className="hidden md:block">
           {RoutesMetadata.map((link) => (
             <Link key={link.label} href={link.href}>
-              <a className="font-medium link-unstyled md:my-2 md:py-2 mx-2 md:px-2">
-                {link.label}
-              </a>
+              <a className="font-medium link-unstyled md:my-2 md:py-2 mx-2 md:px-2">{link.label}</a>
             </Link>
           ))}
         </div>

@@ -36,12 +36,7 @@ export async function getFileBySlug(type: string, slug?) {
 
   // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
   if (process.platform === 'win32') {
-    process.env.ESBUILD_BINARY_PATH = join(
-      process.cwd(),
-      'node_modules',
-      'esbuild',
-      'esbuild.exe'
-    )
+    process.env.ESBUILD_BINARY_PATH = join(process.cwd(), 'node_modules', 'esbuild', 'esbuild.exe')
   } else {
     process.env.ESBUILD_BINARY_PATH = join(
       process.cwd(),
@@ -57,11 +52,7 @@ export async function getFileBySlug(type: string, slug?) {
       // this is the recommended way to add custom remark/rehype plugins:
       // The syntax might look weird, but it protects you in case we add/remove
       // plugins in the future.
-      options.remarkPlugins = [
-        ...(options.remarkPlugins ?? []),
-        remarkGfm,
-        mdxImage,
-      ]
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm, mdxImage]
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
@@ -109,8 +100,7 @@ export async function getAllFilesFrontMatter(type: string) {
 
   return files.reduce((allPosts, postSlug) => {
     const source =
-      existsSync(join(loc, type, postSlug)) &&
-      !statSync(join(loc, type, postSlug)).isDirectory()
+      existsSync(join(loc, type, postSlug)) && !statSync(join(loc, type, postSlug)).isDirectory()
         ? readFileSync(join(loc, type, postSlug), 'utf-8')
         : null
 
@@ -143,8 +133,7 @@ export async function getAllTags(type: string) {
   // Iterate through each post, putting all found tags into `tags`
   files.forEach((file) => {
     const source =
-      existsSync(join(loc, type, file)) &&
-      !statSync(join(loc, type, file)).isDirectory()
+      existsSync(join(loc, type, file)) && !statSync(join(loc, type, file)).isDirectory()
         ? readFileSync(join(loc, type, file), 'utf-8')
         : null
     if (source) {

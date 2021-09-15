@@ -5,4 +5,5 @@ module.exports = {
   singleQuote: true,
   jsxSingleQuote: false,
   arrowParens: 'always',
+  printWidth: 100,
 }

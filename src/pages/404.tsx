@@ -15,19 +15,16 @@ export default function NotFound() {
         <div className="py-4 md:!py-0 !my-0 max-w-lg">
           <h1 className="!my-0">I tried but didn't find this page</h1>
           <p>
-            It seems that you're looking for something that used to exist, or
-            you spelled something wrong.
+            It seems that you're looking for something that used to exist, or you spelled something
+            wrong.
           </p>
           <p>
-            Don't feel bad about it, this happens to me all the time, just
-            imagine you're trying to find some solution for a bug in PHP v5.6
-            that exists since 2007, sadly the only link is a freaking 404 forum
-            thread.
+            Don't feel bad about it, this happens to me all the time, just imagine you're trying to
+            find some solution for a bug in PHP v5.6 that exists since 2007, sadly the only link is
+            a freaking 404 forum thread.
           </p>
           <Link href="/" passHref>
-            <button className="w-full btn btn-primary btn-large">
-              Back to Homepage
-            </button>
+            <button className="w-full btn btn-primary btn-large">Back to Homepage</button>
           </Link>
         </div>
       </div>

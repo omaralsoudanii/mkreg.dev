@@ -24,10 +24,7 @@ export default function Footer() {
           <NextLink href={Environment.social.twitter} className="link-unstyled">
             Twitter
           </NextLink>
-          <NextLink
-            href={Environment.social.linkedin}
-            className="link-unstyled"
-          >
+          <NextLink href={Environment.social.linkedin} className="link-unstyled">
             LinkedIn
           </NextLink>
         </div>

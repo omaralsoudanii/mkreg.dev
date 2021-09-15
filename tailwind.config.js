@@ -1,18 +1,15 @@
-const colors = require('tailwindcss/colors')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/lib/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/data/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
-      spacing: {
-        '9/16': '56.25%',
-      },
       fontFamily: {
         mono: ['"JetBrains Mono"', '"IBM Plex Mono"', ...fontFamily.mono],
         sans: ['Inter', ...fontFamily.sans],
@@ -30,10 +27,6 @@ module.exports = {
           primary: 'rgb(22, 27, 34)', // #161b22
           secondary: 'rgb(29, 34, 41)', // #1d2229-#181D24
           tertiary: 'rgb(40, 45, 52)', // #282d34
-        },
-        gray: {
-          ...colors.coolGray,
-          50: '#f6f8fa',
         },
       },
       typography: (theme) => ({
