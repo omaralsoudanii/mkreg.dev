@@ -3,13 +3,13 @@ title: 'NGINX Treats'
 date: '2021-07-02'
 lastmod: '2021-08-17'
 summary: "Overview that covers useful NGINX tips – enhancements and best practices I've learned by using it for years"
-tags: ['NGINX','Performance']
+tags: ['NGINX', 'Performance']
 image: '/static/images/writing/nginx-treats/nginx-mkreg.png'
 ---
 
-import Card from '@/components/Card/index.tsx';
-import Nginx from '@/components/Icons/Nginx';
-import Github from '@/components/Icons/Github';
+import Card from '@/components/Card/index.tsx'
+import Nginx from '@/components/Icons/Nginx'
+import Github from '@/components/Icons/Github'
 
 ![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-mkreg.png)
 
@@ -25,44 +25,44 @@ Although NGINX can be used as a load balancer (layer 4), the content here only c
 
 ## Table of contents
 
-1.  [Why do I need this?](#why-do-i-need-this)
-2.  [Introduction](#introduction)
-3.  [Tips](#tips)
-4.  [Performance](#performance)
-5.  [Gotchas](#gotchas)
-6.  [Conclusion](#conclusion)
+- [Introduction](#introduction)
+- [Why do I need this?](#why-do-i-need-this)
+- [Decision making](#decision-making)
+- [Performance](#performance)
+- [Gotchas](#gotchas)
+- [Conclusion](#conclusion)
+
+## Introduction
+
+This is not a comprehensive list of everything about NGINX – for that always refer to the documentation.
+
+This is more like pieces of knowledge I learned through trial and error, ranging from common enhancements to some gotchas and correct usage of some features.
+
+Keep in mind this is based on my experience, so it's highly advised to test things and make sure it's stable before using it in a production server.
+
+> The article is kinda long, however, I focused on separating things into sections where each section doesn't depend on others (to some degree). So pick any section and read it at your own pace.
 
 ## Why do I need this?
 
 Your webserver(s) is one the most crucial part of your infrastructure stack, even a small enhancement could have a large impact on your product.
 
-Although it’s NGINX specific – web servers tend to share some common behavior and patterns. 
+Although it’s NGINX specific – web servers tend to share some common behavior and patterns.
 
 Reading this will provide you with different ideas when building and tuning your server whether you are using NGINX or something different.
 
-## Introduction
-
-This is not a comprehensive list of everything about NGINX – for that always refer to the documentation. 
-
-This is more like pieces of knowledge I learned through trial and error, ranging from common enhancements to some gotchas and correct usage of some features.
-
-Keep in mind this is based on my experience, so it's highly advised to test things and make sure it's stable before using it in a production server. 
-
-> The article is kinda long, however, I focused on separating things into sections where each section doesn't depend on others (to some degree). So pick any section and read it at your own pace.
-
-## Tips
-
-Some general tips and concepts to checkout, adapt, and tune with time.
+## Decision making
 
 ![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-tips-mkreg.jpg)
 
+Some general tips and concepts to keep in mind before you decide how you will adopt NGINX.
+
 ### Do you even need NGINX?
 
-Before starting with anything – understand the use case of introducing NGINX to your stack – have good knowledge about your **environment**, **hardware capabilities** and **limitations** – Know what NGINX is supposed to do here.
+Before starting with anything – understand the use case of introducing NGINX to your stack – have good knowledge about your **environment**, **hardware capabilities** and **limitations** – know what NGINX is supposed to do here.
 
-1. Acting as a proxy server?
-2. A caching layer for static assets?
-3. Everything that NGINX does in general to reduce the load on your software – usually the case when you have a web server not optimized to deal with things like SSL or request buffering – so adding NGINX will give you a free boost
+- Acting as a proxy server?
+- A caching layer for static assets?
+- Everything that NGINX does in general to reduce the load on your software – usually the case when you have a web server not optimized to deal with things like SSL or request buffering – so adding NGINX will give you a free boost
 
 If you can't answer these questions or don't know then you might not need it from the beginning and there are better solutions to your problem.
 
@@ -76,27 +76,26 @@ Just like Back-end, Front-end, and probably anything related to programming – 
 
 For common security headers, you could have `security.conf` – for compression you would be having a `compression.conf`. This way your configuration is **reusable** – **maintainable** and **more** (AKA am too lazy to mention).
 
-### Preparations 
+### Preparations
 
-For new products – know what NGINX modules you will need or might need in the future, `nginx -V` will output what modules NGINX was compiled with – this is important because you will have to re-compile NGINX if you want to add more modules. 
+For new products – know what NGINX modules you will need or might need in the future, `nginx -V` will output what modules NGINX was compiled with – this is important because you will have to re-compile NGINX if you want to add more modules.
 
 For established products, this might be not feasible in some production environments where the time spent doing that doesn't justify the added value of those new modules.
 
 ### Validating the result
 
-Test, then test, and finally test. Sometimes asserting that your configuration is optimal can be tricky, you could be having invalid results due to unknown circumstances – maybe your hosting platform was stable at one time, on another it wasn't or it could be a misuse of the testing method. 
+Test, then test, and finally test. Sometimes asserting that your configuration is optimal can be tricky, you could be having invalid results due to unknown circumstances – maybe your hosting platform was stable at one time, on another it wasn't or it could be a misuse of the testing method.
 
 For example, benchmarking throughput by hitting a single endpoint rather than creating a realistic usage scenario in production.
 
-
-<Card 
-    title="Benchmarking NGINX"
-    desc="Best practices to follow when benchmarking NGINX, created by NGINX team"
-    url="https://pages.nginx.com/rs/nginx/images/WP_Benchmarketing_042314.PDF"
-    Icon={Nginx}
+<Card
+  title="Benchmarking NGINX"
+  desc="Best practices to follow when benchmarking NGINX, created by NGINX team"
+  url="https://pages.nginx.com/rs/nginx/images/WP_Benchmarketing_042314.PDF"
+  Icon={Nginx}
 />
 
-Based on the above – take what I'm writing with a grain of salt and test it again for the fourth time, make a bet with a colleague to break your new setup. 
+Based on the above – take what I'm writing with a grain of salt and test it again for the fourth time, make a bet with a colleague to break your new setup.
 
 ## Performance
 
@@ -104,20 +103,22 @@ Based on the above – take what I'm writing with a grain of salt and test it ag
 
 For me Performance doesn't mean **speed** – it’s a combination of:
 
-1. **Stability**
-2. **Resilience**
-3. **Resources consumption**
-4. **Speed**
+- **Stability**
+- **Resilience**
+- **Resources consumption**
+- **Speed**
 
 ### Location blocks
-Sooner or later you're gonna have location blocks to match paths according to a pattern by using **regex expressions**. 
+
+Sooner or later you're gonna have location blocks to match paths according to a pattern by using **regex expressions**.
 
 ```nginx:mk-next.conf
 location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
 	proxy_pass http://my-server;
 }
 ```
-If NGINX matches those locations a lot – In other words the matched location is regularly requested, you could improve the performance of the matching process by enabling [PCRE JIT](https://www.pcre.org/original/doc/html/pcrejit.html) – assuming you have NGINX compiled with the **PCRE** module. 
+
+If NGINX matches those locations a lot – In other words the matched location is regularly requested, you could improve the performance of the matching process by enabling [PCRE JIT](https://www.pcre.org/original/doc/html/pcrejit.html) – assuming you have NGINX compiled with the **PCRE** module.
 
 This directive enables NGINX to evaluate and store the regex expressions matching process at the time of configuration parsing which happens on NGINX startup – to enable it simply add `pcre_jit on` on top of your main configuration file.
 
@@ -130,7 +131,8 @@ pcre_jit on;
 ```
 
 ### Access log
-NGINX `access_log` logs every request – not just the path of the request, also everything requested on the page – which you probably don't need (logging in terms of performance seems to be overlooked). Disable it with `access_log  off` in your main configuration file HTTP block.
+
+NGINX `access_log` logs every request – not just the path of the request, also everything requested on the page – which you probably don't need (logging in terms of performance seems to be overlooked). Disable it with `access_log off` in your main configuration file HTTP block.
 
 ```nginx:nginx.conf
 error_log  /var/log/nginx/error.log warn;
@@ -141,9 +143,8 @@ http {
 }
 ```
 
-
-
 ### Send file
+
 With the `send_file` directive enabled, set `sendfile_max_chunk` to a low value to prevent `send_file` from transferring a large amount of data like images or font files.
 
 Because the default of `sendfile_max_chunk` is 0 which means unlimited – we need to adjust the value from 0 to something like 512k(0.5 MB) then `send_file` will send the data in chunks, the size of each chunk would be 512k.
@@ -158,7 +159,8 @@ http {
 ```
 
 ### Hashmaps
-In addition to [PCRE JIT](https://www.pcre.org/original/doc/html/pcrejit.html) optimization – for other looks ups NGINX uses hash tables. Here we have some directives with their default values that control the size of the used hash tables – tune them based on your hardware specs. 
+
+In addition to [PCRE JIT](https://www.pcre.org/original/doc/html/pcrejit.html) optimization – for other looks ups NGINX uses hash tables. Here we have some directives with their default values that control the size of the used hash tables – tune them based on your hardware specs.
 
 A detailed guide on their usage can be found on [Setting up hashes](https://nginx.org/en/docs/hash.html) (you should start from this link).
 
@@ -174,7 +176,8 @@ also checkout `types_hash_max_size` and hash tables used by the proxy modules `p
 After tweaking the values the benefits are not only faster responses but also more stability – because this speeds up key search in hash tables then we would have less memory access and a decreased pressure on the CPU.
 
 ### Proxy buffering
-Proxy buffering directive(s) controls how NGINX handles transferring the response from the **proxied server** to the **client**. 
+
+Proxy buffering directive(s) controls how NGINX handles transferring the response from the **proxied server** to the **client**.
 
 This is a large topic that I might write about it in a separate article, however personally I follow these rules:
 
@@ -184,36 +187,29 @@ This is a large topic that I might write about it in a separate article, however
 
 - After trial and error tuning the buffers for something in between and I start seeing improved performance – I keep tuning until the performance starts to drop. Then this is an optimal value for this specific product on this specific hardware
 
-- After achieving the above if the response doesn’t fit in the buffer size I allocated, NGINX would have to save part of it on disk temporarily – send the part allocated in memory then read the temp file and send the remaining buffers. 
+- After achieving the above if the response doesn’t fit in the buffer size I allocated, NGINX would have to save part of it on disk temporarily – send the part allocated in memory then read the temp file and send the remaining buffers.
 
   This can be tuned by allowing NGINX to allocate everything in the memory instead of using the disk as a temp – for this particular case it’s up to you on how you control it but I prefer keeping the memory stable and let NGINX write temp files.
 
-  
-
   Refer to [Proxy buffering Documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering) for more details.
-
-
-
-### Not Covered
 
 The following topics will **not be covered** here, maybe I'll write another article dedicated to them
 
- - `worker_processes`
- - `worker_connections`
- - `worker_rlimit_nofile`
- - `worker_cpu_affinity`
- - NGINX multi-threading and thread pools
- - [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option
+- `worker_processes`
+- `worker_connections`
+- `worker_rlimit_nofile`
+- `worker_cpu_affinity`
+- NGINX multi-threading and thread pools
+- [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option
 
 The first 4 directives need a lot of research before you apply them, however, I use NGINX on this site.
 
 I kept NGINX configuration on a separate branch – for those 4 directives you can read my [configuration file](https://github.com/omaralsoudanii/mkreg.dev/blob/main/docker/nginx/conf/nginx.conf) which has brief documentation about them – for compression, there is also a [configuration file](https://github.com/omaralsoudanii/mkreg.dev/blob/main/docker/nginx/conf/compression.conf) documented.
-	
 Actually, you know what? you could also start from the [configuration root folder](https://github.com/omaralsoudanii/mkreg.dev/tree/main/docker/nginx) and read the rest – you might find some weird things used as a workaround for handling some **Next.js** issues for my site which is self-hosted so things differ from using Vercel.
 
 ## Gotchas
 
-This is some stuff I found somewhere on the internet – randomly, while I'm researching a specific topic, issues, maybe from an article I read somewhere. Who knows!
+This is some stuff I found somewhere on the internet – randomly, while I'm researching a specific topic and issues, maybe from an article I read somewhere, who knows!
 
 ### The host IP address
 
@@ -221,10 +217,9 @@ I'm definitely not a security expert but I don't want NGINX to be accessible by 
 
 > Examples (with dummy IP) would be something like these:
 >
-> HTTP request on port 80 => 78.555.666.33 
+> HTTP request on port 80 => 78.555.666.33
 >
 > HTTPS request on port 443 => 78.555.666.33:443
->
 
 After some research the solutions I found basically cover the non-HTTPS part and NGINX will return whatever error or page you decide.
 
@@ -255,7 +250,7 @@ server {
     listen [::]:80 default_server;
     listen 443 default_server;
     listen [::]:443 default_server;
-    server_name _; 
+    server_name _;
 
     ssl_ciphers aNULL;
     ssl_certificate data:$empty;
@@ -276,7 +271,7 @@ After we provide the empty value variable for `ssl_certificate`, `ssl_certificat
 
 ![Omar Alsoudani - NGINX Treats](/static/images/dawg-mkreg.jpg)
 
-Now any access through the server IP will return a 444 status code error the only problem is (again not a security expert) using **aNULL** could open your server to other vulnerabilities. 
+Now any access through the server IP will return a 444 status code error the only problem is (again not a security expert) using **aNULL** could open your server to other vulnerabilities.
 
 Now it's up to you if you want this or not, you can remove the HTTPS part and use it for HTTP only – if you have a new NGINX version then try the suggested solution in the issue by using `ssl_reject_handshake`.
 
@@ -298,11 +293,11 @@ I tried the new directive `ssl_reject_handshake` instead of the **aNULL** hack w
  }
 ```
 
-This directive was added recently, so check the [documentation](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_reject_handshake) to see if you can add it - otherwise you can use the original **hack** mentioned above. 
+This directive was added recently, so check the [documentation](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_reject_handshake) to see if you can add it - otherwise you can use the original **hack** mentioned above.
 
 On a serious note, I had no problem with the old method but I’d advice you to consult someone with security expertise – if you feel that you have provoked the security expertise when mentioning the above, do me a favor and don’t cite me as a resource 🤔.
 
-And this is the updated snippet for this site [nextjs.conf](https://github.com/omaralsoudanii/mkreg.dev/blob/af23c2ee5021496011f2816ce8e6eab51827f941/docker/nginx/conf.d/nextjs.conf#L7)
+And this is the updated snippet for this site [nextjs.conf](https://github.com/omaralsoudanii/mkreg.dev/blob/af23c2ee5021496011f2816ce8e6eab51827f941/docker/nginx/conf.d/nextjs.conf#L7).
 
 ### Headers placement
 
@@ -314,9 +309,9 @@ There are 2 kinds of adding headers in NGINX. The first would be `add_header` an
 
 Both of those directives behave the same way based on their placement, and by placement, I mean their actual location in your configuration file – they could be found in a server block or a location block that is inside a server block.
 
-For example 
+For example
 
-````nginx:mk-golang
+```nginx:mk-golang
 server {
     add_header value1 "1";
     add_header value2 "2";
@@ -326,22 +321,22 @@ server {
         proxy_pass http://my-server;
     }
 }
-````
+```
 
-The client would receive the two headers `value3` and `value4`. 
+The client would receive the two headers `value3` and `value4`.
 
-`value1` and `value2` will not be sent – due to the location block `add_header` directives overrides the previous configuration level which is `server`. 
+`value1` and `value2` will not be sent – due to the location block `add_header` directives overrides the previous configuration level which is `server`.
 
 To make sure all your headers are sent you need to add all of them in the same configuration level, the same thing applies to `proxy_set_header`.
 
-Now, this is annoying especially if you have a large configuration, we can solve it by using the method I suggested in the Tips section – separate configuration files so they can be reusable. 
+Now, this is annoying especially if you have a large configuration, we can solve it by using the method I suggested in the Tips section – separate configuration files so they can be reusable.
 
 A good practice is to create two files, one for the proxy headers and another for the client headers – then simply include the file in the level you would want to apply the headers for.
 
-````nginx:mk-jabbascript
+```nginx:mk-jabbascript
 server {
 	location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
-    	# default client headers 
+    	# default client headers
         include /etc/nginx/client_headers.conf;
         proxy_pass http://my-server;
     }
@@ -349,18 +344,16 @@ server {
 	location =/ {
         # default proxy headers
         include /etc/nginx/proxy.conf;
-    	# we also can add both 
-        # default client headers 
+    	# we also can add both
+        # default client headers
         include /etc/nginx/client_headers.conf;
         # and a third one that contains common security headers
-        # default client security headers 
+        # default client security headers
         include /etc/nginx/client_security_headers.conf;
         proxy_pass http://my-server;
     }
 }
-````
-
-
+```
 
 ## Conclusion
 
@@ -377,10 +370,10 @@ I might write another article about topics I didn't cover including
 Most of the above implementation can be found in my repo. With a bit of adjustment, you probably can try and use them.
 
 <Card
-    title="omaralsoudanii/mkreg.dev"
-    desc="NGINX configuration in conjunction with HAProxy, Cloudflare and Docker for https://mkreg.dev/"
-    url="https://github.com/omaralsoudanii/mkreg.dev/tree/with-nginx/docker/nginx"
-    Icon={Github}
+  title="omaralsoudanii/mkreg.dev"
+  desc="NGINX configuration in conjunction with HAProxy, Cloudflare and Docker for https://mkreg.dev/"
+  url="https://github.com/omaralsoudanii/mkreg.dev/tree/with-nginx/docker/nginx"
+  Icon={Github}
 />
 
 Feel free to contact me via the links provided in the footer if there is outdated, wrong info provided here or if you would like to rant about something I wrote (I know you do). Seriously even if you have some questions, contact me.

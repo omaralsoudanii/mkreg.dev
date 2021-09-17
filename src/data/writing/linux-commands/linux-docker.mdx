@@ -2,7 +2,7 @@
 title: 'Docker Linux commands'
 date: '2021-07-13'
 lastmod: '2021-07-13'
-summary: "Incremental list of useful docker commands using Linux"
+summary: 'Incremental list of useful docker commands using Linux'
 image: '/static/images/writing/linux-commands/linux-bash-docker-mkreg.jpg'
 ---
 
@@ -10,7 +10,7 @@ image: '/static/images/writing/linux-commands/linux-bash-docker-mkreg.jpg'
 
 ## Overview
 
-This page covers Docker specific commands on Linux. You can use it as a reference in case you want to do some task quickly, or you might find something new and beneficial when using Docker. 
+This page covers Docker specific commands on Linux. You can use it as a reference in case you want to do some task quickly, or you might find something new and beneficial when using Docker.
 
 ### Docker compose
 
@@ -46,7 +46,7 @@ The same as above but this time also **attempt to pull the latest version of the
 docker-compose build  --no-cache --pull
 ```
 
-> Although I said non-breaking, you never know with docker. So I always prefer the pinning to exact version and update  the image myself manually. Unless ofcourse I'm too lazy to do that, then I use the second method. Which is the case in this site!
+> Although I said non-breaking, you never know with docker. So I always prefer the pinning to exact version and update the image myself manually. Unless ofcourse I'm too lazy to do that, then I use the second method. Which is the case in this site!
 
 ### exec command
 
@@ -60,47 +60,44 @@ docker exec -it node_app npm install
 
 Export data from a Docker MySQL container to a directory using `mysqldump` and execute command
 
--    Full database structure and data
+- Full database structure and data
 
-        ```bash
-     docker exec -i app_mysql-server-57_1 mysqldump \ 
-     -uroot -proot --databases mydb_name --skip-comments > /Documents/db.sql
-        ```
+  ```bash
+  docker exec -i app_mysql-server-57_1 mysqldump \
+  -uroot -proot --databases mydb_name --skip-comments > /Documents/db.sql
+  ```
 
--    Specified table structure and data 
+- Specified table structure and data
 
-        ```bash
-     docker exec -i app_mysql-server-57_1 mysqldump \ 
-     -uroot -proot mydb_name mytable_name > /Documents/db.sql
-        ```
+  ```bash
+  docker exec -i app_mysql-server-57_1 mysqldump \
+  -uroot -proot mydb_name mytable_name > /Documents/db.sql
+  ```
 
--    Specific table structure and data that matches a where clause
+- Specific table structure and data that matches a where clause
 
-        ```bash
-     docker exec app_mysql mysqldump \ 
-     -uroot -proot mydb_name --tables mytable_name --where="id>5 limit 5000000" > mytable_name.sql
-        ```
-
-
+  ```bash
+  docker exec app_mysql mysqldump \
+  -uroot -proot mydb_name --tables mytable_name --where="id>5 limit 5000000" > mytable_name.sql
+  ```
 
 ### SSH into a container
 
--    For **alpine** images, only sh is available 
+- For **alpine** images, only sh is available
 
-        ```bash
-     docker exec -it app_server sh
-        ```
+  ```bash
+  docker exec -it app_server sh
+  ```
 
--    For **other** images,  bash is available
+- For **other** images, bash is available
 
-        ```bash
-     docker exec -it app_server bash
-        ```
+  ```bash
+  docker exec -it app_server bash
+  ```
 
 ### Testing config
 
 Preview and validate a docker compose file configuration found in the specified path
-
 
 ```bash
 docker-compose -f docker-compose.development.yml config
@@ -116,13 +113,13 @@ Delete all stopped containers and unused images/networks/volumes and non persist
 docker system prune -a
 ```
 
-<br/>
+<br />
 
 ```bash:Networks
 docker network prune
 ```
 
-<br/>
+<br />
 
 ```bash:Volumes
 docker volume ls -qf dangling=true | xargs -r docker volume rm
@@ -130,9 +127,9 @@ docker volume ls -qf dangling=true | xargs -r docker volume rm
 
 **Note:** If you are using **volumes managed by docker** instead of bind volumes by declaring them in a docker-compose file. Beware that you might accidentally wipe the whole data by issuing the following
 
-```` bash
+```bash
 docker-compose down -v
-````
+```
 
 `down` tells docker to remove all containers and images from the running compose file. `-v` tells docker to also **wipe any managed volumes**
 
@@ -162,17 +159,14 @@ docker system info
 docker system df -v
 ```
 
-<br/>
-
-
 ```bash:Overview
 docker system df
 ```
 
 ## All topics
 
-1.  [General Linux commands](/writing/linux-commands/linux-general)
-2.  [Docker Commands](/writing/linux-commands/linux-docker) 
-3.  [MySQL Commands](/writing/linux-commands/linux-mysql)
-4.  [MongoDB Commands](/writing/linux-commands/linux-mongodb)
-5.  [PHP Commands](/writing/linux-commands/linux-php)
+- [General Linux commands](/writing/linux-commands/linux-general)
+- [Docker Commands](/writing/linux-commands/linux-docker)
+- [MySQL Commands](/writing/linux-commands/linux-mysql)
+- [MongoDB Commands](/writing/linux-commands/linux-mongodb)
+- [PHP Commands](/writing/linux-commands/linux-php)
