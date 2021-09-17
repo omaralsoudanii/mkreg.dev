@@ -1,26 +1,44 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
+
+const sans = [
+  'Inter',
+  'ui-sans-serif',
+  'system-ui',
+  '-apple-system',
+  'BlinkMacSystemFont',
+  '"Segoe UI"',
+  'Roboto',
+  '"Helvetica Neue"',
+  'Arial',
+  '"Noto Sans"',
+  '"Apple Color Emoji"',
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"',
+  '"Noto Color Emoji"',
+  'sans-serif',
+]
+
+const mono = ['"JetBrains Mono"', '"IBM Plex Mono"', ...fontFamily.mono]
 module.exports = {
   mode: 'jit',
   purge: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/data/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/lib/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
+    fontFamily: {
+      mono: mono,
+      sans: sans,
+    },
     extend: {
-      fontFamily: {
-        mono: ['"JetBrains Mono"', '"IBM Plex Mono"', ...fontFamily.mono],
-        sans: ['Inter', ...fontFamily.sans],
-      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
         13: '3.25rem',
         14: '3.5rem',
       },
-
       colors: {
         'blue-600': '#1a73e8',
         dark: {
