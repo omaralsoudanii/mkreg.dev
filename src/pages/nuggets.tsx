@@ -15,14 +15,14 @@ function Nuggets({ posts }) {
 
   return (
     <article
-      id="skip"
-      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto"
+      id='skip'
+      className='prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto'
     >
       <Seo data={meta} />
 
-      <section className="mb-8 md:mb-16">
+      <section className='mb-8 md:mb-16'>
         <header>
-          <h1 className="page-heading !mb-4">Nuggets</h1>
+          <h1 className='page-heading !mb-4'>Nuggets</h1>
         </header>
         <p>
           Some stuff I bookmark to read later, or a tool I find useful to use. These recommendations

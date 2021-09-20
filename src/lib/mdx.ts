@@ -81,16 +81,18 @@ export async function getFileBySlug(type: string, slug?) {
       }
       return options
     },
-    globals: { Card: 'Card' },
   })
+
+  if (frontmatter?.lastmod) {
+    frontmatter.lastmod = FormatDate(frontmatter.lastmod)
+  }
 
   return {
     code,
     frontMatter: {
+      ...frontmatter,
       slug: slug ? formatSlug(slug) : type,
       date: FormatDate(frontmatter.date),
-      lastmod: FormatDate(frontmatter.lastmod),
-      ...frontmatter,
     },
   }
 }
@@ -112,7 +114,9 @@ export async function getAllFilesFrontMatter(type: string) {
     if (data?.draft === true) {
       return [...allPosts]
     }
-
+    if (data?.lastmod) {
+      data.lastmod = FormatDate(data.lastmod)
+    }
     return [
       {
         ...data,

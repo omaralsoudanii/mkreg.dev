@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useState, useEffect, Fragment } from 'react'
 
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
@@ -11,10 +11,10 @@ import Sun from '@/components/Icons/Sun'
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted, setMounted] = useState(false)
   // When mounted on client, now we can show the UI
-  React.useEffect(() => setMounted(true), [])
-  const [isExpanded, setExpanded] = React.useState(false)
+  useEffect(() => setMounted(true), [])
+  const [isExpanded, setExpanded] = useState(false)
   const RoutesMetadata = [
     {
       label: 'Home',
@@ -48,20 +48,20 @@ export default function Header() {
         }
 
   return (
-    <React.Fragment>
-      <nav className="grid grid-cols-1 header-sm md:hidden">
-        <div className="flex items-center">
-          <div className="hdr-sm-btn" onClick={() => setExpanded(!isExpanded)}>
+    <Fragment>
+      <nav className='grid grid-cols-1 header-sm md:hidden'>
+        <div className='flex items-center'>
+          <div className='hdr-sm-btn' onClick={() => setExpanded(!isExpanded)}>
             {isExpanded ? <Close /> : <Menu />}
           </div>
 
           <Link href={currentRoute.href}>
-            <a onClick={() => setExpanded(false)} className="hdr-sm-title">
+            <a onClick={() => setExpanded(false)} className='hdr-sm-title'>
               {currentRoute.label}
             </a>
           </Link>
           <div
-            className="hdr-sm-btn"
+            className='hdr-sm-btn'
             onClick={() => {
               setExpanded(false)
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
@@ -85,21 +85,21 @@ export default function Header() {
             )
           })}
       </nav>
-      <nav className="hidden md:flex md:items-center md:text-base md:mr-24 md:leading-5">
-        <div className="hidden md:block">
+      <nav className='hidden md:flex md:items-center md:text-base md:mr-24 md:leading-5'>
+        <div className='hidden md:block'>
           {RoutesMetadata.map((link) => (
             <Link key={link.label} href={link.href}>
-              <a className="font-medium link-unstyled md:my-2 md:py-2 mx-2 md:px-2">{link.label}</a>
+              <a className='font-medium link-unstyled md:my-2 md:py-2 mx-2 md:px-2'>{link.label}</a>
             </Link>
           ))}
         </div>
         <div
-          className="hidden md:block md:hdr-cnt-theme-btn"
+          className='hidden md:block md:hdr-cnt-theme-btn'
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
           {mounted && (resolvedTheme === 'dark' ? <Sun /> : <Moon />)}
         </div>
       </nav>
-    </React.Fragment>
+    </Fragment>
   )
 }

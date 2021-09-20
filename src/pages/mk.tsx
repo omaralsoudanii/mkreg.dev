@@ -13,21 +13,21 @@ export default function MK() {
   }
 
   return (
-    <article id="skip" className="prose dark:prose-dark lg:prose-lg w-full !max-w-none mx-auto">
+    <article id='skip' className='prose dark:prose-dark lg:prose-lg w-full !max-w-none mx-auto'>
       <Seo data={meta} />
-      <div className="!space-y-4 md:!space-y-8">
-        <header className="my-4 md:my-16">
-          <h1 className="md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none">
+      <div className='!space-y-4 md:!space-y-8'>
+        <header className='my-4 md:my-16'>
+          <h1 className='md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none'>
             The Sultan of swing
           </h1>
         </header>
-        <Image src={TheSulatn} alt="The Sultan of swing" />
+        <Image src={TheSulatn} alt='The Sultan of swing' />
         <p>
           Congrats on finding this page! Let me introduce you to my favorite human being in the
           universe.
         </p>
-        <header className="my-4 md:my-16">
-          <h1 className="md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none">
+        <header className='my-4 md:my-16'>
+          <h1 className='md:!my-4  text-center !text-4xl !font-extrabold md:!text-[7rem] md:!leading-none'>
             Mark Knopfler
           </h1>
         </header>
@@ -36,12 +36,12 @@ export default function MK() {
           closer to my name (for SEO blah...), then I can tell you that the acronym—
           <strong>MKREG</strong>—is based on:
         </p>
-        <p className="!font-semibold text-center">
+        <p className='!font-semibold text-center'>
           <a
-            className="primary-link !font-semibold"
-            href="https://www.youtube.com/watch?v=JZWDmY6_E2A"
-            target="_blank"
-            rel="noopener noreferrer"
+            className='primary-link !font-semibold'
+            href='https://www.youtube.com/watch?v=JZWDmY6_E2A'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Mark Knopfler Red Electric Guitar
           </a>
@@ -57,7 +57,7 @@ export default function MK() {
           life.
         </p>
 
-        <Image src={MKPic} alt="Mark Knopfler" />
+        <Image src={MKPic} alt='Mark Knopfler' />
         <p>
           This is a biography about
           <strong> Mark Freuder Knopfler OBE (/ˈnɒpflər/ NOP-flər) </strong>
@@ -65,23 +65,23 @@ export default function MK() {
           <strong>Hugo static sites generator</strong>, open-sourced and hosted on{' '}
           <strong>Vercel</strong>
         </p>
-        <p className="!font-semibold text-center">
+        <p className='!font-semibold text-center'>
           <a
-            href="https://mkreg-hugo.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="primary-link !font-semibold"
+            href='https://mkreg-hugo.vercel.app'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='primary-link !font-semibold'
           >
             Check mkreg-hugo @ Vercel
           </a>
         </p>
         <p>Here, Hold onto this</p>
-        <p className="!font-semibold !text-center">
+        <p className='!font-semibold !text-center'>
           <a
             href={Environment.social.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="primary-link !font-semibold"
+            target='_blank'
+            rel='noopener noreferrer'
+            className='primary-link !font-semibold'
           >
             Golden Nugget 👏
           </a>

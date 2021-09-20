@@ -1,7 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
   font-family: 'Inter';
   font-weight: 100 900;
@@ -37,23 +34,24 @@
   #__next {
     @apply h-full bg-white dark:bg-dark-primary;
   }
-
-  .svg-fill {
-    @apply fill-[black] dark:fill-[white] text-black dark:text-white;
-  }
-
-  /* ubuntu colors */
-  ::-moz-selection {
-    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
-    text-shadow: none;
-  }
-
-  ::selection {
-    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
-    text-shadow: none;
-  }
+}
+.svg-fill {
+  @apply fill-[black] dark:fill-[white] text-black dark:text-white;
 }
 
+/* ubuntu colors */
+::-moz-selection {
+  @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+  text-shadow: none;
+}
+
+::selection {
+  @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+  text-shadow: none;
+}
+
+@tailwind components;
+@tailwind utilities;
 @layer utilities {
   .text-primary {
     @apply text-gray-900 dark:text-gray-100;
@@ -153,14 +151,6 @@
 
   .primary-link {
     @apply w-auto text-blue-600 font-medium dark:text-blue-400 md:hover:transition-colors md:hover:text-blue-400 md:dark:hover:text-blue-300 !important;
-  }
-
-  .footer-grid {
-    @apply grid grid-cols-1  py-12 md:gap-12 m-auto md:items-start md:grid-cols-3;
-  }
-
-  .footer-column {
-    @apply flex flex-col items-start  space-y-8 py-4 px-2 md:items-center;
   }
 
   .filter-blur {

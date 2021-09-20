@@ -25,7 +25,7 @@ const NextLink = ({
       {children}
     </a>
   ) : (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+    <a href={href} target='_blank' rel='noopener noreferrer' className={className}>
       {children}
     </a>
   )
