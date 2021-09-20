@@ -21,13 +21,13 @@ export default function Tag({ posts, tag }) {
 
   return (
     <article
-      id="skip"
-      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto"
+      id='skip'
+      className='prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto'
     >
       <Seo data={meta} />
-      <section className="flex flex-col mb-8 md:mb-20 space-y-6">
+      <section className='flex flex-col mb-8 md:mb-20 space-y-6'>
         <header>
-          <h1 className="page-heading !mb-0">{tag}</h1>
+          <h1 className='page-heading !mb-0'>{tag}</h1>
         </header>
         <p>
           Topics, guides and thoughts I wrote about <strong>{tag}</strong> or related to it. Please
@@ -35,14 +35,14 @@ export default function Tag({ posts, tag }) {
           update some info on older articles, I'll probably make some sort of filteration when I
           have time.
         </p>
-        <p className="self-end">
-          <Link href="/writing">
-            <a className="mr-1 primary-link">Browse all Writing</a>
+        <p className='self-end'>
+          <Link href='/writing'>
+            <a className='mr-1 primary-link'>Browse all Writing</a>
           </Link>
         </p>
       </section>
-      <section className="mt-8">
-        <PostsList href="/writing" posts={posts} />
+      <section className='mt-8'>
+        <PostsList href='/writing' posts={posts} />
       </section>
     </article>
   )

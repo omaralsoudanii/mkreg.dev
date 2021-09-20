@@ -21,13 +21,13 @@ export default function Writing({ posts }) {
 
   return (
     <article
-      id="skip"
-      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto mb-8 md:mb-16"
+      id='skip'
+      className='prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto mb-8 md:mb-16'
     >
       <Seo data={meta} />
-      <section className="mb-8 space-y-8 md:mb-16">
+      <section className='mb-8 space-y-8 md:mb-16'>
         <header>
-          <h1 className="page-heading !mb-4">Writing</h1>
+          <h1 className='page-heading !mb-4'>Writing</h1>
         </header>
         <p>
           Stuff I write about programming and software development with a slight hint of salt.
@@ -35,14 +35,14 @@ export default function Writing({ posts }) {
           modify or update some info on older articles, I'll probably make some sort of filteration
           when I have time.
         </p>
-        <p className="text-right">
-          <Link href="/tags">
-            <a className="mr-1 primary-link">Browse by Tags</a>
+        <p className='text-right'>
+          <Link href='/tags'>
+            <a className='mr-1 primary-link'>Browse by Tags</a>
           </Link>
         </p>
       </section>
-      <section className="mt-8">
-        <PostsList href="/writing" posts={posts} />
+      <section className='mt-8'>
+        <PostsList href='/writing' posts={posts} />
       </section>
     </article>
   )

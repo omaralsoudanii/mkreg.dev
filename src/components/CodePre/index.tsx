@@ -26,11 +26,11 @@ const Pre = (props: {
   }
 
   return (
-    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative">
+    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className='relative'>
       {hovered && (
         <button
-          aria-label="Copy code"
-          type="button"
+          aria-label='Copy code'
+          type='button'
           className={`absolute right-3 top-3 w-7 h-7 p-1 rounded border-2 bg-gray-300 dark:bg-[#282e33] ${
             copied
               ? 'focus:outline-none focus:border-blue-600 border-blue-600 dark:border-blue-400 dark:focus:border-blue-400'
@@ -39,10 +39,10 @@ const Pre = (props: {
           onClick={onCopy}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            fill="none"
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+            fill='none'
             className={
               copied ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
             }
@@ -50,19 +50,19 @@ const Pre = (props: {
             {copied ? (
               <Fragment>
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                   strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                  d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4'
                 />
               </Fragment>
             ) : (
               <Fragment>
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                   strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'
                 />
               </Fragment>
             )}
@@ -70,7 +70,7 @@ const Pre = (props: {
         </button>
       )}
 
-      <pre className="code-container">{props.children}</pre>
+      <pre className='code-container'>{props.children}</pre>
     </div>
   )
 }

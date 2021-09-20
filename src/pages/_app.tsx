@@ -8,9 +8,9 @@ import LayoutWrapper from '@/components/LayoutWrapper'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" enableSystem={true}>
+    <ThemeProvider attribute='class' enableSystem={true}>
       <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content='width=device-width, initial-scale=1' name='viewport' />
       </Head>
       <LayoutWrapper>
         <Component {...pageProps} />

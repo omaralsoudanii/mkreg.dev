@@ -20,36 +20,36 @@ export default function Tags({ sortedData }) {
 
   return (
     <article
-      id="skip"
-      className="prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto mb-8 md:mb-16"
+      id='skip'
+      className='prose dark:prose-dark lg:prose-lg w-full max-w-none lg:max-w-[75ch] mx-auto mb-8 md:mb-16'
     >
       <Seo data={meta} />
-      <section className="mb-8 space-y-8 md:mb-16">
+      <section className='mb-8 space-y-8 md:mb-16'>
         <header>
-          <h1 className="page-heading !mb-4">Tags</h1>
+          <h1 className='page-heading !mb-4'>Tags</h1>
         </header>
         <p>
           Writing tags sorted alphabetically then by how many times each tag has been added to my
           articles
         </p>
-        <p className="text-right">
-          <Link href="/writing">
-            <a className="mr-1 primary-link">Browse all Writing</a>
+        <p className='text-right'>
+          <Link href='/writing'>
+            <a className='mr-1 primary-link'>Browse all Writing</a>
           </Link>
         </p>
       </section>
-      <section className="grid grid-flow-row gap-6">
+      <section className='grid grid-flow-row gap-6'>
         {sortedData.map((item: { character: string; characterTags: any[] }) => (
           <div key={item.character}>
-            <header className="w-full border-b border-gray-300 dark:border-gray-700">
-              <h2 className="!my-2 md:!my-3 !font-semibold">{item.character}</h2>
+            <header className='w-full border-b border-gray-300 dark:border-gray-700'>
+              <h2 className='!my-2 md:!my-3 !font-semibold'>{item.character}</h2>
             </header>
 
-            <div className="flex space-x-6 flex-row !my-2 md:!my-3">
+            <div className='flex space-x-6 flex-row !my-2 md:!my-3'>
               {item.characterTags.map((tag) => (
                 <Link key={tag.slug} href={`/tags/${tag.slug}`} passHref>
-                  <a className="md:hover:transition-colors md:hover:text-gray-500 md:dark:hover:text-gray-400 text-gray-800 dark:text-gray-200">
-                    <p className="text-base !my-0 !py-2">
+                  <a className='md:hover:transition-colors md:hover:text-gray-500 md:dark:hover:text-gray-400 text-gray-800 dark:text-gray-200'>
+                    <p className='text-base !my-0 !py-2'>
                       {tag.name}
                       {` `}
                       {`(${tag.count})`}
