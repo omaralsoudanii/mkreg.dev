@@ -37,35 +37,35 @@ I decided to go with [Next.js](https://nextjs.org/) since I knew **React** and [
 
 ## Technologies
 
-List of technologies I have used on this site – some of them I stopped using or found another tool – you can read about each below.
+List of technologies I have used on this site — some of them I stopped using or found another tool — you can read about each below.
 
 ### Docker
 
-You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure – anyway Docker is the default for me on new apps so I do the build image stuff.
+You kinda hate Docker but you want the benefits, you know? when something is useful but it does have the habit of being a weirdo and log some errors unrelated to anything raising your blood pressure — anyway Docker is the default for me on new apps so I do the build image stuff.
 
 ### HAProxy & NGINX
 
-Well, it's either NGINX or HAProxy or both – I keep experimenting so this list is bound to change from time to time.
+Well, it's either NGINX or HAProxy or both — I keep experimenting so this list is bound to change from time to time.
 
 #### Updated at June 17,2021
 
-Currently, I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful especially when I'm not utilizing any of its capabilities – If most of the site is served by Cloudflare and the revalidation is handled by a proxy server – then, in this case, I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model).
+Currently, I removed NGINX since I already have HAProxy to serve the app, NGINX seemed wasteful especially when I'm not utilizing any of its capabilities — If most of the site is served by Cloudflare and the revalidation is handled by a proxy server — then, in this case, I'm only concerned about [L4](https://en.wikipedia.org/wiki/OSI_model).
 
-Because the whole thing is primarily dependent on latency and response time – of course, HAProxy is miles ahead in this area compared to NGINX, it’s not just a "Load Balancer" – a perfect combo with Cloudflare.
+Because the whole thing is primarily dependent on latency and response time — of course, HAProxy is miles ahead in this area compared to NGINX, it’s not just a "Load Balancer" — a perfect combo with Cloudflare.
 
 #### Updated at August 06,2021
 
-I bought a new much better server to satisfy my obsession with **AMD EPYC** processors – to be honest, the old server was limited, especially in the bandwidth department part (less than 200Mbit/s) so I can’t experiment much – and again as I mentioned before, the whole thing depends on latency except about ~10% of requests.
+I bought a new much better server to satisfy my obsession with **AMD EPYC** processors — to be honest, the old server was limited, especially in the bandwidth department part (less than 200Mbit/s) so I can’t experiment much — and again as I mentioned before, the whole thing depends on latency except about ~10% of requests.
 
-Getting bored and annoyed about the remaining ~10% mentioned above, I kept on switching configs and checking the result. Well this time I have better processors, better memory – it has fewer cores and memory, but quality beats quantity most of the time, sometimes it’s the opposite, depends on your app and what it does. Well, you can check the changes from this [commit](https://github.com/omaralsoudanii/mkreg.dev/commit/261fd4da358318a3f85bcca7d054881942d43af5) – and some stupid fixes after it.
+Getting bored and annoyed about the remaining ~10% mentioned above, I kept on switching configs and checking the result. Well this time I have better processors, better memory — it has fewer cores and memory, but quality beats quantity most of the time, sometimes it’s the opposite, depends on your app and what it does. Well, you can check the changes from this [commit](https://github.com/omaralsoudanii/mkreg.dev/commit/261fd4da358318a3f85bcca7d054881942d43af5) — and some stupid fixes after it.
 
-The summary of this is NGINX spikes weren’t a concern anymore and the latency thing? it’s just bad hardware that was slow to process stuff but we benefited a lot from HAProxy in the old one (read the first update above) – of course just reverting the configuration of NGINX was not enough.
+The summary of this is NGINX spikes weren’t a concern anymore and the latency thing? it’s just bad hardware that was slow to process stuff but we benefited a lot from HAProxy in the old one (read the first update above) — of course just reverting the configuration of NGINX was not enough.
 
-I updated the docker image – implemented a **mini CDN** using NGINX proxy caching and last but not least I used my NGINX **Brotli** compression settings rather than Cloudflare – I have a stupid hunch that Cloudflare has a better **Gzip** implementation, but their **Brotli** is either misused with high compression level or simply the NGINX one I have is just better – yes I know I know… I change this thing more than the changes that happen in the Front-end ecosystem.
+I updated the docker image — implemented a **mini CDN** using NGINX proxy caching and last but not least I used my NGINX **Brotli** compression settings rather than Cloudflare — I have a stupid hunch that Cloudflare has a better **Gzip** implementation, but their **Brotli** is either misused with high compression level or simply the NGINX one I have is just better — yes I know I know… I change this thing more than the changes that happen in the Front-end ecosystem.
 
 ### Cloudflare
 
-Takes care of delivering 99.9% of the app for a specified time that I can set. In fact, it does so much stuff – to the degree that I believe their free plan is a steal. Kudos to them for having this amazing service.
+Takes care of delivering 99.9% of the app for a specified time that I can set. In fact, it does so much stuff — to the degree that I believe their free plan is a steal. Kudos to them for having this amazing service.
 
 ### TypeScript
 
@@ -89,7 +89,7 @@ Used as a staging server. It's perfect since you know Vercel will always output 
 
 ### PlanetScale
 
-I recently added PlanetScale – which is a new service anyway. Seeing it’s built on top of MySQL with a server-less approach – I decided to give it a go because I kinda need a database eventually and testing serverless stuff is a good experience so why not – for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
+I recently added PlanetScale — which is a new service anyway. Seeing it’s built on top of MySQL with a server-less approach — I decided to give it a go because I kinda need a database eventually and testing serverless stuff is a good experience so why not — for now it’s used on articles views numbers. Their free tier plan is very generous compared to something like Firebase storage services.
 
 ## FAQ
 
