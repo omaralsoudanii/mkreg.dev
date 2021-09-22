@@ -33,8 +33,8 @@ export default function MK() {
         </header>
         <p>
           If you have ever wondered why the hell I have this weird domain name rather than something
-          closer to my name (for SEO blah...), then I can tell you that the acronym—
-          <strong>MKREG</strong>—is based on:
+          closer to my name (for SEO blah...) — then I can tell you that the acronym
+          <strong>MKREG</strong> is based on:
         </p>
         <p className='!font-semibold text-center'>
           <a
