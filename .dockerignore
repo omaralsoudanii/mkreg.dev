@@ -1,4 +1,16 @@
-yarn-error.log
 .next
 node_modules
 docker
+.env.example
+.git
+.gitignore
+.nvmrc
+.prettierignore
+.vscode
+.dockerignore
+README.md
+vercel.json
+.github
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
