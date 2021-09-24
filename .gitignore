@@ -14,7 +14,6 @@
 
 # production
 /build
-/docker/nginx/ssl
 
 # misc
 .DS_Store
@@ -36,12 +35,7 @@ yarn-error.log*
 .vercel
 
 # post build
-/public/tags/
 /public/*.xml
 /public/robots.txt
-
-# SSL
-/docker/ssl
-
 
 .idea
