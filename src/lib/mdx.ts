@@ -12,6 +12,7 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
+import Card from '@/components/Card'
 import mdxImage from '@/lib/mdxImage'
 import { FormatDate, formatSlug, slugify } from '@/lib/utils'
 
@@ -73,14 +74,19 @@ export async function getFileBySlug(type: string, slug?) {
       return options
     },
     esbuildOptions(options) {
+      options.treeShaking = true
+      options.minify = true
       options.target = ['es2015']
+      options.tsconfig = join(process.cwd(), 'tsconfig.json')
       options.loader = {
         ...options.loader,
         '.tsx': 'tsx',
         '.svg': 'tsx',
+        '.js': 'jsx',
       }
       return options
     },
+    globals: { Card: Card as any },
   })
 
   if (frontmatter?.lastmod) {
