@@ -10,7 +10,7 @@ module.exports = {
         'react-dom': 'preact/compat',
       })
     }
-    
+
     config.module.rules.push({
       test: /\.svg$/,
       use: [
