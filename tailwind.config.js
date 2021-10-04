@@ -22,7 +22,11 @@ const sans = [
 const mono = ['"JetBrains Mono"', '"IBM Plex Mono"', ...fontFamily.mono]
 module.exports = {
   mode: 'jit',
-  purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  purge: [
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/lib/**/*.{js,ts,jsx,tsx}',
+  ],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
