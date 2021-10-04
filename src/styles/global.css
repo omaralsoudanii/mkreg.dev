@@ -1,6 +1,5 @@
 @tailwind base;
 @layer base {
-  
   @font-face {
     font-family: 'Inter';
     font-weight: 100 900;
@@ -9,7 +8,7 @@
     font-named-instance: 'Regular';
     src: url('/static/fonts/Inter-roman.var-latin.woff2') format('woff2');
   }
-  
+
   @font-face {
     font-family: 'Inter';
     font-weight: 100 900;
@@ -24,8 +23,18 @@
     word-break: break-word;
     touch-action: manipulation;
     text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 100%;
+    overflow-y: scroll;
+    text-size-adjust: 100%;
   }
-
 
   body {
     @apply text-black bg-white dark:bg-dark-primary  dark:text-white;
@@ -38,19 +47,18 @@
   .svg-fill {
     @apply fill-[black] dark:fill-[white] text-black dark:text-white;
   }
-  
+
   /* ubuntu colors */
   ::-moz-selection {
     @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
     text-shadow: none;
   }
-  
+
   ::selection {
     @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
     text-shadow: none;
   }
 }
-
 
 @tailwind components;
 @tailwind utilities;
@@ -79,9 +87,15 @@
     scroll-margin-top: 2em;
   }
 
+  h1 {
+    @apply font-bold;
+  }
+  h2 {
+    @apply font-semibold;
+  }
   h1,
   h2 {
-    @apply text-display scroll-spacing-sm md:scroll-spacing-lg font-bold tracking-tight;
+    @apply text-display scroll-spacing-sm md:scroll-spacing-lg tracking-tight;
   }
 
   h3,

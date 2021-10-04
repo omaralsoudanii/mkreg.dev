@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel='preload'
-            href='/static/fonts/v3/Inter-roman.var-latin.woff2'
+            href='/static/fonts/Inter-roman.var-latin.woff2'
             as='font'
             type='font/woff2'
             crossOrigin='anonymous'

@@ -2,13 +2,14 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 
 const sans = [
   'Inter',
-  'ui-sans-serif',
+  '"Merriweather"',
+  'Roboto',
+  '"Helvetica Neue"',
   'system-ui',
+  'ui-sans-serif',
   '-apple-system',
   'BlinkMacSystemFont',
   '"Segoe UI"',
-  'Roboto',
-  '"Helvetica Neue"',
   'Arial',
   '"Noto Sans"',
   '"Apple Color Emoji"',
@@ -21,11 +22,7 @@ const sans = [
 const mono = ['"JetBrains Mono"', '"IBM Plex Mono"', ...fontFamily.mono]
 module.exports = {
   mode: 'jit',
-  purge: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/lib/**/*.{js,ts,jsx,tsx}',
-  ],
+  purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // 'media' or 'class'
   theme: {
     fontFamily: {
@@ -60,7 +57,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             h2: {
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.900'),
             },
             'h3,h4': {
