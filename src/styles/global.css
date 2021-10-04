@@ -2,53 +2,49 @@
 @layer base {
   @font-face {
     font-family: 'Inter';
+    font-style: normal;
     font-weight: 100 900;
     font-display: optional;
-    font-style: normal;
-    font-named-instance: 'Regular';
-    src: url('/static/fonts/Inter-roman.var-latin.woff2') format('woff2');
+    src: url(/static/fonts/v3/Inter-roman.var-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+      U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
-  
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: italic;
-    font-named-instance: 'Italic';
-    src: url('/static/fonts/Inter-italic.var-latin.woff2') format('woff2');
+  html,
+  body {
+    @apply antialiased break-words;
+    word-break: break-word;
+    touch-action: manipulation;
+    text-rendering: optimizeLegibility;
   }
-  
   html {
     min-width: 360px;
   }
 
   body {
-    @apply text-black bg-white dark:bg-dark-primary break-words dark:text-white antialiased;
-    font-feature-settings: 'ss01', 'cv07', 'cv10', 'kern', 'liga', 'calt';
-    touch-action: manipulation;
-    text-rendering: optimizeLegibility;
+    @apply text-black bg-white dark:bg-dark-primary  dark:text-white;
     word-wrap: break-word;
-    word-break: break-word;
   }
 
   #__next {
     @apply h-full bg-white dark:bg-dark-primary;
   }
-}
-.svg-fill {
-  @apply fill-[black] dark:fill-[white] text-black dark:text-white;
+  
+  .svg-fill {
+    @apply fill-[black] dark:fill-[white] text-black dark:text-white;
+  }
+  
+  /* ubuntu colors */
+  ::-moz-selection {
+    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+    text-shadow: none;
+  }
+  
+  ::selection {
+    @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
+    text-shadow: none;
+  }
 }
 
-/* ubuntu colors */
-::-moz-selection {
-  @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
-  text-shadow: none;
-}
-
-::selection {
-  @apply bg-[#E85233] dark:bg-[#B92507] text-gray-100;
-  text-shadow: none;
-}
 
 @tailwind components;
 @tailwind utilities;
