@@ -114,7 +114,7 @@ Sooner or later you're gonna have location blocks to match paths according to a 
 
 ```nginx:mk-next.conf
 location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
-	proxy_pass http://my-server;
+  proxy_pass http://my-server;
 }
 ```
 
@@ -138,8 +138,8 @@ NGINX `access_log` logs every request — not just the path of the request, also
 error_log  /var/log/nginx/error.log warn;
 
 http {
-	# disabled access_log, we still have error logging
-    access_log  off;
+  # disabled access_log, we still have error logging
+  access_log  off;
 }
 ```
 
@@ -153,8 +153,8 @@ The whole point of this is to prevent a connection from blocking a worker proces
 
 ```nginx:nginx.conf
 http {
-    sendfile   on;
-	sendfile_max_chunk 512k;
+  sendfile on;
+  sendfile_max_chunk 512k;
 }
 ```
 
@@ -166,12 +166,18 @@ A detailed guide on their usage can be found on [Setting up hashes](https://ngin
 
 ```nginx:nginx.conf
 http {
-	server_names_hash_max_size 512;
-	server_names_hash_bucket_size 64;
+  server_names_hash_max_size 512;
+  server_names_hash_bucket_size 64;
 }
 ```
 
-also checkout `types_hash_max_size` and hash tables used by the proxy modules `proxy_headers_hash_bucket_size` and `proxy_headers_hash_max_size` — documentation can be found at [HTTP core module](https://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_bucket_size) and [HTTP proxy module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html).
+Also checkout hash tables used by the proxy modules
+
+- `types_hash_max_size`
+- `proxy_headers_hash_bucket_size`
+- `proxy_headers_hash_max_size`
+
+Documentation can be found at [HTTP core module](https://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_bucket_size) and [HTTP proxy module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html).
 
 After tweaking the values the benefits are not only faster responses but also more stability — because this speeds up key search in hash tables then we would have less memory access and a decreased pressure on the CPU.
 
@@ -195,10 +201,10 @@ This is a large topic that I might write about it in a separate article, however
 
 The following topics will **not be covered** here, maybe I'll write another article dedicated to them
 
-- `worker_processes`
-- `worker_connections`
-- `worker_rlimit_nofile`
-- `worker_cpu_affinity`
+- worker_processes
+- worker_connections
+- worker_rlimit_nofile
+- worker_cpu_affinity
 - NGINX multi-threading and thread pools
 - [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option
 
@@ -255,7 +261,7 @@ server {
     ssl_ciphers aNULL;
     ssl_certificate data:$empty;
     ssl_certificate_key data:$empty;
-    return      444;
+    return 444;
 }
 ```
 
@@ -335,23 +341,23 @@ A good practice is to create two files, one for the proxy headers and another fo
 
 ```nginx:mk-jabbascript
 server {
-	location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
-    	# default client headers
-        include /etc/nginx/client_headers.conf;
-        proxy_pass http://my-server;
-    }
+  location ~* \.(?:css|js|jpg|jpe?g|gif|png|svg)$ {
+    # default client headers
+    include /etc/nginx/client_headers.conf;
+    proxy_pass http://my-server;
+  }
 
-	location =/ {
-        # default proxy headers
-        include /etc/nginx/proxy.conf;
-    	# we also can add both
-        # default client headers
-        include /etc/nginx/client_headers.conf;
-        # and a third one that contains common security headers
-        # default client security headers
-        include /etc/nginx/client_security_headers.conf;
-        proxy_pass http://my-server;
-    }
+  location =/ {
+    # default proxy headers
+    include /etc/nginx/proxy.conf;
+    # we also can add both
+    # default client headers
+    include /etc/nginx/client_headers.conf;
+    # and a third one that contains common security headers
+    # default client security headers
+    include /etc/nginx/client_security_headers.conf;
+    proxy_pass http://my-server;
+  }
 }
 ```
 

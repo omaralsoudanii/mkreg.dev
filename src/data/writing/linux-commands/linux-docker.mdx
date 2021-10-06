@@ -16,13 +16,13 @@ This page covers Docker specific commands on Linux. You can use it as a referenc
 
 This builds the images and run their containers assuming the default compose file name is docker-compose.yml, or by specifying the file name.
 
-**Default file name**
+#### Default file name
 
 ```bash
 docker-compose up  --build -d
 ```
 
-**Different file name**
+#### Different file name
 
 ```bash
 docker-compose  -f docker-compose.development.yml up  --build -d
@@ -113,13 +113,9 @@ Delete all stopped containers and unused images/networks/volumes and non persist
 docker system prune -a
 ```
 
-<br />
-
 ```bash:Networks
 docker network prune
 ```
-
-<br />
 
 ```bash:Volumes
 docker volume ls -qf dangling=true | xargs -r docker volume rm

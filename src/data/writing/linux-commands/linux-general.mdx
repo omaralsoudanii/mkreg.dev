@@ -27,24 +27,24 @@ Curl a request with form-data uploading a file using and get some speed info
 
 ```bash:HTTP2
 curl -w '\nEstablish Connection: %{time_connect}s \
-	\nTTFB: %{time_starttransfer}s\n  \
-	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http2  \
-	--location --request POST 'https://www.somedomain.com/uploadfile' \
-	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' \
-	--form 'file=@/home/some_file.csv' \
-	--form 'file=@/home/another_file.csv'
+  \nTTFB: %{time_starttransfer}s\n  \
+  Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http2  \
+  --location --request POST 'https://www.somedomain.com/uploadfile' \
+  --header 'Authorization: Bearer HwzQAS323DvAGQ23123' \
+  --form 'file=@/home/some_file.csv' \
+  --form 'file=@/home/another_file.csv'
 ```
 
 This specific thing is important due to the nature of how **HTTP2** works, uploading files could be slower unless you tune your web-server **HTTP2** initial window. Try it with **HTTP1.1** and see the difference
 
 ```bash:HTTP1.1
 curl -w '\nEstablish Connection: %{time_connect}s \
-	\nTTFB: %{time_starttransfer}s\n \
-	Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http1.1 \
-	--location --request POST 'https://www.somedomain.com/uploadfile' \
-	--header 'Authorization: Bearer HwzQAS323DvAGQ23123' \
-	--form 'file=@/home/some_file.csv' \
-	--form 'file=@/home/another_file.csv'
+  \nTTFB: %{time_starttransfer}s\n \
+  Total: %{time_total}s\nUpload speed: %{speed_upload}s\n' --http1.1 \
+  --location --request POST 'https://www.somedomain.com/uploadfile' \
+  --header 'Authorization: Bearer HwzQAS323DvAGQ23123' \
+  --form 'file=@/home/some_file.csv' \
+  --form 'file=@/home/another_file.csv'
 ```
 
 You can refer to the write out command in Curl (You can find it Nuggets section too)
