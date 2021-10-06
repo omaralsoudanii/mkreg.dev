@@ -1,6 +1,7 @@
 import { PSDB } from 'planetscale-node'
 
-const db = new PSDB(process.env.PLANETSCALE_BRANCH)
+const DBBranch: string = process.env.PLANETSCALE_BRANCH
+const db = new PSDB(DBBranch)
 
 export const insertView = async (slug: string | string[]) => {
   const date = Date.now()
