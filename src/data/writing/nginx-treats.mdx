@@ -21,7 +21,7 @@ This article talks about the open-sourced version of NGINX — an attempt to sha
 
 Although NGINX can be used as a load balancer (layer 4), the content here only covers layer 7 capabilities of NGINX.
 
-> If you are curious about the layers and their numbering, it's based on the OSI model. You can read about it in detail at [OSI model - Wikipedia](https://en.wikipedia.org/wiki/OSI_model)
+> If you are curious about the layers and their numbering, it's based on the OSI model. You can read about it in detail at [OSI model — Wikipedia](https://en.wikipedia.org/wiki/OSI_model)
 
 ## Table of contents
 
@@ -201,12 +201,12 @@ This is a large topic that I might write about it in a separate article, however
 
 The following topics will **not be covered** here, maybe I'll write another article dedicated to them
 
-- worker_processes
-- worker_connections
-- worker_rlimit_nofile
-- worker_cpu_affinity
-- NGINX multi-threading and thread pools
-- [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option
+- `worker_processes`
+- `worker_connections`
+- `worker_rlimit_nofile`
+- `worker_cpu_affinity`
+- NGINX multi-threading and thread pools using `aio`
+- [Sockets Sharding](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/) by using SO_REUSEPORT socket option via `reuseport`
 
 The first 4 directives need a lot of research before you apply them, however, I use NGINX on this site.
 
