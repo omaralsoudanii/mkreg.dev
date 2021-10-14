@@ -1724,6 +1724,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/core-linux-musl@npm:^1.2.42":
+  version: 1.2.42
+  resolution: "@swc/core-linux-musl@npm:1.2.42"
+  checksum: 1e53493f6af5e25c7a2fc860614b2919133f8a869454c4f6a6cef5511c89472af1a0f78598d4a232c5ac57a93fd72fc0c1fc3df551e315bcfa18a339ad48a556
+  languageName: node
+  linkType: hard
+
 "@szmarczak/http-timer@npm:^4.0.5":
   version: 4.0.6
   resolution: "@szmarczak/http-timer@npm:4.0.6"
@@ -6935,6 +6942,7 @@ __metadata:
   resolution: "mkreg.dev@workspace:."
   dependencies:
     "@svgr/webpack": ^5.5.0
+    "@swc/core-linux-musl": ^1.2.42
     "@tailwindcss/typography": ^0.4.1
     "@types/node": ^16.11.0
     "@types/react": ^17.0.30
