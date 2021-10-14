@@ -18,6 +18,7 @@
     "skipLibCheck": true,
     "checkJs": true,
     "strict": false,
+    "incremental": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

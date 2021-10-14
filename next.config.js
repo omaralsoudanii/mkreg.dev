@@ -1,5 +1,9 @@
 module.exports = {
-  experimental: { esmExternals: true },
+  experimental: {
+    esmExternals: true,
+    swcLoader: true,
+    swcMinify: true,
+  },
   compress: process.env.compress === 'true',
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {

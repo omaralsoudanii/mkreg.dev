@@ -44,6 +44,6 @@ yarn-error.log*
 # post build
 /public/*.xml
 /public/robots.txt
-
+tsconfig.tsbuildinfo
 .idea
 *.sql
