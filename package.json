@@ -38,6 +38,8 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
+    "@swc/cli": "^0.1.51",
+    "@swc/core": "^1.2.96",
     "@swc/core-linux-musl": "^1.2.42",
     "@types/node": "^16.11.0",
     "@types/react": "^17.0.30",
