@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async () => {
         title: post.title,
         date: post.date,
         summary: post.summary,
-        slug: encodeURIComponent(post.slug),
+        slug: post.slug,
       }
     }
   )

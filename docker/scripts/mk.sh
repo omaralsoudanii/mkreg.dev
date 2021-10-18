@@ -110,7 +110,6 @@ if [[ $_arg_build == "on" ]]; then
   cd $_rootdir/docker
   docker buildx bake
   docker-compose up -d
-  docker restart mk-nginx
   echo "Docker build completed"
   docker-compose ps
 fi

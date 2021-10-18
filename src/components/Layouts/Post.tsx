@@ -1,45 +1,23 @@
-import { useEffect } from 'react'
-
 import NextLink from '@/components/NextLink'
 import Seo from '@/components/Seo'
 import Views from '@/components/Views'
 import { Environment } from '@/lib/environment'
 import { slugify } from '@/lib/utils'
 
+const TwitterUrl = (path: string) =>
+  `https://mobile.twitter.com/search?q=${Environment.siteUrl}/${path}&src=typed_query`
+
+const GithubUrl = (path: string) =>
+  `${Environment.social.github}/mkreg.dev/edit/main/src/data/${path}.mdx`
+
 export default function PostLayout({
   children,
-  frontMatter,
+  frontMatter: { date, title, tags, lastmod, slug, path },
+  meta,
   prev = null,
   next = null,
   parentPost = null,
 }) {
-  const { date, title, tags, lastmod, summary, slug } = frontMatter
-
-  useEffect(() => {
-    fetch(`/api/views/${slug}`, {
-      method: 'POST',
-    })
-  }, [slug])
-
-  const fullPath =
-    parentPost && parentPost?.path ? parentPost.path.concat(`/${slug}`) : `writing/${slug}`
-
-  const TwitterUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${Environment.siteUrl}/${fullPath}`
-  )}&src=typed_query`
-
-  const GithubUrl = `${Environment.social.github}/mkreg.dev/edit/main/src/data/${fullPath}.mdx`
-  const meta = {
-    title: `Omar Alsoudani - ${title}`,
-    description: summary,
-    image: {
-      url: frontMatter?.image,
-      alt: title,
-    },
-    tags: tags,
-    JsonLd: true,
-  }
-
   return (
     <article id='skip' className='md:divide-y md:divide-gray-200 md:dark:divide-gray-700'>
       <Seo data={meta} />
@@ -100,12 +78,12 @@ export default function PostLayout({
             </h2>
             <div className='flex md:block justify-between'>
               <p className='py-1'>
-                <NextLink className='primary-link text-base' href={GithubUrl}>
+                <NextLink className='primary-link text-base' href={GithubUrl(path)}>
                   {'Edit on GitHub'}
                 </NextLink>
               </p>
               <p className='py-1'>
-                <NextLink href={TwitterUrl} className='primary-link text-base'>
+                <NextLink href={TwitterUrl(path)} className='primary-link text-base'>
                   {'Discuss on Twitter'}
                 </NextLink>
               </p>
@@ -121,7 +99,6 @@ export default function PostLayout({
                 {tags.map((t: string) => (
                   <NextLink
                     className='mr-4 my-2 !text-base  primary-link'
-                    prefetch={false}
                     key={t}
                     href={`/tags/${slugify(t)}`}
                   >
@@ -138,7 +115,7 @@ export default function PostLayout({
                   <h2 className='text-base py-1 !tracking-normal !font-medium  text-tertiary'>
                     Previous Article
                   </h2>
-                  <NextLink className='text-base primary-link' href={`${prev.path}/${prev.slug}`}>
+                  <NextLink className='text-base primary-link' href={`${prev.path}`}>
                     {prev.title}
                   </NextLink>
                 </div>
@@ -148,7 +125,7 @@ export default function PostLayout({
                   <h2 className='text-base py-1 !font-medium !tracking-normal text-tertiary'>
                     Next Article
                   </h2>
-                  <NextLink className='primary-link text-base' href={`${next.path}/${next.slug}`}>
+                  <NextLink className='primary-link text-base' href={`${next.path}`}>
                     {next.title}
                   </NextLink>
                 </div>

@@ -1,4 +1,4 @@
-export default async function Fetcher(
+export default async function fetcher(
   input: RequestInfo | string,
   init?: RequestInit
 ): Promise<any> {

@@ -17,11 +17,23 @@ import { dateSortDesc, formatSlug } from '@/lib/utils'
 
 export default function MDXPost({ post, prev, next }) {
   const { code, frontMatter } = post
+
+  const meta = {
+    title: `Omar Alsoudani - ${frontMatter.title}`,
+    description: frontMatter.summary,
+    image: {
+      url: frontMatter?.image,
+      alt: frontMatter.title,
+    },
+    tags: frontMatter.tags,
+    JsonLd: true,
+  }
+
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
   const Component = useMemo(() => getMDXComponent(code, { Card: Card }), [code])
   return (
-    <Post frontMatter={frontMatter} prev={prev} next={next}>
+    <Post frontMatter={frontMatter} meta={meta} prev={prev} next={next}>
       <Component components={MDXComponents as ComponentMap} />
     </Post>
   )
@@ -30,30 +42,22 @@ export default function MDXPost({ post, prev, next }) {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allFrontMatter = await getAllFilesFrontMatter('writing')
   const allPosts = allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug)
+
+  const slugQuery = encodeURIComponent(params.slug as string)
+  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === slugQuery)
+
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
-  if (prev) prev.path = '/writing'
-  if (next) next.path = '/writing'
+
   const post = await getFileBySlug('writing', params.slug)
-  post.frontMatter.slug = encodeURIComponent(post.frontMatter.slug)
+
+  post.frontMatter.path = `writing/${post.frontMatter.slug}`
+
   return {
     props: {
       post,
-      prev: prev
-        ? {
-            slug: encodeURIComponent(prev.slug),
-            path: prev.path,
-            title: prev.title,
-          }
-        : null,
-      next: next
-        ? {
-            slug: encodeURIComponent(next.slug),
-            path: next.path,
-            title: next.title,
-          }
-        : null,
+      prev: prev ? { path: `/writing/${prev.slug}`, title: prev.title } : null,
+      next: next ? { path: `/writing/${next.slug}`, title: next.title } : null,
     },
   }
 }

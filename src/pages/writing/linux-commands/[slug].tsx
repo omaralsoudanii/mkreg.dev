@@ -17,11 +17,23 @@ import { formatSlug } from '@/lib/utils'
 
 export default function MDXPost({ post, parentPost }) {
   const { code, frontMatter } = post
+
+  const meta = {
+    title: `Omar Alsoudani - ${frontMatter.title}`,
+    description: frontMatter.summary,
+    image: {
+      url: frontMatter?.image,
+      alt: frontMatter.title,
+    },
+    tags: frontMatter.tags,
+    JsonLd: true,
+  }
+
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
   const Component = useMemo(() => getMDXComponent(code, { Card: Card }), [code])
   return (
-    <Post frontMatter={frontMatter} parentPost={parentPost}>
+    <Post frontMatter={frontMatter} meta={meta} parentPost={parentPost}>
       <Component components={MDXComponents as ComponentMap} />
     </Post>
   )
@@ -29,11 +41,14 @@ export default function MDXPost({ post, parentPost }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getFileBySlug('writing/linux-commands', params.slug)
+
   const parentPost = {
     title: 'Linux commands for me',
     path: 'writing/linux-commands',
   }
-  post.frontMatter.slug = encodeURIComponent(post.frontMatter.slug)
+
+  post.frontMatter.path = `writing/linux-commands/${post.frontMatter.slug}`
+
   return {
     props: { post, parentPost },
   }

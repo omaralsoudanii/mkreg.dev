@@ -4,6 +4,9 @@ module.exports = {
     swcLoader: true,
     swcMinify: true,
   },
+  images: {
+    minimumCacheTTL: 604800, // 1 week, we can make it a month to sync with CF, but I wanna try 1 week first
+  },
   compress: process.env.compress === 'true',
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
@@ -20,7 +23,6 @@ module.exports = {
       use: [
         {
           loader: '@svgr/webpack',
-          options: { memo: true },
         },
       ],
     })

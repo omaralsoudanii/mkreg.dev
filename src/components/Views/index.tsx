@@ -1,11 +1,21 @@
-import { Fragment } from 'react'
+import { useEffect } from 'react'
 
 import useSWR from 'swr'
 
+import fetcher from '@/lib/fetcher'
+
 export default function Views({ encodedSlug }: { encodedSlug: string }): JSX.Element {
-  const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json())
-  const API = `/api/views/${encodedSlug}`
-  const { data } = useSWR(API, fetcher)
+  const { data } = useSWR(`/api/views/${encodedSlug}`, fetcher)
   const views = new Number(data?.total)
-  return <Fragment>{views > 0 ? `${views.toLocaleString()} views` : '––– views'}</Fragment>
+
+  useEffect(() => {
+    const registerView = () =>
+      fetch(`/api/views/${encodedSlug}`, {
+        method: 'POST',
+      })
+
+    registerView()
+  }, [encodedSlug])
+
+  return <>{views > 0 ? `${views.toLocaleString()} views` : '––– views'}</>
 }

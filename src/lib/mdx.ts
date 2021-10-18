@@ -97,9 +97,9 @@ export async function getFileBySlug(type: string, slug?) {
     code,
     frontMatter: {
       ...frontmatter,
-      slug: slug ? formatSlug(slug) : type,
+      slug: slug ? encodeURIComponent(formatSlug(slug)) : encodeURIComponent(type),
       date: FormatDate(frontmatter.date),
-    },
+    } as { [key: string]: any },
   }
 }
 
@@ -127,7 +127,7 @@ export async function getAllFilesFrontMatter(type: string) {
       {
         ...data,
         date: FormatDate(data.date),
-        slug: formatSlug(postSlug),
+        slug: encodeURIComponent(formatSlug(postSlug)),
       },
       ...allPosts,
     ]
