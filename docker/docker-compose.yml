@@ -5,6 +5,7 @@ services:
       context: ../
       dockerfile: docker/Dockerfile.next
     image: mk-next
+    init: true
     env_file:
       - ../.env
     container_name: mk-next
@@ -27,6 +28,7 @@ services:
     volumes:
       - /etc/ssl/mkreg/cf/ecc.pem:/etc/nginx/ssl/ecc.pem:ro
       - /etc/ssl/mkreg/cf/priv.key:/etc/nginx/ssl/priv.key:ro
+      - /etc/ssl/mkreg/cf/ca_root.pem:/etc/nginx/ssl/ca_root.pem:ro
       - /etc/ssl/mkreg/dh/dhparam.pem:/etc/nginx/ssl/dhparam.pem:ro
       - /var/log/nginx:/var/log/nginx
     ports:
