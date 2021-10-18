@@ -12,7 +12,6 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-import Card from '@/components/Card'
 import mdxImage from '@/lib/mdxImage'
 import { FormatDate, formatSlug, slugify } from '@/lib/utils'
 
@@ -86,7 +85,6 @@ export async function getFileBySlug(type: string, slug?) {
       }
       return options
     },
-    globals: { Card: Card as any },
   })
 
   if (frontmatter?.lastmod) {
