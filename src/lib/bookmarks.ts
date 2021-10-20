@@ -18,8 +18,6 @@ import Simpleicons from '@/components/Icons/Simpleicons'
 import Stackoverflow from '@/components/Icons/Stackoverflow'
 import Twilio from '@/components/Icons/Twilio'
 
-
-
 const Icons = {
   Aws,
   Cloudflare,
