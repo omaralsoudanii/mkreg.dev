@@ -34,3 +34,16 @@ export const getViews = async (slug: string | string[]) => {
   const total = rows.length ? rows[0].count : 0
   return { total: total }
 }
+
+type Bookmark = { title: string; desc: string; url: string; icon: string }
+
+export const getBookmarks = async () : Promise<Bookmark[]> => {
+  const [rows] = await db.query(
+    `SELECT * from bookmarks ORDER BY updated_at ASC LIMIT ?;`,
+    [100]
+  )
+
+  // Serialize the data
+  const entries : Bookmark[] = Object.values(JSON.parse(JSON.stringify(rows)))
+  return entries
+}

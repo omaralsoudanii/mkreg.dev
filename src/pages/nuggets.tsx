@@ -4,7 +4,8 @@ import { GetStaticProps } from 'next'
 
 import Card from '@/components/Card'
 import Seo from '@/components/Seo'
-import { Bookmarks, BookmarkIcon } from '@/lib/bookmarks'
+import { BookmarkIcon } from '@/lib/bookmarks'
+import { getBookmarks } from '@/lib/planetscale'
 
 function Nuggets({ posts }) {
   const meta = {
@@ -45,13 +46,13 @@ function Nuggets({ posts }) {
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await Bookmarks()
+  const data = await getBookmarks()
   const posts = data.map((bookmark) => {
     return {
       title: bookmark.title,
       desc: bookmark.desc,
-      url: new URL(bookmark.url).toString(),
-      icon: bookmark.Icon,
+      url: bookmark.url,
+      icon: bookmark.icon,
     }
   })
 
