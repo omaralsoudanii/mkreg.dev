@@ -1,8 +1,9 @@
 # Install dependencies only when needed
 FROM node:14.18.1-buster-slim AS deps
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+COPY .yarn/ .yarn/
+COPY package.json yarn.lock .yarnrc.yml ./
+RUN yarn install --immutable
 
 # Rebuild the source code only when needed
 FROM node:14.18.1-buster-slim AS builder
