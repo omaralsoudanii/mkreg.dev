@@ -11,7 +11,12 @@ import Card from '@/components/Card/index.tsx'
 import Nginx from '@/components/Icons/Nginx'
 import Github from '@/components/Icons/Github'
 
-![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-mkreg.jpg)
+<Image 
+  src="/static/images/writing/nginx-treats/nginx-mkreg.jpg" 
+  alt="Omar Alsoudani - NGINX Treats" 
+  width={1195} 
+  height={495} 
+/>
 
 I've invested a lot of time since I've started programming on infrastructure — a web server is a crucial part of that.
 
@@ -52,7 +57,12 @@ Reading this will provide you with different ideas when building and tuning your
 
 ## Decision making
 
-![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-decision-making-mkreg.jpg)
+<Image 
+  src="/static/images/writing/nginx-treats/nginx-decision-making-mkreg.jpg" 
+  alt="Omar Alsoudani - NGINX Treats" 
+  width={1920} 
+  height={1280} 
+/>
 
 Some general tips and concepts to keep in mind before you decide how you will adopt NGINX.
 
@@ -99,7 +109,12 @@ Based on the above — take what I'm writing with a grain of salt and test it ag
 
 ## Performance
 
-![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-performance-mkreg.jpg)
+<Image 
+  src="/static/images/writing/nginx-treats/nginx-performance-mkreg.jpg" 
+  alt="Omar Alsoudani - NGINX Treats" 
+  width={1920} 
+  height={1280} 
+/>
 
 For me Performance doesn't mean **speed** — it’s a combination of:
 
@@ -231,7 +246,12 @@ After some research the solutions I found basically cover the non-HTTPS part and
 
 However, for HTTPS I found nothing — the response would be returned from the browser with the infamous **Invalid certificate error page**.
 
-![Omar Alsoudani - NGINX Treats](/static/images/writing/nginx-treats/nginx-certpage-mkreg.png)
+<Image 
+  src="/static/images/writing/nginx-treats/nginx-certpage-mkreg.png" 
+  alt="Omar Alsoudani - NGINX Treats" 
+  width={765} 
+  height={717} 
+/>
 
 Which makes sense! How? Well, when you generated your certificate from whatever provider it was issued for your domain, not the IP address — you could go down the rabbit hole looking for a way to get a certificate that works with IP address, and if it works you solve the problem.
 
@@ -275,7 +295,12 @@ Which is the case we need, accessing the server through an IP address will not m
 
 After we provide the empty value variable for `ssl_certificate`, `ssl_certificate_key` with the addition of `ssl_ciphers aNULL` then NGINX won't complain about invalid cert — because the provided cipher means no authentication required.
 
-![Omar Alsoudani - NGINX Treats](/static/images/dawg-mkreg.jpg)
+<Image 
+  src="/static/images/dawg-mkreg.jpg" 
+  alt="Omar Alsoudani - NGINX Treats" 
+  width={1242} 
+  height={819} 
+/>
 
 Now any access through the server IP will return a 444 status code error the only problem is (again not a security expert) using **aNULL** could open your server to other vulnerabilities.
 

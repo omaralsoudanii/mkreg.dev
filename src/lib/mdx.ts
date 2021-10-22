@@ -12,7 +12,6 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-import mdxImage from '@/lib/mdxImage'
 import { FormatDate, formatSlug, slugify } from '@/lib/utils'
 
 const root = join(process.cwd(), 'src')
@@ -52,7 +51,7 @@ export async function getFileBySlug(type: string, slug?) {
       // this is the recommended way to add custom remark/rehype plugins:
       // The syntax might look weird, but it protects you in case we add/remove
       // plugins in the future.
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm, mdxImage]
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm]
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
@@ -81,7 +80,6 @@ export async function getFileBySlug(type: string, slug?) {
         ...options.loader,
         '.tsx': 'tsx',
         '.svg': 'tsx',
-        '.js': 'jsx',
       }
       return options
     },

@@ -3,7 +3,6 @@ module.exports = {
     esmExternals: true,
     swcLoader: true,
     swcMinify: false,
-    scrollRestoration: true,
   },
   images: {
     minimumCacheTTL: 604800, // 1 week, we can make it a month to sync with CF, but I wanna try 1 week first
