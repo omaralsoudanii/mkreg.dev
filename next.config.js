@@ -2,10 +2,8 @@ module.exports = {
   experimental: {
     esmExternals: true,
     swcLoader: true,
-    swcMinify: false,
-  },
-  images: {
-    minimumCacheTTL: 604800, // 1 week, we can make it a month to sync with CF, but I wanna try 1 week first
+    swcMinify: true,
+    optimizeImages:true
   },
   compress: process.env.compress === 'true',
   webpack: (config, { dev, isServer }) => {
