@@ -1,5 +1,4 @@
 .next
-.yarn/cache
 node_modules
 docker
 .env.example

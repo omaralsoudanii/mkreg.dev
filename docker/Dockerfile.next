@@ -2,10 +2,9 @@
 FROM node:14.18.1-buster-slim AS deps
 WORKDIR /app
 ENV YARN_VERSION=3.0.2
-COPY .yarn/releases  ./.yarn/releases
-COPY .yarn/plugins  ./.yarn/plugins
+COPY .yarn/ ./.yarn
 COPY package.json yarn.lock .yarnrc.yml ./
-RUN --mount=type=cache,id=yarn,sharing=locked,target=/app/.yarn/cache yarn install --immutable
+RUN yarn install --immutable
 
 # Rebuild the source code 
 FROM node:14.18.1-buster-slim AS builder
