@@ -19,8 +19,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     description: ogDescription,
     generator: `Omar Alsoudani RSS Feed`,
     feed_url: new URL('rss.xml', siteUrl),
-    site_url: new URL('', siteUrl),
-    image_url: new URL(ogImage, siteUrl),
+    site_url: siteUrl,
+    image_url: siteUrl.concat(ogImage),
     ttl: isr.revalidate,
     custom_namespaces: {
       content: `http://purl.org/rss/1.0/modules/content/`,
@@ -52,6 +52,12 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
                 date: frontmatter.data.date,
                 description: frontmatter.data.summary ?? ogDescription,
                 author: ogTitle,
+                enclosure: {
+                  url: siteUrl.concat(frontmatter.data?.image) || siteUrl.concat(ogImage),
+                  file: frontmatter.data?.image
+                    ? `public/${frontmatter.data.image}`
+                    : `public/${ogImage}`,
+                },
                 categories: frontmatter.data.tags ?? ['Software development'],
               })
             } catch (e) {

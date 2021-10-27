@@ -1,13 +1,12 @@
-import React from 'react'
-
 import { GetStaticProps } from 'next'
 
 import Card from '@/components/Card'
 import Seo from '@/components/Seo'
-import { BookmarkIcon } from '@/lib/bookmarks'
-import { getBookmarks } from '@/lib/planetscale'
+import { BookmarkIcon, Bookmarks } from '@/lib/bookmarks'
 
-function Nuggets({ posts }) {
+type Bookmark = { title: string; desc: string; url: string; icon: string }
+
+export default function Nuggets({ posts }: { posts: Bookmark[] }) {
   const meta = {
     title: 'Omar Alsoudani - Nuggets',
     description: 'Resources and bookmarks for the readers',
@@ -45,14 +44,15 @@ function Nuggets({ posts }) {
     </article>
   )
 }
+
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getBookmarks()
-  const posts = data.map((bookmark) => {
+  const data = await Bookmarks()
+  const posts = data.map((bookmark): Bookmark => {
     return {
       title: bookmark.title,
       desc: bookmark.desc,
-      url: bookmark.url,
-      icon: bookmark.icon,
+      url: new URL(bookmark.url).toString(),
+      icon: bookmark.Icon,
     }
   })
 
@@ -62,4 +62,3 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
-export default Nuggets

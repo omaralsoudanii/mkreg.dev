@@ -1,9 +1,7 @@
 module.exports = {
+  swcMinify: true,
   experimental: {
-    esmExternals: true,
-    swcLoader: true,
-    swcMinify: true,
-    optimizeImages:true
+    scrollRestoration: true,
   },
   compress: process.env.compress === 'true',
   webpack: (config, { dev, isServer }) => {
