@@ -24,7 +24,6 @@ export default function Document() {
         <link rel='icon' type='image/png' sizes='16x16' href='/meta/favicon-16x16.png' />
         <link rel='manifest' href='/meta/site.webmanifest' />
         <link rel='mask-icon' href='/meta/safari-pinned-tab.svg' color='#191818' />
-        <link rel='shortcut icon' href='/meta/favicon.ico' />
         <meta name='apple-mobile-web-app-title' content='MK' />
         <meta name='application-name' content='MK' />
         <meta name='msapplication-TileColor' content='#2d89ef' />
