@@ -1,10 +1,7 @@
 version: "3.6"
 services:
   mk-next:
-    build:
-      context: ../
-      dockerfile: docker/Dockerfile.next
-    image: mk-next
+    image: omaralsoudani/mkreg:14.18.1
     init: true
     env_file:
       - ../.env
