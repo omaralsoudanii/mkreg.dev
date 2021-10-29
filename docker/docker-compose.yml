@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   mk-next:
-    image: omaralsoudani/mkreg:14.18.1
+    image: omaralsoudani/mkreg:node-16.13.0
     init: true
     env_file:
       - ../.env
