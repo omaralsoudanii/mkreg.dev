@@ -1,4 +1,4 @@
-FROM omaralsoudani/nginx-brotli
+FROM omaralsoudani/nginx-brotli:v1.21.4
 # COPY your NGINX configuration files to the container
 COPY ./conf/ /etc/nginx
 COPY ./conf.d/ /etc/nginx/conf.d
