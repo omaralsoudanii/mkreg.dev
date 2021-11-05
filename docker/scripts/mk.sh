@@ -110,6 +110,8 @@ if [[ $_arg_build == "on" ]]; then
   cd $_rootdir/docker
   docker pull omaralsoudani/mkreg:latest
   docker buildx bake
+  docker exec mk-next kill -SIGHUP 1
+  docker exec mk-nginx kill -SIGHUP 1
   docker-compose up -d
   echo "Docker build completed"
   docker-compose ps

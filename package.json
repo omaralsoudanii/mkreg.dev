@@ -16,21 +16,20 @@
     "build": "next build",
     "start": "next start",
     "ts": "tsc --noEmit --pretty",
-    "clean": "yarn ts && yarn lint && yarn format && rm -rf .next node_modules && yarn cache clean",
-    "lint": "next lint",
+    "clean": "yarn ts && next lint && yarn format && rm -rf .next node_modules && rm -rf .next && yarn cache clean",
     "format": "prettier --write **/*.{css,tsx,ts,js}",
     "generate-icons": "npx @svgr/cli -d src/components/Icons --ignore-existing --typescript src/components/Icons && rm -f src/components/Icons/index.tsx"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "mdx-bundler": "^6.0.2",
-    "next": "^12.0.2",
+    "esbuild": "^0.13.12",
+    "mdx-bundler": "^6.0.3",
+    "next": "12.0.3-canary.8",
     "next-themes": "^0.0.15",
     "planetscale-node": "^0.2.0",
     "preact": "^10.5.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rss": "^1.2.2",
     "sharp": "^0.29.2",
     "swr": "^1.0.1",
     "tailwindcss": "^2.2.19"
@@ -38,10 +37,9 @@
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "@types/node": "^16.11.6",
-    "@types/react": "^17.0.33",
+    "@types/react": "^17.0.34",
     "autoprefixer": "^10.4.0",
-    "esbuild": "^0.13.12",
-    "eslint": "^8.1.0",
+    "eslint": "7.32.0",
     "eslint-config-next": "^12.0.2",
     "eslint-config-prettier": "^8.3.0",
     "globby": "^12.0.2",
@@ -53,9 +51,9 @@
     "rehype-code-titles": "^1.0.3",
     "rehype-prism-plus": "^1.1.1",
     "rehype-slug": "^5.0.0",
-    "remark-gfm": "^3.0.0",
-    "typescript": "^4.4.4",
-    "unist-util-visit": "^4.1.0"
+    "remark-gfm": "^3.0.1",
+    "rss": "^1.2.2",
+    "typescript": "^4.4.4"
   },
   "license": "MIT",
   "packageManager": "yarn@3.1.0"

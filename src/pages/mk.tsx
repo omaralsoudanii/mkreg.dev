@@ -67,12 +67,12 @@ export default function MK() {
         </p>
         <p className='!font-semibold text-center'>
           <a
-            href='https://mkreg-hugo.vercel.app'
+            href='https://thesultanofswing.win'
             target='_blank'
             rel='noopener noreferrer'
             className='primary-link !font-semibold'
           >
-            Check mkreg-hugo @ Vercel
+            check it out, hosted @ Vercel & proxied via Cloudflare
           </a>
         </p>
         <p>Here, Hold onto this</p>
