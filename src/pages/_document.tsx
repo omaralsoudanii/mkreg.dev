@@ -19,6 +19,7 @@ export default function Document() {
           title='Omar Alsoudani RSS Feed'
           href={`${Environment.siteUrl}${Environment.social.rss}`}
         />
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "039c33ad40a645b5806d77ac9634148d"}'></script>
         <link rel='apple-touch-icon' sizes='180x180' href='/meta/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='32x32' href='/meta/favicon-32x32.png' />
         <link rel='icon' type='image/png' sizes='16x16' href='/meta/favicon-16x16.png' />
